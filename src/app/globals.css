@@ -2,20 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.nav-link {
+  @apply flex mt-2 md:mt-0   whitespace-nowrap p-1 hover:text-primary transition-all 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bg-nav {
+  @apply backdrop-blur-xl bg-white/50;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.children-nav h3{
+  @apply text-lg font-bold text-primary whitespace-normal;
+  white-space: normal!important; /* Allow titles to wrap */
+}
+
+.children-nav ul li {
+  @apply text-sm text-black hover:text-primary py-1 border-b-white border-b cursor-pointer transition-all;
+}
+
+.children-nav div {
+  @apply whitespace-break-spaces text-wrap break-words;
+  overflow-x: hidden!important; /* Ensure long words break and fit within the div */
+  overflow-wrap: break-word!important; /* Ensure long words break and fit within the div */
+}
+
+.hover-anim {
+  display: inline-block;
+  position: relative;
+}
+.hover-anim:hover {
+  color: #033e85 !important;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.hover-anim:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2.5px;
+  bottom: -1px;
+  left: 0;
+  background-color: #0045A4;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-anim:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }

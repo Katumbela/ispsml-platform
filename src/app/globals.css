@@ -9,6 +9,9 @@
 .bg-nav {
   @apply backdrop-blur-xl bg-white/50;
 }
+.children-nav {
+  z-index: 99999999999999!important;
+}
 
 .children-nav h3{
   @apply text-lg font-bold text-primary whitespace-normal;
@@ -20,6 +23,7 @@
 }
 
 .children-nav div {
+  z-index: 99999999999999!important;
   @apply whitespace-break-spaces text-wrap break-words;
   overflow-x: hidden!important;  
   overflow-wrap: break-word!important;  
@@ -54,20 +58,20 @@
 }
 
 .z-500 {
-  z-index: 9999999999!important;
+  z-index: 99999999999999!important;
 }
 
 .slick-slider .slick-dots {
   position: absolute;
   bottom: 43px; 
-  display: flex;
+  display: none!important;
   justify-content: end!important;
   width: 100%;
   padding: 0;
   color: white;
-
   margin: 0;
   list-style: none;
+  z-index: 1; /* Ensure dots are below the navbar */
 }
 
 .slick-slider .slick-dots li button {
@@ -80,4 +84,15 @@
   border-radius: 50%;
   background-color: #fff;
   transition: all 0.3s;
+}
+
+.slick-slider .slick-slide {
+  z-index: -10!important;
+}
+.slick-slider .slick-list {
+  z-index: -10!important;
+}
+
+.z-00 {
+  z-index: -99999999!important;
 }

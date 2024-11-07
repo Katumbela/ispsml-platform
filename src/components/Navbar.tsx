@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className="bg-slate-200 z-500 w-full p-4 shadow-md">
       <div className="container mx-auto flex flex-col lg:flex-row w-full justify-between gap-4 lg:items-center">
-        {/* Logo section remains unchanged */}
+       
         <div className="flex text-2xl items-center">
           <Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[3em] mr-2" />
           <div className="font-bold flex flex-col">
@@ -29,7 +29,7 @@ const Navbar = () => {
           {isOpen ? <FontAwesomeIcon icon={faTimes} size="lg" /> : <FontAwesomeIcon icon={faBars} size="lg" />}
         </div>
         <div className=''>
-          <ul className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-[20%]' : 'transform -translate-y-[5000%] md:translate-y-0'}`}>
+          <ul className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full md:translate-y-0'}`}>
             {navigationItems.map((item, index) => (
               <li key={index}
                 className={`md:ml-4 ${Array.isArray(item.children) ? "relative" : ""} group`}
@@ -58,6 +58,8 @@ const Navbar = () => {
                       transition={{ duration: 0.2 }}
                       className={`absolute ${Array.isArray(item.children) ? "left-0" : "-right-5"}  max-w-[90vw] mt-3 bg-nav rounded-md shadow-lg py-1 z-50`}
                       style={{ width: Array.isArray(item.children) ? '12rem' : '100vw' }}
+                      onMouseEnter={() => setActiveDropdown(index)}
+                      onMouseLeave={() => setActiveDropdown(null)}
                     >
                       {Array.isArray(item.children) ? (
                         item.children.map((childItem, childIndex) => (

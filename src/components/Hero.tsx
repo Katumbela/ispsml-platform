@@ -8,8 +8,8 @@ import { useEffect, useState } from 'react';
 
 const carouselItems = [
   {
-    background: images.logos.logo1,
-    title: 'Bem-vindo à Universidade Angolana',
+    background: images.teachers.teacher2,
+    title: 'Bem-vindo à ISPML',
     description: 'As inscrições estão abertas! Junte-se a nós e transforme o seu futuro.',
     cta: 'Inscreva-se Agora',
     link: '/apply'

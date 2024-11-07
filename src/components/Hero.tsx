@@ -64,13 +64,13 @@ const Hero = () => {
   const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
 
   return (
-    <section className="text-white">
-      <div className="mx-auto text-center">
+    <section className="text-white z-0">
+      <div className="mx-auto   text-center">
         <Slider {...settings}>
           {carouselItems.map((item, index) => (
             <motion.div
               key={index}
-              className="relative h-[500px] items-start grid place-content-center overflow-hidden"
+              className="relative h-[500px] z-[-1] items-start grid place-content-center overflow-hidden"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -86,7 +86,7 @@ const Hero = () => {
               <div className="text-start  relative my-auto  z-10">
                 <div className="container">
                   <motion.h1
-                    className="text-4xl md:text-6xl font-bold mb-4"
+                    className="text-3xl md:text-5xl font-bold mb-4"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
@@ -95,7 +95,7 @@ const Hero = () => {
                     {item.title}
                   </motion.h1>
                   <motion.p
-                    className="text-xl md:text-2xl mb-8"
+                    className="text-lg md:text-xl mb-8"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1 }}
@@ -105,7 +105,7 @@ const Hero = () => {
                   </motion.p>
                   <motion.a
                     href={item.link}
-                    className="bg-secondary text-white py-2 px-4 rounded"
+                    className="bg-white font-bold hover:rounded-md hover:bg-primary hover:text-white hover:shadow transition-all hover:-translate-y-10 transform text-primary py-3 text-lg px-6"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.5 }}

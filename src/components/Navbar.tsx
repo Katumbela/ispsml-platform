@@ -14,7 +14,7 @@ const Navbar = () => {
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
 
   return (
-    <nav className="bg-slate-200 w-full p-4 shadow-md">
+    <nav className="bg-slate-200 z-500 w-full p-4 shadow-md">
       <div className="container mx-auto flex flex-col lg:flex-row w-full justify-between gap-4 lg:items-center">
         {/* Logo section remains unchanged */}
         <div className="flex text-2xl items-center">
@@ -29,7 +29,7 @@ const Navbar = () => {
           {isOpen ? <FontAwesomeIcon icon={faTimes} size="lg" /> : <FontAwesomeIcon icon={faBars} size="lg" />}
         </div>
         <div className=''>
-          <ul className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-0' : 'transform -translate-y-full md:translate-y-0'}`}>
+          <ul className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen ? 'transform translate-y-[20%]' : 'transform -translate-y-[5000%] md:translate-y-0'}`}>
             {navigationItems.map((item, index) => (
               <li key={index}
                 className={`md:ml-4 ${Array.isArray(item.children) ? "relative" : ""} group`}

@@ -1,3 +1,4 @@
+import { images } from "@/assets";
 import type { ReactNode } from "react";
 
 type NavigationItem = {
@@ -45,7 +46,7 @@ export const navigationItems: NavigationItem[] = [
     label: 'Estude no ISPTML',
     href: '#',
     children: (
-      <div className="grid children-nav grid-cols-3   gap-4 p-4">
+      <div className="grid grid-cols-3 gap-4 p-4 children-nav">
         <div>
           <h3>Todos os Links de Aplicação</h3>
           <ul>
@@ -127,4 +128,35 @@ export const navigationItems: NavigationItem[] = [
       </div>
     )
   },
+];
+
+export const carouselItems = [
+  {
+    background: images .teachers.teacher2,
+    title: 'Bem-vindo à ISPML',
+    description: 'As inscrições estão abertas! Junte-se a nós e transforme o seu futuro.',
+    cta: 'Inscreva-se Agora',
+    link: '/apply'
+  },
+  {
+    background: images.backgrounds.bg1,
+    title: 'Excelência Acadêmica',
+    description: 'Oferecemos cursos de alta qualidade para preparar você para o mercado de trabalho.',
+    cta: 'Saiba Mais',
+    link: '/courses'
+  },
+  {
+    background: images.teachers.teacher1,
+    title: 'Pesquisa e Inovação',
+    description: 'Participe de projetos inovadores e contribua para o avanço do conhecimento.',
+    cta: 'Descubra',
+    link: '/research'
+  },
+  {
+    background: images.teachers.teacher3,
+    title: 'Vida Universitária',
+    description: 'Experimente uma vida universitária vibrante e cheia de atividades.',
+    cta: 'Explore',
+    link: '/campus-life'
+  }
 ];

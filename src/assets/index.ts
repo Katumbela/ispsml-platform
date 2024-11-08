@@ -15,6 +15,12 @@ import bg_night_1 from './bgs/bg-night-1.jpeg';
 import bg_night_2 from './bgs/bg-night-2.webp';
 
 
+// importando as imagens dos departamentos
+
+import ciencias_sociais from './departs-bgs/ciencias-sociais.webp';
+import eng_tech from './departs-bgs/istockphoto-1154341677-612x612.jpg';
+import geoscience from './departs-bgs/geoscience.jpg';
+
 export const logos = {
   logo1,
 };
@@ -33,9 +39,16 @@ export const backgrounds = {
   bg_vertical,
 };
 
+export const departImages = {
+  ciencias_sociais,
+  eng_tech,
+  geoscience
+}
 
 export const images = {
   logos,
   teachers,
   backgrounds,
+  departImages
 };
+

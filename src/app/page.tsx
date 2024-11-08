@@ -8,6 +8,7 @@ import { teachers } from '@/assets';
 import QuickLinks from '@/components/QuickLinks';
 import Footer from '@/components/Footer';
 import { StudyOffer } from '@/components/sections/study-offer/study-offer';
+import { AdmissionsSection } from '@/components/sections/admissions-section/admissions-section';
 
 export default function Home() {
   return (
@@ -16,6 +17,8 @@ export default function Home() {
       <div>
         <Hero />
         <StudyOffer />
+        <br />
+        <AdmissionsSection />
         <section className="py-20 bg-gray-100">
           <div className="container mx-auto text-center">
             <h2 className="mb-8 text-3xl font-bold">Escolas em números</h2>

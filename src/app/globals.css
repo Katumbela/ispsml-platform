@@ -2,37 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 .nav-link {
-  @apply flex mt-2 md:mt-0   whitespace-nowrap p-1 hover:text-primary transition-all 
+  @apply flex p-1 mt-2 transition-all md:mt-0 whitespace-nowrap hover:text-primary;
 }
 
 .bg-nav {
   @apply backdrop-blur-xl bg-white/50;
 }
-.children-nav {
-  z-index: 99999999999999!important;
-}
 
-.children-nav h3{
-  @apply text-lg font-bold text-primary whitespace-normal;
-  white-space: normal!important; 
+/* 
+.children-nav {
+  z-index: 99999999999999 !important;
+} */
+
+.children-nav h3 {
+  @apply text-lg font-medium whitespace-normal text-primary-dark;
+  white-space: normal !important;
 }
 
 .children-nav ul li {
-  @apply text-sm text-black hover:text-primary py-1 border-b-white border-b cursor-pointer transition-all;
+  @apply py-1 text-sm font-normal text-black transition-all border-b cursor-pointer hover:text-primary border-b-white;
 }
 
 .children-nav div {
-  z-index: 99999999999999!important;
-  @apply whitespace-break-spaces text-wrap break-words;
-  overflow-x: hidden!important;  
-  overflow-wrap: break-word!important;  
+  @apply break-words whitespace-break-spaces text-wrap;
+  overflow-x: hidden !important;
+  overflow-wrap: break-word !important;
 }
 
 .hover-anim {
   display: inline-block;
   position: relative;
 }
+
 .hover-anim:hover {
   color: #033e85 !important;
   transition: all 0.3s ease-in;
@@ -58,41 +68,30 @@
 }
 
 .z-500 {
-  z-index: 99999999999999!important;
+  z-index: 9999999999999999999999999999999999 !important;
 }
 
-.slick-slider .slick-dots {
-  position: absolute;
-  bottom: 43px; 
-  display: none!important;
-  justify-content: end!important;
-  width: 100%;
-  padding: 0;
-  color: white;
-  margin: 0;
-  list-style: none;
-  z-index: 1; /* Ensure dots are below the navbar */
+.z-0 {
+  z-index: -1 !important;
 }
 
-.slick-slider .slick-dots li button {
-  margin: 0 5px;
-  padding: 0;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  cursor: pointer;
-  border-radius: 50%;
-  background-color: #fff;
-  transition: all 0.3s;
+.navbar {
+  z-index: 10000 !important;
 }
 
-.slick-slider .slick-slide {
-  z-index: -10!important;
-}
-.slick-slider .slick-list {
-  z-index: -10!important;
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
-.z-00 {
-  z-index: -99999999!important;
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}
+
+.quick-link {
+  @apply flex items-center justify-center p-3 font-bold tracking-wide transition-transform transform rounded bg-white/50 ;
 }

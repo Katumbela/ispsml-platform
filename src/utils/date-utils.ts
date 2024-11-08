@@ -1,3 +1,6 @@
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 export default class DateUtils {
 	static convertToDate(date: Date | string): Date {
 		if (!date) return undefined as any

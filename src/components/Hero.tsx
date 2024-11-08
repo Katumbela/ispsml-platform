@@ -2,44 +2,16 @@
 
 "use client"
 
-import { images } from '@/assets';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
+import { carouselItems } from '@/infra/data/navbar-data'; 
+import { FaAngleRight } from 'react-icons/fa';
 
-const carouselItems = [
-  {
-    background: images.teachers.teacher2,
-    title: 'Bem-vindo à ISPML',
-    description: 'As inscrições estão abertas! Junte-se a nós e transforme o seu futuro.',
-    cta: 'Inscreva-se Agora',
-    link: '/apply'
-  },
-  {
-    background: images.backgrounds.bg1,
-    title: 'Excelência Acadêmica',
-    description: 'Oferecemos cursos de alta qualidade para preparar você para o mercado de trabalho.',
-    cta: 'Saiba Mais',
-    link: '/courses'
-  },
-  {
-    background: images.teachers.teacher1,
-    title: 'Pesquisa e Inovação',
-    description: 'Participe de projetos inovadores e contribua para o avanço do conhecimento.',
-    cta: 'Descubra',
-    link: '/research'
-  },
-  {
-    background: images.teachers.teacher3,
-    title: 'Vida Universitária',
-    description: 'Experimente uma vida universitária vibrante e cheia de atividades.',
-    cta: 'Explore',
-    link: '/campus-life'
-  }
-];
+
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -69,12 +41,12 @@ const Hero = () => {
 
   return (
     <section className="text-white ">
-      <div className="pt-20 mx-auto text-center">
+      <div className="pt-0 mx-auto text-center">
         <Slider {...settings}>
           {carouselItems.map((item, index) => (
             <motion.div
               key={index}
-              className="relative h-[600px] items-start grid place-content-center overflow-hidden"
+              className="relative h-[700px] items-start grid place-content-end pb-10 overflow-hidden"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -99,7 +71,7 @@ const Hero = () => {
                     {item.title}
                   </motion.h1>
                   <motion.p
-                    className="mb-8 text-lg md:text-xl"
+                    className="mb-4 text-lg md:text-xl"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1 }}
@@ -109,13 +81,15 @@ const Hero = () => {
                   </motion.p>
                   <motion.a
                     href={item.link}
-                    className="px-6 py-3 text-lg font-bold transition-all transform bg-white hover:rounded-md hover:bg-primary hover:text-white hover:shadow hover:-translate-y-10 text-primary"
+                    className="flex gap-1 mb-4 font-bold tracking-wider text-md hover:underline"
+                    // className="px-6 py-3 text-lg font-bold transition-all transform bg-white hover:rounded-md hover:bg-primary hover:text-white hover:shadow hover:-translate-y-10 text-primary"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.5 }}
                     key={`cta-${currentSlide}`}
                   >
-                    {item.cta}
+                    <span className="my-auto"> {item.cta}</span>
+                    <FaAngleRight className='my-auto' />
                   </motion.a>
                 </div>
               </div>

@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { images } from '@/assets';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes,  faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { navigationItems } from '@/infra/data/navbar-data';
 
 const Navbar = () => {
@@ -33,7 +33,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`w-full p-4 shadow-md fixed z-[10000] ${isScrolled ? ' top-0 left-0 bg-white animate-slide-down' : 'bg-primary-light'}`}>
+    <nav className={`w-full p-4 fixed z-[10000] ${isScrolled ? ' top-0 left-0 bg-white animate-slide-down' : 'bg-transparent text-white'}`}>
       <div className="container flex flex-col justify-between w-full gap-4 mx-auto lg:flex-row lg:items-center">
 
         <div className="flex items-center text-2xl">
@@ -75,7 +75,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute ${Array.isArray(item.children) ? "left-0" : "-right-5 lg:right-0 xl:-right-[1rem] 2xl:-right-[10rem]"}  max-w-[90vw] mt-3 bg-nav   shadow-lg py-1 z-50`}
+                      className={`absolute ${Array.isArray(item.children) ? "left-0" : "-right-5 lg:right-0 xl:-right-[1rem] 2xl:-right-[10rem]"} max-w-[90vw] mt-3 bg-nav   shadow-lg py-1 z-50`}
                       style={{ width: Array.isArray(item.children) ? '12rem' : '100vw' }}
                       onMouseEnter={() => setActiveDropdown(index)}
                       onMouseLeave={() => setActiveDropdown(null)}
@@ -91,7 +91,7 @@ const Navbar = () => {
                           >
                             <Link
                               href={childItem.href}
-                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-white/10 backdrop-blur-sm hover:text-primary"
+                              className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
                             >
                               {childItem.label}
                             </Link>

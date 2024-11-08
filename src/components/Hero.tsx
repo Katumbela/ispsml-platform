@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
-import { carouselItems } from '@/infra/data/navbar-data'; 
+import { carouselItems } from '@/infra/data/navbar-data';
 import { FaAngleRight } from 'react-icons/fa';
 
 
@@ -46,7 +46,7 @@ const Hero = () => {
           {carouselItems.map((item, index) => (
             <motion.div
               key={index}
-              className="relative h-[700px] items-start grid place-content-end pb-10 overflow-hidden"
+              className="relative 2xl:h-[700px] h-[500px]  items-start grid place-content-end pb-10 overflow-hidden"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}

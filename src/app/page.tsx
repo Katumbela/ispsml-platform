@@ -3,8 +3,10 @@
 import Navbar from '../components/Navbar';
 import Card from '@/components/Card';
 import Counter from '@/components/Counter';
-import Hero from '@/components/Hero';
+import Hero from '@/components/Hero'; 
 import { teachers } from '@/assets';
+import QuickLinks from '@/components/QuickLinks';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -14,28 +16,19 @@ export default function Home() {
         <Hero />
         <section className="py-20 bg-gray-100">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Conheça a nossa oferta formativa</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="mb-8 text-3xl font-bold">Conheça a nossa oferta formativa</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card image={teachers.teacher1.src} title="Engenharia Informática" description="Descrição do curso de Engenharia Informática." />
               <Card image={teachers.teacher2.src} title="Medicina" description="Descrição do curso de Medicina." />
               <Card image={teachers.teacher3.src} title="Direito" description="Descrição do curso de Direito." />
             </div>
           </div>
         </section>
-        <section className="py-20">
-          <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Notícias</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <Card image={teachers.teacher4.src} title="Notícia 1" description="Descrição da notícia 1." />
-              <Card image={teachers.teacher2.src} title="Notícia 2" description="Descrição da notícia 2." />
-              <Card image={teachers.teacher3.src} title="Notícia 3" description="Descrição da notícia 3." />
-            </div>
-          </div>
-        </section>
+
         <section className="py-20 bg-gray-100">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Escolas em números</h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <h2 className="mb-8 text-3xl font-bold">Escolas em números</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
               <Counter end={5000} duration={2} label="Estudantes" />
               <Counter end={200} duration={2} label="Professores" />
               <Counter end={50} duration={2} label="Cursos" />
@@ -45,8 +38,8 @@ export default function Home() {
         </section>
         <section className="py-20">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Eventos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="mb-8 text-3xl font-bold">Eventos</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card image={teachers.teacher1.src} title="Evento 1" description="Descrição do evento 1." />
               <Card image={teachers.teacher4.src} title="Evento 2" description="Descrição do evento 2." />
               <Card image={teachers.teacher2.src} title="Evento 3" description="Descrição do evento 3." />
@@ -55,8 +48,8 @@ export default function Home() {
         </section>
         <section className="py-20 bg-gray-100">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Testemunhos</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="mb-8 text-3xl font-bold">Testemunhos</h2>
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <Card image={teachers.teacher3.src} title="Estudante 1" description="Testemunho do estudante 1." />
               <Card image={teachers.teacher1.src} title="Estudante 2" description="Testemunho do estudante 2." />
               <Card image={teachers.teacher4.src} title="Estudante 3" description="Testemunho do estudante 3." />
@@ -65,11 +58,13 @@ export default function Home() {
         </section>
         <section className="py-20">
           <div className="container mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">Admissões e Oferta Educativa</h2>
-            <p className="text-xl mb-8">Informações sobre admissões e a oferta educativa da Universidade Angolana.</p>
-            <a href="/admissions" className="bg-secondary text-white py-2 px-4 rounded">Saiba Mais</a>
+            <h2 className="mb-8 text-3xl font-bold">Admissões e Oferta Educativa</h2>
+            <p className="mb-8 text-xl">Informações sobre admissões e a oferta educativa da Universidade Angolana.</p>
+            <a href="/admissions" className="px-4 py-2 text-white rounded bg-secondary">Saiba Mais</a>
           </div>
         </section>
+        <QuickLinks />
+        <Footer />
       </div>
     </div>
   );

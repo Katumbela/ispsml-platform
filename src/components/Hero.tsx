@@ -1,3 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
+"use client"
+
 import { images } from '@/assets';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
@@ -64,13 +68,13 @@ const Hero = () => {
   const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
 
   return (
-    <section className="text-white z-0">
-      <div className="mx-auto   text-center">
+    <section className="text-white ">
+      <div className="pt-20 mx-auto text-center">
         <Slider {...settings}>
           {carouselItems.map((item, index) => (
             <motion.div
               key={index}
-              className="relative h-[500px] z-[-1] items-start grid place-content-center overflow-hidden"
+              className="relative h-[600px] items-start grid place-content-center overflow-hidden"
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
@@ -83,10 +87,10 @@ const Hero = () => {
                 className="absolute inset-0 z-[-1]"
               />
               <div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
-              <div className="text-start  relative my-auto  z-10">
+              <div className="relative z-10 my-auto text-start">
                 <div className="container">
                   <motion.h1
-                    className="text-3xl md:text-5xl font-bold mb-4"
+                    className="mb-4 text-3xl font-bold md:text-5xl"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
@@ -95,7 +99,7 @@ const Hero = () => {
                     {item.title}
                   </motion.h1>
                   <motion.p
-                    className="text-lg md:text-xl mb-8"
+                    className="mb-8 text-lg md:text-xl"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1 }}
@@ -105,7 +109,7 @@ const Hero = () => {
                   </motion.p>
                   <motion.a
                     href={item.link}
-                    className="bg-white font-bold hover:rounded-md hover:bg-primary hover:text-white hover:shadow transition-all hover:-translate-y-10 transform text-primary py-3 text-lg px-6"
+                    className="px-6 py-3 text-lg font-bold transition-all transform bg-white hover:rounded-md hover:bg-primary hover:text-white hover:shadow hover:-translate-y-10 text-primary"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 1.5 }}

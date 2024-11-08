@@ -10,8 +10,22 @@ body {
   overflow-x: hidden;
 }
 
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #005B99;  
+  border-radius: 100px !important;  
+}
+
 .nav-link {
-  @apply flex p-1 mt-2 transition-all md:mt-0 whitespace-nowrap hover:text-primary;
+  @apply flex p-1 mt-0 mt-2 transition-all md:whitespace-nowrap;
 }
 
 .bg-nav {
@@ -44,7 +58,7 @@ body {
 }
 
 .hover-anim:hover {
-  color: #033e85 !important;
+
   transition: all 0.3s ease-in;
   cursor: pointer;
 }
@@ -57,7 +71,7 @@ body {
   height: 2.5px;
   bottom: -1px;
   left: 0;
-  background-color: #0045A4;
+  background-color: #ffffff;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -83,6 +97,7 @@ body {
   from {
     transform: translateY(-100%);
   }
+
   to {
     transform: translateY(0);
   }
@@ -93,5 +108,29 @@ body {
 }
 
 .quick-link {
-  @apply flex items-center justify-center p-3 font-bold tracking-wide transition-transform transform rounded bg-white/50 ;
+  @apply flex items-center justify-center p-3 font-bold tracking-wide transition-transform transform rounded bg-white/50;
+}
+
+.slick-dots {
+  position: absolute !important;
+  bottom: 1rem !important;
+  margin-top: -10rem !important;
+}
+
+.slick-dots li button::before {
+  color: white !important;
+}
+
+.slick-slider {
+  position: relative !important;
+}
+
+/* Add hover effect for card background */
+.card-background {
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cc:hover .card-background {
+  transform: scale(1.05) !important;
 }

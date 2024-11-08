@@ -3,10 +3,11 @@
 import Navbar from '../components/Navbar';
 import Card from '@/components/Card';
 import Counter from '@/components/Counter';
-import Hero from '@/components/Hero'; 
+import Hero from '@/components/Hero';
 import { teachers } from '@/assets';
 import QuickLinks from '@/components/QuickLinks';
 import Footer from '@/components/Footer';
+import { StudyOffer } from '@/components/sections/study-offer/study-offer';
 
 export default function Home() {
   return (
@@ -14,17 +15,7 @@ export default function Home() {
       <Navbar />
       <div>
         <Hero />
-        <section className="py-20 bg-gray-100">
-          <div className="container mx-auto text-center">
-            <h2 className="mb-8 text-3xl font-bold">Conheça a nossa oferta formativa</h2>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-              <Card image={teachers.teacher1.src} title="Engenharia Informática" description="Descrição do curso de Engenharia Informática." />
-              <Card image={teachers.teacher2.src} title="Medicina" description="Descrição do curso de Medicina." />
-              <Card image={teachers.teacher3.src} title="Direito" description="Descrição do curso de Direito." />
-            </div>
-          </div>
-        </section>
-
+        <StudyOffer />
         <section className="py-20 bg-gray-100">
           <div className="container mx-auto text-center">
             <h2 className="mb-8 text-3xl font-bold">Escolas em números</h2>

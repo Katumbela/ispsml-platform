@@ -42,17 +42,17 @@ export function StudyOffer() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="relative h-[22rem] overflow-hidden cursor-pointer cc"
+              className="relative 2xl:h-[22rem] h-[17rem] overflow-hidden cursor-pointer cc"
               onClick={() => handleCardClick(index)}
             >
               <div
                 className="absolute inset-0 card-background"
                 style={{ background: `url(${card.image}) center center / cover no-repeat` }}
               />
-              <div className="absolute inset-0 bg-black opacity-50 "></div>
+              <div className="absolute inset-0 opacity-70 bg-primary"></div>
               <div className="relative z-10 grid items-center h-full text-white place-content-center">
                 <h3 className="my-auto text-2xl font-medium">{card.title}</h3>
-                <div className={cn("absolute left-0 right-0 flex justify-center w-full text-2xl text-center bottom-4 py-4", { "bg-primary/50": index === 0})}>
+                <div className={cn("absolute left-0 right-0 flex justify-center w-full text-2xl text-center bottom-4 py-4", { "bg-primary-dark/70": index === 0 })}>
                   <FaAngleDown className={cn({ "rotate-180 transition-all": selectedCard === index, "-rotate-0": selectedCard !== index })} />
                 </div>
               </div>
@@ -71,7 +71,7 @@ export function StudyOffer() {
             >
               <h3 className="text-xl font-bold">{cards[selectedCard].title}</h3>
               <p>{cards[selectedCard].description}</p>
-              <a href="#" className="text-blue-400">Saber mais</a>
+              <a href="#" className="mt-2 text-white underline transition-all hover:text-white/70">Saber mais</a>
             </motion.div>
           )}
         </AnimatePresence>

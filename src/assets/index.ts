@@ -10,6 +10,9 @@ import teacher4 from './teachers/teacher-4.jpeg';
 
 // Backgrounds
 import bg1 from './bgs/school-bg-1.jpeg';
+import bg_vertical from './bgs/school-bg-3-vertical.jpeg';
+import bg_night_1 from './bgs/bg-night-1.jpeg';
+import bg_night_2 from './bgs/bg-night-2.webp';
 
 
 export const logos = {
@@ -25,6 +28,9 @@ export const teachers = {
 
 export const backgrounds = {
   bg1,
+  bg_night_1,
+  bg_night_2,
+  bg_vertical,
 };
 
 

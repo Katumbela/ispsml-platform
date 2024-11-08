@@ -1,27 +1,46 @@
+
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 "use client"
 
-import { useState, ReactNode } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { images } from '@/assets';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faCaretDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes,  faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { navigationItems } from '@/infra/data/navbar-data';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="bg-slate-200 z-500 w-full p-4 shadow-md">
-      <div className="container mx-auto flex flex-col lg:flex-row w-full justify-between gap-4 lg:items-center">
-       
-        <div className="flex text-2xl items-center">
+    <nav className={`w-full p-4 shadow-md fixed z-[10000] ${isScrolled ? ' top-0 left-0 bg-white animate-slide-down' : 'bg-primary-light'}`}>
+      <div className="container flex flex-col justify-between w-full gap-4 mx-auto lg:flex-row lg:items-center">
+
+        <div className="flex items-center text-2xl">
           <Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[3em] mr-2" />
-          <div className="font-bold flex flex-col">
-            <span className='text-3xl text-primary'>Universidade</span>
-            <span className="text-sm font- text-primary-dark">São Martinho de Lima</span>
+          <div className={`flex flex-col font-bold ${!isScrolled ? "text-white" : "text-primary"}`}>
+            <span className='text-3xl '>Universidade</span>
+            <span className="text-sm ">São Martinho de Lima</span>
           </div>
         </div>
 
@@ -36,7 +55,7 @@ const Navbar = () => {
                 onMouseEnter={() => setActiveDropdown(index)}
                 onMouseLeave={() => setActiveDropdown(null)}>
                 <div
-                  className="nav-link space-x-2 w-full flex-row flex items-center justify-start hover-anim py-2 "
+                  className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
                 >
                   <span>{item.label}</span>
                   {item.children && (
@@ -44,7 +63,7 @@ const Navbar = () => {
                       animate={{ rotate: activeDropdown === index ? 180 : 0 }}
                       transition={{ duration: 0.2 }}
                     >
-                      <FontAwesomeIcon icon={faCaretDown} />
+                      <FontAwesomeIcon icon={faAngleDown} />
                     </motion.span>
                   )}
                 </div>
@@ -56,7 +75,7 @@ const Navbar = () => {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.2 }}
-                      className={`absolute ${Array.isArray(item.children) ? "left-0" : "-right-5"}  max-w-[90vw] mt-3 bg-nav rounded-md shadow-lg py-1 z-50`}
+                      className={`absolute ${Array.isArray(item.children) ? "left-0" : "-right-5 lg:right-0 xl:-right-[1rem] 2xl:-right-[10rem]"}  max-w-[90vw] mt-3 bg-nav   shadow-lg py-1 z-50`}
                       style={{ width: Array.isArray(item.children) ? '12rem' : '100vw' }}
                       onMouseEnter={() => setActiveDropdown(index)}
                       onMouseLeave={() => setActiveDropdown(null)}
@@ -65,6 +84,7 @@ const Navbar = () => {
                         item.children.map((childItem, childIndex) => (
                           <motion.div
                             key={childIndex}
+                            className='z-500'
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: childIndex * 0.05 }}

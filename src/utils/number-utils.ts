@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 export default class NumberUtils {
 	static regExpNumber = /^[0-9]{1,50}$/

@@ -35,9 +35,9 @@ export function AdmissionsSection() {
 
   return (
     <div ref={sectionRef} className="h-[300vh]">
-      <div className="relative flex h-screen">
+      <div className="relative grid h-screen grid-cols-12">
         <FixedImage isFixed={isFixed} />
-        <div className={`flex-2 p-5 ${isFixed ? 'ml-[33%]' : ''}`}>
+        <div className={`col-span-6 p-5 ${isFixed ? '' : ''}`}>
           <ContentSections />
         </div>
       </div>

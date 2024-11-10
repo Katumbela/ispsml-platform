@@ -63,7 +63,7 @@ export function StudyOffer() {
           {selectedCard !== null && (
             <motion.div
               key={selectedCard}
-              className="w-full px-6 py-8 overflow-hidden text-sky-100 text-start bg-primary"
+              className={cn("w-full px-6 py-8 overflow-hidden text-sky-100 text-start bg-primary")}
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}

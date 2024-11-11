@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { images } from '@/assets';
-import cn from 'classnames';
+import { images } from '@/assets'; 
 
 function FixedImage({ isFixed }: { isFixed: boolean }) {
   return (

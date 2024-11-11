@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { images } from '@/assets';
 import { FaAngleDown } from 'react-icons/fa';
-import cn from 'classnames';
+import cn from 'classnames'; // npm install classnames
+import { routes } from '@/infra/routes.vars';
 
 interface Card {
   title: string;
   description: string;
   image: string;
+  link?: string
 }
 
 export function StudyOffer() {
@@ -17,17 +19,20 @@ export function StudyOffer() {
     {
       title: "Engenharia e Tecnologia",
       description: "Descrição detalhada sobre Engenharia e Tecnologia.",
-      image: images.departImages.eng_tech.src
+      image: images.departImages.eng_tech.src,
+      link: routes.DET_ROUTER
     },
     {
       title: "Ciências Sociais Aplicadas",
       description: "Descrição detalhada sobre Ciências Sociais Aplicadas.",
-      image: images.departImages.ciencias_sociais.src
+      image: images.departImages.ciencias_sociais.src,
+      link: "#" // Link to be defined
     },
     {
       title: "Geociências",
       description: "Descrição detalhada sobre Geociências.",
-      image: images.departImages.geoscience.src
+      image: images.departImages.geoscience.src,  
+      link: "#" // Link to be defined
     }
   ];
 
@@ -71,7 +76,7 @@ export function StudyOffer() {
             >
               <h3 className="text-xl font-bold">{cards[selectedCard].title}</h3>
               <p>{cards[selectedCard].description}</p>
-              <a href="#" className="mt-2 text-white underline transition-all hover:text-white/70">Saber mais</a>
+              <a href={cards[selectedCard].link} className="mt-2 text-white underline transition-all hover:text-white/70">Saber mais</a>
             </motion.div>
           )}
         </AnimatePresence>

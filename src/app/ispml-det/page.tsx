@@ -2,7 +2,6 @@ import Footer from '@/components/Footer';
 import Navbar from '../../components/Navbar';
 import HeroDet from './components/hero-det';
 import QuickLinks from '@/components/QuickLinks';
-import { images } from '@/assets';
 import { PrepaSection } from './components/prepa-section';
 import { EngCoursesSection } from './components/eng-courses-section';
 
@@ -23,7 +22,11 @@ const About = () => {
       <PrepaSection />
      <div className='my-[10vh]' />
       <EngCoursesSection />
-
+<br />
+<br />
+<br />
+<br />
+<br />
       <QuickLinks />
       <Footer />
     </div>

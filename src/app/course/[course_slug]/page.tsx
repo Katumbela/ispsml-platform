@@ -11,6 +11,7 @@ import { ShortDescCourse } from '../components/short_description_course';
 import Footer from '@/components/Footer';
 import { FaDownload } from 'react-icons/fa6';
 import QuickLinks from '@/components/QuickLinks';
+import Head from 'next/head';
 
 export default function CourseDetailsPage() {
   const { course_slug } = useParams();
@@ -18,7 +19,7 @@ export default function CourseDetailsPage() {
   const [openYear, setOpenYear] = useState<number | null>(null);
 
   if (!course) {
-    return <div>Course not found</div>;
+    return <div>Curso não encontrado</div>;
   }
 
   const toggleYear = (year: number) => {
@@ -27,6 +28,11 @@ export default function CourseDetailsPage() {
 
   return (
     <div>
+      <Head>
+        <title>{course.course} | ISPSML</title>
+        <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
+        <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
+      </Head>
       <Navbar />
       <HeroCourseDetail bg_image={images.departImages.ciencias_sociais} title={course.course} />
       <ShortDescCourse course={course} />

@@ -5,7 +5,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter, FaYoutube } 
 
 export default function Footer() {
   return (
-    <footer className="pt-20 text-white bg-gray-800">
+    <footer className="pt-20 text-white bg-[#212121]">
       <div className="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-4">
         <div>
           <h3 className="mb-4 text-xl font-bold">Contato</h3>

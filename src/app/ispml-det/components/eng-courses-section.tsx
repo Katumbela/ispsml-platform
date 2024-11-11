@@ -1,6 +1,4 @@
 import { coursesData } from "@/infra/data/courses-data";
-import { routes } from "@/infra/routes.vars";
-import { FaAngleRight } from "react-icons/fa6";
 import { CardCourseComponent } from "./card-course-component";
 
 

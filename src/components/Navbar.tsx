@@ -11,6 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faAngleDown } from '@fortawesome/free-solid-svg-icons';
 import { navigationItems } from '@/infra/data/navbar-data';
+import { routes } from '@/infra/routes.vars';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +37,7 @@ const Navbar = () => {
     <nav className={`w-full p-4 fixed z-[10000] ${isScrolled ? ' top-0 left-0 bg-white animate-slide-down' : 'bg-transparent text-white'}`}>
       <div className="container flex flex-col justify-between w-full gap-4 mx-auto lg:flex-row lg:items-center">
 
-        <div className="flex items-center text-2xl">
+        <div onClick={() => window.location.href = routes.HOME_ROUTE} className="flex items-center text-2xl cursor-pointer">
           <Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[3em] mr-2" />
           <div className={`flex flex-col font-bold ${!isScrolled ? "text-white" : "text-primary"}`}>
             <span className='text-3xl '>Universidade</span>

@@ -138,3 +138,7 @@ body {
 .hero-det .slick-dots {
   display: none !important;
 }
+
+.card-view-course:hover a {
+    display: flex;
+}

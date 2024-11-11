@@ -24,7 +24,6 @@ import eng_tech from './departs-bgs/istockphoto-1154341677-612x612.jpg';
 import geoscience from './departs-bgs/geoscience.jpg';
 import studying_group from './departs-bgs/studying-group.avif';
 import studying_group_2 from './departs-bgs/studying-group.avif';
-import studying_group_random from './departs-bgs/istockphoto-1154341677-612x612.jpg';
 
 export const logos = {
   logo1,
@@ -52,7 +51,6 @@ export const departImages = {
   geoscience,
   studying_group,
   studying_group_2,
-  studying_group_random,
 }
 
 export const images = {

@@ -134,3 +134,7 @@ body {
 .cc:hover .card-background {
   transform: scale(1.05) !important;
 }
+
+.hero-det .slick-dots {
+  display: none !important;
+}

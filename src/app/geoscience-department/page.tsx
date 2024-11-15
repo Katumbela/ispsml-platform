@@ -4,25 +4,27 @@ import Navbar from '../../components/Navbar';
 import Footer from '@/components/Footer';
 import QuickLinks from '@/components/QuickLinks';
 import { HeroCourseDetail } from '../course/components/hero-course-details';
-import { images } from '@/assets';
-import { useState } from 'react';
+import { images } from '@/assets'; 
 import Head from 'next/head';
 import { coursesData } from '@/infra/data/courses-data';
 import { CardCourseComponent } from '../ispml-det/components/card-course-component';
+import { departments } from '@/infra/global.vars';
 
 const GeoScienceDepartment = () => {
-  const [openYear, setOpenYear] = useState<number | null>(null);
-
-  const toggleYear = (year: number) => {
-    setOpenYear(openYear === year ? null : year);
-  };
-
+   
   return (
-    <div>
+    <>
       <Head>
         <title>GeoCiências | ISPSML</title>
         <meta name="description" content="Saiba mais sobre o departamento de GeoCiências na ISPSML." />
         <meta name="keywords" content="GeoCiências, ISPSML, cursos" />
+        <meta name="author" content="ISPSML" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta property="og:title" content="GeoCiências | ISPSML" />
+        <meta property="og:description" content="Saiba mais sobre o departamento de GeoCiências na ISPSML." />
+        <meta property="og:image" content={images.departImages.geoscience.src} />
+        <meta property="og:url" content="https://www.ispsml.com/geoscience-department" />
+        <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <Navbar />
       <HeroCourseDetail bg_image={images.departImages.geoscience} title="GeoCiências" />
@@ -35,13 +37,9 @@ const GeoScienceDepartment = () => {
         <h2 className='mb-6 text-3xl font-bold'>Cursos</h2>
         <div className="grid gap-1.5 grid-cols-12">
           {coursesData.geoscience.courses.map((course, i) => (
-            <CardCourseComponent key={i} course={course} department="geoscience" />
+            <CardCourseComponent key={i} course={course} department={departments.GEOSCIENCE_DEPARTMENT} />
           ))}
-          {coursesData.geoscience.courses.map((course, i) => (
-            course.additional_courses?.map((additionalCourse, j) => (
-              <CardCourseComponent key={`${i}-${j}`} course={additionalCourse} department="geoscience" />
-            ))
-          ))}
+          
         </div>
       </div>
       <br />
@@ -50,7 +48,7 @@ const GeoScienceDepartment = () => {
       <br />
       <QuickLinks />
       <Footer />
-    </div>
+    </>
   );
 };
 

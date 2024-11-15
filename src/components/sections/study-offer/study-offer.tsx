@@ -26,13 +26,13 @@ export function StudyOffer() {
       title: "Ciências Sociais Aplicadas",
       description: "Descrição detalhada sobre Ciências Sociais Aplicadas.",
       image: images.departImages.ciencias_sociais.src,
-      link: "#" // Link to be defined
+      link: routes.CSA_ROUTE
     },
     {
       title: "Geociências",
       description: "Descrição detalhada sobre Geociências.",
-      image: images.departImages.geoscience.src,  
-      link: "#" // Link to be defined
+      image: images.departImages.geoscience.src,
+      link: routes.GEOSCIENCE_ROUTE
     }
   ];
 

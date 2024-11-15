@@ -2,14 +2,14 @@
 
 import Navbar from '../../components/Navbar';
 import Footer from '@/components/Footer';
-import QuickLinks from '@/components/QuickLinks';
-import { HeroCourseDetail } from '../course/components/hero-course-details';
+import QuickLinks from '@/components/QuickLinks'; 
 import { images } from '@/assets'; 
 import Head from 'next/head';
 import { coursesData } from '@/infra/data/courses-data';
 import { CardCourseComponent } from '../ispml-det/components/card-course-component';
 import { departments } from '@/infra/global.vars';
 import ConferenceComponent from './components/conference-component';
+import GlobalHero from '@/components/global-hero/global-hero';
 
 const CSADepartment = () => { 
 
@@ -21,7 +21,7 @@ const CSADepartment = () => {
         <meta name="keywords" content="Ciências Sociais Aplicadas, ISPSML, cursos" />
       </Head>
       <Navbar />
-      <HeroCourseDetail bg_image={images.departImages.ciencias_sociais} title="Ciências Sociais Aplicadas" />
+      <GlobalHero className='h-[400px] 2xl:h-[50px]' bottomBG='dark' bgImage={images.departImages.ciencias_sociais.src} title="Ciências Sociais Aplicadas" />
       <main className="container my-8">
         <p className="mt-4">
           O Departamento de Ciências Sociais Aplicadas da nossa instituição é dedicado a promover o conhecimento e a pesquisa nas áreas de ciências sociais. Nossos programas são projetados para equipar os alunos com as habilidades e a expertise necessárias para se destacar em diversas áreas, como administração, economia, direito, e mais. Oferecemos uma variedade de cursos e oportunidades de pesquisa que cobrem várias disciplinas. Nossos membros do corpo docente são especialistas renomados em suas áreas, comprometidos em fornecer educação de alta qualidade e promover um ambiente de aprendizado colaborativo. Junte-se a nós para fazer parte de uma comunidade que está moldando o futuro das ciências sociais aplicadas.
@@ -35,6 +35,9 @@ const CSADepartment = () => {
           ))}
         </div>
       </div>
+      <br />
+      <br />
+      <br />
       <br />
       <br />
       <ConferenceComponent />

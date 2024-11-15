@@ -9,6 +9,9 @@ import teacher4 from "./teachers/teacher-4.jpeg";
 
 // Backgrounds
 import bg1 from "./bgs/school-bg-1.jpeg";
+import bg_ciencia_estudo from "./bgs/est-ciencia.jpg";
+import bg_ciencia_estudo_2 from "./bgs/edt-ciencia.jpg";
+import bg_investigator_1 from "./bgs/investigator-1.webp";
 import bg_vertical from "./bgs/school-bg-3-vertical.jpeg";
 import bg_night_1 from "./bgs/bg-night-1.jpeg";
 import bg_support from "./bgs/support.webp";
@@ -40,7 +43,10 @@ export const backgrounds = {
   bg_night_1,
   bg_night_2,
   bg_support,
+  bg_investigator_1,
   bg_vertical,
+  bg_ciencia_estudo,
+  bg_ciencia_estudo_2,
   bg_books_pen,
   bg_school_2,
 };

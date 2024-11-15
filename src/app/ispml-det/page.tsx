@@ -5,7 +5,7 @@ import QuickLinks from '@/components/QuickLinks';
 import { PrepaSection } from './components/prepa-section';
 import { EngCoursesSection } from './components/eng-courses-section';
 
-const About = () => {
+const ISPMLDet = () => {
   return (
     <div>
       <Navbar />
@@ -32,4 +32,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default ISPMLDet;

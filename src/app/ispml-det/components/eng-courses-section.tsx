@@ -1,5 +1,6 @@
 import { coursesData } from "@/infra/data/courses-data";
 import { CardCourseComponent } from "./card-course-component";
+import { departments } from "@/infra/global.vars";
 
 export function EngCoursesSection() {
 
@@ -11,10 +12,10 @@ export function EngCoursesSection() {
       <br />
       <br />
 
-      <div className="grid flex-wrap  grid-cols-12 gap-1.5">
+      <div className="grid flex-wrap  grid-cols-12 gap-1.5 2xl:gap-6">
         {
-          coursesData.engineering.map((course, i) => (
-            <CardCourseComponent course={course} department="engineering" key={i} />
+          coursesData.engineering.courses.map((course, i) => (
+            <CardCourseComponent course={course} department={departments.ENGINEERING_DEPARTMENT} key={i} />
           ))
         }
       </div>

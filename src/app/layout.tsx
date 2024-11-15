@@ -3,6 +3,7 @@
 import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect, useState } from "react";
+import Loader from "@/components/common/Loader";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,7 +15,7 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
- 
+
 
 export default function RootLayout({
   children,
@@ -34,14 +35,27 @@ export default function RootLayout({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  const [loading, setLoading] = useState<boolean>(true);
+
+  // const pathname = usePathname();
+
+  useEffect(() => {
+    setTimeout(() => setLoading(false), 1000);
+  }, []);
+
+
   return (
     <html lang="pt">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {isLargeScreen ? (
-          children
-        ) : (
+
+          <>
+
+            {loading ? <Loader /> : children}
+
+          </>) : (
           <div className="flex items-center justify-center h-screen text-lg font-semibold text-center text-red-600">
             Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
           </div>

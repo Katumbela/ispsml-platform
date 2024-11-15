@@ -116,7 +116,7 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
                   
                         <div className='flex flex-col text-start'>
                           <p>Modalidade</p>
-                          <span className="text-sm">{course?.duration} anos</span>
+                          <span className="text-sm">Presencial</span>
                         </div>
                       </div>
                     </div>

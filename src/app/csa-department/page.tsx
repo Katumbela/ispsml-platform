@@ -4,20 +4,14 @@ import Navbar from '../../components/Navbar';
 import Footer from '@/components/Footer';
 import QuickLinks from '@/components/QuickLinks';
 import { HeroCourseDetail } from '../course/components/hero-course-details';
-import { images } from '@/assets';
-import { ShortDescCourse } from '../course/components/short_description_course';
-import YearAccordion from '../course/components/YearAccordion';
-import { useState } from 'react';
+import { images } from '@/assets'; 
 import Head from 'next/head';
 import { coursesData } from '@/infra/data/courses-data';
 import { CardCourseComponent } from '../ispml-det/components/card-course-component';
+import { departments } from '@/infra/global.vars';
+import ConferenceComponent from './components/conference-component';
 
-const CSADepartment = () => {
-  const [openYear, setOpenYear] = useState<number | null>(null);
-
-  const toggleYear = (year: number) => {
-    setOpenYear(openYear === year ? null : year);
-  };
+const CSADepartment = () => { 
 
   return (
     <div>
@@ -37,12 +31,13 @@ const CSADepartment = () => {
         <h2 className='mb-6 text-3xl font-bold'>Cursos</h2>
         <div className="grid gap-1.5 grid-cols-12">
           {coursesData.csa.courses.map((course, i ) => (
-            <CardCourseComponent key={i} course={course} department="csa" />
+            <CardCourseComponent key={i} course={course} department={departments.CSA_DEPARTMENT} />
           ))}
         </div>
       </div>
       <br />
       <br />
+      <ConferenceComponent />
       <br />
       <br />
       <QuickLinks />

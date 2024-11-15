@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 import { images } from '@/assets';
+import cn from 'classnames';
 
 
 interface GlobalHeroProps {
@@ -17,12 +18,15 @@ interface GlobalHeroProps {
   paragraph?: string
   linkMore?: string
   className?: string
+  subtitle?: string
+  bottomBG?: "primary" | "none" | "dark"
   heightLg?: string
+  bgImage?: string
   heightXxl?: string
 }
 
 
-const GlobalHero = ({ className, heightXxl, heightLg, title }: GlobalHeroProps) => {
+const GlobalHero = ({ className, heightXxl, heightLg, title, bgImage, subtitle, bottomBG }: GlobalHeroProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('top');
 
@@ -60,7 +64,7 @@ const GlobalHero = ({ className, heightXxl, heightLg, title }: GlobalHeroProps) 
             transition={{ duration: 0.5 }}
           >
             <Image
-              src={images.backgrounds.bg_night_1.src}
+              src={bgImage ? bgImage : images.backgrounds.bg_night_1.src}
               alt={""}
               layout="fill"
               objectFit="cover"
@@ -68,7 +72,7 @@ const GlobalHero = ({ className, heightXxl, heightLg, title }: GlobalHeroProps) 
             />
             <div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
             <div className="relative z-10 my-auto text-start">
-              <div className="py-14 bg-primary-dark/50">
+              <div className={cn("py-14", {" bg-primary-dark/50": bottomBG === "primary", "bg-gradient-to-t from-black": bottomBG === "dark"})}>
                 <div className="container">
                   <motion.h1
                     className="text-2xl font-bold md:text-4xl"
@@ -79,6 +83,9 @@ const GlobalHero = ({ className, heightXxl, heightLg, title }: GlobalHeroProps) 
                   >
                     {title}
                   </motion.h1>
+                  <span className="text-white">
+                    {subtitle}
+                  </span>
                 </div>
 
               </div>

@@ -135,6 +135,13 @@ export const coursesData: {
         slug: "ciencia-computacao-graduacao",
         long_description:
           "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+        benefits: [
+          "Desenvolver habilidades em algoritmos e programação.",
+          "Preparação para carreiras em pesquisa e desenvolvimento.",
+          "Visão abrangente das áreas emergentes da computação.",
+          "Oportunidades de estágio em empresas de tecnologia.",
+          "Base sólida em teoria da computação e desenvolvimento de software.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -267,6 +274,13 @@ export const coursesData: {
         slug: "engenharia-quimica-graduacao",
         long_description:
           "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+        benefits: [
+          "Formação abrangente em processos químicos e industriais.",
+          "Preparação para atuar em setores como petroquímica e farmacêutica.",
+          "Ênfase em sustentabilidade e soluções inovadoras.",
+          "Oportunidades de estágio em empresas do setor.",
+          "Desenvolvimento de competências em otimização de processos.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -522,6 +536,13 @@ export const coursesData: {
         slug: "ciencia-computacao-graduacao",
         long_description:
           "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+        benefits: [
+          "Desenvolver habilidades em algoritmos e programação.",
+          "Preparação para carreiras em pesquisa e desenvolvimento.",
+          "Visão abrangente das áreas emergentes da computação.",
+          "Oportunidades de estágio em empresas de tecnologia.",
+          "Base sólida em teoria da computação e desenvolvimento de software.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -654,6 +675,13 @@ export const coursesData: {
         slug: "engenharia-quimica-graduacao",
         long_description:
           "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+        benefits: [
+          "Formação abrangente em processos químicos e industriais.",
+          "Preparação para atuar em setores como petroquímica e farmacêutica.",
+          "Ênfase em sustentabilidade e soluções inovadoras.",
+          "Oportunidades de estágio em empresas do setor.",
+          "Desenvolvimento de competências em otimização de processos.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -794,6 +822,13 @@ export const coursesData: {
         slug: "geologia-graduacao",
         long_description:
           "O curso de Geologia oferece uma formação completa em estudo da Terra, seus materiais, processos e história. Os alunos aprendem sobre minerais, rochas, fósseis, recursos naturais e riscos geológicos. O curso também aborda técnicas de mapeamento geológico, geofísica e geoquímica, preparando os geólogos para atuar em exploração mineral, petróleo, meio ambiente e pesquisa científica.",
+        benefits: [
+          "Formação completa em estudo da Terra e seus processos.",
+          "Preparação para atuar em exploração mineral e petróleo.",
+          "Desenvolvimento de competências em mapeamento geológico.",
+          "Oportunidades de estágio em empresas do setor.",
+          "Base sólida em técnicas de geofísica e geoquímica.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -947,6 +982,13 @@ export const coursesData: {
         slug: "geofisica-graduacao",
         long_description:
           "O curso de Geofísica oferece uma formação sólida em métodos geofísicos para estudo da Terra. Os alunos aprendem sobre técnicas de prospecção geofísica, sismologia, gravimetria, magnetometria e eletromagnetismo. O curso prepara os geofísicos para atuar em exploração de recursos naturais, monitoramento ambiental, engenharia geotécnica e pesquisa científica.",
+        benefits: [
+          "Formação sólida em métodos geofísicos para estudo da Terra.",
+          "Preparação para atuar em exploração de recursos naturais.",
+          "Desenvolvimento de competências em sismologia e gravimetria.",
+          "Oportunidades de estágio em empresas do setor.",
+          "Base sólida em técnicas de prospecção geofísica.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -1061,6 +1103,13 @@ export const coursesData: {
         slug: "administracao-graduacao",
         long_description:
           "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        benefits: [
+          "Formação abrangente em gestão de empresas e negócios.",
+          "Desenvolvimento de competências em planejamento e organização.",
+          "Preparação para atuar em diversas áreas da administração.",
+          "Ênfase em empreendedorismo e inovação.",
+          "Oportunidades de estágio em empresas de diversos setores.",
+        ],
         shift: {
           afternoon: true,
           morning: true,
@@ -1170,6 +1219,13 @@ export const coursesData: {
         slug: "economia-graduacao",
         long_description:
           "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        benefits: [
+          "Formação sólida em análise econômica e políticas públicas.",
+          "Desenvolvimento de competências em microeconomia e macroeconomia.",
+          "Preparação para atuar em consultoria econômica e planejamento estratégico.",
+          "Ênfase em desenvolvimento econômico e sustentabilidade.",
+          "Oportunidades de estágio em empresas e órgãos públicos.",
+        ],
         shift: {
           afternoon: true,
           morning: true,

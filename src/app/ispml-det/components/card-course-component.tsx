@@ -9,7 +9,7 @@ interface CardCourseComponentProps {
 
 export function CardCourseComponent({ course, department }: CardCourseComponentProps) {
   return (
-    <div onClick={() => window.location.href = `${routes.VIEW_COURSE_ROUTE}/${department}/${course.slug}`} className="grid col-span-2 card-view-course w-[15vw] h-[30vh] items-center text-white bg-primary hover:bg-primary-dark cursor-pointer transition-all place-content-center">
+    <div onClick={() => window.location.href = `${routes.VIEW_COURSE_ROUTE}/${department}/${course.slug}`} className="grid col-span-2 card-view-course  w-full h-[11rem] 2xl:h-[13rem] items-center text-white bg-primary hover:bg-primary-dark cursor-pointer transition-all place-content-center">
       <div className="text-center whitespace-break-spaces">
         <h2 className="text-2xl mg-3">
           {course.course}

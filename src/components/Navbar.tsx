@@ -56,6 +56,7 @@ const Navbar = () => {
                 onMouseEnter={() => setActiveDropdown(index)}
                 onMouseLeave={() => setActiveDropdown(null)}>
                 <div
+                onClick={() => window.location.href = item.href}
                   className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
                 >
                   <span>{item.label}</span>

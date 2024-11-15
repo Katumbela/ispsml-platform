@@ -34,7 +34,7 @@ export function AdmissionsSection() {
   }, []);
 
   return (
-    <div ref={sectionRef} className="h-[300vh]">
+    <div ref={sectionRef} className=" ">
       <div className="relative grid h-screen grid-cols-12">
         <FixedImage isFixed={isFixed} />
         <div className={`col-span-6 p-5 ${isFixed ? '' : ''}`}>

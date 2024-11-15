@@ -2,13 +2,13 @@
 
 import Navbar from '../../components/Navbar';
 import Footer from '@/components/Footer';
-import QuickLinks from '@/components/QuickLinks';
-import { HeroCourseDetail } from '../course/components/hero-course-details';
+import QuickLinks from '@/components/QuickLinks'; 
 import { images } from '@/assets'; 
 import Head from 'next/head';
 import { coursesData } from '@/infra/data/courses-data';
 import { CardCourseComponent } from '../ispml-det/components/card-course-component';
 import { departments } from '@/infra/global.vars';
+import GlobalHero from '@/components/global-hero/global-hero';
 
 const GeoScienceDepartment = () => {
    
@@ -26,8 +26,9 @@ const GeoScienceDepartment = () => {
         <meta property="og:url" content="https://www.ispsml.com/geoscience-department" />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Navbar />
-      <HeroCourseDetail bg_image={images.departImages.geoscience} title="GeoCiências" />
+      <Navbar /> 
+      <GlobalHero className='h-[400px] 2xl:h-[50px]' bottomBG='primary' bgImage={images.departImages.geoscience.src} title="Departamento de GeoCiências" />
+      
       <main className="container my-8">
         <p className="mt-4">
           O Departamento de GeoCiências da nossa instituição é dedicado a promover o conhecimento e a pesquisa nas áreas de ciências da terra. Nossos programas são projetados para equipar os alunos com as habilidades e a expertise necessárias para se destacar em diversas áreas, como geologia, geofísica, geografia, e mais. Oferecemos uma variedade de cursos e oportunidades de pesquisa que cobrem várias disciplinas. Nossos membros do corpo docente são especialistas renomados em suas áreas, comprometidos em fornecer educação de alta qualidade e promover um ambiente de aprendizado colaborativo. Junte-se a nós para fazer parte de uma comunidade que está moldando o futuro das ciências da terra.

@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useParams } from 'next/navigation';
@@ -28,19 +27,31 @@ export default function CourseDetailsPage() {
   };
 
   return (
-    <div>
+    <>
       <Head>
         <title>{course.course} | ISPSML</title>
         <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
         <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
       </Head>
       <Navbar />
-      <HeroCourseDetail bg_image={images.departImages.ciencias_sociais} title={course.course} />
+      <HeroCourseDetail course={course} bg_image={images.departImages.ciencias_sociais} title={course.course} />
       <ShortDescCourse course={course} />
       <br />
       <br />
       <br />
-
+      <div className="container">
+        <h2 className='mb-6 text-3xl font-bold'>Benefícios do Programa</h2>
+        <div className="grid grid-cols-2 gap-4">
+            {course.benefits?.map((benefit: string, index: number) => (
+            <div key={index} className="benefit-item">
+              <p>{benefit}</p>
+            </div>
+            ))}
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
       <div className="container">
         <h2 className='mb-6 text-3xl font-bold'>Plano Curricular</h2>
         <div className="relative grid grid-cols-2 gap-4">
@@ -73,6 +84,6 @@ export default function CourseDetailsPage() {
       <br />
       <QuickLinks />
       <Footer />
-    </div>
+    </>
   );
 };

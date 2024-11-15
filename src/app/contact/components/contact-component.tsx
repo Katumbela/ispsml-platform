@@ -169,10 +169,10 @@ const ContactComponent = () => {
 <br /><div className="container">
 
 
-<p>ISPML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no Tecnológico de Monterrey. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.
+<p>ISPML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no ISPML. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.
 <br />
 <br />
-No TECservices, nos esforçamos para oferecer a melhor experiência possível. Nossos pilares são confiança, empatia e compreensão, para que você se sinta ouvido e apoiado o tempo todo. Além disso, garantimos respostas claras, ágeis e oportunas para resolver suas dúvidas ou problemas de forma eficiente. Queremos que o acesso aos nossos serviços seja fácil e rápido, e para isso contamos com uma equipe altamente capacitada e comprometida. Sua satisfação é nossa prioridade!</p>
+Na o ISPML, nos esforçamos para oferecer a melhor experiência possível. Nossos pilares são confiança, empatia e compreensão, para que você se sinta ouvido e apoiado o tempo todo. Além disso, garantimos respostas claras, ágeis e oportunas para resolver suas dúvidas ou problemas de forma eficiente. Queremos que o acesso aos nossos serviços seja fácil e rápido, e para isso contamos com uma equipe altamente capacitada e comprometida. Sua satisfação é nossa prioridade!</p>
 </div>
     </section>
   );

@@ -7,7 +7,7 @@ export const disabledInputClasses = 'input-disabled bg-gray-200 cursor-not-allow
 
 export const inputWrapperClasses = 'input-wrapper';
 export const inputLabelClasses = 'input-label';
-export const inputContainerClasses = 'input-container flex items-center';
+export const inputcontainersClasses = 'input-containers flex items-center';
 export const inputIconClasses = 'input-icon flex items-center';
 export const leftIconClasses = 'left-icon';
 export const rightIconClasses = 'right-icon';

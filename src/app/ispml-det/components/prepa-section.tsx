@@ -4,7 +4,7 @@ export function PrepaSection() {
   return (
     <div className="prepa-section bg-primary ">
       <div className="relative flex ">
-        <div className="container w-full grid place-content-center items-center ps-[3.9vw]">
+        <div className="containers w-full grid place-content-center items-center ps-[3.9vw]">
           <div className='text-white '>
             <h2 className="text-4xl font-bold">
               Preparatorio Engenharias

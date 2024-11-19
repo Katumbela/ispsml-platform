@@ -79,37 +79,37 @@ export const navigationItems: NavigationItem[] = [
       { label: 'Programa "A Empresa na Universidade"', href: routes.UNIVERSITY_BUSINESS_PROGRAM_ROUTE },
     ]
   },
-  {
-    label: 'Acadêmico',
-    href: '#',
-    children: [
-      { label: 'Cursos', href: '/courses' },
-      { label: 'Biblioteca', href: '/library' },
-      { label: 'Horários', href: '/schedules' },
-      { label: 'Calendário', href: '/calendar' },
-    ]
-  },
-  {
-    label: 'Campus',
-    href: '#',
-    children: [
-      { label: 'Mapa', href: '/map' },
-      { label: 'Acomodações', href: '/accommodations' },
-      { label: 'Refeitório', href: '/cafeteria' },
-      { label: 'Estacionamento', href: '/parking' },
-      { label: 'Segurança', href: '/security' },
-      { label: 'Eventos', href: '/events' },
-    ]
-  },
-  {
-    label: 'Estudantes',
-    href: '#',
-    children: [
-      { label: 'Portal do Estudante', href: '/student-portal' },
-      { label: 'Alumni', href: '/alumni' },
-      { label: 'Associações', href: '/associations' },
-    ]
-  },
+  // {
+  //   label: 'Acadêmico',
+  //   href: '#',
+  //   children: [
+  //     { label: 'Cursos', href: '/courses' },
+  //     { label: 'Biblioteca', href: '/library' },
+  //     { label: 'Horários', href: '/schedules' },
+  //     { label: 'Calendário', href: '/calendar' },
+  //   ]
+  // },
+  // {
+  //   label: 'Campus',
+  //   href: '#',
+  //   children: [
+  //     { label: 'Mapa', href: '/map' },
+  //     { label: 'Acomodações', href: '/accommodations' },
+  //     { label: 'Refeitório', href: '/cafeteria' },
+  //     { label: 'Estacionamento', href: '/parking' },
+  //     { label: 'Segurança', href: '/security' },
+  //     { label: 'Eventos', href: '/events' },
+  //   ]
+  // },
+  // {
+  //   label: 'Estudantes',
+  //   href: '#',
+  //   children: [
+  //     { label: 'Portal do Estudante', href: '/student-portal' },
+  //     { label: 'Alumni', href: '/alumni' },
+  //     { label: 'Associações', href: '/associations' },
+  //   ]
+  // },
   {
     label: 'Estude no ISPTML',
     href: routes.ACADEMIC_SERVICES_ROUTE,
@@ -134,9 +134,10 @@ export const navigationItems: NavigationItem[] = [
       </div>
     )
   },
-  { label: 'Biblioteca', href: '/library' },
+  // { label: 'Biblioteca', href: '/library' },
   { label: 'Contato', href: '/contact' },
   { label: 'Notícias', href: '/news' },
+  { label: 'Eventos', href: '/events' },
 ];
 
 export const carouselItems = [

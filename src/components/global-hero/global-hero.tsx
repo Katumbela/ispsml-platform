@@ -73,7 +73,7 @@ const GlobalHero = ({ className, heightXxl, heightLg, title, bgImage, subtitle, 
             <div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
             <div className="relative z-10 my-auto text-start">
               <div className={cn("py-14", {" bg-primary-dark/50": bottomBG === "primary", "bg-gradient-to-t from-black": bottomBG === "dark"})}>
-                <div className="container">
+                <div className="containers">
                   <motion.h1
                     className="text-2xl font-bold md:text-4xl"
                     initial={{ opacity: 0, y: getInitialY() }}

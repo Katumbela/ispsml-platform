@@ -6,7 +6,7 @@ interface ShortDescCourseProps {
 
 export function ShortDescCourse({ course }: ShortDescCourseProps) {
   return (
-    <div className="container mt-[10vh]">
+    <div className="containers mt-[10vh]">
       <div className="flex">
         <div className="w-full">
           <h1 className='text-2xl font-bold'>{course.course}</h1>

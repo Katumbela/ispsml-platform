@@ -35,18 +35,22 @@ const Navbar = () => {
 	return (
 		<nav
 			className={`w-full p-4 fixed z-[10000] ${isScrolled
-				? ' top-0 left-0 bg-white animate-slide-down'
+				? ' top-0 left-0 bg-white shadow-md animate-slide-down'
 				: 'bg-transparent text-white'}`}
 		>
-			<div className="flex flex-col justify-between w-full gap-4 mx-auto containers lg:flex-row lg:items-center">
+			<div className="flex flex-col w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center">
 				<div
 					onClick={() => (window.location.href = routes.HOME_ROUTE)}
 					className="flex items-center text-2xl cursor-pointer"
 				>
-					<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[3em] mr-2" />
-					<div className={`flex flex-col font-bold ${!isScrolled ? 'text-white' : 'text-primary'}`}>
-						<span className="text-3xl ">Universidade</span>
-						<span className="text-sm ">São Martinho de Lima</span>
+					<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
+					<div
+						className={`flex mt-2 flex-col justify-center font-bold ${!isScrolled
+							? 'text-white'
+							: 'text-primary'}`}
+					>
+						<span className="text-lg ">Universidade</span>
+						<span className="text-[10px] -mt-[1rem] ">São Martinho de Lima</span>
 					</div>
 				</div>
 
@@ -74,7 +78,7 @@ const Navbar = () => {
 									onClick={() => (window.location.href = item.href)}
 									className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
 								>
-									<span>{item.label}</span>
+									<span className="font-[600] tracking-wider">{item.label}</span>
 									{item.children && (
 										<motion.span
 											animate={{ rotate: activeDropdown === index ? 180 : 0 }}

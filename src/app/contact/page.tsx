@@ -11,7 +11,7 @@ const Contact = () => {
     <div>
       <Navbar />
       <GlobalHero title='Como podemos ajudar ?' subtitle='Contante o ISPML' className='h-[500px] 2xl:h-[650px]' bottomBG='dark' bgImage={images.backgrounds.bg_support.src}/>
-      <main className="container">
+      <main className="containers">
       
       <ContactComponent />
 

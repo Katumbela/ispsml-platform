@@ -13,7 +13,7 @@ interface YearAccordionProps {
 const YearAccordion: React.FC<YearAccordionProps> = ({ year, isOpen, toggleYear }) => {
   return (
     <div className=''>
-      <h2 className={cn("py-4 my-0 text-xl font-bold  transition-all cursor-pointer text-primary hover:bg-slate-100/80 bg-slate-50 container flex gap-3")} onClick={() => toggleYear(year.year)}>
+      <h2 className={cn("py-4 my-0 text-xl font-bold  transition-all cursor-pointer text-primary hover:bg-slate-100/80 bg-slate-50 containers flex gap-3")} onClick={() => toggleYear(year.year)}>
         {
           !isOpen ? <FaPlus className='my-auto text-xl' /> : <FaMinus className='my-auto text-xl' />
         }
@@ -30,10 +30,10 @@ const YearAccordion: React.FC<YearAccordionProps> = ({ year, isOpen, toggleYear 
           <>
             {year.semesters.map(semester => (
               <div className='mb-10' key={semester.semester}>
-                <div className="container py-2 text-md bg-slate-200/50">   {semester.semester}º Semestre</div>
+                <div className="containers py-2 text-md bg-slate-200/50">   {semester.semester}º Semestre</div>
                 <table className='table w-full table-fixed text-start text-balance'>
                   <thead>
-                    <tr className='container py-6 font-medium bg-slate-100/60'>
+                    <tr className='containers py-6 font-medium bg-slate-100/60'>
                       <th className='px-4 py-2 text-start'>Disciplina</th>
                       <th className='px-4 py-2 text-start'>Carga Horária</th>
                     </tr>

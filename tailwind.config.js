@@ -20,16 +20,16 @@ const config = {
           dark: '#F57C00',
         },
       },
-      container: {
-        center: true,
-        padding: "15px",
-        screens: {
-          sm: "576px",
-          md: "768px",
-          lg: "992px",
-          xl: "1200px",
-          "2xl": "1400px",
-        },
+      containers: {
+center: true,
+                padding: "10px",
+        // screens: {
+        //   sm: "776px",
+        //   md: "968px",
+        //   lg: "1192px",
+        //   xl: "1400px",
+        //   "2xl": "1600px",
+        // },
       },
     },
   },

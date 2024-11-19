@@ -6,7 +6,7 @@ import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter, FaYoutube } 
 export default function Footer() {
   return (
     <footer className="pt-20 text-white bg-[#212121]">
-      <div className="container grid grid-cols-1 gap-8 mx-auto md:grid-cols-4">
+      <div className="containers grid grid-cols-1 gap-8 mx-auto md:grid-cols-4">
         <div>
           <h3 className="mb-4 text-xl font-bold">Contato</h3>
           <p>+244 123 456 789</p>
@@ -55,7 +55,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="py-4 mt-20 text-start bg-primary">
-        <div className="container text-sm">
+        <div className="containers text-sm">
 
           <p>&copy; 2024 São Martinho de Lima. Todos os direitos reservados.</p>
 

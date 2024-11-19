@@ -30,7 +30,7 @@ export const navigationItems: NavigationItem[] = [
   },
   {
     label: 'Estude no ISPTML',
-    href: routes.ACADEMIC_SERVICES_ROUTE,
+    href: "#",
     children: (
       <div className="grid grid-cols-2 gap-4 px-4 py-12 children-nav">
         <div>
@@ -125,18 +125,19 @@ export const navigationItems: NavigationItem[] = [
   //     { label: 'Eventos', href: '/events' },
   //   ]
   // },
-  // {
-  //   label: 'Estudantes',
-  //   href: '#',
-  //   children: [
-  //     { label: 'Portal do Estudante', href: '/student-portal' },
-  //     { label: 'Alumni', href: '/alumni' },
-  //     { label: 'Associações', href: '/associations' },
-  //   ]
-  // },
+  {
+    label: 'Mais',
+    href: '#',
+    children: [
+      { label: 'Portal do Estudante', href: '/student-portal' },
+      { label: 'Alumni', href: '/alumni' },
+      { label: 'Associações', href: '/associations' },  
+      { label: 'Contato', href: '/contact' },
+      { label: 'Notícias', href: '/news' }, 
+    ]
+  },
 // { label: 'Biblioteca', href: '/library' },
-  { label: 'Contato', href: '/contact' },
-  { label: 'Notícias', href: '/news' }, 
+ 
 ];
 
 export const carouselItems = [

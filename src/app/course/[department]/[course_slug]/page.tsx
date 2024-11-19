@@ -39,7 +39,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
       <br />
-      <div className="container">
+      <div className="containers">
         <h2 className='mb-6 text-3xl font-bold'>Benefícios do Programa</h2>
         <div className="grid grid-cols-2 gap-4">
             {course.benefits?.map((benefit: string, index: number) => (
@@ -52,7 +52,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
       <br />
-      <div className="container">
+      <div className="containers">
         <h2 className='mb-6 text-3xl font-bold'>Plano Curricular</h2>
         <div className="relative grid grid-cols-2 gap-4">
           {course.years.map(year => (
@@ -69,7 +69,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
 
-      <a href='#' className="container flex justify-between">
+      <a href='#' className="containers flex justify-between">
         <div className="w-full my-auto">
           <h2 className="text-2xl font-bold">
             Baixar Plano Curricular de {course.course}

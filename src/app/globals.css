@@ -33,6 +33,10 @@ body {
   @apply flex p-1 mt-0 mt-2 transition-all md:whitespace-nowrap;
 }
 
+.containers {
+  @apply px-10 mx-auto;
+}
+
 .bg-nav {
   @apply backdrop-blur-xl bg-white/50;
 }

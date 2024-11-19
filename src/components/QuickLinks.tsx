@@ -5,7 +5,7 @@ import { FaBook, FaChalkboardTeacher, FaGraduationCap, FaUniversity, FaInfoCircl
 export default function QuickLinks() {
   return (
     <section className="relative py-20 overflow-hidden bg-center bg-cover">
-      <div className="container mx-auto text-center text-white">
+      <div className="containers mx-auto text-center text-white">
 
         <Image
           src={images.backgrounds.bg_night_1.src}

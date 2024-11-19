@@ -78,7 +78,7 @@ body {
   width: 100%;
   transform: scaleX(0);
   height: 2.5px;
-  bottom: -1px;
+  bottom: 0px;
   left: 0;
   background-color: #ffffff;
   transform-origin: bottom right;

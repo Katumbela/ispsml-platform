@@ -8,7 +8,7 @@ export const defaultInputClasses = 'border-gray-300 border-2 focus-within:border
 
 export const inputWrapperClasses = 'input-wrapper';
 export const inputLabelClasses = 'input-label';
-export const inputContainerClasses = 'input-container flex items-center';
+export const inputcontainersClasses = 'input-containers flex items-center';
 export const inputIconClasses = 'input-icon flex items-center';
 export const leftIconClasses = 'left-icon';
 export const rightIconClasses = 'right-icon';

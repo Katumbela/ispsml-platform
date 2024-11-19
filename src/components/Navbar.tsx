@@ -99,8 +99,8 @@ const Navbar = () => {
 											transition={{ duration: 0.2 }}
 											className={`absolute ${Array.isArray(item.children)
 												? 'left-0'
-												: '-right-5 lg:right-0 xl:-right-[1rem] 2xl:right-[6rem]'} max-w-[80vw] mt-3 bg-nav   shadow-lg py-1 z-50`}
-											style={{ width: Array.isArray(item.children) ? '12rem' : '90vw' }}
+												: '--right-5 --lg:right-0 --xl:-right-[1rem] --2xl:-right-[10rem]'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
+											style={{ width: Array.isArray(item.children) ? 'auto' : 'auto', minWidth: '20rem' }}
 											onMouseEnter={() => setActiveDropdown(index)}
 											onMouseLeave={() => setActiveDropdown(null)}
 										>

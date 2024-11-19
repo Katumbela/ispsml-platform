@@ -113,7 +113,7 @@ const ContactComponent = () => {
               transition={{ duration: 0.3 }}
               className="col-span-12 py-6 text-wshite text-md bg-xsky-500"
             >
-           <div className="container">
+           <div className="containers">
            {contactOptions[activeIndex].content}
            </div>
             </motion.div>
@@ -156,7 +156,7 @@ const ContactComponent = () => {
               transition={{ duration: 0.3 }}
               className="col-span-12 py-6 text-lg text-white bg-sky-500"
             >
-              <div className="container">
+              <div className="containers">
               {contactOptions[activeIndex].content}
               </div>
             </motion.div>
@@ -166,7 +166,7 @@ const ContactComponent = () => {
 
 
 <br />
-<br /><div className="container">
+<br /><div className="containers">
 
 
 <p>ISPML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no ISPML. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.

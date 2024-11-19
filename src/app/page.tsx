@@ -27,7 +27,7 @@ export default function Home() {
             className='h-[400px] 2xl:h-[600px]'
             bgImage={images.backgrounds.bg_investigator_1.src}
           >
-            <div className="container px-6 text-lg text-white">
+            <div className="containers px-6 text-lg text-white">
               LA CIENCIA CON SOLUCIONES ACCIONABLES
               <p className="text-sm">
                 Conoce el nuevo enfoque de investigación en el Tecnológico de Monterrey. Descubre los tres institutos y los diferentes Core Labs que cambiarán la forma de realizar investigación en México.

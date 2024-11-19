@@ -34,7 +34,7 @@ const Navbar = () => {
 
 	return (
 		<nav
-			className={`w-full p-4 fixed z-[10000] ${isScrolled
+			className={`w-full px-4 py-1 fixed z-[10000] ${isScrolled
 				? ' top-0 left-0 bg-white shadow-md animate-slide-down'
 				: 'bg-transparent text-white'}`}
 		>
@@ -64,7 +64,7 @@ const Navbar = () => {
 							<FontAwesomeIcon icon={faBars} size="lg" />
 						)}
 					</div>
-					<div className="flex items-center">
+					<div className="flex items-center my-auto -mt-[0.5px]">
 						<ul
 							className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
 								? 'transform translate-y-0'
@@ -79,9 +79,11 @@ const Navbar = () => {
 								>
 									<div
 										onClick={() => (window.location.href = item.href)}
-										className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
+										className="flex flex-row items-center justify-start w-full -mt-1 space-x-2 nav-link hover-anim "
 									>
-										<span className="font-[600] text-sm tracking-wider">{item.label}</span>
+										<span className="font-[600] my-auto text-[12px]  uppercase tracking-wider">
+											{item.label}
+										</span>
 										{item.children && (
 											<motion.span
 												animate={{ rotate: activeDropdown === index ? 180 : 0 }}
@@ -139,7 +141,7 @@ const Navbar = () => {
 					</div>
 				</div>
 				{/* Icone de search e EN e PT opctions  */}
-				<div className="flex items-center ml-4 space-x-4">
+				<div className="flex items-center my-auto ml-4 space-x-4 ">
 					<div className="flex my-auto space-x-2">
 						<span className="my-auto cursor-pointer">EN</span>
 						<span>|</span>

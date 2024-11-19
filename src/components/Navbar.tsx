@@ -8,7 +8,7 @@ import Image from 'next/image';
 import { images } from '@/assets';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes, faAngleDown } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faAngleDown, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { navigationItems } from '@/infra/data/navbar-data';
 import { routes } from '@/infra/routes.vars';
 
@@ -38,98 +38,114 @@ const Navbar = () => {
 				? ' top-0 left-0 bg-white shadow-md animate-slide-down'
 				: 'bg-transparent text-white'}`}
 		>
-			<div className="flex flex-col w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center">
-				<div
-					onClick={() => (window.location.href = routes.HOME_ROUTE)}
-					className="flex items-center text-2xl cursor-pointer"
-				>
-					<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
+			<div className="flex flex-col justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center">
+				{/* logo e os items  */}
+
+				<div className="flex">
 					<div
-						className={`flex mt-2 flex-col justify-center font-bold ${!isScrolled
-							? 'text-white'
-							: 'text-primary'}`}
+						onClick={() => (window.location.href = routes.HOME_ROUTE)}
+						className="flex items-center text-2xl cursor-pointer"
 					>
-						<span className="text-lg ">Universidade</span>
-						<span className="text-[10px] -mt-[1rem] ">São Martinho de Lima</span>
+						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
+						<div
+							className={`flex mt-2 flex-col justify-center font-bold ${!isScrolled
+								? 'text-white'
+								: 'text-primary'}`}
+						>
+							<span className="text-lg ">Universidade</span>
+							<span className="text-[10px] -mt-[1rem] ">São Martinho de Lima</span>
+						</div>
+					</div>
+
+					<div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+						{isOpen ? (
+							<FontAwesomeIcon icon={faTimes} size="lg" />
+						) : (
+							<FontAwesomeIcon icon={faBars} size="lg" />
+						)}
+					</div>
+					<div className="flex items-center">
+						<ul
+							className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
+								? 'transform translate-y-0'
+								: 'transform -translate-y-full md:translate-y-0'}`}
+						>
+							{navigationItems.map((item, index) => (
+								<li
+									key={index}
+									className={`md:ml-4 ${Array.isArray(item.children) ? 'relative' : ''} group`}
+									onMouseEnter={() => setActiveDropdown(index)}
+									onMouseLeave={() => setActiveDropdown(null)}
+								>
+									<div
+										onClick={() => (window.location.href = item.href)}
+										className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
+									>
+										<span className="font-[600] text-sm tracking-wider">{item.label}</span>
+										{item.children && (
+											<motion.span
+												animate={{ rotate: activeDropdown === index ? 180 : 0 }}
+												transition={{ duration: 0.2 }}
+											>
+												<FontAwesomeIcon icon={faAngleDown} />
+											</motion.span>
+										)}
+									</div>
+
+									<AnimatePresence>
+										{item.children &&
+										activeDropdown === index && (
+											<motion.div
+												initial={{ opacity: 0, y: -10 }}
+												animate={{ opacity: 1, y: 0 }}
+												exit={{ opacity: 0, y: -10 }}
+												transition={{ duration: 0.2 }}
+												className={`absolute ${Array.isArray(item.children)
+													? 'left-0'
+													: '--right-5 --lg:right-0 --xl:-right-[1rem] --2xl:-right-[10rem]'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
+												style={{
+													width: Array.isArray(item.children) ? 'auto' : 'auto',
+													minWidth: '20rem'
+												}}
+												onMouseEnter={() => setActiveDropdown(index)}
+												onMouseLeave={() => setActiveDropdown(null)}
+											>
+												{Array.isArray(item.children) ? (
+													item.children.map((childItem, childIndex) => (
+														<motion.div
+															key={childIndex}
+															className="z-500"
+															initial={{ opacity: 0, x: -10 }}
+															animate={{ opacity: 1, x: 0 }}
+															transition={{ delay: childIndex * 0.05 }}
+														>
+															<Link
+																href={childItem.href}
+																className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
+															>
+																{childItem.label}
+															</Link>
+														</motion.div>
+													))
+												) : (
+													<div className="p-4">{item.children}</div>
+												)}
+											</motion.div>
+										)}
+									</AnimatePresence>
+								</li>
+							))}
+						</ul>
 					</div>
 				</div>
-
-				<div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
-					{isOpen ? (
-						<FontAwesomeIcon icon={faTimes} size="lg" />
-					) : (
-						<FontAwesomeIcon icon={faBars} size="lg" />
-					)}
-				</div>
-				<div className="">
-					<ul
-						className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
-							? 'transform translate-y-0'
-							: 'transform -translate-y-full md:translate-y-0'}`}
-					>
-						{navigationItems.map((item, index) => (
-							<li
-								key={index}
-								className={`md:ml-4 ${Array.isArray(item.children) ? 'relative' : ''} group`}
-								onMouseEnter={() => setActiveDropdown(index)}
-								onMouseLeave={() => setActiveDropdown(null)}
-							>
-								<div
-									onClick={() => (window.location.href = item.href)}
-									className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
-								>
-									<span className="font-[600] text-sm tracking-wider">{item.label}</span>
-									{item.children && (
-										<motion.span
-											animate={{ rotate: activeDropdown === index ? 180 : 0 }}
-											transition={{ duration: 0.2 }}
-										>
-											<FontAwesomeIcon icon={faAngleDown} />
-										</motion.span>
-									)}
-								</div>
-
-								<AnimatePresence>
-									{item.children &&
-									activeDropdown === index && (
-										<motion.div
-											initial={{ opacity: 0, y: -10 }}
-											animate={{ opacity: 1, y: 0 }}
-											exit={{ opacity: 0, y: -10 }}
-											transition={{ duration: 0.2 }}
-											className={`absolute ${Array.isArray(item.children)
-												? 'left-0'
-												: '--right-5 --lg:right-0 --xl:-right-[1rem] --2xl:-right-[10rem]'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
-											style={{ width: Array.isArray(item.children) ? 'auto' : 'auto', minWidth: '20rem' }}
-											onMouseEnter={() => setActiveDropdown(index)}
-											onMouseLeave={() => setActiveDropdown(null)}
-										>
-											{Array.isArray(item.children) ? (
-												item.children.map((childItem, childIndex) => (
-													<motion.div
-														key={childIndex}
-														className="z-500"
-														initial={{ opacity: 0, x: -10 }}
-														animate={{ opacity: 1, x: 0 }}
-														transition={{ delay: childIndex * 0.05 }}
-													>
-														<Link
-															href={childItem.href}
-															className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
-														>
-															{childItem.label}
-														</Link>
-													</motion.div>
-												))
-											) : (
-												<div className="p-4">{item.children}</div>
-											)}
-										</motion.div>
-									)}
-								</AnimatePresence>
-							</li>
-						))}
-					</ul>
+				{/* Icone de search e EN e PT opctions  */}
+				<div className="flex items-center ml-4 space-x-4">
+					<div className="flex my-auto space-x-2">
+						<span className="cursor-pointer">EN</span>
+						<span>|</span>
+						<span className="cursor-pointer">PT</span>
+					</div>
+					<FontAwesomeIcon icon={faSearch} size="lg" className="cursor-pointer" />
 				</div>
 			</div>
 		</nav>

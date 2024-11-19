@@ -3,7 +3,7 @@ import React from 'react';
 
 const ConferenceComponent = () => {
   return (
-    <section className="container px-4 py-8 mx-auto">
+    <section className="containers px-4 py-8 mx-auto">
       <h2 className="mb-4 text-2xl font-bold text md:text-3xl">
         Dê o primeiro passo e participe de nossas conferências para todo o público
       </h2>

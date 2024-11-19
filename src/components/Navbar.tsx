@@ -141,9 +141,9 @@ const Navbar = () => {
 				{/* Icone de search e EN e PT opctions  */}
 				<div className="flex items-center ml-4 space-x-4">
 					<div className="flex my-auto space-x-2">
-						<span className="cursor-pointer">EN</span>
+						<span className="my-auto cursor-pointer">EN</span>
 						<span>|</span>
-						<span className="cursor-pointer">PT</span>
+						<span className="my-auto cursor-pointer">PT</span>
 					</div>
 					<FontAwesomeIcon icon={faSearch} size="lg" className="cursor-pointer" />
 				</div>

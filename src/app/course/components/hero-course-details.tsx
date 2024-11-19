@@ -69,9 +69,8 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
             <div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
             <div className="relative z-10 my-auto text-start">
               <div className="py-8 bg-gradient-to-t from-black ">
-                <div className="container">
- 
- <span>{GetLevelDescription(course?.level)}</span>
+                <div className="containers">
+                  <span>{GetLevelDescription(course?.level)}</span>
                   <motion.h1
                     className="text-2xl font-bold mb-[10vh] md:text-4xl"
                     initial={{ opacity: 0, y: getInitialY() }}

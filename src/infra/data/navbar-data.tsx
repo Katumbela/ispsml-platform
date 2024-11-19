@@ -29,21 +29,45 @@ export const navigationItems: NavigationItem[] = [
     ]
   },
   {
-    label: 'Ensino',
-    href: routes.TEACHING_ROUTE,
-    children: [
-      { label: 'Departamentos/Cursos', href: '#', children: [
-        { label: 'Departamento de Engenharias e Tecnologias (DET)', href: routes.DET_DEPARTMENT_ROUTE },
-        { label: 'Departamento de Geociências (DGC)', href: routes.DGC_DEPARTMENT_ROUTE },
-        { label: 'Departamento de Ciências Sociais Aplicadas (DCSA)', href: routes.DCSA_DEPARTMENT_ROUTE },
-        { label: 'Corpo Docente', href: routes.FACULTY_ROUTE },
-      ]},
-      { label: 'Biblioteca', href: '#', children: [
-        { label: 'Apresentação', href: routes.LIBRARY_ROUTE },
-        { label: 'Regulamentos e Normas', href: routes.STUDENT_REGULATIONS_ROUTE },
-      ]}
-    ]
+    label: 'Estude no ISPTML',
+    href: routes.ACADEMIC_SERVICES_ROUTE,
+    children: (
+      <div className="grid grid-cols-2 gap-4 px-4 py-12 children-nav">
+        <div>
+       
+          <ul>
+            <li><a href={routes.ACADEMIC_CALENDAR_ROUTE}>Calendário Académico</a></li>
+            <li><a href={routes.STUDENT_MOBILITY_ROUTE}>Mobilidade Estudantil</a></li>
+            <li><a href={routes.ALUMNI_ROUTE}>Alumni</a></li> 
+          </ul>
+        </div>
+        <div>
+       
+       <ul>
+         <li><a href={routes.RULES_MODAL_ROUTE} data-target="#rules-modal" data-toggle="modal">Regulamentos</a></li>
+         <li><a href={routes.EDITAL_MODAL_ROUTE} data-target="#edital-modal" data-toggle="modal">Editais</a></li>
+         <li><a href={routes.EXAM_RESULTS_ROUTE} data-target="#lista-modal" data-toggle="modal">Listas de Resultados dos Exames de Acesso</a></li>
+       </ul>
+     </div>
+      </div>
+    )
   },
+  // {
+  //   label: 'Ensino',
+  //   href: routes.TEACHING_ROUTE,
+  //   children: [
+  //     { label: 'Departamentos/Cursos', href: '#', children: [
+  //       { label: 'Departamento de Engenharias e Tecnologias (DET)', href: routes.DET_DEPARTMENT_ROUTE },
+  //       { label: 'Departamento de Geociências (DGC)', href: routes.DGC_DEPARTMENT_ROUTE },
+  //       { label: 'Departamento de Ciências Sociais Aplicadas (DCSA)', href: routes.DCSA_DEPARTMENT_ROUTE },
+  //       { label: 'Corpo Docente', href: routes.FACULTY_ROUTE },
+  //     ]},
+  //     { label: 'Biblioteca', href: '#', children: [
+  //       { label: 'Apresentação', href: routes.LIBRARY_ROUTE },
+  //       { label: 'Regulamentos e Normas', href: routes.STUDENT_REGULATIONS_ROUTE },
+  //     ]}
+  //   ]
+  // },
   {
     label: 'Investigação',
     href: routes.RESEARCH_ROUTE,
@@ -110,34 +134,9 @@ export const navigationItems: NavigationItem[] = [
   //     { label: 'Associações', href: '/associations' },
   //   ]
   // },
-  {
-    label: 'Estude no ISPTML',
-    href: routes.ACADEMIC_SERVICES_ROUTE,
-    children: (
-      <div className="grid grid-cols-2 gap-4 px-4 py-12 children-nav">
-        <div>
-       
-          <ul>
-            <li><a href={routes.ACADEMIC_CALENDAR_ROUTE}>Calendário Académico</a></li>
-            <li><a href={routes.STUDENT_MOBILITY_ROUTE}>Mobilidade Estudantil</a></li>
-            <li><a href={routes.ALUMNI_ROUTE}>Alumni</a></li> 
-          </ul>
-        </div>
-        <div>
-       
-       <ul>
-         <li><a href={routes.RULES_MODAL_ROUTE} data-target="#rules-modal" data-toggle="modal">Regulamentos</a></li>
-         <li><a href={routes.EDITAL_MODAL_ROUTE} data-target="#edital-modal" data-toggle="modal">Editais</a></li>
-         <li><a href={routes.EXAM_RESULTS_ROUTE} data-target="#lista-modal" data-toggle="modal">Listas de Resultados dos Exames de Acesso</a></li>
-       </ul>
-     </div>
-      </div>
-    )
-  },
-  // { label: 'Biblioteca', href: '/library' },
+// { label: 'Biblioteca', href: '/library' },
   { label: 'Contato', href: '/contact' },
-  { label: 'Notícias', href: '/news' },
-  { label: 'Eventos', href: '/events' },
+  { label: 'Notícias', href: '/news' }, 
 ];
 
 export const carouselItems = [

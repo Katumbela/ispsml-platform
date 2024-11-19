@@ -78,7 +78,7 @@ const Navbar = () => {
 									onClick={() => (window.location.href = item.href)}
 									className="flex flex-row items-center justify-start w-full py-2 space-x-2 nav-link hover-anim "
 								>
-									<span className="font-[600] tracking-wider">{item.label}</span>
+									<span className="font-[600] text-sm tracking-wider">{item.label}</span>
 									{item.children && (
 										<motion.span
 											animate={{ rotate: activeDropdown === index ? 180 : 0 }}

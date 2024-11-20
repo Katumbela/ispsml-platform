@@ -5,11 +5,11 @@ import Footer from '@/components/Footer';
 import QuickLinks from '@/components/QuickLinks'; 
 import { images } from '@/assets'; 
 import Head from 'next/head';
-import { coursesData } from '@/infra/data/courses-data';
-import { CardCourseComponent } from '../ispml-det/components/card-course-component';
+import { coursesData } from '@/infra/data/courses-data'; 
 import { departments } from '@/infra/global.vars';
 import ConferenceComponent from './components/conference-component';
 import GlobalHero from '@/components/global-hero/global-hero';
+import { CardCourseComponent } from '../ispml-det/components/card-course-component';
 
 const CSADepartment = () => { 
 
@@ -22,7 +22,7 @@ const CSADepartment = () => {
       </Head>
       <Navbar />
       <GlobalHero className='h-[400px] 2xl:h-[50px]' bottomBG='dark' bgImage={images.departImages.ciencias_sociais.src} title="Ciências Sociais Aplicadas" />
-      <main className="containers my-8">
+      <main className="my-8 containers">
         <p className="mt-4">
           O Departamento de Ciências Sociais Aplicadas da nossa instituição é dedicado a promover o conhecimento e a pesquisa nas áreas de ciências sociais. Nossos programas são projetados para equipar os alunos com as habilidades e a expertise necessárias para se destacar em diversas áreas, como administração, economia, direito, e mais. Oferecemos uma variedade de cursos e oportunidades de pesquisa que cobrem várias disciplinas. Nossos membros do corpo docente são especialistas renomados em suas áreas, comprometidos em fornecer educação de alta qualidade e promover um ambiente de aprendizado colaborativo. Junte-se a nós para fazer parte de uma comunidade que está moldando o futuro das ciências sociais aplicadas.
         </p>

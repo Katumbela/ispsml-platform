@@ -7,7 +7,7 @@ import Loader from "@/components/common/Loader";
 import { I18nextProvider } from 'react-i18next';
 import i18n from '@/infra/i18n';
 import { usePathname } from 'next/navigation'; // importar usePathname
-import { LanguageProvider } from "@/contexts/lang-context";
+// import { LanguageProvider } from "@/contexts/lang-context";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -64,7 +64,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-        <LanguageProvider>
+        {/* <LanguageProvider> */}
           
         <I18nextProvider i18n={i18n}>
           {isLargeScreen ? (
@@ -80,7 +80,7 @@ export default function RootLayout({
           )}
         </I18nextProvider>
         
-        </LanguageProvider>
+        {/* </LanguageProvider> */}
       </body>
     </html>
   );

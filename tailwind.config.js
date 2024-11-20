@@ -13,6 +13,7 @@ const config = {
           light: '#6EC1E4',
           DEFAULT: '#0045A4',
           dark: '#005B99',
+          footer: '#212121',
         },
         secondary: {
           light: '#FFB74D',
@@ -21,15 +22,15 @@ const config = {
         },
       },
       containers: {
-center: true,
-                padding: "10px",
-        // screens: {
-        //   sm: "776px",
-        //   md: "968px",
-        //   lg: "1192px",
-        //   xl: "1400px",
-        //   "2xl": "1600px",
-        // },
+        center: true,
+        padding: "10px",
+        screens: {
+          sm: "776px",
+          md: "968px",
+          lg: "1192px",
+          xl: "1400px",
+          "2xl": "1600px",
+        },
       },
     },
   },

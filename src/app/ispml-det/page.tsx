@@ -6,7 +6,7 @@ import { EngCoursesSection } from './components/eng-courses-section';
 import GlobalHero from '@/components/global-hero/global-hero';
 import { images } from '@/assets';
 
-const ISPMLDet = () => {
+const ISPSMLDet = () => {
   return (
     <div>
       <Navbar /> 
@@ -34,4 +34,4 @@ const ISPMLDet = () => {
   );
 };
 
-export default ISPMLDet;
+export default ISPSMLDet;

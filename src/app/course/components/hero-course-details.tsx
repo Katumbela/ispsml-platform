@@ -23,7 +23,7 @@ interface HeroCourseDetailProps {
 
 
 export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailProps) {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentslide, setcurrentslide] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('top');
 
   const settings = {
@@ -37,14 +37,14 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
     fade: true,
     cssEase: 'linear',
     beforeChange: (oldIndex: any, newIndex: any) => {
-      setCurrentSlide(newIndex);
+      setcurrentslide(newIndex);
       setAnimationDirection(Math.random() > 0.5 ? 'top' : 'bottom');
     },
   };
 
   useEffect(() => {
     // Trigger re-render to reset animations
-  }, [currentSlide]);
+  }, [currentslide]);
 
   const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
 
@@ -76,7 +76,7 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
-                    key={`title-${currentSlide}`}
+                    key={`title-${currentslide}`}
                   >
                     {title}
                   </motion.h1>

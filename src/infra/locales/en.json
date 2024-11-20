@@ -1,0 +1,191 @@
+{
+    "global": {
+        "newsTitle": "News",
+        "educationTitle": "Education"
+    },
+    "navbar": {
+        "about": "About",
+        "presidentMessage": "President's Message",
+        "institutionalPresentation": "Institutional Presentation",
+        "organigram": "Organigram",
+        "missionVisionValues": "Mission, Vision, and Values",
+        "history": "History",
+        "infrastructures": "Infrastructures",
+        "legislation": "Legislation",
+        "agreements": "Agreements and Protocols",
+        "socialAction": "Social Action",
+        "codeOfConduct": "Code of Conduct and Ethics",
+        "studyAtISPSML": "Study at ISPSML",
+        "academicServices": "Academic Services",
+        "academicCalendar": "Academic Calendar",
+        "studentMobility": "Student Mobility",
+        "alumni": "Alumni",
+        "regulations": "Regulations",
+        "edital": "Editals",
+        "examResults": "Exam Results",
+        "allApplicationLinks": "All Application Links",
+        "informationGeneral": "General Application Information",
+        "academicProgramsAll": "All Academic Programs",
+        "onlineApplication": "Online Application",
+        "onlineApplicationGuideReturning": "Online Application Guide (Returning Students)",
+        "prospects": "Prospects",
+        "lateApplications": "Late Applications",
+        "applicationForms": "Application Forms",
+        "undergraduateStudents": "Undergraduate Students",
+        "admissionRequirements": "Admission Requirements",
+        "programBrochure": "Program Brochure",
+        "fees": "Fees",
+        "onlineRegistration": "Online Registration",
+        "prospectsGraduation": "Graduation Prospects",
+        "postgraduateStudents": "Postgraduate Students",
+        "internationalStudents": "International Students",
+        "registrationOnline": "Online Registration",
+        "research": "Research",
+        "extension": "Extension",
+        "extensionSection": {
+            "policy": "Extension Policy",
+            "knowledgeTransfer": "Knowledge Transfer Projects for Society",
+            "nonSupervisedInternships": "Non-Supervised Internships",
+            "entrepreneurshipPromotion": "Entrepreneurship Promotion Program",
+            "scientificOlympiads": "Scientific Olympiads",
+            "careerServices": "Career Services",
+            "shortCourses": "Short Courses",
+            "languageCenter": "Language Teaching Center - CEL",
+            "universityBusinessProgram": "\"Business at the University\" Program"
+        },
+        "more": {
+            "title": "More",
+            "studentPortal": "Student Portal",
+            "alumni": "Alumni",
+            "associations": "Associations",
+            "contact": "Contact",
+            "news": "News"
+        },
+        "studentPortal": "Student Portal",
+        "contact": "Contact",
+        "news": "News",
+        "EN": "EN",
+        "PT": "PT",
+        "institutoSuperior": "Higher Institute",
+        "politecnico": "Polytechnic",
+        "saoMartinhoDeLima": "São Martinho de Lima",
+        "academicServicesSection": {
+            "academicCalendar": "Academic Calendar",
+            "studentMobility": "Student Mobility",
+            "alumni": "Alumni",
+            "regulations": "Regulations",
+            "edital": "Editals",
+            "examResults": "Exam Results of Access Exams"
+        },
+        "allApplicationLinksSection": {
+            "informationGeneral": "General Application Information",
+            "academicProgramsAll": "All Academic Programs",
+            "onlineApplication": "Online Application",
+            "onlineApplicationGuideReturning": "Online Application Guide (Returning Students)",
+            "prospects": "Prospects",
+            "lateApplications": "Late Applications",
+            "applicationForms": "Application Forms"
+        },
+        "undergraduateStudentsSection": {
+            "undergraduateStudents": "Undergraduate Students",
+            "admissionRequirements": "Admission Requirements",
+            "programBrochure": "Program Brochure",
+            "fees": "Fees",
+            "onlineApplication": "Online Application",
+            "prospects": "Prospects",
+            "applicationGuide": "Application Guide"
+        },
+        "postgraduateStudentsSection": {
+            "postgraduateStudents": "Postgraduate Students",
+            "admissionRequirements": "Admission Requirements",
+            "programBrochure": "Program Brochure",
+            "fees": "Fees",
+            "onlineApplication": "Online Application",
+            "prospects": "Prospects",
+            "applicationGuide": "Application Guide"
+        },
+        "internationalStudentsSection": {
+            "internationalStudents": "International Students",
+            "academicPrograms": "Academic Programs",
+            "registrationOnline": "Online Registration",
+            "prospects": "Prospects"
+        },
+        "studentFeesSection": {
+            "studentFees": "Student Fees",
+            "programBrochureFees": "Program Brochure",
+            "onlinePayment": "Online Payment",
+            "directDebitForm": "Direct Debit Form",
+            "refundProcess": "Refund Process"
+        },
+        "carouselItems": {
+            "welcomeTitle": "Welcome to ISPSML",
+            "welcomeDescription": "Applications are open! Join us and transform your future.",
+            "welcomeCta": "Apply Now",
+            "academicExcellenceTitle": "Academic Excellence",
+            "academicExcellenceDescription": "We offer high-quality courses to prepare you for the job market.",
+            "academicExcellenceCta": "Learn More",
+            "researchInnovationTitle": "Research and Innovation",
+            "researchInnovationDescription": "Participate in innovative projects and contribute to the advancement of knowledge.",
+            "researchInnovationCta": "Discover",
+            "universityLifeTitle": "University Life",
+            "universityLifeDescription": "Experience a vibrant and activity-filled university life.",
+            "universityLifeCta": "Explore"
+        },
+        "research": {
+            "label": "Research",
+            "policy": "Research Policy",
+            "guide": "Research Guide",
+            "scientificJourneys": "Scientific Journeys",
+            "innovationAward": "Innovation Award",
+            "lectureSeries": "Lecture Series",
+            "impactPublications": "Impact Publications",
+            "nonImpactPublications": "Non-Impact Publications",
+            "researchCenters": "Research Centers",
+            "postgraduatePrograms": "Postgraduate Programs"
+        }
+    },
+    "carouselItems": {
+        "welcomeTitle": "Welcome to ISPSML",
+        "welcomeDescription": "Applications are open! Join us and transform your future.",
+        "welcomeCta": "Apply Now",
+        "academicExcellenceTitle": "Academic Excellence",
+        "academicExcellenceDescription": "We offer high-quality courses to prepare you for the job market.",
+        "academicExcellenceCta": "Learn More",
+        "researchInnovationTitle": "Research and Innovation",
+        "researchInnovationDescription": "Participate in innovative projects and contribute to the advancement of knowledge.",
+        "researchInnovationCta": "Discover",
+        "universityLifeTitle": "University Life",
+        "universityLifeDescription": "Experience a vibrant and activity-filled university life.",
+        "universityLifeCta": "Explore"
+    },
+    "carouselItems": {
+        "welcomeTitle": "Welcome to ISPSML"
+    },
+    "educationComponents": {
+        "admissionsAndEducationalOffersTitle": "Admissions and Educational Offers",
+        "admissionsAndEducationalOffersDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptates architecto id consectetur aliquam molestiae eligendi laborum molestias, sapiente libero dicta nisi",
+        "yearRange": "Year 2021 - 2024",
+        "academicCalendar": "Academic Calendar",
+        "admissions": "Admissions",
+        "postgraduateAndMastersTitle": "Postgraduate & Masters",
+        "postgraduateAndMastersDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptates architecto id consectetur aliquam molestiae eligendi laborum molestias, sapiente libero dicta nisi"
+    },
+    "aboutTheSchool": {
+        "title": "About Our Campus",
+        "description": "Take a look at our institution"
+    },
+    "footer": {
+        "contact": "Contact",
+        "phone1": "+244 123 456 789",
+        "phone2": "+244 987 654 321",
+        "email": "info@universidadeangolana.ao",
+        "addressLine1": "São Martinho de Lima",
+        "addressLine2": "Rua Exemplo, 123",
+        "city": "Luanda, Angola",
+        "usefulLinks": "Useful Links",
+        "researchInnovation": "Research and Innovation",
+        "calendar": "ISPSML Calendar",
+        "viewCalendar": "View Calendar",
+        "allRightsReserved": "&copy; 2024 São Martinho de Lima. All rights reserved."
+    }
+}

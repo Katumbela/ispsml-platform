@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <div>
       <Navbar />
-      <GlobalHero title='Como podemos ajudar ?' subtitle='Contante o ISPML' className='h-[500px] 2xl:h-[650px]' bottomBG='dark' bgImage={images.backgrounds.bg_support.src}/>
+      <GlobalHero title='Como podemos ajudar ?' subtitle='Contante o ISPSML' className='h-[500px] 2xl:h-[650px]' bottomBG='dark' bgImage={images.backgrounds.bg_support.src}/>
       <main className="containers">
       
       <ContactComponent />

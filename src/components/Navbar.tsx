@@ -12,7 +12,7 @@ import { faBars, faTimes, faAngleDown, faSearch } from '@fortawesome/free-solid-
 import { navigationItems } from '@/infra/data/navbar-data';
 import { routes } from '@/infra/routes.vars';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '@/contexts/lang-context';
+// import { useLanguage } from '@/contexts/lang-context';
 
 const Navbar = () => {
 	const { t, i18n } = useTranslation();
@@ -22,7 +22,7 @@ const Navbar = () => {
 
 	const currentLang = i18n.language || 'pt'; // obter a língua atual
 
-	const { setLang } = useLanguage();
+	// const { setLang } = useLanguage();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -40,7 +40,7 @@ const Navbar = () => {
 	}, []);
 
 	const changeLanguage = (lng: string) => {
-		setLang(lng);
+		// setLang(lng);
 		i18n.changeLanguage(lng);
 		localStorage.setItem('lang', lng); // armazenar a língua selecionada
 	};

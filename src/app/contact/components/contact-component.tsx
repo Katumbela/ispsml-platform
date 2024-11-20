@@ -16,10 +16,10 @@ const ContactComponent = () => {
   const contactOptions = [
     { 
       icon: <BiBot className='m-auto text-6xl' />, 
-      label: 'ISPMLbot', 
+      label: 'ISPSMLbot', 
       content: (
         <>
-          <p><strong>Assistência por ISPMLbot disponível 24/7.</strong></p>
+          <p><strong>Assistência por ISPSMLbot disponível 24/7.</strong></p>
           <p>Nosso bot está disponível 24 horas por dia, 7 dias por semana para ajudar você.</p>
         </>
       )
@@ -45,8 +45,8 @@ const ContactComponent = () => {
           <p><strong>Envie um email para assistência.</strong></p>
           <p>Responderemos o mais rápido possível.</p> 
           <br />
-          <p>suporte@ispml.com</p>
-          <p>atendimento@ispml.com</p>
+          <p>suporte@ISPSML.com</p>
+          <p>atendimento@ISPSML.com</p>
         </>
       )
     },
@@ -169,10 +169,10 @@ const ContactComponent = () => {
 <br /><div className="containers">
 
 
-<p>ISPML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no ISPML. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.
+<p>ISPSML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no ISPSML. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.
 <br />
 <br />
-Na o ISPML, nos esforçamos para oferecer a melhor experiência possível. Nossos pilares são confiança, empatia e compreensão, para que você se sinta ouvido e apoiado o tempo todo. Além disso, garantimos respostas claras, ágeis e oportunas para resolver suas dúvidas ou problemas de forma eficiente. Queremos que o acesso aos nossos serviços seja fácil e rápido, e para isso contamos com uma equipe altamente capacitada e comprometida. Sua satisfação é nossa prioridade!</p>
+Na o ISPSML, nos esforçamos para oferecer a melhor experiência possível. Nossos pilares são confiança, empatia e compreensão, para que você se sinta ouvido e apoiado o tempo todo. Além disso, garantimos respostas claras, ágeis e oportunas para resolver suas dúvidas ou problemas de forma eficiente. Queremos que o acesso aos nossos serviços seja fácil e rápido, e para isso contamos com uma equipe altamente capacitada e comprometida. Sua satisfação é nossa prioridade!</p>
 </div>
     </section>
   );

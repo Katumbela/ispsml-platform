@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { images } from "@/assets";
 import type { ReactNode } from "react";
 import { routes } from "@/infra/routes.vars";
@@ -11,139 +12,184 @@ type NavigationItem = {
   target?: string;
 };
 
-export const navigationItems: NavigationItem[] = [
-  {
-    label: 'Sobre',
-    href: routes.ABOUT_ROUTE,
-    children: [
-      { label: 'Mensagem da Presidência', href: routes.PRESIDENT_MESSAGE_ROUTE },
-      { label: 'Apresentação Institucional', href: routes.INSTITUTIONAL_PRESENTATION_ROUTE },
-      { label: 'Organigrama', href: routes.ORGANOGRAM_ROUTE },
-      { label: 'Missão, Visão e Valores', href: routes.MISSION_VISION_VALUES_ROUTE },
-      { label: 'Histórico', href: routes.HISTORY_ROUTE },
-      { label: 'Infraestruturas', href: routes.INFRASTRUCTURES_ROUTE },
-      { label: 'Legislação', href: routes.LEGISLATION_ROUTE },
-      { label: 'Convénios e Protocolos', href: routes.AGREEMENTS_ROUTE },
-      { label: 'Acção Social', href: routes.SOCIAL_ACTION_ROUTE },
-      { label: 'Código de Conduta e Ética', href: routes.CODE_OF_CONDUCT_ROUTE, target: '_blank' },
-    ]
-  },
-  {
-    label: 'Estude no ISPTML',
-    href: "#",
-    children: (
-      <div className="grid grid-cols-2 gap-4 px-4 py-12 children-nav">
-        <div>
-       
-          <ul>
-            <li><a href={routes.ACADEMIC_CALENDAR_ROUTE}>Calendário Académico</a></li>
-            <li><a href={routes.STUDENT_MOBILITY_ROUTE}>Mobilidade Estudantil</a></li>
-            <li><a href={routes.ALUMNI_ROUTE}>Alumni</a></li> 
-          </ul>
+export const navigationItems = (t: any): NavigationItem[] => {
+  
+  return [
+    {
+      label: 'navbar.about',
+      href: routes.ABOUT_ROUTE,
+      children: [
+        { label: 'navbar.presidentMessage', href: routes.PRESIDENT_MESSAGE_ROUTE },
+        { label: 'navbar.institutionalPresentation', href: routes.INSTITUTIONAL_PRESENTATION_ROUTE },
+      ]
+    },
+    {
+      label: 'navbar.studyAtISPSML',
+      href: "#",
+      children: (
+        <div className="grid grid-cols-3 gap-4 px-4 py-4 children-nav">
+          <div>
+            <h3>{t('navbar.academicServicesSection.academicServices')}</h3>
+            <ul>
+              <li>
+                <a href={routes.ACADEMIC_CALENDAR_ROUTE}>
+                  {t('navbar.academicServicesSection.academicCalendar')}
+                </a>
+              </li>
+              <li>
+                <a href={routes.STUDENT_MOBILITY_ROUTE}>
+                  {t('navbar.academicServicesSection.studentMobility')}
+                </a>
+              </li>
+              <li>
+                <a href={routes.ALUMNI_ROUTE}>
+                  {t('navbar.academicServicesSection.alumni')}
+                </a>
+              </li>
+              <li>
+                <a href={routes.RULES_MODAL_ROUTE} data-target="#rules-modal" data-toggle="modal">
+                  {t('navbar.academicServicesSection.regulations')}
+                </a>
+              </li>
+              <li>
+                <a href={routes.EDITAL_MODAL_ROUTE} data-target="#edital-modal" data-toggle="modal">
+                  {t('navbar.academicServicesSection.edital')}
+                </a>
+              </li>
+              <li>
+                <a href={routes.EXAM_RESULTS_ROUTE} data-target="#lista-modal" data-toggle="modal">
+                  {t('navbar.academicServicesSection.examResults')}
+                </a>
+              </li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3>{t('navbar.allApplicationLinksSection.informationGeneral')}</h3>
+            <ul>
+              <li>{t('navbar.allApplicationLinksSection.informationGeneral')}</li>
+              <li>{t('navbar.allApplicationLinksSection.academicProgramsAll')}</li>
+              <li>{t('navbar.allApplicationLinksSection.onlineApplication')}</li>
+              <li>{t('navbar.allApplicationLinksSection.onlineApplicationGuideReturning')}</li>
+              <li>{t('navbar.allApplicationLinksSection.prospects')}</li>
+              <li>{t('navbar.allApplicationLinksSection.lateApplications')}</li>
+              <li>{t('navbar.allApplicationLinksSection.applicationForms')}</li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3>{t('navbar.undergraduateStudentsSection.undergraduateStudents')}</h3>
+            <ul>
+              <li>{t('navbar.undergraduateStudentsSection.admissionRequirements')}</li>
+              <li>{t('navbar.undergraduateStudentsSection.programBrochure')}</li>
+              <li>{t('navbar.undergraduateStudentsSection.fees')}</li>
+              <li>{t('navbar.undergraduateStudentsSection.onlineApplication')}</li>
+              <li>{t('navbar.undergraduateStudentsSection.applicationGuide')}</li>
+              <li>{t('navbar.undergraduateStudentsSection.prospects')}</li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3>{t('navbar.postgraduateStudentsSection.postgraduateStudents')}</h3>
+            <ul>
+              <li>{t('navbar.postgraduateStudentsSection.admissionRequirements')}</li>
+              <li>{t('navbar.postgraduateStudentsSection.programBrochure')}</li>
+              <li>{t('navbar.postgraduateStudentsSection.fees')}</li>
+              <li>{t('navbar.postgraduateStudentsSection.onlineApplication')}</li>
+              <li>{t('navbar.postgraduateStudentsSection.applicationGuide')}</li>
+              <li>{t('navbar.postgraduateStudentsSection.prospects')}</li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3>{t('navbar.internationalStudentsSection.internationalStudents')}</h3>
+            <ul>
+              <li>{t('navbar.internationalStudentsSection.academicPrograms')}</li>
+              <li>{t('navbar.internationalStudentsSection.fees')}</li>
+              <li>{t('navbar.internationalStudentsSection.onlineApplication')}</li>
+              <li>{t('navbar.internationalStudentsSection.onlineRegistration')}</li>
+              <li>{t('navbar.internationalStudentsSection.prospects')}</li>
+            </ul>
+          </div>
+      
+          <div>
+            <h3>{t('navbar.studentFeesSection.studentFees')}</h3>
+            <ul>
+              <li>{t('navbar.studentFeesSection.programBrochureFees')}</li>
+              <li>{t('navbar.studentFeesSection.onlinePayment')}</li>
+              <li>{t('navbar.studentFeesSection.directDebitForm')}</li>
+              <li>{t('navbar.studentFeesSection.refundProcess')}</li>
+            </ul>
+          </div>
         </div>
-        <div>
-       
-       <ul>
-         <li><a href={routes.RULES_MODAL_ROUTE} data-target="#rules-modal" data-toggle="modal">Regulamentos</a></li>
-         <li><a href={routes.EDITAL_MODAL_ROUTE} data-target="#edital-modal" data-toggle="modal">Editais</a></li>
-         <li><a href={routes.EXAM_RESULTS_ROUTE} data-target="#lista-modal" data-toggle="modal">Listas de Resultados dos Exames de Acesso</a></li>
-       </ul>
-     </div>
-      </div>
-    )
-  },
-  // {
-  //   label: 'Ensino',
-  //   href: routes.TEACHING_ROUTE,
-  //   children: [
-  //     { label: 'Departamentos/Cursos', href: '#', children: [
-  //       { label: 'Departamento de Engenharias e Tecnologias (DET)', href: routes.DET_DEPARTMENT_ROUTE },
-  //       { label: 'Departamento de Geociências (DGC)', href: routes.DGC_DEPARTMENT_ROUTE },
-  //       { label: 'Departamento de Ciências Sociais Aplicadas (DCSA)', href: routes.DCSA_DEPARTMENT_ROUTE },
-  //       { label: 'Corpo Docente', href: routes.FACULTY_ROUTE },
-  //     ]},
-  //     { label: 'Biblioteca', href: '#', children: [
-  //       { label: 'Apresentação', href: routes.LIBRARY_ROUTE },
-  //       { label: 'Regulamentos e Normas', href: routes.STUDENT_REGULATIONS_ROUTE },
-  //     ]}
-  //   ]
-  // },
-  {
-    label: 'Investigação',
-    href: routes.RESEARCH_ROUTE,
-    children: [
-      { label: 'Politica para a Investigação e Desenvolvimento (I&D)', href: routes.RESEARCH_POLICY_ROUTE },
-      { label: 'Guia para a Elaboração de Projectos de Investigação Científica', href: routes.RESEARCH_GUIDE_ROUTE },
-      { label: 'Jornadas Científicas e Tecnológicas', href: routes.SCIENTIFIC_JOURNEYS_ROUTE },
-      { label: 'Prémio Inovação do ISPML', href: routes.INNOVATION_AWARD_ROUTE },
-      { label: 'Ciclo de Palestras do ISPML', href: routes.LECTURE_SERIES_ROUTE },
-      { label: 'Publicações em Revista com Impacto', href: routes.IMPACT_PUBLICATIONS_ROUTE },
-      { label: 'Publicações em Revista sem Impacto', href: routes.NON_IMPACT_PUBLICATIONS_ROUTE },
-      { label: 'Centros de Investigação', href: '#', children: [
-        { label: 'Centro de Investigação das Ciências Sociais Aplicadas (CICSA)', href: routes.CICSA_ROUTE },
-      ]},
-      { label: 'Pós-Graduações', href: '#', children: [
-        { label: 'Programas Académicos (AMITY-ISPML)', href: routes.AMITY_PROGRAM_PT_ROUTE, target: '_blank' },
-        { label: 'Academic Programmes (AMITY-ISPML)', href: routes.AMITY_PROGRAM_EN_ROUTE, target: '_blank' },
-      ]}
-    ]
-  },
-  {
-    label: 'Extensão',
-    href: routes.EXTENSION_ROUTE,
-    children: [
-      { label: 'Política de Extensão', href: routes.EXTENSION_POLICY_ROUTE },
-      { label: 'Projectos de Transferência de Conhecimento para a Sociedade', href: routes.KNOWLEDGE_TRANSFER_ROUTE },
-      { label: 'Estágios não Obrigatório', href: routes.NON_SUPERVISED_INTERNSHIPS_ROUTE },
-      { label: 'Programa de Promoção ao Empreendedorismo', href: routes.ENTREPRENEURSHIP_PROMOTION_ROUTE },
-      { label: 'Olimpíadas Científicas', href: routes.SCIENTIFIC_OLYMPIADS_ROUTE },
-      { label: 'Serviços de Carreira e Empregabilidade', href: routes.CAREER_SERVICES_ROUTE },
-      { label: 'Cursos de Curta Duração', href: routes.SHORT_COURSES_ROUTE },
-      { label: 'Centro de Ensino de Línguas- CEL', href: routes.LANGUAGE_CENTER_ROUTE },
-      { label: 'Programa "A Empresa na Universidade"', href: routes.UNIVERSITY_BUSINESS_PROGRAM_ROUTE },
-    ]
-  },
-  // {
-  //   label: 'Acadêmico',
-  //   href: '#',
-  //   children: [
-  //     { label: 'Cursos', href: '/courses' },
-  //     { label: 'Biblioteca', href: '/library' },
-  //     { label: 'Horários', href: '/schedules' },
-  //     { label: 'Calendário', href: '/calendar' },
-  //   ]
-  // },
-  // {
-  //   label: 'Campus',
-  //   href: '#',
-  //   children: [
-  //     { label: 'Mapa', href: '/map' },
-  //     { label: 'Acomodações', href: '/accommodations' },
-  //     { label: 'Refeitório', href: '/cafeteria' },
-  //     { label: 'Estacionamento', href: '/parking' },
-  //     { label: 'Segurança', href: '/security' },
-  //     { label: 'Eventos', href: '/events' },
-  //   ]
-  // },
-  {
-    label: 'Mais',
-    href: '#',
-    children: [
-      { label: 'Portal do Estudante', href: '/student-portal' },
-      { label: 'Alumni', href: '/alumni' },
-      { label: 'Associações', href: '/associations' },  
-      { label: 'Contato', href: '/contact' },
-      { label: 'Notícias', href: '/news' }, 
-    ]
-  },
-// { label: 'Biblioteca', href: '/library' },
- 
-];
+      )
+    },
+    // {
+    //   label: 'Ensino',
+    //   href: routes.TEACHING_ROUTE,
+    //   children: [
+    //     { label: 'Departamentos/Cursos', href: '#', children: [
+    //       { label: 'Departamento de Engenharias e Tecnologias (DET)', href: routes.DET_DEPARTMENT_ROUTE },
+    //       { label: 'Departamento de Geociências (DGC)', href: routes.DGC_DEPARTMENT_ROUTE },
+    //       { label: 'Departamento de Ciências Sociais Aplicadas (DCSA)', href: routes.DCSA_DEPARTMENT_ROUTE },
+    //       { label: 'Corpo Docente', href: routes.FACULTY_ROUTE },
+    //     ]},
+    //     { label: 'Biblioteca', href: '#', children: [
+    //       { label: 'Apresentação', href: routes.LIBRARY_ROUTE },
+    //       { label: 'Regulamentos e Normas', href: routes.STUDENT_REGULATIONS_ROUTE },
+    //     ]}
+    //   ]
+    // },
+    {
+      label: 'navbar.research.label',
+      href: routes.RESEARCH_ROUTE,
+      children: [
+        { label: 'navbar.research.policy', href: routes.RESEARCH_POLICY_ROUTE },
+        { label: 'navbar.research.guide', href: routes.RESEARCH_GUIDE_ROUTE },
+        { label: 'navbar.research.scientificJourneys', href: routes.SCIENTIFIC_JOURNEYS_ROUTE },
+        { label: 'navbar.research.innovationAward', href: routes.INNOVATION_AWARD_ROUTE },
+        { label: 'navbar.research.lectureSeries', href: routes.LECTURE_SERIES_ROUTE },
+        { label: 'navbar.research.impactPublications', href: routes.IMPACT_PUBLICATIONS_ROUTE },
+        { label: 'navbar.research.nonImpactPublications', href: routes.NON_IMPACT_PUBLICATIONS_ROUTE },
+        { label: 'navbar.research.researchCenters', href: routes.CICSA_ROUTE },
+        { label: 'navbar.research.postgraduatePrograms', href: routes.POSTGRADUATE_PROGRAMS_ROUTE },
+      ]
+    },
+    {
+      label: 'navbar.extension',
+      href: routes.EXTENSION_ROUTE,
+      children: [
+        { label: 'navbar.extensionSection.policy', href: routes.EXTENSION_POLICY_ROUTE },
+        { label: 'navbar.extensionSection.knowledgeTransfer', href: routes.KNOWLEDGE_TRANSFER_ROUTE },
+        { label: 'navbar.extensionSection.nonSupervisedInternships', href: routes.NON_SUPERVISED_INTERNSHIPS_ROUTE },
+        { label: 'navbar.extensionSection.entrepreneurshipPromotion', href: routes.ENTREPRENEURSHIP_PROMOTION_ROUTE },
+        { label: 'navbar.extensionSection.scientificOlympiads', href: routes.SCIENTIFIC_OLYMPIADS_ROUTE },
+        { label: 'navbar.extensionSection.careerServices', href: routes.CAREER_SERVICES_ROUTE },
+        { label: 'navbar.extensionSection.shortCourses', href: routes.SHORT_COURSES_ROUTE },
+        { label: 'navbar.extensionSection.languageCenter', href: routes.LANGUAGE_CENTER_ROUTE },
+        { label: 'navbar.extensionSection.universityBusinessProgram', href: routes.UNIVERSITY_BUSINESS_PROGRAM_ROUTE },
+      ]
+    },
+    {
+      label: 'navbar.more.title',
+      href: "#",
+      children: [
+        { label: 'navbar.more.studentPortal', href: routes.STUDENT_PORTAL_ROUTE },
+        { label: 'navbar.more.alumni', href: routes.ALUMNI_ROUTE },
+        { label: 'navbar.more.associations', href: routes.ASSOCIATIONS_ROUTE },
+        { label: 'navbar.more.contact', href: routes.CONTACT_ROUTE },
+        { label: 'navbar.more.news', href: routes.NEWS_ROUTE },
+      ]
+    },
+  // { label: 'Biblioteca', href: routes.LIBRARY_ROUTE },
+   
+  ];
+};
 
 export const carouselItems = [
   {
     background: images.teachers.teacher2,
-    title: 'Bem-vindo à ISPML',
+    title: 'Bem-vindo à ISPSML',
     description: 'As inscrições estão abertas! Junte-se a nós e transforme o seu futuro.',
     cta: 'Inscreva-se Agora',
     link: '/apply'

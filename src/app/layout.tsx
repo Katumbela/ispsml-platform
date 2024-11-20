@@ -4,6 +4,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect, useState } from "react";
 import Loader from "@/components/common/Loader";
+import { I18nextProvider } from 'react-i18next';
+import i18n from '@/infra/i18n';
+import { usePathname } from 'next/navigation'; // importar usePathname
+import { LanguageProvider } from "@/contexts/lang-context";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -22,6 +26,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname(); // obter o pathname
+  const lang = typeof pathname === 'string' && pathname.startsWith('/en') ? 'en' : 'pt'; // determinar a língua a partir da rota
+
+  useEffect(() => {
+    if (lang) {
+      i18n.changeLanguage(lang); // mudar a língua no i18n
+      localStorage.setItem('lang', lang); // armazenar a língua atual
+    }
+  }, [lang]);
+
   const [isLargeScreen, setIsLargeScreen] = useState(true);
 
   useEffect(() => {
@@ -45,21 +59,28 @@ export default function RootLayout({
 
 
   return (
-    <html lang="pt">
+    <html lang={lang}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {isLargeScreen ? (
 
-          <>
+        <LanguageProvider>
+          
+        <I18nextProvider i18n={i18n}>
+          {isLargeScreen ? (
 
-            {loading ? <Loader /> : children}
+            <>
 
-          </>) : (
-          <div className="flex items-center justify-center h-screen text-lg font-semibold text-center text-red-600">
-            Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
-          </div>
-        )}
+              {loading ? <Loader /> : children}
+
+            </>) : (
+            <div className="flex items-center justify-center h-screen text-lg font-semibold text-center text-red-600">
+              Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
+            </div>
+          )}
+        </I18nextProvider>
+        
+        </LanguageProvider>
       </body>
     </html>
   );

@@ -11,11 +11,18 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faAngleDown, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { navigationItems } from '@/infra/data/navbar-data';
 import { routes } from '@/infra/routes.vars';
+import { useTranslation } from 'react-i18next';
+import { useLanguage } from '@/contexts/lang-context';
 
 const Navbar = () => {
+	const { t, i18n } = useTranslation();
 	const [ isOpen, setIsOpen ] = useState(false);
 	const [ activeDropdown, setActiveDropdown ] = useState<number | null>(null);
 	const [ isScrolled, setIsScrolled ] = useState(false);
+
+	const currentLang = i18n.language || 'pt'; // obter a língua atual
+
+	const { setLang } = useLanguage();
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -32,6 +39,21 @@ const Navbar = () => {
 		};
 	}, []);
 
+	const changeLanguage = (lng: string) => {
+		setLang(lng);
+		i18n.changeLanguage(lng);
+		localStorage.setItem('lang', lng); // armazenar a língua selecionada
+	};
+	// const changeLanguage = (lng: string) => {
+	// 	const path = pathname;
+	// 	const newPath = path.replace(/^\/(en|pt)/, `/${lng}`);
+	// 	router.push(newPath);
+	// 	i18n.changeLanguage(lng);
+	// 	localStorage.setItem('lang', lng); // armazenar a língua selecionada
+	// };
+
+	const navItems = navigationItems(t); // obter itens da navbar com a língua atual
+
 	return (
 		<nav
 			className={`w-full px-4 py-1 fixed z-[10000] ${isScrolled
@@ -43,17 +65,18 @@ const Navbar = () => {
 
 				<div className="flex">
 					<div
-						onClick={() => (window.location.href = routes.HOME_ROUTE)}
+						onClick={() => (window.location.href = `/${currentLang}${routes.HOME_ROUTE}`)}
 						className="flex items-center text-2xl cursor-pointer"
 					>
 						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
 						<div
-							className={`flex mt-2 flex-col justify-center font-bold ${!isScrolled
+							className={`flex my-auto flex-col justify-center font-bold ${!isScrolled
 								? 'text-white'
 								: 'text-primary'}`}
 						>
-							<span className="text-lg ">Universidade</span>
-							<span className="text-[10px] -mt-[1rem] ">São Martinho de Lima</span>
+							<span className="text-[10px] ">{t('navbar.institutoSuperior')}</span>
+							<span className="text-[10px] -mt-[1.3rem] ">{t('navbar.politecnico')}</span>
+							<span className="text-[10px] -mt-[1.3rem] ">{t('navbar.saoMartinhoDeLima')}</span>
 						</div>
 					</div>
 
@@ -64,25 +87,27 @@ const Navbar = () => {
 							<FontAwesomeIcon icon={faBars} size="lg" />
 						)}
 					</div>
-					<div className="flex items-center my-auto -mt-[0.5px]">
+					<div className="flex items-center my-auto ">
 						<ul
-							className={`md:flex md:items-center absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
+							className={`md:flex bg-red-4000 md:items-center my-auto absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
 								? 'transform translate-y-0'
 								: 'transform -translate-y-full md:translate-y-0'}`}
 						>
-							{navigationItems.map((item, index) => (
+							{navItems.map((item, index) => (
 								<li
 									key={index}
-									className={`md:ml-4 ${Array.isArray(item.children) ? 'relative' : ''} group`}
+									className={`md:ml-4 -mt-1.5 bg-sky-9000 my-auto ${Array.isArray(item.children)
+										? 'relative'
+										: ''} group`}
 									onMouseEnter={() => setActiveDropdown(index)}
 									onMouseLeave={() => setActiveDropdown(null)}
 								>
 									<div
 										onClick={() => (window.location.href = item.href)}
-										className="flex flex-row items-center justify-start w-full -mt-1 space-x-2 nav-link hover-anim "
+										className="flex flex-row items-center justify-start w-full p-0 m-0 space-x-2 bg-bblack nav-link hover-anim "
 									>
 										<span className="font-[600] my-auto text-[12px]  uppercase tracking-wider">
-											{item.label}
+											{t(item.label)}
 										</span>
 										{item.children && (
 											<motion.span
@@ -104,9 +129,9 @@ const Navbar = () => {
 												transition={{ duration: 0.2 }}
 												className={`absolute ${Array.isArray(item.children)
 													? 'left-0'
-													: '--right-5 --lg:right-0 --xl:-right-[1rem] --2xl:-right-[10rem]'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
+													: ' -left-16'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
 												style={{
-													width: Array.isArray(item.children) ? 'auto' : 'auto',
+													width: Array.isArray(item.children) ? 'auto' : '80vw',
 													minWidth: '20rem'
 												}}
 												onMouseEnter={() => setActiveDropdown(index)}
@@ -122,10 +147,10 @@ const Navbar = () => {
 															transition={{ delay: childIndex * 0.05 }}
 														>
 															<Link
-																href={childItem.href}
+																href={`/${currentLang}${childItem.href}`} // incluir a língua na rota
 																className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
 															>
-																{childItem.label}
+																{t(childItem.label)}
 															</Link>
 														</motion.div>
 													))
@@ -140,12 +165,16 @@ const Navbar = () => {
 						</ul>
 					</div>
 				</div>
-				{/* Icone de search e EN e PT opctions  */}
+				{/* Icone de search e EN e PT options  */}
 				<div className="flex items-center my-auto ml-4 space-x-4 ">
 					<div className="flex my-auto space-x-2">
-						<span className="my-auto cursor-pointer">EN</span>
+						<span className="my-auto cursor-pointer" onClick={() => changeLanguage('en')}>
+							EN
+						</span>
 						<span>|</span>
-						<span className="my-auto cursor-pointer">PT</span>
+						<span className="my-auto cursor-pointer" onClick={() => changeLanguage('pt')}>
+							PT
+						</span>
 					</div>
 					<FontAwesomeIcon icon={faSearch} size="lg" className="cursor-pointer" />
 				</div>

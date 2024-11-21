@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { useEffect, useState } from "react";
 import Loader from "@/components/common/Loader";
-import { I18nextProvider } from 'react-i18next';
+// import { I18nextProvider } from 'react-i18next';
 import i18n from '@/infra/i18n';
 import { usePathname } from 'next/navigation'; // importar usePathname
 // import { LanguageProvider } from "@/contexts/lang-context";
@@ -66,7 +66,7 @@ export default function RootLayout({
 
         {/* <LanguageProvider> */}
           
-        <I18nextProvider i18n={i18n}>
+        {/* <I18nextProvider i18n={i18n}> */}
           {isLargeScreen ? (
 
             <>
@@ -78,7 +78,7 @@ export default function RootLayout({
               Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
             </div>
           )}
-        </I18nextProvider>
+        {/* </I18nextProvider> */}
         
         {/* </LanguageProvider> */}
       </body>

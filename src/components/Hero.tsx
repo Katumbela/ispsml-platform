@@ -14,7 +14,7 @@ import { images } from '@/assets';
 
 const Hero = () => {
 	const { t } = useTranslation();
-	const [ currentslide, setcurrentslide ] = useState(0);
+	const [ slideIndex, setSlideIndex ] = useState(0);
 	const [ animationDirection, setAnimationDirection ] = useState('top');
 
 	const settings = {
@@ -28,7 +28,7 @@ const Hero = () => {
 		fade: true,
 		cssEase: 'linear',
 		beforeChange: (oldIndex: any, newIndex: any) => {
-			setcurrentslide(newIndex);
+			setSlideIndex(newIndex);
 			setAnimationDirection(Math.random() > 0.5 ? 'top' : 'bottom');
 		}
 	};
@@ -37,7 +37,7 @@ const Hero = () => {
 		() => {
 			// Trigger re-render to reset animations
 		},
-		[ currentslide ]
+		 [ slideIndex ]
 	);
 
 	const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
@@ -100,7 +100,6 @@ const Hero = () => {
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0, scale: [ 1, 1.2, 1 ] }}
 										transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
-										key={`title-${currentslide}`}
 									>
 										{item.title}
 									</motion.h1>
@@ -109,7 +108,6 @@ const Hero = () => {
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1 }}
-										key={`description-${currentslide}`}
 									>
 										{item.description}
 									</motion.p>
@@ -119,7 +117,6 @@ const Hero = () => {
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1.5 }}
-										key={`cta-${currentslide}`}
 									>
 										<span className="my-auto"> {item.cta}</span>
 										<FaAngleRight className="my-auto" />

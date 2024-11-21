@@ -27,7 +27,7 @@ interface GlobalHeroProps {
 
 
 const GlobalHero = ({ className, heightXxl, heightLg, title, bgImage, subtitle, bottomBG }: GlobalHeroProps) => {
-  const [currentslide, setcurrentslide] = useState(0);
+  const [slideIndex, setSlideIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('top');
 
   const settings = {
@@ -41,14 +41,14 @@ const GlobalHero = ({ className, heightXxl, heightLg, title, bgImage, subtitle, 
     fade: true,
     cssEase: 'linear',
     beforeChange: (oldIndex: any, newIndex: any) => {
-      setcurrentslide(newIndex);
+      setSlideIndex(newIndex);
       setAnimationDirection(Math.random() > 0.5 ? 'top' : 'bottom');
     },
   };
 
   useEffect(() => {
     // Trigger re-render to reset animations
-  }, [currentslide]);
+  }, [slideIndex]);
 
   const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
 
@@ -79,7 +79,6 @@ const GlobalHero = ({ className, heightXxl, heightLg, title, bgImage, subtitle, 
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
-                    key={`title-${currentslide}`}
                   >
                     {title}
                   </motion.h1>

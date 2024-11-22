@@ -19,6 +19,7 @@ export const newsData = [
         postDate: "2023-10-01",
         poster: "Maria Oliveira",
         link: "#",
+        sponsor: true,
         image: images.newsImages.news4.src,
     },
     {

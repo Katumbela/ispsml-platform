@@ -45,12 +45,14 @@ export function NewsComponents() {
 						<div
 							key={index}
 							style={{
-								background: `linear-gradient(180deg, #00000027, #0000008A), url(${news.image}) center center`,
+								background: `linear-gradient(180deg, #0000006F, #000000C6), url(${news.image}) center center`,
 								backgroundRepeat: 'no-repeat',
 								backgroundSize: 'cover'
 							}}
-							className="relative h-full bg-primary"
+							title='Clique para ler mais'
+							className="relative h-full transition-all cursor-pointer hover:shadow-xl shadow-primary bg-primary"
 						>
+							<div className="absolute px-3 py-1 text-white bg-yellow-500 rounded-full left-4 top-4">Em Destaque</div>
 							<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
 								<h2 className="text-2xl font-extrabold">{news.title}</h2>
 								<p className="text-md">{AbreviateString.abbreviate(news.longDescription, 170)}</p>
@@ -79,6 +81,7 @@ export function NewsComponents() {
 									shortDescription={news.shortDescription}
 									postDate={news.postDate}
 									poster={news.poster}
+									longDescription={news.longDescription}
 									link={news.link}
 									image={news.image}
 								/>

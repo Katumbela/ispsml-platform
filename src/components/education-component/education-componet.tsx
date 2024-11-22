@@ -50,7 +50,7 @@ export function EducationComponents() {
 				<br />
 				<br />
 				<br />
-				<div className="flex gap-10">
+				{/* <div className="flex gap-10">
 					<motion.div
 						initial={{ opacity: 0, x: -100 }}
 						whileInView={{ opacity: 1, originX: 0, x: 0, transition: { duration: 0.5, delay: 0.2 } }}
@@ -72,7 +72,7 @@ export function EducationComponents() {
 					>
 						<Image alt="" src={images.backgrounds.bg_graduated_student_2} objectFit="cover" layout="fill" />
 					</motion.div>
-				</div>
+				</div> */}
 			</div>
 		</section>
 	);

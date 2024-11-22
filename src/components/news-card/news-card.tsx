@@ -13,7 +13,7 @@ interface NewsCardProps {
 
 const NewsCard: React.FC<NewsCardProps> = ({ title, shortDescription, postDate, link, image }) => {
 	return (
-		<div className="w-[15rem] relative h-[21rem] overflow-hidden border shadow-lg">
+		<div className="w-[14.5rem] relative h-[21rem] overflow-hidden border shadow-lg">
 			<div className="relative w-full overflow-hidden h-44 imagem">
 				<Image
 					src={image}

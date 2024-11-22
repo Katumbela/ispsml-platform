@@ -5,15 +5,16 @@ import { AbreviateString } from '../../utils/abreviate-utils';
 interface NewsCardProps {
 	title: string;
 	shortDescription: string;
+	longDescription: string;
 	postDate: string;
 	poster: string;
 	link: string;
 	image: string;
 }
 
-const NewsCard: React.FC<NewsCardProps> = ({ title, shortDescription, postDate, link, image }) => {
+const NewsCard: React.FC<NewsCardProps> = ({ title, longDescription, postDate, link, image }) => {
 	return (
-		<div className="w-[14.5rem] relative h-[21rem] overflow-hidden border shadow-lg">
+		<div className="w-[14.5rem] relative h-[24rem] overflow-hidden border shadow-lg">
 			<div className="relative w-full overflow-hidden h-44 imagem">
 				<Image
 					src={image}
@@ -24,9 +25,9 @@ const NewsCard: React.FC<NewsCardProps> = ({ title, shortDescription, postDate, 
 				/>
 			</div>
 			<div className="p-2">
-				<h2 className="font-bold text-md">{AbreviateString.abbreviate(title, 40)}</h2>
+				<h2 className="font-bold text-md">{AbreviateString.abbreviate(title, 50)}</h2>
 
-				<p className="mt-1 text-xs text-gray-400">{AbreviateString.abbreviate(shortDescription, 70)}</p>
+				<p className="mt-1 text-xs text-gray-400">{AbreviateString.abbreviate(longDescription, 120)}</p>
 				<div className="absolute flex justify-between right-2 left-2 bottom-3">
 					<a
 						href={link}

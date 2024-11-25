@@ -87,7 +87,7 @@ export function StudyOffer() {
 							exit={{ height: 0, opacity: 0 }}
 							transition={{ duration: 0.5 }}
 						>
-							<h3 className="text-xl font-bold">{cards[selectedCard].title}</h3>
+							<h3 className="text-xl font-semibold">{cards[selectedCard].title}</h3>
 							<p>{cards[selectedCard].description}</p>
 							<a
 								href={cards[selectedCard].link}

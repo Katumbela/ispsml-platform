@@ -23,7 +23,7 @@ export default function ViewNewsPage() {
 			<Navbar />
 			<div className="pt-24 pb-6 bg-primary">
 				<div className="containers">
-					<h1 className="text-3xl font-bold text-white">{news.title}</h1>
+					<h1 className="text-3xl font-semibold text-white">{news.title}</h1>
 					<p className="flex gap-2 mt-4 text-sm text-white">
 						{' '}
 						<FaCalendarAlt className="my-auto" />
@@ -85,7 +85,7 @@ export default function ViewNewsPage() {
 			<section className="py-10 view-more bg-slate-100">
 				<div className="containers">
 					<div>
-						<h2 className="text-2xl font-bold">Veja também </h2>
+						<h2 className="text-2xl font-semibold">Veja também </h2>
 					</div>
                     <br />
                 <br />

@@ -66,7 +66,7 @@ const Navbar = () => {
 				<div className="flex">
 					<div
 						onClick={() => (window.location.href = `/${currentLang}${routes.HOME_ROUTE}`)}
-						className="flex items-center text-2xl cursor-pointer"
+						className="flex items-center text-2xl cursor-pointer me-12"
 					>
 						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
 						<div
@@ -74,9 +74,9 @@ const Navbar = () => {
 								? 'text-white'
 								: 'text-primary'}`}
 						>
-							<span className="text-[10px] ">{t('navbar.institutoSuperior')}</span>
+							<span className="text-[12px] ">{t('navbar.institutoSuperior')}</span>
 							<span className="text-[10px] hidden -mt-[1.3rem] ">{t('navbar.politecnico')}</span>
-							<span className="text-[10px] -mt-[1.3rem] ">{t('navbar.saoMartinhoDeLima')}</span>
+							<span className="text-[12px] -mt-[1.3rem] ">{t('navbar.saoMartinhoDeLima')}</span>
 						</div>
 					</div>
 

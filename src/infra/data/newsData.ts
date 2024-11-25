@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { images } from '@/assets';
 
 export const newsData = [
@@ -9,6 +10,7 @@ export const newsData = [
         postDate: "2023-09-15",
         poster: "Dr. João Silva",
         link: "#",
+        slug: "descoberta-cientifica-revoluciona-a-medicina",
         image: images.newsImages.news3.src,
     },
     {
@@ -19,6 +21,7 @@ export const newsData = [
         postDate: "2023-10-01",
         poster: "Maria Oliveira",
         link: "#",
+        slug: "tecnologia-5g-chega-em-angola",
         sponsor: true,
         image: images.newsImages.news4.src,
     },
@@ -30,6 +33,7 @@ export const newsData = [
         postDate: "2023-08-20",
         poster: "Ana Costa",
         link: "#",
+        slug: "mudancas-climaticas-o-que-esperar-para-o-futuro",
         image: images.newsImages.news4.src,
     },
     {
@@ -40,6 +44,7 @@ export const newsData = [
         postDate: "2023-09-15",
         poster: "Dr. João Silva",
         link: "#",
+        slug: "descoberta-cientifica-revoluciona-a-medicina",
         image: images.newsImages.news3.src,
     },
     {
@@ -50,6 +55,7 @@ export const newsData = [
         postDate: "2023-10-01",
         poster: "Maria Oliveira",
         link: "#",
+        slug: "tecnologia-5g-chega-em-angola",
         image: images.newsImages.news4.src,
     },
     {
@@ -60,6 +66,11 @@ export const newsData = [
         postDate: "2023-08-20",
         poster: "Ana Costa",
         link: "#",
+        slug: "mudancas-climaticas-o-que-esperar-para-o-futuro",
         image: images.newsImages.news4.src,
     },
 ];
+
+export function getNewsBySlug(slug: any) {
+    return newsData.find(news => news.slug === slug);
+}

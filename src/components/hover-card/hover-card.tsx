@@ -27,7 +27,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ bgColor, bgImage, className, hove
 			{/* Gradiente de baixo para cima cobrindo apenas 50% */}
 			<div className="absolute inset-x-0 bottom-0 flex items-end justify-start py-4 mt-auto h-1/2 bg-gradient-to-t from-black">
 				<div className="container px-5">
-					<h2 className="text-xl font-bold text-white">{title}</h2>
+					<h2 className="text-xl font-semibold text-white">{title}</h2>
 				</div>
 			</div>
 

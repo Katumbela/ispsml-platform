@@ -16,7 +16,7 @@ export default function QuickLinks() {
         />
         <div className="absolute inset-0 bg-black opacity-70 z-[-1]" />
 
-        <h2 className="mb-8 text-3xl font-bold">Links Rápidos</h2>
+        <h2 className="mb-8 text-3xl font-semibold">Links Rápidos</h2>
         <div className="grid grid-cols-1 gap-8 px-[11vw] 2xl:px-[20vw] md:grid-cols-4">
           <a href="/courses" className="quick-link">
             <div className='icon'>

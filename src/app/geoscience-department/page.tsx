@@ -35,7 +35,7 @@ const GeoScienceDepartment = () => {
         </p>
       </main>
       <div className="containers">
-        <h2 className='mb-6 text-3xl font-bold'>Cursos</h2>
+        <h2 className='mb-6 text-3xl font-semibold'>Cursos</h2>
         <div className="grid gap-1.5 grid-cols-12">
           {coursesData.geoscience.courses.map((course, i) => (
             <CardCourseComponent key={i} course={course} department={departments.GEOSCIENCE_DEPARTMENT} />

@@ -5,7 +5,7 @@ import { departments } from '@/infra/global.vars';
 export function EngCoursesSection() {
 	return (
 		<div className="containers courses-section">
-			<h1 className="text-3xl font-bold">Cursos de Engenharia</h1>
+			<h1 className="text-3xl font-semibold">Cursos de Engenharia</h1>
 			<br />
 			<br />
 

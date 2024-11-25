@@ -5,7 +5,7 @@ const About = () => {
     <div>
       <Navbar />
       <main className="p-8">
-        <h1 className="text-2xl font-bold">Sobre Nós</h1>
+        <h1 className="text-2xl font-semibold">Sobre Nós</h1>
         <p className="mt-4">Informações sobre a universidade...</p>
       </main>
     </div>

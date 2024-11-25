@@ -28,7 +28,7 @@ const CSADepartment = () => {
         </p>
       </main>
       <div className="containers">
-        <h2 className='mb-6 text-3xl font-bold'>Cursos</h2>
+        <h2 className='mb-6 text-3xl font-semibold'>Cursos</h2>
         <div className="grid gap-1.5 grid-cols-12">
           {coursesData.csa.courses.map((course, i ) => (
             <CardCourseComponent key={i} course={course} department={departments.CSA_DEPARTMENT} />

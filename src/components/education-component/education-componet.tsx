@@ -14,25 +14,27 @@ export function EducationComponents() {
 			</div>
 			<div className="relative px-24">
 				<div className="flex gap-10">
-					<motion.div
-						initial={{ opacity: 0 }}
-						whileInView={{ opacity: 1, originX: 0, transition: { duration: 0.5, delay: 0.5 } }}
-						// viewport={{ once: true }}
-						className=" w-full h-[400px] relative bg-primary"
-					>
-						<Image alt="" src={images.backgrounds.bg_student_1} objectFit="cover" layout="fill" />
-					</motion.div>
+					<div className='w-full 2xl:w-2/3'>
+						<motion.div
+							initial={{ opacity: 0 }}
+							whileInView={{ opacity: 1, originX: 0, transition: { duration: 0.5, delay: 0.5 } }}
+							// viewport={{ once: true }}
+							className="  ms-auto h-[400px] 2xl:h-[600px] relative bg-primary"
+						>
+							<Image alt="" src={images.backgrounds.bg_student_1} objectFit="cover" layout="fill" />
+						</motion.div>
+					</div>
 					<motion.div
 						initial={{ opacity: 0, x: 100 }}
 						whileInView={{ opacity: 1, originX: 0, x: 0, transition: { duration: 0.5, delay: 0.5 } }}
 						// viewport={{ once: true }}
-						className=" w-full grid h-[400px] relative "
+						className=" w-full grid h-[400px] 2xl:h-[600px] relative "
 					>
 						<div className="my-auto">
-							<h1 className="text-5xl font-extrabold">{t('educationComponents.admissionsAndEducationalOffersTitle')}</h1>
-							<p className="mt-5">
-								{t('educationComponents.admissionsAndEducationalOffersDescription')}
-							</p>
+							<h1 className="text-5xl font-extrabold">
+								{t('educationComponents.admissionsAndEducationalOffersTitle')}
+							</h1>
+							<p className="mt-5 2xl:w-2/3">{t('educationComponents.admissionsAndEducationalOffersDescription')}</p>
 							<ul className="mt-2 font-bold text-blue-700 cursor-pointer">
 								<li className="flex gap-3 transition-all hover:underline">
 									<a href="#">{t('educationComponents.yearRange')}</a>

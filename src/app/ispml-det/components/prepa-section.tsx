@@ -6,7 +6,7 @@ export function PrepaSection() {
       <div className="relative flex ">
         <div className="containers w-full grid place-content-center items-center ps-[3.9vw]">
           <div className='text-white '>
-            <h2 className="text-4xl font-bold">
+            <h2 className="text-4xl font-semibold">
               Preparatorio Engenharias
             </h2>
             <br />

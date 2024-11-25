@@ -40,7 +40,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
       <div className="containers">
-        <h2 className='mb-6 text-3xl font-bold'>Benefícios do Programa</h2>
+        <h2 className='mb-6 text-3xl font-semibold'>Benefícios do Programa</h2>
         <div className="grid grid-cols-2 gap-4">
             {course.benefits?.map((benefit: string, index: number) => (
             <div key={index} className="flex gap-2 benefit-item">
@@ -53,7 +53,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
       <div className="containers">
-        <h2 className='mb-6 text-3xl font-bold'>Plano Curricular</h2>
+        <h2 className='mb-6 text-3xl font-semibold'>Plano Curricular</h2>
         <div className="relative grid grid-cols-2 gap-4">
           {course.years.map(year => (
             <YearAccordion
@@ -71,7 +71,7 @@ export default function CourseDetailsPage() {
 
       <a href='#' className="flex justify-between containers">
         <div className="w-full my-auto">
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-semibold">
             Baixar Plano Curricular de {course.course}
           </h2>
         </div>

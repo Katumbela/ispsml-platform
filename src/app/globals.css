@@ -1,4 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway');
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/static/Raleway-Regular.ttf') format('truetype'); 
+ }
+/*@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/static/Raleway-Bold.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/static/Raleway-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/static/Raleway-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700;
+} */
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +25,7 @@
 
 * {
   font-family: 'Raleway', sans-serif; 
-}
+} 
 html {
   scroll-behavior: smooth;
 }
@@ -163,4 +182,26 @@ footer div ul li, footer div p {
 
 .card-view-course:hover a {
     display: flex;
+}
+
+.font-raleway-regular {
+  font-family: 'Raleway';
+  font-weight: 400;
+}
+
+.font-raleway-bold {
+  font-family: 'Raleway';
+  font-weight: 700;
+}
+
+.font-raleway-italic {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-raleway-bold-italic {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
 }

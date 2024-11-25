@@ -74,7 +74,7 @@ export default function RootLayout({
               {loading ? <Loader /> : children}
 
             </>) : (
-            <div className="flex items-center justify-center h-screen text-lg font-semibold text-center text-red-600">
+            <div className="flex items-center justify-center h-screen text-lg font-medium text-center text-red-600">
               Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
             </div>
           )}

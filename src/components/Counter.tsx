@@ -55,7 +55,7 @@ const Counter: React.FC<CounterProps> = ({ end, duration, label }) => {
 
   return (
     <motion.div ref={counterRef} className="text-center" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}>
-      <h2 className="text-4xl font-bold">
+      <h2 className="text-4xl font-semibold">
         <CountUp duration={4} className="counter" end={end} />
       </h2>
       <p>{label}</p>

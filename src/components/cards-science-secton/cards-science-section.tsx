@@ -41,7 +41,7 @@ export function ScienceStudyCard() {
 							institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
 						</p>
 						<br />
-						<a href="#" className="font-bold underline">
+						<a href="#" className="font-semibold underline">
 							Saber mais
 						</a>
 					</div>
@@ -59,7 +59,7 @@ export function ScienceStudyCard() {
 							institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
 						</p>
 						<br />
-						<a href="#" className="font-bold underline">
+						<a href="#" className="font-semibold underline">
 							Saber mais
 						</a>
 					</div>

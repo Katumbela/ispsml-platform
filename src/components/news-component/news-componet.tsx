@@ -5,6 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useTranslation } from 'react-i18next';
 import { AbreviateString } from '@/utils';
+import { routes } from '@/infra/routes.vars';
 
 export function NewsComponents() {
 	const { t } = useTranslation();
@@ -20,12 +21,22 @@ export function NewsComponents() {
 			{
 				breakpoint: 1024,
 				settings: {
-					slidesToShow: 2,
-					slidesToScroll: 1
+					slidesToShow: 3,
+					slidesToScroll: 3,
+					infinite: true,
+					dots: true
 				}
 			},
 			{
 				breakpoint: 600,
+				settings: {
+					slidesToShow: 2,
+					slidesToScroll: 2,
+					initialSlide: 2
+				}
+			},
+			{
+				breakpoint: 480,
 				settings: {
 					slidesToShow: 1,
 					slidesToScroll: 1
@@ -49,10 +60,12 @@ export function NewsComponents() {
 								backgroundRepeat: 'no-repeat',
 								backgroundSize: 'cover'
 							}}
-							title='Clique para ler mais'
+							title="Clique para ler mais"
 							className="relative h-full transition-all cursor-pointer hover:shadow-xl shadow-primary bg-primary"
 						>
-							<div className="absolute px-3 py-1 text-white bg-yellow-500 rounded-full left-4 top-4">Em Destaque</div>
+							<div className="absolute px-3 py-1 text-white bg-yellow-500 rounded-full left-4 top-4">
+								Em Destaque
+							</div>
 							<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
 								<h2 className="text-2xl font-extrabold">{news.title}</h2>
 								<p className="text-md">{AbreviateString.abbreviate(news.longDescription, 170)}</p>
@@ -60,7 +73,7 @@ export function NewsComponents() {
 								<br />
 								<div className="flex justify-between w-full right-2 left-2 bottom-3">
 									<a
-										href={news.link}
+										href={routes.VIEW_NEWS_ROUTE + '/' + news.slug}
 										className="px-3 py-1 mt-auto text-xs font-bold text-white uppercase transition-all border hover:underline hover:bg-white hover:text-primary"
 									>
 										Leia mais
@@ -73,7 +86,7 @@ export function NewsComponents() {
 				</div>
 				<div className="w-3/5">
 					<div className="relative">
-						<Slider {...settings} >
+						<Slider {...settings}>
 							{newsData.map((news, index) => (
 								<NewsCard
 									key={index}
@@ -83,6 +96,7 @@ export function NewsComponents() {
 									poster={news.poster}
 									longDescription={news.longDescription}
 									link={news.link}
+									slug={news.slug}
 									image={news.image}
 								/>
 							))}

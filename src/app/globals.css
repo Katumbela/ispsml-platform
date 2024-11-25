@@ -28,8 +28,10 @@
 @tailwind utilities;
 
 * {
-  font-family: 'Raleway', sans-serif; 
+  /* font-family: 'Raleway;  */
 } 
+
+
 html {
   scroll-behavior: smooth;
 }

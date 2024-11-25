@@ -74,7 +74,7 @@ const Navbar = () => {
 								? 'text-white'
 								: 'text-primary'}`}
 						>
-							<span className="text-[16px] ">{t('navbar.institutoSuperior')}</span>
+							<span className="text-[16px] -mt-[.1rem]">{t('navbar.institutoSuperior')}</span>
 							<span className="text-[10px] hidden -mt-[1.3rem] ">{t('navbar.politecnico')}</span>
 							<span className="text-[16px] -mt-[.8rem] ">{t('navbar.saoMartinhoDeLima')}</span>
 						</div>

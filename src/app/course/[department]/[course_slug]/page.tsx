@@ -43,8 +43,8 @@ export default function CourseDetailsPage() {
         <h2 className='mb-6 text-3xl font-bold'>Benefícios do Programa</h2>
         <div className="grid grid-cols-2 gap-4">
             {course.benefits?.map((benefit: string, index: number) => (
-            <div key={index} className="benefit-item">
-              <p>{benefit}</p>
+            <div key={index} className="flex gap-2 benefit-item">
+             <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{benefit}</p>
             </div>
             ))}
         </div>
@@ -69,7 +69,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
 
-      <a href='#' className="containers flex justify-between">
+      <a href='#' className="flex justify-between containers">
         <div className="w-full my-auto">
           <h2 className="text-2xl font-bold">
             Baixar Plano Curricular de {course.course}

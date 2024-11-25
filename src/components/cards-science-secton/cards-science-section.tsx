@@ -58,6 +58,10 @@ export function ScienceStudyCard() {
 							Conheça a nova abordagem de pesquisa no Tecnológico de Monterrey. Descubra os três
 							institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
 						</p>
+						<br />
+						<a href="#" className="font-bold underline">
+							Saber mais
+						</a>
 					</div>
 				</HoverCard>
 			</div>

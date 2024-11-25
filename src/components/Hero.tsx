@@ -80,7 +80,7 @@ const Hero = () => {
 					{translatedCarouselItems.map((item, index) => (
 						<motion.div
 							key={index}
-							className="relative 2xl:h-[700px] h-[500px] items-start grid place-content-end pb-10 overflow-hidden"
+							className="relative 2xl:h-[770px] h-[500px] items-start grid place-content-end pb-10 overflow-hidden"
 							initial={{ scale: 0.9 }}
 							animate={{ scale: 1 }}
 							transition={{ duration: 0.5 }}

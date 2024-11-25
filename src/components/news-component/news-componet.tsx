@@ -76,7 +76,7 @@ export function NewsComponents() {
 								<div className="flex justify-between w-full right-2 left-2 bottom-3">
 									<a
 										href={routes.VIEW_NEWS_ROUTE + '/' + news.slug}
-										className="px-3 py-1 mt-auto text-xs font-bold text-white uppercase transition-all border hover:underline hover:bg-white hover:text-primary"
+										className="px-3 py-1 mt-auto text-xs font-semibold text-white uppercase transition-all border hover:underline hover:bg-white hover:text-primary"
 									>
 										Leia mais
 									</a>

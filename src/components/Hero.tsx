@@ -96,7 +96,7 @@ const Hero = () => {
 							<div className="relative z-10 my-auto text-start">
 								<div className="px-6 containers">
 									<motion.h1
-										className="mb-4 text-3xl font-bold md:text-5xl"
+										className="mb-4 text-3xl font-semibold md:text-5xl"
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0, scale: [ 1, 1.2, 1 ] }}
 										transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
@@ -113,7 +113,7 @@ const Hero = () => {
 									</motion.p>
 									<motion.a
 										href={item.link}
-										className="flex gap-1 mb-4 font-bold tracking-wider text-md hover:underline"
+										className="flex gap-1 mb-4 font-semibold tracking-wider text-md hover:underline"
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1.5 }}

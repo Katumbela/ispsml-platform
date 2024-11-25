@@ -100,8 +100,8 @@ export default function Footer() {
                 </div>
             </div>
             <div className="py-4 mt-20 text-start bg-primary">
-                <div className="text-sm containers">
-                    <p>{t('footer.allRightsReserved')}</p>
+                <div className="text-xs containers">
+                    <span>&copy;{t('footer.allRightsReserved')}</span>
                 </div>
             </div>
         </footer>

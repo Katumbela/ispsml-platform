@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { images } from '@/assets';
 import { FaAngleDown } from 'react-icons/fa';
 import cn from 'classnames'; // npm install classnames
-import { routes } from '@/infra/routes.vars';
+// import { routes } from '@/infra/routes.vars';
 
 interface Card {
 	title: string;

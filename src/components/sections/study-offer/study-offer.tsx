@@ -17,22 +17,25 @@ export function StudyOffer() {
 
 	const cards: Card[] = [
 		{
-			title: 'Engenharia e Tecnologia',
-			description: 'Descrição detalhada sobre Engenharia e Tecnologia.',
+			title: 'Inscrições e Bolsas de Estudos',
+			description: 'Informações sobre como se inscrever e obter bolsas de estudo.',
 			image: images.departImages.eng_tech.src,
-			link: routes.DET_ROUTER
+			// link: routes.DET_ROUTER
+			link: '#'
 		},
 		{
-			title: 'Ciências Sociais Aplicadas',
-			description: 'Descrição detalhada sobre Ciências Sociais Aplicadas.',
+			title: 'Unidades Orgânicas',
+			description: 'Detalhes sobre as diferentes unidades orgânicas da instituição.',
 			image: images.departImages.ciencias_sociais.src,
-			link: routes.CSA_ROUTE
+			// link: routes.CSA_ROUTE
+			link: '#'
 		},
 		{
-			title: 'Geociências',
-			description: 'Descrição detalhada sobre Geociências.',
+			title: 'Responsabilidade Social',
+			description: 'Iniciativas e projetos de responsabilidade social.',
 			image: images.departImages.geoscience.src,
-			link: routes.GEOSCIENCE_ROUTE
+			link: '#'
+			// link: routes.GEOSCIENCE_ROUTE
 		}
 	];
 

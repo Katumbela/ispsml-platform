@@ -75,7 +75,7 @@ const GlobalHero = ({ className, heightXxl, heightLg, title, bgImage, subtitle, 
               <div className={cn("py-14", {" bg-primary-dark/50": bottomBG === "primary", "bg-gradient-to-t from-black": bottomBG === "dark"})}>
                 <div className="containers">
                   <motion.h1
-                    className="text-2xl font-bold md:text-4xl"
+                    className="text-2xl font-semibold md:text-4xl"
                     initial={{ opacity: 0, y: getInitialY() }}
                     animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
                     transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}

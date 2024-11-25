@@ -148,7 +148,7 @@ footer div ul li, footer div p {
 }
 
 .quick-link {
-  @apply flex items-center gap-4 font-semibold tracking-wide transition-transform transform rounded bg-white/50;
+  @apply flex items-center gap-4 font-medium tracking-wide transition-transform transform rounded bg-white/50;
 }
 
 .quick-link span {

@@ -68,7 +68,9 @@ export function NewsComponents() {
 							</div>
 							<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
 								<h2 className="text-2xl font-extrabold">{news.title}</h2>
-								<p className="text-md">{AbreviateString.abbreviate(news.longDescription, 170)}</p>
+								<p className="text-md" dangerouslySetInnerHTML={{
+							__html: AbreviateString.abbreviate(`${news.content}`, 170)
+						}} />
 
 								<br />
 								<div className="flex justify-between w-full right-2 left-2 bottom-3">
@@ -94,7 +96,7 @@ export function NewsComponents() {
 									shortDescription={news.shortDescription}
 									postDate={news.postDate}
 									poster={news.poster}
-									longDescription={news.longDescription}
+									content={news.content}
 									link={news.link}
 									slug={news.slug}
 									image={news.image}

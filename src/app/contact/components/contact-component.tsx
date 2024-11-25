@@ -88,7 +88,7 @@ const ContactComponent = () => {
                 <div className="flex flex-col items-center justify-center my-auto">
                   <div>
                     {option.icon}
-                    <p className="mt-2 font-bold">{option.label}</p>
+                    <p className="mt-2 font-semibold">{option.label}</p>
                   </div>
                   <motion.div
                     initial={{ rotate: 0 }}
@@ -131,7 +131,7 @@ const ContactComponent = () => {
                 <div className="flex flex-col items-center justify-center my-auto">
                   <div>
                     {option.icon}
-                    <p className="mt-2 font-bold">{option.label}</p>
+                    <p className="mt-2 font-semibold">{option.label}</p>
                   </div>
                   <motion.div
                     initial={{ rotate: 0 }}

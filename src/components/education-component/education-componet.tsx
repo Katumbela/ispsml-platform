@@ -35,7 +35,7 @@ export function EducationComponents() {
 								{t('educationComponents.admissionsAndEducationalOffersTitle')}
 							</h1>
 							<p className="mt-5 2xl:w-2/3">{t('educationComponents.admissionsAndEducationalOffersDescription')}</p>
-							<ul className="mt-2 font-bold text-blue-700 cursor-pointer">
+							<ul className="mt-2 font-semibold text-blue-700 cursor-pointer">
 								<li className="flex gap-3 transition-all hover:underline">
 									<a href="#">{t('educationComponents.yearRange')}</a>
 								</li>

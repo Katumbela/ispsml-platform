@@ -13,7 +13,7 @@ interface YearAccordionProps {
 const YearAccordion: React.FC<YearAccordionProps> = ({ year, isOpen, toggleYear }) => {
   return (
     <div className=''>
-      <h2 className={cn("py-4 my-0 text-xl font-bold  transition-all cursor-pointer text-primary hover:bg-slate-100/80 bg-slate-50 containers flex gap-3")} onClick={() => toggleYear(year.year)}>
+      <h2 className={cn("py-4 my-0 text-xl font-semibold  transition-all cursor-pointer text-primary hover:bg-slate-100/80 bg-slate-50 containers flex gap-3")} onClick={() => toggleYear(year.year)}>
         {
           !isOpen ? <FaPlus className='my-auto text-xl' /> : <FaMinus className='my-auto text-xl' />
         }

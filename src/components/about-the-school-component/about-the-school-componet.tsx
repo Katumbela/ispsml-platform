@@ -35,7 +35,7 @@ export function AboutTheSchoolComponents() {
 					<Slider {...settings}>
 						{imageList.map((item, index) => (
 							<div className=" h-[75vh] 2xl:h-[75vh] " key={index}>
-								{/* <h3 className="mb-2 text-xl font-semibold text-center text-white">{item.title}</h3> */}
+								{/* <h3 className="mb-2 text-xl font-medium text-center text-white">{item.title}</h3> */}
 								{/* <div className="relative w-20 h-20"> */}
 								<Image
 									alt={`Imagem ${index + 1}`}
@@ -63,19 +63,19 @@ export function AboutTheSchoolComponents() {
 								<span className="text-sm"> Luanda</span>
 							</p>
 						</li>
-						<li className="flex justify-end gap-2 pt-4 text-xs font-bold uppercase cursor-pointer hover:underline ">
+						<li className="flex justify-end gap-2 pt-4 text-xs font-semibold uppercase cursor-pointer hover:underline ">
 							<span className="my-auto">Galeria</span>
 							<BiPhotoAlbum className="my-auto text-xl" />
 						</li>
-						<li className="flex justify-end gap-2 text-xs font-bold uppercase cursor-pointer hover:underline ">
+						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
 							<span className="my-auto">Apresentação</span>
 							<FaVideo className="my-auto text-xl" />
 						</li>
-						<li className="flex justify-end gap-2 text-xs font-bold uppercase cursor-pointer hover:underline ">
+						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
 							<span className="my-auto">Link</span>
 							<BiLink className="my-auto text-xl" />
 						</li>
-						<li className="flex justify-end gap-2 text-xs font-bold uppercase cursor-pointer hover:underline ">
+						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
 							<span className="my-auto">Street View</span>
 							<BiSolidBuildings className="my-auto text-xl" />
 						</li>

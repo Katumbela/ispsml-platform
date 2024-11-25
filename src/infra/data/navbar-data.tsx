@@ -18,10 +18,10 @@ export const navigationItems = (t: any): NavigationItem[] => {
     {
       label: 'navbar.about',
       href: routes.ABOUT_ROUTE,
-      children: [
-        { label: 'navbar.presidentMessage', href: routes.PRESIDENT_MESSAGE_ROUTE },
-        { label: 'navbar.institutionalPresentation', href: routes.INSTITUTIONAL_PRESENTATION_ROUTE },
-      ]
+      // children: [
+      //   { label: 'navbar.presidentMessage', href: routes.PRESIDENT_MESSAGE_ROUTE },
+      //   { label: 'navbar.institutionalPresentation', href: routes.INSTITUTIONAL_PRESENTATION_ROUTE },
+      // ]
     },
     {
       label: 'navbar.studyAtISPSML',
@@ -143,32 +143,32 @@ export const navigationItems = (t: any): NavigationItem[] => {
     {
       label: 'navbar.research.label',
       href: routes.RESEARCH_ROUTE,
-      children: [
-        { label: 'navbar.research.policy', href: routes.RESEARCH_POLICY_ROUTE },
-        { label: 'navbar.research.guide', href: routes.RESEARCH_GUIDE_ROUTE },
-        { label: 'navbar.research.scientificJourneys', href: routes.SCIENTIFIC_JOURNEYS_ROUTE },
-        { label: 'navbar.research.innovationAward', href: routes.INNOVATION_AWARD_ROUTE },
-        { label: 'navbar.research.lectureSeries', href: routes.LECTURE_SERIES_ROUTE },
-        { label: 'navbar.research.impactPublications', href: routes.IMPACT_PUBLICATIONS_ROUTE },
-        { label: 'navbar.research.nonImpactPublications', href: routes.NON_IMPACT_PUBLICATIONS_ROUTE },
-        { label: 'navbar.research.researchCenters', href: routes.CICSA_ROUTE },
-        { label: 'navbar.research.postgraduatePrograms', href: routes.POSTGRADUATE_PROGRAMS_ROUTE },
-      ]
+      // children: [
+      //   { label: 'navbar.research.policy', href: routes.RESEARCH_POLICY_ROUTE },
+      //   { label: 'navbar.research.guide', href: routes.RESEARCH_GUIDE_ROUTE },
+      //   { label: 'navbar.research.scientificJourneys', href: routes.SCIENTIFIC_JOURNEYS_ROUTE },
+      //   { label: 'navbar.research.innovationAward', href: routes.INNOVATION_AWARD_ROUTE },
+      //   { label: 'navbar.research.lectureSeries', href: routes.LECTURE_SERIES_ROUTE },
+      //   { label: 'navbar.research.impactPublications', href: routes.IMPACT_PUBLICATIONS_ROUTE },
+      //   { label: 'navbar.research.nonImpactPublications', href: routes.NON_IMPACT_PUBLICATIONS_ROUTE },
+      //   { label: 'navbar.research.researchCenters', href: routes.CICSA_ROUTE },
+      //   { label: 'navbar.research.postgraduatePrograms', href: routes.POSTGRADUATE_PROGRAMS_ROUTE },
+      // ]
     },
     {
       label: 'navbar.extension',
       href: routes.EXTENSION_ROUTE,
-      children: [
-        { label: 'navbar.extensionSection.policy', href: routes.EXTENSION_POLICY_ROUTE },
-        { label: 'navbar.extensionSection.knowledgeTransfer', href: routes.KNOWLEDGE_TRANSFER_ROUTE },
-        { label: 'navbar.extensionSection.nonSupervisedInternships', href: routes.NON_SUPERVISED_INTERNSHIPS_ROUTE },
-        { label: 'navbar.extensionSection.entrepreneurshipPromotion', href: routes.ENTREPRENEURSHIP_PROMOTION_ROUTE },
-        { label: 'navbar.extensionSection.scientificOlympiads', href: routes.SCIENTIFIC_OLYMPIADS_ROUTE },
-        { label: 'navbar.extensionSection.careerServices', href: routes.CAREER_SERVICES_ROUTE },
-        { label: 'navbar.extensionSection.shortCourses', href: routes.SHORT_COURSES_ROUTE },
-        { label: 'navbar.extensionSection.languageCenter', href: routes.LANGUAGE_CENTER_ROUTE },
-        { label: 'navbar.extensionSection.universityBusinessProgram', href: routes.UNIVERSITY_BUSINESS_PROGRAM_ROUTE },
-      ]
+      // children: [
+      //   { label: 'navbar.extensionSection.policy', href: routes.EXTENSION_POLICY_ROUTE },
+      //   { label: 'navbar.extensionSection.knowledgeTransfer', href: routes.KNOWLEDGE_TRANSFER_ROUTE },
+      //   { label: 'navbar.extensionSection.nonSupervisedInternships', href: routes.NON_SUPERVISED_INTERNSHIPS_ROUTE },
+      //   { label: 'navbar.extensionSection.entrepreneurshipPromotion', href: routes.ENTREPRENEURSHIP_PROMOTION_ROUTE },
+      //   { label: 'navbar.extensionSection.scientificOlympiads', href: routes.SCIENTIFIC_OLYMPIADS_ROUTE },
+      //   { label: 'navbar.extensionSection.careerServices', href: routes.CAREER_SERVICES_ROUTE },
+      //   { label: 'navbar.extensionSection.shortCourses', href: routes.SHORT_COURSES_ROUTE },
+      //   { label: 'navbar.extensionSection.languageCenter', href: routes.LANGUAGE_CENTER_ROUTE },
+      //   { label: 'navbar.extensionSection.universityBusinessProgram', href: routes.UNIVERSITY_BUSINESS_PROGRAM_ROUTE },
+      // ]
     },
     {
       label: 'navbar.more.title',

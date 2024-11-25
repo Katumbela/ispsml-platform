@@ -9,7 +9,7 @@ interface HoverCardProps {
 	className?: string;
 }
 
-const HoverCard: React.FC<HoverCardProps> = ({ bgColor, bgImage, className, hoverBgColor, title, children }) => {
+export  function HoverCard  ({ bgColor, bgImage, className, hoverBgColor, title, children }: HoverCardProps) {
 	return (
 		<motion.div
 			className={`relative w-full grid h-64 ${bgColor} ${className} overflow-hidden cursor-pointer`}
@@ -27,7 +27,7 @@ const HoverCard: React.FC<HoverCardProps> = ({ bgColor, bgImage, className, hove
 			{/* Gradiente de baixo para cima cobrindo apenas 50% */}
 			<div className="absolute inset-x-0 bottom-0 flex items-end justify-start py-4 mt-auto h-1/2 bg-gradient-to-t from-black">
 				<div className="container px-5">
-					<h2 className="text-xl font-semibold text-white">{title}</h2>
+					<h2 className="text-2xl font-semibold text-white">{title}</h2>
 				</div>
 			</div>
 
@@ -41,7 +41,6 @@ const HoverCard: React.FC<HoverCardProps> = ({ bgColor, bgImage, className, hove
 	);
 };
 
-export default HoverCard;
 
 // <HoverCard
 //   bgColor="bg-blue-500"

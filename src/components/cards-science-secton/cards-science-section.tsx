@@ -1,5 +1,5 @@
 import { images } from '@/assets';
-import HoverCard from '../hover-card/hover-card';
+import { HoverCard } from '../hover-card/hover-card';
 
 export function ScienceStudyCard() {
 	return (

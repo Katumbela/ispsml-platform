@@ -24,7 +24,7 @@ export function AboutTheSchoolComponents() {
 	];
 
 	return (
-		<section className="py-0 ">
+		<section className="py-0 z-500">
 			<div className="containers">
 				<h2 className="mb-0 text-3xl font-extrabold">{t('aboutTheSchool.title')}</h2>
 				<p className="text-gray-500">{t('aboutTheSchool.description')}</p>

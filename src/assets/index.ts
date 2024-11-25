@@ -6,6 +6,9 @@ import teacher1 from "./teachers/teacher-1.jpeg";
 import teacher2 from "./teachers/teacher-2.jpg";
 import teacher3 from "./teachers/teacher-3.png";
 import teacher4 from "./teachers/teacher-4.jpeg";
+import katumbela from "./teachers/katumbela.png";
+import bill_gates from "./teachers/bil_gates.webp";
+import elon_musk from "./teachers/elon_musk.jpg";
 
 // importando as imagens das news 
 
@@ -15,6 +18,7 @@ import news4 from "./news/news4.jpeg";
 
 // Backgrounds
 import bg1 from "./bgs/school-bg-1.jpeg";
+import bg_writing from "./bgs/writing_paper.jpg";
 import bg_ciencia_estudo from "./bgs/est-ciencia.jpg";
 import bg_student_1 from "./bgs/stdnt-bg1.jpg";
 import bg_student_2 from "./bgs/stdnt-bg2.jpg";
@@ -25,11 +29,22 @@ import bg_investigator_1 from "./bgs/investigator-1.webp";
 import bg_vertical from "./bgs/school-bg-3-vertical.jpeg";
 import bg_night_1 from "./bgs/bg-night-1.jpeg";
 import bg_support from "./bgs/support.webp";
+import bg_research_2 from "./bgs/research_2.jpg";
+import bg_research_1 from "./bgs/research_1.webp";
+import bg_students_hands_up from "./bgs/student_hands_up.jpg";
+import bg_vertical_education from "./bgs/bg-vertical-education.avif";
+import bg_vertical_education_1 from "./bgs/bg_vertical_education_1.jpg";
+import bg_vertical_education_2 from "./bgs/bg_vertical_education_2.avif";
 import bg_night_2 from "./bgs/bg-night-2.webp";
-import bg_school_1 from "./bgs/school-bg-1.jpeg"; 
+import bg_school_1 from "./bgs/school-bg-1.jpeg";
 import bg_school_4 from "./bgs/bg_school_4.jpg";
 import bg_school_3 from "./bgs/bg_school_3.jpg";
+import bg_student_11 from "./bgs/students_1.jpg";
+import bg_student_22 from "./bgs/students_2.jpg";
+import bg_student_33 from "./bgs/students_3.jpg";
 import bg_books_pen from "./bgs/bg-book-pens.jpg";
+import bg_sci_method from "./bgs/sci_method.avif";
+import bg_sci_method_2 from "./bgs/sci_method_2.webp";
 import bg_school_2 from "./bgs/school-bg-2.jpg";
 
 // importando as imagens dos departamentos
@@ -49,27 +64,42 @@ export const teachers = {
   teacher2,
   teacher3,
   teacher4,
+  katumbela,
+  elon_musk,
+  bill_gates
 };
 
 export const backgrounds = {
   bg1,
   bg_night_1,
+  bg_sci_method,
+  bg_sci_method_2,
   bg_night_2,
+  bg_vertical_education,
   bg_support,
+  bg_students_hands_up,
   bg_investigator_1,
+  bg_research_2,
+  bg_research_1,
+  bg_student_11,
+  bg_student_33,
+  bg_student_22,
   bg_vertical,
   bg_ciencia_estudo,
   bg_ciencia_estudo_2,
   bg_books_pen,
+  bg_writing,
   bg_school_2,
   bg_student_1,
   bg_student_2,
   bg_graduated_student_1,
   bg_graduated_student_2,
+  bg_vertical_education_1,
+  bg_vertical_education_2,
   bg_school_1,
   bg_school_3,
   bg_school_4,
-  
+
 };
 
 export const departImages = {

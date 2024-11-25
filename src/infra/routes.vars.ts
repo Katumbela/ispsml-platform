@@ -56,11 +56,13 @@ const HOME_ROUTE = "/",
   ASSOCIATIONS_ROUTE = "/associations",
   CONTACT_ROUTE = "/contact",
   NEWS_ROUTE = "/news",
+  VIEW_NEWS_ROUTE = NEWS_ROUTE,
   POSTGRADUATE_PROGRAMS_ROUTE = "/postgraduate-programs";
 
 export const routes = {
   HOME_ROUTE,
   GEOSCIENCE_ROUTE,
+  VIEW_NEWS_ROUTE,
   LOGIN_ROUTE,
   CSA_ROUTE,
   VIEW_COURSE_ROUTE,

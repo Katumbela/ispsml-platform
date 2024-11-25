@@ -5,7 +5,7 @@ import { FaBook, FaChalkboardTeacher, FaGraduationCap, FaUniversity, FaInfoCircl
 export default function QuickLinks() {
   return (
     <section className="relative py-20 overflow-hidden bg-center bg-cover">
-      <div className="containers mx-auto text-center text-white">
+      <div className="mx-auto text-center text-white containers">
 
         <Image
           src={images.backgrounds.bg_night_1.src}
@@ -20,37 +20,37 @@ export default function QuickLinks() {
         <div className="grid grid-cols-1 gap-8 md:grid-cols-4">
           <a href="/courses" className="quick-link">
             <div className='icon'>
-              <FaBook className="mr-2" />
+              <FaBook className="" />
             </div>
             <span>Cursos</span>
           </a>
           <a href="/teachers" className="quick-link">
             <div className='icon'>
-              <FaChalkboardTeacher className="mr-2" />
+              <FaChalkboardTeacher className="" />
             </div>
             <span>Professores</span>
           </a>
           <a href="/admissions" className="quick-link">
             <div className='icon'>
-              <FaGraduationCap className="mr-2" />
+              <FaGraduationCap className="" />
             </div>
             <span>Admissões</span>
           </a>
           <a href="/faculties" className="quick-link">
             <div className='icon'>
-              <FaUniversity className="mr-2" />
+              <FaUniversity className="" />
             </div>
             <span>Faculdades</span>
           </a>
           <a href="/about" className="quick-link">
             <div className='icon'>
-              <FaInfoCircle className="mr-2" />
+              <FaInfoCircle className="" />
             </div>
             <span>Sobre Nós</span>
           </a>
           <a href="/contact" className="quick-link">
             <div className='icon'>
-              <FaPhoneAlt className="mr-2" />
+              <FaPhoneAlt className="" />
             </div>
             <span>Contato</span>
           </a>

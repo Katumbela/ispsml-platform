@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 
 export function AboutTheSchoolComponents() {
 	const { t } = useTranslation();
-	
+
 	const settings = {
 		dots: true,
 		speed: 500,
@@ -30,11 +30,11 @@ export function AboutTheSchoolComponents() {
 				<p className="text-gray-500">{t('aboutTheSchool.description')}</p>
 			</div>
 			<br />
-			<div className="h-[400px] relative bg-primary-footer">
-				<div className="relative w-3/4 pt-[2.5rem] ps-[7.5vw]">
+			<div className="h-[450px] containers 2xl:h-[700px] relative bg-primary-footer">
+				<div className="relative w-3/4 2xl:w-3/4 pt-[2.5rem]  ]">
 					<Slider {...settings}>
 						{imageList.map((item, index) => (
-							<div className=" h-[460px] " key={index}>
+							<div className=" h-[75vh] 2xl:h-[75vh] " key={index}>
 								{/* <h3 className="mb-2 text-xl font-semibold text-center text-white">{item.title}</h3> */}
 								{/* <div className="relative w-20 h-20"> */}
 								<Image

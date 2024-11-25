@@ -10,7 +10,7 @@ export default function Footer() {
         <footer className="pt-20 text-white bg-[#212121]">
             <div className="grid grid-cols-1 gap-8 mx-auto containers md:grid-cols-4">
                 <div>
-                    <h3 className="mb-4 text-xl font-bold">{t('footer.contact')}</h3>
+                    <h3 className="mb-4 text-xl font-semibold">{t('footer.contact')}</h3>
                     <p>{t('footer.phone1')}</p>
                     <p>{t('footer.phone2')}</p>
                     <p>{t('footer.email')}</p>
@@ -28,7 +28,7 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <h3 className="mb-4 text-xl font-bold">{t('footer.usefulLinks')}</h3>
+                    <h3 className="mb-4 text-xl font-semibold">{t('footer.usefulLinks')}</h3>
                     <ul>
                         <li>
                             <a href="/my-portal" className="hover:underline">
@@ -58,7 +58,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h3 className="mb-4 text-xl font-bold">{t('footer.researchInnovation')}</h3>
+                    <h3 className="mb-4 text-xl font-semibold">{t('footer.researchInnovation')}</h3>
                     <ul>
                         <li>
                             <a href="/research-services" className="hover:underline">
@@ -93,7 +93,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div>
-                    <h3 className="mb-4 text-xl font-bold">{t('footer.calendar')}</h3>
+                    <h3 className="mb-4 text-xl font-semibold">{t('footer.calendar')}</h3>
                     <button className="w-full py-3 text-sm transition-all bg-primary hover:bg-primary-dark">
                         {t('footer.viewCalendar')}
                     </button>

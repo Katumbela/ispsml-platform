@@ -48,7 +48,7 @@ export default function CustomKnowMore() {
         return 'Cursos de Licenciatura';
       case 'professional':
         return 'Cursos Profissionais';
-      case 'master':
+      case 'masters':
         return 'Cursos de Mestrado';
       case 'preparatory':
         return 'Cursos Preparatórios';
@@ -63,10 +63,10 @@ export default function CustomKnowMore() {
         return images.backgrounds.bg_school_3.src;
       case 'professional':
         return images.backgrounds.bg_students_hands_up.src;
-      case 'master':
-        return images.backgrounds.bg_ciencia_estudo_2.src;
+      case 'masters':
+        return images.backgrounds.bg_master_2.src;
       case 'preparatory':
-        return images.backgrounds.bg_vertical_education_2.src;
+        return images.backgrounds.bg_prepa_tec.src;
       default:
         return images.backgrounds.bg_research_2.src;
     }
@@ -94,7 +94,7 @@ export default function CustomKnowMore() {
             </button>
           </div>
         );
-      case 'master':
+      case 'masters':
         return (
           <p className="max-w-3xl text-lg">
             Os cursos de mestrado são destinados a aprofundar o conhecimento em uma área específica,
@@ -206,7 +206,15 @@ export default function CustomKnowMore() {
       <br />
       <br />
       <section className="containers">
-        <h2 className="text-4xl font-semibold">Comece a Transformar o Seu Futuro</h2>
+        <h2 className="text-4xl font-semibold">
+           {
+            level === 'undergraduate' ?
+        " Comece a Transformar o Seu Futuro" :
+        level === 'professional' ? "Eleve sua Carreira com Cursos Profissionais" :
+        level === 'masters' ? "Aprofunde o Seu Conhecimento com Nossos Mestrados" :
+        level === 'preparatory' ? "Prepare-se para o Sucesso com Nossos Cursos Preparatórios" : ""
+           }
+            </h2>
         <p className="my-4 text-gray-600 uppercase">Descubra a Nossa Oferta Educativa para {title}</p>
         <p className="text-gray-500 my-7">
           No ISPSML construímos um futuro mais humano, inovador e centrado no bem-estar

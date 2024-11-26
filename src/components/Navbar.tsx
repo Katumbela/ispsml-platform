@@ -65,7 +65,7 @@ const Navbar = () => {
 
 				<div className="flex">
 					<div
-						onClick={() => (window.location.href = `/${currentLang}${routes.HOME_ROUTE}`)}
+						onClick={() => (window.location.href = `${routes.HOME_ROUTE}`)}
 						className="flex items-center text-2xl cursor-pointer me-12"
 					>
 						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />

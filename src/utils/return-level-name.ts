@@ -6,6 +6,7 @@ export function GetLevelDescription(
     | "professional"
     | "master"
     | "pos-graduation"
+    | "preparatory"
 ): string {
   switch (level) {
     case "bacharel":
@@ -18,6 +19,8 @@ export function GetLevelDescription(
       return "Mestrado";
     case "pos-graduation":
       return "Pós-Graduação";
+    case "preparatory":
+      return "Preparatório";
     default:
       return "Licenciatura";
   }

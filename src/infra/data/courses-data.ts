@@ -1,3 +1,4 @@
+import { images } from "@/assets";
 import type { ICourse } from "../interfaces/course.interface";
 
 export const coursesData: {
@@ -1330,7 +1331,7 @@ export const coursesData: {
     ],
   },
   masters: {
-    department_cover: "https://www.example.com/masters-department-cover.jpg",
+    department_cover: images.backgrounds.bg_master.src,
     courses: [
       {
         course: "Mestrado em Engenharia de Software",
@@ -1350,7 +1351,7 @@ export const coursesData: {
           morning: true,
           evening: true,
         },
-        course_cover: "https://www.realimage.com/mestrado-engenharia-software-cover.jpg",
+        course_cover: "https://miro.medium.com/v2/resize:fit:1400/0*aTDfdlZWl2eiL58-",
         years: [
           {
             year: 1,
@@ -1398,11 +1399,77 @@ export const coursesData: {
           },
         ],
       },
+      {
+        course: "Mestrado em Inteligência Artificial",
+        duration: 2,
+        level: "master",
+        short_detail: "Formação avançada em inteligência artificial",
+        slug: "mestrado-inteligencia-artificial",
+        long_description:
+          "O curso de Mestrado em Inteligência Artificial oferece uma formação especializada em técnicas e aplicações de IA, preparando os alunos para atuar em pesquisa e desenvolvimento de soluções inovadoras.",
+        benefits: [
+          "Desenvolvimento de habilidades avançadas em IA.",
+          "Preparação para pesquisa e desenvolvimento em IA.",
+          "Oportunidades de inovação tecnológica.",
+        ],
+        shift: {
+          afternoon: true,
+          morning: true,
+          evening: true,
+        },
+        course_cover: "https://img-c.udemycdn.com/course/480x270/950390_270f_3.jpg",
+        years: [
+          {
+            year: 1,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Fundamentos de IA", workload: 60 },
+                  { name: "Aprendizado de Máquina", workload: 60 },
+                  { name: "Processamento de Linguagem Natural", workload: 45 },
+                  { name: "Visão Computacional", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Redes Neurais", workload: 60 },
+                  { name: "Robótica", workload: 60 },
+                  { name: "Sistemas Inteligentes", workload: 45 },
+                  { name: "Ética em IA", workload: 45 },
+                ],
+              },
+            ],
+          },
+          {
+            year: 2,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Tópicos Avançados em IA", workload: 60 },
+                  { name: "Pesquisa em IA", workload: 60 },
+                  { name: "Inovação em IA", workload: 45 },
+                  { name: "Empreendedorismo em IA", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Dissertação de Mestrado I", workload: 60 },
+                  { name: "Dissertação de Mestrado II", workload: 60 },
+                ],
+              },
+            ],
+          },
+        ],
+      },
       // ...additional master courses...
     ],
   },
   professional: {
-    department_cover: "https://www.example.com/professional-department-cover.jpg",
+    department_cover: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
     courses: [
       {
         course: "Curso Profissional de Desenvolvimento Web",
@@ -1422,7 +1489,7 @@ export const coursesData: {
           morning: true,
           evening: true,
         },
-        course_cover: "https://www.realimage.com/curso-profissional-desenvolvimento-web-cover.jpg",
+        course_cover: "https://t3.ftcdn.net/jpg/03/48/39/74/360_F_348397404_wXuf22GUPNAh67htBZZnaDSx3Bj92yep.jpg",
         years: [
           {
             year: 1,
@@ -1449,14 +1516,59 @@ export const coursesData: {
           },
         ],
       },
+      {
+        course: "Curso Profissional de Marketing Digital",
+        duration: 1,
+        level: "professional",
+        short_detail: "Formação prática em marketing digital",
+        slug: "curso-profissional-marketing-digital",
+        long_description:
+          "O curso profissional de Marketing Digital oferece uma formação prática e intensiva em estratégias e ferramentas de marketing digital, preparando os alunos para atuar em campanhas online.",
+        benefits: [
+          "Desenvolvimento de habilidades práticas em marketing digital.",
+          "Preparação para o mercado de trabalho em marketing.",
+          "Oportunidades de estágio em empresas de marketing.",
+        ],
+        shift: {
+          afternoon: true,
+          morning: true,
+          evening: true,
+        },
+        course_cover: "https://ultimatum.com.br/wp-content/uploads/2024/03/marketing-digital.jpeg",
+        years: [
+          {
+            year: 1,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Fundamentos de Marketing Digital", workload: 60 },
+                  { name: "SEO e SEM", workload: 60 },
+                  { name: "Redes Sociais", workload: 45 },
+                  { name: "Análise de Dados", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Publicidade Online", workload: 60 },
+                  { name: "E-mail Marketing", workload: 60 },
+                  { name: "Marketing de Conteúdo", workload: 45 },
+                  { name: "Projeto Final", workload: 45 },
+                ],
+              },
+            ],
+          },
+        ],
+      },
       // ...additional professional courses...
     ],
   },
   preparatory: {
-    department_cover: "https://www.example.com/preparatory-department-cover.jpg",
+    department_cover: "https://www.polandstudy.com/_next/image?url=%2Fimages%2Fbackgrounds%2Fdetails.webp&w=3840&q=75",
     courses: [
       {
-        course: "Curso Preparatório para ENEM",
+        course: " Preparatório para Engenharias",
         duration: 1,
         level: "preparatory",
         short_detail: "Preparação intensiva para o ENEM",
@@ -1473,7 +1585,50 @@ export const coursesData: {
           morning: true,
           evening: true,
         },
-        course_cover: "https://www.realimage.com/curso-preparatorio-enem-cover.jpg",
+        course_cover: "https://mynice.org/wp-content/uploads/2021/05/board-4727472_1920.jpg",
+        years: [
+          {
+            year: 1,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Matemática", workload: 60 },
+                  { name: "Língua Portuguesa", workload: 60 },
+                  { name: "Ciências Humanas", workload: 45 },
+                  { name: "Ciências da Natureza", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Redação", workload: 60 },
+                  { name: "Simulados", workload: 60 },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        course: "Curso Preparatório para Vestibulares",
+        duration: 1,
+        level: "preparatory",
+        short_detail: "Preparação intensiva para vestibulares",
+        slug: "curso-preparatorio-vestibulares",
+        long_description:
+          "O curso preparatório para vestibulares oferece uma formação intensiva e focada nas disciplinas cobradas nos principais vestibulares do país, preparando os alunos para obterem um bom desempenho.",
+        benefits: [
+          "Preparação completa para vestibulares.",
+          "Aulas com professores experientes.",
+          "Material didático atualizado.",
+        ],
+        shift: {
+          afternoon: true,
+          morning: true,
+          evening: true,
+        },
+        course_cover: "https://ambitio.club/blog/wp-content/uploads/2024/06/gmat-for-non-maths-background-3-1024x536.jpg",
         years: [
           {
             year: 1,

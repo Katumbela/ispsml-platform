@@ -36,8 +36,11 @@ import bg_vertical_education from "./bgs/bg-vertical-education.avif";
 import bg_vertical_education_1 from "./bgs/bg_vertical_education_1.jpg";
 import bg_vertical_education_2 from "./bgs/bg_vertical_education_2.avif";
 import bg_night_2 from "./bgs/bg-night-2.webp";
+import bg_master from "./bgs/master_bg.jpg";
+import bg_master_2 from "./bgs/master_bg_2.jpg";
 import bg_school_1 from "./bgs/school-bg-1.jpeg";
 import bg_school_4 from "./bgs/bg_school_4.jpg";
+import bg_prepa_tec from "./bgs/prepa-bg.jpg";
 import bg_school_3 from "./bgs/bg_school_3.jpg";
 import bg_student_11 from "./bgs/students_1.jpg";
 import bg_student_22 from "./bgs/students_2.jpg";
@@ -75,6 +78,9 @@ export const backgrounds = {
   bg_sci_method,
   bg_sci_method_2,
   bg_night_2,
+  bg_prepa_tec,
+  bg_master_2,
+  bg_master,
   bg_vertical_education,
   bg_support,
   bg_students_hands_up,

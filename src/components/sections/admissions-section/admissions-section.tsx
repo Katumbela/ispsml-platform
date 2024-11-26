@@ -59,7 +59,7 @@ const Paragraph = ({ children, index, title, onVisible, isActive }: IParagraphPr
 			{/* Título e Parágrafo */}
 			<div>
 				<h3 className="mb-2 text-3xl font-semibold 2xl:text-4xl">{title}</h3>
-				<p>{children}</p>
+				<div>{children}</div>
 			</div>
 		</motion.div>
 	);
@@ -122,7 +122,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Bolsas de Estudo <FaAngleRight className="ml-1" /></a>
 					</div>
 					<div className="mt-2">
-						<a href={routes.KNOW_MORE_ROUTE+"/master"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE+"/masters"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
@@ -138,7 +138,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Certificações <FaAngleRight className="ml-1" /></a>
 					</div>
 					<div className="mt-2">
-						<a href={routes.KNOW_MORE_ROUTE+"/prepa-tec"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE+"/preparatory"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)

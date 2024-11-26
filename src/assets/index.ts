@@ -58,8 +58,20 @@ import geoscience from "./departs-bgs/geoscience.jpg";
 import studying_group from "./departs-bgs/studying-group.avif";
 import studying_group_2 from "./departs-bgs/studying-group.avif";
 
+
+// importando os scgs
+
+import not_found_1 from './svgs/error-page-svgrepo-com.svg'
+import not_found_2 from './svgs/not-found-error-alert-svgrepo-com.svg'
+
+
 export const logos = {
   logo1,
+};
+
+export const svgs = {
+  not_found_1,
+  not_found_2
 };
 
 export const teachers = {
@@ -126,6 +138,7 @@ export const images = {
   teachers,
   backgrounds,
   departImages,
-  newsImages
+  newsImages,
+  svgs
 };
 

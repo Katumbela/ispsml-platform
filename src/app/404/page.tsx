@@ -6,7 +6,7 @@ export default function Custom404() {
 	return (
 		<div className="grid h-screen" style={{ textAlign: 'center', padding: '50px' }}>
 			<div className="my-auto">
-				<center>
+				<center> 
 					<Image alt="" src={images.logos.logo1} className="h-[6em] w-[7em]" />
 				</center>
 				<br />

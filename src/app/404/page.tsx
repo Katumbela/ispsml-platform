@@ -13,7 +13,7 @@ export default function Custom404() {
 				<p className="mt-4 font-light">Desculpe, a página que você está procurando não existe.</p>
 				<br />
 				<br />
-				<a className="px-5 py-4 text-white transition-opacity hover:bg-primary/90 bg-primary" href="#">
+				<a className="px-5 py-4 text-white transition-opacity hover:bg-primary/90 bg-primary" href="/">
 					Página inicial
 				</a>
 				<br />

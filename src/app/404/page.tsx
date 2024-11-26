@@ -1,5 +1,6 @@
 import { images } from '@/assets';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Custom404() {
 	return (
@@ -13,9 +14,9 @@ export default function Custom404() {
 				<p className="mt-4 font-light">Desculpe, a página que você está procurando não existe.</p>
 				<br />
 				<br />
-				<a className="px-5 py-4 text-white transition-opacity hover:bg-primary/90 bg-primary" href="/">
+				<Link className="px-5 py-4 text-white transition-opacity hover:bg-primary/90 bg-primary" href="/">
 					Página inicial
-				</a>
+				</Link>
 				<br />
 				<br />
 				{/* <center>
@@ -25,4 +26,3 @@ export default function Custom404() {
 		</div>
 	);
 }
-

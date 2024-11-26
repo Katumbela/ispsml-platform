@@ -5,7 +5,7 @@ export function ScienceStudyCard() {
 	return (
 		<section className="pt-16 pb-1 ">
 			<div className="mb-2 containers">
-				<h2 className="text-3xl font-extrabold">Investigação</h2>
+				<h2 className="text-3xl font-bold">Investigação</h2>
 			</div>
 			<br />
 			<div className="flex my-1 containers bg-primary-footer">
@@ -19,7 +19,7 @@ export function ScienceStudyCard() {
 				</div>
 				<div className="grid text-white containers">
 					<div className="px-10 my-auto">
-						<h1 className="mb-2 text-2xl font-extrabold">A ciência busca criar impacto</h1>
+						<h1 className="mb-2 text-2xl font-bold">A ciência busca criar impacto</h1>
 						Buscamos as soluções para as grandes problemáticas do mundo. Assim nasce Science in Action.
 						Conheça a área de pesquisa e seu novo enfoque.
 					</div>

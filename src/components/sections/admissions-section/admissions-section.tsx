@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { images } from '@/assets';
-import { FaLink, FaAngleRight } from 'react-icons/fa'; // Importar ícones
+import {  FaAngleRight } from 'react-icons/fa'; // Importar ícones
 import { routes } from '@/infra/routes.vars';
 
 interface IParagraphProps {
@@ -83,14 +83,9 @@ const FixedImageScrollWithBrutalEffect = () => {
 			title: 'Licenciatura',
 			content: (
 				<>
-					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção.
-					<div className="flex flex-col gap-1 mt-4 text-sm">
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Currículo <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Inscrição <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Bolsas de Estudo <FaAngleRight className="ml-1" /></a>
-					</div>
-					<div className="mt-2">
-						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
+					<div className="mt-6">
+						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
@@ -99,46 +94,21 @@ const FixedImageScrollWithBrutalEffect = () => {
 			title: 'Formação Profissional',
 			content: (
 				<>
-					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais
-					<div className="flex flex-col gap-1 mt-4 text-sm">
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Cursos Disponíveis <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Inscrição <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Certificações <FaAngleRight className="ml-1" /></a>
-					</div>
-					<div className="mt-2">
-						<a href={routes.KNOW_MORE_ROUTE+"/professional"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais. Nossos programas de formação profissional são projetados para fornecer as habilidades e conhecimentos necessários para se destacar no mercado de trabalho. Oferecemos uma variedade de cursos e certificações que atendem às demandas das indústrias modernas.
+					<div className="mt-6">
+						<a href={routes.KNOW_MORE_ROUTE+"/professional"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
 		},
-		{
-			title: 'Mestrados',
-			content: (
-				<>
-					Seus professores irão continuamente e deliberadamente desafiá-lo a formular e resolver problemas. Não mais disciplinas como você as conhecia, com conhecimentos não necessariamente conectados entre si.
-					<div className="flex flex-col gap-1 mt-4 text-sm">
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Programas de Mestrado <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Inscrição <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Bolsas de Estudo <FaAngleRight className="ml-1" /></a>
-					</div>
-					<div className="mt-2">
-						<a href={routes.KNOW_MORE_ROUTE+"/masters"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
-					</div>
-				</>
-			)
-		},
+		 
 		{
 			title: 'Preparatórios',
 			content: (
 				<>
-					Mestres e Educação Continuada, Programas de Pós-Graduação, Nossos programas de educação continuada são projetados para prepará-lo para os desafios do mercado atual.
-					<div className="flex flex-col gap-1 mt-4 text-sm">
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Cursos Preparatórios <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Inscrição <FaAngleRight className="ml-1" /></a>
-						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Certificações <FaAngleRight className="ml-1" /></a>
-					</div>
-					<div className="mt-2">
-						<a href={routes.KNOW_MORE_ROUTE+"/preparatory"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+					Mestres e Educação Continuada, Programas de Pós-Graduação, Nossos programas de educação continuada são projetados para prepará-lo para os desafios do mercado atual. Oferecemos cursos preparatórios que ajudam a desenvolver habilidades avançadas e conhecimentos especializados, essenciais para o sucesso em diversas áreas profissionais.
+					<div className="mt-6">
+						<a href={routes.KNOW_MORE_ROUTE+"/preparatory"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)

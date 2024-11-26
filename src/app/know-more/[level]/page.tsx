@@ -8,14 +8,15 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { FaAngleRight, FaArrowRight, FaCheck, FaChessBoard, FaMedal, FaUserGraduate } from 'react-icons/fa6';
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import ConferenceComponent from '@/app/csa-department/components/conference-component';
 import Footer from '@/components/Footer';
 import { coursesData } from '@/infra/data/courses-data';
 import { ICourse } from '@/infra/interfaces/course.interface';
+import ConferenceComponent from '@/app/organic-unit/components/conference-component';
+import { routes } from '@/infra/routes.vars';
 
-const CourseList = ({ courses }:{courses: ICourse[]}) => (
+const CourseList = ({ courses }: { courses: { course: ICourse, department: string }[] }) => (
   <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-    {courses.map((course, index) => (
+    {courses.map(({ course, department }, index) => (
       <div key={index} className="relative cursor-pointer card h-[19rem] group">
         <Image
           alt=""
@@ -27,7 +28,7 @@ const CourseList = ({ courses }:{courses: ICourse[]}) => (
         <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-30 group-hover:bg-opacity-60">
           <h3 className="text-2xl font-semibold">{course.course}</h3>
           <a
-            href={`/${course.slug}`}
+            href={`${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`}
             className="p-1.5 mt-3 -mb-4 transition-opacity duration-300 border-2 opacity-0 group-hover:opacity-100"
           >
             <FaArrowRight className="text-3xl" />
@@ -76,10 +77,16 @@ export default function CustomKnowMore() {
     switch (level) {
       case 'undergraduate':
         return (
+          <div>
           <p className="max-w-3xl text-lg">
             Os cursos de graduação oferecem uma base sólida em diversas áreas do conhecimento, preparando os
             alunos para o mercado de trabalho e para a vida acadêmica.
           </p>
+          <button onClick={() => window.location.href = "#courses"} className="px-4 py-2 text-white bg-red-500 cta-button">
+              <span className="my-auto">Ver cursos</span>
+              <FaAngleRight className="my-auto" />
+            </button>
+          </div>
         );
       case 'professional':
         return (
@@ -125,7 +132,11 @@ export default function CustomKnowMore() {
   const bgImage = getBackgroundByLevel(level as string);
   const content = getContentByLevel(level as string);
 
-  const courses = coursesData[level as string]?.courses || [];
+  const courses = level === 'undergraduate'
+    ? Object.entries(coursesData)
+        .filter(([key]) => !['masters', 'preparatory', 'professional'].includes(key))
+        .flatMap(([department, data]) => data.courses.map(course => ({ course, department: department as string })))
+    : coursesData[level as string]?.courses.map(course => ({ course, department: level as string })) || [];
 
   return (
     <div>
@@ -225,9 +236,11 @@ export default function CustomKnowMore() {
         <br />
         <br />
         <br />
-
+<section id="courses">
+  
         {/* Lista de cursos */}
         <CourseList courses={courses} />
+</section>
       </section>
       <br />
       <br />

@@ -12,6 +12,7 @@ import { FaLocationCrosshairs, FaRegClock } from 'react-icons/fa6';
 import { ICourse } from '@/infra/interfaces/course.interface';
 import { FaPencilRuler } from 'react-icons/fa';
 import { GetLevelDescription } from '@/utils/return-level-name';
+import { routes } from '@/infra/routes.vars';
  
 
 interface HeroCourseDetailProps {
@@ -19,10 +20,12 @@ interface HeroCourseDetailProps {
   bg_image?: string | StaticImageData
   height?: string
   course?: ICourse
+  department?: string
+  departmentName?: string
 }
 
 
-export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailProps) {
+export function HeroCourseDetail({ departmentName, department, bg_image, title, course }: HeroCourseDetailProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('top');
 
@@ -69,7 +72,10 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
             <div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
             <div className="relative z-10 my-auto text-start">
               <div className="py-8 bg-gradient-to-t from-black ">
-                <div className="containers">
+                <div className="flex flex-col containers">
+                  <p className='pb-2 mb-3 border-b'>
+    <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE+"/"+department}>{departmentName}</a> / {course?.course}
+                  </p>
                   <span>{GetLevelDescription(course?.level)}</span>
                   <motion.h1
                     className="text-2xl font-semibold mb-[10vh] md:text-4xl"
@@ -83,19 +89,19 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
                   <br />
 
                   {/* div onde tem os icones da div */}
-                  <div className="grid w-auto text-center grid-cols-3 p-2 max-w-[60vw] mx-auto place-content-center bg-primary">
-                    <div className='py-3'>
-                    <div className="flex justify-center gap-5 text-xl justify">
+                  <div className="grid px-6 gap-6 w-auto text-center grid-cols-3 p-2 max-w-[60vw] mx-auto place-content-center bg-primary">
+                    <div className='py-3 my-auto'>
+                      <div className="flex justify-center gap-5 text-xl justify">
                       
                           <FaLocationCrosshairs className='my-auto text-3xl' />
                          
-                        <div className='flex flex-col text-start'>
+                        <div className='flex flex-col my-auto text-start'>
                           <p>Ano Letivo</p>
                           <span className="text-sm">2024 - 2025</span>
                         </div>
                       </div>
                     </div>
-                    <div className='py-3 border-x-2'>
+                    <div className='px-10 py-5 border-x-2'>
                       <div className="flex justify-center gap-5 text-xl justify">
                        
                           <FaRegClock className='my-auto text-3xl' />
@@ -105,18 +111,16 @@ export function HeroCourseDetail({ bg_image, title, course }: HeroCourseDetailPr
                           <span className="text-sm">{course?.duration} anos</span>
                         </div>
                       </div>
-                    </div>
-                    <div>
-                    <div className="flex justify-center gap-5 py-3 text-xl justify">
+                    </div> 
+                    <div className="flex justify-center gap-5 py-3 my-auto text-xl justify">
                         
                           <FaPencilRuler className='my-auto text-3xl' />
                          
                   
-                        <div className='flex flex-col text-start'>
+                        <div className='flex flex-col my-auto text-start'>
                           <p>Modalidade</p>
                           <span className="text-sm">Presencial</span>
                         </div>
-                      </div>
                     </div>
                   </div>
                   <br /> 

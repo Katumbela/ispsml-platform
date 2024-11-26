@@ -9,9 +9,7 @@ import Footer from '@/components/Footer';
 // import { title } from 'process';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { newsData } from '@/infra/data/newsData';
-import NewsCard from '@/components/news-card/news-card';
-// import Image from 'next/image';
+
 interface IOurInst {
 	title: string;
 	link: string;
@@ -166,7 +164,7 @@ const About = () => {
 					))}
 				</div>
 			</section>
-			<div className="cards-sections-about">
+			<div className="mb-1 cards-sections-about">
 				<div className="flex gap-1">
 					<HoverCard
 						bgColor="bg-primary"
@@ -182,7 +180,7 @@ const About = () => {
 								diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
 							</p>
 							<br />
-							<a href="#" className="font-semibold underline">
+							<a href="#" className="font-semibold uppercase">
 								Saber mais
 							</a>
 						</div>
@@ -207,34 +205,7 @@ const About = () => {
 					</HoverCard>
 				</div>
 			</div>
-
-			<br />
-			<br />
-			<br />
-			<section className="containers">
-				<h2 className="text-3xl font-bold">Notícias</h2>
-				<br />
-				<br />
-				<div className="grid grid-cols-5 2xl:grid-cols-6">
-					{newsData
-						.slice(0, 5)
-						.map((news, index) => (
-							<NewsCard
-								key={index}
-								title={news.title}
-								shortDescription={news.shortDescription}
-								postDate={news.postDate}
-								poster={news.poster}
-								content={news.content}
-								link={news.link}
-								slug={news.slug}
-								image={news.image}
-							/>
-						))}
-				</div>
-			</section>
-			<br />
-			<br />
+ 
 			<Footer />
 		</div>
 	);

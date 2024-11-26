@@ -91,7 +91,7 @@ export default function ViewNewsPage() {
                 <br />
 					<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
 						{newsData
-							.slice(0, 6)
+							.slice(0, 3)
 							.map((news, index) => (
 								<NewsCard
 									key={index}

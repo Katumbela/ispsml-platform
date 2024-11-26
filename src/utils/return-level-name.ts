@@ -14,13 +14,13 @@ export function GetLevelDescription(
     case "graduation":
       return "Licenciatura";
     case "professional":
-      return "Profissional";
+      return "Curso Profissional";
     case "master":
       return "Mestrado";
     case "pos-graduation":
       return "Pós-Graduação";
     case "preparatory":
-      return "Preparatório";
+      return "Curso Preparatório";
     default:
       return "Licenciatura";
   }

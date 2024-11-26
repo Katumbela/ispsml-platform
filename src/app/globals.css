@@ -135,16 +135,32 @@ footer div ul li, footer div p {
 .cta-button svg {
   transform: translateX(100);
   transition: .2s;
-
 }
+
 
 .cta-button:hover svg {
   transform: translateX(0);
   transition: .3s;
 }
 
+.title {
+  @apply text-3xl font-bold 2xl:text-4xl;
+}
+
 .navbar {
   z-index: 10000 !important;
+}
+
+.card-depa {
+  background: linear-gradient(180deg, #011a4de7, #011a4de7), url(../assets/logos/logo.png) no-repeat left bottom;
+  background-size: 60%;
+  transition: .5s all;
+}
+
+.card-depa:hover {
+  background: linear-gradient(180deg, #012d86ee, #012d86ee), url(../assets/logos/logo.png) no-repeat left bottom;
+  background-size: 60%;
+  transition: .5s all;
 }
 
 @keyframes slide-down {

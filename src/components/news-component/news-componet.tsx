@@ -48,9 +48,9 @@ export function NewsComponents() {
 	return (
 		<section className="pt-20 pb-10">
 			<div className="containers">
-				<h2 className="mb-8 text-3xl font-extrabold">{t('global.newsTitle')}</h2>
+				<h2 className="mb-8 text-3xl font-bold">{t('global.newsTitle')}</h2>
 			</div>
-			<div className="flex gap-2 containers">
+			<div className="flex gap-2 px-1 mx-auto ">
 				<div className="w-1/2">
 					{newsData.filter((news) => news.sponsor).map((news, index) => (
 						<div
@@ -67,7 +67,7 @@ export function NewsComponents() {
 								Em Destaque
 							</div>
 							<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
-								<h2 className="text-2xl font-extrabold">{news.title}</h2>
+								<h2 className="text-2xl font-bold">{news.title}</h2>
 								<p className="text-md" dangerouslySetInnerHTML={{
 							__html: AbreviateString.abbreviate(`${news.content}`, 170)
 						}} />

@@ -39,8 +39,8 @@ const ConferenceComponent = () => {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-700">EVENTOS ANTERIORES</h3>
           {['OUT', 'AGO', 'JUL'].map((month, index) => (
-            <div key={index} className="flex items-start p-3 transition-all bg-gray-100 border-4 border-gray-100 shadow-sm hover:border-primary">
-              <div className="flex items-center justify-center flex-shrink-0 w-16 h-16 text-lg font-semibold text-gray-700 bg-gray-300">
+            <div key={index} className="flex items-start p-3 transition-all bg-gray-100 border-4 border-gray-100 shadow-sm 2xl:p-5 hover:border-primary">
+              <div className="flex items-center justify-center flex-shrink-0 w-20 h-20 text-lg font-semibold text-gray-700 bg-gray-300">
                 {month}
               </div>
               <div className="flex-1 ml-4">

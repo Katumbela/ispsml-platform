@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { images } from '@/assets';
-import { FaAngleDown } from 'react-icons/fa';
+import { FaAngleDown, FaAngleRight } from 'react-icons/fa';
 import cn from 'classnames'; // npm install classnames
+import { routes } from '@/infra/routes.vars';
 // import { routes } from '@/infra/routes.vars';
 
 interface Card {
@@ -18,21 +19,20 @@ export function StudyOffer() {
 	const cards: Card[] = [
 		{
 			title: 'Inscrições e Bolsas de Estudos',
-			description: 'Informações sobre como se inscrever e obter bolsas de estudo.',
+			description: 'Informações detalhadas sobre como se inscrever, os requisitos necessários, prazos importantes e como obter bolsas de estudo para ajudar a financiar sua educação.',
 			image: images.departImages.eng_tech.src,
 			// link: routes.DET_ROUTER
 			link: '#'
 		},
 		{
 			title: 'Unidades Orgânicas',
-			description: 'Detalhes sobre as diferentes unidades orgânicas da instituição.',
+			description: 'Detalhes abrangentes sobre as diferentes unidades orgânicas da instituição, incluindo suas funções, departamentos, cursos oferecidos e oportunidades de pesquisa.',
 			image: images.departImages.ciencias_sociais.src,
-			// link: routes.CSA_ROUTE
-			link: '#'
+			link: routes.ORGANIC_UNIT_ROUTE
 		},
 		{
 			title: 'Responsabilidade Social',
-			description: 'Iniciativas e projetos de responsabilidade social.',
+			description: 'Iniciativas e projetos de responsabilidade social que a instituição está envolvida, destacando o impacto positivo na comunidade e as oportunidades de participação para os alunos.',
 			image: images.departImages.geoscience.src,
 			link: '#'
 			// link: routes.GEOSCIENCE_ROUTE
@@ -42,7 +42,7 @@ export function StudyOffer() {
 	const handleCardClick = (index: number) => {
 		setSelectedCard(selectedCard === index ? null : index);
 	};
-
+  
 	return (
 		<section className="-mt-1 bg-gray-100 ">
 			<div className="mx-auto text-center ">
@@ -60,7 +60,7 @@ export function StudyOffer() {
 							<div className="absolute inset-0 opacity-70 bg-primary" />
 							<div className="relative z-10 grid items-center h-full text-white place-content-center">
 								<h3 className="my-auto text-2xl font-medium">{card.title}</h3>
-								<div
+								<div 
 									className={cn(
 										'absolute left-0 right-0 flex justify-center w-full text-2xl text-center bottom-4 py-4',
 										{ 'bg-primary-dark/70z': index === 0 }
@@ -89,11 +89,13 @@ export function StudyOffer() {
 						>
 							<h3 className="text-xl font-semibold">{cards[selectedCard].title}</h3>
 							<p>{cards[selectedCard].description}</p>
+							<br />
 							<a
 								href={cards[selectedCard].link}
-								className="mt-2 text-white underline transition-all hover:text-white/70"
+								className="flex gap-2 mt-6 font-bold text-white uppercase transition-all hover:text-white/70"
 							>
-								Saber mais
+								<span className="my-auto">Saber mais</span>
+								<FaAngleRight className='my-auto text-xl'/>
 							</a>
 						</motion.div>
 					)}
@@ -102,3 +104,4 @@ export function StudyOffer() {
 		</section>
 	);
 }
+

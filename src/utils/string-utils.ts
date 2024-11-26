@@ -101,4 +101,9 @@ export class StringUtils {
 			.replace(/[^a-z0-9-]/g, (char) => specialCharactersMap[char] || '-')
 			.replace(/--+/g, '-') // Remove hífens duplicados
 	}
+
+	static getFirstLetterOfEachWord(text: string) {
+		if (!text || text.length < 1) return
+		return text.split(' ').map(word => word.charAt(0)).join('')
+	}
 }

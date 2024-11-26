@@ -30,10 +30,10 @@ const YearAccordion: React.FC<YearAccordionProps> = ({ year, isOpen, toggleYear 
           <>
             {year.semesters.map(semester => (
               <div className='mb-10' key={semester.semester}>
-                <div className="containers py-2 text-md bg-slate-200/50">   {semester.semester}º Semestre</div>
+                <div className="py-2 containers text-md bg-slate-200/50">   {semester.semester}º Semestre</div>
                 <table className='table w-full table-fixed text-start text-balance'>
                   <thead>
-                    <tr className='containers py-6 font-medium bg-slate-100/60'>
+                    <tr className='py-6 font-medium containers bg-slate-100/60'>
                       <th className='px-4 py-2 text-start'>Disciplina</th>
                       <th className='px-4 py-2 text-start'>Carga Horária</th>
                     </tr>
@@ -42,7 +42,7 @@ const YearAccordion: React.FC<YearAccordionProps> = ({ year, isOpen, toggleYear 
                     {semester.subjects.map(subject => (
                       <tr key={subject.name} className='text-sm transition-all hover:bg-slate-100'>
                         <td className='px-4 py-1 '>{subject.name}</td>
-                        <td className='px-4 py-1 '>{subject.workload} hours</td>
+                        <td className='px-4 py-1 '>{subject.workload} horas</td>
                       </tr>
                     ))}
                   </tbody>

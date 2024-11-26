@@ -6,15 +6,17 @@ import QuickLinks from '@/components/QuickLinks';
 import Footer from '@/components/Footer';
 import { StudyOffer } from '@/components/sections/study-offer/study-offer';
 import { NewsComponents } from '@/components/news-component/news-componet';
-// import { EducationComponents } from '@/components/education-component/education-componet';
 import { ScienceStudyCard } from '@/components/cards-science-secton/cards-science-section';
 import { AboutTheSchoolComponents } from '@/components/about-the-school-component/about-the-school-componet';
 import FixedImageScrollWithElastic from '@/components/sections/admissions-section/admissions-section';
-// import { AdmissionsSection } from '@/components/sections/admissions-section/admissions-section';
+import ConferenceComponent from './organic-unit/components/conference-component';
 
 export default function Home() {
 	return (
-		<div>
+		<>
+		<head>
+			<title>Instituto Superior Politécnico São Martinho de Lima</title>
+		</head>
 			<Navbar />
 			<div>
 				<Hero />
@@ -36,9 +38,10 @@ export default function Home() {
 				<br />
 				<br />
 				<ScienceStudyCard />
+				<ConferenceComponent />
 				<QuickLinks />
 				<Footer />
 			</div>
-		</div>
+		</>
 	);
 }

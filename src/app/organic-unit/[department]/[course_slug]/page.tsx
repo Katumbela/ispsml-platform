@@ -6,15 +6,14 @@ import { useState } from 'react';
 import YearAccordion from '../../components/YearAccordion';
 import Navbar from '@/components/Navbar';
 import { HeroCourseDetail } from '../../components/hero-course-details';
-import { images } from '@/assets';
 import { ShortDescCourse } from '../../components/short_description_course';
 import Footer from '@/components/Footer';
 import { FaDownload } from 'react-icons/fa6';
 import QuickLinks from '@/components/QuickLinks';
-import Head from 'next/head';
 
 export default function CourseDetailsPage() {
   const { department, course_slug } = useParams();
+	const departmentData = coursesData[department as string];
   const course = typeof department === 'string' ? coursesData[department]?.courses.find(c => c.slug === course_slug) : null;
   const [openYear, setOpenYear] = useState<number | null>(null);
 
@@ -28,13 +27,13 @@ export default function CourseDetailsPage() {
 
   return (
     <>
-      <Head>
+      <head>
         <title>{course.course} | ISPSML</title>
         <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
         <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
-      </Head>
+      </head>
       <Navbar />
-      <HeroCourseDetail course={course} bg_image={images.departImages.ciencias_sociais} title={course.course} />
+      <HeroCourseDetail departmentName={departmentData.name as string} department={department as string} course={course} bg_image={course.course_cover} title={course.course} />
       <ShortDescCourse course={course} />
       <br />
       <br />

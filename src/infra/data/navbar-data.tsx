@@ -176,6 +176,7 @@ export const navigationItems = (t: any): NavigationItem[] => {
       children: [
         { label: 'navbar.more.studentPortal', href: routes.STUDENT_PORTAL_ROUTE },
         { label: 'navbar.more.alumni', href: routes.ALUMNI_ROUTE },
+        { label: 'navbar.more.library', href: "#" },
         { label: 'navbar.more.associations', href: routes.ASSOCIATIONS_ROUTE },
         { label: 'navbar.more.contact', href: routes.CONTACT_ROUTE },
         { label: 'navbar.more.news', href: routes.NEWS_ROUTE },

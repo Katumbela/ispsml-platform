@@ -63,8 +63,8 @@ const About = () => {
 				<div className="containers">
 					{' '}
 					<p className="text-white text-md max-w-[83vw]">
-						At Tecnológico de Monterrey you will develop your professional and human potential through the
-						high academic level, resources and programs of excellence we offer.
+						At ISPSML you will develop your professional and human potential through the high academic
+						level, resources and programs of excellence we offer.
 					</p>
 				</div>
 			</div>
@@ -143,8 +143,8 @@ const About = () => {
 			<div className="containers">
 				<h2 className="text-3xl font-bold">Nossa Instituição</h2>
 				<p className="text-gray-600">
-					The Tecnológico de Monterrey, founded in 1943, is a private, non-profit institution committed to the
-					quality of higher education in the country.
+					The ISPSML, founded in 1943, is a private, non-profit institution committed to the quality of higher
+					education in the country.
 				</p>
 			</div>
 			<br />
@@ -178,8 +178,8 @@ const About = () => {
 						<div className="px-6 text-xl font-semibold text-white containers">
 							NOSSOS PRINCIPIOS, VALORES E VISÃO
 							<p className="text-sm font-light">
-								Conheça a nova abordagem de pesquisa no Tecnológico de Monterrey. Descubra os três
-								institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
+								Conheça a nova abordagem de pesquisa no ISPSML. Descubra os três institutos e os
+								diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
 							</p>
 							<br />
 							<a href="#" className="font-semibold underline">
@@ -196,8 +196,8 @@ const About = () => {
 						<div className="text-xl font-semibold text-white">
 							SAIBA MAIS SOBRE O ISPSML
 							<p className="text-sm font-light">
-								Conheça a nova abordagem de pesquisa no Tecnológico de Monterrey. Descubra os três
-								institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
+								Conheça a nova abordagem de pesquisa no ISPSML. Descubra os três institutos e os
+								diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
 							</p>
 							<br />
 							<a href="#" className="font-semibold underline">

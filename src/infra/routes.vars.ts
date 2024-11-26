@@ -59,7 +59,15 @@ const HOME_ROUTE = "/",
   CONTACT_ROUTE = "/contact",
   NEWS_ROUTE = "/news",
   VIEW_NEWS_ROUTE = NEWS_ROUTE,
-  POSTGRADUATE_PROGRAMS_ROUTE = "/postgraduate-programs";
+  POSTGRADUATE_PROGRAMS_ROUTE = "/postgraduate-programs",
+  DEPARTMENTS = {
+    ENGINEERING: "engineering",
+    GEOSCIENCE: "geoscience", 
+    CSA: "csa",
+    MASTERS: "masters",
+    PROFESSIONAL: "professional",
+    PREPARATORY: "preparatory"
+  };
 
 export const routes = {
   HOME_ROUTE,
@@ -123,5 +131,6 @@ export const routes = {
   ASSOCIATIONS_ROUTE,
   CONTACT_ROUTE,
   NEWS_ROUTE,
-  POSTGRADUATE_PROGRAMS_ROUTE
+  POSTGRADUATE_PROGRAMS_ROUTE,
+  DEPARTMENTS
 };

@@ -52,10 +52,13 @@ const CSADepartment = () => {
 					<p className="pb-1 mb-5 text-white border-b">
 						<a href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / {departmentData.name}{' '}
 					</p>
+					<div className="sticky top-0 w-full bg-primary-footer">
+
 					<h1 className="text-4xl font-bold text-white">
 						{StringUtils.getFirstLetterOfEachWord(`Unidade ${departmentData.name}`)}
 					</h1>
 					<span className="text-white text-md">Unidade de {departmentData.name}</span>
+					</div>
 				</div>
 			</div>
 			{/* <GlobalHero

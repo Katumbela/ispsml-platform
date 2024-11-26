@@ -1329,4 +1329,176 @@ export const coursesData: {
       },
     ],
   },
+  masters: {
+    department_cover: "https://www.example.com/masters-department-cover.jpg",
+    courses: [
+      {
+        course: "Mestrado em Engenharia de Software",
+        duration: 2,
+        level: "master",
+        short_detail: "Formação avançada em engenharia de software",
+        slug: "mestrado-engenharia-software",
+        long_description:
+          "O curso de Mestrado em Engenharia de Software oferece uma formação avançada e especializada em desenvolvimento de software, abordando técnicas modernas e práticas de engenharia.",
+        benefits: [
+          "Desenvolvimento de habilidades avançadas em engenharia de software.",
+          "Preparação para cargos de liderança em projetos de software.",
+          "Oportunidades de pesquisa e inovação tecnológica.",
+        ],
+        shift: {
+          afternoon: true,
+          morning: true,
+          evening: true,
+        },
+        course_cover: "https://www.realimage.com/mestrado-engenharia-software-cover.jpg",
+        years: [
+          {
+            year: 1,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Arquitetura de Software", workload: 60 },
+                  { name: "Engenharia de Requisitos", workload: 60 },
+                  { name: "Gerenciamento de Projetos de Software", workload: 45 },
+                  { name: "Qualidade de Software", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Desenvolvimento Ágil", workload: 60 },
+                  { name: "Teste de Software", workload: 60 },
+                  { name: "Segurança de Software", workload: 45 },
+                  { name: "Manutenção de Software", workload: 45 },
+                ],
+              },
+            ],
+          },
+          {
+            year: 2,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Tópicos Avançados em Engenharia de Software", workload: 60 },
+                  { name: "Pesquisa em Engenharia de Software", workload: 60 },
+                  { name: "Inovação em Software", workload: 45 },
+                  { name: "Empreendedorismo em TI", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Dissertação de Mestrado I", workload: 60 },
+                  { name: "Dissertação de Mestrado II", workload: 60 },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      // ...additional master courses...
+    ],
+  },
+  professional: {
+    department_cover: "https://www.example.com/professional-department-cover.jpg",
+    courses: [
+      {
+        course: "Curso Profissional de Desenvolvimento Web",
+        duration: 1,
+        level: "professional",
+        short_detail: "Formação prática em desenvolvimento web",
+        slug: "curso-profissional-desenvolvimento-web",
+        long_description:
+          "O curso profissional de Desenvolvimento Web oferece uma formação prática e intensiva em tecnologias e ferramentas modernas para criação de websites e aplicações web.",
+        benefits: [
+          "Desenvolvimento de habilidades práticas em desenvolvimento web.",
+          "Preparação para o mercado de trabalho em tecnologia.",
+          "Oportunidades de estágio em empresas de tecnologia.",
+        ],
+        shift: {
+          afternoon: true,
+          morning: true,
+          evening: true,
+        },
+        course_cover: "https://www.realimage.com/curso-profissional-desenvolvimento-web-cover.jpg",
+        years: [
+          {
+            year: 1,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "HTML e CSS", workload: 60 },
+                  { name: "JavaScript", workload: 60 },
+                  { name: "Frameworks Front-end", workload: 45 },
+                  { name: "Desenvolvimento Back-end", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Banco de Dados", workload: 60 },
+                  { name: "DevOps", workload: 60 },
+                  { name: "Segurança Web", workload: 45 },
+                  { name: "Projeto Final", workload: 45 },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      // ...additional professional courses...
+    ],
+  },
+  preparatory: {
+    department_cover: "https://www.example.com/preparatory-department-cover.jpg",
+    courses: [
+      {
+        course: "Curso Preparatório para ENEM",
+        duration: 1,
+        level: "preparatory",
+        short_detail: "Preparação intensiva para o ENEM",
+        slug: "curso-preparatorio-enem",
+        long_description:
+          "O curso preparatório para o ENEM oferece uma formação intensiva e focada nas disciplinas cobradas no exame, preparando os alunos para obterem um bom desempenho.",
+        benefits: [
+          "Preparação completa para o ENEM.",
+          "Aulas com professores experientes.",
+          "Material didático atualizado.",
+        ],
+        shift: {
+          afternoon: true,
+          morning: true,
+          evening: true,
+        },
+        course_cover: "https://www.realimage.com/curso-preparatorio-enem-cover.jpg",
+        years: [
+          {
+            year: 1,
+            semesters: [
+              {
+                semester: 1,
+                subjects: [
+                  { name: "Matemática", workload: 60 },
+                  { name: "Língua Portuguesa", workload: 60 },
+                  { name: "Ciências Humanas", workload: 45 },
+                  { name: "Ciências da Natureza", workload: 45 },
+                ],
+              },
+              {
+                semester: 2,
+                subjects: [
+                  { name: "Redação", workload: 60 },
+                  { name: "Simulados", workload: 60 },
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      // ...additional preparatory courses...
+    ],
+  },
 };

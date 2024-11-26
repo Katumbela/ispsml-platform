@@ -3,8 +3,8 @@ import React from 'react';
 
 const ConferenceComponent = () => {
   return (
-    <section className="containers px-4 py-8 mx-auto">
-      <h2 className="mb-4 text-2xl font-semibold text md:text-3xl">
+    <section className="px-4 py-8 mx-auto containers">
+      <h2 className="max-w-3xl mb-4 text-3xl font-semibold text md:text-4xl">
         Dê o primeiro passo e participe de nossas conferências para todo o público
       </h2>
       <p className="mb-8 text-gray-600 text">
@@ -39,7 +39,7 @@ const ConferenceComponent = () => {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-700">EVENTOS ANTERIORES</h3>
           {['OUT', 'AGO', 'JUL'].map((month, index) => (
-            <div key={index} className="flex items-start p-4 bg-gray-100 shadow-sm">
+            <div key={index} className="flex items-start p-3 transition-all bg-gray-100 border-4 border-gray-100 shadow-sm hover:border-primary">
               <div className="flex items-center justify-center flex-shrink-0 w-16 h-16 text-lg font-semibold text-gray-700 bg-gray-300">
                 {month}
               </div>

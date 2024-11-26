@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { images } from '@/assets';
 import { FaLink, FaAngleRight } from 'react-icons/fa'; // Importar ícones
+import { routes } from '@/infra/routes.vars';
 
 interface IParagraphProps {
 	children: ReactNode;
@@ -89,7 +90,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Bolsas de Estudo <FaAngleRight className="ml-1" /></a>
 					</div>
 					<div className="mt-2">
-						<a href="/know-more" className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
@@ -105,7 +106,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Certificações <FaAngleRight className="ml-1" /></a>
 					</div>
 					<div className="mt-2">
-						<a href="/know-more" className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE+"/professional"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
@@ -121,7 +122,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Bolsas de Estudo <FaAngleRight className="ml-1" /></a>
 					</div>
 					<div className="mt-2">
-						<a href="/know-more" className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE+"/master"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
@@ -137,7 +138,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<a href="#" className="flex items-center "><FaLink className="mr-1" /> Certificações <FaAngleRight className="ml-1" /></a>
 					</div>
 					<div className="mt-2">
-						<a href="/know-more" className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE+"/prepa-tec"} className="flex items-center text-sm underline"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)

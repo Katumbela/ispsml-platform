@@ -5,11 +5,12 @@ export interface ICourse {
   long_description?: string;
   duration?: number;
   level?:
-    | "bacharel"
-    | "graduation"
-    | "professional"
-    | "master"
-    | "pos-graduation";
+  | "bacharel"
+  | "graduation"
+  | "professional"
+  | "master"
+  | "pos-graduation" 
+  | "preparatory";
   slug?: string;
   shift?: IShift;
   benefits?: string[];

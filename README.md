@@ -1,4 +1,4 @@
-![Logo](./src/assets/logos/logo.png)
+<img src="./src/assets/logos/logo.png" alt="Logo" width="200"/>
 
 # ISPSML Platform
 

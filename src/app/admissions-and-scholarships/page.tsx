@@ -47,6 +47,7 @@ export default function OrganicUnitPage() {
 						<h2 className="font-bold text-white lg:mb-2 lg:text-4xl 2xl:mb-3 2xl:text-5xl">
 							 Preparatório & Inscrição
 						</h2>
+						<p className="text-sm 2xl:text-[14px] text-white">At Tec we connect and collaborate with national and international organizations through valuable corporate relationships, through a bonding model that generates human, economic, social, and environmental value to contribute to a fairer.</p>
 						 
 					</div>
 					<div className="relative w-1/2 h-100 image-container">

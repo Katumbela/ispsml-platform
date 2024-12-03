@@ -19,17 +19,17 @@ const ourInst: IOurInst[] = [
 	{
 		bg: images.backgrounds.bg_student_11.src,
 		link: '#',
-		title: 'Nossa Historia'
+		title: 'Apresentação Institucional'
 	},
 	{
 		bg: images.backgrounds.bg_graduated_student_1.src,
 		link: '#',
-		title: 'Plano Estratégico 2025'
+		title: 'Infraestuturas'
 	},
 	{
 		bg: images.backgrounds.bg_graduated_student_2.src,
 		link: '#',
-		title: 'Integridade e Acordos'
+		title: 'Convênios e Protocolos'
 	},
 	{
 		bg: images.backgrounds.bg_school_4.src,
@@ -39,12 +39,12 @@ const ourInst: IOurInst[] = [
 	{
 		bg: images.backgrounds.bg_school_2.src,
 		link: '#',
-		title: 'Dados Figurativos'
+		title: 'Código de Conduta e Ética'
 	},
 	{
 		bg: images.backgrounds.bg_vertical_education_1.src,
 		link: '#',
-		title: 'Informacoes anuais'
+		title: 'Ação Social'
 	}
 ];
 const About = () => {
@@ -157,7 +157,7 @@ const About = () => {
 								backgroundSize: 'cover'
 							}}
 							key={i}
-							className="grid px-5 cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[13rem] 2xl:h-[32vh]"
+							className="grid px-5 text-center cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[13rem] 2xl:h-[32vh]"
 						>
 							{info.title}
 						</div>

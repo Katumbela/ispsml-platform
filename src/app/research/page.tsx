@@ -1,9 +1,7 @@
 'use client';
 
 import { images } from '@/assets';
-import Footer from '@/components/Footer';
-import GlobalHero from '@/components/global-hero/global-hero';
-import Navbar from '@/components/Navbar';
+import GlobalHero from '@/components/global-hero/global-hero'; 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaAngleRight } from 'react-icons/fa6';
@@ -22,7 +20,7 @@ export default function ResearchPage() {
 		<head>
 			<title>Investigação Científica | Instituto Superior Politécnico São Martinho de Lima</title>
 		</head>
-			<Navbar />
+			 
 			<GlobalHero
 				bgImage={images.backgrounds.bg_research_1.src}
 				className="h-[500px]"
@@ -136,7 +134,6 @@ export default function ResearchPage() {
 			<br />
 			<br />
 			<br />
-			<Footer />
 		</>
 	);
 }

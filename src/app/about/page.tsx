@@ -45,6 +45,16 @@ const ourInst: IOurInst[] = [
 		bg: images.backgrounds.bg_vertical_education_1.src,
 		link: '#',
 		title: 'Ação Social'
+	},
+	{
+		bg: images.backgrounds.bg_student_11.src,
+		link: '#',
+		title: 'Mensagem de Direção'
+	},
+	{
+		bg: images.backgrounds.bg_graduated_student_1.src,
+		link: '#',
+		title: 'Legislação'
 	}
 ];
 const About = () => {
@@ -148,7 +158,7 @@ const About = () => {
 			<br />
 			<br />
 			<section className="py-1">
-				<div className="grid grid-cols-6 gap-1">
+				<div className="grid grid-cols-4 gap-1">
 					{ourInst.map((info, i) => (
 						<div
 							title={`Clique para abrir mais sobre ${info.title}`}
@@ -157,7 +167,7 @@ const About = () => {
 								backgroundSize: 'cover'
 							}}
 							key={i}
-							className="grid px-5 text-center cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[13rem] 2xl:h-[32vh]"
+							className="grid px-5 text-center cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[15rem] 2xl:h-[35vh]"
 						>
 							{info.title}
 						</div>
@@ -205,7 +215,7 @@ const About = () => {
 					</HoverCard>
 				</div>
 			</div>
- 
+
 			<Footer />
 		</div>
 	);

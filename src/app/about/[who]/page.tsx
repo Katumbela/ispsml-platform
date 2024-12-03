@@ -102,7 +102,7 @@ const RoleProfile = () => {
 
 	 <section className="organigram mt-[18vh]">
 		<div className="containers">
-			<h1 className="title">Organisação</h1>
+			<h1 className="title">Organização</h1>
 		</div>
 	 </section>
 	 <br />

@@ -7,7 +7,8 @@ import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaAngleRight } from 'react-icons/fa6';
-import { env } from '@/infra/env';
+// import { env } from '@/infra/env';
+// import  Head  from 'next/head';
 
 export default function ResearchPage() {
 	const imageList = [
@@ -19,7 +20,7 @@ export default function ResearchPage() {
 	return (
 		<>
 		<head>
-			<title>Investigação Científica | {env.PT_SCHOOL_TITLE}</title>
+			<title>Investigação Científica | Instituto Superior Politécnico São Martinho de Lima</title>
 		</head>
 			<Navbar />
 			<GlobalHero

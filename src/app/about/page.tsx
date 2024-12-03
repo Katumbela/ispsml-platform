@@ -79,7 +79,7 @@ const About = () => {
 				</div>
 				<div className="h-[20rem] 2xl:h-[23rem] grid  w-full">
 					<div className="w-full my-auto 2xl:mx-24 containers">
-						<h2 className="text-4xl font-bold 2xl:text-5xl">Mensagem do Presidente</h2>
+						<h2 className="text-4xl font-bold 2xl:text-5xl">Gabinete do Promotor</h2>
 						<button className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
 							<span className="my-auto">Saber Mais</span>
 							<FaAngleRight className="my-auto" />
@@ -89,7 +89,7 @@ const About = () => {
 
 				<div className="h-[20rem] 2xl:h-[23rem] grid items-start  w-full">
 					<div className="w-full my-auto 2xl:mx-24 containers">
-						<h2 className="text-4xl font-bold 2xl:text-5xl">Mensagem do Reitor</h2>
+						<h2 className="text-4xl font-bold 2xl:text-5xl">Gabinete do Presidente</h2>
 						<button className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
 							<span className="my-auto">Saber Mais</span>
 							<FaAngleRight className="my-auto" />

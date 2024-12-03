@@ -7,8 +7,8 @@ import { FaAngleRight } from 'react-icons/fa6';
 import { HoverCard } from '@/components/hover-card/hover-card';
 import Footer from '@/components/Footer';
 // import { title } from 'process';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+// import Image from 'next/image';
+// import { motion } from 'framer-motion';
 
 interface IOurInst {
 	title: string;
@@ -108,7 +108,7 @@ const About = () => {
 				</div>
 			</div>
 
-			<motion.div
+			{/* <motion.div
 				initial={{ x: -1000, opacity: 0 }}
 				viewport={{ once: true }}
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
@@ -135,7 +135,7 @@ const About = () => {
 						/>
 					</div>
 				</div>
-			</motion.div>
+			</motion.div> */}
 			<br />
 			<br />
 			<div className="containers">

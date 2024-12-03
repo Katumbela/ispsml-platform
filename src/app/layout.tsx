@@ -6,6 +6,8 @@ import Loader from "@/components/common/Loader";
 // import { I18nextProvider } from 'react-i18next';
 import i18n from '@/infra/i18n';
 import { usePathname } from 'next/navigation'; // importar usePathname
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 // import { LanguageProvider } from "@/contexts/lang-context";
  
 
@@ -63,10 +65,18 @@ export default function RootLayout({
           
         {/* <I18nextProvider i18n={i18n}> */}
           {isLargeScreen ? (
+	
+
 
             <>
 
-              {loading ? <Loader /> : children}
+              {loading ? <Loader /> : 
+              
+              <>
+              		<Navbar />
+              {children}
+              <Footer />
+              </>}
 
             </>) : (
             <div className="flex items-center justify-center h-screen text-lg font-medium text-center text-red-600">

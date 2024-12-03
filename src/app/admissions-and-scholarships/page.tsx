@@ -24,10 +24,10 @@ export default function OrganicUnitPage() {
   return (
     <>
     <head>
-			<title>Inscrições e Bolsas de Estudos | Instituto Superior Politécnico São Martinho de Lima </title>
+			<title>Inscrições e Matrículas | Instituto Superior Politécnico São Martinho de Lima </title>
 		</head>
       <Navbar />
-      <GlobalHero bgImage={images.backgrounds.bg_prepa_tec.src} titleClassName='text-6xl' title='Inscrições e Bolsas' className='h-[500px] 2xl:h-[600px] ' />
+      <GlobalHero bgImage={images.backgrounds.bg_prepa_tec.src} titleClassName='text-6xl' title='Inscrições e Matrículas' className='h-[500px] 2xl:h-[600px] ' />
       <br />
       <div className="containers">
         <p className="text-gray-500">
@@ -119,7 +119,37 @@ export default function OrganicUnitPage() {
 					</div>
 				</div>
 			</motion.div>
- 
+      <br />
+      <br />
+     
+      <section className='pt-10'>
+        <div className="containers">
+          <h2 className="title">Inscrições </h2>
+        </div>
+        <br />
+        <div className="flex gap-1">
+          {cardData.map((card, index) => (
+            <AdmissionsCard card={card} type='undergraduate' key={index}/>
+          ))}
+        </div>
+      </section>
+ <br />
+ <br />   <section className=' containers'>
+        <div className="">
+          <h2 className="font-bold  text-3xl 2xl:text-4xl">Bolsas de Estudos </h2>
+        </div>
+        <br />
+        <div className="flex gap-1">
+          {/* <Slider {...settings} > */}
+
+          {scholarShipsData.map((card, index) => (
+           <AdmissionsCard type='undergraduate' card={card} key={index}/>
+          ))}
+
+          {/* </Slider> */}
+        </div>
+      </section>
+
       <br />
       <br />
       <br />

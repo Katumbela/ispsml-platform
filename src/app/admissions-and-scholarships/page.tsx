@@ -9,6 +9,7 @@ import { images } from '@/assets';
 import { motion } from 'framer-motion';
 import { FaAngleRight } from 'react-icons/fa6';
 import Image from 'next/image';
+import { BiSolidContact } from 'react-icons/bi';
 // import Head from 'next/head';
 // import { env } from '@/infra/env';
 
@@ -69,8 +70,10 @@ export default function OrganicUnitPage() {
         </div>
         <br />
         <div className="flex gap-2">
-            <div className="grid items-center p-5 w-[13rem] h-[15rem] bg-primary">
+            <div className="grid items-center p-5 w-[14rem] h-[17rem] bg-primary">
               <div>
+              <BiSolidContact />
+
               <h3 className="text-white">Inscrições</h3> 
               </div>
             </div>

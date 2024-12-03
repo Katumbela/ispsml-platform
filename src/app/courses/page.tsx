@@ -2,7 +2,6 @@
 "use client"
 import Hero from '@/components/Hero';
 import { StudyOffer } from '@/components/sections/study-offer/study-offer';
-import Footer from '@/components/Footer';
 
 const Courses = () => {
   return (

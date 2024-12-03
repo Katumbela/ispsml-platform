@@ -117,7 +117,7 @@ const About = () => {
 				<div className="flex gap-2 ">
 					<div className="w-full ps-10 py-14 2xl:py-24">
 						<h2 className="font-bold text-white lg:mb-2 lg:text-4xl 2xl:mb-3 2xl:text-5xl">
-							 Governamento Institutional
+							 Organigrama
 						</h2>
 						<p className="text-white 2xl:text-xl">ISPSML é uma instituição da sociedade para a Sociedade</p>
 						<button className="flex gap-2 py-5 mt-6 font-semibold text-black uppercase transition-all bg-white border-2 border-white px-7 hover:bg-transparent hover:text-white ">

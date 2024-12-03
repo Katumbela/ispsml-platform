@@ -9,6 +9,7 @@ import { BiFile } from 'react-icons/bi';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
 import Slider from 'react-slick';
+import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 // import { title } from 'process';
 // import Image from 'next/image';
 // import { motion } from 'framer-motion';
@@ -71,9 +72,29 @@ const RoleProfile = () => {
 					</div>
 					</div>
 				</div>
-				<div className="absolute border-4 flex flex-col border-white right-2 top-[65vh]">
+				<div className="absolute border-[.4rem] flex flex-col border-white right-2 top-[55vh]">
+					<div className='relative'>
 					<div className="img relative w-[19rem] h-[20rem]">
 						<Image alt='' src={user?.pic || ""} objectFit='cover' layout='fill'/>
+					</div>
+					<div className="from-black py-2 absolute bottom-0 left-0 right-0 bg-gradient-to-t">
+						<div className="containers flex flex-col text-white">
+						<b>{user?.name}</b>
+						<i>{user?.role}</i>
+						<div className="flex my-2 gap-2">
+							{
+								user?.linkedin && <div>
+								<FaLinkedinIn className='text-2xl '/>
+								</div>
+							}
+							{
+								user?.x && <div>
+								<FaXTwitter className='text-2xl '/>
+								</div>
+							}
+						</div>
+						</div>
+					</div>
 					</div>
 					<div className="bg-primary-footer w-[19rem] h-[10rem]  mt-1 p-3">
 						<i  className="text-white font-bold">Frases</i>

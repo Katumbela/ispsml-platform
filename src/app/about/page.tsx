@@ -169,7 +169,7 @@ const About = () => {
 					<HoverCard
 						bgColor="bg-primary"
 						hoverBgColor="bg-sky-700"
-						title="Principios, Valores e Visão"
+						title="Missão, Visão e Valores"
 						className="h-[400px] 2xl:h-[600px]"
 						bgImage={images.backgrounds.bg_student_22.src}
 					>

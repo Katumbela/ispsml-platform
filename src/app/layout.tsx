@@ -48,6 +48,9 @@ export default function RootLayout({
 
   return (
     <html lang={lang}>
+      <head>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=contacts" />
+      </head>
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

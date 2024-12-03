@@ -70,7 +70,7 @@ const Navbar = () => {
 					>
 						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
 						<div
-							className={`flex my-auto flex-col justify-center font-semibold ${!isScrolled
+							className={`flex my-auto hiddenn flex-col justify-center font-semibold ${!isScrolled
 								? 'text-white'
 								: 'text-primary'}`}
 						>

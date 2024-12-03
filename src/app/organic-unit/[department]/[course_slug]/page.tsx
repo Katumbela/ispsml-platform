@@ -4,10 +4,8 @@ import { useParams } from 'next/navigation';
 import { coursesData } from '@/infra/data/courses-data';
 import { useState } from 'react';
 import YearAccordion from '../../components/YearAccordion';
-import Navbar from '@/components/Navbar';
 import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
-import Footer from '@/components/Footer';
 import { FaDownload } from 'react-icons/fa6';
 import QuickLinks from '@/components/QuickLinks';
 
@@ -31,8 +29,7 @@ export default function CourseDetailsPage() {
         <title>{course.course} | ISPSML</title>
         <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
         <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
-      </head>
-      <Navbar />
+      </head> 
       <HeroCourseDetail departmentName={departmentData.name as string} department={department as string} course={course} bg_image={course.course_cover} title={course.course} />
       <ShortDescCourse course={course} />
       <br />
@@ -82,7 +79,6 @@ export default function CourseDetailsPage() {
       <br />
       <br />
       <QuickLinks />
-      <Footer />
     </>
   );
 };

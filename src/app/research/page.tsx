@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { FaAngleRight } from 'react-icons/fa6';
+import { env } from '@/infra/env';
 
 export default function ResearchPage() {
 	const imageList = [
@@ -16,7 +17,10 @@ export default function ResearchPage() {
 	];
 
 	return (
-		<div>
+		<>
+		<head>
+			<title>Investigação Científica | {env.PT_SCHOOL_TITLE}</title>
+		</head>
 			<Navbar />
 			<GlobalHero
 				bgImage={images.backgrounds.bg_research_1.src}
@@ -132,6 +136,6 @@ export default function ResearchPage() {
 			<br />
 			<br />
 			<Footer />
-		</div>
+		</>
 	);
 }

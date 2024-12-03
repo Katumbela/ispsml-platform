@@ -1,6 +1,5 @@
 'use client';
 
-import Footer from '@/components/Footer';
 import QuickLinks from '@/components/QuickLinks'; 
 import { coursesData } from '@/infra/data/courses-data';
 import { StringUtils } from '@/utils';
@@ -8,7 +7,6 @@ import { useParams } from 'next/navigation';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaAngleRight } from 'react-icons/fa';
-import Navbar from '@/components/Navbar';
 import { CardCourseComponent } from '../components/card-course-component';
 
 const CSADepartment = () => {
@@ -45,8 +43,7 @@ const CSADepartment = () => {
 					content="Saiba mais sobre o departamento de Ciências Sociais Aplicadas na ISPSML."
 				/>
 				<meta name="keywords" content="Ciências Sociais Aplicadas, ISPSML, cursos" />
-			</head>
-			<Navbar />
+			</head> 
 			<div className="pt-24 pb-10 bg-primary-footer">
 				<div className="containers">
 					<p className="pb-1 mb-5 text-white border-b">
@@ -112,7 +109,6 @@ const CSADepartment = () => {
 			</div>
 
 			<QuickLinks />
-			<Footer />
 		</>
 	);
 };

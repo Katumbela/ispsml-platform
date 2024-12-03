@@ -38,7 +38,7 @@ export default function OrganicUnitPage() {
 				initial={{ x: -1000, opacity: 0 }}
 				viewport={{ once: true }}
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
-				className=" bg-primary-footer image-container"
+				className=" bg-primary image-container"
 			>
 				<div className="flex gap-2 ">
 					<div className="w-1/2 ps-10 py-14 2xl:py-24">

@@ -1,12 +1,10 @@
 'use client';
-
-import Navbar from '@/components/Navbar';
+ 
 import { useParams } from 'next/navigation';
 import { getNewsBySlug, newsData } from '@/infra/data/newsData';
 import { FaArrowRight, FaFacebookF, FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
-import Footer from '@/components/Footer';
 import { FaCalendarAlt } from 'react-icons/fa';
 import NewsCard from '@/components/news-card/news-card';
 
@@ -19,8 +17,7 @@ export default function ViewNewsPage() {
 	}
 
 	return (
-		<div>
-			<Navbar />
+		<div> 
 			<div className="pt-24 pb-6 bg-primary">
 				<div className="containers">
 					<h1 className="text-3xl font-semibold text-white">{news.title}</h1>
@@ -114,7 +111,6 @@ export default function ViewNewsPage() {
 				</div>
 			</section>
 
-			<Footer />
 		</div>
 	);
 }

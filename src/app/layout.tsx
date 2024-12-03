@@ -49,7 +49,11 @@ export default function RootLayout({
   return (
     <html lang={lang}>
       <head>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=contacts" />
+      {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /> */}
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+        
+        <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" />
+         <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Raleway:wght@900&amp;display=swap" />
       </head>
       <body
         // className={`${geistSans.variable} ${geistMono.variable} antialiased`}

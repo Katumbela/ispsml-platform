@@ -5,6 +5,7 @@ export interface CardData {
 	iconType: IconType;
 	title: string;
 	link?: string;
+	type?: 'admission' | 'undergraduate' | 'graduate';
 }
 
 export interface IACard {
@@ -18,7 +19,7 @@ export default function AdmissionsCard({ card }: IACard) {
 				<div className="text-4xl text-white">
 					{React.createElement(card.iconType, { className: 'text-7xl font-medium mx-auto' })}
 				</div>
-				<h3 className="text-white 2xl:text-3xl text-2xl mt-2">{card.title}</h3>
+				<h3 className="text-white text-2xl mt-2">{card.title}</h3>
 			</div>
 		</div>
 	);

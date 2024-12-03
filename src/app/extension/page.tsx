@@ -1,7 +1,5 @@
 'use client';
-
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
+ 
 // import { routes } from '@/infra/routes.vars';
 // import { coursesData } from '@/infra/data/courses-data';
 import GlobalHero from '@/components/global-hero/global-hero';
@@ -21,8 +19,7 @@ export default function OrganicUnitPage() {
     <>
     <head>
       <title>Extensão | Instituto Superior São Martinho de Lima</title>
-    </head>
-      <Navbar />
+    </head> 
       <GlobalHero bgImage={images.backgrounds.bg_students_hands_up.src} titleClassName='text-5xl' title='Extensão' className='h-[500px] 2xl:h-[600px] ' />
      
       <div className="-mt-1.5">
@@ -144,7 +141,6 @@ export default function OrganicUnitPage() {
       <br />
       <br />
       <br />
-      <Footer />
     </>
   );
 }

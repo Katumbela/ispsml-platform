@@ -1,8 +1,6 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
 import HeroOrganicUnit from './components/HeroOrganicUnit';
-import Footer from '@/components/Footer';
 import { routes } from '@/infra/routes.vars';
 import { coursesData } from '@/infra/data/courses-data';
 
@@ -14,8 +12,7 @@ const departments = Object.entries(coursesData).map(([key, value]) => ({
 
 export default function OrganicUnitPage() {
   return (
-    <div>
-      <Navbar />
+    <div> 
       <HeroOrganicUnit />
       <br />
       <div className="containers">
@@ -64,7 +61,6 @@ export default function OrganicUnitPage() {
           ))}
         </div>
       </div>
-      <Footer />
     </div>
   );
 }

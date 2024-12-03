@@ -78,7 +78,7 @@ const RoleProfile = () => {
 						<Image alt='' src={user?.pic || ""} objectFit='cover' layout='fill'/>
 					</div>
 					<div className="from-black py-2 absolute bottom-0 left-0 right-0 bg-gradient-to-t">
-						<div className="containers flex flex-col text-white">
+						<div className="px-4 flex flex-col text-white">
 						<b>{user?.name}</b>
 						<i>{user?.role}</i>
 						<div className="flex my-2 gap-2">

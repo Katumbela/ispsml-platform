@@ -70,11 +70,24 @@ export default function OrganicUnitPage() {
         </div>
         <br />
         <div className="flex gap-2">
-            <div className="grid items-center p-5 w-[14rem] h-[17rem] bg-primary">
-              <div>
-              <span className="material-symbols-outlined">
+            <div className="grid items-center p-5 w-[16rem] h-[17rem] bg-primary hover:bg-primary-light">
+              <div className='text-center'>
+              <div className="text-4xl text-white">
+              <span className="text-5xl material-icons">
                 contacts
               </span>
+              </div>
+
+              <h3 className="text-white">Inscrições</h3> 
+              </div>
+            </div>
+            <div className="grid items-center p-5 w-[16rem] h-[17rem] bg-primary hover:bg-primary-light">
+              <div className='text-center'>
+              <div className="text-4xl text-white">
+              <span className="text-5xl material-icons">
+              touch_long
+              </span>
+              </div>
 
               <h3 className="text-white">Inscrições</h3> 
               </div>

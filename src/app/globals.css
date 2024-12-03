@@ -28,9 +28,18 @@
 @tailwind utilities;
 
 * {
-  /* font-family: 'Raleway;  */
+  font-family: Raleway;
+  font-style: normal;
 } 
 
+#toolbar-administration ul li {
+  font-family: Raleway;
+  font-style: normal;
+}
+li.select2-results__option {
+  font-family: Raleway;
+  font-style: normal;
+}
 
 html {
   scroll-behavior: smooth;

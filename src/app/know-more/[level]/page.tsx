@@ -3,12 +3,10 @@
 
 import { images } from '@/assets';
 import GlobalHero from '@/components/global-hero/global-hero';
-import Navbar from '@/components/Navbar';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import { FaAngleRight, FaArrowRight, FaCheck, FaChessBoard, FaMedal, FaUserGraduate } from 'react-icons/fa6';
 import { FaChalkboardTeacher } from 'react-icons/fa';
-import Footer from '@/components/Footer';
 import { coursesData } from '@/infra/data/courses-data';
 import { ICourse } from '@/infra/interfaces/course.interface';
 import ConferenceComponent from '@/app/organic-unit/components/conference-component';
@@ -139,8 +137,7 @@ export default function CustomKnowMore() {
     : coursesData[level as string]?.courses.map(course => ({ course, department: level as string })) || [];
 
   return (
-    <div>
-      <Navbar />
+    <div> 
 
       <GlobalHero
         titleClassName="text-5xl mb-5"
@@ -249,7 +246,6 @@ export default function CustomKnowMore() {
       <ConferenceComponent />
       <br />
       <br />
-      <Footer />
     </div>
   );
 }

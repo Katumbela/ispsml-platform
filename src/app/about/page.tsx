@@ -34,7 +34,7 @@ const ourInst: IOurInst[] = [
 	{
 		bg: images.backgrounds.bg_school_4.src,
 		link: '#',
-		title: 'Exemplo de titulo'
+		title: 'Organigrama'
 	},
 	{
 		bg: images.backgrounds.bg_school_2.src,

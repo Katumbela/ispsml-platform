@@ -1,7 +1,5 @@
 'use client';
 
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
 // import { routes } from '@/infra/routes.vars';
 // import { coursesData } from '@/infra/data/courses-data';
 import GlobalHero from '@/components/global-hero/global-hero';
@@ -25,8 +23,7 @@ export default function OrganicUnitPage() {
     <>
     <head>
 			<title>Inscrições e Matrículas | Instituto Superior Politécnico São Martinho de Lima </title>
-		</head>
-      <Navbar />
+		</head> 
       <GlobalHero bgImage={images.backgrounds.bg_prepa_tec.src} titleClassName='text-6xl' title='Inscrições e Matrículas' className='h-[500px] 2xl:h-[600px] ' />
       <br />
       <div className="containers">
@@ -154,7 +151,6 @@ export default function OrganicUnitPage() {
       <br />
       <br />
       <br />
-      <Footer />
     </>
   );
 }

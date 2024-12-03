@@ -7,47 +7,20 @@ import Footer from '@/components/Footer';
 import GlobalHero from '@/components/global-hero/global-hero';
 import { images } from '@/assets';
 import { motion } from 'framer-motion';
-import { FaAngleRight, FaWpforms } from 'react-icons/fa6';
+// import { FaAngleRight } from 'react-icons/fa6';
 import Image from 'next/image';
 // import { BiSolidContact } from 'react-icons/bi';
 // import Head from 'next/head';
 // import { env } from '@/infra/env';
  
 import React from 'react';
-import AdmissionsCard, { CardData } from './components/admissions-card';
-
-
-const cardData: CardData[] = [
-  {
-    iconType: FaWpforms,
-    title: 'Inscrições',
-  },
-  {
-    iconType: FaWpforms,
-    title: 'Inscrições',
-  },
-];
-
-const scholarShipsData: CardData[] = [
-  {
-    iconType: FaWpforms,
-    title: 'Bolsa de SOcioeconomia',
-  },
-  {
-    iconType: FaWpforms,
-    title: 'Bolsa CTEM',
-  },
-  {
-    iconType: FaWpforms,
-    title: 'Bolsa de Estudos Academico',
-  },
-  {
-    iconType: FaWpforms,
-    title: 'Bolsa CTEM',
-  },
-];
+import AdmissionsCard from './components/admissions-card';
+import { cardData, scholarShipsData } from '@/infra/data/admission-datas';
 
 export default function OrganicUnitPage() {
+ 
+
+
   return (
     <>
     <head>
@@ -70,15 +43,11 @@ export default function OrganicUnitPage() {
 				className=" bg-primary image-container"
 			>
 				<div className="flex gap-2 ">
-					<div className="w-1/2 ps-10 py-14 2xl:py-24">
-						<h2 className="font-bold text-white lg:mb-2 lg:text-3xl 2xl:mb-3 2xl:text-4xl">
-							 Relações Empresariais
+					<div className="w-1/2 ps-10 py-20 2xl:py-32">
+						<h2 className="font-bold text-white lg:mb-2 lg:text-4xl 2xl:mb-3 2xl:text-5xl">
+							 Preparatório & Inscrição
 						</h2>
-						<p className="text-sm 2xl:text-[14px] text-white">At Tec we connect and collaborate with national and international organizations through valuable corporate relationships, through a bonding model that generates human, economic, social, and environmental value to contribute to a fairer, more prosperous, and more sustainable society with higher levels of wellness.</p>
-						<button className="flex gap-2 py-5 mt-6 font-semibold text-black uppercase transition-all bg-white border-2 border-white px-7 hover:bg-transparent hover:text-white ">
-							<span className="my-auto">Saber Mais</span>
-							<FaAngleRight className="my-auto" />
-						</button>
+						 
 					</div>
 					<div className="relative w-1/2 h-100 image-container">
 						<Image
@@ -108,15 +77,48 @@ export default function OrganicUnitPage() {
       <br />
       <section className=' containers'>
         <div className="">
-          <h2 className="title">Bolsas de Estudos </h2>
+          <h2 className="font-bold  text-3xl 2xl:text-4xl">Bolsas de Estudos </h2>
         </div>
         <br />
         <div className="flex gap-1">
+          {/* <Slider {...settings} > */}
+
           {scholarShipsData.map((card, index) => (
            <AdmissionsCard card={card} key={index}/>
           ))}
+
+          {/* </Slider> */}
         </div>
       </section>
+
+      <br />
+      <br />
+      <motion.div
+				initial={{ x: -1000, opacity: 0 }}
+				viewport={{ once: true }}
+				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
+				className=" bg-primary-footer image-container"
+			>
+				<div className="flex gap-2 ">
+					<div className="w-1/2 ps-10 py-20 2xl:py-32">
+						<div className="containers">
+              <h2 className="font-bold text-white lg:mb-2 lg:text-4xl 2xl:mb-3 2xl:text-5xl">
+							 Inscrões em Licenciatura
+						</h2>
+						<p className="text-sm 2xl:text-[14px] text-white">At Tec we connect and collaborate with national and international organizations through valuable corporate relationships, through a bonding model that generates human, economic, social, and environmental value to contribute to a fairer.</p>
+						 </div>
+					</div>
+					<div className="relative w-1/2 h-100 image-container">
+						<Image
+							objectFit="cover"
+							layout="fill"
+							alt=""
+							src={images.backgrounds.bg_student_2.src}
+							className="image"
+						/>
+					</div>
+				</div>
+			</motion.div>
  
       <br />
       <br />

@@ -45,7 +45,7 @@ const Paragraph = ({ children, index, title, onVisible, isActive }: IParagraphPr
 				duration: 0.3,
 				ease: 'easeOut'
 			}}
-			className={`relative flex items-start ${index !== 0 ? " mt-[25vh] 2xl:mb-[0vh]" : ""}`}
+			className={`relative flex items-start ${index !== 0 ? " mt-[20vh] 2xl:mb-[0vh]" : ""}`}
 		>
 			{/* Ponto à esquerda */}
 			<div
@@ -120,18 +120,18 @@ const FixedImageScrollWithBrutalEffect = () => {
 			<h2 className="text-3xl font-bold">Educação</h2>
 			<br />
 			<br />
-			<div className="min-h-[120vh]  2xl:min-h-[00vh]     flex gap-20">
+			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[15vw]   flex gap-20 2xl:gap-28">
 				{/* Imagem Fixa */}
-				<div className="w-1/2" style={{ position: 'sticky', top: '100px', height: '500px' }}>
+				<div className="w-1/2 " style={{ position: 'sticky', top: '90px', height: '500px' }}>
 					<img
 						src={images.backgrounds.bg_vertical_education_2.src}
 						alt="Imagem fixa"
-						className="h-[80vh] w-[28rem] 2xl:w-[35vw] ms-auto"
+						className="h-[89vh] w-[29rem] 2xl:w-[55vw] me-auto"
 					/>
 				</div>
 
 				{/* Conteúdo */}
-				<div className="relative w-1/2">
+				<div className="relative w-1/2 2xl:w-1/3s">
 					<div
 						className="absolute top-[12rem] bottom-0 left-0 w-[1px] bg-gray-300"
 						style={{ marginLeft: '-1.5rem' }}

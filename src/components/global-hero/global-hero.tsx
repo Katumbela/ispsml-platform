@@ -90,7 +90,7 @@ const GlobalHero = ({
 							>
 								<div className="containers">
 									<motion.h1
-										className={cn(' font-bold', titleClassName, {"text-4xl": !titleClassName})}
+										className={cn(' font-bold ', titleClassName, {"text-4xl": !titleClassName})}
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0, scale: [ 1, 1.2, 1 ] }}
 										transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}

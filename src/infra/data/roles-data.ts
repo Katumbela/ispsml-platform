@@ -3,7 +3,6 @@ import { images } from "@/assets"
 interface IPhrase {
     title: string
     description: string
-
 }
 export interface IRole {
     pic: string
@@ -15,6 +14,7 @@ export interface IRole {
     x?: string
     phrases?: IPhrase[]
     id: string
+    team?: string[]
 }
 
 export const RolesData: IRole[] = [
@@ -26,6 +26,7 @@ export const RolesData: IRole[] = [
         role: "Promotor",
         cv: "link_para_cv",
         linkedin: "link_para_linkedin",
+        x: "link_para_linkedin",
         phrases: [
             {
                 title: "The Little Poney",

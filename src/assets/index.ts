@@ -1,5 +1,8 @@
 // Logos
 import logo1 from "./logos/logo.png";
+import logo_black from "./logos/logo-new.png";
+import logo_white from "./logos/logo-new-white.png";
+import logo_blue from "./logos/logo-new-blue.png";
 
 // Teachers
 import teacher1 from "./teachers/teacher-1.jpeg";
@@ -67,6 +70,9 @@ import not_found_2 from './svgs/not-found-error-alert-svgrepo-com.svg'
 
 export const logos = {
   logo1,
+  logo_black,
+  logo_blue,
+  logo_white
 };
 
 export const svgs = {

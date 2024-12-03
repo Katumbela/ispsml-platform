@@ -7,17 +7,45 @@ import Footer from '@/components/Footer';
 import GlobalHero from '@/components/global-hero/global-hero';
 import { images } from '@/assets';
 import { motion } from 'framer-motion';
-import { FaAngleRight } from 'react-icons/fa6';
+import { FaAngleRight, FaWpforms } from 'react-icons/fa6';
 import Image from 'next/image';
 // import { BiSolidContact } from 'react-icons/bi';
 // import Head from 'next/head';
 // import { env } from '@/infra/env';
+ 
+import React from 'react';
+import AdmissionsCard, { CardData } from './components/admissions-card';
 
-// const departments = Object.entries(coursesData).map(([key, value]) => ({
-//   link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
-//   name: `Departamento de ${key.charAt(0).toUpperCase() + key.slice(1)}`,
-//   cover: value.department_cover
-// }));
+
+const cardData: CardData[] = [
+  {
+    iconType: FaWpforms,
+    title: 'Inscrições',
+  },
+  {
+    iconType: FaWpforms,
+    title: 'Inscrições',
+  },
+];
+
+const scholarShipsData: CardData[] = [
+  {
+    iconType: FaWpforms,
+    title: 'Bolsa de SOcioeconomia',
+  },
+  {
+    iconType: FaWpforms,
+    title: 'Bolsa CTEM',
+  },
+  {
+    iconType: FaWpforms,
+    title: 'Bolsa de Estudos Academico',
+  },
+  {
+    iconType: FaWpforms,
+    title: 'Bolsa CTEM',
+  },
+];
 
 export default function OrganicUnitPage() {
   return (
@@ -64,37 +92,32 @@ export default function OrganicUnitPage() {
 				</div>
 			</motion.div>
 
-      <section className='py-10'>
+      <section className='pt-10'>
         <div className="containers">
           <h2 className="title">Inscrições </h2>
         </div>
         <br />
-        <div className="flex gap-2">
-            <div className="grid items-center p-5 w-[16rem] h-[17rem] bg-primary hover:bg-primary-light">
-              <div className='text-center'>
-              <div className="text-4xl text-white">
-              <span className="text-5xl material-icons">
-                contacts
-              </span>
-              </div>
-
-              <h3 className="text-white">Inscrições</h3> 
-              </div>
-            </div>
-            <div className="grid items-center p-5 w-[16rem] h-[17rem] bg-primary hover:bg-primary-light">
-              <div className='text-center'>
-              <div className="text-4xl text-white">
-              <span className="text-5xl material-icons">
-              touch_long
-              </span>
-              </div>
-
-              <h3 className="text-white">Inscrições</h3> 
-              </div>
-            </div>
-          </div>
+        <div className="flex gap-1">
+          {cardData.map((card, index) => (
+            <AdmissionsCard card={card} key={index}/>
+          ))}
+        </div>
       </section>
-
+      <br />
+      <br />
+      <br />
+      <section className=' containers'>
+        <div className="">
+          <h2 className="title">Bolsas de Estudos </h2>
+        </div>
+        <br />
+        <div className="flex gap-1">
+          {scholarShipsData.map((card, index) => (
+           <AdmissionsCard card={card} key={index}/>
+          ))}
+        </div>
+      </section>
+ 
       <br />
       <br />
       <br />

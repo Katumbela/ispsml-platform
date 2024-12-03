@@ -63,7 +63,23 @@ export default function OrganicUnitPage() {
 				</div>
 			</motion.div>
 
-      
+      <section className='py-10'>
+        <div className="containers">
+          <h2 className="title">Inscrições </h2>
+        </div>
+        <br />
+        <div className="flex gap-2">
+            <div className="grid items-center p-5 w-[13rem] h-[15rem] bg-primary">
+              <div>
+              <h3 className="text-white">Inscrições</h3> 
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <br />
+      <br />
+      <br />
       <Footer />
     </>
   );

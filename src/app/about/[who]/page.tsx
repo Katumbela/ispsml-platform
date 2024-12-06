@@ -44,16 +44,18 @@ const RoleProfile = () => {
 	}, [who])
 
 	const accordionItems = teamMembers.map((member) => ({
-		title:  <div key={member.id} className="w-full relative p-4 text-black h-[20rem]">
+		title:  <div key={member.id} className="w-full relative p-4 text-black h-[20rem] group">
 			<Image alt={member.name} src={member.pic} layout='fill' objectFit='cover' className='inset-0' />
-			<div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white bg-opacity-50 from-black bg-gradient-to-t">
+			<div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white bg-opacity-50 from-black bg-gradient-to-t group-hover:bg-opacity-75">
 				<h3>{member.name}</h3>
 				<p className='text-xs'>{member.role}</p>
 			</div>
-			<div className="absolute top-0 bottom-0 left-0 right-0 z-10 bg-black opacity-5"></div>
+			<div className="absolute top-0 bottom-0 left-0 right-0 z-10 bg-black opacity-[0] group-hover:opacity-[.6] transition-all"></div>
 
 		</div>,
-		children: <p className='text-black'>{member.about}</p>, // O conteúdo do accordion será a descrição do membro
+		children: <p className='text-black' dangerouslySetInnerHTML={{
+			__html:  member.about || ""
+		}} />, // O conteúdo do accordion será a descrição do membro
 	  }));
 
 
@@ -137,12 +139,13 @@ const RoleProfile = () => {
 			</div>
 			 
 
-	 <br />
-	 <br />
+	 <br /> 
 
 	 <section className="organigram mt-[18vh]">
 		<div className="containers">
 			<h1 className="title">Organização</h1>
+			<br />
+			<br />
 			<div className="flex flex-wrap gap-4">
            {/* Componente Accordion aqui */}
             <AnimatedAccordionBellowHeader gap={5} items={accordionItems} columns={3} />

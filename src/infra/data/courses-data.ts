@@ -2,13 +2,17 @@ import { images } from "@/assets";
 import type { ICourse } from "../interfaces/course.interface";
 
 export const coursesData: {
-  [key: string]: { name: string, catalog_link: string, department_cover: string; courses: ICourse[] };
+  [key: string]: { name: string, catalog_link: string, department_cover: string; courses: ICourse[], departmentDirector: { name: string, picture: string } };
 } = {
   engineering: {
     catalog_link: "https://docs.google.com/document/d/1zlmEIrShckNeRXmscaReMwYFMpAKJRlgRZUV2Ft9GnI/edit?usp=sharing",
     name: "Engenharias Aplicadas",
     department_cover:
       images.departImages.eng_tech.src,
+    departmentDirector: {
+      name: "João A. Katombela",
+      picture: images.teachers.katumbela.src
+    },
     courses: [
       {
         course: "Engenharia Informática",
@@ -1230,7 +1234,7 @@ export const coursesData: {
           morning: true,
           evening: false,
         },
-        course_cover: "https://media.licdn.com/dms/image/D5612AQFdg3laclrIhQ/article-cover_image-shrink_600_2000/0/1685824335310?e=2147483647&v=beta&t=bcsHQzx7tAYHKNiDvJbUQuRnd0zkShLs-XnbwRzoGFk",
+        course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
         years: [
           {
             year: 1,
@@ -1369,7 +1373,7 @@ export const coursesData: {
           morning: true,
           evening: false,
         },
-        course_cover: "https://cgu-odisha.ac.in/wp-content/uploads/2023/05/Chemical-Engineering-2-1024x682.jpeg",
+        course_cover: "https://example.com/engenharia-quimica-cover.jpg",
         years: [
           {
             year: 1,
@@ -1497,6 +1501,10 @@ export const coursesData: {
     catalog_link: "https://docs.google.com/document/d/1zlmEIrShckNeRXmscaReMwYFMpAKJRlgRZUV2Ft9GnI/edit?usp=sharing",
     name: "Geociências",
     department_cover: images.departImages.geoscience.src,
+    departmentDirector: {
+      name: "Jaime Mavungo",
+      picture: images.teachers.katumbela.src
+    },
     courses: [
       {
         course: "Geologia",
@@ -2057,6 +2065,10 @@ export const coursesData: {
     catalog_link: "https://docs.google.com/document/d/1zlmEIrShckNeRXmscaReMwYFMpAKJRlgRZUV2Ft9GnI/edit?usp=sharing",
     name: "Ciências Sociais e Aplicadas",
     department_cover: images.departImages.ciencias_sociais.src,
+    departmentDirector: {
+      name: "João A. Katombela",
+      picture: images.teachers.katumbela.src
+    },
     courses: [
       {
         course: "Administração",
@@ -3456,6 +3468,10 @@ export const coursesData: {
     catalog_link: "https://docs.google.com/document/d/1zlmEIrShckNeRXmscaReMwYFMpAKJRlgRZUV2Ft9GnI/edit?usp=sharing",
     name: "Mestrados",
     department_cover: images.backgrounds.bg_master.src,
+    departmentDirector: {
+      name: "M2J Technologias",
+      picture: images.teachers.katumbela.src
+    },
     courses: [
       {
         course: "Mestrado em Engenharia de Software",
@@ -3596,6 +3612,10 @@ export const coursesData: {
     catalog_link: "https://docs.google.com/document/d/1zlmEIrShckNeRXmscaReMwYFMpAKJRlgRZUV2Ft9GnI/edit?usp=sharing",
     name: "Cursos Profissionais",
     department_cover: "https://plus.unsplash.com/premium_photo-1685086785054-d047cdc0e525?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d2ViJTIwZGV2ZWxvcG1lbnR8ZW58MHx8MHx8fDA%3D",
+    departmentDirector: {
+      name: "João A. Katombela",
+      picture: images.teachers.katumbela.src
+    },
     courses: [
       {
         course: "Curso Profissional de Desenvolvimento Web",
@@ -3694,6 +3714,10 @@ export const coursesData: {
     catalog_link: "https://docs.google.com/document/d/1zlmEIrShckNeRXmscaReMwYFMpAKJRlgRZUV2Ft9GnI/edit?usp=sharing",
     name: "Cursos Preparatórios",
     department_cover: images.backgrounds.bg_prepa_tec.src,
+    departmentDirector: {
+      name: "João A. Katombela",
+      picture: images.teachers.katumbela.src
+    },
     courses: [
       {
         course: " Preparatório para Engenharias",

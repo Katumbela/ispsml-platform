@@ -22,6 +22,8 @@ const CSADepartment = () => {
 			<p className="text-lg text-gray-700">
 			  Desculpe, não conseguimos encontrar o departamento que você está procurando.
 			</p>
+			<div className="flex"> 
+			</div>
 			<button 
 			  onClick={() => window.location.href = routes.ORGANIC_UNIT_ROUTE}
 			  className="px-4 py-2 mt-6 text-white bg-blue-500 rounded hover:bg-blue-700"
@@ -78,6 +80,13 @@ const CSADepartment = () => {
 						
 					</p>
 					<br />
+					<div className="flex">
+						<p className="flex w-1/2 gap-4">
+							<Image alt='' width={100} height={100} className='w-[2em] border border-black rounded-full h-[2em]' src={departmentData.departmentDirector.picture}/>
+							<span className="my-auto"><strong>Diretor:</strong> {departmentData.departmentDirector.name}</span>
+						</p>
+						
+					</div>
 					<br />
 				<div>
 				<button   onClick={() => window.location.href = departmentData.catalog_link} className="flex w-auto gap-2 py-5 text-white uppercase transition-all bg-black border-2 border-black mt- px-7 hover:bg-white hover:text-black ">

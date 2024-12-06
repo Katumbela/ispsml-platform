@@ -44,7 +44,11 @@ const RoleProfile = () => {
 	}, [who])
 
 	const accordionItems = teamMembers.map((member) => ({
-		title: member.name,
+		title:  <div key={member.id} className="w-full p-4 bg-gray-100">
+		<Image alt={member.name} src={member.pic} width={100} height={100} />
+		<h3>{member.name}</h3>
+		<p>{member.role}</p>
+   </div>,
 		children: <p>{member.about}</p>, // O conteúdo do accordion será a descrição do membro
 	  }));
 
@@ -136,31 +140,13 @@ const RoleProfile = () => {
 		<div className="containers">
 			<h1 className="title">Organização</h1>
 			<div className="flex flex-wrap gap-4">
-				{teamMembers.map((member) => (
-					<div key={member.id} className="w-1/4 p-4 bg-gray-100">
-						<Image alt={member.name} src={member.pic} width={100} height={100} />
-						<h3>{member.name}</h3>
-						<p>{member.role}</p>
-					</div>
-				))}
-			</div>
+           {/* Componente Accordion aqui */}
+            <AnimatedAccordionBellowHeader items={accordionItems} />
+        
+      </div>
 		</div>
 	 </section>
-	 <div className="containers">
-      <h1 className="title">Organização</h1>
-      <div className="flex flex-wrap gap-4">
-        {teamMembers.map((member) => (
-          <div key={member.id} className="w-1/4 p-4 bg-gray-100">
-            <Image alt={member.name} src={member.pic} width={100} height={100} />
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-
-            {/* Componente Accordion aqui */}
-            <AnimatedAccordionBellowHeader items={accordionItems} />
-          </div>
-        ))}
-      </div>
-    </div>
+	  
 	 <br />
 	 <br />
 	 <br />

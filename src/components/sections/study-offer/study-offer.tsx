@@ -21,7 +21,7 @@ export function StudyOffer() {
 			title: 'Inscrições e Bolsas de Estudos',
 			description: 'Informações detalhadas sobre como se inscrever, os requisitos necessários, prazos importantes e como obter bolsas de estudo para ajudar a financiar sua educação.',
 			image: images.departImages.eng_tech.src,
-			link: routes.ADMISSIONS_AND_SCHOLARSHIPS_ROUTE
+			link: routes.APPLY_ROUTE
 
 		},
 		{

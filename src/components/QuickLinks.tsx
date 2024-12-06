@@ -18,42 +18,42 @@ export default function QuickLinks() {
 
         <h2 className="mb-8 text-3xl font-semibold">Links Rápidos</h2>
         <div className="grid grid-cols-1 gap-8 px-[11vw] 2xl:px-[20vw] md:grid-cols-4">
-          <a href="/courses" className="quick-link">
+          <Link href="/courses" className="quick-link">
             <div className='icon'>
               <FaBook className="" />
             </div>
             <span>Cursos</span>
-          </a>
-          <a href="/teachers" className="quick-link">
+          </Link>
+          <Link href="/teachers" className="quick-link">
             <div className='icon'>
               <FaChalkboardTeacher className="" />
             </div>
             <span>Professores</span>
-          </a>
-          <a href="/admissions" className="quick-link">
+          </Link>
+          <Link href="/admissions" className="quick-link">
             <div className='icon'>
               <FaGraduationCap className="" />
             </div>
             <span>Admissões</span>
-          </a>
-          <a href="/faculties" className="quick-link">
+          </Link>
+          <Link href="/faculties" className="quick-link">
             <div className='icon'>
               <FaUniversity className="" />
             </div>
             <span>Faculdades</span>
-          </a>
-          <a href="/about" className="quick-link">
+          </Link>
+          <Link href="/about" className="quick-link">
             <div className='icon'>
               <FaInfoCircle className="" />
             </div>
             <span>Sobre Nós</span>
-          </a>
-          <a href="/contact" className="quick-link">
+          </Link>
+          <Link href="/contact" className="quick-link">
             <div className='icon'>
               <FaPhoneAlt className="" />
             </div>
             <span>Contato</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>

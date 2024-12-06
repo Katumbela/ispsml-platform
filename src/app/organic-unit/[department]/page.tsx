@@ -77,13 +77,17 @@ const CSADepartment = () => {
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab expedita dolorum reiciendis esse saepe perferendis quos, incidunt eaque, nam vero provident unde debitis optio enim hic minima rem porro?
 						<br />
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab expedita dolorum reiciendis esse saepe perferendis quos, incidunt eaque, nam vero provident unde debitis optio enim hic minima rem porro?
-						
 					</p>
 					<br />
 					<div className="flex">
-						<p className="flex w-1/2 gap-4">
-							<Image alt='' width={100} height={100} className='w-[2em] border border-black rounded-full h-[2em]' src={departmentData.departmentDirector.picture}/>
-							<span className="my-auto"><strong>Diretor:</strong> {departmentData.departmentDirector.name}</span>
+						<p className="flex w-full gap-4">
+							<Image alt='' width={100} height={100} className='w-[2em] my-auto border border-black rounded-full h-[2em]' src={departmentData.departmentDirector.picture}/>
+							<span className="flex flex-col my-auto">
+								 {departmentData.departmentDirector.name}
+								 <span className="text-xs">
+								 <strong className='text-gray-500'>Chefe do Dep. </strong>
+								 </span>
+								 </span>
 						</p>
 						
 					</div>

@@ -3,6 +3,7 @@
 import HeroOrganicUnit from './components/HeroOrganicUnit';
 import { routes } from '@/infra/routes.vars';
 import { coursesData } from '@/infra/data/courses-data';
+import { RolesData } from '@/infra/data/roles-data';
 
 const departments = Object.entries(coursesData).map(([key, value]) => ({
   link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
@@ -11,6 +12,22 @@ const departments = Object.entries(coursesData).map(([key, value]) => ({
 }));
 
 export default function OrganicUnitPage() {
+
+  
+function getTeamMembers(directorId: string) {
+  const director = RolesData.find(role => role.id === directorId)
+  if (director && director.team) {
+      return director.team.map(memberId => RolesData.find(role => role.id === memberId))
+  }
+  return []
+}
+
+// ...existing code...
+
+// Exemplo de uso
+const teamMembers = getTeamMembers("diretor-unidade-organica")
+console.log(teamMembers)
+
   return (
     <div> 
       <HeroOrganicUnit />

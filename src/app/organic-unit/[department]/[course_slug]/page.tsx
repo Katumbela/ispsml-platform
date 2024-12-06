@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { useParams } from 'next/navigation';
@@ -8,6 +9,7 @@ import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
 import { FaDownload } from 'react-icons/fa6';
 import QuickLinks from '@/components/QuickLinks';
+// import { RolesData } from '@/infra/data/roles-data';
 
 export default function CourseDetailsPage() {
   const { department, course_slug } = useParams();
@@ -22,6 +24,19 @@ export default function CourseDetailsPage() {
   const toggleYear = (year: number) => {
     setOpenYear(openYear === year ? null : year);
   };
+
+  
+// function getCourseTeachers(courseId: string) {
+//   const course = coursesData.find((course: any) => course.id === courseId)
+//   if (course) {
+//       return course.teachers.map((teacherId: any) => RolesData.find(role => role.id === teacherId))
+//   }
+//   return []
+// }
+
+// // Exemplo de uso
+// const courseTeachers = getCourseTeachers("curso-biologia")
+// console.log(courseTeachers)
 
   return (
     <>

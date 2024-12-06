@@ -36,7 +36,8 @@ export const RolesData: IRole[] = [
                 title: "The Little Poney",
                 description: "Uma pequena descrição sobre o Little Poney, abordando suas características e importância."
             }
-        ]
+        ],
+        team: ["vice-presidente", "diretor-executivo"]
     },
     {
         id: "vice-presidente",
@@ -45,7 +46,8 @@ export const RolesData: IRole[] = [
         about: "<p>Maria Silva é a Vice Presidente da instituição, com uma carreira dedicada à administração educacional. Ela possui um mestrado em Administração e tem sido fundamental na implementação de políticas educacionais inovadoras.</p><p>Maria é conhecida por sua liderança e capacidade de gerenciar equipes de forma eficaz.</p><p>Ela também tem experiência em consultoria educacional e desenvolvimento de currículos.</p><p>Maria tem trabalhado em estreita colaboração com várias organizações educacionais para desenvolver programas que atendam às necessidades dos alunos e professores. Sua abordagem centrada no aluno tem resultado em melhorias significativas no desempenho acadêmico e na satisfação dos alunos. Além disso, Maria é uma defensora ativa da educação inclusiva e tem liderado várias iniciativas para garantir que todos os alunos, independentemente de suas habilidades ou origens, tenham acesso a uma educação de qualidade.</p>",
         role: "Vice Presidente",
         cv: "link_para_cv",
-        linkedin: "link_para_linkedin"
+        linkedin: "link_para_linkedin",
+        team: ["promotor", "diretor-executivo"]
     },
     {
         id: "diretor-executivo",
@@ -54,7 +56,8 @@ export const RolesData: IRole[] = [
         about: "<p>Carlos Santos é o Diretor Executivo, responsável por supervisionar todas as operações administrativas da instituição. Ele possui um MBA e uma vasta experiência em gestão de projetos.</p><p>Carlos é um líder estratégico, sempre buscando maneiras de otimizar processos e melhorar a eficiência organizacional.</p><p>Ele também tem um histórico de sucesso em captação de recursos e parcerias institucionais.</p><p>Carlos tem sido um defensor fervoroso da inovação no setor educacional, promovendo o uso de novas tecnologias e metodologias para melhorar a experiência de aprendizagem. Ele acredita que a educação deve evoluir constantemente para atender às demandas do mundo moderno e trabalha para garantir que a instituição esteja na vanguarda dessas mudanças. Sua dedicação à excelência administrativa tem sido fundamental para o crescimento e sucesso contínuo da instituição.</p>",
         role: "Diretor Executivo",
         cv: "link_para_cv",
-        linkedin: "link_para_linkedin"
+        linkedin: "link_para_linkedin",
+        team: ["promotor", "vice-presidente"]
     },
     {
         id: "chefe-matematica",
@@ -143,6 +146,30 @@ export const RolesData: IRole[] = [
                 title: "A Magia da Química",
                 description: "Transformações químicas e suas aplicações no dia a dia, mostrando a importância da química na vida cotidiana."
             },
-        ]
+        ],
+        team: ["promotor", "vice-presidente", "diretor-executivo"]
+    },
+    {
+        id: "diretor-unidade-organica",
+        pic: images.teachers.elon_musk.src,
+        name: "Jane Doe",
+        about: "<p>Jane Doe é a Diretora da Unidade Orgânica de Ciências Naturais, com um doutorado em Biologia. Ela tem uma vasta experiência em pesquisa e ensino, e é conhecida por suas contribuições significativas para a comunidade científica.</p>",
+        role: "Diretora de Unidade Orgânica",
+        cv: "link_para_cv",
+        linkedin: "link_para_linkedin",
+        team: ["professor-biologia", "professor-quimica"]
+    },
+    {
+        id: "professor-biologia",
+        pic: images.teachers.katumbela.src,
+        name: "John Smith",
+        about: "<p>John Smith é um Professor de Biologia com um mestrado na área. Ele é conhecido por sua habilidade em tornar conceitos complexos acessíveis e interessantes para seus alunos.</p>",
+        role: "Professor de Biologia",
+        cv: "link_para_cv",
+        linkedin: "link_para_linkedin",
+        phrases: [{
+            title: "A Vida na Terra",
+            description: "Explorando a diversidade da vida e os processos biológicos fundamentais."
+        }]
     }
 ]

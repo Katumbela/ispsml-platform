@@ -19,6 +19,7 @@ const Navbar = () => {
 	const [ isOpen, setIsOpen ] = useState(false);
 	const [ activeDropdown, setActiveDropdown ] = useState<number | null>(null);
 	const [ isScrolled, setIsScrolled ] = useState(false);
+	const [isSearchOpen, setIsSearchOpen] = useState(false);
 
 	const currentLang = i18n.language || 'pt'; // obter a língua atual
 
@@ -176,9 +177,30 @@ const Navbar = () => {
 							PT
 						</span>
 					</div>
-					<FontAwesomeIcon icon={faSearch} size="lg" className="cursor-pointer" />
+					<FontAwesomeIcon icon={faSearch} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(true)} />
 				</div>
 			</div>
+			<AnimatePresence>
+				{isSearchOpen && (
+					<motion.div
+						initial={{ x: '100%' }}
+						animate={{ x: 0 }}
+						exit={{ x: '100%' }}
+						transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+						className="fixed top-0 right-0 z-50 w-full h-full max-w-md p-4 bg-white shadow-lg"
+					>
+						<div className="flex items-center justify-between mb-4">
+							<h2 className="text-xl font-semibold">Search</h2>
+							<FontAwesomeIcon icon={faTimes} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(false)} />
+						</div>
+						<input
+							type="text"
+							placeholder="Search..."
+							className="w-full p-2 border border-gray-300 rounded"
+						/>
+					</motion.div>
+				)}
+			</AnimatePresence>
 		</nav>
 	);
 };

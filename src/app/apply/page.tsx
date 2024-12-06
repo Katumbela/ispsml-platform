@@ -210,7 +210,7 @@ export default function OrganicUnitPage() {
             ),
           },
         ]}
-        columns={8}
+        columns={6}
       />
     </div>
 

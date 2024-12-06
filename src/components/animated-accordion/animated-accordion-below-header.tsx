@@ -21,12 +21,12 @@ const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, column
   };
 
   // Define o número de colunas baseado nos itens ou na propriedade `columns`
-  const gridColumns = columns;
+  // const gridColumns = columns;
 
   return (
     <div className="w-full">
       {/* Grid para os cabeçalhos */}
-      <div className={`grid md:grid-cols-${gridColumns} gap-${gap} grid-cols-1`}>
+      <div className={`grid md:grid-cols-${columns?.toString()} ${columns ? "grid-cols-"+columns : ""} gap-${gap} grid-cols-1`}>
         {items.map((item, index) => (
           <div key={index}>
             {/* Cabeçalho do Accordion */}

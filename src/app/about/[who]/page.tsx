@@ -44,12 +44,16 @@ const RoleProfile = () => {
 	}, [who])
 
 	const accordionItems = teamMembers.map((member) => ({
-		title:  <div key={member.id} className="w-full p-4 bg-gray-100">
-		<Image alt={member.name} src={member.pic} width={100} height={100} />
-		<h3>{member.name}</h3>
-		<p>{member.role}</p>
-   </div>,
-		children: <p>{member.about}</p>, // O conteúdo do accordion será a descrição do membro
+		title:  <div key={member.id} className="w-full relative p-4 text-black h-[20rem]">
+			<Image alt={member.name} src={member.pic} layout='fill' objectFit='cover' className='inset-0' />
+			<div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white bg-opacity-50 from-black bg-gradient-to-t">
+				<h3>{member.name}</h3>
+				<p className='text-xs'>{member.role}</p>
+			</div>
+			<div className="absolute top-0 bottom-0 left-0 right-0 z-10 bg-black opacity-5"></div>
+
+		</div>,
+		children: <p className='text-black'>{member.about}</p>, // O conteúdo do accordion será a descrição do membro
 	  }));
 
 
@@ -141,7 +145,7 @@ const RoleProfile = () => {
 			<h1 className="title">Organização</h1>
 			<div className="flex flex-wrap gap-4">
            {/* Componente Accordion aqui */}
-            <AnimatedAccordionBellowHeader items={accordionItems} />
+            <AnimatedAccordionBellowHeader gap={5} items={accordionItems} columns={3} />
         
       </div>
 		</div>

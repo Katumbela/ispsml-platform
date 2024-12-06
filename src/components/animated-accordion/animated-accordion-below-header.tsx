@@ -1,6 +1,6 @@
 import React, { ReactNode, useState } from 'react';
 import { motion } from 'framer-motion';
-import cn from 'classnames';
+import cn from 'classnames'; 
 
 interface AccordionItemProps {
   title: ReactNode;
@@ -9,10 +9,11 @@ interface AccordionItemProps {
 
 interface AccordionProps {
   items: AccordionItemProps[];
+  gap?: number;
   columns?: number; // Permite definir o número de colunas manualmente
 }
 
-const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, columns }) => {
+const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, columns, gap }) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const handleToggle = (index: number) => {
@@ -25,12 +26,12 @@ const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, column
   return (
     <div className="w-full">
       {/* Grid para os cabeçalhos */}
-      <div className={`grid md:grid-cols-${gridColumns} grid-cols-6`}>
+      <div className={`grid md:grid-cols-${gridColumns} gap-${gap} grid-cols-1`}>
         {items.map((item, index) => (
           <div key={index}>
             {/* Cabeçalho do Accordion */}
             <div
-              className={cn("p-4 text-xl text-white cursor-pointer", {
+              className={cn("p-0 text-xl text-white cursor-pointer", {
                 "bg-green-500": activeIndex === index // Destaque o item ativo
               })}
               onClick={() => handleToggle(index)}

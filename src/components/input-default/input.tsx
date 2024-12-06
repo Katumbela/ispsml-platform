@@ -13,6 +13,7 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa'; // Importação direta dos �
 type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
     variant?: 'primary' | 'secondary' | 'default';
     disabled?: boolean;
+    required?: boolean;
     loading?: boolean;
     placeholder?: string;
     leftIcon?: React.ReactNode; // Alterado para aceitar ReactNode (JSX)
@@ -31,6 +32,7 @@ const InputDefault: React.FC<InputProps> = ({
     className,
     placeholder,
     label,
+    required=false,
     type = 'text',
     ...rest
 }) => {
@@ -57,7 +59,9 @@ const InputDefault: React.FC<InputProps> = ({
 
     return (
         <div>
-            {label && <label className="-mb-4 text-xs tracking-widest text-gray-400">{label}</label>}
+
+        
+            {label && <div className='flex gap-1 -mb-3'><label className="text-xs tracking-widest text-white uppercase -mb-4s">{label}</label>{required && <span className='-mt-1 text-2xl'>*</span>}</div>}
             <div className={inputClasses}>
                 <div className="flex items-center">
                     {/* Renderiza o ícone à esquerda, se existir */}

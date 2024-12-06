@@ -1,6 +1,14 @@
-import { FC, ChangeEvent } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { FC, ChangeEvent, useState } from 'react';
 import type { IconType } from 'react-icons';
-import { baseInputClasses, defaultInputClasses, disabledInputClasses, primaryInputClasses, secondaryInputClasses } from './style';
+import { 
+  baseInputClasses, 
+  defaultInputClasses, 
+  disabledInputClasses, 
+  primaryInputClasses, 
+  secondaryInputClasses, 
+  selectDropdownClasses, 
+} from './style';
 import clsx from 'clsx';
 
 interface Option {
@@ -15,8 +23,8 @@ interface SelectDefaultProps {
   leftIcon?: IconType;
   rightIcon?: IconType;
   variant?: 'primary' | 'secondary' | 'default';
-  name: string;
-  value: string;
+  name?: string;
+  value: any;
   onChange: (event: ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void;
   options: Option[];
   placeholder?: string;
@@ -37,7 +45,10 @@ const SelectDefault: FC<SelectDefaultProps> = ({
   placeholder,
   required = false
 }) => {
+  const [isOpen, setIsOpen] = useState(false);
 
+  const handleFocus = () => setIsOpen(true);
+  const handleBlur = () => setIsOpen(false);
 
   const inputClasses = clsx(
     baseInputClasses,
@@ -45,19 +56,30 @@ const SelectDefault: FC<SelectDefaultProps> = ({
       [primaryInputClasses]: variant === 'primary' && !disabled,
       [secondaryInputClasses]: variant === 'secondary' && !disabled,
       [defaultInputClasses]: variant === 'default' && !disabled,
-      [disabledInputClasses]: disabled
+      [disabledInputClasses]: disabled,
     },
     className
   );
 
+  const selectClasses = clsx(
+    `w-full px-2 py-1 bg-transparent border-none outline-none transition-all`,
+    selectDropdownClasses,
+    {
+      'text-black': isOpen, // Texto preto quando aberto
+      'text-white': !isOpen // Texto branco quando fechado
+    }
+  );
+
   return (
-    <div className={`${inputClasses} flex items-center  `}>
+    <div className={`${inputClasses} flex items-center`}>
       {LeftIcon && <LeftIcon className="my-auto mr-2" />}
       <select
-        className={` outline-none bg-none w-full my-auto `}
-        name={name}
+        className={selectClasses}
+        name={name || "ispsml-select"}
         value={value}
         onChange={onChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
         disabled={disabled || loading}
         required={required}
       >

@@ -1,5 +1,6 @@
 import { images } from '@/assets';
 import Image from 'next/image';
+import Link from 'next/link';
 import { FaBook, FaChalkboardTeacher, FaGraduationCap, FaUniversity, FaInfoCircle, FaPhoneAlt } from 'react-icons/fa';
 
 export default function QuickLinks() {

@@ -48,7 +48,7 @@ const Hero = () => {
 			title: t('navbar.carouselItems.welcomeTitle'),
 			description: t('navbar.carouselItems.welcomeDescription'),
 			cta: t('navbar.carouselItems.welcomeCta'),
-			link: '/apply'
+			link: '#'
 		},
 		// {
 		// 	background: images.backgrounds.bg1,

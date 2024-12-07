@@ -34,7 +34,7 @@ export default function Home() {
 				<br />
 				<br />
 				<br />
-				<ScienceStudyCard />
+				{/* <ScienceStudyCard /> */}
 				<ConferenceComponent />
 				<QuickLinks /> 
 			</div>

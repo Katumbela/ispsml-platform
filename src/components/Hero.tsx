@@ -50,13 +50,13 @@ const Hero = () => {
 			cta: t('navbar.carouselItems.welcomeCta'),
 			link: '/apply'
 		},
-		{
-			background: images.backgrounds.bg1,
-			title: t('navbar.carouselItems.academicExcellenceTitle'),
-			description: t('navbar.carouselItems.academicExcellenceDescription'),
-			cta: t('navbar.carouselItems.academicExcellenceCta'),
-			link: '/courses'
-		},
+		// {
+		// 	background: images.backgrounds.bg1,
+		// 	title: t('navbar.carouselItems.academicExcellenceTitle'),
+		// 	description: t('navbar.carouselItems.academicExcellenceDescription'),
+		// 	cta: t('navbar.carouselItems.academicExcellenceCta'),
+		// 	link: '/courses'
+		// },
 		{
 			background: images.teachers.teacher1,
 			title: t('navbar.carouselItems.researchInnovationTitle'),

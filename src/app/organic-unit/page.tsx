@@ -51,7 +51,7 @@ console.log(teamMembers)
             <div
               onClick={() => window.location.href = department.link}
               key={i}
-              className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] card-depa"
+              className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa"
             //   style={{
             //     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${department.cover})`,
             //     backgroundSize: 'cover',

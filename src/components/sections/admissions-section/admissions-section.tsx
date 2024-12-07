@@ -80,6 +80,17 @@ const FixedImageScrollWithBrutalEffect = () => {
 
 	const paragraphs = [
 		{
+			title: 'Pós-Graduação',
+			content: (
+				<>
+					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
+					<div className="mt-6">
+						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
+					</div>
+				</>
+			)
+		},
+		{
 			title: 'Licenciatura',
 			content: (
 				<>

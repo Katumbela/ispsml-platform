@@ -1,0 +1,108 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model Role {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  pic         String
+  name        String
+  about       String
+  cv          String
+  role        String
+  linkedin    String?
+  x           String?
+  phrases     Phrase[]
+  team        String[]
+}
+
+model Phrase {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  roleId      String   @db.ObjectId
+}
+
+model News {
+  id             String   @id @default(auto()) @map("_id") @db.ObjectId
+  title          String
+  shortDescription String
+  content        String
+  postDate       DateTime
+  poster         String
+  link           String
+  slug           String
+  image          String
+  sponsor        Boolean?
+}
+
+model Department {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  description String
+  courses     Course[]
+}
+
+model Course {
+  id                String   @id @default(auto()) @map("_id") @db.ObjectId
+  title             String
+  shortDetail       String?
+  longDescription   String?
+  duration          Int
+  level             String
+  slug              String
+  courseCover       String
+  departmentId      String   @db.ObjectId
+  department        Department @relation(fields: [departmentId], references: [id])
+  shift             Shift
+  benefits          String[]
+  years             Year[]
+  additionalCourses Course[] @relation("AdditionalCourses")
+}
+
+model Shift {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  morning   Boolean
+  afternoon Boolean
+  evening   Boolean
+  courseId  String @db.ObjectId
+  course    Course @relation(fields: [courseId], references: [id])
+}
+
+model Year {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  year      Int
+  courseId  String @db.ObjectId
+  course    Course @relation(fields: [courseId], references: [id])
+  semesters Semester[]
+}
+
+model Semester {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  semester   Int
+  yearId     String @db.ObjectId
+  year       Year @relation(fields: [yearId], references: [id])
+  subjects   Subject[]
+}
+
+model Subject {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
+  workload   Int
+  semesterId String @db.ObjectId
+  semester   Semester @relation(fields: [semesterId], references: [id])
+}
+
+model Application {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  name        String
+  email       String
+  phone       String
+  birthDate   DateTime
+  course      String
+  interest    String
+}

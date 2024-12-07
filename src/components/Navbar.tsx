@@ -20,8 +20,8 @@ const Navbar = () => {
 	const [ isOpen, setIsOpen ] = useState(false);
 	const [ activeDropdown, setActiveDropdown ] = useState<number | null>(null);
 	const [ isScrolled, setIsScrolled ] = useState(false);
-	const [isSearchOpen, setIsSearchOpen] = useState(false);
-	const [searchQuery, setSearchQuery] = useState('');
+	const [ isSearchOpen, setIsSearchOpen ] = useState(false);
+	const [ searchQuery, setSearchQuery ] = useState('');
 
 	const currentLang = i18n.language || 'pt'; // obter a língua atual
 
@@ -42,13 +42,16 @@ const Navbar = () => {
 		};
 	}, []);
 
-	useEffect(() => {
-		if (isSearchOpen) {
-			document.body.style.overflowY = 'hidden';
-		} else {
-			document.body.style.overflowY = 'auto';
-		}
-	}, [isSearchOpen]);
+	useEffect(
+		() => {
+			if (isSearchOpen) {
+				document.body.style.overflowY = 'hidden';
+			} else {
+				document.body.style.overflowY = 'auto';
+			}
+		},
+		[ isSearchOpen ]
+	);
 
 	const changeLanguage = (lng: string) => {
 		// setLang(lng);
@@ -66,7 +69,7 @@ const Navbar = () => {
 	const navItems = navigationItems(t); // obter itens da navbar com a língua atual
 	const searchResults = searchItems(t); // obter itens pesquisáveis com a língua atual
 
-	const filteredSearchResults = searchResults.filter(item =>
+	const filteredSearchResults = searchResults.filter((item) =>
 		item.label.toLowerCase().includes(searchQuery.toLowerCase())
 	);
 
@@ -79,10 +82,13 @@ const Navbar = () => {
 	return (
 		<nav
 			className={`w-full px-4 py-1 fixed z-[10000] ${isScrolled
-				? ' top-0 left-0 bg-white shadow-md animate-slide-down'
+				? ' top-0 left-0 bg-white shadow-md aanimate-slide-down'
 				: 'bg-transparent text-white'}`}
 		>
-			<div className="flex flex-col justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center">
+			<div
+				className={`flex flex-col ${isScrolled &&
+					'  animate-slide-down'} justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center`}
+			>
 				{/* logo e os items  */}
 
 				<div className="flex">
@@ -198,7 +204,12 @@ const Navbar = () => {
 							PT
 						</span>
 					</div>
-					<FontAwesomeIcon icon={faSearch} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(true)} />
+					<FontAwesomeIcon
+						icon={faSearch}
+						size="lg"
+						className="cursor-pointer"
+						onClick={() => setIsSearchOpen(true)}
+					/>
 				</div>
 			</div>
 			<AnimatePresence>
@@ -219,18 +230,28 @@ const Navbar = () => {
 							className="fixed top-0 right-0 z-50 w-full h-full max-w-md p-4 shadow-lg bg-primary-footer"
 						>
 							<div className="flex items-center justify-between mb-4">
-								<h2 className="text-xl font-semibold">Pesquisar</h2>
-								<FontAwesomeIcon icon={faTimes} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(false)} />
+								<h2 className="text-xl font-semibold text-white">Pesquisar</h2>
+								<FontAwesomeIcon
+									icon={faTimes}
+									size="lg"
+									className="text-white cursor-pointer"
+									onClick={() => setIsSearchOpen(false)}
+								/>
 							</div>
-							<InputDefault placeholder='Pesquise alguma coisa' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+							<InputDefault
+								placeholder="Pesquise alguma coisa"
+								value={searchQuery}
+								onChange={(e) => setSearchQuery(e.target.value)}
+							/>
 							<ul className="mt-4">
-								{searchQuery && filteredSearchResults.map((item, index) => (
-									<li key={index} className="mb-2">
-										<Link href={item.href} className="text-white hover:underline">
-											{item.label}
-										</Link>
-									</li>
-								))}
+								{searchQuery &&
+									filteredSearchResults.map((item, index) => (
+										<li key={index} className="mb-2">
+											<Link href={item.href} className="text-white hover:underline">
+												{item.label}
+											</Link>
+										</li>
+									))}
 							</ul>
 						</motion.div>
 					</motion.div>

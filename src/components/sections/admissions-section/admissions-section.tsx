@@ -102,7 +102,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 			)
 		},
 		{
-			title: 'Cursos Técnicos Profissional',
+			title: 'Técnicos Profissional',
 			content: (
 				<>
 					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais. Nossos programas de formação profissional são projetados para fornecer as habilidades e conhecimentos necessários para se destacar no mercado de trabalho. Oferecemos uma variedade de cursos e certificações que atendem às demandas das indústrias modernas.

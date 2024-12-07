@@ -19,7 +19,7 @@ import AnimatedAccordionBellowHeader from '@/components/animated-accordion/anima
 
 export default function OrganicUnitPage() {
   const [hour, setHour] = useState('');
-  const [date, setDate] = useState<Date | null>(null);
+  // const [date, setDate] = useState<Date | null>(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');

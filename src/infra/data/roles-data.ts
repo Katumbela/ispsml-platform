@@ -171,5 +171,22 @@ export const RolesData: IRole[] = [
             title: "A Vida na Terra",
             description: "Explorando a diversidade da vida e os processos biológicos fundamentais."
         }]
+    },
+    {
+        id: "new-role",
+        pic: "path/to/image",
+        name: "New Role",
+        about: "Description about the new role.",
+        role: "New Role",
+        cv: "link_to_cv",
+        linkedin: "link_to_linkedin",
+        x: "link_to_x",
+        phrases: [
+            {
+                title: "Phrase Title",
+                description: "Phrase description."
+            }
+        ],
+        team: ["team-member-1", "team-member-2"]
     }
 ]

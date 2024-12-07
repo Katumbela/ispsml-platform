@@ -21,6 +21,7 @@ interface DateSelectProps {
   onChange: (date: Date | null) => void;
   placeholder?: string;
   required?: boolean;
+  label?: string;
 }
 
 const DateSelect: FC<DateSelectProps> = ({
@@ -32,7 +33,8 @@ const DateSelect: FC<DateSelectProps> = ({
   value,
   onChange,
   placeholder,
-  required = false
+  required = false,
+  label
 }) => {
   const inputClasses = clsx(
     baseInputClasses,
@@ -46,17 +48,20 @@ const DateSelect: FC<DateSelectProps> = ({
   );
 
   return (
-    <div className={`${inputClasses} flex items-center`}>
-      <FaCalendarAlt className="my-auto mr-2" />
-      <DatePicker
-        selected={value}
-        onChange={(date) => onChange(date as Date | null)}
-        className="w-full px-2 py-1 bg-transparent border-none outline-none"
-        placeholderText={placeholder}
-        disabled={disabled || loading}
-        required={required}
-        name={name || "ispsml-date"}
-      />
+    <div className="mb-4">
+      {label && <label className="block mb-2 text-sm font-bold text-gray-700">{label}</label>}
+      <div className={`${inputClasses} flex items-center`}>
+        <FaCalendarAlt className="my-auto mr-2" />
+        <DatePicker
+          selected={value}
+          onChange={(date) => onChange(date as Date | null)}
+          className="w-full px-2 py-1 bg-transparent border-none outline-none"
+          placeholderText={placeholder}
+          disabled={disabled || loading}
+          required={required}
+          name={name || "ispsml-date"}
+        />
+      </div>
     </div>
   );
 };

@@ -36,34 +36,7 @@ async function main() {
     ]
   });
 
-  await prisma.course.createMany({
-    data: [
-      {
-        title: "Engenharia de Software",
-        description: "Curso focado em desenvolvimento de software e engenharia de sistemas.",
-        duration: 8,
-        level: "Graduação",
-        image: "path/to/image"
-      },
-      {
-        title: "Administração de Empresas",
-        description: "Curso voltado para a formação de administradores e gestores.",
-        duration: 8,
-        level: "Graduação",
-        image: "path/to/image"
-      },
-      {
-        title: "Mestrado em Inteligência Artificial",
-        description: "Programa de pós-graduação em IA e aprendizado de máquina.",
-        duration: 4,
-        level: "Pós-Graduação",
-        image: "path/to/image"
-      },
-      // ...other courses...
-    ]
-  });
-
-  const department1 = await prisma.department.create({
+  await prisma.department.create({
     data: {
       name: "Departamento de Engenharia",
       description: "Departamento focado em cursos de engenharia.",
@@ -77,13 +50,7 @@ async function main() {
             level: "Graduação",
             slug: "engenharia-de-software",
             courseCover: "path/to/image",
-            shift: {
-              create: {
-                morning: true,
-                afternoon: false,
-                evening: true
-              }
-            },
+            shift: "Presencial",
             benefits: ["Benefício 1", "Benefício 2"],
             years: {
               create: [
@@ -114,56 +81,55 @@ async function main() {
                 },
                 // ...other years...
               ]
-            },
-            additionalCourses: {
+            }
+          },
+          {
+            title: "Mestrado em Inteligência Artificial",
+            shortDetail: "Programa de pós-graduação em IA e aprendizado de máquina.",
+            longDescription: "Programa completo de Mestrado em Inteligência Artificial...",
+            duration: 4,
+            level: "Pós-Graduação",
+            slug: "mestrado-em-inteligencia-artificial",
+            courseCover: "path/to/image",
+            shift: "Presencial",
+            benefits: ["Benefício 1", "Benefício 2"],
+            years: {
               create: [
                 {
-                  title: "Curso Adicional 1",
-                  shortDetail: "Detalhe curto do curso adicional 1",
-                  longDescription: "Descrição longa do curso adicional 1",
-                  duration: 2,
-                  level: "Curso Adicional",
-                  slug: "curso-adicional-1",
-                  courseCover: "path/to/image",
-                  shift: {
-                    create: {
-                      morning: false,
-                      afternoon: true,
-                      evening: false
-                    }
-                  },
-                  benefits: ["Benefício A", "Benefício B"],
-                  years: {
+                  year: 1,
+                  semesters: {
                     create: [
                       {
-                        year: 1,
-                        semesters: {
+                        semester: 1,
+                        subjects: {
                           create: [
-                            {
-                              semester: 1,
-                              subjects: {
-                                create: [
-                                  { name: "Introdução", workload: 30 },
-                                  { name: "Avançado", workload: 50 }
-                                ]
-                              }
-                            }
+                            { name: "Introdução à IA", workload: 60 },
+                            { name: "Aprendizado de Máquina", workload: 80 }
+                          ]
+                        }
+                      },
+                      {
+                        semester: 2,
+                        subjects: {
+                          create: [
+                            { name: "Redes Neurais", workload: 70 },
+                            { name: "Processamento de Linguagem Natural", workload: 90 }
                           ]
                         }
                       }
                     ]
                   }
-                }
+                },
+                // ...other years...
               ]
             }
-          },
-          // ...other courses...
+          }
         ]
       }
     }
   });
 
-  const department2 = await prisma.department.create({
+  await prisma.department.create({
     data: {
       name: "Departamento de Administração",
       description: "Departamento voltado para cursos de administração e gestão.",
@@ -171,18 +137,48 @@ async function main() {
         create: [
           {
             title: "Administração de Empresas",
-            description: "Curso voltado para a formação de administradores e gestores.",
+            shortDetail: "Curso voltado para a formação de administradores e gestores.",
+            longDescription: "Curso completo de Administração de Empresas...",
             duration: 8,
             level: "Graduação",
-            image: "path/to/image"
+            slug: "administracao-de-empresas",
+            courseCover: "path/to/image",
+            shift: "Presencial",
+            benefits: ["Benefício 1", "Benefício 2"],
+            years: {
+              create: [
+                {
+                  year: 1,
+                  semesters: {
+                    create: [
+                      {
+                        semester: 1,
+                        subjects: {
+                          create: [
+                            { name: "Introdução à Administração", workload: 60 },
+                            { name: "Contabilidade", workload: 80 }
+                          ]
+                        }
+                      },
+                      {
+                        semester: 2,
+                        subjects: {
+                          create: [
+                            { name: "Marketing", workload: 70 },
+                            { name: "Gestão de Pessoas", workload: 90 }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                // ...other years...
+              ]
+            }
           }
         ]
       }
     }
-  });
-
-  await prisma.departments.createMany({
-    data: [department1, department2]
   });
 }
 

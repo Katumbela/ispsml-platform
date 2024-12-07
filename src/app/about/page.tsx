@@ -61,7 +61,7 @@ const About = () => {
 		<div>
 			
 			<GlobalHero
-				bgImage={images.backgrounds.bg_school_2.src}
+				bgImage={images.backgrounds.bg_ispsml.src}
 				bottomBG="dark"
 				title={'Sobre Nós'}
 				className="h-[500px] 2xl:h-[750px]"

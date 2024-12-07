@@ -24,6 +24,7 @@ import news4 from "./news/news4.jpeg";
 import bg1 from "./bgs/school-bg-1.jpeg";
 import bg_writing from "./bgs/writing_paper.jpg";
 import bg_ciencia_estudo from "./bgs/est-ciencia.jpg";
+import bg_ispsml from "./bgs/bg-ispsml.jpg";
 import bg_form_inscription from "./bgs/bg_form.jpg";
 import bg_student_1 from "./bgs/stdnt-bg1.jpg";
 import bg_student_2 from "./bgs/stdnt-bg2.jpg";
@@ -99,6 +100,7 @@ export const backgrounds = {
   bg_sci_method,
   bg_sci_method_2,
   bg_night_2,
+  bg_ispsml,
   bg_prepa_tec,
   bg_master_2,
   bg_master,

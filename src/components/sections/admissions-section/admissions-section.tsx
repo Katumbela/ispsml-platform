@@ -120,7 +120,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 			<h2 className="text-3xl font-bold">Educação</h2>
 			<br />
 			<br />
-			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[15vw] pe-[20vw]   flex gap-5 2xl:gap-28">
+			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[15vw] pe-[20vw]   flex gap-24 2xl:gap-28">
 				{/* Imagem Fixa */}
 				<div className="w-1/2 " style={{ position: 'sticky', top: '90px', height: '500px' }}>
 					<img

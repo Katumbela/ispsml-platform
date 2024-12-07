@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { images } from '@/assets';
+import { routes } from '@/infra/routes.vars';
 
 const Hero = () => {
 	const { t } = useTranslation();
@@ -51,11 +52,11 @@ const Hero = () => {
 			link: '/apply'
 		},
 		{
-			background: images.teachers.teacher2,
+			background: images.backgrounds.bg_ispsml_air,
 			title: t('navbar.carouselItems.welcomeTitle'),
 			description: t('navbar.carouselItems.welcomeDescription'),
 			cta: t('navbar.carouselItems.welcomeCta'),
-			link: '#'
+			link: routes.ABOUT_ROUTE
 		},
 		// {
 		// 	background: images.backgrounds.bg1,

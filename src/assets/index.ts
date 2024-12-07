@@ -23,6 +23,7 @@ import news4 from "./news/news4.jpeg";
 import bg1 from "./bgs/school-bg-1.jpeg";
 import bg_writing from "./bgs/writing_paper.jpg";
 import bg_ciencia_estudo from "./bgs/est-ciencia.jpg";
+import bg_form_inscription from "./bgs/bg_form.jpg";
 import bg_student_1 from "./bgs/stdnt-bg1.jpg";
 import bg_student_2 from "./bgs/stdnt-bg2.jpg";
 import bg_graduated_student_1 from "./bgs/graduated_student.webp";
@@ -102,6 +103,7 @@ export const backgrounds = {
   bg_vertical_education,
   bg_support,
   bg_students_hands_up,
+  bg_form_inscription,
   bg_investigator_1,
   bg_research_2,
   bg_research_1,

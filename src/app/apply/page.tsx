@@ -88,8 +88,6 @@ export default function OrganicUnitPage() {
     </p>
     <br />
     <br />
-
- 
       </div>
       <section className='py-10 bg-primary-footer' id="form">
       <motion.div
@@ -99,7 +97,7 @@ export default function OrganicUnitPage() {
       className="flex gap-8 containers">
         <div className="relative w-1/3 py-">
         <div className="relative w-full h-[20rem] py-10 bg-primary">
-          <Image src={images.backgrounds.bg_student_22.src} objectFit='cover' layout='fill' alt="" />
+          <Image src={images.backgrounds.bg_form_inscription.src} objectFit='cover' layout='fill' alt="" />
         </div>
         </div>
         <form onSubmit={handleSubmit} className="grid items-start w-4/5 py-6 text-white containers 2xl:py-14">

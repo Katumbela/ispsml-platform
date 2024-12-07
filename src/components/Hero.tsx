@@ -44,6 +44,13 @@ const Hero = () => {
 
 	const translatedCarouselItems = [
 		{
+			background: images.teachers.teacher1,
+			title: t('navbar.carouselItems.researchInnovationTitle'),
+			description: t('navbar.carouselItems.researchInnovationDescription'),
+			cta: t('navbar.carouselItems.researchInnovationCta'),
+			link: '/apply'
+		},
+		{
 			background: images.teachers.teacher2,
 			title: t('navbar.carouselItems.welcomeTitle'),
 			description: t('navbar.carouselItems.welcomeDescription'),
@@ -57,13 +64,6 @@ const Hero = () => {
 		// 	cta: t('navbar.carouselItems.academicExcellenceCta'),
 		// 	link: '/courses'
 		// },
-		{
-			background: images.teachers.teacher1,
-			title: t('navbar.carouselItems.researchInnovationTitle'),
-			description: t('navbar.carouselItems.researchInnovationDescription'),
-			cta: t('navbar.carouselItems.researchInnovationCta'),
-			link: '/apply'
-		},
 		{
 			background: images.teachers.teacher3,
 			title: t('navbar.carouselItems.universityLifeTitle'),

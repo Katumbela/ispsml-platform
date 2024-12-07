@@ -26,7 +26,7 @@ const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, column
   return (
     <div className="w-full">
       {/* Grid para os cabeçalhos */}
-      <div className={`grid md:grid-cols-${columns?.toString()} ${columns ? "grid-cols-"+columns : ""} gap-${gap} grid-cols-1`}>
+      <div className={`grid ${columns ? "md:grid-cols-"+columns : ""} gap-${gap} ${columns === 6 && "grid-cols-6"}`}>
         {items.map((item, index) => (
           <div key={index}>
             {/* Cabeçalho do Accordion */}
@@ -36,7 +36,7 @@ const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, column
               })}
               onClick={() => handleToggle(index)}
             >
-              {item.title}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    s
+              {item.title}
             </div>
 
             {/* Conteúdo Animado */}

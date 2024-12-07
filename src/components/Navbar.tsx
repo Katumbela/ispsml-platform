@@ -208,7 +208,7 @@ const Navbar = () => {
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
 						transition={{ duration: 0.3 }}
-						className="fixed inset-0 z-40 bg-black bg-opacity-[.8]"
+						className="fixed -inset-1 z-40 bg-black bg-opacity-[.8]"
 						onClick={handleOverlayClick}
 					>
 						<motion.div

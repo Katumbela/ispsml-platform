@@ -7,7 +7,7 @@
   },
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
-    "build": "next build",
+    "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },

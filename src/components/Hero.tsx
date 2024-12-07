@@ -62,14 +62,14 @@ const Hero = () => {
 			title: t('navbar.carouselItems.researchInnovationTitle'),
 			description: t('navbar.carouselItems.researchInnovationDescription'),
 			cta: t('navbar.carouselItems.researchInnovationCta'),
-			link: '/research'
+			link: '/apply'
 		},
 		{
 			background: images.teachers.teacher3,
 			title: t('navbar.carouselItems.universityLifeTitle'),
 			description: t('navbar.carouselItems.universityLifeDescription'),
 			cta: t('navbar.carouselItems.universityLifeCta'),
-			link: '/campus-life'
+			link: '#'
 		}
 	];
 

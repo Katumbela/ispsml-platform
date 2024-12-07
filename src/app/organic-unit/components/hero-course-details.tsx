@@ -19,7 +19,7 @@ interface HeroCourseDetailProps {
   title?: string
   bg_image?: string | StaticImageData
   height?: string
-  course?: ICourse
+  course: ICourse
   department?: string
   departmentName?: string
 }
@@ -98,7 +98,7 @@ export function HeroCourseDetail({ departmentName, department, bg_image, title, 
                         <div className='flex flex-col my-auto text-start'>
                           <p>Turno</p>
                           <span className="text-sm">
-                          <p className='text-slate-500'>Turnos:
+                          <p className='text-slate'>
             <span className=" text-primary">
               {course?.shift?.morning ? 'Manhã' : ''}
             </span>

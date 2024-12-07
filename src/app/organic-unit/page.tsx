@@ -58,7 +58,7 @@ console.log(teamMembers)
             //     backgroundPosition: 'center'
             //   }}
             >
-              <h3 className="text-xl font-bold">{department.name}</h3>
+              <h3 className="text-xl font-bold 2xl:text-2xl">{department.name}</h3>
             </div>
           ))}
         </div>

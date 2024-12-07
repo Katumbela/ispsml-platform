@@ -217,3 +217,13 @@ export const carouselItems = [
     link: '/campus-life'
   }
 ];
+
+export const searchItems = (t: any) => [
+  { label: t('navbar.about'), href: routes.ABOUT_ROUTE },
+  { label: "Unidade Organica", href: routes.ORGANIC_UNIT_ROUTE },
+  { label: t('navbar.research.label'), href: routes.RESEARCH_ROUTE },
+  { label: t('navbar.extension'), href: routes.EXTENSION_ROUTE },
+  { label: t('navbar.more.news'), href: routes.NEWS_ROUTE },
+  { label: t('navbar.more.contact'), href: routes.CONTACT_ROUTE },
+  // Adicionar mais itens conforme necessário
+];

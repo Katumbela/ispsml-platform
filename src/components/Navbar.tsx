@@ -9,7 +9,7 @@ import { images } from '@/assets';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes, faAngleDown, faSearch } from '@fortawesome/free-solid-svg-icons';
-import { navigationItems } from '@/infra/data/navbar-data';
+import { navigationItems, searchItems } from '@/infra/data/navbar-data';
 import { routes } from '@/infra/routes.vars';
 import { useTranslation } from 'react-i18next';
 import InputDefault from './input-default/input';
@@ -55,6 +55,7 @@ const Navbar = () => {
 	// };
 
 	const navItems = navigationItems(t); // obter itens da navbar com a língua atual
+	const searchResults = searchItems(t); // obter itens pesquisáveis com a língua atual
 
 	const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (e.target === e.currentTarget) {
@@ -209,6 +210,15 @@ const Navbar = () => {
 								<FontAwesomeIcon icon={faTimes} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(false)} />
 							</div>
 							<InputDefault placeholder='Pesquise alguma coisa' />
+							<ul className="mt-4">
+								{searchResults.map((item, index) => (
+									<li key={index} className="mb-2">
+										<Link href={item.href} className="text-white hover:underline">
+											{item.label}
+										</Link>
+									</li>
+								))}
+							</ul>
 						</motion.div>
 					</motion.div>
 				)}

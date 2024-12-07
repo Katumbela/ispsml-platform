@@ -36,7 +36,7 @@ const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, column
               })}
               onClick={() => handleToggle(index)}
             >
-              {item.title}
+              {item.title}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    s
             </div>
 
             {/* Conteúdo Animado */}

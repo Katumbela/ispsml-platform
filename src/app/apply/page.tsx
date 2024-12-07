@@ -47,10 +47,10 @@ export default function OrganicUnitPage() {
 			link: '#steps',
 			title: 'Passos A Seguir'
 		},
-		{
-			link: '#dates',
-			title: 'Datas Importantes'
-		}
+		// {
+		// 	link: '#dates',
+		// 	title: 'Datas Importantes'
+		// }
 	];
  
   const hourOptions = [

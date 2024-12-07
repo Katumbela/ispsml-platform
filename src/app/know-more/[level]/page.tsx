@@ -8,7 +8,7 @@ import { useParams } from 'next/navigation';
 import { FaAngleRight, FaArrowRight } from 'react-icons/fa6';
 import { coursesData } from '@/infra/data/courses-data';
 import { ICourse } from '@/infra/interfaces/course.interface';
-import ConferenceComponent from '@/app/organic-unit/components/conference-component';
+// import ConferenceComponent from '@/app/organic-unit/components/conference-component';
 import { routes } from '@/infra/routes.vars';
 
 const CourseList = ({ courses }: { courses: { course: ICourse, department: string }[] }) => (

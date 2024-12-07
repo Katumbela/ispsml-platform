@@ -12,17 +12,6 @@ export function ShortDescCourse({ course }: ShortDescCourseProps) {
           <h1 className='text-2xl font-semibold'>{course.course}</h1>
           <p className='text-slate-500'>{course.short_detail}</p>
           <p className='text-slate-500'>Duração: <b>{course.duration} anos</b></p>
-          <p className='text-slate-500'>Turnos:
-            <span className=" text-primary ms-3">
-              {course.shift?.morning ? 'Manhã' : ''}
-            </span>
-            <span className=" text-primary ms-3">
-              {course.shift?.afternoon ? 'Tarde' : ''}
-            </span>
-            <span className="text-primary ms-3">
-              {course.shift?.evening ? 'Noite' : ''}
-            </span>
-          </p>
         </div>
         <div className="w-full">
           {course.long_description}

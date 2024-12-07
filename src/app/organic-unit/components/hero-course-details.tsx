@@ -96,8 +96,20 @@ export function HeroCourseDetail({ departmentName, department, bg_image, title, 
                           <FaLocationCrosshairs className='my-auto text-3xl' />
                          
                         <div className='flex flex-col my-auto text-start'>
-                          <p>Ano Letivo</p>
-                          <span className="text-sm">2024 - 2025</span>
+                          <p>Turno</p>
+                          <span className="text-sm">
+                          <p className='text-slate-500'>Turnos:
+            <span className=" text-primary">
+              {course?.shift?.morning ? 'Manhã' : ''}
+            </span>
+            <span className=" text-primary">
+              {course?.shift?.afternoon ? 'Tarde' : ''}
+            </span>
+            <span className="text-primary">
+              {course?.shift?.evening ? 'Noite' : ''}
+            </span>
+          </p>
+                          </span>
                         </div>
                       </div>
                     </div>

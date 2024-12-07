@@ -58,6 +58,7 @@ const Hero = () => {
 			cta: t('navbar.carouselItems.welcomeCta'),
 			link: routes.ABOUT_ROUTE
 		},
+		
 		// {
 		// 	background: images.backgrounds.bg1,
 		// 	title: t('navbar.carouselItems.academicExcellenceTitle'),
@@ -65,6 +66,7 @@ const Hero = () => {
 		// 	cta: t('navbar.carouselItems.academicExcellenceCta'),
 		// 	link: '/courses'
 		// },
+
 		{
 			background: images.teachers.president_photo,
 			title: t('navbar.carouselItems.universityLifeTitle'),

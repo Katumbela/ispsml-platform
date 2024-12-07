@@ -45,7 +45,7 @@ const Paragraph = ({ children, index, title, onVisible, isActive }: IParagraphPr
 				duration: 0.3,
 				ease: 'easeOut'
 			}}
-			className={`sticky top-[20rem] flex items-start ${index !== 0 ? " mt-[20vh] 2xl:mb-[0vh]" : ""}`}
+			className={`relative flex items-start ${index !== 0 ? " mt-[20vh] 2xl:mb-[0vh]" : ""}`}
 		>
 			{/* Ponto à esquerda */}
 			<div

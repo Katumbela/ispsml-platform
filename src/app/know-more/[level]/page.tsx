@@ -149,7 +149,7 @@ export default function CustomKnowMore() {
         {content}
       </GlobalHero>
       <br />
-      <section className="containers">
+      {/* <section className="containers">
         <h2 className="text-4xl font-semibold">Conheça os grandes benefícios de estudar no ISPSML</h2>
       </section>
       <br />
@@ -210,7 +210,7 @@ export default function CustomKnowMore() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <br />
       <br />
       <section className="containers">

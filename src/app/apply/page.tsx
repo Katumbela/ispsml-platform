@@ -192,13 +192,9 @@ export default function OrganicUnitPage() {
         </section>
 
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <br /> 
 
-        <section id="dates" className="">
+        <section id="dates" className="hidden">
 
         <div className="containers">
         <h1 className="py-8 text-4xl font-bold text-start">Datas Importantes</h1> 
@@ -295,11 +291,7 @@ export default function OrganicUnitPage() {
  
 			</div> 
 			</section> 
-
-<br />
-<br />
-<br />
-<br />
-		</>
+ 
+ 		</>
 	);
 }

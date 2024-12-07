@@ -12,6 +12,7 @@ import { faBars, faTimes, faAngleDown, faSearch } from '@fortawesome/free-solid-
 import { navigationItems } from '@/infra/data/navbar-data';
 import { routes } from '@/infra/routes.vars';
 import { useTranslation } from 'react-i18next';
+import InputDefault from './input-default/input';
 // import { useLanguage } from '@/contexts/lang-context';
 
 const Navbar = () => {
@@ -54,6 +55,12 @@ const Navbar = () => {
 	// };
 
 	const navItems = navigationItems(t); // obter itens da navbar com a língua atual
+
+	const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
+		if (e.target === e.currentTarget) {
+			setIsSearchOpen(false);
+		}
+	};
 
 	return (
 		<nav
@@ -183,21 +190,26 @@ const Navbar = () => {
 			<AnimatePresence>
 				{isSearchOpen && (
 					<motion.div
-						initial={{ x: '100%' }}
-						animate={{ x: 0 }}
-						exit={{ x: '100%' }}
-						transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-						className="fixed top-0 right-0 z-50 w-full h-full max-w-md p-4 bg-white shadow-lg"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						exit={{ opacity: 0 }}
+						transition={{ duration: 0.3 }}
+						className="fixed inset-0 z-40 bg-black bg-opacity-[.8]"
+						onClick={handleOverlayClick}
 					>
-						<div className="flex items-center justify-between mb-4">
-							<h2 className="text-xl font-semibold">Search</h2>
-							<FontAwesomeIcon icon={faTimes} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(false)} />
-						</div>
-						<input
-							type="text"
-							placeholder="Search..."
-							className="w-full p-2 border border-gray-300 rounded"
-						/>
+						<motion.div
+							initial={{ x: '100%' }}
+							animate={{ x: 0 }}
+							exit={{ x: '100%' }}
+							transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+							className="fixed top-0 right-0 z-50 w-full h-full max-w-md p-4 shadow-lg bg-primary-footer"
+						>
+							<div className="flex items-center justify-between mb-4">
+								<h2 className="text-xl font-semibold">Pesquisar</h2>
+								<FontAwesomeIcon icon={faTimes} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(false)} />
+							</div>
+							<InputDefault placeholder='Pesquise alguma coisa' />
+						</motion.div>
 					</motion.div>
 				)}
 			</AnimatePresence>

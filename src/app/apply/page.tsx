@@ -99,8 +99,9 @@ export default function OrganicUnitPage() {
         </div>
         </div>
         <form onSubmit={handleSubmit} className="grid items-start w-4/5 py-6 text-white containers 2xl:py-14">
+      <div>
+      <h2 className='text-xl font-medium'>INFORMAÇÕES PESSOAIS</h2>
           <div className="grid grid-cols-2 gap-7">
-          <h2 className='text-xl font-medium'>INFORMAÇÕES PESSOAIS</h2>
             <InputDefault label='Nome Completo' placeholder='Nome completo' value={name} onChange={(e) => setName(e.target.value)} required={true} />
             <InputDefault label='Email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required={true} />
             <InputDefault label='Telefone' placeholder='Telefone' value={phone} onChange={(e) => setPhone(e.target.value)} required={true} />
@@ -108,7 +109,7 @@ export default function OrganicUnitPage() {
             <InputDefault label='Curso Pretendido' placeholder='Curso Pretendido' value={course} onChange={(e) => setCourse(e.target.value)} required={true} />
             <SelectDefault name='select-hour' value={hour} onChange={(e) => setHour(e.target.value)} options={hourOptions} placeholder='Selecione o horário' required={true} />
             <DateSelect name='select-date' value={date} onChange={(date) => setDate(date)} placeholder='Selecione a data' required={true} />
-            <InputDefault label='Interesse' placeholder='Interesse' value={interest} onChange={(e) => setInterest(e.target.value)} required={true} />
+            <InputDefault label='Mensagem' placeholder='Escreva uma mensagem' value={interest} onChange={(e) => setInterest(e.target.value)} required={false} />
         <div className="flex justify-center">
         <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
           {loading ? <FaSpinner className="my-auto animate-spin" /> : (
@@ -120,6 +121,7 @@ export default function OrganicUnitPage() {
         </button>
         </div>
           </div>
+      </div>
         </form>
       </motion.div>
       </section>
@@ -181,36 +183,9 @@ export default function OrganicUnitPage() {
                 Aguarde a confirmação do recebimento dos documentos e a validação das informações fornecidas. Você será notificado por e-mail sobre o status da sua inscrição.
               </p>
             ),
-          },
-          {
-            title: <h1 className="py-8 font-bold text-center text-9xl">4</h1> ,
-
-            children: (
-              <p>
-                Participe da prova de admissão na data agendada. Prepare-se adequadamente para o exame, revisando o conteúdo programático e praticando com provas anteriores.
-              </p>
-            ),
-          },
-          {
-            title: <h1 className="py-8 font-bold text-center text-9xl">5</h1> ,
-
-            children: (
-              <p>
-                Aguarde a divulgação dos resultados da prova de admissão. Os resultados serão publicados no site oficial e você também receberá uma notificação por e-mail.
-              </p>
-            ),
-          },
-          {
-            title: <h1 className="py-8 font-bold text-center text-9xl">6</h1> ,
-
-            children: (
-              <p>
-                Caso aprovado, conclua o processo de matrícula dentro do prazo estipulado. Compareça à instituição com os documentos originais para a confirmação da matrícula.
-              </p>
-            ),
-          },
+          }
         ]}
-        columns={6}
+        columns={3}
       />
     </div>
 

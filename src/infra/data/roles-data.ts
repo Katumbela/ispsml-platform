@@ -127,7 +127,7 @@ export const RolesData: IRole[] = [
     },
     {
         id: "president",
-        pic: images.teachers.bill_gates.src,
+        pic: images.teachers.president_photo.src,
         name: "Bill Gates",
         about: "<p>Bill Gates é um Presidente com um doutorado na área. Ele é conhecido por sua abordagem prática ao ensino da química, sempre buscando maneiras de tornar as aulas mais interativas e envolventes.</p><p>Ricardo é um pesquisador dedicado, com várias publicações em revistas científicas renomadas.</p><p>Ele também lidera iniciativas de responsabilidade social e programas de bolsas de estudo.</p><p>Bill tem sido uma figura central na promoção da educação acessível e de qualidade para todos. Ele acredita que a educação é um direito fundamental e trabalha para garantir que todos os alunos tenham as mesmas oportunidades de sucesso. Sua liderança e visão têm sido fundamentais para o desenvolvimento de programas e iniciativas que apoiam a aprendizagem e o crescimento dos alunos. Além disso, Bill é um defensor ativo da responsabilidade social, liderando várias iniciativas que visam melhorar a comunidade e o mundo em geral.</p>",
         role: "Presidente",

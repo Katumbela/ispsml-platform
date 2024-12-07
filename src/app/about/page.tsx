@@ -107,7 +107,7 @@ const About = () => {
 				</div>
 				<div
 					style={{
-						background: `url(${images.teachers.bill_gates.src}) center center`,
+						background: `url(${images.teachers.president_photo.src}) center center`,
 						backgroundRepeat: 'no-repeat',
 						backgroundSize: 'cover'
 					}}

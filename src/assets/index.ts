@@ -7,6 +7,7 @@ import logo_blue from "./logos/logo-new-blue.png";
 // Teachers
 import teacher1 from "./teachers/teacher-1.jpeg";
 import teacher2 from "./teachers/teacher-2.jpg";
+import president_photo from "./teachers/president-photo.jpg";
 import teacher3 from "./teachers/teacher-3.png";
 import teacher4 from "./teachers/teacher-4.jpeg";
 import katumbela from "./teachers/katumbela.png";
@@ -84,6 +85,7 @@ export const svgs = {
 export const teachers = {
   teacher1,
   teacher2,
+  president_photo,
   teacher3,
   teacher4,
   katumbela,

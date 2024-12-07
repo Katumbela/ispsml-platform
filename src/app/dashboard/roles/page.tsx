@@ -6,12 +6,14 @@ import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import axios from 'axios';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { storage } from '../../../config/firebaseConfig';
 
 const RolesDashboard = () => {
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
   const [role, setRole] = useState('');
-  const [cv, setCv] = useState('');
+  const [cv, setCv] = useState<File | null>(null);
   const [linkedin, setLinkedin] = useState('');
   const [x, setX] = useState('');
   const [loading, setLoading] = useState(false);
@@ -20,11 +22,18 @@ const RolesDashboard = () => {
     e.preventDefault();
     setLoading(true);
     try {
+      let cvUrl = '';
+      if (cv) {
+        const storageRef = ref(storage, `cvs/${cv.name}`);
+        await uploadBytes(storageRef, cv);
+        cvUrl = await getDownloadURL(storageRef);
+      }
+
       await axios.post('/api/roles', {
         name,
         about,
         role,
-        cv,
+        cv: cvUrl,
         linkedin,
         x,
       });
@@ -43,7 +52,7 @@ const RolesDashboard = () => {
         <InputDefault label='Nome' placeholder='Nome' value={name} onChange={(e) => setName(e.target.value)} required={true} />
         <InputDefault label='Sobre' placeholder='Sobre' value={about} onChange={(e) => setAbout(e.target.value)} required={true} />
         <InputDefault label='Role' placeholder='Role' value={role} onChange={(e) => setRole(e.target.value)} required={true} />
-        <InputDefault label='CV' placeholder='CV' value={cv} onChange={(e) => setCv(e.target.value)} required={true} />
+        <input type="file" onChange={(e) => setCv(e.target.files ? e.target.files[0] : null)} required={true} />
         <InputDefault label='LinkedIn' placeholder='LinkedIn' value={linkedin} onChange={(e) => setLinkedin(e.target.value)} />
         <InputDefault label='X' placeholder='X' value={x} onChange={(e) => setX(e.target.value)} />
         <div className="flex justify-center">

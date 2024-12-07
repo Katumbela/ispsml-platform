@@ -45,7 +45,7 @@ const Hero = () => {
 
 	const translatedCarouselItems = [
 		{
-			background: images.teachers.teacher1,
+			background: images.backgrounds.bg_woman_lib,
 			title: t('navbar.carouselItems.researchInnovationTitle'),
 			description: t('navbar.carouselItems.researchInnovationDescription'),
 			cta: t('navbar.carouselItems.researchInnovationCta'),
@@ -66,7 +66,7 @@ const Hero = () => {
 		// 	link: '/courses'
 		// },
 		{
-			background: images.teachers.teacher3,
+			background: images.teachers.president_photo,
 			title: t('navbar.carouselItems.universityLifeTitle'),
 			description: t('navbar.carouselItems.universityLifeDescription'),
 			cta: t('navbar.carouselItems.universityLifeCta'),
@@ -84,6 +84,7 @@ const Hero = () => {
 							className="relative 2xl:h-[770px] h-[500px] items-start grid place-content-end pb-10 overflow-hidden"
 							initial={{ scale: 0.9 }}
 							animate={{ scale: 1 }}
+							// style={{ background: `url(${item.background.src})` }}
 							transition={{ duration: 0.5 }}
 						>
 							<Image
@@ -91,6 +92,8 @@ const Hero = () => {
 								alt={item.title}
 								layout="fill"
 								objectFit="cover"
+								// width={100}
+								// height={80}
 								className="absolute inset-0 z-[-1]"
 							/>
 							<div className="absolute inset-0 bg-black opacity-50 z-[-1]" />

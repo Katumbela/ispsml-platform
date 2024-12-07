@@ -18,7 +18,7 @@ export function AboutTheSchoolComponents() {
 	};
 
 	const imageList = [
-		{ title: 'Campus Principal', src: images.backgrounds.bg_ispsml },
+		{ title: 'Campus Principal', src: images.backgrounds.bg_ispsml_air },
 		{ title: 'Biblioteca Moderna', src: images.backgrounds.bg_school_2 },
 		{ title: 'Laboratórios Avançados', src: images.backgrounds.bg_school_4 }
 	];

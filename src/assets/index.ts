@@ -53,6 +53,7 @@ import bg_student_22 from "./bgs/students_2.jpg";
 import bg_student_33 from "./bgs/students_3.jpg";
 import bg_books_pen from "./bgs/bg-book-pens.jpg";
 import bg_sci_method from "./bgs/sci_method.avif";
+import bg_ispsml_air from "./bgs/bg_ispsml_air.jpg";
 import bg_sci_method_2 from "./bgs/sci_method_2.webp";
 import bg_school_2 from "./bgs/school-bg-2.jpg";
 
@@ -102,6 +103,7 @@ export const backgrounds = {
   bg_night_2,
   bg_ispsml,
   bg_prepa_tec,
+  bg_ispsml_air,
   bg_master_2,
   bg_master,
   bg_vertical_education,

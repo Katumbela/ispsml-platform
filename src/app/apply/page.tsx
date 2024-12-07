@@ -55,12 +55,16 @@ export default function OrganicUnitPage() {
  
   const hourOptions = [
     {
-      value: '10:00',
-      label: '10-12h'
+      value: 'manha',
+      label: 'Manhã'
     },
     {
-      value: '14-18',
-      label: '14-18h'
+      value: 'tarde',
+      label: 'Tarde'
+    },
+    {
+      value: 'noite',
+      label: 'Noite'
     }
   ]
 	return (
@@ -100,15 +104,15 @@ export default function OrganicUnitPage() {
         </div>
         <form onSubmit={handleSubmit} className="grid items-start w-4/5 py-6 text-white containers 2xl:py-14">
       <div>
-      <h2 className='text-xl font-medium'>INFORMAÇÕES PESSOAIS</h2>
+      <h2 className='text-xl font-medium mb-7'>INFORMAÇÕES PESSOAIS</h2>
           <div className="grid grid-cols-2 gap-7">
             <InputDefault label='Nome Completo' placeholder='Nome completo' value={name} onChange={(e) => setName(e.target.value)} required={true} />
             <InputDefault label='Email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required={true} />
             <InputDefault label='Telefone' placeholder='Telefone' value={phone} onChange={(e) => setPhone(e.target.value)} required={true} />
             <DateSelect name='birth-date' value={birthDate} onChange={(date) => setBirthDate(date)} placeholder='Data de Nascimento' required={true} />
             <InputDefault label='Curso Pretendido' placeholder='Curso Pretendido' value={course} onChange={(e) => setCourse(e.target.value)} required={true} />
-            <SelectDefault name='select-hour' value={hour} onChange={(e) => setHour(e.target.value)} options={hourOptions} placeholder='Selecione o horário' required={true} />
-            <DateSelect name='select-date' value={date} onChange={(date) => setDate(date)} placeholder='Selecione a data' required={true} />
+            <SelectDefault name='select-hour' value={hour} onChange={(e) => setHour(e.target.value)} options={hourOptions} placeholder='Selecione o turno' required={true} />
+            {/* <DateSelect name='select-date' value={date} onChange={(date) => setDate(date)} placeholder='Selecione a data' required={true} /> */}
             <InputDefault label='Mensagem' placeholder='Escreva uma mensagem' value={interest} onChange={(e) => setInterest(e.target.value)} required={false} />
         <div className="flex justify-center">
         <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">

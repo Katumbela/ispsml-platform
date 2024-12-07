@@ -21,6 +21,7 @@ const Navbar = () => {
 	const [ activeDropdown, setActiveDropdown ] = useState<number | null>(null);
 	const [ isScrolled, setIsScrolled ] = useState(false);
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
+	const [searchQuery, setSearchQuery] = useState('');
 
 	const currentLang = i18n.language || 'pt'; // obter a língua atual
 
@@ -41,6 +42,14 @@ const Navbar = () => {
 		};
 	}, []);
 
+	useEffect(() => {
+		if (isSearchOpen) {
+			document.body.style.overflowY = 'hidden';
+		} else {
+			document.body.style.overflowY = 'auto';
+		}
+	}, [isSearchOpen]);
+
 	const changeLanguage = (lng: string) => {
 		// setLang(lng);
 		i18n.changeLanguage(lng);
@@ -56,6 +65,10 @@ const Navbar = () => {
 
 	const navItems = navigationItems(t); // obter itens da navbar com a língua atual
 	const searchResults = searchItems(t); // obter itens pesquisáveis com a língua atual
+
+	const filteredSearchResults = searchResults.filter(item =>
+		item.label.toLowerCase().includes(searchQuery.toLowerCase())
+	);
 
 	const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
 		if (e.target === e.currentTarget) {
@@ -209,9 +222,9 @@ const Navbar = () => {
 								<h2 className="text-xl font-semibold">Pesquisar</h2>
 								<FontAwesomeIcon icon={faTimes} size="lg" className="cursor-pointer" onClick={() => setIsSearchOpen(false)} />
 							</div>
-							<InputDefault placeholder='Pesquise alguma coisa' />
+							<InputDefault placeholder='Pesquise alguma coisa' value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
 							<ul className="mt-4">
-								{searchResults.map((item, index) => (
+								{searchQuery && filteredSearchResults.map((item, index) => (
 									<li key={index} className="mb-2">
 										<Link href={item.href} className="text-white hover:underline">
 											{item.label}

@@ -103,14 +103,14 @@ const Hero = () => {
 									>
 										{item.title}
 									</motion.h1>
-									<motion.p
+									{/* <motion.p
 										className="mb-4 text-lg md:text-xl"
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1 }}
 									>
 										{item.description}
-									</motion.p>
+									</motion.p> */}
 									<motion.a
 										href={item.link}
 										className="flex gap-1 mb-4 font-semibold tracking-wider transition-all text-md hover:text-white/80"
@@ -118,7 +118,8 @@ const Hero = () => {
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1.5 }}
 									>
-										<span className="my-auto uppercase"> {item.cta}</span>
+										<span className="my-auto uppercase"> SABER MAIS</span>
+										{/* <span className="my-auto uppercase"> {item.cta}</span> */}
 										<FaAngleRight className="my-auto text-xl" />
 									</motion.a>
 								</div>

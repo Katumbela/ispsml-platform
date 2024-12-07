@@ -33,22 +33,7 @@ console.log(teamMembers)
       <HeroOrganicUnit />
       <br />
       <div className="containers">
-        <h2 className="text-3xl title">Unidades Organicas ISPSML</h2>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolorem provident nesciunt sit id est
-          laborum tempore dolores eum deleniti similique sed nisi, inventore ullam harum hic, unde eveniet
-          atque?
-        </p>
-        <br />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolorem provident nesciunt sit id est
-          laborum tempore dolores eum deleniti similique sed nisi, inventore ullam harum hic, unde eveniet
-          atque?
-        </p>
-        <br />
-        <br />
-        <br />
+       
         <h2 className="title">Conheça as Nossas Unidades Organicas</h2>
         <p className="mt-4 text-gray-500">
           <i>

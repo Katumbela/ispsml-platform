@@ -16,7 +16,6 @@ export function ShortDescCourse({ course }: ShortDescCourseProps) {
         <div className="w-full">
           <h2 className="title">Sobre o Curso</h2>
           <br />
-          
           {course.long_description}
         </div>
       </div>

@@ -91,7 +91,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 			)
 		},
 		{
-			title: 'Formação Profissional',
+			title: 'Cursos Técnicos Profissional',
 			content: (
 				<>
 					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais. Nossos programas de formação profissional são projetados para fornecer as habilidades e conhecimentos necessários para se destacar no mercado de trabalho. Oferecemos uma variedade de cursos e certificações que atendem às demandas das indústrias modernas.
@@ -117,7 +117,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 
 	return (
 		<div className="containers 2xl:mb-[30vh]">
-			<h2 className="text-3xl font-bold">Educação</h2>
+			<h2 className="text-3xl font-bold">Oferta Formativa</h2>
 			<br />
 			<br />
 			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[15vw] pe-[20vw]   flex gap-24 2xl:gap-28">
@@ -133,10 +133,10 @@ const FixedImageScrollWithBrutalEffect = () => {
 				{/* Conteúdo */}
 				<div className="relative w-1/2 2xl:w-1/3s">
 					<div
-						className="absolute top-[12rem] bottom-0 left-0 w-[1px] bg-gray-300"
+						className="absolute top-[0rem] bottom-0 left-0 w-[1px] bg-gray-300"
 						style={{ marginLeft: '-1.5rem' }}
 					/>
-					<div className='mb-20'>
+					{/* <div className='mb-20'>
 						<h2 className="text-4xl font-bold 2xl:text-5xl">Ofertas Educativas</h2>
 						<p className="mt-6">
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui dolor excepturi eveniet
@@ -145,7 +145,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						</p>
 						<br />
 						<br />
-					</div>
+					</div> */}
 					{/* Parágrafos */}
 					{paragraphs.map((paragraph, index) => (
 						<Paragraph

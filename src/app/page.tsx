@@ -1,7 +1,7 @@
 'use client';
 
 import Hero from '@/components/Hero';
-import QuickLinks from '@/components/QuickLinks';
+// import QuickLinks from '@/components/QuickLinks';
 import { StudyOffer } from '@/components/sections/study-offer/study-offer';
 import { NewsComponents } from '@/components/news-component/news-componet';
 // import { ScienceStudyCard } from '@/components/cards-science-secton/cards-science-section';
@@ -36,7 +36,7 @@ export default function Home() {
 				<br />
 				{/* <ScienceStudyCard /> */}
 				<ConferenceComponent />
-				<QuickLinks /> 
+				{/* <QuickLinks />  */}
 			</div>
 		</>
 	);

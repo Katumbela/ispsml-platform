@@ -1,6 +1,6 @@
 'use client';
 
-import QuickLinks from '@/components/QuickLinks'; 
+// import QuickLinks from '@/components/QuickLinks'; 
 import { coursesData } from '@/infra/data/courses-data';
 import { StringUtils } from '@/utils';
 import { useParams } from 'next/navigation';
@@ -121,7 +121,7 @@ const CSADepartment = () => {
 				</div>
 			</div>
 
-			<QuickLinks />
+			{/* <QuickLinks />  */}
 		</>
 	);
 };

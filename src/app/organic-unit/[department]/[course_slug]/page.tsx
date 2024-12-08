@@ -8,7 +8,7 @@ import YearAccordion from '../../components/YearAccordion';
 import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
 import { FaAngleRight, FaDownload } from 'react-icons/fa6';
-import QuickLinks from '@/components/QuickLinks';
+// import QuickLinks from '@/components/QuickLinks';
 import { routes } from '@/infra/routes.vars';
 // import { RolesData } from '@/infra/data/roles-data';
 
@@ -102,7 +102,7 @@ export default function CourseDetailsPage() {
       <br />
       <br />
       <br />
-      <QuickLinks />
+      {/* <QuickLinks />  */}
     </>
   );
 };

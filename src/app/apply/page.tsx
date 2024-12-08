@@ -15,8 +15,9 @@ import { FaAngleRight, FaSpinner } from 'react-icons/fa6';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
-import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
+// import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 import { useSearchParams } from 'next/navigation';
+import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
 
 export default function ApplyForm() {
   const [hour, setHour] = useState('');
@@ -157,11 +158,11 @@ export default function ApplyForm() {
 
 </div>
       <section id="steps" className="">
-        <div className="py-10 text-white bg-gray-900 ">
+        <div className="py-10 text-white ">
     
     
       
-        <AnimatedAccordionBellowHeader
+        <AnimatedAccordion
         items={[
           {
             title: <h1 className="py-32 font-bold text-center text-9xl">1</h1> ,

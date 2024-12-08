@@ -10,7 +10,7 @@ import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
 import Slider from 'react-slick';
 import { FaAngleDown, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
-import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
+import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
 // import { title } from 'process';
 // import Image from 'next/image';
 // import { motion } from 'framer-motion';
@@ -56,9 +56,24 @@ const RoleProfile = () => {
 			<div className="absolute top-0 bottom-0 left-0 right-0 z-10 bg-black opacity-[0] group-hover:opacity-[.6] transition-all"></div>
 
 		</div>,
-		children: <p className='' dangerouslySetInnerHTML={{
+		children: <div>
+			<p className='' dangerouslySetInnerHTML={{
 			__html:  member.about || ""
-		}} />, // O conteúdo do accordion será a descrição do membro
+		}} /> 
+		<br />
+		<div className="flex gap-2 my-2">
+							{
+								member?.linkedin && <div>
+								<FaLinkedinIn className='text-2xl '/>
+								</div>
+							}
+							{
+								member?.x && <div>
+								<FaXTwitter className='text-2xl '/>
+								</div>
+							}
+						</div>
+		</div>  
 	  }));
 
 
@@ -151,14 +166,13 @@ const RoleProfile = () => {
 			<br />
 			<div className="flex flex-wrap gap-4">
            {/* Componente Accordion aqui */}
-            <AnimatedAccordionBellowHeader gap={5} items={accordionItems} columns={4} />
+            <AnimatedAccordion gap={5} items={accordionItems} columns={4} />
         
       </div>
 		</div>
 	 </section>
 	  
-	 <br />
-	 <br />
+	 <br /> 
 	 <br />
 	 <br />
 	 <br />

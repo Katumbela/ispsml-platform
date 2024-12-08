@@ -109,6 +109,7 @@ const About = () => {
 					style={{
 						background: `url(${images.teachers.president_photo.src}) center center`,
 						backgroundRepeat: 'no-repeat',
+						backgroundPosition:'top',
 						backgroundSize: 'cover'
 					}}
 					className="h-[20rem] 2xl:h-[23rem] relative w-full"

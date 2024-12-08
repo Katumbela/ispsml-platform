@@ -58,7 +58,7 @@ const Hero = () => {
 			cta: t('navbar.carouselItems.welcomeCta'),
 			link: routes.ABOUT_ROUTE
 		},
-		
+
 		// {
 		// 	background: images.backgrounds.bg1,
 		// 	title: t('navbar.carouselItems.academicExcellenceTitle'),
@@ -94,9 +94,8 @@ const Hero = () => {
 								alt={item.title}
 								layout="fill"
 								objectFit="cover"
-								// width={100}
-								// height={80}
-								className="absolute inset-0 z-[-1]"
+								objectPosition="top"
+								className="absolute inset-0 z-[-1] scale-100"
 							/>
 							<div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
 							<div className="relative z-10 my-auto text-start">

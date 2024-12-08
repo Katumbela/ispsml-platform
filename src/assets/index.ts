@@ -3,6 +3,7 @@ import logo1 from "./logos/logo.png";
 import logo_black from "./logos/logo-new.png";
 import logo_white from "./logos/logo-new-white.png";
 import m2j_logo_white from "./logos/m2j_white.png";
+import m2j_logo_p_white from "./logos/logo_p_white.png";
 import logo_blue from "./logos/logo-new-blue.png";
 
 // Teachers
@@ -80,6 +81,7 @@ export const logos = {
   logo_black,
   m2j_logo_white,
   logo_blue,
+  m2j_logo_p_white,
   logo_white
 };
 

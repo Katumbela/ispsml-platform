@@ -14,7 +14,7 @@ export default function SocialResp() {
     <head>
       <title>Responsabilidade Social | Instituto Superior Politécnico São Martinho de Lima</title>
     </head>
-			<GlobalHero bottomBG='dark' title='Responsalibidade Social' bgImage={images.backgrounds.bg_woman_bg_flower.src} className='h-[600px]' />
+			<GlobalHero position='top' bottomBG='dark' title='Responsalibidade Social' bgImage={images.backgrounds.bg_woman_bg_flower.src} className='h-[500px]' />
 
 
 <section className="py-20 containers">

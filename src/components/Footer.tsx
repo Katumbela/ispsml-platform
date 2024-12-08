@@ -106,9 +106,9 @@ export default function Footer() {
                   <div className="w-full my-auto text-start">
                   <span className='my-auto'>&copy;{t('footer.allRightsReserved')}</span>
                   </div>
-                  <div className="flex justify-end w-full gap-1 text-end">
-                  {/* <span className='flex gap-1.5 my-auto '>Developed by</span> */}
-                  <a title='Clique para saber mais' href="https://www.m2jtecnologia.ao" target='_blank' className="my-a"><Image alt='' className='h-[1.8em] my-auto w-[11em]' src={images.logos.m2j_logo_white}/></a>
+                  <div className="flex justify-end w-full gap-2 text-end">
+                  <span className='flex gap-1.5 my-auto '>Developed by</span>
+                  <a title='Clique para saber mais' href="https://www.m2jtecnologia.ao" target='_blank' className="my-a"><Image alt='' className='h-[1.8em] my-auto w-[3em]' src={images.logos.m2j_logo_p_white}/></a>
                   </div>
                 </div>
             </div>

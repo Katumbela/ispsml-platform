@@ -9,7 +9,7 @@ import { BiFile } from 'react-icons/bi';
 import { FaDownload } from 'react-icons/fa';
 import Image from 'next/image';
 import Slider from 'react-slick';
-import { FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
+import { FaAngleDown, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 // import { title } from 'process';
 // import Image from 'next/image';
@@ -44,16 +44,19 @@ const RoleProfile = () => {
 	}, [who])
 
 	const accordionItems = teamMembers.map((member) => ({
-		title:  <div key={member.id} className="w-full relative p-4 text-black h-[20rem] group">
+		title:  <div key={member.id} className="w-full relative p-4 text-black h-[20rem] 2xl:h-[24rem] group">
 			<Image alt={member.name} src={member.pic} layout='fill' objectFit='cover' className='inset-0' />
 			<div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white bg-opacity-50 from-black bg-gradient-to-t group-hover:bg-opacity-75">
 				<h3>{member.name}</h3>
 				<p className='text-xs'>{member.role}</p>
+				<center>
+					<FaAngleDown className='mt-4 text-2xl'/>
+				</center>
 			</div>
 			<div className="absolute top-0 bottom-0 left-0 right-0 z-10 bg-black opacity-[0] group-hover:opacity-[.6] transition-all"></div>
 
 		</div>,
-		children: <p className='text-black' dangerouslySetInnerHTML={{
+		children: <p className='' dangerouslySetInnerHTML={{
 			__html:  member.about || ""
 		}} />, // O conteúdo do accordion será a descrição do membro
 	  }));
@@ -148,7 +151,7 @@ const RoleProfile = () => {
 			<br />
 			<div className="flex flex-wrap gap-4">
            {/* Componente Accordion aqui */}
-            <AnimatedAccordionBellowHeader gap={5} items={accordionItems} columns={3} />
+            <AnimatedAccordionBellowHeader gap={5} items={accordionItems} columns={4} />
         
       </div>
 		</div>
@@ -168,3 +171,4 @@ const RoleProfile = () => {
 };
 
 export default RoleProfile;
+

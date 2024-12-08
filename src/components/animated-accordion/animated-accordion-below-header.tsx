@@ -52,7 +52,7 @@ const AnimatedAccordionBellowHeader: React.FC<AccordionProps> = ({ items, column
               }}
               className="col-span-5 col-start-3 overflow-hidden text-white "
             >
-              <div className="p-3 text-sm">{item.children}</div>
+              <div className="p-3 text-lg">{item.children}</div>
             </motion.div>
           </div>
         ))}

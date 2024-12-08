@@ -8,6 +8,7 @@ import { NewsComponents } from '@/components/news-component/news-componet';
 import { AboutTheSchoolComponents } from '@/components/about-the-school-component/about-the-school-componet';
 import FixedImageScrollWithElastic from '@/components/sections/admissions-section/admissions-section';
 import ConferenceComponent from './organic-unit/components/conference-component';
+import { ScienceStudyCard } from '@/components/cards-science-secton/cards-science-section';
 
 export default function Home() {
 	return (
@@ -34,7 +35,7 @@ export default function Home() {
 				<br />
 				<br />
 				<br />
-				{/* <ScienceStudyCard /> */}
+				<ScienceStudyCard />
 				<ConferenceComponent />
 				{/* <QuickLinks />  */}
 			</div>

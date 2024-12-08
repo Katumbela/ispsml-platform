@@ -3,12 +3,12 @@ import { HoverCard } from '../hover-card/hover-card';
 
 export function ScienceStudyCard() {
 	return (
-		<section className="pt-16 pb-1 ">
+		<section className="pt-[16vh] pb-1 ">
 			<div className="mb-2 containers">
 				<h2 className="text-3xl font-bold">Investigação</h2>
 			</div>
 			<br />
-			<div className="flex my-1 containers bg-primary-footer">
+			{/* <div className="flex my-1 containers bg-primary-footer">
 				<div className="">
 					<div className="">
 						<iframe
@@ -24,7 +24,7 @@ export function ScienceStudyCard() {
 						Conheça a área de pesquisa e seu novo enfoque.
 					</div>
 				</div>
-			</div>
+			</div> */}
 
 			<div className="flex gap-1">
 				<HoverCard

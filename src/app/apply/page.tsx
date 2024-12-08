@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 import { useSearchParams } from 'next/navigation';
 
-export default function OrganicUnitPage() {
+export default function ApplyForm() {
   const [hour, setHour] = useState('');
   const q = useSearchParams()
   const pretendedCoursr = q.get('course')

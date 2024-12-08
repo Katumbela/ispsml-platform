@@ -7,6 +7,7 @@ import { images } from '@/assets';
 import Image from 'next/image';
 import { FaAngleRight } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
+import { routes } from '@/infra/routes.vars';
 
 // const departments = Object.entries(coursesData).map(([key, value]) => ({
 //   link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
@@ -139,6 +140,29 @@ export default function OrganicUnitPage() {
       </motion.div>
       <br />
       <br />
+      <motion.div
+      	initial={{ x: -1000, opacity: 0 }}
+				viewport={{ once: true }}
+				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
+      className="flex flex-row-reverse gap-8 bg-white">
+        <div className="relative w-full py-10 bg-primary">
+          <Image src={images.backgrounds.bg_student_22.src} objectFit='cover' layout='fill' alt="" />
+        </div>
+        <div className="grid items-center w-4/5 py-24 bg-white containers 2xl:py-40 ">
+          <div className="my-auto ">
+          <h2 className='title'>Responsabilidade Social</h2>
+            <p className="mt-4 text-gray-600">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet unde nam maxime dicta aperiam architecto quam adipisci qui neque, fugit autem. Nobis delectus facere hic tempore perferendis ipsam a deserunt.
+            
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore ex iure ipsa nihil ea modi libero minus necessitatibus! Consequatur ipsum doloribus nam molestiae, repellat ipsam natus sequi maxime similique alias.
+            </p>
+            <button  onClick={()=> window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}  className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
+							<span className="my-auto">Saber Mais</span>
+							<FaAngleRight className="my-auto" />
+						</button>
+          </div>
+        </div>
+      </motion.div>
       <br />
       <br />
     </>

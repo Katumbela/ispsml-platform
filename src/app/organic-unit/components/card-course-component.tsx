@@ -1,7 +1,8 @@
 "use client"
 import type { ICourse } from "@/infra/interfaces/course.interface";
 import { routes } from "@/infra/routes.vars";
-import { FaAngleRight } from "react-icons/fa6";
+import Image from "next/image";
+import { FaArrowRight } from "react-icons/fa6";
 interface CardCourseComponentProps {
   course: ICourse,
   department: string 
@@ -9,16 +10,25 @@ interface CardCourseComponentProps {
 
 export function CardCourseComponent({ course, department }: CardCourseComponentProps) {
   return (
-    <div onClick={() => window.location.href = `${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`} className="grid col-span-2 card-view-course  w-full h-[11rem] 2xl:h-[13rem] items-center text-white bg-primary hover:bg-primary-dark cursor-pointer transition-all place-content-center">
-      <div className="text-center whitespace-break-spaces">
-        <h2 className="text-2xl mg-3">
-          {course.course}
-        </h2>
-        <a href={`${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`} className="justify-center hidden gap-1 text-xs underline transition-all ">
-          <span className="my-auto">Ver programa</span>
-          <FaAngleRight className="my-auto text-xs" />
-        </a>
-      </div>
+    // <div className="grid col-span-2 card-view-course  w-full h-[11rem] 2xl:h-[13rem] items-center text-white bg-primary hover:bg-primary-dark cursor-pointer transition-all place-content-center">
+     <div onClick={() => window.location.href = `${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`}   className="relative cursor-pointer card h-[19rem] group">
+        <Image
+          alt=""
+          src={course.course_cover}
+          layout="fill"
+          objectFit="cover"
+          className="inset-0 transition-opacity duration-300 group-hover:opacity-75"
+        />
+        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-30 group-hover:bg-opacity-60">
+          <h3 className="text-2xl font-semibold">{course.course}</h3>
+          <a
+            href={`${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`}
+            className="p-1.5 mt-3 -mb-4 transition-opacity duration-300 border-2 opacity-0 group-hover:opacity-100"
+          >
+            <FaArrowRight className="text-3xl" />
+          </a>
+        </div>
+      {/* </div> */}
     </div>
   )
 }

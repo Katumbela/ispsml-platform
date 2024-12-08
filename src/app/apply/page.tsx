@@ -16,15 +16,18 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
 import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
+import { useSearchParams } from 'next/navigation';
 
 export default function OrganicUnitPage() {
   const [hour, setHour] = useState('');
+  const q = useSearchParams()
+  const pretendedCoursr = q.get('course')
   // const [date, setDate] = useState<Date | null>(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [birthDate, setBirthDate] = useState<Date | null>(null);
-  const [course, setCourse] = useState('');
+  const [course, setCourse] = useState(pretendedCoursr || "");
   const [interest, setInterest] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -161,7 +164,7 @@ export default function OrganicUnitPage() {
         <AnimatedAccordionBellowHeader
         items={[
           {
-            title: <h1 className="py-8 font-bold text-center text-9xl">1</h1> ,
+            title: <h1 className="py-32 font-bold text-center text-9xl">1</h1> ,
             children: (
               <p>
                 Complete o formulário de inscrição com suas informações pessoais e escolha o curso desejado. Certifique-se de que todos os campos obrigatórios estão preenchidos corretamente.
@@ -169,7 +172,7 @@ export default function OrganicUnitPage() {
             ),
           },
           {
-            title: <h1 className="py-8 font-bold text-center text-9xl">2</h1> ,
+            title: <h1 className="py-32 font-bold text-center text-9xl">2</h1> ,
 
             children: (
               <p>
@@ -178,7 +181,7 @@ export default function OrganicUnitPage() {
             ),
           },
           {
-            title: <h1 className="py-8 font-bold text-center text-9xl">3</h1> ,
+            title: <h1 className="py-32 font-bold text-center text-9xl">3</h1> ,
 
             children: (
               <p>

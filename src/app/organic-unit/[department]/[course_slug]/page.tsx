@@ -7,8 +7,9 @@ import { useState } from 'react';
 import YearAccordion from '../../components/YearAccordion';
 import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
-import { FaDownload } from 'react-icons/fa6';
+import { FaAngleRight, FaDownload } from 'react-icons/fa6';
 import QuickLinks from '@/components/QuickLinks';
+import { routes } from '@/infra/routes.vars';
 // import { RolesData } from '@/infra/data/roles-data';
 
 export default function CourseDetailsPage() {
@@ -80,7 +81,8 @@ export default function CourseDetailsPage() {
       <br />
       <br />
 
-      <a href='#' className="flex justify-between containers">
+      <div  className="flex justify-between containers">
+      <div  className="flex justify-between w-full ">
         <div className="w-full my-auto">
           <h2 className="text-2xl font-semibold">
             Baixar Plano Curricular de {course.course}
@@ -89,7 +91,14 @@ export default function CourseDetailsPage() {
         <div className="w-full my-auto">
           <FaDownload className='my-auto text-xl' />
         </div>
-      </a>
+      </div>
+      <div  className="flex justify-end w-full text-end ">
+      <button  onClick={()=> window.location.href = routes.APPLY_ROUTE+"?course="+course.course}  className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
+							<span className="my-auto">Inscrição</span>
+							<FaAngleRight className="my-auto" />
+						</button>
+      </div>
+      </div>
       <br />
       <br />
       <br />

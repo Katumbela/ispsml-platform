@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { FaFacebook, FaHeart, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter, FaYoutube } from 'react-icons/fa6';
+import { FaFacebook, FaInstagram, FaLinkedin, FaTiktok, FaXTwitter, FaYoutube } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';
 import { images } from '@/assets';
@@ -107,7 +107,7 @@ export default function Footer() {
                   <span className='my-auto'>&copy;{t('footer.allRightsReserved')}</span>
                   </div>
                   <div className="flex justify-end w-full gap-1 text-end">
-                  <span className='flex gap-1.5 my-auto '>Developed by</span>
+                  {/* <span className='flex gap-1.5 my-auto '>Developed by</span> */}
                   <a title='Clique para saber mais' href="https://www.m2jtecnologia.ao" target='_blank' className="my-a"><Image alt='' className='h-[1.8em] my-auto w-[11em]' src={images.logos.m2j_logo_white}/></a>
                   </div>
                 </div>

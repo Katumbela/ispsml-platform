@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { images } from '@/assets';
 import {  FaAngleRight } from 'react-icons/fa'; // Importar ícones
 import { routes } from '@/infra/routes.vars';
+import Image from 'next/image';
 
 interface IParagraphProps {
 	children: ReactNode;
@@ -134,8 +135,8 @@ const FixedImageScrollWithBrutalEffect = () => {
 			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[6vw] pe-[5vw]   flex gap-24 2xl:gap-28">
 				{/* Imagem Fixa */}
 				<div className="w-full bg-primary " style={{ position: 'sticky', top: '90px', height: '500px' }}>
-					<img
-						src={images.backgrounds.bg_vertical_education_2.src}
+					<Image
+						src={images.bgPplImages.bg_ppl48.src}
 						alt="Imagem fixa"
 						className="h-[89vh] w-full me-auto"
 					/>

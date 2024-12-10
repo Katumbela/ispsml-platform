@@ -146,7 +146,7 @@ export default function OrganicUnitPage() {
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
       className="flex flex-row-reverse gap-8 bg-white">
         <div className="relative w-full py-10 bg-primary">
-          <Image src={images.backgrounds.fundo_isp_1.src} objectFit='cover' layout='fill' alt="" />
+          <Image objectPosition='top' src={images.backgrounds.fundo_isp_1.src} objectFit='cover' layout='fill' alt="" />
         </div>
         <div className="grid items-center w-4/5 py-24 bg-white containers 2xl:py-40 ">
           <div className="my-auto ">

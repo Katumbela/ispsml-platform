@@ -10,8 +10,8 @@ import { FaAngleRight } from 'react-icons/fa6';
 
 export default function ResearchPage() {
 	const imageList = [
-		{ link: '#', title: 'Campus Principal', src: images.backgrounds.bg_school_3 },
-		{ link: '#', title: 'Biblioteca Moderna', src: images.backgrounds.bg_school_2 },
+		{ link: '#', title: 'Campus Principal', src: images.backgrounds.bg_ispsml_air },
+		{ link: '#', title: 'Biblioteca Moderna', src: images.bgsSchool.bg_school_16 },
 		{ link: '#', title: 'Laboratórios Avançados', src: images.backgrounds.bg_school_4 }
 	];
 
@@ -68,11 +68,11 @@ export default function ResearchPage() {
 			>
 				{imageList.map((item, i) => (
 					<div
-						style={{ background: `linear-gradient(90deg, #0000008D, #0000008D), url('${item.src.src}')` }}
+						style={{ background: `linear-gradient(90deg, #0000008D, #0000008D), url('${item.src.src}') center center `, backgroundSize: 'cover' }}
 						key={i}
-						className="h-[15rem] p-3 text-md text-white font-semibold cursor-pointer grid items-end"
+						className="h-[15rem] 2xl:h-[23rem] p-3 text-md text-white font-semibold cursor-pointer grid items-end"
 					>
-						<a href="#" className="flex gap-2">
+						<a href="#" className="flex gap-2 2xl:text-2xl">
 							<span className="my-auto">{item.title}</span>
 							<FaAngleRight className="my-auto" />
 						</a>

@@ -100,7 +100,7 @@ export default function ApplyForm() {
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
       className="flex gap-8 containers">
         <div className="relative w-1/3 py-">
-        <div className="relative w-full h-[20rem] py-10 bg-primary">
+        <div className="relative w-full h-full py-10 bg-primary">
           <Image src={images.backgrounds.bg_form_inscription.src} objectFit='cover' layout='fill' alt="" />
         </div>
         </div>

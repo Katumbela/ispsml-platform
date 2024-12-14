@@ -13,10 +13,8 @@ export default function Footer() {
             <div className="grid grid-cols-1 gap-8 mx-auto containers md:grid-cols-4">
                 <div>
                     <h3 className="mb-4 text-xl font-semibold">{t('footer.contact')}</h3>
-                    <p>{t('footer.phone1')}</p>
-                    <p>{t('footer.phone2')}</p>
+                    <p>{t('footer.phone1')}</p> 
                     <p>{t('footer.email')}</p>
-                    <p>{t('footer.addressLine1')}</p>
                     <p>{t('footer.addressLine2')}</p>
                     <p>{t('footer.city')}</p>
                     <br />

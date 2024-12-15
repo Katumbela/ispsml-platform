@@ -45,7 +45,7 @@ export default function ApplyForm() {
         birthDate,
         course,
         hour,
-        date,
+        // date,
         interest,
       });
 

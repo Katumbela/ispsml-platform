@@ -5,6 +5,7 @@ import { events } from '@/infra/data/events';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AbreviateString } from '../../../utils/abreviate-utils';
+import { DateUtils } from '@/utils';
 
 export default function EventDetailPage() {
     const { slug } = useParams();
@@ -22,7 +23,7 @@ export default function EventDetailPage() {
                 <div className="containers">
                     <h1 className="text-3xl font-semibold text-white">{event.title}</h1>
                     <p className="flex gap-2 mt-4 text-sm text-white">
-                        <span className="my-auto">{event.date} às {event.time}</span>
+                        <span className="my-auto">{DateUtils.getDateTimePt(event.date)}</span>
                     </p>
                 </div>
             </div>
@@ -62,7 +63,7 @@ export default function EventDetailPage() {
                                 <h4 className="text-sm font-semibold text-gray-700">
                                     {AbreviateString.abbreviate(event.title, 30)}
                                 </h4>
-                                <p className="text-xs text-gray-600">{event.time} HRS.</p>
+                                <p className="text-xs text-gray-600">{DateUtils.getDateTime(event.date)} HRS.</p>
                                 <Link href={`/events/${event.slug}`}>
                                     <button className="mt-1 text-xs text-blue-500 hover:underline">Conferência online</button>
                                 </Link>

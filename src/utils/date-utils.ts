@@ -39,4 +39,8 @@ export default class DateUtils {
 		const minutes = String(date.getUTCMinutes()).padStart(2, '0')
 		return `${hours}:${minutes}`
 	}
+
+	static getAbbreviatedMonth(date: Date): string {
+		return date.toLocaleString('pt-br', { month: 'short' }).toUpperCase();
+	}
 }

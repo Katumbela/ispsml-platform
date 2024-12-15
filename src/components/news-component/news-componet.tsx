@@ -14,22 +14,22 @@ import 'react-loading-skeleton/dist/skeleton.css';
 export function NewsComponents() {
 	const { t } = useTranslation();
 
-  const [loading, setLoading] = useState(false);
-	
-  const [newses, setNewses] = useState<News[] | []>([]);
-  const [randomNews, setRandomNews] = useState<News | null>(null);
-  
-    useEffect(() => {
+	const [loading, setLoading] = useState(false);
+
+	const [newses, setNewses] = useState<News[] | []>([]);
+	const [randomNews, setRandomNews] = useState<News | null>(null);
+
+	useEffect(() => {
 		setLoading(true);
-      newsService.getAllNews().then((news) => {
-        setNewses(news);
-        setLoading(false);
-        if (news.length > 0) {
-          const randomIndex = Math.floor(Math.random() * news.length);
-          setRandomNews(news[randomIndex]);
-        }
-      });
-    }, []);
+		newsService.getAllNews().then((news) => {
+			setNewses(news);
+			setLoading(false);
+			if (news.length > 0) {
+				const randomIndex = Math.floor(Math.random() * news.length);
+				setRandomNews(news[randomIndex]);
+			}
+		});
+	}, []);
 
 
 	const settings = {
@@ -113,7 +113,12 @@ export function NewsComponents() {
 				<div className="w-3/5">
 					<div className="relative">
 						{loading ? (
-							<Skeleton count={3} height={200} />
+
+							<div className='flex gap-3'>
+								<div className="w-full h-[22rem] mb-2 bg-gray-300 rounded"></div>
+								<div className="w-full h-[22rem] mb-2 bg-gray-300 rounded "></div>
+								<div className="w-full h-[22rem] mb-2 bg-gray-300 rounded"></div>
+							</div>
 						) : (
 							<Slider {...settings}>
 								{newses.map((news, index) => (

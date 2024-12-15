@@ -34,6 +34,9 @@ const ConferenceComponent = () => {
                 <p className="mb-6">
                   {featuredEvent.description}
                 </p>
+                <p className="mb-6">
+                  Local: {featuredEvent.place}
+                </p>
                 <Link href={`/events/${featuredEvent.slug}`}>
                   <button className="px-4 py-2 font-medium text-white transition-all bg-primary hover:bg-primary-dark">
                     QUERO ME REGISTRAR

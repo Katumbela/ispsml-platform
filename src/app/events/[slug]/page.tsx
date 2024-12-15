@@ -39,6 +39,8 @@ export default function EventDetailPage() {
                     <br />
                     <p>{event.longDescription}</p>
                     <br />
+                    <p>Local: {event.place}</p>
+                    <br />
                     <Image height={1000} width={1000} src={event.imageUrl} alt={event.title} />
                     <br />
                     <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white">

@@ -13,6 +13,7 @@ export const events: Event[] = [
     imageUrl: images.departImages.ciencias_sociais.src,
     isFeatured: true,
     slug: 'conferencia-futuro-mobilidade-eletrificacao-transporte',
+    place: 'Auditório Principal', // nova propriedade
   },
   {
     id: '2',
@@ -25,6 +26,7 @@ export const events: Event[] = [
     imageUrl: images.departImages.studying_group.src,
     isFeatured: false,
     slug: 'conferencia-desafios-vendas-contextos-dinamicos',
+    place: 'Sala de Conferências 2', // nova propriedade
   },
   {
     id: '3',
@@ -37,6 +39,7 @@ export const events: Event[] = [
     imageUrl: images.departImages.studying_group_2.src,
     isFeatured: false,
     slug: 'viagens-terras-inimaginaveis-convivencia-transtornos-neurocognitivos',
+    place: 'Sala de Conferências 3', // nova propriedade
   },
   {
     id: '4',
@@ -49,5 +52,6 @@ export const events: Event[] = [
     imageUrl: images.departImages.geoscience.src,
     isFeatured: false,
     slug: 'conferencia-sucesso-sem-medos-vencendo-sindrome-impostor',
+    place: 'Auditório Secundário', // nova propriedade
   },
 ];

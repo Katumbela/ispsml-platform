@@ -9,4 +9,5 @@ export interface Event {
   imageUrl: string;
   isFeatured: boolean;
   slug: string; // nova propriedade
+  place: string; // nova propriedade
 }

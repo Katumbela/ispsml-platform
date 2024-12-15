@@ -54,6 +54,7 @@ const DateSelect: FC<DateSelectProps> = ({
         <FaCalendarAlt className="my-auto mr-2" />
         <DatePicker
           selected={value}
+          showTimeSelect={true}
           onChange={(date) => onChange(date as Date | null)}
           className="w-full px-2 py-1 bg-transparent border-none outline-none"
           placeholderText={placeholder}

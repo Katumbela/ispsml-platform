@@ -2,12 +2,13 @@ import Image from 'next/image';
 import React from 'react';
 import { AbreviateString } from '../../utils/abreviate-utils';
 import { routes } from '@/infra/routes.vars';
+import { DateUtils } from '@/utils';
 
 interface NewsCardProps {
 	title: string;
 	shortDescription: string;
 	content: string;
-	postDate: string;
+	postDate: Date;
 	poster: string;
 	link: string;
 	image: string;
@@ -29,7 +30,6 @@ const NewsCard: React.FC<NewsCardProps> = ({ slug, title, content, postDate, ima
 				</div>
 				<div className="p-2">
 					<h2 className="font-semibold text-md 2xl:text-lg">{AbreviateString.abbreviate(title, 50)}</h2>
-
 					<p
 						className="mt-1 text-xs text-gray-400 2xl:text-md"
 						dangerouslySetInnerHTML={{
@@ -43,7 +43,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ slug, title, content, postDate, ima
 						>
 							Leia mais
 						</a>
-						<span className="text-xs">{postDate}</span>
+						<span className="text-xs">{DateUtils.getDatePt(postDate)}</span>
 					</div>
 				</div>
 			</div>

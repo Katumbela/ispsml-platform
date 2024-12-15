@@ -99,3 +99,16 @@ model Application {
     interest  String
     date      DateTime
 }
+
+model Event {
+    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+    title           String
+    description     String
+    longDescription String
+    date            DateTime 
+    category        String
+    imageUrl        String
+    isFeatured      Boolean
+    slug            String
+    place           String
+}

@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import axios from 'axios'; 
 import { uploadImage } from '@/utils/uploadImage';
+import { createDepartment } from '@/services/departments.service';
 
 
 const DepartmentsDashboard = () => {
@@ -22,9 +22,9 @@ const DepartmentsDashboard = () => {
         let imageUrl = '';
     if (image) {
       imageUrl = await uploadImage(image, 'departments');
-    }
+    } 
 
-      await axios.post('/api/departments', {
+      await createDepartment({
         name,
         description,
         image: imageUrl,

@@ -34,8 +34,7 @@ export function StudyOffer() {
 			title: 'Responsabilidade Social',
 			description: 'Iniciativas e projetos de responsabilidade social que a instituição está envolvida, destacando o impacto positivo na comunidade e as oportunidades de participação para os alunos.',
 			image: images.departImages.geoscience.src,
-			link: '#'
-			// link: routes.GEOSCIENCE_ROUTE
+			link: routes.SOCIAL_REPONSABILITY_ROUTE
 		}
 	];
 

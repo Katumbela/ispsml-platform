@@ -1,6 +1,6 @@
 'use client';
 
-import QuickLinks from '@/components/QuickLinks'; 
+// import QuickLinks from '@/components/QuickLinks'; 
 import { coursesData } from '@/infra/data/courses-data';
 import { StringUtils } from '@/utils';
 import { useParams } from 'next/navigation';
@@ -114,14 +114,14 @@ const CSADepartment = () => {
 				<br />
 			</div>
 			<div className="px-1 mb-1">
-				<div className="grid gap-1.5 grid-cols-12">
+				<div className="grid gap-1.5 grid-cols-4">
 					{departmentData?.courses.map((course, i) => (
 						<CardCourseComponent key={i} course={course} department={department as string} />
 					))}
 				</div>
 			</div>
 
-			<QuickLinks />
+			{/* <QuickLinks />  */}
 		</>
 	);
 };

@@ -23,6 +23,7 @@ interface GlobalHeroProps {
 	heightLg?: string;
 	bgImage?: string;
 	heightXxl?: string;
+	position?: string;
 }
 
 const GlobalHero = ({
@@ -33,7 +34,8 @@ const GlobalHero = ({
 	heightLg,
 	title,
 	bgImage,
-	bottomBG
+	bottomBG,
+	position
 }: GlobalHeroProps) => {
 	const [ slideIndex, setSlideIndex ] = useState(0);
 	const [ animationDirection, setAnimationDirection ] = useState('top');
@@ -77,6 +79,7 @@ const GlobalHero = ({
 							src={bgImage ? bgImage : images.backgrounds.bg_night_1.src}
 							alt={''}
 							layout="fill"
+							objectPosition={position || ""}
 							objectFit="cover"
 							className="absolute inset-0 z-[-1]"
 						/>

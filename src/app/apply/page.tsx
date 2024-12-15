@@ -3,7 +3,6 @@
 
 import cn from 'classnames';
 
-import HeroOrganicUnit from '../organic-unit/components/HeroOrganicUnit';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { images } from '@/assets'; 
@@ -15,17 +14,22 @@ import { FaAngleRight, FaSpinner } from 'react-icons/fa6';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
-import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 import axios from 'axios';
+// import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
+import { useSearchParams } from 'next/navigation';
+import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+import GlobalHero from '@/components/global-hero/global-hero';
 
-export default function OrganicUnitPage() {
+export default function ApplyForm() {
   const [hour, setHour] = useState('');
-  const [date, setDate] = useState<Date | null>(null);
+  const q = useSearchParams()
+  const pretendedCoursr = q.get('course')
+  // const [date, setDate] = useState<Date | null>(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [birthDate, setBirthDate] = useState<Date | null>(null);
-  const [course, setCourse] = useState('');
+  const [course, setCourse] = useState(pretendedCoursr || "");
   const [interest, setInterest] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -67,20 +71,24 @@ export default function OrganicUnitPage() {
 			link: '#steps',
 			title: 'Passos A Seguir'
 		},
-		{
-			link: '#dates',
-			title: 'Datas Importantes'
-		}
+		// {
+		// 	link: '#dates',
+		// 	title: 'Datas Importantes'
+		// }
 	];
  
   const hourOptions = [
     {
-      value: '10:00',
-      label: '10-12h'
+      value: 'manha',
+      label: 'Manhã'
     },
     {
-      value: '14-18',
-      label: '14-18h'
+      value: 'tarde',
+      label: 'Tarde'
+    },
+    {
+      value: 'noite',
+      label: 'Noite'
     }
   ]
 	return (
@@ -88,7 +96,7 @@ export default function OrganicUnitPage() {
     <head>
       <title>Processo de Inscrição | Instituto Superior Politécnico São Martinho de Lima</title>
     </head>
-			<HeroOrganicUnit />
+			<GlobalHero bgImage={images.backgrounds.bg_woman_bg_flower.src} className='h-[700px]' bottomBG='dark' position='top' title='Formulário de Inscrição' />
 			<div className="flex justify-between -mt-1.5 text-center border-b">
 				{buttons.map((item, index) => (
 					<a href={item.link} key={index} className={cn("justify-center w-full py-5 font-bold text-center transition-colors cursor-pointer hover:text-white uppercase text-sm hover:bg-primary-footer", {"border-x": index===1})}>
@@ -104,8 +112,6 @@ export default function OrganicUnitPage() {
     </p>
     <br />
     <br />
-
- 
       </div>
       <section className='py-10 bg-primary-footer' id="form">
       <motion.div
@@ -114,21 +120,22 @@ export default function OrganicUnitPage() {
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
       className="flex gap-8 containers">
         <div className="relative w-1/3 py-">
-        <div className="relative w-full h-[20rem] py-10 bg-primary">
-          <Image src={images.backgrounds.bg_student_22.src} objectFit='cover' layout='fill' alt="" />
+        <div className="relative w-full h-full py-10 bg-primary">
+          <Image src={images.backgrounds.bg_form_inscription.src} objectFit='cover' layout='fill' alt="" />
         </div>
         </div>
         <form onSubmit={handleSubmit} className="grid items-start w-4/5 py-6 text-white containers 2xl:py-14">
+      <div>
+      <h2 className='text-xl font-medium mb-7'>INFORMAÇÕES PESSOAIS</h2>
           <div className="grid grid-cols-2 gap-7">
-          <h2 className='text-xl font-medium'>INFORMAÇÕES PESSOAIS</h2>
             <InputDefault label='Nome Completo' placeholder='Nome completo' value={name} onChange={(e) => setName(e.target.value)} required={true} />
             <InputDefault label='Email' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} required={true} />
             <InputDefault label='Telefone' placeholder='Telefone' value={phone} onChange={(e) => setPhone(e.target.value)} required={true} />
             <DateSelect name='birth-date' value={birthDate} onChange={(date) => setBirthDate(date)} placeholder='Data de Nascimento' required={true} />
             <InputDefault label='Curso Pretendido' placeholder='Curso Pretendido' value={course} onChange={(e) => setCourse(e.target.value)} required={true} />
-            <SelectDefault name='select-hour' value={hour} onChange={(e) => setHour(e.target.value)} options={hourOptions} placeholder='Selecione o horário' required={true} />
-            <DateSelect name='select-date' value={date} onChange={(date) => setDate(date)} placeholder='Selecione a data' required={true} />
-            <InputDefault label='Interesse' placeholder='Interesse' value={interest} onChange={(e) => setInterest(e.target.value)} required={true} />
+            <SelectDefault name='select-hour' value={hour} onChange={(e) => setHour(e.target.value)} options={hourOptions} placeholder='Selecione o turno' required={true} />
+            {/* <DateSelect name='select-date' value={date} onChange={(date) => setDate(date)} placeholder='Selecione a data' required={true} /> */}
+            <InputDefault label='Mensagem' placeholder='Escreva uma mensagem' value={interest} onChange={(e) => setInterest(e.target.value)} required={false} />
         <div className="flex justify-center">
         <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
           {loading ? <FaSpinner className="my-auto animate-spin" /> : (
@@ -140,6 +147,7 @@ export default function OrganicUnitPage() {
         </button>
         </div>
           </div>
+      </div>
         </form>
       </motion.div>
       </section>
@@ -170,14 +178,14 @@ export default function OrganicUnitPage() {
 
 </div>
       <section id="steps" className="">
-        <div className="py-10 text-white bg-gray-900 ">
+        <div className="py-10 text-white ">
     
     
       
-        <AnimatedAccordionBellowHeader
+        <AnimatedAccordion
         items={[
           {
-            title: <h1 className="py-8 font-bold text-center text-9xl">1</h1> ,
+            title: <h1 className="py-32 font-bold text-center text-9xl">1</h1> ,
             children: (
               <p>
                 Complete o formulário de inscrição com suas informações pessoais e escolha o curso desejado. Certifique-se de que todos os campos obrigatórios estão preenchidos corretamente.
@@ -185,7 +193,7 @@ export default function OrganicUnitPage() {
             ),
           },
           {
-            title: <h1 className="py-8 font-bold text-center text-9xl">2</h1> ,
+            title: <h1 className="py-32 font-bold text-center text-9xl">2</h1> ,
 
             children: (
               <p>
@@ -194,56 +202,25 @@ export default function OrganicUnitPage() {
             ),
           },
           {
-            title: <h1 className="py-8 font-bold text-center text-9xl">3</h1> ,
+            title: <h1 className="py-32 font-bold text-center text-9xl">3</h1> ,
 
             children: (
               <p>
                 Aguarde a confirmação do recebimento dos documentos e a validação das informações fornecidas. Você será notificado por e-mail sobre o status da sua inscrição.
               </p>
             ),
-          },
-          {
-            title: <h1 className="py-8 font-bold text-center text-9xl">4</h1> ,
-
-            children: (
-              <p>
-                Participe da prova de admissão na data agendada. Prepare-se adequadamente para o exame, revisando o conteúdo programático e praticando com provas anteriores.
-              </p>
-            ),
-          },
-          {
-            title: <h1 className="py-8 font-bold text-center text-9xl">5</h1> ,
-
-            children: (
-              <p>
-                Aguarde a divulgação dos resultados da prova de admissão. Os resultados serão publicados no site oficial e você também receberá uma notificação por e-mail.
-              </p>
-            ),
-          },
-          {
-            title: <h1 className="py-8 font-bold text-center text-9xl">6</h1> ,
-
-            children: (
-              <p>
-                Caso aprovado, conclua o processo de matrícula dentro do prazo estipulado. Compareça à instituição com os documentos originais para a confirmação da matrícula.
-              </p>
-            ),
-          },
+          }
         ]}
-        columns={6}
+        columns={3}
       />
     </div>
 
         </section>
 
         <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <br /> 
 
-        <section id="dates" className="">
+        <section id="dates" className="hidden">
 
         <div className="containers">
         <h1 className="py-8 text-4xl font-bold text-start">Datas Importantes</h1> 
@@ -340,11 +317,7 @@ export default function OrganicUnitPage() {
  
 			</div> 
 			</section> 
-
-<br />
-<br />
-<br />
-<br />
-		</>
+ 
+ 		</>
 	);
 }

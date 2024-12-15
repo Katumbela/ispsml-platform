@@ -18,7 +18,7 @@ export function AboutTheSchoolComponents() {
 	};
 
 	const imageList = [
-		{ title: 'Campus Principal', src: images.backgrounds.bg_school_3 },
+		{ title: 'Campus Principal', src: images.backgrounds.bg_ispsml_air },
 		{ title: 'Biblioteca Moderna', src: images.backgrounds.bg_school_2 },
 		{ title: 'Laboratórios Avançados', src: images.backgrounds.bg_school_4 }
 	];
@@ -34,7 +34,7 @@ export function AboutTheSchoolComponents() {
 				<div className="relative w-3/4 2xl:w-3/4 pt-[2.5rem]  ]">
 					<Slider {...settings}>
 						{imageList.map((item, index) => (
-							<div className=" h-[75vh] 2xl:h-[75vh] " key={index}>
+							<div className=" h-[75vh] 2xl:h-[85vh] " key={index}>
 								{/* <h3 className="mb-2 text-xl font-medium text-center text-white">{item.title}</h3> */}
 								{/* <div className="relative w-20 h-20"> */}
 								<Image

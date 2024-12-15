@@ -13,7 +13,6 @@ type NavigationItem = {
 };
 
 export const navigationItems = (t: any): NavigationItem[] => {
-  
   return [
     {
       label: 'navbar.about',
@@ -42,18 +41,8 @@ export const navigationItems = (t: any): NavigationItem[] => {
                 </a>
               </li>
               <li>
-                <a href={routes.ALUMNI_ROUTE}>
-                  {t('navbar.academicServicesSection.alumni')}
-                </a>
-              </li>
-              <li>
                 <a href={routes.RULES_MODAL_ROUTE} data-target="#rules-modal" data-toggle="modal">
                   {t('navbar.academicServicesSection.regulations')}
-                </a>
-              </li>
-              <li>
-                <a href={routes.EDITAL_MODAL_ROUTE} data-target="#edital-modal" data-toggle="modal">
-                  {t('navbar.academicServicesSection.edital')}
                 </a>
               </li>
               <li>
@@ -63,32 +52,23 @@ export const navigationItems = (t: any): NavigationItem[] => {
               </li>
             </ul>
           </div>
-      
           <div>
             <h3>{t('navbar.allApplicationLinksSection.informationGeneral')}</h3>
             <ul>
-              <li>{t('navbar.allApplicationLinksSection.informationGeneral')}</li>
               <li>{t('navbar.allApplicationLinksSection.academicProgramsAll')}</li>
               <li>{t('navbar.allApplicationLinksSection.onlineApplication')}</li>
               <li>{t('navbar.allApplicationLinksSection.onlineApplicationGuideReturning')}</li>
               <li>{t('navbar.allApplicationLinksSection.prospects')}</li>
-              <li>{t('navbar.allApplicationLinksSection.lateApplications')}</li>
-              <li>{t('navbar.allApplicationLinksSection.applicationForms')}</li>
             </ul>
           </div>
-      
           <div>
             <h3>{t('navbar.undergraduateStudentsSection.undergraduateStudents')}</h3>
             <ul>
               <li>{t('navbar.undergraduateStudentsSection.admissionRequirements')}</li>
               <li>{t('navbar.undergraduateStudentsSection.programBrochure')}</li>
               <li>{t('navbar.undergraduateStudentsSection.fees')}</li>
-              <li>{t('navbar.undergraduateStudentsSection.onlineApplication')}</li>
-              <li>{t('navbar.undergraduateStudentsSection.applicationGuide')}</li>
-              <li>{t('navbar.undergraduateStudentsSection.prospects')}</li>
             </ul>
           </div>
-      
           <div>
             <h3>{t('navbar.postgraduateStudentsSection.postgraduateStudents')}</h3>
             <ul>
@@ -100,7 +80,6 @@ export const navigationItems = (t: any): NavigationItem[] => {
               <li>{t('navbar.postgraduateStudentsSection.prospects')}</li>
             </ul>
           </div>
-      
           <div>
             <h3>{t('navbar.internationalStudentsSection.internationalStudents')}</h3>
             <ul>
@@ -111,7 +90,6 @@ export const navigationItems = (t: any): NavigationItem[] => {
               <li>{t('navbar.internationalStudentsSection.prospects')}</li>
             </ul>
           </div>
-      
           <div>
             <h3>{t('navbar.studentFeesSection.studentFees')}</h3>
             <ul>
@@ -119,6 +97,7 @@ export const navigationItems = (t: any): NavigationItem[] => {
               <li>{t('navbar.studentFeesSection.onlinePayment')}</li>
               <li>{t('navbar.studentFeesSection.directDebitForm')}</li>
               <li>{t('navbar.studentFeesSection.refundProcess')}</li>
+              <li>{t('navbar.studentFeesSection.servicesHealth')}</li>
             </ul>
           </div>
         </div>

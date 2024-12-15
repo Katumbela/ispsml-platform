@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer';
 import { images } from '@/assets';
 import {  FaAngleRight } from 'react-icons/fa'; // Importar ícones
 import { routes } from '@/infra/routes.vars';
+import Image from 'next/image';
 
 interface IParagraphProps {
 	children: ReactNode;
@@ -80,6 +81,17 @@ const FixedImageScrollWithBrutalEffect = () => {
 
 	const paragraphs = [
 		{
+			title: 'Pós-Graduação',
+			content: (
+				<>
+					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
+					<div className="mt-6">
+						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
+					</div>
+				</>
+			)
+		},
+		{
 			title: 'Licenciatura',
 			content: (
 				<>
@@ -91,7 +103,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 			)
 		},
 		{
-			title: 'Formação Profissional',
+			title: 'Técnicos Profissional',
 			content: (
 				<>
 					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais. Nossos programas de formação profissional são projetados para fornecer as habilidades e conhecimentos necessários para se destacar no mercado de trabalho. Oferecemos uma variedade de cursos e certificações que atendem às demandas das indústrias modernas.
@@ -116,27 +128,30 @@ const FixedImageScrollWithBrutalEffect = () => {
 	];
 
 	return (
-		<div className="containers 2xl:mb-[30vh]">
-			<h2 className="text-3xl font-bold">Educação</h2>
+		<div className="containers pb-[5vh] ">
+			<h2 className="text-3xl font-bold">Oferta Formativa</h2>
 			<br />
 			<br />
-			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[15vw] pe-[20vw]   flex gap-5 2xl:gap-28">
+			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[6vw] pe-[5vw]   flex gap-24 2xl:gap-28">
 				{/* Imagem Fixa */}
-				<div className="w-1/2 " style={{ position: 'sticky', top: '90px', height: '500px' }}>
-					<img
-						src={images.backgrounds.bg_vertical_education_2.src}
+				<div className="relative w-full bg-primary " style={{ position: 'sticky', top: '90px', height: '89vh' }}>
+					<Image
+						src={images.bgPplImages.bg_ppl48.src}
 						alt="Imagem fixa"
-						className="h-[89vh] w-[29rem] 2xl:w-[55vw] me-auto"
+						
+						objectFit='cover'
+						layout='fill'
+						className="h-[89vh] w-full me-auto"
 					/>
 				</div>
 
 				{/* Conteúdo */}
-				<div className="relative w-1/2 2xl:w-1/3s">
+				<div className="relative w-full ">
 					<div
-						className="absolute top-[12rem] bottom-0 left-0 w-[1px] bg-gray-300"
+						className="absolute top-[0rem] bottom-0 left-0 w-[1px] bg-gray-300"
 						style={{ marginLeft: '-1.5rem' }}
 					/>
-					<div className='mb-20'>
+					{/* <div className='mb-20'>
 						<h2 className="text-4xl font-bold 2xl:text-5xl">Ofertas Educativas</h2>
 						<p className="mt-6">
 							Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui dolor excepturi eveniet
@@ -145,7 +160,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						</p>
 						<br />
 						<br />
-					</div>
+					</div> */}
 					{/* Parágrafos */}
 					{paragraphs.map((paragraph, index) => (
 						<Paragraph

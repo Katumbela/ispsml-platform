@@ -5,11 +5,10 @@ import { images } from '@/assets';
 import GlobalHero from '@/components/global-hero/global-hero';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
-import { FaAngleRight, FaArrowRight, FaCheck, FaChessBoard, FaMedal, FaUserGraduate } from 'react-icons/fa6';
-import { FaChalkboardTeacher } from 'react-icons/fa';
+import { FaAngleRight, FaArrowRight } from 'react-icons/fa6';
 import { coursesData } from '@/infra/data/courses-data';
 import { ICourse } from '@/infra/interfaces/course.interface';
-import ConferenceComponent from '@/app/organic-unit/components/conference-component';
+// import ConferenceComponent from '@/app/organic-unit/components/conference-component';
 import { routes } from '@/infra/routes.vars';
 
 const CourseList = ({ courses }: { courses: { course: ICourse, department: string }[] }) => (
@@ -149,7 +148,7 @@ export default function CustomKnowMore() {
         {content}
       </GlobalHero>
       <br />
-      <section className="containers">
+      {/* <section className="containers">
         <h2 className="text-4xl font-semibold">Conheça os grandes benefícios de estudar no ISPSML</h2>
       </section>
       <br />
@@ -210,7 +209,7 @@ export default function CustomKnowMore() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <br />
       <br />
       <section className="containers">
@@ -240,10 +239,8 @@ export default function CustomKnowMore() {
 </section>
       </section>
       <br />
-      <br />
-      <br />
-      <br />
-      <ConferenceComponent />
+      <br /> 
+      {/* <ConferenceComponent /> */}
       <br />
       <br />
     </div>

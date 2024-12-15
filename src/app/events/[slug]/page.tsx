@@ -1,17 +1,61 @@
 "use client"
 
 import { useParams } from 'next/navigation';
-import { events } from '@/infra/data/events';
+// import { events } from '@/infra/data/events';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AbreviateString } from '../../../utils/abreviate-utils';
 import { DateUtils } from '@/utils';
+import { useEffect, useState } from 'react';
+import { getAllEvents, getEventBySlug } from '@/services/events.service';
+import { Event } from '@/infra/interfaces/events.interface';
 
 export default function EventDetailPage() {
     const { slug } = useParams();
-    const event = events.find(event => event.slug === slug);
+    // const event = events.find(event => event.slug === slug);
+    const [event, setEvents] = useState<Event | null>(null);
+    const [allEvent, setAllEvents] = useState<Event[] | []>([]);
+    const [loading, setLoading] = useState(true);
 
-    console.log(event);
+    useEffect(() => {
+        getEventBySlug(slug ? String(slug) : "").then((events) => {
+            setEvents(events);
+            setLoading(false);
+        });
+        getAllEvents().then((events) => {
+            setAllEvents(events);
+            setLoading(false);
+        });
+    }, [slug]);
+
+    if (loading) {
+        return (
+            <div className="items-center py-[15vh] h-full containers place-content-center">
+                <div className="w-full h-32 mb-2 bg-gray-300 rounded"></div>
+                <br />
+                <div className="flex gap-8">
+                    <div className="w-8/12 animate-pulse">
+                        <div className="w-full h-32 mb-2 bg-gray-300 rounded"></div>
+                        <div className="h-[10rem] w-full mb-4 bg-gray-300 rounded"></div>
+                        <div className="w-full h-10 mb-2 bg-gray-300 rounded"></div>
+                        <div className="w-full h-10 mb-2 bg-gray-300 rounded"></div>
+                        <div className="w-full h-10 mb-2 bg-gray-300 rounded"></div>
+                        <div className="h-4 mb-2 bg-gray-300 rounded w-28"></div>
+                    </div>
+                    <div className="w-4/12 animate-pulse">
+                        {
+                            Array.from({ length: 3 }).map((_, index) => (
+                                <div key={index} className="flex items-start p-1 transition-all bg-gray-100 border-4 border-gray-100 shadow-sm 2xl:p-5 hover:border-primary">
+                                    <div className="w-full h-24 bg-gray-300 rounded"></div>
+
+                                </div>
+                            ))
+                        }
+                    </div>
+                </div>
+            </div>
+        );
+    }
 
     if (!event) {
         return <div className='grid items-center h-screen place-content-center'>{slug} Evento não encontrado</div>;
@@ -54,7 +98,7 @@ export default function EventDetailPage() {
                 </div>
                 <div className="w-4/12">
                     <h3 className="text-lg font-semibold text-gray-700">EVENTOS ANTERIORES</h3>
-                    {events.map((event, index) => (
+                    {allEvent.filter((e) => e.slug !== slug).map((event, index) => (
                         <div key={index} className="flex items-start p-3 transition-all bg-gray-100 border-4 border-gray-100 shadow-sm 2xl:p-5 hover:border-primary">
                             <div className="flex items-center justify-center flex-shrink-0 w-20 h-20 text-lg font-semibold text-gray-700 bg-gray-300">
                                 {new Date(event.date).toLocaleString('pt-br', { month: 'short' }).toUpperCase()}

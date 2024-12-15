@@ -1,5 +1,5 @@
 export interface Role {
-  id: string;
+  id?: string;
   pic: string;
   name: string;
   about: string;
@@ -12,15 +12,15 @@ export interface Role {
 }
 
 export interface Phrase {
-  id: string;
+  id?: string;
   title: string;
   description: string;
-  roleId: string;
+  roleid?: string;
   Role: Role;
 }
 
 export interface News {
-  id: string;
+  id?: string;
   title: string;
   shortDescription: string;
   content: string;
@@ -33,14 +33,15 @@ export interface News {
 }
 
 export interface Department {
-  id: string;
+  id?: string;
   name: string;
   description: string;
-  courses: Course[];
+  image: string; // Adicionado campo image
+  courses?: Course[];
 }
 
 export interface Course {
-  id: string;
+  id?: string;
   title: string;
   shortDetail?: string;
   longDescription?: string;
@@ -48,7 +49,7 @@ export interface Course {
   level: string;
   slug: string;
   courseCover: string;
-  departmentId: string;
+  departmentid?: string;
   department: Department;
   shiftId?: string;
   shift?: string;
@@ -57,31 +58,31 @@ export interface Course {
 }
 
 export interface Year {
-  id: string;
+  id?: string;
   year: number;
-  courseId: string;
+  courseid?: string;
   course: Course;
   semesters: Semester[];
 }
 
 export interface Semester {
-  id: string;
+  id?: string;
   semester: number;
-  yearId: string;
+  yearid?: string;
   year: Year;
   subjects: Subject[];
 }
 
 export interface Subject {
-  id: string;
+  id?: string;
   name: string;
   workload: number;
-  semesterId: string;
+  semesterid?: string;
   semester: Semester;
 }
 
 export interface Application {
-  id: string;
+  id?: string;
   name: string;
   email: string;
   phone: string;
@@ -92,7 +93,7 @@ export interface Application {
 }
 
 export interface Event {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   longDescription: string;

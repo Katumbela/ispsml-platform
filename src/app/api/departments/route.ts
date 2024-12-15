@@ -35,12 +35,13 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, description } = body;
+    const { name, description, image } = body;
 
     const newDepartment = await prisma.department.create({
       data: {
         name,
         description,
+        image,
       },
     });
 

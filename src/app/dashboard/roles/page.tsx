@@ -6,8 +6,8 @@ import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../../config/firebaseConfig';
-import { createRole } from '@/services/roles.service';
+import { storage } from '../../../config/firebaseConfig'; 
+import rolesService from '@/services/roles.service';
  
 const RolesDashboard = () => {
   const [name, setName] = useState('');
@@ -29,13 +29,17 @@ const RolesDashboard = () => {
         cvUrl = await getDownloadURL(storageRef);
       }
 
-      await createRole({
+      await rolesService.createRole({
+        id: '', // Add appropriate value for id
         name,
         about,
         role,
         cv: cvUrl,
         linkedin,
         x,
+        pic: '', // Add appropriate value for pic
+        phrases: [], // Add appropriate value for phrases
+        team: [''] // Add appropriate value for team
       });
       setLoading(false);
       toast.success('Role adicionada com sucesso!');

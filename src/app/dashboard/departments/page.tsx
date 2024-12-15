@@ -5,8 +5,8 @@ import React, { useState } from 'react';
 import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { uploadImage } from '@/utils/uploadImage';
-import { createDepartment } from '@/services/departments.service';
+import { uploadImage } from '@/utils/uploadImage'; 
+import departmentsService from '@/services/departments.service';
 
 
 const DepartmentsDashboard = () => {
@@ -24,7 +24,7 @@ const DepartmentsDashboard = () => {
       imageUrl = await uploadImage(image, 'departments');
     } 
 
-      await createDepartment({
+      await departmentsService.createDepartment({
         name,
         description,
         image: imageUrl,

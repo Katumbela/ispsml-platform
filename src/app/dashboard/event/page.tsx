@@ -4,12 +4,12 @@
 import React, { useEffect, useState } from 'react';
 import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
-import { toast } from 'react-toastify';
-import { createEvent } from '@/services/events.service';
+import { toast } from 'react-toastify'; 
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../../config/firebaseConfig';
 import { generateSlug } from '@/utils/slugfy';
 import DateSelect from '@/components/date-select/date-select';
+import eventsService from '@/services/events.service';
 // import { Event } from '@/infra/interfaces/events.interface';
  
 
@@ -36,7 +36,7 @@ const EventsDashboard = () => {
         imageUrlString = await getDownloadURL(storageRef);
       }
 
-      await createEvent({
+      await eventsService.createEvent({
         id: '',
         title,
         description,

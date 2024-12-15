@@ -5,10 +5,10 @@ import React, { useState } from 'react';
 import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import axios from 'axios';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '../../../config/firebaseConfig';
-
+import { createRole } from '@/services/roles.service';
+ 
 const RolesDashboard = () => {
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
@@ -29,7 +29,7 @@ const RolesDashboard = () => {
         cvUrl = await getDownloadURL(storageRef);
       }
 
-      await axios.post('/api/roles', {
+      await createRole({
         name,
         about,
         role,

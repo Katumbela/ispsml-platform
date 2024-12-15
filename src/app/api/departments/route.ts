@@ -90,7 +90,7 @@ export async function DELETE(request: NextRequest) {
     await prisma.department.delete({
       where: { id },
     });
-
+ 
     return NextResponse.json({ message: 'Departamento deletado com sucesso!' }, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ message: 'Erro ao deletar departamento! ' + error.message }, { status: 500 });

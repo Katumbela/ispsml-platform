@@ -2,18 +2,18 @@ import { images } from '@/assets';
 import React, { useEffect, useState } from 'react';
 // import { events } from '@/infra/data/events';
 import Link from 'next/link';
-import { getAllEvents } from '@/services/events.service';
 import { Event } from '@/infra/interfaces/events.interface';
 import { AbreviateString, DateUtils } from '@/utils';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import eventsService from '@/services/events.service';
 
 const ConferenceComponent = () => {
   const [events, setEvents] = useState<Event[] | []>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getAllEvents().then((events) => {
+    eventsService.getAllEvents().then((events) => {
       setEvents(events);
       setLoading(false);
     });

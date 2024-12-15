@@ -5,21 +5,30 @@
 import React, { useEffect, useState } from 'react';
 import InputDefault from '../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
-import { toast } from 'react-toastify';
-import axios from 'axios';
+import { toast } from 'react-toastify'; 
 import { uploadImage } from '@/utils/uploadImage';
-import { generateSlug } from '@/utils/slugfy';
+import { generateSlug } from '@/utils/slugfy';  
+// import { News } from '@/infra/interfaces/news'; 
+import newsService from '@/services/news.service';
+import { TextEditor } from '@/components/text-editor/text-editor';
 
 const Dashboard = () => {
   const [title, setTitle] = useState('');
   const [shortDescription, setShortDescription] = useState('');
-  const [content, setContent] = useState('');
-  const [postDate, setPostDate] = useState<Date | null>(new Date());
-  const [poster, setPoster] = useState('');
+  const [content, setContent] = useState(''); 
   const [link, setLink] = useState('');
   const [slug, setSlug] = useState('');
   const [image, setImage] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
+
+  // const [newses, setNewses] = useState<News[] | []>([]);
+  
+  //   useEffect(() => {
+  //     newsService.getAllNews().then((news) => {
+  //       setNewses(news);
+  //       setLoading(false);
+  //     });
+  //   }, []);
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
@@ -31,12 +40,12 @@ const Dashboard = () => {
         imageUrl = await uploadImage(image, 'departments');
       }
 
-      await axios.post('/api/news', {
+      await newsService.createNews({
         title,
         shortDescription,
         content,
-        postDate,
-        poster,
+        postDate: new Date(),
+        poster: 'Instituto Superior São Martinho de Lima',
         link,
         slug,
         image: imageUrl,
@@ -48,7 +57,7 @@ const Dashboard = () => {
       setLoading(false);
       toast.error('Erro ao adicionar informação! '+ error.message);
     }
-  };
+  }; 
 
   useEffect(() => {
     setSlug(generateSlug(title));
@@ -56,12 +65,16 @@ const Dashboard = () => {
 
   return (
     <div className="container px-6 py-32 mx-auto text-white bg-primary-footer">
-      <h1 className="mb-4 text-2xl font-bold">Adicionar Informação</h1>
+      <h1 className="mb-4 text-2xl font-bold">  Adicionar Informação</h1>
       <form onSubmit={handleSubmit}>
         <InputDefault label='Título' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
+        
+        <br />
         <InputDefault label='Descrição Curta' placeholder='Descrição Curta' value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} required={true} />
-        <InputDefault label='Conteúdo' placeholder='Conteúdo' value={content} onChange={(e) => setContent(e.target.value)} required={true} />
-        <InputDefault label='Poster' placeholder='Poster' value={poster} onChange={(e) => setPoster(e.target.value)} required={true} />
+        <br />
+        <TextEditor editorContent={content} setEditorContent={setContent} />
+        <br />
+        {/* <InputDefault label='Poster' placeholder='Poster' value={poster} onChange={(e) => setPoster(e.target.value)} required={true} /> */}
         <InputDefault label='Link' placeholder='Link' value={link} onChange={(e) => setLink(e.target.value)} required={true} />
         <InputDefault label='Slug' disabled placeholder='Slug' value={slug} onChange={(e) => setSlug(e.target.value)} required={true} />
         <div className="mb-4">

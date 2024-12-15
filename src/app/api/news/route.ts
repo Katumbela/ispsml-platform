@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { title, shortDescription, content, postDate, poster, link, slug, image } = body;
-
+ 
     await prisma.news.create({
       data: {
         title,

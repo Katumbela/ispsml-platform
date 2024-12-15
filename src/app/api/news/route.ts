@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server';
 import prisma from '@/infra/database/prisma';
 
-// Handler para o método POST (Criar notícia)
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -28,9 +28,36 @@ export async function POST(request: Request) {
   }
 }
 
-// Handler para o método GET (Listar notícias)
-export async function GET() {
+
+export async function GET(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+  const slug = searchParams.get('slug');
+
   try {
+    if (id) {
+      // Buscar por ID
+      const news = await prisma.news.findUnique({
+        where: { id: String(id) },
+      });
+      if (!news) {
+        return NextResponse.json({ message: 'Notícia não encontrada!' }, { status: 404 });
+      }
+      return NextResponse.json(news, { status: 200 });
+    }
+
+    if (slug) {
+      // Buscar por slug
+      const news = await prisma.news.findFirst({
+        where: { slug: slug },
+      });
+      if (!news) {
+        return NextResponse.json({ message: 'Notícia não encontrada!' }, { status: 404 });
+      }
+      return NextResponse.json(news, { status: 200 });
+    }
+
+    // Listar todas as notícias
     const news = await prisma.news.findMany();
     return NextResponse.json(news, { status: 200 });
   } catch (error: any) {
@@ -52,7 +79,7 @@ export async function PUT(request: Request) {
         content,
         postDate: new Date(postDate),
         poster,
-        link,
+        link, 
         slug,
         image,
       },

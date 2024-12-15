@@ -1,30 +1,124 @@
 'use client';
 
 import { useParams } from 'next/navigation';
-import { getNewsBySlug, newsData } from '@/infra/data/newsData';
+// import { newsData } from '@/infra/data/newsData';
 import { FaArrowRight, FaFacebookF, FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaCalendarAlt } from 'react-icons/fa';
 import NewsCard from '@/components/news-card/news-card';
+import newsService from '@/services/news.service';
+import { useEffect, useState } from 'react';
+import { News } from '@/infra/interfaces/news';
+import { DateUtils } from '@/utils';
+import Head from 'next/head';
 
 export default function ViewNewsPage() {
 	const { slug } = useParams();
-	const news = getNewsBySlug(slug);
+	const [news, setNews] = useState<News | null>(null);
+	const [allNews, setAllNews] = useState<News[] | []>([]);
+	const [loading, setLoading] = useState(true);
+
+	useEffect(() => {
+		newsService.getNewsBySlug(slug ? String(slug) : "").then((news) => {
+			setNews(news);
+			setLoading(false);
+		});
+		newsService.getAllNews().then((news) => {
+			setAllNews(news);
+			setLoading(false);
+		});
+	}, [slug]);
+
+	if (loading) {
+		return (
+			<div>
+				<Head>
+					<title>Carregando...</title>
+				</Head>
+				<div className="pt-24 pb-6 bg-primary">
+					<div className="containers">
+						<div className="w-3/4 h-8 bg-gray-300 rounded"></div>
+						<div className="flex gap-2 mt-4">
+							<div className="w-1/4 h-4 bg-gray-300 rounded"></div>
+						</div>
+					</div>
+				</div>
+				<section className="containers">
+					<div className="flex gap-4 my-3">
+						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+					</div>
+					<br />
+					<div className="flex">
+						<div className="w-full">
+							<div className="h-[400px] 2xl:h-[600px] bg-gray-300"></div>
+						</div>
+						<div className="w-full containers">
+							<div className="w-1/2 h-6 bg-gray-300 rounded"></div>
+							<br />
+							<div className="w-full h-4 bg-gray-300 rounded"></div>
+							<div className="w-full h-4 bg-gray-300 rounded"></div>
+							<div className="w-full h-4 bg-gray-300 rounded"></div>
+						</div>
+					</div>
+				</section>
+				<br />
+				<br />
+				<br />
+				<section className="py-10 view-more bg-slate-100">
+					<div className="containers">
+						<div className="w-1/4 h-6 bg-gray-300 rounded"></div>
+						<br />
+						<br />
+						<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
+							{[...Array(3)].map((_, index) => (
+								<div key={index} className="h-48 bg-gray-300 rounded"></div>
+							))}
+						</div>
+						<br />
+						<br />
+						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+					</div>
+				</section>
+			</div>
+		);
+	}
 
 	if (!news) {
-		return <div>Notícia não encontrada</div>;
+		return (
+			<div>
+				<Head>
+					<title>Notícia não encontrada</title>
+				</Head>
+				Notícia não encontrada
+			</div>
+		);
 	}
 
 	return (
 		<div>
+			<Head>
+				<title>{news.title}</title>
+				<meta name="description" content={news.shortDescription} />
+				<meta property="og:title" content={news.title} />
+				<meta property="og:description" content={news.shortDescription} />
+				<meta property="og:image" content={news.image} />
+				<meta property="og:url" content={`https://ispsml.ao${routes.VIEW_NEWS_ROUTE}/${slug}`} />
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta name="twitter:title" content={news.title} />
+				<meta name="twitter:description" content={news.shortDescription} />
+				<meta name="twitter:image" content={news.image} />
+			</Head>
 			<div className="pt-24 pb-6 bg-primary">
 				<div className="containers">
 					<h1 className="text-3xl font-semibold text-white">{news.title}</h1>
 					<p className="flex gap-2 mt-4 text-sm text-white">
 						{' '}
 						<FaCalendarAlt className="my-auto" />
-						<span className="my-auto"> Publicado em: {news.postDate}</span>
+						<span className="my-auto"> Publicado em: {DateUtils.getDatePt(news.postDate)}</span>
 					</p>
 				</div>
 			</div>
@@ -87,7 +181,7 @@ export default function ViewNewsPage() {
 					<br />
 					<br />
 					<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
-						{newsData.filter((n) => n.slug !== slug)
+						{allNews.filter((n) => n.slug !== slug)
 							.slice(0, 3)
 							.map((news, index) => (
 								<NewsCard

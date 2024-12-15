@@ -67,6 +67,15 @@ export default function EventDetailPage() {
         <>
         <Head>
             <title>{event.title} | ISPSML</title>
+            <meta name="description" content={event.description} />
+            <meta property="og:title" content={event.title} />
+            <meta property="og:description" content={event.description} />
+            <meta property="og:image" content={event.imageUrl} />
+            <meta property="og:url" content={`https://seusite.com/events/${event.slug}`} />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content={event.title} />
+            <meta name="twitter:description" content={event.description} />
+            <meta name="twitter:image" content={event.imageUrl} />
         </Head>
             <div>
                 <div className="pt-24 pb-6 bg-primary-footer">

@@ -16,6 +16,11 @@ class NewsService {
     return response.data;
   }
 
+  async getNewsBySlug(slug: string): Promise<News | null> {
+    const response = await this.api.get(`/?slug=${slug}`);
+    return response.data;
+  }
+
   async createNews(newsData: News): Promise<News> {
     const response = await this.api.post('/', newsData);
     return response.data;

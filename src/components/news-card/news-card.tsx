@@ -30,7 +30,6 @@ const NewsCard: React.FC<NewsCardProps> = ({ slug, title, content, postDate, ima
 				</div>
 				<div className="p-2">
 					<h2 className="font-semibold text-md 2xl:text-lg">{AbreviateString.abbreviate(title, 50)}</h2>
-
 					<p
 						className="mt-1 text-xs text-gray-400 2xl:text-md"
 						dangerouslySetInnerHTML={{

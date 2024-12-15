@@ -58,10 +58,13 @@ const ourInst: IOurInst[] = [
 ];
 const About = () => {
 	return (
-		<div>
-			
+		<>
+			<head>
+				<title>Sobre Nossa Instituição </title>
+			</head>
+
 			<GlobalHero
-				bgImage={images.backgrounds.bg_school_2.src}
+				bgImage={images.backgrounds.bg_woman_bg_flower.src}
 				bottomBG="dark"
 				title={'Sobre Nós'}
 				className="h-[500px] 2xl:h-[750px]"
@@ -78,8 +81,9 @@ const About = () => {
 			<div className="grid w-full grid-cols-2">
 				<div
 					style={{
-						background: `url(${images.teachers.elon_musk.src}) center center`,
+						background: `url(${images.bgPplImages.bg_ppl22.src}) center center`,
 						backgroundRepeat: 'no-repeat',
+						backgroundPosition:'top',
 						backgroundSize: 'cover'
 					}}
 					className="h-[20rem] 2xl:h-[23rem] relative w-full"
@@ -107,8 +111,9 @@ const About = () => {
 				</div>
 				<div
 					style={{
-						background: `url(${images.teachers.bill_gates.src}) center center`,
+						background: `url(${images.teachers.president_photo.src}) center center`,
 						backgroundRepeat: 'no-repeat',
+						backgroundPosition:'top',
 						backgroundSize: 'cover'
 					}}
 					className="h-[20rem] 2xl:h-[23rem] relative w-full"
@@ -180,7 +185,7 @@ const About = () => {
 						hoverBgColor="bg-sky-700"
 						title="Missão, Visão e Valores"
 						className="h-[400px] 2xl:h-[600px]"
-						bgImage={images.backgrounds.bg_student_22.src}
+						bgImage={images.bgsSchool.bg_school_28.src}
 					>
 						<div className="px-6 text-xl font-semibold text-white containers">
 							NOSSOS PRINCIPIOS, VALORES E VISÃO
@@ -195,7 +200,7 @@ const About = () => {
 						</div>
 					</HoverCard>
 					<HoverCard
-						bgImage={images.backgrounds.bg_students_hands_up.src}
+						bgImage={images.bgsSchool.bg_school_23.src}
 						className="h-[400px] 2xl:h-[600px]"
 						hoverBgColor="bg-green-600"
 						title="Mais sobre o ISPSML"
@@ -215,7 +220,7 @@ const About = () => {
 				</div>
 			</div>
 
-		</div>
+		</>
 	);
 };
 

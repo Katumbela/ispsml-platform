@@ -1,5 +1,5 @@
 'use client';
- 
+
 import { useParams } from 'next/navigation';
 import { getNewsBySlug, newsData } from '@/infra/data/newsData';
 import { FaArrowRight, FaFacebookF, FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
@@ -17,7 +17,7 @@ export default function ViewNewsPage() {
 	}
 
 	return (
-		<div> 
+		<div>
 			<div className="pt-24 pb-6 bg-primary">
 				<div className="containers">
 					<h1 className="text-3xl font-semibold text-white">{news.title}</h1>
@@ -84,10 +84,10 @@ export default function ViewNewsPage() {
 					<div>
 						<h2 className="text-2xl font-semibold">Veja também </h2>
 					</div>
-                    <br />
-                <br />
+					<br />
+					<br />
 					<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
-						{newsData
+						{newsData.filter((n) => n.slug !== slug)
 							.slice(0, 3)
 							.map((news, index) => (
 								<NewsCard
@@ -105,7 +105,7 @@ export default function ViewNewsPage() {
 					</div>
 					<br />
 					<br />
-					<button className="flex gap-2 px-3 py-2 text-sm transition-all border-2 hover:bg-primary hover:text-white border-primary text-primary">
+					<button onClick={() => window.location.href = routes.NEWS_ROUTE} className="flex gap-2 px-3 py-2 text-sm transition-all border-2 hover:bg-primary hover:text-white border-primary text-primary">
 						<span className="my-auto">Todas as Notícias</span> <FaArrowRight className="my-auto" />
 					</button>
 				</div>

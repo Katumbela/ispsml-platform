@@ -11,6 +11,7 @@ import { useEffect, useState } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { images } from '@/assets';
+import { routes } from '@/infra/routes.vars';
 
 const Hero = () => {
 	const { t } = useTranslation();
@@ -44,32 +45,34 @@ const Hero = () => {
 
 	const translatedCarouselItems = [
 		{
-			background: images.teachers.teacher2,
-			title: t('navbar.carouselItems.welcomeTitle'),
-			description: t('navbar.carouselItems.welcomeDescription'),
-			cta: t('navbar.carouselItems.welcomeCta'),
-			link: '/apply'
-		},
-		{
-			background: images.backgrounds.bg1,
-			title: t('navbar.carouselItems.academicExcellenceTitle'),
-			description: t('navbar.carouselItems.academicExcellenceDescription'),
-			cta: t('navbar.carouselItems.academicExcellenceCta'),
-			link: '/courses'
-		},
-		{
-			background: images.teachers.teacher1,
+			background: images.backgrounds.bg_woman_lib,
 			title: t('navbar.carouselItems.researchInnovationTitle'),
 			description: t('navbar.carouselItems.researchInnovationDescription'),
 			cta: t('navbar.carouselItems.researchInnovationCta'),
-			link: '/research'
+			link: '/apply'
 		},
 		{
-			background: images.teachers.teacher3,
+			background: images.backgrounds.bg_ispsml_air,
+			title: t('navbar.carouselItems.welcomeTitle'),
+			description: t('navbar.carouselItems.welcomeDescription'),
+			cta: t('navbar.carouselItems.welcomeCta'),
+			link: routes.ABOUT_ROUTE
+		},
+
+		// {
+		// 	background: images.backgrounds.bg1,
+		// 	title: t('navbar.carouselItems.academicExcellenceTitle'),
+		// 	description: t('navbar.carouselItems.academicExcellenceDescription'),
+		// 	cta: t('navbar.carouselItems.academicExcellenceCta'),
+		// 	link: '/courses'
+		// },
+
+		{
+			background: images.teachers.president_photo,
 			title: t('navbar.carouselItems.universityLifeTitle'),
 			description: t('navbar.carouselItems.universityLifeDescription'),
 			cta: t('navbar.carouselItems.universityLifeCta'),
-			link: '/campus-life'
+			link: '#'
 		}
 	];
 
@@ -83,6 +86,7 @@ const Hero = () => {
 							className="relative 2xl:h-[770px] h-[500px] items-start grid place-content-end pb-10 overflow-hidden"
 							initial={{ scale: 0.9 }}
 							animate={{ scale: 1 }}
+							// style={{ background: `url(${item.background.src})` }}
 							transition={{ duration: 0.5 }}
 						>
 							<Image
@@ -90,7 +94,8 @@ const Hero = () => {
 								alt={item.title}
 								layout="fill"
 								objectFit="cover"
-								className="absolute inset-0 z-[-1]"
+								objectPosition="top"
+								className="absolute inset-0 z-[-1] scale-100"
 							/>
 							<div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
 							<div className="relative z-10 my-auto text-start">
@@ -103,14 +108,14 @@ const Hero = () => {
 									>
 										{item.title}
 									</motion.h1>
-									<motion.p
+									{/* <motion.p
 										className="mb-4 text-lg md:text-xl"
 										initial={{ opacity: 0, y: getInitialY() }}
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1 }}
 									>
 										{item.description}
-									</motion.p>
+									</motion.p> */}
 									<motion.a
 										href={item.link}
 										className="flex gap-1 mb-4 font-semibold tracking-wider transition-all text-md hover:text-white/80"
@@ -118,7 +123,8 @@ const Hero = () => {
 										animate={{ opacity: 1, y: 0 }}
 										transition={{ duration: 0.5, delay: 1.5 }}
 									>
-										<span className="my-auto uppercase"> {item.cta}</span>
+										<span className="my-auto uppercase"> SABER MAIS</span>
+										{/* <span className="my-auto uppercase"> {item.cta}</span> */}
 										<FaAngleRight className="my-auto text-xl" />
 									</motion.a>
 								</div>

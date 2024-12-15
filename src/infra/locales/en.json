@@ -71,52 +71,49 @@
         "politecnico": "Polytechnic",
         "saoMartinhoDeLima": "São Martinho de Lima",
         "academicServicesSection": {
+            "academicServices": "Academic Services",
             "academicCalendar": "Academic Calendar",
-            "studentMobility": "Student Mobility",
-            "alumni": "Alumni",
+            "studentMobility": "Registrations and Enrollments",
             "regulations": "Regulations",
-            "edital": "Editals",
-            "examResults": "Exam Results of Access Exams"
+            "examResults": "Results List"
         },
         "allApplicationLinksSection": {
-            "informationGeneral": "General Application Information",
-            "academicProgramsAll": "All Academic Programs",
-            "onlineApplication": "Online Application",
-            "onlineApplicationGuideReturning": "Online Application Guide (Returning Students)",
-            "prospects": "Prospects",
-            "lateApplications": "Late Applications",
-            "applicationForms": "Application Forms"
+            "informationGeneral": "Educational Offer",
+            "academicProgramsAll": "Postgraduate",
+            "onlineApplication": "Undergraduate",
+            "onlineApplicationGuideReturning": "Professional Technician",
+            "prospects": "Preparatory"
         },
         "undergraduateStudentsSection": {
-            "undergraduateStudents": "Undergraduate Students",
-            "admissionRequirements": "Admission Requirements",
-            "programBrochure": "Program Brochure",
-            "fees": "Fees",
-            "onlineApplication": "Online Application",
-            "prospects": "Prospects",
-            "applicationGuide": "Application Guide"
+            "undergraduateStudents": "Online Resources",
+            "admissionRequirements": "Online Portal",
+            "programBrochure": "EAD Platform",
+            "fees": "Virtual Library"
         },
         "postgraduateStudentsSection": {
-            "postgraduateStudents": "Postgraduate Students",
-            "admissionRequirements": "Admission Requirements",
-            "programBrochure": "Program Brochure",
-            "fees": "Fees",
-            "onlineApplication": "Online Application",
-            "prospects": "Prospects",
-            "applicationGuide": "Application Guide"
+            "postgraduateStudents": "University Campus",
+            "admissionRequirements": "Library",
+            "programBrochure": "Laboratories",
+            "fees": "Classrooms",
+            "onlineApplication": "Auditoriums",
+            "applicationGuide": "Cafeterias",
+            "prospects": "Gardens and Spaces"
         },
         "internationalStudentsSection": {
-            "internationalStudents": "International Students",
-            "academicPrograms": "Academic Programs",
-            "registrationOnline": "Online Registration",
-            "prospects": "Prospects"
+            "internationalStudents": "Academic Life",
+            "academicPrograms": "Associations",
+            "fees": "Academic Events",
+            "onlineApplication": "Festivals and Competitions",
+            "onlineRegistration": "Study Groups",
+            "prospects": "Extracurricular Activities"
         },
         "studentFeesSection": {
-            "studentFees": "Student Fees",
-            "programBrochureFees": "Program Brochure",
-            "onlinePayment": "Online Payment",
-            "directDebitForm": "Direct Debit Form",
-            "refundProcess": "Refund Process"
+            "studentFees": "Student Support",
+            "programBrochureFees": "Academic Guidance",
+            "onlinePayment": "Social and Psychological Support",
+            "directDebitForm": "Career and Employment Services",
+            "refundProcess": "Tutoring and Mentoring",
+            "servicesHealth": "Health Services"
         },
         "carouselItems": {
             "welcomeTitle": "Welcome to ISPSML",
@@ -177,8 +174,7 @@
     },
     "footer": {
         "contact": "Contact",
-        "phone1": "+244 123 456 789",
-        "phone2": "+244 987 654 321",
+        "phone1": "+244 939 072 373", 
         "email": "info@universidadeangolana.ao",
         "addressLine1": "São Martinho de Lima",
         "addressLine2": "Rua Exemplo, 123",

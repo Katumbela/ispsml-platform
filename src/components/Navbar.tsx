@@ -17,11 +17,11 @@ import InputDefault from './input-default/input';
 
 const Navbar = () => {
 	const { t, i18n } = useTranslation();
-	const [ isOpen, setIsOpen ] = useState(false);
-	const [ activeDropdown, setActiveDropdown ] = useState<number | null>(null);
-	const [ isScrolled, setIsScrolled ] = useState(false);
-	const [ isSearchOpen, setIsSearchOpen ] = useState(false);
-	const [ searchQuery, setSearchQuery ] = useState('');
+	const [isOpen, setIsOpen] = useState(false);
+	const [activeDropdown, setActiveDropdown] = useState<number | null>(null);
+	const [isScrolled, setIsScrolled] = useState(false);
+	const [isSearchOpen, setIsSearchOpen] = useState(false);
+	const [searchQuery, setSearchQuery] = useState('');
 
 	const currentLang = i18n.language || 'pt'; // obter a língua atual
 
@@ -50,7 +50,7 @@ const Navbar = () => {
 				document.body.style.overflowY = 'auto';
 			}
 		},
-		[ isSearchOpen ]
+		[isSearchOpen]
 	);
 
 	const changeLanguage = (lng: string) => {
@@ -80,14 +80,17 @@ const Navbar = () => {
 	};
 
 	return (
-		<nav
+		
+		<nav className = {`w-full px-4 py-1 fixed z-[10000] text-black bg-white shadow-md`}
+
+		>
+			{/* <nav
 			className={`w-full px-4 py-1 fixed z-[10000] ${isScrolled
 				? ' top-0 left-0 bg-white shadow-md aanimate-slide-down'
 				: 'bg-transparent text-white'}`}
-		>
+		>*/}
 			<div
-				className={`flex flex-col ${isScrolled &&
-					'  animate-slide-down'} justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center`}
+				className={`flex flex-col  justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center`}
 			>
 				{/* logo e os items  */}
 
@@ -99,7 +102,7 @@ const Navbar = () => {
 						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
 						<div
 							className={`flex my-auto hiddenn flex-col justify-center font-semibold ${!isScrolled
-								? 'text-white'
+								? 'text-primary'
 								: 'text-primary'}`}
 						>
 							<span className="text-[16px] -mt-[.1rem]">{t('navbar.institutoSuperior')}</span>
@@ -257,7 +260,7 @@ const Navbar = () => {
 					</motion.div>
 				)}
 			</AnimatePresence>
-		</nav>
+		</nav >
 	);
 };
 

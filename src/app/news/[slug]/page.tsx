@@ -38,18 +38,18 @@ export default function ViewNewsPage() {
 				</Head>
 				<div className="pt-24 pb-6 bg-primary">
 					<div className="containers">
-						<div className="w-3/4 h-8 bg-gray-300 rounded"></div>
+						<div className="w-3/4 h-8 bg-gray-200 rounded"></div>
 						<div className="flex gap-2 mt-4">
-							<div className="w-1/4 h-4 bg-gray-300 rounded"></div>
+							<div className="w-1/4 h-4 bg-gray-200 rounded"></div>
 						</div>
 					</div>
 				</div>
 				<section className="containers">
 					<div className="flex gap-4 my-3">
-						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
-						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
-						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
-						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
 					</div>
 					<br />
 					<div className="flex">
@@ -57,11 +57,11 @@ export default function ViewNewsPage() {
 							<div className="h-[400px] 2xl:h-[600px] bg-gray-300"></div>
 						</div>
 						<div className="w-full containers">
-							<div className="w-1/2 h-6 bg-gray-300 rounded"></div>
+							<div className="w-1/2 h-6 bg-gray-200 rounded"></div>
 							<br />
-							<div className="w-full h-4 bg-gray-300 rounded"></div>
-							<div className="w-full h-4 bg-gray-300 rounded"></div>
-							<div className="w-full h-4 bg-gray-300 rounded"></div>
+							<div className="w-full h-4 bg-gray-200 rounded"></div>
+							<div className="w-full h-4 bg-gray-200 rounded"></div>
+							<div className="w-full h-4 bg-gray-200 rounded"></div>
 						</div>
 					</div>
 				</section>
@@ -70,17 +70,17 @@ export default function ViewNewsPage() {
 				<br />
 				<section className="py-10 view-more bg-slate-100">
 					<div className="containers">
-						<div className="w-1/4 h-6 bg-gray-300 rounded"></div>
+						<div className="w-1/4 h-6 bg-gray-200 rounded"></div>
 						<br />
 						<br />
 						<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
 							{[...Array(3)].map((_, index) => (
-								<div key={index} className="h-48 bg-gray-300 rounded"></div>
+								<div key={index} className="h-48 bg-gray-200 rounded"></div>
 							))}
 						</div>
 						<br />
 						<br />
-						<div className="w-1/4 h-8 bg-gray-300 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
 					</div>
 				</section>
 			</div>

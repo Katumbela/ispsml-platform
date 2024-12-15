@@ -1,11 +1,12 @@
 'use client';
 
-import HeroOrganicUnit from './components/HeroOrganicUnit';
 import { routes } from '@/infra/routes.vars';
 import { coursesData } from '@/infra/data/courses-data';
 import { RolesData } from '@/infra/data/roles-data';
+import { images } from '@/assets';
+import GlobalHero from '@/components/global-hero/global-hero';
 
-const departments = Object.entries(coursesData).map(([ key, value ]) => ({
+const departments = Object.entries(coursesData).map(([key, value]) => ({
 	link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
 	name: `Departamento de ${key.charAt(0).toUpperCase() + key.slice(1)}`,
 	cover: value.department_cover
@@ -28,7 +29,8 @@ export default function OrganicUnitPage() {
 
 	return (
 		<div>
-			<HeroOrganicUnit />
+			<GlobalHero bgImage={images.backgrounds.bg_woman_bg_flower.src} className='h-[700px]' bottomBG='dark' position='top' title='Unidades Orgânicas' />
+
 			<br />
 			<div className="containers">
 				<h2 className="title">Conheça as Nossas Unidades Organicas</h2>
@@ -49,11 +51,11 @@ export default function OrganicUnitPage() {
 							onClick={() => (window.location.href = department.link)}
 							key={i}
 							className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa"
-							//   style={{
-							//     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${department.cover})`,
-							//     backgroundSize: 'cover',
-							//     backgroundPosition: 'center'
-							//   }}
+						//   style={{
+						//     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${department.cover})`,
+						//     backgroundSize: 'cover',
+						//     backgroundPosition: 'center'
+						//   }}
 						>
 							<h3 className="text-xl font-bold 2xl:text-2xl">{department.name}</h3>
 						</div>

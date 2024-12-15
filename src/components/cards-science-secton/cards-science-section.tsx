@@ -32,7 +32,7 @@ export function ScienceStudyCard() {
 					hoverBgColor="bg-primary"
 					title="Professores Investigadores"
 					className="h-[400px] 2xl:h-[600px]"
-					bgImage={images.backgrounds.bg_investigator_1.src}
+					bgImage={images.bgsSchool.bg_school_27.src}
 				>
 					<div className="px-6 text-lg text-white containers">
 						A CIÊNCIA COM SOLUÇÕES EM AÇÃO
@@ -47,7 +47,7 @@ export function ScienceStudyCard() {
 					</div>
 				</HoverCard>
 				<HoverCard
-					bgImage={images.backgrounds.bg_ciencia_estudo_2.src}
+					bgImage={images.bgsSchool.bg_school_16.src}
 					className="h-[400px] 2xl:h-[600px]"
 					hoverBgColor="bg-red-500"
 					title="Laboratórios de Ciências e Medicina"

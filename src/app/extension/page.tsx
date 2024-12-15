@@ -21,12 +21,12 @@ export default function OrganicUnitPage() {
     <head>
       <title>Extensão | Instituto Superior São Martinho de Lima</title>
     </head> 
-      <GlobalHero bgImage={images.backgrounds.bg_students_hands_up.src} titleClassName='text-5xl' title='Extensão' className='h-[500px] 2xl:h-[600px] ' />
+      <GlobalHero position='top' bgImage={images.backgrounds.fundo_isp_2.src} titleClassName='text-5xl' title='Extensão' className='h-[500px] 2xl:h-[600px] ' />
      
       <div className="-mt-1.5">
       <div className="flex gap-8 bg-white">
         <div className="relative w-full py-10 bg-primary">
-          <Image src={images.backgrounds.bg_student_22.src} objectFit='cover' layout='fill' alt="" />
+          <Image src={images.backgrounds.fundo_isp_3.src} objectFit='cover' layout='fill' alt="" />
         </div>
         <div className="grid items-center w-4/5 py-24 bg-white containers 2xl:py-40 ">
           <div className="my-auto ">
@@ -123,7 +123,7 @@ export default function OrganicUnitPage() {
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
       className="flex gap-8 bg-white">
         <div className="relative w-1/3 py-10 bg-primary">
-          <Image src={images.backgrounds.bg_student_22.src} objectFit='cover' layout='fill' alt="" />
+          <Image src={images.backgrounds.bg_pplIMG_2219.src} objectFit='cover' layout='fill' alt="" />
         </div>
         <div className="grid items-center w-4/5 py-6 bg-white containers 2xl:py-14 ">
           <div className="my-auto ">
@@ -146,7 +146,7 @@ export default function OrganicUnitPage() {
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
       className="flex flex-row-reverse gap-8 bg-white">
         <div className="relative w-full py-10 bg-primary">
-          <Image src={images.backgrounds.bg_student_22.src} objectFit='cover' layout='fill' alt="" />
+          <Image objectPosition='top' src={images.backgrounds.fundo_isp_1.src} objectFit='cover' layout='fill' alt="" />
         </div>
         <div className="grid items-center w-4/5 py-24 bg-white containers 2xl:py-40 ">
           <div className="my-auto ">

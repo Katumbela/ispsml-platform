@@ -37,6 +37,9 @@ import bg_investigator_1 from "./bgs/investigator-1.webp";
 import bg_vertical from "./bgs/school-bg-3-vertical.jpeg";
 import bg_night_1 from "./bgs/bg-night-1.jpeg";
 import bg_support from "./bgs/support.webp";
+import fundo_isp_1 from "./bgs/fundo-isp-1.jpg";
+import fundo_isp_2 from "./bgs/fundo-isp-2.jpg";
+import fundo_isp_3 from "./bgs/fundo-isp-3.jpg";
 import bg_research_2 from "./bgs/research_2.jpg";
 import bg_research_1 from "./bgs/research_1.webp";
 import bg_students_hands_up from "./bgs/student_hands_up.jpg";
@@ -61,6 +64,56 @@ import bg_ispsml_air from "./bgs/bg_ispsml_air.jpg";
 import bg_sci_method_2 from "./bgs/sci_method_2.webp";
 import bg_school_2 from "./bgs/school-bg-2.jpg";
 
+// Importando as imagens da pasta bgs_school
+import bg_school_11 from "./bgs_school/11.jpg";
+import bg_school_12 from "./bgs_school/12.jpg";
+import bg_school_13 from "./bgs_school/13.jpg";
+import bg_school_14 from "./bgs_school/14.jpg";
+import bg_school_15 from "./bgs_school/24.jpg";
+import bg_school_16 from "./bgs_school/25.jpg";
+import bg_school_17 from "./bgs_school/27.jpg";
+import bg_school_18 from "./bgs_school/28.jpg";
+import bg_school_19 from "./bgs_school/29.jpg";
+import bg_school_20 from "./bgs_school/30.jpg";
+import bg_school_21 from "./bgs_school/31.jpg";
+import bg_school_22 from "./bgs_school/33.jpg";
+import bg_school_23 from "./bgs_school/35.jpg";
+import bg_school_24 from "./bgs_school/36.jpg";
+import bg_school_25 from "./bgs_school/39.jpg";
+import bg_school_26 from "./bgs_school/41.jpg";
+import bg_school_27 from "./bgs_school/46.jpg";
+import bg_school_28 from "./bgs_school/47.jpg";
+
+// Importando as imagens da pasta profiles
+import profile1 from "./profiles/1.jpg";
+import profile2 from "./profiles/2.jpg";
+import profile20 from "./profiles/20.jpg";
+import profile21 from "./profiles/21.jpg";
+import profile3 from "./profiles/3.jpg";
+import profile4 from "./profiles/4.jpg";
+import profile5 from "./profiles/5.jpg";
+import profile6 from "./profiles/6.jpg";
+import profile7 from "./profiles/7.jpg";
+import profile8 from "./profiles/8.jpg";
+import profile9 from "./profiles/9.jpg"; 
+
+
+// Importando as imagens da pasta bg_ppl
+import bg_ppl16 from "./bg_ppl/16.jpg"; 
+import bg_ppl17 from "./bg_ppl/17.jpg"; 
+import bg_ppl22 from "./bg_ppl/22.jpg"; 
+import bg_ppl23 from "./bg_ppl/23.jpg"; 
+import bg_ppl34 from "./bg_ppl/34.jpg"; 
+import bg_ppl37 from "./bg_ppl/37.jpg"; 
+import bg_ppl38 from "./bg_ppl/38.jpg"; 
+import bg_ppl44 from "./bg_ppl/44.jpg"; 
+import bg_ppl48 from "./bg_ppl/48.jpg"; 
+import bg_pplDSC_4083 from "./bg_ppl/DSC_4083.jpg"; 
+import bg_pplIMG_2217 from "./bg_ppl/IMG_2217.jpeg"; 
+import bg_pplIMG_2218 from "./bg_ppl/IMG_2218.jpeg"; 
+import bg_pplIMG_2219 from "./bg_ppl/IMG_2219.jpeg"; 
+import bg_pplImagem_WhatsApp_2024_12_04 from "./bg_ppl/Imagem WhatsApp 2024-12-04 às 10.55.23_3f70f419.jpg"; 
+ 
 // importando as imagens dos departamentos
 
 import ciencias_sociais from "./departs-bgs/ciencias-sociais.webp";
@@ -104,6 +157,9 @@ export const teachers = {
 export const backgrounds = {
   bg1,
   bg_night_1,
+  fundo_isp_2,
+  fundo_isp_1,
+  fundo_isp_3,
   bg_sci_method,
   bg_sci_method_2,
   bg_night_2,
@@ -139,7 +195,62 @@ export const backgrounds = {
   bg_school_1,
   bg_school_3,
   bg_school_4,
+  bg_school_11,
+  bg_school_12,
+  bg_school_13,
+  bg_school_14,
+  bg_school_15,
+  bg_school_16,
+  bg_school_17,
+  bg_ppl16,
+  bg_ppl17,
+  bg_ppl22,
+  bg_ppl23,
+  bg_ppl34,
+  bg_ppl37,
+  bg_ppl38,
+  bg_ppl44,
+  bg_ppl48,
+  bg_pplDSC_4083,
+  bg_pplIMG_2217,
+  bg_pplIMG_2218,
+  bg_pplIMG_2219,
+  bg_pplImagem_WhatsApp_2024_12_04, 
+};
 
+export const bgsSchool = {
+  bg_school_11,
+  bg_school_12,
+  bg_school_13,
+  bg_school_14,
+  bg_school_15,
+  bg_school_16,
+  bg_school_17,
+  bg_school_18,
+  bg_school_19,
+  bg_school_20,
+  bg_school_21,
+  bg_school_22,
+  bg_school_23,
+  bg_school_24,
+  bg_school_25,
+  bg_school_26,
+  bg_school_27,
+  bg_school_28,
+};
+
+export const profiles = {
+  profile1,
+  profile2,
+  profile20,
+  profile21,
+  profile3,
+  profile4,
+  profile5,
+  profile6,
+  profile7,
+  profile8,
+  profile9, 
 };
 
 export const departImages = {
@@ -155,12 +266,32 @@ export const newsImages = {
   news4,
 };
 
+export const bgPplImages = {
+  bg_ppl16,
+  bg_ppl17,
+  bg_ppl22,
+  bg_ppl23,
+  bg_ppl34,
+  bg_ppl37,
+  bg_ppl38,
+  bg_ppl44,
+  bg_ppl48,
+  bg_pplDSC_4083,
+  bg_pplIMG_2217,
+  bg_pplIMG_2218,
+  bg_pplIMG_2219,
+  bg_pplImagem_WhatsApp_2024_12_04,
+};
+
 export const images = {
   logos,
   teachers,
   backgrounds,
   departImages,
   newsImages,
-  svgs
+  svgs,
+  profiles,
+  bgPplImages,
+  bgsSchool,
 };
 

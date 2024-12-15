@@ -3,7 +3,6 @@
 
 import cn from 'classnames';
 
-import HeroOrganicUnit from '../organic-unit/components/HeroOrganicUnit';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { images } from '@/assets'; 
@@ -18,6 +17,7 @@ import 'react-toastify/dist/ReactToastify.css';
 // import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 import { useSearchParams } from 'next/navigation';
 import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+import GlobalHero from '@/components/global-hero/global-hero';
 
 export default function ApplyForm() {
   const [hour, setHour] = useState('');
@@ -76,7 +76,7 @@ export default function ApplyForm() {
     <head>
       <title>Processo de Inscrição | Instituto Superior Politécnico São Martinho de Lima</title>
     </head>
-			<HeroOrganicUnit />
+			<GlobalHero bgImage={images.backgrounds.bg_woman_bg_flower.src} className='h-[700px]' bottomBG='dark' position='top' title='Formulário de Inscrição' />
 			<div className="flex justify-between -mt-1.5 text-center border-b">
 				{buttons.map((item, index) => (
 					<a href={item.link} key={index} className={cn("justify-center w-full py-5 font-bold text-center transition-colors cursor-pointer hover:text-white uppercase text-sm hover:bg-primary-footer", {"border-x": index===1})}>
@@ -100,7 +100,7 @@ export default function ApplyForm() {
 				whileInView={{ x: 0, opacity: 1, transition: { duration: 0.3, delay: 0.1 } }}
       className="flex gap-8 containers">
         <div className="relative w-1/3 py-">
-        <div className="relative w-full h-[20rem] py-10 bg-primary">
+        <div className="relative w-full h-full py-10 bg-primary">
           <Image src={images.backgrounds.bg_form_inscription.src} objectFit='cover' layout='fill' alt="" />
         </div>
         </div>

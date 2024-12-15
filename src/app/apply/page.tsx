@@ -14,11 +14,13 @@ import { FaAngleRight, FaSpinner } from 'react-icons/fa6';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+
 import axios from 'axios';
 // import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 import { useSearchParams } from 'next/navigation';
-import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+// import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
 import GlobalHero from '@/components/global-hero/global-hero';
+import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
 
 export default function ApplyForm() {
   const [hour, setHour] = useState('');

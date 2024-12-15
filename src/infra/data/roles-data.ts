@@ -173,23 +173,7 @@ export const RolesData: IRole[] = [
         }]
     },
     {
-        id: "new-role",
-        pic: "path/to/image",
-        name: "New Role",
-        about: "Description about the new role.",
-        role: "New Role",
-        cv: "link_to_cv",
-        linkedin: "link_to_linkedin",
-        x: "link_to_x",
-        phrases: [
-            {
-                title: "Phrase Title",
-                description: "Phrase description."
-            }
-        ],
-        team: ["team-member-1", "team-member-2"]
-    },
-    {
+
         id: "professor-historia",
         pic: profiles.profile1.src,
         name: "Alice Souza",
@@ -200,7 +184,9 @@ export const RolesData: IRole[] = [
         phrases: [{
             title: "A História Viva",
             description: "Explorando os eventos que moldaram o mundo moderno."
-        }]
+        }],
+      
+        team: ["team-member-1", "team-member-2"]
     },
     {
         id: "professor-geografia",

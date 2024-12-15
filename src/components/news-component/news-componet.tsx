@@ -92,7 +92,7 @@ export function NewsComponents() {
 								</div>
 								<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
 									<h2 className="text-2xl font-bold">{randomNews.title}</h2>
-									<p className="text-md" dangerouslySetInnerHTML={{
+									<div className="text-md" dangerouslySetInnerHTML={{
 										__html: AbreviateString.abbreviate(`${randomNews.content}`, 170)
 									}} />
 									<br />

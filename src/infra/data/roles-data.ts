@@ -173,6 +173,7 @@ export const RolesData: IRole[] = [
         }]
     },
     {
+
         id: "professor-historia",
         pic: profiles.profile1.src,
         name: "Alice Souza",
@@ -183,7 +184,9 @@ export const RolesData: IRole[] = [
         phrases: [{
             title: "A História Viva",
             description: "Explorando os eventos que moldaram o mundo moderno."
-        }]
+        }],
+      
+        team: ["team-member-1", "team-member-2"]
     },
     {
         id: "professor-geografia",

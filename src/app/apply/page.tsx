@@ -14,9 +14,12 @@ import { FaAngleRight, FaSpinner } from 'react-icons/fa6';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 // import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+
+import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
+import axios from 'axios';
 // import AnimatedAccordionBellowHeader from '@/components/animated-accordion/animated-accordion-below-header';
 import { useSearchParams } from 'next/navigation';
-import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+// import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
 import GlobalHero from '@/components/global-hero/global-hero';
 
 export default function ApplyForm() {
@@ -35,11 +38,30 @@ export default function ApplyForm() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     setLoading(true);
-    // Simulação de envio de dados
-    setTimeout(() => {
+
+    try {
+      const response = await axios.post('/api/application', {
+        name,
+        email,
+        phone,
+        birthDate,
+        course,
+        hour,
+        date,
+        interest,
+      });
+
+      const data = response.data;
+      if (response.status === 200) {
+        toast.success(data.message);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error: any) {
+      toast.error('Erro ao enviar inscrição! ' + error.message);
+    } finally {
       setLoading(false);
-      toast.success('Inscrição enviada com sucesso!');
-    }, 2000);
+    }
   };
 
 	const buttons = [

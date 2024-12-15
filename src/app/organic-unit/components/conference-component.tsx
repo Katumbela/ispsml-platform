@@ -1,7 +1,12 @@
 import { images } from '@/assets';
 import React from 'react';
+import { events } from '@/infra/data/events';
+import Link from 'next/link';
 
 const ConferenceComponent = () => {
+  const featuredEvent = events.find(event => event.isFeatured);
+  const previousEvents = events.filter(event => !event.isFeatured);
+
   return (
     <section className="px-4 py-8 mt-[10vh] mx-auto containers">
       <h2 className="max-w-3xl mb-4 text-3xl font-semibold text md:text-4xl">
@@ -12,49 +17,53 @@ const ConferenceComponent = () => {
       </p>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Featured Conference */}
-        <div className="relative grid items-center p-10 overflow-hidden text-white place-content-center md:col-span-1" style={{background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover"}}>
-          <div>
-          <div className="top-0 left-0 flex gap-6 text-2xl ">
-            <p className="flex flex-col font-semibold ">21 <span className='text-xl'>NOV</span></p>
-            <p className="flex flex-col ">19:00 <span className='text-xl'>HRS</span></p>
+        {featuredEvent && (
+          <div className="relative grid items-center p-10 overflow-hidden text-white place-content-center md:col-span-1" style={{background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover"}}>
+            <div>
+              <div className="top-0 left-0 flex gap-6 text-2xl ">
+                <p className="flex flex-col font-semibold ">{new Date(featuredEvent.date).getDate()} <span className='text-xl'>{new Date(featuredEvent.date).toLocaleString('pt-br', { month: 'short' }).toUpperCase()}</span></p>
+                <p className="flex flex-col ">{featuredEvent.time} <span className='text-xl'>HRS</span></p>
+              </div>
+              <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white top-16 left-4">
+                {featuredEvent.category}
+              </span>
+              <div className="mt-12">
+                <h3 className="mb-4 text-2xl font-semibold">
+                  {featuredEvent.title}
+                </h3>
+                <p className="mb-6">
+                  {featuredEvent.description}
+                </p>
+                <Link href={`/events/${featuredEvent.slug}`}>
+                  <button className="px-4 py-2 font-medium text-white transition-all bg-primary hover:bg-primary-dark">
+                    QUERO ME REGISTRAR
+                  </button>
+                </Link>
+              </div>
+            </div>
           </div>
-          <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white top-16 left-4">
-            Setor Público
-          </span>
-          <div className="mt-12">
-            <h3 className="mb-4 text-2xl font-semibold">
-              CONFERÊNCIA: O FUTURO DA MOBILIDADE E A ELETRIFICAÇÃO DO TRANSPORTE
-            </h3>
-            <p className="mb-6">
-              Junte-se a esta conferência! Descubra como a eletrificação e a descarbonização estão transformando o futuro da mobilidade.
-            </p>
-            <button className="px-4 py-2 font-medium text-white transition-all bg-primary hover:bg-primary-dark">
-              QUERO ME REGISTRAR
-            </button>
-          </div>
-          </div>
-        </div>
+        )}
         
         {/* Previous Events */}
         <div className="space-y-4">
           <h3 className="text-lg font-semibold text-gray-700">EVENTOS ANTERIORES</h3>
-          {['OUT', 'AGO', 'JUL'].map((month, index) => (
+          {previousEvents.map((event, index) => (
             <div key={index} className="flex items-start p-3 transition-all bg-gray-100 border-4 border-gray-100 shadow-sm 2xl:p-5 hover:border-primary">
               <div className="flex items-center justify-center flex-shrink-0 w-20 h-20 text-lg font-semibold text-gray-700 bg-gray-300">
-                {month}
+                {new Date(event.date).toLocaleString('pt-br', { month: 'short' }).toUpperCase()}
               </div>
               <div className="flex-1 ml-4">
                 <h4 className="text-sm font-semibold text-gray-700">
-                  {index === 0
-                    ? 'CONFERÊNCIA: DESAFIOS DAS VENDAS EM CONTEXTOS DINÂMICOS'
-                    : index === 1
-                    ? 'VIAGENS A TERRAS INIMAGINÁVEIS: A CONVIVÊNCIA COM OS TRANSTORNOS NEUROCOGNITIVOS'
-                    : 'CONFERÊNCIA SUCESSO SEM MEDOS: VENCENDO A SÍNDROME DO IMPOSTOR'}
+                  {event.title}
                 </h4>
-                <p className="text-xs text-gray-600">19:00 HRS.</p>
-                <button className="mt-1 text-xs text-blue-500 hover:underline">Conferência online</button>
+                <p className="text-xs text-gray-600">{event.time} HRS.</p>
+                <Link href={`/events/${event.slug}`}>
+                  <button className="mt-1 text-xs text-blue-500 hover:underline">Conferência online</button>
+                </Link>
               </div>
-              <button className="ml-4 text-sm text-pink-500 hover:underline">Ver evento</button>
+              <Link href={`/events/${event.slug}`}>
+                <button className="ml-4 text-sm text-pink-500 hover:underline">Ver evento</button>
+              </Link>
             </div>
           ))}
           <button className="w-full px-4 py-2 mt-4 font-medium text-gray-700 border border-gray-500 hover:bg-gray-200">

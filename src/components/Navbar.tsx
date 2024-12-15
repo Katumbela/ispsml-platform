@@ -81,7 +81,7 @@ const Navbar = () => {
 
 	return (
 		
-		<nav className = {`w-full px-4 py-1 fixed z-[10000] text-black bg-white`}
+		<nav className = {`w-full px-4 py-1 fixed z-[10000] text-black bg-white shadow-md`}
 
 		>
 			{/* <nav

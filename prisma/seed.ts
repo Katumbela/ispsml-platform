@@ -40,6 +40,7 @@ async function main() {
     data: {
       name: "Departamento de Engenharia",
       description: "Departamento focado em cursos de engenharia.",
+      image: "https://wallpapers.com/images/hd/coding-background-9izlympnd0ovmpli.jpg",
       courses: {
         create: [
           {
@@ -133,6 +134,7 @@ async function main() {
     data: {
       name: "Departamento de Administração",
       description: "Departamento voltado para cursos de administração e gestão.",
+      image: "path/to/administration/image", // Adicionado campo image
       courses: {
         create: [
           {

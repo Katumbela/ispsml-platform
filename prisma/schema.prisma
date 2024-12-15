@@ -45,6 +45,7 @@ model Department {
     id          String   @id @default(auto()) @map("_id") @db.ObjectId
     name        String
     description String
+    image       String
     courses     Course[]
 }
 
@@ -105,7 +106,7 @@ model Event {
     title           String
     description     String
     longDescription String
-    date            DateTime 
+    date            DateTime
     category        String
     imageUrl        String
     isFeatured      Boolean

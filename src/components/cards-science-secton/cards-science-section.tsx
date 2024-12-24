@@ -3,11 +3,8 @@ import { HoverCard } from '../hover-card/hover-card';
 
 export function ScienceStudyCard() {
 	return (
-		<section className="pt-[16vh] pb-1 ">
-			<div className="mb-2 containers">
-				<h2 className="text-3xl font-bold">Investigação</h2>
-			</div>
-			<br />
+		<section className="pt-[6vh] pb-1 ">
+		
 			{/* <div className="flex my-1 containers bg-primary-footer">
 				<div className="">
 					<div className="">
@@ -30,7 +27,7 @@ export function ScienceStudyCard() {
 				<HoverCard
 					bgColor="bg-primary"
 					hoverBgColor="bg-primary"
-					title="Professores Investigadores"
+					title="Laboratório de Informática"
 					className="h-[400px] 2xl:h-[600px]"
 					bgImage={images.bgsSchool.bg_school_27.src}
 				>
@@ -50,7 +47,7 @@ export function ScienceStudyCard() {
 					bgImage={images.bgsSchool.bg_school_16.src}
 					className="h-[400px] 2xl:h-[600px]"
 					hoverBgColor="bg-red-500"
-					title="Laboratórios de Ciências e Medicina"
+					title="Biblioteca Moderna"
 				>
 					<div className="text-lg text-white">
 						A CIÊNCIA COM SOLUÇÕES AÇÃOIS

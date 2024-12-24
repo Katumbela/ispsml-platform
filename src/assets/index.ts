@@ -59,6 +59,7 @@ import bg_student_33 from "./bgs/students_3.jpg";
 import bg_books_pen from "./bgs/bg-book-pens.jpg";
 import bg_sci_method from "./bgs/sci_method.avif";
 import bg_woman_lib from "./bgs/bg_woman_lib.jpg";
+import bg_director_right_left from "./bgs/bg-director-right-left.jpg";
 import bg_woman_bg_flower from "./bgs/bg_woman_bg_flower.jpg";
 import bg_ispsml_air from "./bgs/bg_ispsml_air.jpg";
 import bg_sci_method_2 from "./bgs/sci_method_2.webp";
@@ -76,6 +77,7 @@ import bg_school_18 from "./bgs_school/28.jpg";
 import bg_school_19 from "./bgs_school/29.jpg";
 import bg_school_20 from "./bgs_school/30.jpg";
 import bg_school_21 from "./bgs_school/31.jpg";
+import bg_applyings from "./bgs/applyings.jpg";
 import bg_school_22 from "./bgs_school/33.jpg";
 import bg_school_23 from "./bgs_school/35.jpg";
 import bg_school_24 from "./bgs_school/36.jpg";
@@ -166,8 +168,10 @@ export const backgrounds = {
   bg_ispsml,
   bg_prepa_tec,
   bg_woman_lib,
+  bg_applyings,
   bg_woman_bg_flower,
   bg_ispsml_air,
+  bg_director_right_left,
   bg_master_2,
   bg_master,
   bg_vertical_education,

@@ -15,6 +15,7 @@ import { routes } from '@/infra/routes.vars';
 export default function CourseDetailsPage() {
   const { department, course_slug } = useParams();
 	const departmentData = coursesData[department as string];
+
   const course = typeof department === 'string' ? coursesData[department]?.courses.find(c => c.slug === course_slug) : null;
   const [openYear, setOpenYear] = useState<number | null>(null);
 

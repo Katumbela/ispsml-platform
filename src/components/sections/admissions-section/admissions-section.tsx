@@ -129,7 +129,9 @@ const FixedImageScrollWithBrutalEffect = () => {
 
 	return (
 		<div className="containers pb-[5vh] ">
-			<h2 className="text-3xl font-bold">Oferta Formativa</h2>
+			<h2 className="text-3xl font-bold">Conheça a Nossa Oferta Formativa </h2>
+			
+			<p className="text-gray-500">Desde Cursos Profissionais até Pós-Graduações</p>
 			<br />
 			<br />
 			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[6vw] pe-[5vw]   flex gap-24 2xl:gap-28">
@@ -161,6 +163,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<br />
 						<br />
 					</div> */}
+					
 					{/* Parágrafos */}
 					{paragraphs.map((paragraph, index) => (
 						<Paragraph

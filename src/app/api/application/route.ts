@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     return NextResponse.json({ message: 'Erro ao enviar inscrição! ' + error.message }, { status: 500 });
   }
 }
- 
+
 // Handler para métodos não permitidos
 export async function GET() {
   return NextResponse.json({ message: 'Método não permitido!' }, { status: 405 });

@@ -23,7 +23,7 @@ const Navbar = () => {
 	const [isSearchOpen, setIsSearchOpen] = useState(false);
 	const [searchQuery, setSearchQuery] = useState('');
 
-	const currentLang = i18n.language || 'pt'; // obter a língua atual
+	// const currentLang = i18n.language || 'pt'; // obter a língua atual
 
 	// const { setLang } = useLanguage();
 
@@ -178,7 +178,7 @@ const Navbar = () => {
 																transition={{ delay: childIndex * 0.05 }}
 															>
 																<Link
-																	href={`/${currentLang}${childItem.href}`} // incluir a língua na rota
+																	href={`${childItem.href}`} // incluir a língua na rota
 																	className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
 																>
 																	{t(childItem.label)}

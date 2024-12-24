@@ -80,15 +80,15 @@ const Navbar = () => {
 	};
 
 	return (
-		
-		<nav className = {`w-full px-4 py-1 fixed z-[10000] text-black bg-white shadow-md`}
 
-		>
-			{/* <nav
+		// <nav className = {`w-full px-4 py-1 fixed z-[10000] text-black bg-white shadow-md`}
+
+		// >
+		<nav
 			className={`w-full px-4 py-1 fixed z-[10000] ${isScrolled
 				? ' top-0 left-0 bg-white shadow-md aanimate-slide-down'
 				: 'bg-transparent text-white'}`}
-		>*/}
+		>
 			<div
 				className={`flex flex-col  justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center`}
 			>
@@ -102,7 +102,7 @@ const Navbar = () => {
 						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
 						<div
 							className={`flex my-auto hiddenn flex-col justify-center font-semibold ${!isScrolled
-								? 'text-primary'
+								? 'text-white'
 								: 'text-primary'}`}
 						>
 							<span className="text-[16px] -mt-[.1rem]">{t('navbar.institutoSuperior')}</span>
@@ -152,44 +152,44 @@ const Navbar = () => {
 
 									<AnimatePresence>
 										{item.children &&
-										activeDropdown === index && (
-											<motion.div
-												initial={{ opacity: 0, y: -10 }}
-												animate={{ opacity: 1, y: 0 }}
-												exit={{ opacity: 0, y: -10 }}
-												transition={{ duration: 0.2 }}
-												className={`absolute ${Array.isArray(item.children)
-													? 'left-0'
-													: ' -left-16'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
-												style={{
-													width: Array.isArray(item.children) ? 'auto' : '80vw',
-													minWidth: '20rem'
-												}}
-												onMouseEnter={() => setActiveDropdown(index)}
-												onMouseLeave={() => setActiveDropdown(null)}
-											>
-												{Array.isArray(item.children) ? (
-													item.children.map((childItem, childIndex) => (
-														<motion.div
-															key={childIndex}
-															className="z-500"
-															initial={{ opacity: 0, x: -10 }}
-															animate={{ opacity: 1, x: 0 }}
-															transition={{ delay: childIndex * 0.05 }}
-														>
-															<Link
-																href={`/${currentLang}${childItem.href}`} // incluir a língua na rota
-																className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
+											activeDropdown === index && (
+												<motion.div
+													initial={{ opacity: 0, y: -10 }}
+													animate={{ opacity: 1, y: 0 }}
+													exit={{ opacity: 0, y: -10 }}
+													transition={{ duration: 0.2 }}
+													className={`absolute ${Array.isArray(item.children)
+														? 'left-0'
+														: ' -left-16'}  mt-3 bg-nav   shadow-lg py-1 z-50`}
+													style={{
+														width: Array.isArray(item.children) ? 'auto' : '80vw',
+														minWidth: '20rem'
+													}}
+													onMouseEnter={() => setActiveDropdown(index)}
+													onMouseLeave={() => setActiveDropdown(null)}
+												>
+													{Array.isArray(item.children) ? (
+														item.children.map((childItem, childIndex) => (
+															<motion.div
+																key={childIndex}
+																className="z-500"
+																initial={{ opacity: 0, x: -10 }}
+																animate={{ opacity: 1, x: 0 }}
+																transition={{ delay: childIndex * 0.05 }}
 															>
-																{t(childItem.label)}
-															</Link>
-														</motion.div>
-													))
-												) : (
-													<div className="p-4">{item.children}</div>
-												)}
-											</motion.div>
-										)}
+																<Link
+																	href={`/${currentLang}${childItem.href}`} // incluir a língua na rota
+																	className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
+																>
+																	{t(childItem.label)}
+																</Link>
+															</motion.div>
+														))
+													) : (
+														<div className="p-4">{item.children}</div>
+													)}
+												</motion.div>
+											)}
 									</AnimatePresence>
 								</li>
 							))}

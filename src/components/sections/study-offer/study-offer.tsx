@@ -18,7 +18,7 @@ export function StudyOffer() {
 
 	const cards: Card[] = [
 		{
-			title: 'Inscrições e Matrículas',
+			title: 'A Melhor Aposta Para o Seu Futuro',
 			description: 'Informações detalhadas sobre como se inscrever, os requisitos necessários, prazos importantes e como obter bolsas de estudo para ajudar a financiar sua educação.',
 			image: images.departImages.eng_tech.src,
 			link: routes.APPLY_ROUTE

@@ -1,7 +1,7 @@
 {
     "global": {
         "educationTitle": "Educação",
-        "newsTitle": "Notícias"
+        "newsTitle": "Fique por Dentro das Nossas Notícias"
     },
     "navbar": {
         "about": "Sobre",
@@ -134,16 +134,16 @@
             "postgraduatePrograms": "Pós-Graduações"
         },
         "carouselItems": {
-            "welcomeTitle": "Sobre A Nossa Instituição",
+            "welcomeTitle": "A Melhor Aposta Para o Seu Futuro",
             "welcomeDescription": "As inscrições estão abertas! Junte-se a nós e transforme o seu futuro.",
             "welcomeCta": "Inscreva-se Agora",
             "academicExcellenceTitle": "Excelência Acadêmica",
             "academicExcellenceDescription": "Oferecemos cursos de alta qualidade para preparar você para o mercado de trabalho.",
             "academicExcellenceCta": "Saiba Mais",
-            "researchInnovationTitle": "Inscrições e Matrículas",
+            "researchInnovationTitle": "Inscrições e Matrículas: Garanta o Seu Lugar",
             "researchInnovationDescription": "Participe de projetos inovadores e contribua para o avanço do conhecimento.",
             "researchInnovationCta": "Descubra",
-            "universityLifeTitle": "Vida Universitária",
+            "universityLifeTitle": "Vida Ensino de Qualidade e Excelência",
             "universityLifeDescription": "Experimente uma vida universitária vibrante e cheia de atividades.",
             "universityLifeCta": "Explore"
         }
@@ -158,8 +158,8 @@
         "postgraduateAndMastersDescription": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi voluptates architecto id consectetur aliquam molestiae eligendi laborum molestias, sapiente libero dicta nisi"
     },
     "aboutTheSchool": {
-        "title": "Sobre o Nosso Campus",
-        "description": "Sobre a Nossa Instituição"
+        "title": "Explore as Nossas Instalações",
+        "description": " Laboratórios, Bibliotecas e Um Campus Moderno"
     },
     "footer": {
         "contact": "Contato",

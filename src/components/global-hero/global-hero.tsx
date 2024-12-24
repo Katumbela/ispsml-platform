@@ -37,8 +37,8 @@ const GlobalHero = ({
 	bottomBG,
 	position
 }: GlobalHeroProps) => {
-	const [ slideIndex, setSlideIndex ] = useState(0);
-	const [ animationDirection, setAnimationDirection ] = useState('top');
+	const [slideIndex, setSlideIndex] = useState(0);
+	const [animationDirection, setAnimationDirection] = useState('top');
 
 	const settings = {
 		dots: true,
@@ -60,7 +60,7 @@ const GlobalHero = ({
 		() => {
 			// Trigger re-render to reset animations
 		},
-		[ slideIndex ]
+		[slideIndex]
 	);
 
 	const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
@@ -93,9 +93,9 @@ const GlobalHero = ({
 							>
 								<div className="containers">
 									<motion.h1
-										className={cn(' font-bold ', titleClassName, {"text-4xl": !titleClassName})}
+										className={cn(' font-bold ', titleClassName, { "text-4xl": !titleClassName })}
 										initial={{ opacity: 0, y: getInitialY() }}
-										animate={{ opacity: 1, y: 0, scale: [ 1, 1.2, 1 ] }}
+										animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
 										transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
 									>
 										{title}

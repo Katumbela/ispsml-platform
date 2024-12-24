@@ -69,6 +69,7 @@ const About = () => {
 				title={'Sobre Nós'}
 				className="h-[500px] 2xl:h-[750px]"
 			/>
+			
 			<div className="py-8 -mt-2 2xl:py-14 bg-primary">
 				<div className="containers">
 					{' '}

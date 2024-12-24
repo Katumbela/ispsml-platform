@@ -10,32 +10,32 @@ import { FaAngleRight } from 'react-icons/fa';
 import { CardCourseComponent } from '../components/card-course-component';
 
 const CSADepartment = () => {
-	
+
 	const { department } = useParams();
 	const departmentData = coursesData[department as string];
-  
+
 	if (!departmentData) {
-	  return (
-		<div className="flex items-center justify-center h-screen bg-gray-100">
-		  <div className="p-8 text-center bg-white rounded-lg shadow-lg">
-			<h1 className="mb-4 text-4xl font-semibold">Departamento não encontrado</h1>
-			<p className="text-lg text-gray-700">
-			  Desculpe, não conseguimos encontrar o departamento que você está procurando.
-			</p>
-			<div className="flex"> 
+		return (
+			<div className="flex items-center justify-center h-screen bg-gray-100">
+				<div className="p-8 text-center bg-white rounded-lg shadow-lg">
+					<h1 className="mb-4 text-4xl font-semibold">Departamento não encontrado</h1>
+					<p className="text-lg text-gray-700">
+						Desculpe, não conseguimos encontrar o departamento que você está procurando.
+					</p>
+					<div className="flex">
+					</div>
+					<button
+						onClick={() => window.location.href = routes.ORGANIC_UNIT_ROUTE}
+						className="px-4 py-2 mt-6 text-white bg-blue-500 rounded hover:bg-blue-700"
+					>
+						Voltar para Unidades Orgânicas
+					</button>
+				</div>
 			</div>
-			<button 
-			  onClick={() => window.location.href = routes.ORGANIC_UNIT_ROUTE}
-			  className="px-4 py-2 mt-6 text-white bg-blue-500 rounded hover:bg-blue-700"
-			>
-			  Voltar para Unidades Orgânicas
-			</button>
-		  </div>
-		</div>
-	  );
+		);
 	}
-  
-  
+
+
 	return (
 		<>
 			<head>
@@ -45,7 +45,7 @@ const CSADepartment = () => {
 					content="Saiba mais sobre o departamento de Ciências Sociais Aplicadas na ISPSML."
 				/>
 				<meta name="keywords" content="Ciências Sociais Aplicadas, ISPSML, cursos" />
-			</head> 
+			</head>
 			<div className="pt-24 pb-10 bg-primary-footer">
 				<div className="containers">
 					<p className="pb-1 mb-5 text-white border-b">
@@ -53,10 +53,10 @@ const CSADepartment = () => {
 					</p>
 					<div className="sticky top-0 w-full bg-primary-footer">
 
-					<h1 className="text-4xl font-bold text-white">
-						{StringUtils.getFirstLetterOfEachWord(`Unidade ${departmentData.name}`)}
-					</h1>
-					<span className="text-white text-md">Unidade de {departmentData.name}</span>
+						<h1 className="text-4xl font-bold text-white">
+							{StringUtils.getFirstLetterOfEachWord(`Unidade ${departmentData.name}`)}
+						</h1>
+						<span className="text-white text-md">Unidade de {departmentData.name}</span>
 					</div>
 				</div>
 			</div>
@@ -81,23 +81,23 @@ const CSADepartment = () => {
 					<br />
 					<div className="flex">
 						<p className="flex w-full gap-4">
-							<Image alt='' width={100} height={100} className='w-[2em] my-auto border border-black rounded-full h-[2em]' src={departmentData.departmentDirector.picture}/>
+							<Image alt='' width={100} height={100} className='w-[2em] my-auto border border-black rounded-full h-[2em]' src={departmentData.departmentDirector.picture} />
 							<span className="flex flex-col my-auto">
-								 {departmentData.departmentDirector.name}
-								 <span className="text-xs">
-								 <strong className='text-gray-500'>Chefe do Dep. </strong>
-								 </span>
-								 </span>
+								{departmentData.departmentDirector.name}
+								<span className="text-xs">
+									<strong className='text-gray-500'>Chefe do Dep. </strong>
+								</span>
+							</span>
 						</p>
-						
+
 					</div>
 					<br />
-				<div>
-				<button   onClick={() => window.location.href = departmentData.catalog_link} className="flex w-auto gap-2 py-5 text-white uppercase transition-all bg-black border-2 border-black mt- px-7 hover:bg-white hover:text-black ">
-						<span className="my-auto">Baixar Catalogo</span>
-						<FaAngleRight className="my-auto" />
-					</button>
-				</div>
+					<div>
+						<button onClick={() => window.location.href = departmentData.catalog_link} className="flex w-auto gap-2 py-5 text-white uppercase transition-all bg-black border-2 border-black mt- px-7 hover:bg-white hover:text-black ">
+							<span className="my-auto">Baixar Catalogo</span>
+							<FaAngleRight className="my-auto" />
+						</button>
+					</div>
 				</div>
 			</main>
 			<div className="containers">

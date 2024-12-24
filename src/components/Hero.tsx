@@ -45,14 +45,14 @@ const Hero = () => {
 
 	const translatedCarouselItems = [
 		{
-			background: images.backgrounds.bg_woman_lib,
+			background: images.backgrounds.bg_applyings,
 			title: t('navbar.carouselItems.researchInnovationTitle'),
 			description: t('navbar.carouselItems.researchInnovationDescription'),
 			cta: t('navbar.carouselItems.researchInnovationCta'),
 			link: '/apply'
 		},
 		{
-			background: images.backgrounds.bg_ispsml_air,
+			background: images.backgrounds.bg_woman_lib,
 			title: t('navbar.carouselItems.welcomeTitle'),
 			description: t('navbar.carouselItems.welcomeDescription'),
 			cta: t('navbar.carouselItems.welcomeCta'),
@@ -68,7 +68,7 @@ const Hero = () => {
 		// },
 
 		{
-			background: images.teachers.president_photo,
+			background: images.backgrounds.bg_director_right_left,
 			title: t('navbar.carouselItems.universityLifeTitle'),
 			description: t('navbar.carouselItems.universityLifeDescription'),
 			cta: t('navbar.carouselItems.universityLifeCta'),
@@ -83,7 +83,7 @@ const Hero = () => {
 					{translatedCarouselItems.map((item, index) => (
 						<motion.div
 							key={index}
-							className="relative 2xl:h-[770px] h-[500px] items-start grid place-content-end pb-10 overflow-hidden"
+							className="relative 2xl:h-[80px] h-[600px] items-start grid place-content-end pb-10 overflow-hidden"
 							initial={{ scale: 0.9 }}
 							animate={{ scale: 1 }}
 							// style={{ background: `url(${item.background.src})` }}
@@ -94,7 +94,7 @@ const Hero = () => {
 								alt={item.title}
 								layout="fill"
 								objectFit="cover"
-								objectPosition="top"
+								objectPosition={index === 1 ? 'top' : 'center'}
 								className="absolute inset-0 z-[-1] scale-100"
 							/>
 							<div className="absolute inset-0 bg-black opacity-50 z-[-1]" />

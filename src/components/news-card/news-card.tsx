@@ -39,7 +39,7 @@ const NewsCard: React.FC<NewsCardProps> = ({ slug, title, content, postDate, ima
 					<div className="absolute flex justify-between right-2 left-2 bottom-3">
 						<a
 							href={routes.VIEW_NEWS_ROUTE + '/' + slug}
-							className="px-3 py-1 mt-auto text-xs font-semibold uppercase transition-all border hover:underline hover:bg-primary/10 text-primary"
+							className="px-3 py-1 mt-auto text-xs font-semibold uppercase transition-all border hover:bg-primary/10 text-primary"
 						>
 							Leia mais
 						</a>

@@ -13,27 +13,19 @@ import { ScienceStudyCard } from '@/components/cards-science-secton/cards-scienc
 export default function Home() {
 	return (
 		<>
-		<head>
-			<title>Instituto Superior Politécnico São Martinho de Lima</title>
-		</head> 
+			<head>
+				<title>Instituto Superior Politécnico São Martinho de Lima</title>
+			</head>
 			<div>
 				<Hero />
 				<StudyOffer />
-				<br />
+				
 				<NewsComponents />
-				<br />
+
 				<FixedImageScrollWithElastic />
 				{/* <EducationComponents /> */}
-				<br />
-				<br />
-				<br />
-				<br />
-				<br />
+
 				<AboutTheSchoolComponents />
-				<br />
-				<br />
-				<br />
-				<br />
 				<br />
 				<ScienceStudyCard />
 				<ConferenceComponent />

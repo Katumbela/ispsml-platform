@@ -23,7 +23,22 @@ export const coursesData: {
         slug: "engenharia-informatica-graduacao",
         long_description:
           "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
-        benefits: [
+       
+          entryProfile: [
+            "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+            "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+            "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+            "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+  
+          ],
+          outProfile: [
+            "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+            "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+            "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+            "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+  
+          ],
+          benefits: [
           "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e  ",
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, ",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte  ",
@@ -34,7 +49,7 @@ export const coursesData: {
         shift: {
           afternoon: true,
           morning: true,
-          evening: false,
+          evening: true,
         },
         course_cover:
           "https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-notebook-computer-electronic-equipment-science-and-technology-particles-image_1062240.jpg",
@@ -423,14 +438,28 @@ export const coursesData: {
         slug: "engenharia-informatica-graduacao",
         long_description:
           "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
-        benefits: [
-          "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
+        entryProfile: [
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
           "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
           "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-          "Compreenderá e aplicará a Abordagem de Desenvolvimento Preditivo e a Abordagem Híbrida, permitindo uma maior flexibilidade e adaptabilidade na gestão de projetos. Esta compreensão permitirá que os profissionais escolham a abordagem mais adequada para cada projeto, aumentando as chances de sucesso."
+
         ],
+        outProfile: [
+          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+
+        ],
+        // benefits: [
+        //   "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
+        //   "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+        //   "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+        //   "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+        //   "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+        //   "Compreenderá e aplicará a Abordagem de Desenvolvimento Preditivo e a Abordagem Híbrida, permitindo uma maior flexibilidade e adaptabilidade na gestão de projetos. Esta compreensão permitirá que os profissionais escolham a abordagem mais adequada para cada projeto, aumentando as chances de sucesso."
+        // ],
         shift: {
           afternoon: true,
           morning: true,
@@ -1104,6 +1133,21 @@ export const coursesData: {
         slug: "engenharia-informatica-graduacao",
         long_description:
           "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
+
+        entryProfile: [
+          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+
+        ],
+        outProfile: [
+          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+
+        ],
         benefits: [
           "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
@@ -2058,7 +2102,7 @@ export const coursesData: {
           },
         ],
       },
-      
+
     ],
   },
   csa: {

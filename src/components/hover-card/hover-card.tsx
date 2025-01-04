@@ -9,7 +9,7 @@ interface HoverCardProps {
 	className?: string;
 }
 
-export  function HoverCard  ({ bgColor, bgImage, className, hoverBgColor, title, children }: HoverCardProps) {
+export function HoverCard({ bgColor, bgImage, className, title }: HoverCardProps) {
 	return (
 		<motion.div
 			className={`relative w-full grid h-64 ${bgColor} ${className} overflow-hidden cursor-pointer`}
@@ -32,11 +32,11 @@ export  function HoverCard  ({ bgColor, bgImage, className, hoverBgColor, title,
 			</div>
 
 			{/* Hover Content */}
-			<motion.div
+			{/* <motion.div
 				className={`absolute inset-0 flex items-center justify-center ${hoverBgColor} transition duration-300 ease-in-out opacity-0 hover:opacity-100`}
 			>
 				<div className="containers">{children}</div>
-			</motion.div>
+			</motion.div> */}
 		</motion.div>
 	);
 };

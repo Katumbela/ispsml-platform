@@ -68,7 +68,7 @@ export function NewsComponents() {
 	};
 
 	return (
-		<section className="pt-20 pb-10">
+		<section className="pt-20 pb-11">
 			<div className="containers">
 				<h2 className="mb-8 text-3xl font-bold">{t('global.newsTitle')}</h2>
 			</div>
@@ -87,7 +87,7 @@ export function NewsComponents() {
 								title="Clique para ler mais"
 								className="relative h-full transition-all cursor-pointer hover:shadow-xl shadow-primary bg-primary"
 							>
-								<div className="absolute px-3 py-1 text-white bg-yellow-500 rounded-full left-4 top-4">
+								<div className="absolute px-3 py-1 text-sm text-white rounded-full bg-primary left-4 top-4">
 									Em Destaque
 								</div>
 								<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
@@ -99,7 +99,7 @@ export function NewsComponents() {
 									<div className="flex justify-between w-full right-2 left-2 bottom-3">
 										<a
 											href={routes.VIEW_NEWS_ROUTE + '/' + randomNews.slug}
-											className="px-3 py-1 mt-auto text-xs font-semibold text-white uppercase transition-all border hover:underline hover:bg-white hover:text-primary"
+											className="px-3 py-1 mt-auto text-xs font-semibold text-white uppercase transition-all border hover:bg-white hover:text-primary"
 										>
 											Leia mais
 										</a>

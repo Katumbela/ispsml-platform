@@ -13,7 +13,7 @@ import { ICourse } from '@/infra/interfaces/course.interface';
 import { FaPencilRuler } from 'react-icons/fa';
 import { GetLevelDescription } from '@/utils/return-level-name';
 import { routes } from '@/infra/routes.vars';
- 
+
 
 interface HeroCourseDetailProps {
   title?: string
@@ -74,7 +74,7 @@ export function HeroCourseDetail({ departmentName, department, bg_image, title, 
               <div className="py-8 bg-gradient-to-t from-black ">
                 <div className="flex flex-col containers">
                   <p className='pb-2 mb-3 border-b'>
-    <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE+"/"+department}>{departmentName}</a> / {course?.course}
+                    <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE + "/" + department}>{departmentName}</a> / {course?.course}
                   </p>
                   <span>{GetLevelDescription(course?.level)}</span>
                   <motion.h1
@@ -92,50 +92,50 @@ export function HeroCourseDetail({ departmentName, department, bg_image, title, 
                   <div className="grid px-6 gap-6 w-auto text-center grid-cols-3 p-2 max-w-[60vw] mx-auto place-content-center bg-primary">
                     <div className='py-3 my-auto'>
                       <div className="flex justify-center gap-5 text-xl justify">
-                      
-                          <FaLocationCrosshairs className='my-auto text-3xl' />
-                         
+
+                        <FaLocationCrosshairs className='my-auto text-3xl' />
+
                         <div className='flex flex-col my-auto text-start'>
                           <p>Turno</p>
                           <span className="text-sm">
-                          <p className='text-slate'>
-            <span className=" text-primary">
-              {course?.shift?.morning ? 'Manhã' : ''}
-            </span>
-            <span className=" text-primary">
-              {course?.shift?.afternoon ? 'Tarde' : ''}
-            </span>
-            <span className="text-primary">
-              {course?.shift?.evening ? 'Noite' : ''}
-            </span>
-          </p>
+                            <p className='flex gap-2 text-slate'>
+                              <span className="text-white ">
+                                {course?.shift?.morning ? 'M' : ''}
+                              </span>
+                              <span className="text-white ">
+                                {course?.shift?.afternoon ? 'T' : ''}
+                              </span>
+                              <span className="text-white">
+                                {course?.shift?.evening ? 'N' : ''}
+                              </span>
+                            </p>
                           </span>
                         </div>
                       </div>
                     </div>
                     <div className='px-10 py-5 border-x-2'>
                       <div className="flex justify-center gap-5 text-xl justify">
-                       
-                          <FaRegClock className='my-auto text-3xl' />
-                     
+
+                        <FaRegClock className='my-auto text-3xl' />
+
                         <div className='flex flex-col text-start'>
                           <p>Duração</p>
                           <span className="text-sm">{course?.duration} anos</span>
                         </div>
                       </div>
-                    </div> 
+                    </div>
                     <div className="flex justify-center gap-5 py-3 my-auto text-xl justify">
-                        
-                          <FaPencilRuler className='my-auto text-3xl' />
-                         
-                  
-                        <div className='flex flex-col my-auto text-start'>
-                          <p>Modalidade</p>
-                          <span className="text-sm">Presencial</span>
-                        </div>
+
+                      <FaPencilRuler className='my-auto text-3xl' />
+
+
+                      <div className='flex flex-col my-auto text-start'>
+                        <p>Modalidade</p>
+                        <span className="text-sm">Presencial</span>
+                      </div>
                     </div>
                   </div>
-                  <br /> 
+                  <br />
                 </div>
 
               </div>

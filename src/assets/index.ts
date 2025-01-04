@@ -25,6 +25,10 @@ import news4 from "./news/news4.jpeg";
 // Backgrounds
 import bg1 from "./bgs/school-bg-1.jpeg";
 import bg_writing from "./bgs/writing_paper.jpg";
+import bg_oferta_formativa_main_opt_2 from "./bgs/Section Oferta Formativa/Option 2.jpg";
+import bg_oferta_formativa_main from "./bgs/Section Oferta Formativa/Main.png";
+import bg_inscricao_e_matricula from "./bgs/3 - Inscrições e Matrículas.jpg";
+import bg_qualidade_e_inovacao from "./bgs/2 - Qualidade e Inovação.jpg";
 import bg_ciencia_estudo from "./bgs/est-ciencia.jpg";
 import bg_ispsml from "./bgs/bg-ispsml.jpg";
 import bg_form_inscription from "./bgs/bg_form.jpg";
@@ -47,6 +51,7 @@ import bg_vertical_education from "./bgs/bg-vertical-education.avif";
 import bg_vertical_education_1 from "./bgs/bg_vertical_education_1.jpg";
 import bg_vertical_education_2 from "./bgs/bg_vertical_education_2.avif";
 import bg_night_2 from "./bgs/bg-night-2.webp";
+import bg_hero_3 from "./bgs/bg_hero_3.jpg";
 import bg_master from "./bgs/master_bg.jpg";
 import bg_master_2 from "./bgs/master_bg_2.jpg";
 import bg_school_1 from "./bgs/school-bg-1.jpeg";
@@ -97,25 +102,25 @@ import profile5 from "./profiles/5.jpg";
 import profile6 from "./profiles/6.jpg";
 import profile7 from "./profiles/7.jpg";
 import profile8 from "./profiles/8.jpg";
-import profile9 from "./profiles/9.jpg"; 
+import profile9 from "./profiles/9.jpg";
 
 
 // Importando as imagens da pasta bg_ppl
-import bg_ppl16 from "./bg_ppl/16.jpg"; 
-import bg_ppl17 from "./bg_ppl/17.jpg"; 
-import bg_ppl22 from "./bg_ppl/22.jpg"; 
-import bg_ppl23 from "./bg_ppl/23.jpg"; 
-import bg_ppl34 from "./bg_ppl/34.jpg"; 
-import bg_ppl37 from "./bg_ppl/37.jpg"; 
-import bg_ppl38 from "./bg_ppl/38.jpg"; 
-import bg_ppl44 from "./bg_ppl/44.jpg"; 
-import bg_ppl48 from "./bg_ppl/48.jpg"; 
-import bg_pplDSC_4083 from "./bg_ppl/DSC_4083.jpg"; 
-import bg_pplIMG_2217 from "./bg_ppl/IMG_2217.jpeg"; 
-import bg_pplIMG_2218 from "./bg_ppl/IMG_2218.jpeg"; 
-import bg_pplIMG_2219 from "./bg_ppl/IMG_2219.jpeg"; 
-import bg_pplImagem_WhatsApp_2024_12_04 from "./bg_ppl/Imagem WhatsApp 2024-12-04 às 10.55.23_3f70f419.jpg"; 
- 
+import bg_ppl16 from "./bg_ppl/16.jpg";
+import bg_ppl17 from "./bg_ppl/17.jpg";
+import bg_ppl22 from "./bg_ppl/22.jpg";
+import bg_ppl23 from "./bg_ppl/23.jpg";
+import bg_ppl34 from "./bg_ppl/34.jpg";
+import bg_ppl37 from "./bg_ppl/37.jpg";
+import bg_ppl38 from "./bg_ppl/38.jpg";
+import bg_ppl44 from "./bg_ppl/44.jpg";
+import bg_ppl48 from "./bg_ppl/48.jpg";
+import bg_pplDSC_4083 from "./bg_ppl/DSC_4083.jpg";
+import bg_pplIMG_2217 from "./bg_ppl/IMG_2217.jpeg";
+import bg_pplIMG_2218 from "./bg_ppl/IMG_2218.jpeg";
+import bg_pplIMG_2219 from "./bg_ppl/IMG_2219.jpeg";
+import bg_pplImagem_WhatsApp_2024_12_04 from "./bg_ppl/Imagem WhatsApp 2024-12-04 às 10.55.23_3f70f419.jpg";
+
 // importando as imagens dos departamentos
 
 import ciencias_sociais from "./departs-bgs/ciencias-sociais.webp";
@@ -130,6 +135,32 @@ import studying_group_2 from "./departs-bgs/studying-group.avif";
 import not_found_1 from './svgs/error-page-svgrepo-com.svg'
 import not_found_2 from './svgs/not-found-error-alert-svgrepo-com.svg'
 
+// importando os logos do ISPSML
+import logo_1_png from './logos/Logo ISPSML/PNG/ISPSML 1@4x.png'
+import logo_2_png from './logos/Logo ISPSML/PNG/ISPSML 2@4x.png'
+import logo_V1_png from './logos/Logo ISPSML/PNG/V1@4x.png'
+import logo_V2_png from './logos/Logo ISPSML/PNG/V2@4x.png'
+
+// importando os logos do ISPSML SVG
+import logo_1_svg from './logos/Logo ISPSML/SVG/ISPSML 1.svg'
+import logo_2_svg from './logos/Logo ISPSML/SVG/ISPSML 2.svg'
+import logo_V1_svg from './logos/Logo ISPSML/SVG/V1.svg'
+import logo_V2_svg from './logos/Logo ISPSML/SVG/V2.svg'
+
+
+
+export const logos_ispsml = {
+  logo_1_png,
+  logo_2_png,
+  logo_1_svg,
+  logo_2_svg,
+  logo_V1_png,
+  logo_V2_png,
+  logo_V1_svg,
+  logo_V2_svg
+}
+
+
 
 export const logos = {
   logo1,
@@ -137,7 +168,8 @@ export const logos = {
   m2j_logo_white,
   logo_blue,
   m2j_logo_p_white,
-  logo_white
+  logo_white,
+  logos_ispsml
 };
 
 export const svgs = {
@@ -159,7 +191,12 @@ export const teachers = {
 export const backgrounds = {
   bg1,
   bg_night_1,
+  bg_qualidade_e_inovacao,
+  bg_inscricao_e_matricula,
+  bg_oferta_formativa_main_opt_2,
+  bg_oferta_formativa_main,
   fundo_isp_2,
+  bg_hero_3,
   fundo_isp_1,
   fundo_isp_3,
   bg_sci_method,
@@ -219,7 +256,7 @@ export const backgrounds = {
   bg_pplIMG_2217,
   bg_pplIMG_2218,
   bg_pplIMG_2219,
-  bg_pplImagem_WhatsApp_2024_12_04, 
+  bg_pplImagem_WhatsApp_2024_12_04,
 };
 
 export const bgsSchool = {
@@ -254,7 +291,7 @@ export const profiles = {
   profile6,
   profile7,
   profile8,
-  profile9, 
+  profile9,
 };
 
 export const departImages = {

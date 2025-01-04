@@ -97,11 +97,11 @@ const Navbar = () => {
 				<div className="flex">
 					<div
 						onClick={() => (window.location.href = `${routes.HOME_ROUTE}`)}
-						className="flex items-center text-2xl cursor-pointer me-12"
+						className="flex items-center text-2xl cursor-pointer me-7"
 					>
-						<Image src={images.logos.logo1} width={100} height={100} alt="Logo" className="w-[2em] mr-2" />
+						<Image src={ isScrolled ? images.logos.logos_ispsml.logo_1_png : images.logos.logos_ispsml.logo_2_png} width={1000} height={1000} alt="Logo" className="h-[2em] w-full mr-2" />
 						<div
-							className={`flex my-auto hiddenn flex-col justify-center font-semibold ${!isScrolled
+							className={`fflex my-auto hidden flex-col justify-center font-semibold ${!isScrolled
 								? 'text-white'
 								: 'text-primary'}`}
 						>

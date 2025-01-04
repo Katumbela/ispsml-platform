@@ -27,9 +27,9 @@ const ConferenceComponent = () => {
       <h2 className="max-w-3xl mb-4 text-3xl font-semibold text md:text-4xl">
       Participe dos nossos eventos académico
       </h2>
-      <p className="mb-8 text-gray-600 text">
+      {/* <p className="mb-8 text-gray-600 text">
         NOSSO CORPO DOCENTE COMPARTILHARÁ INFORMAÇÕES VALIOSAS E TEMAS ATUAIS
-      </p>
+      </p> */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Featured Conference */}
         {loading ? (

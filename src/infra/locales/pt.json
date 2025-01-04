@@ -134,16 +134,16 @@
             "postgraduatePrograms": "Pós-Graduações"
         },
         "carouselItems": {
-            "welcomeTitle": "A Melhor Aposta Para o Seu Futuro",
+            "welcomeTitle": "A melhor aposta para o seu futuro",
             "welcomeDescription": "As inscrições estão abertas! Junte-se a nós e transforme o seu futuro.",
             "welcomeCta": "Inscreva-se Agora",
             "academicExcellenceTitle": "Excelência Acadêmica",
             "academicExcellenceDescription": "Oferecemos cursos de alta qualidade para preparar você para o mercado de trabalho.",
             "academicExcellenceCta": "Saiba Mais",
-            "researchInnovationTitle": "Inscrições e Matrículas: Garanta o Seu Lugar",
+            "researchInnovationTitle": "Inscrições e matrículas: garanta o seu lugar",
             "researchInnovationDescription": "Participe de projetos inovadores e contribua para o avanço do conhecimento.",
             "researchInnovationCta": "Descubra",
-            "universityLifeTitle": "Vida Ensino de Qualidade e Excelência",
+            "universityLifeTitle": "Qualidade e excelência",
             "universityLifeDescription": "Experimente uma vida universitária vibrante e cheia de atividades.",
             "universityLifeCta": "Explore"
         }
@@ -163,12 +163,13 @@
     },
     "footer": {
         "contact": "Contato",
-        "phone1": "+244 939 072 373", 
-        "email": "info@ispsml.ao",    
+        "phone1": "+244 939 072 373",
+        "email": "info@ispsml.ao",
         "addressLine1": "São Martinho de Lima",
         "addressLine2": "Avenida Fidel Castro, junto à entrada do cemitério.",
         "city": "Luanda, Angola",
         "usefulLinks": "Links Úteis",
+        "extension": "Extensão",
         "researchInnovation": "Pesquisa e Inovação",
         "calendar": "Calendário ISPSML",
         "viewCalendar": "Ver Calendário",

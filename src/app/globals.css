@@ -253,3 +253,7 @@ footer div ul li, footer div p {
   font-style: italic;
   font-weight: 700;
 }
+
+.title-course {
+  @apply mb-6 text-3xl font-semibold
+}

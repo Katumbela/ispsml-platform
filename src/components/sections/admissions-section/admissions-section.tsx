@@ -2,7 +2,7 @@ import React, { ReactNode, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { images } from '@/assets';
-import {  FaAngleRight } from 'react-icons/fa'; // Importar ícones
+import { FaAngleRight } from 'react-icons/fa'; // Importar ícones
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 
@@ -26,7 +26,7 @@ const Paragraph = ({ children, index, title, onVisible, isActive }: IParagraphPr
 				onVisible(index); // Notifica o pai sobre o índice atual visível
 			}
 		},
-		[ inView, index, onVisible ]
+		[inView, index, onVisible]
 	);
 
 	const variants = {
@@ -46,17 +46,19 @@ const Paragraph = ({ children, index, title, onVisible, isActive }: IParagraphPr
 				duration: 0.3,
 				ease: 'easeOut'
 			}}
-			className={`relative flex items-start ${index !== 0 ? " mt-[20vh] 2xl:mb-[0vh]" : ""}`}
+			className={`relative flex items-start ${index !== 0 ? " mt-[10vh] 2xl:mb-[0vh]" : ""}`}
 		>
 			{/* Ponto à esquerda */}
 			<div
-				className={`absolute -left-8 w-4 h-4 rounded-full  bg-gray-400`}
+				className={`absolute -left-8 w-5 h-5 grid items-center place-content-center rounded-full  border-2 border-primary`}
 				style={{
 					// transform: isActive ? 'translateY(calc(50vh - 50%))' : 'none',
 					transition: 'transform 0.3s ease, background-color 0.3s ease'
 				}}
-			/>
+			>
+				<div className='w-[10px] h-[10px] rounded-full bg-primary '></div>
 
+			</div>
 			{/* Título e Parágrafo */}
 			<div>
 				<h3 className="mb-2 text-3xl font-semibold 2xl:text-4xl">{title}</h3>
@@ -67,7 +69,7 @@ const Paragraph = ({ children, index, title, onVisible, isActive }: IParagraphPr
 };
 
 const FixedImageScrollWithBrutalEffect = () => {
-	const [ activeIndex, setActiveIndex ] = useState<number | null>(null);
+	const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
 	const handleVisible = (index: number) => {
 		setActiveIndex(index);
@@ -80,13 +82,24 @@ const FixedImageScrollWithBrutalEffect = () => {
 	}, [activeIndex]);
 
 	const paragraphs = [
+		// {
+		// 	title: 'Pós-Graduação',
+		// 	content: (
+		// 		<>
+		// 			Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
+		// 			<div className="mt-6">
+		// 				<a href={routes.KNOW_MORE_ROUTE + "/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
+		// 			</div>
+		// 		</>
+		// 	)
+		// },
 		{
-			title: 'Pós-Graduação',
+			title: 'Preparatórios',
 			content: (
 				<>
-					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
+					Mestres e Educação Continuada, Programas de Pós-Graduação, Nossos programas de educação continuada são projetados para prepará-lo para os desafios do mercado atual. Oferecemos cursos preparatórios que ajudam a desenvolver habilidades avançadas e conhecimentos especializados, essenciais para o sucesso em diversas áreas profissionais.
 					<div className="mt-6">
-						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE + "/preparatory"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
@@ -97,40 +110,29 @@ const FixedImageScrollWithBrutalEffect = () => {
 				<>
 					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
 					<div className="mt-6">
-						<a href={routes.KNOW_MORE_ROUTE+"/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE + "/undergraduate"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
 		},
 		{
-			title: 'Técnicos Profissional',
+			title: 'Técnico Profissional',
 			content: (
 				<>
 					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais. Nossos programas de formação profissional são projetados para fornecer as habilidades e conhecimentos necessários para se destacar no mercado de trabalho. Oferecemos uma variedade de cursos e certificações que atendem às demandas das indústrias modernas.
 					<div className="mt-6">
-						<a href={routes.KNOW_MORE_ROUTE+"/professional"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
+						<a href={routes.KNOW_MORE_ROUTE + "/professional"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
 				</>
 			)
 		},
-		 
-		{
-			title: 'Preparatórios',
-			content: (
-				<>
-					Mestres e Educação Continuada, Programas de Pós-Graduação, Nossos programas de educação continuada são projetados para prepará-lo para os desafios do mercado atual. Oferecemos cursos preparatórios que ajudam a desenvolver habilidades avançadas e conhecimentos especializados, essenciais para o sucesso em diversas áreas profissionais.
-					<div className="mt-6">
-						<a href={routes.KNOW_MORE_ROUTE+"/preparatory"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
-					</div>
-				</>
-			)
-		}
+
 	];
 
 	return (
-		<div className="containers pb-[5vh] ">
+		<div className="pb-20 containers ">
 			<h2 className="text-3xl font-bold">Conheça a Nossa Oferta Formativa </h2>
-			
+
 			<p className="text-gray-500">Desde Cursos Profissionais até Pós-Graduações</p>
 			<br />
 			<br />
@@ -140,7 +142,6 @@ const FixedImageScrollWithBrutalEffect = () => {
 					<Image
 						src={images.backgrounds.bg_oferta_formativa_main.src}
 						alt="Imagem fixa"
-						
 						objectFit='cover'
 						layout='fill'
 						className="h-[89vh] w-full me-auto"
@@ -163,7 +164,7 @@ const FixedImageScrollWithBrutalEffect = () => {
 						<br />
 						<br />
 					</div> */}
-					
+
 					{/* Parágrafos */}
 					{paragraphs.map((paragraph, index) => (
 						<Paragraph

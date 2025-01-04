@@ -44,14 +44,7 @@ const Hero = () => {
 	const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
 
 	const translatedCarouselItems = [
-		{
-			background: images.backgrounds.bg_inscricao_e_matricula,
-			// background: images.backgrounds.bg_applyings,
-			title: t('navbar.carouselItems.researchInnovationTitle'),
-			description: t('navbar.carouselItems.researchInnovationDescription'),
-			cta: t('navbar.carouselItems.researchInnovationCta'),
-			link: '/apply'
-		},
+
 		{
 			background: images.backgrounds.bg_hero_3,
 			// background: images.backgrounds.bg_woman_lib,
@@ -59,6 +52,14 @@ const Hero = () => {
 			description: t('navbar.carouselItems.welcomeDescription'),
 			cta: t('navbar.carouselItems.welcomeCta'),
 			link: routes.ABOUT_ROUTE
+		},
+		{
+			background: images.backgrounds.bg_inscricao_e_matricula,
+			// background: images.backgrounds.bg_applyings,
+			title: t('navbar.carouselItems.researchInnovationTitle'),
+			description: t('navbar.carouselItems.researchInnovationDescription'),
+			cta: t('navbar.carouselItems.researchInnovationCta'),
+			link: '/apply'
 		},
 
 		// {

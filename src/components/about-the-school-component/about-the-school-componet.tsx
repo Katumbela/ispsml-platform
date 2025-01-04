@@ -1,6 +1,4 @@
 import Image from 'next/image';
-import { BiLink, BiPhotoAlbum, BiSolidBuildings } from 'react-icons/bi';
-import { FaVideo } from 'react-icons/fa6';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -25,12 +23,12 @@ export function AboutTheSchoolComponents() {
 
 	return (
 		<section className="py-0 z-500">
-			<div className="containers">
-				<h2 className="mb-0 text-3xl font-bold">{t('aboutTheSchool.title')}</h2>
-				<p className="text-gray-500">{t('aboutTheSchool.description')}</p>
+			<div className="text-center containers">
+				<h2 className="mb-10 text-5xl font-bold text-primary">{t('aboutTheSchool.title')}</h2>
+				{/* <p className="hidden text-gray-500">{t('aboutTheSchool.description')}</p> */}
 			</div>
 			<br />
-			<div className="h-[450px] containers 2xl:h-[700px] relative bg-primary-footer">
+			<div className="h-[450px] overflow-hidden containers 2xl:h-[700px] relative bg-primary-footer">
 				<div className="relative w-3/4 2xl:w-3/4 pt-[2.5rem]  ]">
 					<Slider {...settings}>
 						{imageList.map((item, index) => (
@@ -58,12 +56,12 @@ export function AboutTheSchoolComponents() {
 					<ul className="space-y-2 text-white text-end">
 						<li>
 							<p className="flex flex-col gap-1 text-white text-end">
-								<span className="text-sm"> Campus</span>
-								<span className="text-xl font-bold"> ISPSML YZ</span>
-								<span className="text-sm"> Luanda</span>
+								{/* <span className="text-sm"> Campus</span> */}
+								<span className="text-xl font-bold"> ISPSML</span>
+								<span className="text-sm"> Luanda, Benfica</span>
 							</p>
 						</li>
-						<li className="flex justify-end gap-2 pt-4 text-xs font-semibold uppercase cursor-pointer hover:underline ">
+						{/* <li className="flex justify-end gap-2 pt-4 text-xs font-semibold uppercase cursor-pointer hover:underline ">
 							<span className="my-auto">Galeria</span>
 							<BiPhotoAlbum className="my-auto text-xl" />
 						</li>
@@ -78,7 +76,7 @@ export function AboutTheSchoolComponents() {
 						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
 							<span className="my-auto">Street View</span>
 							<BiSolidBuildings className="my-auto text-xl" />
-						</li>
+						</li> */}
 					</ul>
 				</div>
 			</div>

@@ -9,12 +9,13 @@ export interface ICourse {
   | "graduation"
   | "professional"
   | "master"
-  | "pos-graduation" 
+  | "pos-graduation"
   | "preparatory";
   slug?: string;
   shift?: IShift;
   benefits?: string[];
-
+  entryProfile?: string[];
+  outProfile?: string[];
   years: IYear[];
   course_cover: string;
   additional_courses?: ICourse[];

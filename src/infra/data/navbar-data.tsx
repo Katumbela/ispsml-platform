@@ -121,7 +121,8 @@ export const navigationItems = (t: any): NavigationItem[] => {
     // },
     {
       label: 'navbar.research.label',
-      href: routes.RESEARCH_ROUTE,
+      href: "#",
+      // href: routes.RESEARCH_ROUTE,
       // children: [
       //   { label: 'navbar.research.policy', href: routes.RESEARCH_POLICY_ROUTE },
       //   { label: 'navbar.research.guide', href: routes.RESEARCH_GUIDE_ROUTE },
@@ -136,7 +137,8 @@ export const navigationItems = (t: any): NavigationItem[] => {
     },
     {
       label: 'navbar.extension',
-      href: routes.EXTENSION_ROUTE,
+      href: "#",
+      // href: routes.EXTENSION_ROUTE,
       // children: [
       //   { label: 'navbar.extensionSection.policy', href: routes.EXTENSION_POLICY_ROUTE },
       //   { label: 'navbar.extensionSection.knowledgeTransfer', href: routes.KNOWLEDGE_TRANSFER_ROUTE },
@@ -161,8 +163,8 @@ export const navigationItems = (t: any): NavigationItem[] => {
         { label: 'navbar.more.news', href: routes.NEWS_ROUTE },
       ]
     },
-  // { label: 'Biblioteca', href: routes.LIBRARY_ROUTE },
-   
+    // { label: 'Biblioteca', href: routes.LIBRARY_ROUTE },
+
   ];
 };
 

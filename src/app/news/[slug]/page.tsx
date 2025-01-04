@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation';
 // import { newsData } from '@/infra/data/newsData';
-import { FaArrowRight, FaFacebookF, FaLinkedin, FaWhatsapp, FaXTwitter } from 'react-icons/fa6';
+import { FaArrowRight, FaFacebookF, FaLinkedin, FaWhatsapp } from 'react-icons/fa6';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaCalendarAlt } from 'react-icons/fa';
@@ -138,13 +138,13 @@ export default function ViewNewsPage() {
 					>
 						<FaWhatsapp className="my-auto" /> <span className="my-auto">Whatsapp</span>
 					</a>
-					<a
+					{/* <a
 						href={`https://x.com/intent/tweet?url=https://ispsml.ao${routes.VIEW_NEWS_ROUTE}/${slug}&via=ispml-university`}
 						target="__blank"
 						className="flex gap-2 px-3 py-2 text-sm transition-all border-2 hover:bg-primary hover:text-white border-primary text-primary"
 					>
 						<FaXTwitter className="my-auto" /> <span className="my-auto">Tweeter</span>
-					</a>
+					</a> */}
 					<a
 						href={`https://www.linkedin.com/sharing/share-offsite/?url=https://ispsml.ao${routes.VIEW_NEWS_ROUTE}/${slug}`}
 						target="__blank"

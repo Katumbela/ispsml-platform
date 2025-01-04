@@ -131,14 +131,14 @@ const FixedImageScrollWithBrutalEffect = () => {
 		<div className="containers pb-[5vh] ">
 			<h2 className="text-3xl font-bold">Conheça a Nossa Oferta Formativa </h2>
 			
-			<p className="text-gray-500">Desde Cursos Profissionais até Pós-Graduações</p>
+			<p className="text-gray-500">Desde Cursos Profissionais até Pós-Graduações</p>
 			<br />
 			<br />
 			<div className="min-h-[120vh]  2xl:min-h-[00vh]  2xl:pe-[6vw] pe-[5vw]   flex gap-24 2xl:gap-28">
-				{/* Imagem Fixa */}
+				{/* Imagem fixa */}
 				<div className="relative w-full bg-primary " style={{ position: 'sticky', top: '90px', height: '89vh' }}>
 					<Image
-						src={images.bgPplImages.bg_ppl48.src}
+						src={images.backgrounds.bg_oferta_formativa_main.src}
 						alt="Imagem fixa"
 						
 						objectFit='cover'

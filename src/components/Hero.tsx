@@ -15,8 +15,8 @@ import { routes } from '@/infra/routes.vars';
 
 const Hero = () => {
 	const { t } = useTranslation();
-	const [ slideIndex, setSlideIndex ] = useState(0);
-	const [ animationDirection, setAnimationDirection ] = useState('top');
+	const [slideIndex, setSlideIndex] = useState(0);
+	const [animationDirection, setAnimationDirection] = useState('top');
 
 	const settings = {
 		dots: true,
@@ -38,21 +38,23 @@ const Hero = () => {
 		() => {
 			// Trigger re-render to reset animations
 		},
-		[ slideIndex ]
+		[slideIndex]
 	);
 
 	const getInitialY = () => (animationDirection === 'top' ? -50 : 50);
 
 	const translatedCarouselItems = [
 		{
-			background: images.backgrounds.bg_applyings,
+			background: images.backgrounds.bg_inscricao_e_matricula,
+			// background: images.backgrounds.bg_applyings,
 			title: t('navbar.carouselItems.researchInnovationTitle'),
 			description: t('navbar.carouselItems.researchInnovationDescription'),
 			cta: t('navbar.carouselItems.researchInnovationCta'),
 			link: '/apply'
 		},
 		{
-			background: images.backgrounds.bg_woman_lib,
+			background: images.backgrounds.bg_hero_3,
+			// background: images.backgrounds.bg_woman_lib,
 			title: t('navbar.carouselItems.welcomeTitle'),
 			description: t('navbar.carouselItems.welcomeDescription'),
 			cta: t('navbar.carouselItems.welcomeCta'),
@@ -68,7 +70,8 @@ const Hero = () => {
 		// },
 
 		{
-			background: images.backgrounds.bg_director_right_left,
+			background: images.backgrounds.bg_qualidade_e_inovacao,
+			// background: images.backgrounds.bg_director_right_left,
 			title: t('navbar.carouselItems.universityLifeTitle'),
 			description: t('navbar.carouselItems.universityLifeDescription'),
 			cta: t('navbar.carouselItems.universityLifeCta'),
@@ -83,7 +86,7 @@ const Hero = () => {
 					{translatedCarouselItems.map((item, index) => (
 						<motion.div
 							key={index}
-							className="relative 2xl:h-[80px] h-[600px] items-start grid place-content-end pb-10 overflow-hidden"
+							className="relative h-[600px] 2xl:h-[800px] items-start grid place-content-end pb-10 overflow-hidden"
 							initial={{ scale: 0.9 }}
 							animate={{ scale: 1 }}
 							// style={{ background: `url(${item.background.src})` }}
@@ -94,7 +97,8 @@ const Hero = () => {
 								alt={item.title}
 								layout="fill"
 								objectFit="cover"
-								objectPosition={index === 1 ? 'top' : 'center'}
+								// objectPosition={index === 1 ? 'top' : 'center'}
+								objectPosition={'top'}
 								className="absolute inset-0 z-[-1] scale-100"
 							/>
 							<div className="absolute inset-0 bg-black opacity-50 z-[-1]" />
@@ -103,7 +107,7 @@ const Hero = () => {
 									<motion.h1
 										className="mb-4 text-3xl font-semibold md:text-5xl"
 										initial={{ opacity: 0, y: getInitialY() }}
-										animate={{ opacity: 1, y: 0, scale: [ 1, 1.2, 1 ] }}
+										animate={{ opacity: 1, y: 0, scale: [1, 1.2, 1] }}
 										transition={{ duration: 0.5, delay: 0.5, type: 'spring', stiffness: 100 }}
 									>
 										{item.title}

@@ -41,30 +41,30 @@ model News {
     sponsor          Boolean?
 }
 
-model Department {
-    id          String   @id @default(auto()) @map("_id") @db.ObjectId
-    name        String
-    description String
-    image       String
-    courses     Course[]
-}
+// model Department {
+//     id          String   @id @default(auto()) @map("_id") @db.ObjectId
+//     name        String
+//     description String
+//     image       String
+//     courses     Course[]
+// }
 
-model Course {
-    id              String     @id @default(auto()) @map("_id") @db.ObjectId
-    title           String
-    shortDetail     String?
-    longDescription String?
-    duration        Int
-    level           String
-    slug            String
-    courseCover     String
-    departmentId    String     @db.ObjectId
-    department      Department @relation(fields: [departmentId], references: [id])
-    shiftId         String?    @db.ObjectId
-    shift           String?
-    benefits        String[]
-    years           Year[]
-}
+// model Course {
+//     id              String     @id @default(auto()) @map("_id") @db.ObjectId
+//     title           String
+//     shortDetail     String?
+//     longDescription String?
+//     duration        Int
+//     level           String
+//     slug            String
+//     courseCover     String
+//     departmentId    String     @db.ObjectId
+//     department      Department @relation(fields: [departmentId], references: [id])
+//     shiftId         String?    @db.ObjectId
+//     shift           String?
+//     benefits        String[]
+//     years           Year[]
+// }
 
 model Year {
     id        String     @id @default(auto()) @map("_id") @db.ObjectId
@@ -74,21 +74,20 @@ model Year {
     semesters Semester[]
 }
 
-model Semester {
-    id       String    @id @default(auto()) @map("_id") @db.ObjectId
-    semester Int
-    yearId   String    @db.ObjectId
-    year     Year      @relation(fields: [yearId], references: [id])
-    subjects Subject[]
-}
-
-model Subject {
-    id         String   @id @default(auto()) @map("_id") @db.ObjectId
-    name       String
-    workload   Int
-    semesterId String   @db.ObjectId
-    semester   Semester @relation(fields: [semesterId], references: [id])
-}
+// model Semester {
+//     id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//     semester Int
+//     yearId   String    @db.ObjectId
+//     year     Year      @relation(fields: [yearId], references: [id])
+//     subjects Subject[]
+// }
+// model Subject {
+//     id         String   @id @default(auto()) @map("_id") @db.ObjectId
+//     name       String
+//     workload   Int
+//     semesterId String   @db.ObjectId
+//     semester   Semester @relation(fields: [semesterId], references: [id])
+// }
 
 model Application {
     id        String   @id @default(auto()) @map("_id") @db.ObjectId
@@ -112,4 +111,68 @@ model Event {
     isFeatured      Boolean
     slug            String
     place           String
+}
+
+model Department {
+    id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+    name               String
+    catalog_link       String?
+    department_cover   String?
+    departmentDirector Director @relation(fields: [directorId], references: [id])
+    courses            Course[]
+    directorId         String   @db.ObjectId
+}
+
+model Director {
+    id         String       @id @default(auto()) @map("_id") @db.ObjectId
+    name       String?
+    picture    String?
+    Department Department[]
+}
+
+model Course {
+    id               String       @id @default(auto()) @map("_id") @db.ObjectId
+    name             String
+    duration         String
+    level            String
+    short_detail     String
+    slug             String
+    long_description String
+    benefits         String[]
+    shift_afternoon  Boolean?
+    shift_morning    Boolean?
+    shift_evening    Boolean?
+    course_cover     String
+    yearDetails      YearDetail[]
+    departmentId     String       @db.ObjectId
+    department       Department   @relation(fields: [departmentId], references: [id])
+    shiftId          String?      @db.ObjectId
+    // Department      Department   @relation(fields: [departmentId], references: [id])
+    Year             Year[]
+}
+
+model YearDetail {
+    id        String     @id @default(auto()) @map("_id") @db.ObjectId
+    year      Int
+    semesters Semester[]
+    courseId  String     @db.ObjectId
+    Course    Course     @relation(fields: [courseId], references: [id])
+}
+
+model Semester {
+    id           String     @id @default(auto()) @map("_id") @db.ObjectId
+    semester     Int
+    subjects     Subject[]
+    yearDetailId String     @db.ObjectId
+    YearDetail   YearDetail @relation(fields: [yearDetailId], references: [id])
+    Year         Year?      @relation(fields: [yearId], references: [id])
+    yearId       String?    @db.ObjectId
+}
+
+model Subject {
+    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    name       String
+    workload   Int
+    semesterId String   @db.ObjectId
+    Semester   Semester @relation(fields: [semesterId], references: [id])
 }

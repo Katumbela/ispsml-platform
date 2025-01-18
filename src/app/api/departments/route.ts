@@ -1,99 +1,261 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
-
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import prisma from '@/infra/database/prisma';
+import { uploadImage } from '@/utils/uploadImage';
 
-// Listar departamentos ou buscar por ID
-export async function GET(request: NextRequest) {
+// export async function POST(request: Request) {
+//   try {
+//     const body = await request.json();
+//     const {
+//       name,
+//       catalogLink,
+//       departmentCover,
+//       departmentDirector,
+//       courses,
+//       image,
+//     } = body;
+
+//     // Upload de imagem, se fornecida
+//     let imageUrl = '';
+//     if (image) {
+//       imageUrl = await uploadImage(image, 'departments');
+//     }
+
+//     // Criação do departamento no banco
+//     const newDepartment = await prisma.department.create({
+//       data: {
+//         name,
+//         catalogLink,
+//         departmentCover: imageUrl || departmentCover,
+//         departmentDirector: {
+//           create: {
+//             name: departmentDirector.name,
+//             picture: departmentDirector.picture,
+//           },
+//         },
+//         courses: {
+//           create: courses.map((course: any) => ({
+//             name: course.course,
+//             duration: course.duration,
+//             level: course.level,
+//             shortDetail: course.short_detail,
+//             slug: course.slug,
+//             longDescription: course.long_description,
+//             benefits: course.benefits,
+//             shiftAfternoon: course.shift.afternoon,
+//             shiftMorning: course.shift.morning,
+//             shiftEvening: course.shift.evening,
+//             courseCover: course.course_cover,
+//             yearDetails: {
+//               create: course.years.map((year: any) => ({
+//                 year: year.year,
+//                 semesters: {
+//                   create: year.semesters.map((semester: any) => ({
+//                     semester: semester.semester,
+//                     subjects: {
+//                       create: semester.subjects.map((subject: any) => ({
+//                         name: subject.name,
+//                         workload: subject.workload,
+//                       })),
+//                     },
+//                   })),
+//                 },
+//               })),
+//             },
+//           })),
+//         },
+//       },
+//     });
+
+//     return NextResponse.json({ message: 'Departamento criado com sucesso!', department: newDepartment }, { status: 201 });
+//   } catch (error: any) {
+//     return NextResponse.json({ message: 'Erro ao criar departamento! ' + error.message }, { status: 500 });
+//   }
+// }
+
+// Obter lista ou detalhe de departamento
+
+
+
+export async function POST(request: Request) {
+  try {
+    const formData = await request.formData();
+    const data = JSON.parse(formData.get("data") as string);
+
+    const departmentCoverFile = formData.get("department_cover");
+    const directorPictureFile = formData.get("departmentDirector_picture");
+
+    if (!(departmentCoverFile instanceof File) || !(directorPictureFile instanceof File)) {
+      throw new Error("Invalid file upload");
+    }
+
+    // Faz o upload das imagens
+    const departmentCover = await uploadImage(departmentCoverFile, "departments");
+    const directorPicture = await uploadImage(directorPictureFile, "directors");
+
+    // Adiciona as URLs das imagens no objeto de dados
+    data.department_cover = departmentCover;
+    data.departmentDirector.picture = directorPicture;
+
+    // Cria o departamento com o diretor e cursos
+    const response = await prisma.$transaction(async (prisma) => {
+      const department = await prisma.department.create({
+        data: {
+          name: data.name,
+          catalog_link: data.catalogLink,
+          department_cover: data.department_cover,
+          departmentDirector: {
+            create: {
+              name: data.departmentDirector.name,
+              picture: data.departmentDirector.picture,
+            },
+          },
+          courses: {
+            create: data.courses.map((course: any) => ({
+              name: course.course,
+              duration: course.duration,
+              level: course.level,
+              short_detail: course.short_detail,
+              slug: course.slug,
+              long_description: course.long_description,
+              benefits: course.benefits,
+              shift_afternoon: course.shift.afternoon,
+              shift_morning: course.shift.morning,
+              shift_evening: course.shift.evening,
+              course_cover: course.course_cover,
+              yearDetails: {
+                create: course.years.map((year: any) => ({
+                  year: year.year,
+                  semesters: {
+                    create: year.semesters.map((semester: any) => ({
+                      semester: semester.semester,
+                      subjects: {
+                        create: semester.subjects.map((subject: any) => ({
+                          name: subject.name,
+                          workload: subject.workload,
+                        })),
+                      },
+                    })),
+                  },
+                })),
+              },
+            })),
+          },
+        },
+      });
+
+      return department;
+    });
+
+
+    return NextResponse.json(response, { status: 201 });
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+}
+
+
+export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
 
   try {
     if (id) {
-      // Buscar por ID
       const department = await prisma.department.findUnique({
         where: { id },
+        include: {
+          departmentDirector: true,
+          courses: {
+            include: {
+              yearDetails: {
+                include: {
+                  semesters: {
+                    include: { subjects: true },
+                  },
+                },
+              },
+            },
+          },
+        },
       });
+
 
       if (!department) {
         return NextResponse.json({ message: 'Departamento não encontrado!' }, { status: 404 });
       }
-
       return NextResponse.json(department, { status: 200 });
     }
 
-    // Listar todos os departamentos
-    const departments = await prisma.department.findMany();
+    const departments = await prisma.department.findMany({
+      include: {
+        departmentDirector: true,
+        courses: {
+          include: {
+            yearDetails: {
+              include: {
+                semesters: {
+                  include: { subjects: true },
+                },
+              },
+            },
+          },
+        },
+      },
+    });
     return NextResponse.json(departments, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ message: 'Erro ao buscar departamentos! ' + error.message }, { status: 500 });
   }
 }
 
-// Criar um novo departamento
-export async function POST(request: NextRequest) {
+// Atualizar departamento
+export async function PUT(request: Request) {
   try {
     const body = await request.json();
-    const { name, description, image } = body;
-
-    const newDepartment = await prisma.department.create({
-      data: {
-        name,
-        description,
-        image,
-      },
-    });
-
-    return NextResponse.json(newDepartment, { status: 201 });
-  } catch (error: any) {
-    return NextResponse.json({ message: 'Erro ao adicionar departamento! ' + error.message }, { status: 500 });
-  }
-}
-
-// Atualizar um departamento
-export async function PUT(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const id = searchParams.get('id');
-
-  if (!id) {
-    return NextResponse.json({ message: 'ID do departamento é obrigatório!' }, { status: 400 });
-  }
-
-  try {
-    const body = await request.json();
-    const { name, description } = body;
+    const { id, name, catalog_link, department_cover, departmentDirector, courses } = body;
 
     const updatedDepartment = await prisma.department.update({
       where: { id },
       data: {
         name,
-        description,
+        catalog_link,
+        department_cover,
+        departmentDirector: {
+          update: {
+            name: departmentDirector.name,
+            picture: departmentDirector.picture,
+          },
+        },
+        courses: {
+          deleteMany: {},
+          create: courses.map((course: any) => ({
+            name: course.name,
+            duration: course.duration,
+            level: course.level,
+          })),
+        },
       },
     });
 
-    return NextResponse.json(updatedDepartment, { status: 200 });
+    return NextResponse.json({ message: 'Departamento atualizado com sucesso!', department: updatedDepartment }, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ message: 'Erro ao atualizar departamento! ' + error.message }, { status: 500 });
   }
 }
 
-// Deletar um departamento
-export async function DELETE(request: NextRequest) {
+// Excluir departamento
+export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
 
-  if (!id) {
-    return NextResponse.json({ message: 'ID do departamento é obrigatório!' }, { status: 400 });
-  }
-
   try {
-    await prisma.department.delete({
-      where: { id },
-    });
- 
-    return NextResponse.json({ message: 'Departamento deletado com sucesso!' }, { status: 200 });
+    if (!id) {
+      return NextResponse.json({ message: 'ID é obrigatório!' }, { status: 400 });
+    }
+
+    await prisma.department.delete({ where: { id } });
+    return NextResponse.json({ message: 'Departamento excluído com sucesso!' }, { status: 200 });
   } catch (error: any) {
-    return NextResponse.json({ message: 'Erro ao deletar departamento! ' + error.message }, { status: 500 });
+    return NextResponse.json({ message: 'Erro ao excluir departamento! ' + error.message }, { status: 500 });
   }
 }

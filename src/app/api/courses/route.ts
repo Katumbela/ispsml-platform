@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
             // Buscar por ID
             const course = await prisma.course.findUnique({
                 where: { id },
+                include: { department: true, yearDetails: true },
             });
             if (!course) {
                 return NextResponse.json({ message: 'Curso não encontrado!' }, { status: 404 });

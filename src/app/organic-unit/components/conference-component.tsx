@@ -25,7 +25,7 @@ const ConferenceComponent = () => {
   return (
     <section className="px-4 py-8 mt-[10vh] mx-auto containers">
       <h2 className="max-w-3xl mb-4 text-3xl font-semibold text md:text-4xl">
-      Participe dos nossos eventos académico
+        Participe dos nossos eventos académico
       </h2>
       {/* <p className="mb-8 text-gray-600 text">
         NOSSO CORPO DOCENTE COMPARTILHARÁ INFORMAÇÕES VALIOSAS E TEMAS ATUAIS

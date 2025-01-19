@@ -89,7 +89,7 @@ export async function GET(request: Request) {
   try {
     if (id) {
       const department = await prisma.department.findUnique({
-        where: { id },
+        where: { id: Number(id) },
         include: {
           departmentDirector: true,
           courses: {
@@ -115,7 +115,7 @@ export async function GET(request: Request) {
 
     if (courseId) {
       const course = await prisma.course.findUnique({
-        where: { id: courseId },
+        where: { id: Number(courseId) },
         include: {
           yearDetails: {
             include: {
@@ -156,13 +156,76 @@ export async function GET(request: Request) {
 }
 
 // Atualizar departamento
+// export async function PUT(request: Request) {
+//   try {
+//     const body = await request.json();
+//     const { id, name, catalog_link, department_cover, departmentDirector, courses } = body;
+
+//     const updatedDepartment = await prisma.department.update({
+//       where: { id },
+//       data: {
+//         name,
+//         catalog_link,
+//         department_cover,
+//         departmentDirector: {
+//           update: {
+//             name: departmentDirector.name,
+//             picture: departmentDirector.picture,
+//           },
+//         },
+//         courses: {
+//           deleteMany: {},
+//           create: courses.map((course: any) => ({
+//             name: course.course,
+//             duration: course.duration,
+//             level: course.level,
+//             short_detail: course.short_detail,
+//             slug: course.slug,
+//             long_description: course.long_description,
+//             benefits: course.benefits,
+//             shift_afternoon: course.shift.afternoon,
+//             shift_morning: course.shift.morning,
+//             shift_evening: course.shift.evening,
+//             course_cover: course.course_cover,
+//             yearDetails: {
+//               create: course.years.map((year: any) => ({
+//                 year: year.year,
+//                 semesters: {
+//                   create: year.semesters.map((semester: any) => ({
+//                     semester: semester.semester,
+//                     subjects: {
+//                       create: semester.subjects.map((subject: any) => ({
+//                         name: subject.name,
+//                         workload: subject.workload,
+//                       })),
+//                     },
+//                   })),
+//                 },
+//               })),
+//             },
+//           })),
+//         },
+//       },
+//     });
+
+//     return NextResponse.json({ message: 'Departamento atualizado com sucesso!', department: updatedDepartment }, { status: 200 });
+//   } catch (error: any) {
+//     return NextResponse.json({ message: 'Erro ao atualizar departamento! ' + error.message }, { status: 500 });
+//   }
+// }
+
+
 export async function PUT(request: Request) {
+  const { searchParams } = new URL(request.url);
+  const id = searchParams.get('id');
+
+  console.log(id);
   try {
     const body = await request.json();
-    const { id, name, catalog_link, department_cover, departmentDirector, courses } = body;
+    const { name, catalog_link, department_cover, departmentDirector, courses } = body;
 
     const updatedDepartment = await prisma.department.update({
-      where: { id },
+      where: { id: Number(id) },
       data: {
         name,
         catalog_link,
@@ -210,9 +273,12 @@ export async function PUT(request: Request) {
 
     return NextResponse.json({ message: 'Departamento atualizado com sucesso!', department: updatedDepartment }, { status: 200 });
   } catch (error: any) {
+    console.log(error);
     return NextResponse.json({ message: 'Erro ao atualizar departamento! ' + error.message }, { status: 500 });
   }
 }
+
+
 
 // Excluir departamento
 export async function DELETE(request: Request) {
@@ -224,7 +290,7 @@ export async function DELETE(request: Request) {
       return NextResponse.json({ message: 'ID é obrigatório!' }, { status: 400 });
     }
 
-    await prisma.department.delete({ where: { id } });
+    await prisma.department.delete({ where: { id: Number(id) } });
     return NextResponse.json({ message: 'Departamento excluído com sucesso!' }, { status: 200 });
   } catch (error: any) {
     return NextResponse.json({ message: 'Erro ao excluir departamento! ' + error.message }, { status: 500 });

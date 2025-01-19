@@ -1,61 +1,76 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import React, { useState } from 'react';
-import InputDefault from '../../../components/input-default/input';
-import { FaSpinner } from 'react-icons/fa';
-import { toast } from 'react-toastify';
-import { uploadImage } from '@/utils/uploadImage'; 
-import departmentsService from '@/services/departments.service';
+import React, { useState, useEffect } from "react";
+import { getDepartments, getCoursesByDepartment, addCourseToDepartment } from "@/services/dep.service";
+import { ICourse, IDepartment } from "@/infra/interfaces/course.interface";
+import CourseForm from "./components/add-course-form";
 
 
-const DepartmentsDashboard = () => {
-  const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
-  const [image, setImage] = useState<File | null>(null);
-  const [loading, setLoading] = useState(false);
+const DepartmentList: React.FC = () => {
+  const [departments, setDepartments] = useState<IDepartment[]>([]);
+  const [selectedDepartmentId, setSelectedDepartmentId] = useState<string | null>(null);
+  const [courses, setCourses] = useState<ICourse[]>([]);
 
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-    setLoading(true);
-    try {
-        let imageUrl = '';
-    if (image) {
-      imageUrl = await uploadImage(image, 'departments');
-    } 
+  useEffect(() => {
+    async function fetchDepartments() {
+      const data = await getDepartments();
+      setDepartments(data);
+    }
+    fetchDepartments();
+  }, []);
 
-      await departmentsService.createDepartment({
-        name,
-        description,
-        image: imageUrl,
-      });
-      setLoading(false);
-      toast.success('Departamento adicionado com sucesso!');
-    } catch (error: any) {
-      setLoading(false);
-      toast.error('Erro ao adicionar departamento! ' + error.message);
+  const handleSelectDepartment = async (departmentId: string) => {
+    setSelectedDepartmentId(departmentId);
+    const data = await getCoursesByDepartment(departmentId);
+    setCourses(data);
+  };
+
+  const handleAddCourse = async (course: ICourse): Promise<void> => {
+    console.log("Adding course:", course);
+    if (selectedDepartmentId) {
+      const formData = new FormData();
+      formData.append("course", course as any);
+      console.log(formData);
+      // Add other course fields to formData if necessary
+      await addCourseToDepartment(selectedDepartmentId, formData);
+      const updatedCourses = await getCoursesByDepartment(selectedDepartmentId);
+      setCourses(updatedCourses);
     }
   };
 
   return (
-    <div className="container px-6 py-32 mx-auto text-white bg-primary-footer">
-      <h1 className="mb-4 text-2xl font-bold">Adicionar Departamento</h1>
-      <form onSubmit={handleSubmit}>
-        <InputDefault label='Nome' placeholder='Nome' value={name} onChange={(e) => setName(e.target.value)} required={true} />
-        <InputDefault label='Descrição' placeholder='Descrição' value={description} onChange={(e) => setDescription(e.target.value)} required={true} />
-        <input type="file" onChange={(e) => setImage(e.target.files ? e.target.files[0] : null)} required={true} />
-        <div className="flex justify-center">
-          <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
-            {loading ? <FaSpinner className="my-auto animate-spin" /> : (
-              <>
-                <span className="my-auto">Adicionar Departamento</span>
-              </>
-            )}
-          </button>
+    <div className="py-32 containers">
+      <h1 className="mb-4 text-2xl font-bold">Departments</h1>
+      <ul className="space-y-2">
+        {departments.map((department) => (
+          <li key={department.id}>
+            <button
+              className="text-blue-500"
+              onClick={() => handleSelectDepartment(selectedDepartmentId === department.id ? '' : department.id)}
+            >
+              {department.name} - {department.courses ? department.courses.length : 0} Cursos
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {selectedDepartmentId && (
+        <div className="mt-8">
+          <h2 className="text-xl font-bold">Courses</h2>
+          <ul className="space-y-2">
+            {courses.map((course) => (
+              <li key={course.id}>{course.course}</li>
+            ))}
+          </ul>
+
+          <h2 className="mt-4 text-xl font-bold">Add New Course</h2>
+          <CourseForm onSubmit={handleAddCourse} />
         </div>
-      </form>
+      )}
     </div>
   );
 };
 
-export default DepartmentsDashboard;
+
+export default DepartmentList

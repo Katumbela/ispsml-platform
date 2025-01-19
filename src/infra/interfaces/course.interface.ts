@@ -34,6 +34,14 @@ export interface IShift {
 export interface IDepartment {
   id: string;
   name: string;
+  departmentDirector?: {
+    name: string;
+    picture: string;
+  };
+  department_cover?: string;
+  catalog_link?: string;
+  courses?: ICourse[];
+  directorId?: string;
 }
 
 export interface IYear {

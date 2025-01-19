@@ -3,12 +3,12 @@ generator client {
 }
 
 datasource db {
-    provider = "mongodb"
-    url      = env("DATABASE_URL")
+    provider = "postgresql"
+    url      = env("POSTGRES_DATABASE_URL")
 }
 
 model Role {
-    id       String   @id @default(auto()) @map("_id") @db.ObjectId
+    id       Int      @id @default(autoincrement())
     pic      String
     name     String
     about    String
@@ -21,15 +21,15 @@ model Role {
 }
 
 model Phrase {
-    id          String @id @default(auto()) @map("_id") @db.ObjectId
+    id          Int    @id @default(autoincrement())
     title       String
     description String
-    roleId      String @db.ObjectId
+    roleId      Int
     Role        Role   @relation(fields: [roleId], references: [id])
 }
 
 model News {
-    id               String   @id @default(auto()) @map("_id") @db.ObjectId
+    id               Int      @id @default(autoincrement())
     title            String
     shortDescription String
     content          String
@@ -67,9 +67,9 @@ model News {
 // }
 
 model Year {
-    id        String     @id @default(auto()) @map("_id") @db.ObjectId
+    id        Int        @id @default(autoincrement())
     year      Int
-    courseId  String     @db.ObjectId
+    courseId  Int
     course    Course     @relation(fields: [courseId], references: [id])
     semesters Semester[]
 }
@@ -90,7 +90,7 @@ model Year {
 // }
 
 model Application {
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    id        Int      @id @default(autoincrement())
     name      String
     email     String
     phone     String
@@ -101,7 +101,7 @@ model Application {
 }
 
 model Event {
-    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+    id              Int      @id @default(autoincrement())
     title           String
     description     String
     longDescription String
@@ -114,24 +114,24 @@ model Event {
 }
 
 model Department {
-    id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+    id                 Int      @id @default(autoincrement())
     name               String
     catalog_link       String?
     department_cover   String?
     departmentDirector Director @relation(fields: [directorId], references: [id])
     courses            Course[]
-    directorId         String   @db.ObjectId
+    directorId         Int
 }
 
 model Director {
-    id         String       @id @default(auto()) @map("_id") @db.ObjectId
+    id         Int          @id @default(autoincrement())
     name       String?
     picture    String?
     Department Department[]
 }
 
 model Course {
-    id               String       @id @default(auto()) @map("_id") @db.ObjectId
+    id               Int          @id @default(autoincrement())
     name             String
     duration         String
     level            String
@@ -141,38 +141,40 @@ model Course {
     benefits         String[]
     shift_afternoon  Boolean?
     shift_morning    Boolean?
+    entryProfile     String[]
+    outProfile       String[]
     shift_evening    Boolean?
     course_cover     String
     yearDetails      YearDetail[]
-    departmentId     String       @db.ObjectId
+    departmentId     Int
     department       Department   @relation(fields: [departmentId], references: [id])
-    shiftId          String?      @db.ObjectId
+    // shiftId          Int
     // Department      Department   @relation(fields: [departmentId], references: [id])
     Year             Year[]
 }
 
 model YearDetail {
-    id        String     @id @default(auto()) @map("_id") @db.ObjectId
+    id        Int        @id @default(autoincrement())
     year      Int
     semesters Semester[]
-    courseId  String     @db.ObjectId
+    courseId  Int
     Course    Course     @relation(fields: [courseId], references: [id])
 }
 
 model Semester {
-    id           String     @id @default(auto()) @map("_id") @db.ObjectId
+    id           Int        @id @default(autoincrement())
     semester     Int
     subjects     Subject[]
-    yearDetailId String     @db.ObjectId
+    yearDetailId Int
     YearDetail   YearDetail @relation(fields: [yearDetailId], references: [id])
     Year         Year?      @relation(fields: [yearId], references: [id])
-    yearId       String?    @db.ObjectId
+    yearId       Int?
 }
 
 model Subject {
-    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    id         Int      @id @default(autoincrement())
     name       String
     workload   Int
-    semesterId String   @db.ObjectId
+    semesterId Int
     Semester   Semester @relation(fields: [semesterId], references: [id])
 }

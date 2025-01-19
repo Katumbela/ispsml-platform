@@ -3,12 +3,13 @@ generator client {
 }
 
 datasource db {
-    provider = "mongodb"
-    url      = env("DATABASE_URL")
+    provider = "sqlite"
+    // url      = env("DATABASE_URL")
+    url      = "file:./dev.db"
 }
 
 model Role {
-    id       String   @id @default(auto()) @map("_id") @db.ObjectId
+    id       String   @id @default(cuid())
     pic      String
     name     String
     about    String
@@ -17,19 +18,19 @@ model Role {
     linkedin String?
     x        String?
     phrases  Phrase[]
-    team     String[]
+    team     String
 }
 
 model Phrase {
-    id          String @id @default(auto()) @map("_id") @db.ObjectId
+    id          String @id @default(cuid())
     title       String
     description String
-    roleId      String @db.ObjectId
+    roleId      String
     Role        Role   @relation(fields: [roleId], references: [id])
 }
 
 model News {
-    id               String   @id @default(auto()) @map("_id") @db.ObjectId
+    id               String   @id @default(cuid())
     title            String
     shortDescription String
     content          String
@@ -42,7 +43,7 @@ model News {
 }
 
 // model Department {
-//     id          String   @id @default(auto()) @map("_id") @db.ObjectId
+//     id          String   @id @default(cuid())
 //     name        String
 //     description String
 //     image       String
@@ -50,7 +51,7 @@ model News {
 // }
 
 // model Course {
-//     id              String     @id @default(auto()) @map("_id") @db.ObjectId
+//     id              String     @id @default(cuid())
 //     title           String
 //     shortDetail     String?
 //     longDescription String?
@@ -58,39 +59,39 @@ model News {
 //     level           String
 //     slug            String
 //     courseCover     String
-//     departmentId    String     @db.ObjectId
+//     departmentId    String    
 //     department      Department @relation(fields: [departmentId], references: [id])
-//     shiftId         String?    @db.ObjectId
+//     shiftId         String?   
 //     shift           String?
 //     benefits        String[]
 //     years           Year[]
 // }
 
 model Year {
-    id        String     @id @default(auto()) @map("_id") @db.ObjectId
+    id        String     @id @default(cuid())
     year      Int
-    courseId  String     @db.ObjectId
+    courseId  String
     course    Course     @relation(fields: [courseId], references: [id])
     semesters Semester[]
 }
 
 // model Semester {
-//     id       String    @id @default(auto()) @map("_id") @db.ObjectId
+//     id       String    @id @default(cuid())
 //     semester Int
-//     yearId   String    @db.ObjectId
+//     yearId   String   
 //     year     Year      @relation(fields: [yearId], references: [id])
 //     subjects Subject[]
 // }
 // model Subject {
-//     id         String   @id @default(auto()) @map("_id") @db.ObjectId
+//     id         String   @id @default(cuid())
 //     name       String
 //     workload   Int
-//     semesterId String   @db.ObjectId
+//     semesterId String  
 //     semester   Semester @relation(fields: [semesterId], references: [id])
 // }
 
 model Application {
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
+    id        String   @id @default(cuid())
     name      String
     email     String
     phone     String
@@ -101,7 +102,7 @@ model Application {
 }
 
 model Event {
-    id              String   @id @default(auto()) @map("_id") @db.ObjectId
+    id              String   @id @default(cuid())
     title           String
     description     String
     longDescription String
@@ -114,65 +115,65 @@ model Event {
 }
 
 model Department {
-    id                 String   @id @default(auto()) @map("_id") @db.ObjectId
+    id                 String   @id @default(cuid())
     name               String
     catalog_link       String?
     department_cover   String?
     departmentDirector Director @relation(fields: [directorId], references: [id])
     courses            Course[]
-    directorId         String   @db.ObjectId
+    directorId         String
 }
 
 model Director {
-    id         String       @id @default(auto()) @map("_id") @db.ObjectId
+    id         String       @id @default(cuid())
     name       String?
     picture    String?
     Department Department[]
 }
 
 model Course {
-    id               String       @id @default(auto()) @map("_id") @db.ObjectId
+    id               String       @id @default(cuid())
     name             String
     duration         String
     level            String
     short_detail     String
     slug             String
     long_description String
-    benefits         String[]
+    benefits         String
     shift_afternoon  Boolean?
     shift_morning    Boolean?
     shift_evening    Boolean?
     course_cover     String
     yearDetails      YearDetail[]
-    departmentId     String       @db.ObjectId
+    departmentId     String
     department       Department   @relation(fields: [departmentId], references: [id])
-    shiftId          String?      @db.ObjectId
+    shiftId          String?
     // Department      Department   @relation(fields: [departmentId], references: [id])
     Year             Year[]
 }
 
 model YearDetail {
-    id        String     @id @default(auto()) @map("_id") @db.ObjectId
+    id        String     @id @default(cuid())
     year      Int
     semesters Semester[]
-    courseId  String     @db.ObjectId
+    courseId  String
     Course    Course     @relation(fields: [courseId], references: [id])
 }
 
 model Semester {
-    id           String     @id @default(auto()) @map("_id") @db.ObjectId
+    id           String     @id @default(cuid())
     semester     Int
     subjects     Subject[]
-    yearDetailId String     @db.ObjectId
+    yearDetailId String
     YearDetail   YearDetail @relation(fields: [yearDetailId], references: [id])
     Year         Year?      @relation(fields: [yearId], references: [id])
-    yearId       String?    @db.ObjectId
+    yearId       String?
 }
 
 model Subject {
-    id         String   @id @default(auto()) @map("_id") @db.ObjectId
+    id         String   @id @default(cuid())
     name       String
     workload   Int
-    semesterId String   @db.ObjectId
+    semesterId String
     Semester   Semester @relation(fields: [semesterId], references: [id])
 }

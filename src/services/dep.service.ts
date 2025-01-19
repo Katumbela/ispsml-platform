@@ -1,3 +1,4 @@
+import { IDepartment } from "@/infra/interfaces/course.interface";
 import axios from "axios";
 
 export const createDepartment = async (formData: FormData) => {
@@ -8,7 +9,7 @@ export const createDepartment = async (formData: FormData) => {
 };
 
 
-export const getDepartments = async () => {
+export const getDepartments = async (): Promise<IDepartment[]> => {
     const response = await axios.get("/api/departments");
     return response.data;
 };

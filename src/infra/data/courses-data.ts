@@ -18,27 +18,23 @@ export const coursesData: {
         course: "Engenharia Informática",
         duration: 4,
         level: "graduation",
-        short_detail:
-          "Formação em desenvolvimento e gestão de sistemas computacionais",
+        short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
         slug: "engenharia-informatica-graduacao",
-        long_description:
-          "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
-       
-          entryProfile: [
-            "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-            "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-            "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-            "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-  
-          ],
-          outProfile: [
-            "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-            "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-            "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-            "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-  
-          ],
-          benefits: [
+        long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
+
+        entryProfile: [
+          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+        ],
+        outProfile: [
+          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+        ],
+        benefits: [
           "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e  ",
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, ",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte  ",
@@ -51,8 +47,7 @@ export const coursesData: {
           morning: true,
           evening: true,
         },
-        course_cover:
-          "https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-notebook-computer-electronic-equipment-science-and-technology-particles-image_1062240.jpg",
+        course_cover: "https://png.pngtree.com/thumb_back/fh260/background/20220312/pngtree-notebook-computer-electronic-equipment-science-and-technology-particles-image_1062240.jpg",
         years: [
           {
             year: 1,
@@ -147,6 +142,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Ciência da Computação",
@@ -154,8 +150,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação avançada em computação e suas aplicações",
         slug: "ciencia-computacao-graduacao",
-        long_description:
-          "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
         benefits: [
           "Desenvolver habilidades em algoritmos e programação.",
           "Preparação para carreiras em pesquisa e desenvolvimento.",
@@ -286,6 +281,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Engenharia Química",
@@ -293,8 +289,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em processos químicos e industriais",
         slug: "engenharia-quimica-graduacao",
-        long_description:
-          "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
         benefits: [
           "Formação abrangente em processos químicos e industriais.",
           "Preparação para atuar em setores como petroquímica e farmacêutica.",
@@ -428,29 +423,26 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Engenharia Informática",
         duration: 4,
         level: "graduation",
-        short_detail:
-          "Formação em desenvolvimento e gestão de sistemas computacionais",
+        short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
         slug: "engenharia-informatica-graduacao",
-        long_description:
-          "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
+        long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
         entryProfile: [
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
           "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
           "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-
         ],
         outProfile: [
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
           "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
           "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-
         ],
         // benefits: [
         //   "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
@@ -465,8 +457,7 @@ export const coursesData: {
           morning: true,
           evening: false,
         },
-        course_cover:
-          "https://www.realimage.com/engenharia-informatica-cover.jpg",
+        course_cover: "https://www.realimage.com/engenharia-informatica-cover.jpg",
         years: [
           {
             year: 1,
@@ -561,6 +552,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Ciência da Computação",
@@ -568,8 +560,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação avançada em computação e suas aplicações",
         slug: "ciencia-computacao-graduacao",
-        long_description:
-          "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
         benefits: [
           "Desenvolver habilidades em algoritmos e programação.",
           "Preparação para carreiras em pesquisa e desenvolvimento.",
@@ -700,6 +691,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Engenharia Química",
@@ -707,8 +699,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em processos químicos e industriais",
         slug: "engenharia-quimica-graduacao",
-        long_description:
-          "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
         benefits: [
           "Formação abrangente em processos químicos e industriais.",
           "Preparação para atuar em setores como petroquímica e farmacêutica.",
@@ -842,6 +833,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Ciência da Computação",
@@ -849,8 +841,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação avançada em computação e suas aplicações",
         slug: "ciencia-computacao-graduacao",
-        long_description:
-          "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
         benefits: [
           "Desenvolver habilidades em algoritmos e programação.",
           "Preparação para carreiras em pesquisa e desenvolvimento.",
@@ -981,6 +972,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Engenharia Química",
@@ -988,8 +980,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em processos químicos e industriais",
         slug: "engenharia-quimica-graduacao",
-        long_description:
-          "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
         benefits: [
           "Formação abrangente em processos químicos e industriais.",
           "Preparação para atuar em setores como petroquímica e farmacêutica.",
@@ -1123,30 +1114,27 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Engenharia Informática",
         duration: 4,
         level: "graduation",
-        short_detail:
-          "Formação em desenvolvimento e gestão de sistemas computacionais",
+        short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
         slug: "engenharia-informatica-graduacao",
-        long_description:
-          "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
+        long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
 
         entryProfile: [
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
           "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
           "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-
         ],
         outProfile: [
           "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
           "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
           "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
           "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-
         ],
         benefits: [
           "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
@@ -1161,8 +1149,7 @@ export const coursesData: {
           morning: true,
           evening: false,
         },
-        course_cover:
-          "https://www.realimage.com/engenharia-informatica-cover.jpg",
+        course_cover: "https://www.realimage.com/engenharia-informatica-cover.jpg",
         years: [
           {
             year: 1,
@@ -1257,6 +1244,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Ciência da Computação",
@@ -1264,8 +1252,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação avançada em computação e suas aplicações",
         slug: "ciencia-computacao-graduacao",
-        long_description:
-          "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
         benefits: [
           "Desenvolver habilidades em algoritmos e programação.",
           "Preparação para carreiras em pesquisa e desenvolvimento.",
@@ -1396,6 +1383,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Engenharia Química",
@@ -1403,8 +1391,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em processos químicos e industriais",
         slug: "engenharia-quimica-graduacao",
-        long_description:
-          "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
         benefits: [
           "Formação abrangente em processos químicos e industriais.",
           "Preparação para atuar em setores como petroquímica e farmacêutica.",
@@ -1538,6 +1525,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
     ],
   },
@@ -1672,15 +1660,13 @@ export const coursesData: {
             level: "graduation",
             short_detail: "Formação em estudo dos impactos ambientais",
             slug: "geologia-ambiental-graduacao",
-            long_description:
-              "O curso de Geologia Ambiental oferece uma formação completa em estudo dos impactos ambientais e suas soluções. Os alunos aprendem sobre a interação entre os processos geológicos e o meio ambiente, incluindo a gestão de recursos naturais e a mitigação de riscos ambientais.",
+            long_description: "O curso de Geologia Ambiental oferece uma formação completa em estudo dos impactos ambientais e suas soluções. Os alunos aprendem sobre a interação entre os processos geológicos e o meio ambiente, incluindo a gestão de recursos naturais e a mitigação de riscos ambientais.",
             shift: {
               afternoon: true,
               morning: true,
               evening: false,
             },
-            course_cover:
-              "https://www.realimage.com/geologia-ambiental-cover.jpg",
+            course_cover: "https://www.realimage.com/geologia-ambiental-cover.jpg",
             years: [
               {
                 year: 1,
@@ -1707,6 +1693,7 @@ export const coursesData: {
               },
               // ...additional years and semesters...
             ],
+            departmentId: ""
           },
         ],
       },
@@ -1716,8 +1703,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em métodos geofísicos para estudo da Terra",
         slug: "geofisica-graduacao",
-        long_description:
-          "O curso de Geofísica oferece uma formação sólida em métodos geofísicos para estudo da Terra. Os alunos aprendem sobre técnicas de prospecção geofísica, sismologia, gravimetria, magnetometria e eletromagnetismo. O curso prepara os geofísicos para atuar em exploração de recursos naturais, monitoramento ambiental, engenharia geotécnica e pesquisa científica.",
+        long_description: "O curso de Geofísica oferece uma formação sólida em métodos geofísicos para estudo da Terra. Os alunos aprendem sobre técnicas de prospecção geofísica, sismologia, gravimetria, magnetometria e eletromagnetismo. O curso prepara os geofísicos para atuar em exploração de recursos naturais, monitoramento ambiental, engenharia geotécnica e pesquisa científica.",
         benefits: [
           "Formação sólida em métodos geofísicos para estudo da Terra.",
           "Preparação para atuar em exploração de recursos naturais.",
@@ -1825,6 +1811,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Geologia",
@@ -1948,15 +1935,13 @@ export const coursesData: {
             level: "graduation",
             short_detail: "Formação em estudo dos impactos ambientais",
             slug: "geologia-ambiental-graduacao",
-            long_description:
-              "O curso de Geologia Ambiental oferece uma formação completa em estudo dos impactos ambientais e suas soluções. Os alunos aprendem sobre a interação entre os processos geológicos e o meio ambiente, incluindo a gestão de recursos naturais e a mitigação de riscos ambientais.",
+            long_description: "O curso de Geologia Ambiental oferece uma formação completa em estudo dos impactos ambientais e suas soluções. Os alunos aprendem sobre a interação entre os processos geológicos e o meio ambiente, incluindo a gestão de recursos naturais e a mitigação de riscos ambientais.",
             shift: {
               afternoon: true,
               morning: true,
               evening: false,
             },
-            course_cover:
-              "https://www.realimage.com/geologia-ambiental-cover.jpg",
+            course_cover: "https://www.realimage.com/geologia-ambiental-cover.jpg",
             years: [
               {
                 year: 1,
@@ -1983,6 +1968,7 @@ export const coursesData: {
               },
               // ...additional years and semesters...
             ],
+            departmentId: ""
           },
         ],
       },
@@ -1992,8 +1978,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em métodos geofísicos para estudo da Terra",
         slug: "geofisica-graduacao",
-        long_description:
-          "O curso de Geofísica oferece uma formação sólida em métodos geofísicos para estudo da Terra. Os alunos aprendem sobre técnicas de prospecção geofísica, sismologia, gravimetria, magnetometria e eletromagnetismo. O curso prepara os geofísicos para atuar em exploração de recursos naturais, monitoramento ambiental, engenharia geotécnica e pesquisa científica.",
+        long_description: "O curso de Geofísica oferece uma formação sólida em métodos geofísicos para estudo da Terra. Os alunos aprendem sobre técnicas de prospecção geofísica, sismologia, gravimetria, magnetometria e eletromagnetismo. O curso prepara os geofísicos para atuar em exploração de recursos naturais, monitoramento ambiental, engenharia geotécnica e pesquisa científica.",
         benefits: [
           "Formação sólida em métodos geofísicos para estudo da Terra.",
           "Preparação para atuar em exploração de recursos naturais.",
@@ -2101,6 +2086,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
 
     ],
@@ -2120,8 +2106,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em gestão de empresas e negócios",
         slug: "administracao-graduacao",
-        long_description:
-          "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação abrangente em gestão de empresas e negócios.",
           "Desenvolvimento de competências em planejamento e organização.",
@@ -2229,6 +2214,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Economia",
@@ -2236,8 +2222,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em análise econômica e políticas públicas",
         slug: "economia-graduacao",
-        long_description:
-          "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação sólida em análise econômica e políticas públicas.",
           "Desenvolvimento de competências em microeconomia e macroeconomia.",
@@ -2345,6 +2330,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Administração",
@@ -2352,8 +2338,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em gestão de empresas e negócios",
         slug: "administracao-graduacao",
-        long_description:
-          "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação abrangente em gestão de empresas e negócios.",
           "Desenvolvimento de competências em planejamento e organização.",
@@ -2461,6 +2446,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Economia",
@@ -2468,8 +2454,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em análise econômica e políticas públicas",
         slug: "economia-graduacao",
-        long_description:
-          "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação sólida em análise econômica e políticas públicas.",
           "Desenvolvimento de competências em microeconomia e macroeconomia.",
@@ -2577,6 +2562,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Administração",
@@ -2584,8 +2570,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em gestão de empresas e negócios",
         slug: "administracao-graduacao",
-        long_description:
-          "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação abrangente em gestão de empresas e negócios.",
           "Desenvolvimento de competências em planejamento e organização.",
@@ -2693,6 +2678,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Economia",
@@ -2700,8 +2686,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em análise econômica e políticas públicas",
         slug: "economia-graduacao",
-        long_description:
-          "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação sólida em análise econômica e políticas públicas.",
           "Desenvolvimento de competências em microeconomia e macroeconomia.",
@@ -2809,6 +2794,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Administração",
@@ -2816,8 +2802,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em gestão de empresas e negócios",
         slug: "administracao-graduacao",
-        long_description:
-          "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação abrangente em gestão de empresas e negócios.",
           "Desenvolvimento de competências em planejamento e organização.",
@@ -2925,6 +2910,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Economia",
@@ -2932,8 +2918,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em análise econômica e políticas públicas",
         slug: "economia-graduacao",
-        long_description:
-          "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação sólida em análise econômica e políticas públicas.",
           "Desenvolvimento de competências em microeconomia e macroeconomia.",
@@ -3041,6 +3026,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Administração",
@@ -3048,8 +3034,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em gestão de empresas e negócios",
         slug: "administracao-graduacao",
-        long_description:
-          "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação abrangente em gestão de empresas e negócios.",
           "Desenvolvimento de competências em planejamento e organização.",
@@ -3157,6 +3142,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Economia",
@@ -3164,8 +3150,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em análise econômica e políticas públicas",
         slug: "economia-graduacao",
-        long_description:
-          "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação sólida em análise econômica e políticas públicas.",
           "Desenvolvimento de competências em microeconomia e macroeconomia.",
@@ -3273,6 +3258,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Administração",
@@ -3280,8 +3266,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em gestão de empresas e negócios",
         slug: "administracao-graduacao",
-        long_description:
-          "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Administração oferece uma formação abrangente em gestão de empresas e negócios. Os alunos desenvolvem competências em planejamento, organização, direção e controle, preparando-se para atuar em diversas áreas da administração, como recursos humanos, marketing, finanças e produção. O curso também aborda temas como empreendedorismo, inovação e sustentabilidade, capacitando os futuros administradores a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação abrangente em gestão de empresas e negócios.",
           "Desenvolvimento de competências em planejamento e organização.",
@@ -3389,6 +3374,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Economia",
@@ -3396,8 +3382,7 @@ export const coursesData: {
         level: "graduation",
         short_detail: "Formação em análise econômica e políticas públicas",
         slug: "economia-graduacao",
-        long_description:
-          "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
+        long_description: "O curso de Economia oferece uma formação sólida em análise econômica e políticas públicas. Os alunos desenvolvem competências em microeconomia, macroeconomia, econometria e finanças, preparando-se para atuar em diversas áreas, como consultoria econômica, planejamento estratégico, análise de investimentos e formulação de políticas públicas. O curso também aborda temas como desenvolvimento econômico, economia internacional e sustentabilidade, capacitando os futuros economistas a enfrentar os desafios do mercado globalizado.",
         benefits: [
           "Formação sólida em análise econômica e políticas públicas.",
           "Desenvolvimento de competências em microeconomia e macroeconomia.",
@@ -3505,6 +3490,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
     ],
   },
@@ -3523,8 +3509,7 @@ export const coursesData: {
         level: "master",
         short_detail: "Formação avançada em engenharia de software",
         slug: "mestrado-engenharia-software",
-        long_description:
-          "O curso de Mestrado em Engenharia de Software oferece uma formação avançada e especializada em desenvolvimento de software, abordando técnicas modernas e práticas de engenharia.",
+        long_description: "O curso de Mestrado em Engenharia de Software oferece uma formação avançada e especializada em desenvolvimento de software, abordando técnicas modernas e práticas de engenharia.",
         benefits: [
           "Desenvolvimento de habilidades avançadas em engenharia de software.",
           "Preparação para cargos de liderança em projetos de software.",
@@ -3582,6 +3567,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Mestrado em Inteligência Artificial",
@@ -3589,8 +3575,7 @@ export const coursesData: {
         level: "master",
         short_detail: "Formação avançada em inteligência artificial",
         slug: "mestrado-inteligencia-artificial",
-        long_description:
-          "O curso de Mestrado em Inteligência Artificial oferece uma formação especializada em técnicas e aplica��ões de IA, preparando os alunos para atuar em pesquisa e desenvolvimento de soluções inovadoras.",
+        long_description: "O curso de Mestrado em Inteligência Artificial oferece uma formação especializada em técnicas e aplica��ões de IA, preparando os alunos para atuar em pesquisa e desenvolvimento de soluções inovadoras.",
         benefits: [
           "Desenvolvimento de habilidades avançadas em IA.",
           "Preparação para pesquisa e desenvolvimento em IA.",
@@ -3648,6 +3633,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       // ...additional master courses...
     ],
@@ -3667,8 +3653,7 @@ export const coursesData: {
         level: "professional",
         short_detail: "Formação prática em desenvolvimento web",
         slug: "curso-profissional-desenvolvimento-web",
-        long_description:
-          "O curso profissional de Desenvolvimento Web oferece uma formação prática e intensiva em tecnologias e ferramentas modernas para criação de websites e aplicações web.",
+        long_description: "O curso profissional de Desenvolvimento Web oferece uma formação prática e intensiva em tecnologias e ferramentas modernas para criação de websites e aplicações web.",
         benefits: [
           "Desenvolvimento de habilidades práticas em desenvolvimento web.",
           "Preparação para o mercado de trabalho em tecnologia.",
@@ -3705,6 +3690,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Curso Profissional de Marketing Digital",
@@ -3712,8 +3698,7 @@ export const coursesData: {
         level: "professional",
         short_detail: "Formação prática em marketing digital",
         slug: "curso-profissional-marketing-digital",
-        long_description:
-          "O curso profissional de Marketing Digital oferece uma formação prática e intensiva em estratégias e ferramentas de marketing digital, preparando os alunos para atuar em campanhas online.",
+        long_description: "O curso profissional de Marketing Digital oferece uma formação prática e intensiva em estratégias e ferramentas de marketing digital, preparando os alunos para atuar em campanhas online.",
         benefits: [
           "Desenvolvimento de habilidades práticas em marketing digital.",
           "Preparação para o mercado de trabalho em marketing.",
@@ -3750,6 +3735,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       // ...additional professional courses...
     ],
@@ -3769,8 +3755,7 @@ export const coursesData: {
         level: "preparatory",
         short_detail: "Preparação intensiva para o ENEM",
         slug: "curso-preparatorio-enem",
-        long_description:
-          "O curso preparatório para o ENEM oferece uma formação intensiva e focada nas disciplinas cobradas no exame, preparando os alunos para obterem um bom desempenho.",
+        long_description: "O curso preparatório para o ENEM oferece uma formação intensiva e focada nas disciplinas cobradas no exame, preparando os alunos para obterem um bom desempenho.",
         benefits: [
           "Preparação completa para o ENEM.",
           "Aulas com professores experientes.",
@@ -3805,6 +3790,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       {
         course: "Curso Preparatório para Vestibulares",
@@ -3812,8 +3798,7 @@ export const coursesData: {
         level: "preparatory",
         short_detail: "Preparação intensiva para vestibulares",
         slug: "curso-preparatorio-vestibulares",
-        long_description:
-          "O curso preparatório para vestibulares oferece uma formação intensiva e focada nas disciplinas cobradas nos principais vestibulares do país, preparando os alunos para obterem um bom desempenho.",
+        long_description: "O curso preparatório para vestibulares oferece uma formação intensiva e focada nas disciplinas cobradas nos principais vestibulares do país, preparando os alunos para obterem um bom desempenho.",
         benefits: [
           "Preparação completa para vestibulares.",
           "Aulas com professores experientes.",
@@ -3848,6 +3833,7 @@ export const coursesData: {
             ],
           },
         ],
+        departmentId: ""
       },
       // ...additional preparatory courses...
     ],

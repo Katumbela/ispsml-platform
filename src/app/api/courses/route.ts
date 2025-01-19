@@ -44,17 +44,16 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { name, description, benefits, shift, departmentId, courseCover, shortDescription, slug, duration, level } = body;
+        const { name, description, benefits, departmentId, course_cover, shortDescription, slug, duration, level } = body;
 
         const newCourse = await prisma.course.create({
             data: {
-                courseCover,
+                course_cover,
                 benefits,
                 department: { connect: { id: departmentId } },
-                shift,
-                title: name,
-                longDescription: description,
-                shortDetail: shortDescription,
+                name,
+                long_description: description,
+                short_detail: shortDescription,
                 slug,
                 duration,
                 level,
@@ -78,13 +77,13 @@ export async function PUT(request: NextRequest) {
 
     try {
         const body = await request.json();
-        const { title, longDescription, slug, duration, level } = body;
+        const { name, long_description, slug, duration, level } = body;
 
         const updatedCourse = await prisma.course.update({
             where: { id },
             data: {
-                title,
-                longDescription,
+                name,
+                long_description,
                 slug,
                 duration,
                 level,

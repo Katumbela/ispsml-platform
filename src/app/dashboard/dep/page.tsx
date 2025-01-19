@@ -225,7 +225,7 @@ const DepartmentForm: React.FC = () => {
                                     >
                                         Add Course
                                     </button>
-                                    {values.courses.map((course, index) => (
+                                    {values.courses.map((course: any, index) => (
                                         <div key={index} className="p-4 space-y-2 border rounded-lg shadow-sm">
                                             <Field
                                                 name={`courses.${index}.course`}
@@ -299,7 +299,7 @@ const DepartmentForm: React.FC = () => {
                                                 name={`courses.${index}.benefits`}
                                                 render={(benefitHelpers) => (
                                                     <div className="space-y-2">
-                                                        {course.benefits.map((benefit, bIndex) => (
+                                                        {course.benefits.map((_benefit: any, bIndex: number) => (
                                                             <div key={bIndex} className="flex items-center space-x-2">
                                                                 <Field
                                                                     name={`courses.${index}.benefits.${bIndex}`}
@@ -351,7 +351,7 @@ const DepartmentForm: React.FC = () => {
                                                 name={`courses.${index}.entryProfile`}
                                                 render={(entryHelpers) => (
                                                     <div className="space-y-2">
-                                                        {course.entryProfile.map((entry, eIndex) => (
+                                                        {course.entryProfile.map((_: any, eIndex: number) => (
                                                             <div key={eIndex} className="flex items-center space-x-2">
                                                                 <Field
                                                                     name={`courses.${index}.entryProfile.${eIndex}`}
@@ -383,7 +383,7 @@ const DepartmentForm: React.FC = () => {
                                                 name={`courses.${index}.outProfile`}
                                                 render={(outHelpers) => (
                                                     <div className="space-y-2">
-                                                        {course.outProfile.map((output, oIndex) => (
+                                                        {course?.outProfile.map((_output: any, oIndex: number) => (
                                                             <div key={oIndex} className="flex items-center space-x-2">
                                                                 <Field
                                                                     name={`courses.${index}.outProfile.${oIndex}`}
@@ -409,43 +409,11 @@ const DepartmentForm: React.FC = () => {
                                                     </div>
                                                 )}
                                             />
-
-                                            {/* Additional Courses */}
-                                            <FieldArray
-                                                name={`courses.${index}.additional_courses`}
-                                                render={(additionalHelpers) => (
-                                                    <div className="space-y-2">
-                                                        {course.additional_courses.map((additional, aIndex) => (
-                                                            <div key={aIndex} className="flex items-center space-x-2">
-                                                                <Field
-                                                                    name={`courses.${index}.additional_courses.${aIndex}`}
-                                                                    placeholder="Additional Course"
-                                                                    className="w-full px-4 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500"
-                                                                />
-                                                                <button
-                                                                    type="button"
-                                                                    onClick={() => additionalHelpers.remove(aIndex)}
-                                                                    className="px-2 py-1 text-white bg-red-500 rounded hover:bg-red-600"
-                                                                >
-                                                                    Remove
-                                                                </button>
-                                                            </div>
-                                                        ))}
-                                                        <button
-                                                            type="button"
-                                                            onClick={() => additionalHelpers.push("")}
-                                                            className="px-4 py-2 text-white bg-green-600 rounded-lg shadow-md hover:bg-green-700"
-                                                        >
-                                                            Add Additional Course
-                                                        </button>
-                                                    </div>
-                                                )}
-                                            />
                                             <FieldArray
                                                 name={`courses.${index}.years`}
                                                 render={(yearHelpers) => (
                                                     <div className="space-y-2">
-                                                        {course.years.map((year, yIndex) => (
+                                                        {course.years.map((year: { semesters: any[]; }, yIndex: number) => (
                                                             <div key={yIndex} className="flex items-center space-x-2">
                                                                 {/* Campo para o ano */}
                                                                 <Field
@@ -460,7 +428,7 @@ const DepartmentForm: React.FC = () => {
                                                                     name={`courses.${index}.years.${yIndex}.semesters`}
                                                                     render={(semesterHelpers) => (
                                                                         <div className="space-y-1">
-                                                                            {year.semesters.map((semester, sIndex) => (
+                                                                            {year.semesters.map((_semester: any, sIndex: number) => (
                                                                                 <div key={sIndex} className="flex items-center space-x-2">
                                                                                     <Field
                                                                                         name={`courses.${index}.years.${yIndex}.semesters.${sIndex}.semester`}

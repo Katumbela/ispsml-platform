@@ -3,80 +3,6 @@ import { NextResponse } from 'next/server';
 import prisma from '@/infra/database/prisma';
 import { uploadImage } from '@/utils/uploadImage';
 
-// export async function POST(request: Request) {
-//   try {
-//     const body = await request.json();
-//     const {
-//       name,
-//       catalogLink,
-//       departmentCover,
-//       departmentDirector,
-//       courses,
-//       image,
-//     } = body;
-
-//     // Upload de imagem, se fornecida
-//     let imageUrl = '';
-//     if (image) {
-//       imageUrl = await uploadImage(image, 'departments');
-//     }
-
-//     // Criação do departamento no banco
-//     const newDepartment = await prisma.department.create({
-//       data: {
-//         name,
-//         catalogLink,
-//         departmentCover: imageUrl || departmentCover,
-//         departmentDirector: {
-//           create: {
-//             name: departmentDirector.name,
-//             picture: departmentDirector.picture,
-//           },
-//         },
-//         courses: {
-//           create: courses.map((course: any) => ({
-//             name: course.course,
-//             duration: course.duration,
-//             level: course.level,
-//             shortDetail: course.short_detail,
-//             slug: course.slug,
-//             longDescription: course.long_description,
-//             benefits: course.benefits,
-//             shiftAfternoon: course.shift.afternoon,
-//             shiftMorning: course.shift.morning,
-//             shiftEvening: course.shift.evening,
-//             courseCover: course.course_cover,
-//             yearDetails: {
-//               create: course.years.map((year: any) => ({
-//                 year: year.year,
-//                 semesters: {
-//                   create: year.semesters.map((semester: any) => ({
-//                     semester: semester.semester,
-//                     subjects: {
-//                       create: semester.subjects.map((subject: any) => ({
-//                         name: subject.name,
-//                         workload: subject.workload,
-//                       })),
-//                     },
-//                   })),
-//                 },
-//               })),
-//             },
-//           })),
-//         },
-//       },
-//     });
-
-//     return NextResponse.json({ message: 'Departamento criado com sucesso!', department: newDepartment }, { status: 201 });
-//   } catch (error: any) {
-//     return NextResponse.json({ message: 'Erro ao criar departamento! ' + error.message }, { status: 500 });
-//   }
-// }
-
-// Obter lista ou detalhe de departamento
-
-
-
 export async function POST(request: Request) {
   try {
     const formData = await request.formData();
@@ -158,6 +84,7 @@ export async function POST(request: Request) {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
+  const courseId = searchParams.get('course_id');
 
   try {
     if (id) {
@@ -184,6 +111,26 @@ export async function GET(request: Request) {
         return NextResponse.json({ message: 'Departamento não encontrado!' }, { status: 404 });
       }
       return NextResponse.json(department, { status: 200 });
+    }
+
+    if (courseId) {
+      const course = await prisma.course.findUnique({
+        where: { id: courseId },
+        include: {
+          yearDetails: {
+            include: {
+              semesters: {
+                include: { subjects: true },
+              },
+            },
+          },
+        },
+      });
+
+      if (!course) {
+        return NextResponse.json({ message: 'Curso nao encontrado!' }, { status: 404 });
+      }
+      return NextResponse.json(course, { status: 200 });
     }
 
     const departments = await prisma.department.findMany({
@@ -229,9 +176,33 @@ export async function PUT(request: Request) {
         courses: {
           deleteMany: {},
           create: courses.map((course: any) => ({
-            name: course.name,
+            name: course.course,
             duration: course.duration,
             level: course.level,
+            short_detail: course.short_detail,
+            slug: course.slug,
+            long_description: course.long_description,
+            benefits: course.benefits,
+            shift_afternoon: course.shift.afternoon,
+            shift_morning: course.shift.morning,
+            shift_evening: course.shift.evening,
+            course_cover: course.course_cover,
+            yearDetails: {
+              create: course.years.map((year: any) => ({
+                year: year.year,
+                semesters: {
+                  create: year.semesters.map((semester: any) => ({
+                    semester: semester.semester,
+                    subjects: {
+                      create: semester.subjects.map((subject: any) => ({
+                        name: subject.name,
+                        workload: subject.workload,
+                      })),
+                    },
+                  })),
+                },
+              })),
+            },
           })),
         },
       },

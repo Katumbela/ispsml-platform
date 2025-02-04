@@ -2,5 +2,8 @@
     "cSpell.words": [
         "autoincrement",
         "modelos"
-    ]
+    ],
+    "prisma-smart-formatter.typescript.defaultFormatter": "vscode.typescript-language-features",
+    "prisma-smart-formatter.typescriptreact.defaultFormatter": "vscode.typescript-language-features",
+    "prisma-smart-formatter.prisma.defaultFormatter": "Prisma.prisma"
 }

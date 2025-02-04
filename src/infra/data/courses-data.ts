@@ -143,1390 +143,1390 @@ export const coursesData: {
           },
         ],
         departmentId: ""
-      },
-      {
-        course: "Ciência da Computação",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação avançada em computação e suas aplicações",
-        slug: "ciencia-computacao-graduacao",
-        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
-        benefits: [
-          "Desenvolver habilidades em algoritmos e programação.",
-          "Preparação para carreiras em pesquisa e desenvolvimento.",
-          "Visão abrangente das áreas emergentes da computação.",
-          "Oportunidades de estágio em empresas de tecnologia.",
-          "Base sólida em teoria da computação e desenvolvimento de software.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://img.lovepik.com/photo/50036/0163.jpg_wh860.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Algoritmos e Lógica de Programação", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral I", workload: 60 },
-                  { name: "Geometria Analítica", workload: 45 },
-                  { name: "Fundamentos de Computação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Estruturas de Dados", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral II", workload: 60 },
-                  { name: "Álgebra Linear", workload: 45 },
-                  { name: "Lógica Matemática", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Teoria da Computação", workload: 60 },
-                  { name: "Probabilidade e Estatística", workload: 60 },
-                  { name: "Programação Orientada a Objetos", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral III", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Análise de Algoritmos", workload: 60 },
-                  { name: "Banco de Dados", workload: 60 },
-                  { name: "Redes de Computadores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral IV", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Inteligência Artificial", workload: 60 },
-                  { name: "Sistemas Operacionais", workload: 60 },
-                  { name: "Compiladores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral V", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Aprendizado de Máquina", workload: 60 },
-                  { name: "Sistemas Distribuídos", workload: 60 },
-                  { name: "Segurança da Informação", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral VI", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Empreendedorismo", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Computação Quântica", workload: 60 },
-                  { name: "Ciência de Dados", workload: 60 },
-                  { name: "Big Data", workload: 45 },
-                  { name: "Computação em Nuvem", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Tópicos Avançados em Computação", workload: 60 },
-                  { name: "Computação Gráfica", workload: 60 },
-                  { name: "Processamento de Imagens", workload: 45 },
-                  { name: "Realidade Virtual", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Engenharia Química",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação em processos químicos e industriais",
-        slug: "engenharia-quimica-graduacao",
-        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
-        benefits: [
-          "Formação abrangente em processos químicos e industriais.",
-          "Preparação para atuar em setores como petroquímica e farmacêutica.",
-          "Ênfase em sustentabilidade e soluções inovadoras.",
-          "Oportunidades de estágio em empresas do setor.",
-          "Desenvolvimento de competências em otimização de processos.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://media.licdn.com/dms/image/C4E12AQH-nHcc3zIBkw/article-cover_image-shrink_600_2000/0/1626620547094?e=2147483647&v=beta&t=PEk7a2ABf8U3jrQTuvr1R6AIHsXDqJI4TQFlN-H7IJw",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática I", workload: 60 },
-                  { name: "Química I", workload: 60 },
-                  { name: "Física I", workload: 45 },
-                  { name: "Introdução à Engenharia Química", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática II", workload: 60 },
-                  { name: "Química II", workload: 60 },
-                  { name: "Física II", workload: 45 },
-                  { name: "Termodinâmica I", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática III", workload: 60 },
-                  { name: "Química Orgânica I", workload: 60 },
-                  { name: "Física III", workload: 45 },
-                  { name: "Termodinâmica II", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática IV", workload: 60 },
-                  { name: "Química Orgânica II", workload: 60 },
-                  { name: "Física IV", workload: 45 },
-                  { name: "Mecânica dos Fluidos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Operações Unitárias I", workload: 60 },
-                  { name: "Reatores Químicos I", workload: 60 },
-                  { name: "Transferência de Calor", workload: 45 },
-                  { name: "Cálculo Numérico", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Operações Unitárias II", workload: 60 },
-                  { name: "Reatores Químicos II", workload: 60 },
-                  { name: "Transferência de Massa", workload: 45 },
-                  { name: "Controle de Processos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Engenharia Ambiental", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Engenharia de Processos", workload: 60 },
-                  { name: "Biotecnologia", workload: 60 },
-                  { name: "Nanotecnologia", workload: 45 },
-                  { name: "Sustentabilidade", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  {
-                    name: "Tópicos Avançados em Engenharia Química",
-                    workload: 60,
-                  },
-                  { name: "Processos Industriais", workload: 60 },
-                  { name: "Segurança de Processos", workload: 45 },
-                  { name: "Gestão Ambiental", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Engenharia Informática",
-        duration: 4,
-        level: "graduation",
-        short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
-        slug: "engenharia-informatica-graduacao",
-        long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
-        entryProfile: [
-          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-        ],
-        outProfile: [
-          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-        ],
-        // benefits: [
-        //   "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
-        //   "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-        //   "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-        //   "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-        //   "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-        //   "Compreenderá e aplicará a Abordagem de Desenvolvimento Preditivo e a Abordagem Híbrida, permitindo uma maior flexibilidade e adaptabilidade na gestão de projetos. Esta compreensão permitirá que os profissionais escolham a abordagem mais adequada para cada projeto, aumentando as chances de sucesso."
-        // ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://www.realimage.com/engenharia-informatica-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Programação I", workload: 60 },
-                  { name: "Matemática Discreta", workload: 60 },
-                  { name: "Álgebra Linear", workload: 45 },
-                  { name: "Introdução à Computação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Programação II", workload: 60 },
-                  { name: "Estruturas de Dados", workload: 60 },
-                  { name: "Arquitetura de Computadores", workload: 45 },
-                  { name: "Cálculo I", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Programação III", workload: 60 },
-                  { name: "Banco de Dados I", workload: 60 },
-                  { name: "Redes de Computadores I", workload: 45 },
-                  { name: "Cálculo II", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Engenharia de Software I", workload: 60 },
-                  { name: "Banco de Dados II", workload: 60 },
-                  { name: "Redes de Computadores II", workload: 45 },
-                  { name: "Cálculo III", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Inteligência Artificial I", workload: 60 },
-                  { name: "Sistemas Operacionais", workload: 60 },
-                  { name: "Compiladores", workload: 45 },
-                  { name: "Cálculo IV", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Inteligência Artificial II", workload: 60 },
-                  { name: "Sistemas Distribuídos", workload: 60 },
-                  { name: "Segurança da Informação", workload: 45 },
-                  { name: "Cálculo V", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Empreendedorismo", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Ciência da Computação",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação avançada em computação e suas aplicações",
-        slug: "ciencia-computacao-graduacao",
-        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
-        benefits: [
-          "Desenvolver habilidades em algoritmos e programação.",
-          "Preparação para carreiras em pesquisa e desenvolvimento.",
-          "Visão abrangente das áreas emergentes da computação.",
-          "Oportunidades de estágio em empresas de tecnologia.",
-          "Base sólida em teoria da computação e desenvolvimento de software.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Algoritmos e Lógica de Programação", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral I", workload: 60 },
-                  { name: "Geometria Analítica", workload: 45 },
-                  { name: "Fundamentos de Computação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Estruturas de Dados", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral II", workload: 60 },
-                  { name: "Álgebra Linear", workload: 45 },
-                  { name: "Lógica Matemática", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Teoria da Computação", workload: 60 },
-                  { name: "Probabilidade e Estatística", workload: 60 },
-                  { name: "Programação Orientada a Objetos", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral III", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Análise de Algoritmos", workload: 60 },
-                  { name: "Banco de Dados", workload: 60 },
-                  { name: "Redes de Computadores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral IV", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Inteligência Artificial", workload: 60 },
-                  { name: "Sistemas Operacionais", workload: 60 },
-                  { name: "Compiladores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral V", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Aprendizado de Máquina", workload: 60 },
-                  { name: "Sistemas Distribuídos", workload: 60 },
-                  { name: "Segurança da Informação", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral VI", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Empreendedorismo", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Computação Quântica", workload: 60 },
-                  { name: "Ciência de Dados", workload: 60 },
-                  { name: "Big Data", workload: 45 },
-                  { name: "Computação em Nuvem", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Tópicos Avançados em Computação", workload: 60 },
-                  { name: "Computação Gráfica", workload: 60 },
-                  { name: "Processamento de Imagens", workload: 45 },
-                  { name: "Realidade Virtual", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Engenharia Química",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação em processos químicos e industriais",
-        slug: "engenharia-quimica-graduacao",
-        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
-        benefits: [
-          "Formação abrangente em processos químicos e industriais.",
-          "Preparação para atuar em setores como petroquímica e farmacêutica.",
-          "Ênfase em sustentabilidade e soluções inovadoras.",
-          "Oportunidades de estágio em empresas do setor.",
-          "Desenvolvimento de competências em otimização de processos.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://example.com/engenharia-quimica-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática I", workload: 60 },
-                  { name: "Química I", workload: 60 },
-                  { name: "Física I", workload: 45 },
-                  { name: "Introdução à Engenharia Química", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática II", workload: 60 },
-                  { name: "Química II", workload: 60 },
-                  { name: "Física II", workload: 45 },
-                  { name: "Termodinâmica I", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática III", workload: 60 },
-                  { name: "Química Orgânica I", workload: 60 },
-                  { name: "Física III", workload: 45 },
-                  { name: "Termodinâmica II", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática IV", workload: 60 },
-                  { name: "Química Orgânica II", workload: 60 },
-                  { name: "Física IV", workload: 45 },
-                  { name: "Mecânica dos Fluidos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Operações Unitárias I", workload: 60 },
-                  { name: "Reatores Químicos I", workload: 60 },
-                  { name: "Transferência de Calor", workload: 45 },
-                  { name: "Cálculo Numérico", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Operações Unitárias II", workload: 60 },
-                  { name: "Reatores Químicos II", workload: 60 },
-                  { name: "Transferência de Massa", workload: 45 },
-                  { name: "Controle de Processos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Engenharia Ambiental", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Engenharia de Processos", workload: 60 },
-                  { name: "Biotecnologia", workload: 60 },
-                  { name: "Nanotecnologia", workload: 45 },
-                  { name: "Sustentabilidade", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  {
-                    name: "Tópicos Avançados em Engenharia Química",
-                    workload: 60,
-                  },
-                  { name: "Processos Industriais", workload: 60 },
-                  { name: "Segurança de Processos", workload: 45 },
-                  { name: "Gestão Ambiental", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Ciência da Computação",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação avançada em computação e suas aplicações",
-        slug: "ciencia-computacao-graduacao",
-        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
-        benefits: [
-          "Desenvolver habilidades em algoritmos e programação.",
-          "Preparação para carreiras em pesquisa e desenvolvimento.",
-          "Visão abrangente das áreas emergentes da computação.",
-          "Oportunidades de estágio em empresas de tecnologia.",
-          "Base sólida em teoria da computação e desenvolvimento de software.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Algoritmos e Lógica de Programação", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral I", workload: 60 },
-                  { name: "Geometria Analítica", workload: 45 },
-                  { name: "Fundamentos de Computação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Estruturas de Dados", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral II", workload: 60 },
-                  { name: "Álgebra Linear", workload: 45 },
-                  { name: "Lógica Matemática", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Teoria da Computação", workload: 60 },
-                  { name: "Probabilidade e Estatística", workload: 60 },
-                  { name: "Programação Orientada a Objetos", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral III", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Análise de Algoritmos", workload: 60 },
-                  { name: "Banco de Dados", workload: 60 },
-                  { name: "Redes de Computadores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral IV", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Inteligência Artificial", workload: 60 },
-                  { name: "Sistemas Operacionais", workload: 60 },
-                  { name: "Compiladores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral V", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Aprendizado de Máquina", workload: 60 },
-                  { name: "Sistemas Distribuídos", workload: 60 },
-                  { name: "Segurança da Informação", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral VI", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Empreendedorismo", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Computação Quântica", workload: 60 },
-                  { name: "Ciência de Dados", workload: 60 },
-                  { name: "Big Data", workload: 45 },
-                  { name: "Computação em Nuvem", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Tópicos Avançados em Computação", workload: 60 },
-                  { name: "Computação Gráfica", workload: 60 },
-                  { name: "Processamento de Imagens", workload: 45 },
-                  { name: "Realidade Virtual", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Engenharia Química",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação em processos químicos e industriais",
-        slug: "engenharia-quimica-graduacao",
-        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
-        benefits: [
-          "Formação abrangente em processos químicos e industriais.",
-          "Preparação para atuar em setores como petroquímica e farmacêutica.",
-          "Ênfase em sustentabilidade e soluções inovadoras.",
-          "Oportunidades de estágio em empresas do setor.",
-          "Desenvolvimento de competências em otimização de processos.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://example.com/engenharia-quimica-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática I", workload: 60 },
-                  { name: "Química I", workload: 60 },
-                  { name: "Física I", workload: 45 },
-                  { name: "Introdução à Engenharia Química", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática II", workload: 60 },
-                  { name: "Química II", workload: 60 },
-                  { name: "Física II", workload: 45 },
-                  { name: "Termodinâmica I", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática III", workload: 60 },
-                  { name: "Química Orgânica I", workload: 60 },
-                  { name: "Física III", workload: 45 },
-                  { name: "Termodinâmica II", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática IV", workload: 60 },
-                  { name: "Química Orgânica II", workload: 60 },
-                  { name: "Física IV", workload: 45 },
-                  { name: "Mecânica dos Fluidos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Operações Unitárias I", workload: 60 },
-                  { name: "Reatores Químicos I", workload: 60 },
-                  { name: "Transferência de Calor", workload: 45 },
-                  { name: "Cálculo Numérico", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Operações Unitárias II", workload: 60 },
-                  { name: "Reatores Químicos II", workload: 60 },
-                  { name: "Transferência de Massa", workload: 45 },
-                  { name: "Controle de Processos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Engenharia Ambiental", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Engenharia de Processos", workload: 60 },
-                  { name: "Biotecnologia", workload: 60 },
-                  { name: "Nanotecnologia", workload: 45 },
-                  { name: "Sustentabilidade", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  {
-                    name: "Tópicos Avançados em Engenharia Química",
-                    workload: 60,
-                  },
-                  { name: "Processos Industriais", workload: 60 },
-                  { name: "Segurança de Processos", workload: 45 },
-                  { name: "Gestão Ambiental", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Engenharia Informática",
-        duration: 4,
-        level: "graduation",
-        short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
-        slug: "engenharia-informatica-graduacao",
-        long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
+      }
+      // {
+      //   course: "Ciência da Computação",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação avançada em computação e suas aplicações",
+      //   slug: "ciencia-computacao-graduacao",
+      //   long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+      //   benefits: [
+      //     "Desenvolver habilidades em algoritmos e programação.",
+      //     "Preparação para carreiras em pesquisa e desenvolvimento.",
+      //     "Visão abrangente das áreas emergentes da computação.",
+      //     "Oportunidades de estágio em empresas de tecnologia.",
+      //     "Base sólida em teoria da computação e desenvolvimento de software.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://img.lovepik.com/photo/50036/0163.jpg_wh860.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Algoritmos e Lógica de Programação", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral I", workload: 60 },
+      //             { name: "Geometria Analítica", workload: 45 },
+      //             { name: "Fundamentos de Computação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Estruturas de Dados", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral II", workload: 60 },
+      //             { name: "Álgebra Linear", workload: 45 },
+      //             { name: "Lógica Matemática", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Teoria da Computação", workload: 60 },
+      //             { name: "Probabilidade e Estatística", workload: 60 },
+      //             { name: "Programação Orientada a Objetos", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral III", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Análise de Algoritmos", workload: 60 },
+      //             { name: "Banco de Dados", workload: 60 },
+      //             { name: "Redes de Computadores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral IV", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Inteligência Artificial", workload: 60 },
+      //             { name: "Sistemas Operacionais", workload: 60 },
+      //             { name: "Compiladores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral V", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Aprendizado de Máquina", workload: 60 },
+      //             { name: "Sistemas Distribuídos", workload: 60 },
+      //             { name: "Segurança da Informação", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral VI", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Empreendedorismo", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Computação Quântica", workload: 60 },
+      //             { name: "Ciência de Dados", workload: 60 },
+      //             { name: "Big Data", workload: 45 },
+      //             { name: "Computação em Nuvem", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Tópicos Avançados em Computação", workload: 60 },
+      //             { name: "Computação Gráfica", workload: 60 },
+      //             { name: "Processamento de Imagens", workload: 45 },
+      //             { name: "Realidade Virtual", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Engenharia Química",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação em processos químicos e industriais",
+      //   slug: "engenharia-quimica-graduacao",
+      //   long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+      //   benefits: [
+      //     "Formação abrangente em processos químicos e industriais.",
+      //     "Preparação para atuar em setores como petroquímica e farmacêutica.",
+      //     "Ênfase em sustentabilidade e soluções inovadoras.",
+      //     "Oportunidades de estágio em empresas do setor.",
+      //     "Desenvolvimento de competências em otimização de processos.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://media.licdn.com/dms/image/C4E12AQH-nHcc3zIBkw/article-cover_image-shrink_600_2000/0/1626620547094?e=2147483647&v=beta&t=PEk7a2ABf8U3jrQTuvr1R6AIHsXDqJI4TQFlN-H7IJw",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática I", workload: 60 },
+      //             { name: "Química I", workload: 60 },
+      //             { name: "Física I", workload: 45 },
+      //             { name: "Introdução à Engenharia Química", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática II", workload: 60 },
+      //             { name: "Química II", workload: 60 },
+      //             { name: "Física II", workload: 45 },
+      //             { name: "Termodinâmica I", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática III", workload: 60 },
+      //             { name: "Química Orgânica I", workload: 60 },
+      //             { name: "Física III", workload: 45 },
+      //             { name: "Termodinâmica II", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática IV", workload: 60 },
+      //             { name: "Química Orgânica II", workload: 60 },
+      //             { name: "Física IV", workload: 45 },
+      //             { name: "Mecânica dos Fluidos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Operações Unitárias I", workload: 60 },
+      //             { name: "Reatores Químicos I", workload: 60 },
+      //             { name: "Transferência de Calor", workload: 45 },
+      //             { name: "Cálculo Numérico", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Operações Unitárias II", workload: 60 },
+      //             { name: "Reatores Químicos II", workload: 60 },
+      //             { name: "Transferência de Massa", workload: 45 },
+      //             { name: "Controle de Processos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Engenharia Ambiental", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Engenharia de Processos", workload: 60 },
+      //             { name: "Biotecnologia", workload: 60 },
+      //             { name: "Nanotecnologia", workload: 45 },
+      //             { name: "Sustentabilidade", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             {
+      //               name: "Tópicos Avançados em Engenharia Química",
+      //               workload: 60,
+      //             },
+      //             { name: "Processos Industriais", workload: 60 },
+      //             { name: "Segurança de Processos", workload: 45 },
+      //             { name: "Gestão Ambiental", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Engenharia Informática",
+      //   duration: 4,
+      //   level: "graduation",
+      //   short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
+      //   slug: "engenharia-informatica-graduacao",
+      //   long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
+      //   entryProfile: [
+      //     "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+      //     "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+      //     "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+      //     "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+      //   ],
+      //   outProfile: [
+      //     "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+      //     "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+      //     "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+      //     "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+      //   ],
+      //   // benefits: [
+      //   //   "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
+      //   //   "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+      //   //   "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+      //   //   "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+      //   //   "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+      //   //   "Compreenderá e aplicará a Abordagem de Desenvolvimento Preditivo e a Abordagem Híbrida, permitindo uma maior flexibilidade e adaptabilidade na gestão de projetos. Esta compreensão permitirá que os profissionais escolham a abordagem mais adequada para cada projeto, aumentando as chances de sucesso."
+      //   // ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://www.realimage.com/engenharia-informatica-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Programação I", workload: 60 },
+      //             { name: "Matemática Discreta", workload: 60 },
+      //             { name: "Álgebra Linear", workload: 45 },
+      //             { name: "Introdução à Computação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Programação II", workload: 60 },
+      //             { name: "Estruturas de Dados", workload: 60 },
+      //             { name: "Arquitetura de Computadores", workload: 45 },
+      //             { name: "Cálculo I", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Programação III", workload: 60 },
+      //             { name: "Banco de Dados I", workload: 60 },
+      //             { name: "Redes de Computadores I", workload: 45 },
+      //             { name: "Cálculo II", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Engenharia de Software I", workload: 60 },
+      //             { name: "Banco de Dados II", workload: 60 },
+      //             { name: "Redes de Computadores II", workload: 45 },
+      //             { name: "Cálculo III", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Inteligência Artificial I", workload: 60 },
+      //             { name: "Sistemas Operacionais", workload: 60 },
+      //             { name: "Compiladores", workload: 45 },
+      //             { name: "Cálculo IV", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Inteligência Artificial II", workload: 60 },
+      //             { name: "Sistemas Distribuídos", workload: 60 },
+      //             { name: "Segurança da Informação", workload: 45 },
+      //             { name: "Cálculo V", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Empreendedorismo", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Ciência da Computação",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação avançada em computação e suas aplicações",
+      //   slug: "ciencia-computacao-graduacao",
+      //   long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+      //   benefits: [
+      //     "Desenvolver habilidades em algoritmos e programação.",
+      //     "Preparação para carreiras em pesquisa e desenvolvimento.",
+      //     "Visão abrangente das áreas emergentes da computação.",
+      //     "Oportunidades de estágio em empresas de tecnologia.",
+      //     "Base sólida em teoria da computação e desenvolvimento de software.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Algoritmos e Lógica de Programação", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral I", workload: 60 },
+      //             { name: "Geometria Analítica", workload: 45 },
+      //             { name: "Fundamentos de Computação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Estruturas de Dados", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral II", workload: 60 },
+      //             { name: "Álgebra Linear", workload: 45 },
+      //             { name: "Lógica Matemática", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Teoria da Computação", workload: 60 },
+      //             { name: "Probabilidade e Estatística", workload: 60 },
+      //             { name: "Programação Orientada a Objetos", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral III", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Análise de Algoritmos", workload: 60 },
+      //             { name: "Banco de Dados", workload: 60 },
+      //             { name: "Redes de Computadores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral IV", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Inteligência Artificial", workload: 60 },
+      //             { name: "Sistemas Operacionais", workload: 60 },
+      //             { name: "Compiladores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral V", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Aprendizado de Máquina", workload: 60 },
+      //             { name: "Sistemas Distribuídos", workload: 60 },
+      //             { name: "Segurança da Informação", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral VI", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Empreendedorismo", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Computação Quântica", workload: 60 },
+      //             { name: "Ciência de Dados", workload: 60 },
+      //             { name: "Big Data", workload: 45 },
+      //             { name: "Computação em Nuvem", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Tópicos Avançados em Computação", workload: 60 },
+      //             { name: "Computação Gráfica", workload: 60 },
+      //             { name: "Processamento de Imagens", workload: 45 },
+      //             { name: "Realidade Virtual", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Engenharia Química",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação em processos químicos e industriais",
+      //   slug: "engenharia-quimica-graduacao",
+      //   long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+      //   benefits: [
+      //     "Formação abrangente em processos químicos e industriais.",
+      //     "Preparação para atuar em setores como petroquímica e farmacêutica.",
+      //     "Ênfase em sustentabilidade e soluções inovadoras.",
+      //     "Oportunidades de estágio em empresas do setor.",
+      //     "Desenvolvimento de competências em otimização de processos.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://example.com/engenharia-quimica-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática I", workload: 60 },
+      //             { name: "Química I", workload: 60 },
+      //             { name: "Física I", workload: 45 },
+      //             { name: "Introdução à Engenharia Química", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática II", workload: 60 },
+      //             { name: "Química II", workload: 60 },
+      //             { name: "Física II", workload: 45 },
+      //             { name: "Termodinâmica I", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática III", workload: 60 },
+      //             { name: "Química Orgânica I", workload: 60 },
+      //             { name: "Física III", workload: 45 },
+      //             { name: "Termodinâmica II", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática IV", workload: 60 },
+      //             { name: "Química Orgânica II", workload: 60 },
+      //             { name: "Física IV", workload: 45 },
+      //             { name: "Mecânica dos Fluidos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Operações Unitárias I", workload: 60 },
+      //             { name: "Reatores Químicos I", workload: 60 },
+      //             { name: "Transferência de Calor", workload: 45 },
+      //             { name: "Cálculo Numérico", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Operações Unitárias II", workload: 60 },
+      //             { name: "Reatores Químicos II", workload: 60 },
+      //             { name: "Transferência de Massa", workload: 45 },
+      //             { name: "Controle de Processos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Engenharia Ambiental", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Engenharia de Processos", workload: 60 },
+      //             { name: "Biotecnologia", workload: 60 },
+      //             { name: "Nanotecnologia", workload: 45 },
+      //             { name: "Sustentabilidade", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             {
+      //               name: "Tópicos Avançados em Engenharia Química",
+      //               workload: 60,
+      //             },
+      //             { name: "Processos Industriais", workload: 60 },
+      //             { name: "Segurança de Processos", workload: 45 },
+      //             { name: "Gestão Ambiental", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Ciência da Computação",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação avançada em computação e suas aplicações",
+      //   slug: "ciencia-computacao-graduacao",
+      //   long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+      //   benefits: [
+      //     "Desenvolver habilidades em algoritmos e programação.",
+      //     "Preparação para carreiras em pesquisa e desenvolvimento.",
+      //     "Visão abrangente das áreas emergentes da computação.",
+      //     "Oportunidades de estágio em empresas de tecnologia.",
+      //     "Base sólida em teoria da computação e desenvolvimento de software.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Algoritmos e Lógica de Programação", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral I", workload: 60 },
+      //             { name: "Geometria Analítica", workload: 45 },
+      //             { name: "Fundamentos de Computação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Estruturas de Dados", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral II", workload: 60 },
+      //             { name: "Álgebra Linear", workload: 45 },
+      //             { name: "Lógica Matemática", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Teoria da Computação", workload: 60 },
+      //             { name: "Probabilidade e Estatística", workload: 60 },
+      //             { name: "Programação Orientada a Objetos", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral III", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Análise de Algoritmos", workload: 60 },
+      //             { name: "Banco de Dados", workload: 60 },
+      //             { name: "Redes de Computadores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral IV", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Inteligência Artificial", workload: 60 },
+      //             { name: "Sistemas Operacionais", workload: 60 },
+      //             { name: "Compiladores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral V", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Aprendizado de Máquina", workload: 60 },
+      //             { name: "Sistemas Distribuídos", workload: 60 },
+      //             { name: "Segurança da Informação", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral VI", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Empreendedorismo", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Computação Quântica", workload: 60 },
+      //             { name: "Ciência de Dados", workload: 60 },
+      //             { name: "Big Data", workload: 45 },
+      //             { name: "Computação em Nuvem", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Tópicos Avançados em Computação", workload: 60 },
+      //             { name: "Computação Gráfica", workload: 60 },
+      //             { name: "Processamento de Imagens", workload: 45 },
+      //             { name: "Realidade Virtual", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Engenharia Química",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação em processos químicos e industriais",
+      //   slug: "engenharia-quimica-graduacao",
+      //   long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+      //   benefits: [
+      //     "Formação abrangente em processos químicos e industriais.",
+      //     "Preparação para atuar em setores como petroquímica e farmacêutica.",
+      //     "Ênfase em sustentabilidade e soluções inovadoras.",
+      //     "Oportunidades de estágio em empresas do setor.",
+      //     "Desenvolvimento de competências em otimização de processos.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://example.com/engenharia-quimica-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática I", workload: 60 },
+      //             { name: "Química I", workload: 60 },
+      //             { name: "Física I", workload: 45 },
+      //             { name: "Introdução à Engenharia Química", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática II", workload: 60 },
+      //             { name: "Química II", workload: 60 },
+      //             { name: "Física II", workload: 45 },
+      //             { name: "Termodinâmica I", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática III", workload: 60 },
+      //             { name: "Química Orgânica I", workload: 60 },
+      //             { name: "Física III", workload: 45 },
+      //             { name: "Termodinâmica II", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática IV", workload: 60 },
+      //             { name: "Química Orgânica II", workload: 60 },
+      //             { name: "Física IV", workload: 45 },
+      //             { name: "Mecânica dos Fluidos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Operações Unitárias I", workload: 60 },
+      //             { name: "Reatores Químicos I", workload: 60 },
+      //             { name: "Transferência de Calor", workload: 45 },
+      //             { name: "Cálculo Numérico", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Operações Unitárias II", workload: 60 },
+      //             { name: "Reatores Químicos II", workload: 60 },
+      //             { name: "Transferência de Massa", workload: 45 },
+      //             { name: "Controle de Processos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Engenharia Ambiental", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Engenharia de Processos", workload: 60 },
+      //             { name: "Biotecnologia", workload: 60 },
+      //             { name: "Nanotecnologia", workload: 45 },
+      //             { name: "Sustentabilidade", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             {
+      //               name: "Tópicos Avançados em Engenharia Química",
+      //               workload: 60,
+      //             },
+      //             { name: "Processos Industriais", workload: 60 },
+      //             { name: "Segurança de Processos", workload: 45 },
+      //             { name: "Gestão Ambiental", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Engenharia Informática",
+      //   duration: 4,
+      //   level: "graduation",
+      //   short_detail: "Formação em desenvolvimento e gestão de sistemas computacionais",
+      //   slug: "engenharia-informatica-graduacao",
+      //   long_description: "O curso de Engenharia Informática forma profissionais capacitados para projetar, desenvolver e gerir sistemas computacionais. Com forte ênfase em programação, banco de dados, redes de computadores e inteligência artificial, os graduados estão preparados para atuar em diversos setores tecnológicos, contribuindo para a transformação digital das organizações. Além disso, o curso oferece uma base sólida em matemática e física, preparando os alunos para enfrentar desafios complexos na área de tecnologia. O curso também inclui disciplinas de ética e responsabilidade social, garantindo que os profissionais formados estejam cientes do impacto de suas ações na sociedade.",
 
-        entryProfile: [
-          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-        ],
-        outProfile: [
-          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-        ],
-        benefits: [
-          "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
-          "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
-          "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
-          "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
-          "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
-          "Compreenderá e aplicará a Abordagem de Desenvolvimento Preditivo e a Abordagem Híbrida, permitindo uma maior flexibilidade e adaptabilidade na gestão de projetos. Esta compreensão permitirá que os profissionais escolham a abordagem mais adequada para cada projeto, aumentando as chances de sucesso."
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://www.realimage.com/engenharia-informatica-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Programação I", workload: 60 },
-                  { name: "Matemática Discreta", workload: 60 },
-                  { name: "Álgebra Linear", workload: 45 },
-                  { name: "Introdução à Computação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Programação II", workload: 60 },
-                  { name: "Estruturas de Dados", workload: 60 },
-                  { name: "Arquitetura de Computadores", workload: 45 },
-                  { name: "Cálculo I", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Programação III", workload: 60 },
-                  { name: "Banco de Dados I", workload: 60 },
-                  { name: "Redes de Computadores I", workload: 45 },
-                  { name: "Cálculo II", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Engenharia de Software I", workload: 60 },
-                  { name: "Banco de Dados II", workload: 60 },
-                  { name: "Redes de Computadores II", workload: 45 },
-                  { name: "Cálculo III", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Inteligência Artificial I", workload: 60 },
-                  { name: "Sistemas Operacionais", workload: 60 },
-                  { name: "Compiladores", workload: 45 },
-                  { name: "Cálculo IV", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Inteligência Artificial II", workload: 60 },
-                  { name: "Sistemas Distribuídos", workload: 60 },
-                  { name: "Segurança da Informação", workload: 45 },
-                  { name: "Cálculo V", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Empreendedorismo", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Ciência da Computação",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação avançada em computação e suas aplicações",
-        slug: "ciencia-computacao-graduacao",
-        long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
-        benefits: [
-          "Desenvolver habilidades em algoritmos e programação.",
-          "Preparação para carreiras em pesquisa e desenvolvimento.",
-          "Visão abrangente das áreas emergentes da computação.",
-          "Oportunidades de estágio em empresas de tecnologia.",
-          "Base sólida em teoria da computação e desenvolvimento de software.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Algoritmos e Lógica de Programação", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral I", workload: 60 },
-                  { name: "Geometria Analítica", workload: 45 },
-                  { name: "Fundamentos de Computação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Estruturas de Dados", workload: 60 },
-                  { name: "Cálculo Diferencial e Integral II", workload: 60 },
-                  { name: "Álgebra Linear", workload: 45 },
-                  { name: "Lógica Matemática", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Teoria da Computação", workload: 60 },
-                  { name: "Probabilidade e Estatística", workload: 60 },
-                  { name: "Programação Orientada a Objetos", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral III", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Análise de Algoritmos", workload: 60 },
-                  { name: "Banco de Dados", workload: 60 },
-                  { name: "Redes de Computadores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral IV", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Inteligência Artificial", workload: 60 },
-                  { name: "Sistemas Operacionais", workload: 60 },
-                  { name: "Compiladores", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral V", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Aprendizado de Máquina", workload: 60 },
-                  { name: "Sistemas Distribuídos", workload: 60 },
-                  { name: "Segurança da Informação", workload: 45 },
-                  { name: "Cálculo Diferencial e Integral VI", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Empreendedorismo", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Computação Quântica", workload: 60 },
-                  { name: "Ciência de Dados", workload: 60 },
-                  { name: "Big Data", workload: 45 },
-                  { name: "Computação em Nuvem", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Tópicos Avançados em Computação", workload: 60 },
-                  { name: "Computação Gráfica", workload: 60 },
-                  { name: "Processamento de Imagens", workload: 45 },
-                  { name: "Realidade Virtual", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
-      {
-        course: "Engenharia Química",
-        duration: 5,
-        level: "graduation",
-        short_detail: "Formação em processos químicos e industriais",
-        slug: "engenharia-quimica-graduacao",
-        long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
-        benefits: [
-          "Formação abrangente em processos químicos e industriais.",
-          "Preparação para atuar em setores como petroquímica e farmacêutica.",
-          "Ênfase em sustentabilidade e soluções inovadoras.",
-          "Oportunidades de estágio em empresas do setor.",
-          "Desenvolvimento de competências em otimização de processos.",
-        ],
-        shift: {
-          afternoon: true,
-          morning: true,
-          evening: false,
-        },
-        course_cover: "https://example.com/engenharia-quimica-cover.jpg",
-        years: [
-          {
-            year: 1,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática I", workload: 60 },
-                  { name: "Química I", workload: 60 },
-                  { name: "Física I", workload: 45 },
-                  { name: "Introdução à Engenharia Química", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática II", workload: 60 },
-                  { name: "Química II", workload: 60 },
-                  { name: "Física II", workload: 45 },
-                  { name: "Termodinâmica I", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 2,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Matemática III", workload: 60 },
-                  { name: "Química Orgânica I", workload: 60 },
-                  { name: "Física III", workload: 45 },
-                  { name: "Termodinâmica II", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Matemática IV", workload: 60 },
-                  { name: "Química Orgânica II", workload: 60 },
-                  { name: "Física IV", workload: 45 },
-                  { name: "Mecânica dos Fluidos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 3,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Operações Unitárias I", workload: 60 },
-                  { name: "Reatores Químicos I", workload: 60 },
-                  { name: "Transferência de Calor", workload: 45 },
-                  { name: "Cálculo Numérico", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Operações Unitárias II", workload: 60 },
-                  { name: "Reatores Químicos II", workload: 60 },
-                  { name: "Transferência de Massa", workload: 45 },
-                  { name: "Controle de Processos", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 4,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Projeto de TCC I", workload: 60 },
-                  { name: "Engenharia Ambiental", workload: 60 },
-                  { name: "Gestão de Projetos", workload: 45 },
-                  { name: "Ética e Legislação", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  { name: "Projeto de TCC II", workload: 60 },
-                  { name: "Inovação Tecnológica", workload: 60 },
-                  { name: "Gestão de TI", workload: 45 },
-                  { name: "Direito Digital", workload: 45 },
-                ],
-              },
-            ],
-          },
-          {
-            year: 5,
-            semesters: [
-              {
-                semester: 1,
-                subjects: [
-                  { name: "Engenharia de Processos", workload: 60 },
-                  { name: "Biotecnologia", workload: 60 },
-                  { name: "Nanotecnologia", workload: 45 },
-                  { name: "Sustentabilidade", workload: 45 },
-                ],
-              },
-              {
-                semester: 2,
-                subjects: [
-                  {
-                    name: "Tópicos Avançados em Engenharia Química",
-                    workload: 60,
-                  },
-                  { name: "Processos Industriais", workload: 60 },
-                  { name: "Segurança de Processos", workload: 45 },
-                  { name: "Gestão Ambiental", workload: 45 },
-                ],
-              },
-            ],
-          },
-        ],
-        departmentId: ""
-      },
+      //   entryProfile: [
+      //     "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+      //     "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+      //     "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+      //     "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+      //   ],
+      //   outProfile: [
+      //     "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+      //     "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+      //     "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+      //     "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+      //   ],
+      //   benefits: [
+      //     "Este diplomado está orientado a proporcionar os conhecimentos, modelos, métodos e artefatos práticos para aplicar e gerir efetivamente projetos, mediante o desenvolvimento de um projeto real durante todo o diplomado. Os alunos terão a oportunidade de trabalhar em projetos colaborativos, desenvolvendo habilidades de trabalho em equipe e comunicação.",
+      //     "Permitirá criar seu próprio caso de aplicação de um projeto aplicável ao seu ambiente de trabalho, proporcionando uma experiência prática e relevante que pode ser diretamente aplicada em sua carreira profissional.",
+      //     "Durante o diplomado será utilizado o software Microsoft Project Online, Plano 3. E, portanto, como parte do diplomado será fornecida a cada participante esta ferramenta computacional para utilização durante o diplomado e aplicação no projeto a ser desenvolvido. Além disso, os alunos receberão treinamento especializado no uso desta ferramenta, garantindo que possam utilizá-la de forma eficaz em seus projetos futuros.",
+      //     "O diplomado fornecerá os fundamentos para que o participante posteriormente possa continuar na especialização de áreas de administração de projetos ou continuar uma preparação formal para a obtenção de certificações profissionais do PMI, tais como: CAPM®, PMP® ou abordagens ágeis de projetos. Este conhecimento adicional pode abrir novas oportunidades de carreira e aumentar a empregabilidade dos graduados.",
+      //     "O participante será um agente de mudança na organização para produzir projetos de valor para a organização. Eles serão capacitados a identificar oportunidades de melhoria e implementar soluções inovadoras que agreguem valor significativo.",
+      //     "Compreenderá e aplicará a Abordagem de Desenvolvimento Preditivo e a Abordagem Híbrida, permitindo uma maior flexibilidade e adaptabilidade na gestão de projetos. Esta compreensão permitirá que os profissionais escolham a abordagem mais adequada para cada projeto, aumentando as chances de sucesso."
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://www.realimage.com/engenharia-informatica-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Programação I", workload: 60 },
+      //             { name: "Matemática Discreta", workload: 60 },
+      //             { name: "Álgebra Linear", workload: 45 },
+      //             { name: "Introdução à Computação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Programação II", workload: 60 },
+      //             { name: "Estruturas de Dados", workload: 60 },
+      //             { name: "Arquitetura de Computadores", workload: 45 },
+      //             { name: "Cálculo I", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Programação III", workload: 60 },
+      //             { name: "Banco de Dados I", workload: 60 },
+      //             { name: "Redes de Computadores I", workload: 45 },
+      //             { name: "Cálculo II", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Engenharia de Software I", workload: 60 },
+      //             { name: "Banco de Dados II", workload: 60 },
+      //             { name: "Redes de Computadores II", workload: 45 },
+      //             { name: "Cálculo III", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Inteligência Artificial I", workload: 60 },
+      //             { name: "Sistemas Operacionais", workload: 60 },
+      //             { name: "Compiladores", workload: 45 },
+      //             { name: "Cálculo IV", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Inteligência Artificial II", workload: 60 },
+      //             { name: "Sistemas Distribuídos", workload: 60 },
+      //             { name: "Segurança da Informação", workload: 45 },
+      //             { name: "Cálculo V", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Empreendedorismo", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Ciência da Computação",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação avançada em computação e suas aplicações",
+      //   slug: "ciencia-computacao-graduacao",
+      //   long_description: "O curso de Ciência da Computação oferece uma formação sólida em fundamentos teóricos e práticos da computação. Os estudantes desenvolvem competências em algoritmos, teoria da computação, desenvolvimento de software, inteligência artificial e computação científica, preparando-se para carreiras em pesquisa, desenvolvimento e inovação tecnológica. O curso também abrange áreas emergentes como computação quântica, aprendizado de máquina e ciência de dados, proporcionando uma visão abrangente e atualizada do campo.",
+      //   benefits: [
+      //     "Desenvolver habilidades em algoritmos e programação.",
+      //     "Preparação para carreiras em pesquisa e desenvolvimento.",
+      //     "Visão abrangente das áreas emergentes da computação.",
+      //     "Oportunidades de estágio em empresas de tecnologia.",
+      //     "Base sólida em teoria da computação e desenvolvimento de software.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://www.realimage.com/ciencia-computacao-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Algoritmos e Lógica de Programação", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral I", workload: 60 },
+      //             { name: "Geometria Analítica", workload: 45 },
+      //             { name: "Fundamentos de Computação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Estruturas de Dados", workload: 60 },
+      //             { name: "Cálculo Diferencial e Integral II", workload: 60 },
+      //             { name: "Álgebra Linear", workload: 45 },
+      //             { name: "Lógica Matemática", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Teoria da Computação", workload: 60 },
+      //             { name: "Probabilidade e Estatística", workload: 60 },
+      //             { name: "Programação Orientada a Objetos", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral III", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Análise de Algoritmos", workload: 60 },
+      //             { name: "Banco de Dados", workload: 60 },
+      //             { name: "Redes de Computadores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral IV", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Inteligência Artificial", workload: 60 },
+      //             { name: "Sistemas Operacionais", workload: 60 },
+      //             { name: "Compiladores", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral V", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Aprendizado de Máquina", workload: 60 },
+      //             { name: "Sistemas Distribuídos", workload: 60 },
+      //             { name: "Segurança da Informação", workload: 45 },
+      //             { name: "Cálculo Diferencial e Integral VI", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Empreendedorismo", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Computação Quântica", workload: 60 },
+      //             { name: "Ciência de Dados", workload: 60 },
+      //             { name: "Big Data", workload: 45 },
+      //             { name: "Computação em Nuvem", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Tópicos Avançados em Computação", workload: 60 },
+      //             { name: "Computação Gráfica", workload: 60 },
+      //             { name: "Processamento de Imagens", workload: 45 },
+      //             { name: "Realidade Virtual", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
+      // {
+      //   course: "Engenharia Química",
+      //   duration: 5,
+      //   level: "graduation",
+      //   short_detail: "Formação em processos químicos e industriais",
+      //   slug: "engenharia-quimica-graduacao",
+      //   long_description: "O curso de Engenharia Química oferece uma formação abrangente em processos químicos e industriais. Os alunos aprendem a projetar, otimizar e operar processos de produção de produtos químicos, petroquímicos, farmacêuticos e de alimentos. O curso também aborda questões ambientais e de sustentabilidade, preparando os engenheiros para desenvolver soluções inovadoras e sustentáveis para a indústria. Além disso, os estudantes têm a oportunidade de realizar estágios em empresas do setor, adquirindo experiência prática e ampliando suas perspectivas de carreira.",
+      //   benefits: [
+      //     "Formação abrangente em processos químicos e industriais.",
+      //     "Preparação para atuar em setores como petroquímica e farmacêutica.",
+      //     "Ênfase em sustentabilidade e soluções inovadoras.",
+      //     "Oportunidades de estágio em empresas do setor.",
+      //     "Desenvolvimento de competências em otimização de processos.",
+      //   ],
+      //   shift: {
+      //     afternoon: true,
+      //     morning: true,
+      //     evening: false,
+      //   },
+      //   course_cover: "https://example.com/engenharia-quimica-cover.jpg",
+      //   years: [
+      //     {
+      //       year: 1,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática I", workload: 60 },
+      //             { name: "Química I", workload: 60 },
+      //             { name: "Física I", workload: 45 },
+      //             { name: "Introdução à Engenharia Química", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática II", workload: 60 },
+      //             { name: "Química II", workload: 60 },
+      //             { name: "Física II", workload: 45 },
+      //             { name: "Termodinâmica I", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 2,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Matemática III", workload: 60 },
+      //             { name: "Química Orgânica I", workload: 60 },
+      //             { name: "Física III", workload: 45 },
+      //             { name: "Termodinâmica II", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Matemática IV", workload: 60 },
+      //             { name: "Química Orgânica II", workload: 60 },
+      //             { name: "Física IV", workload: 45 },
+      //             { name: "Mecânica dos Fluidos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 3,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Operações Unitárias I", workload: 60 },
+      //             { name: "Reatores Químicos I", workload: 60 },
+      //             { name: "Transferência de Calor", workload: 45 },
+      //             { name: "Cálculo Numérico", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Operações Unitárias II", workload: 60 },
+      //             { name: "Reatores Químicos II", workload: 60 },
+      //             { name: "Transferência de Massa", workload: 45 },
+      //             { name: "Controle de Processos", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 4,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Projeto de TCC I", workload: 60 },
+      //             { name: "Engenharia Ambiental", workload: 60 },
+      //             { name: "Gestão de Projetos", workload: 45 },
+      //             { name: "Ética e Legislação", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             { name: "Projeto de TCC II", workload: 60 },
+      //             { name: "Inovação Tecnológica", workload: 60 },
+      //             { name: "Gestão de TI", workload: 45 },
+      //             { name: "Direito Digital", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //     {
+      //       year: 5,
+      //       semesters: [
+      //         {
+      //           semester: 1,
+      //           subjects: [
+      //             { name: "Engenharia de Processos", workload: 60 },
+      //             { name: "Biotecnologia", workload: 60 },
+      //             { name: "Nanotecnologia", workload: 45 },
+      //             { name: "Sustentabilidade", workload: 45 },
+      //           ],
+      //         },
+      //         {
+      //           semester: 2,
+      //           subjects: [
+      //             {
+      //               name: "Tópicos Avançados em Engenharia Química",
+      //               workload: 60,
+      //             },
+      //             { name: "Processos Industriais", workload: 60 },
+      //             { name: "Segurança de Processos", workload: 45 },
+      //             { name: "Gestão Ambiental", workload: 45 },
+      //           ],
+      //         },
+      //       ],
+      //     },
+      //   ],
+      //   departmentId: ""
+      // },
     ],
   },
   geoscience: {

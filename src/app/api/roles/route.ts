@@ -56,7 +56,7 @@ export async function PUT(request: NextRequest) {
     try {
       
         await prisma.role.update({
-            where: { id: String(id) },
+            where: { id },
             data: {
                 name,
                 about,
@@ -81,7 +81,7 @@ export async function DELETE(request: NextRequest) {
 
     try {
         await prisma.role.delete({
-            where: { id: String(id) },
+            where: { id },
         });
 
         return NextResponse.json({ message: 'Role deletada com sucesso!' }, { status: 200 });

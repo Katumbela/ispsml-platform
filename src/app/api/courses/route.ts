@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { NextRequest, NextResponse } from 'next/server';
 import prisma from '@/infra/database/prisma';
-import { ISemester, ISubject, IYear } from '@/infra/interfaces/course.interface';
 
 
 // Listar todos os cursos
@@ -15,7 +14,7 @@ export async function GET(request: NextRequest) {
             // Buscar por ID
             const course = await prisma.course.findUnique({
                 where: { id: Number(id) },
-                include: { department: true, yearDetails: true },
+                include: { department: true },
             });
             if (!course) {
                 return NextResponse.json({ message: 'Curso não encontrado!' }, { status: 404 });
@@ -46,7 +45,9 @@ export async function GET(request: NextRequest) {
 // Função para criar um novo curso com upload de imagens
 export async function POST(request: NextRequest) {
     try {
+
         const formData = await request.json();
+
         console.log(formData);
         const data = {
             course: formData.course,
@@ -74,7 +75,7 @@ export async function POST(request: NextRequest) {
         // Criar o curso no banco de dados usando Prisma
         const newCourse = await prisma.course.create({
             data: {
-                name: data.course,
+                course: data.course,
                 short_detail: data.short_detail,
                 long_description: data.long_description,
                 duration: data.duration,
@@ -87,22 +88,22 @@ export async function POST(request: NextRequest) {
                 course_cover: String(data.course_cover),
                 department: { connect: { id: data.departmentId } },
                 // shiftId: data.shiftId,
-                yearDetails: {
-                    create: data.years.map((year: IYear) => ({
-                        year: year.year,
-                        semesters: {
-                            create: year.semesters.map((semester: ISemester) => ({
-                                semester: semester.semester,
-                                subjects: {
-                                    create: semester.subjects.map((subject: ISubject) => ({
-                                        name: subject.name,
-                                        workload: subject.workload,
-                                    })),
-                                },
-                            })),
-                        },
-                    })),
-                },
+                // yearDetails: {
+                //     create: data.years.map((year: IYear) => ({
+                //         year: year.year,
+                //         semesters: {
+                //             create: year.semesters.map((semester: ISemester) => ({
+                //                 semester: semester.semester,
+                //                 subjects: {
+                //                     create: semester.subjects.map((subject: ISubject) => ({
+                //                         name: subject.name,
+                //                         workload: subject.workload,
+                //                     })),
+                //                 },
+                //             })),
+                //         },
+                //     })),
+                // },
             },
         });
 
@@ -124,12 +125,12 @@ export async function PUT(request: NextRequest) {
 
     try {
         const body = await request.json();
-        const { name, long_description, slug, duration, level } = body;
+        const { course, long_description, slug, duration, level } = body;
 
         const updatedCourse = await prisma.course.update({
             where: { id: Number(id) },
             data: {
-                name,
+                course,
                 long_description,
                 slug,
                 duration,

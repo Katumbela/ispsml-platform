@@ -37,3 +37,15 @@ class NewsService {
 }
 
 export default new NewsService();
+
+
+interface SomaProps {
+  a: string
+  b: number
+}
+
+export function soma({ a, b }: SomaProps): number {
+  return Number(a + b)
+}
+
+soma({ a: '1', b: 2 })

@@ -3,178 +3,136 @@ generator client {
 }
 
 datasource db {
-    provider = "postgresql"
-    url      = env("POSTGRES_DATABASE_URL")
-}
-
-model Role {
-    id       Int      @id @default(autoincrement())
-    pic      String
-    name     String
-    about    String
-    cv       String
-    role     String
-    linkedin String?
-    x        String?
-    phrases  Phrase[]
-    team     String[]
-}
-
-model Phrase {
-    id          Int    @id @default(autoincrement())
-    title       String
-    description String
-    roleId      Int
-    Role        Role   @relation(fields: [roleId], references: [id])
+    provider          = "mysql"
+    url               = env("DATABASE_URL")
+    shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model News {
     id               Int      @id @default(autoincrement())
     title            String
     shortDescription String
-    content          String
+    content          String   @db.LongText // Permite textos longos
     postDate         DateTime
     poster           String
     link             String
     slug             String
-    image            String
+    image            String   @db.LongText
     sponsor          Boolean?
 }
 
-// model Department {
-//     id          String   @id @default(auto()) @map("_id") @db.ObjectId
-//     name        String
-//     description String
-//     image       String
-//     courses     Course[]
-// }
-
-// model Course {
-//     id              String     @id @default(auto()) @map("_id") @db.ObjectId
-//     title           String
-//     shortDetail     String?
-//     longDescription String?
-//     duration        Int
-//     level           String
-//     slug            String
-//     courseCover     String
-//     departmentId    String     @db.ObjectId
-//     department      Department @relation(fields: [departmentId], references: [id])
-//     shiftId         String?    @db.ObjectId
-//     shift           String?
-//     benefits        String[]
-//     years           Year[]
-// }
-
-model Year {
-    id        Int        @id @default(autoincrement())
-    year      Int
-    courseId  Int
-    course    Course     @relation(fields: [courseId], references: [id])
-    semesters Semester[]
+model Role {
+    id       Int      @id @default(autoincrement())
+    pic      String
+    name     String
+    about    String   @db.Text // Permite textos médios
+    cv       String   @db.LongText // Pode armazenar currículos extensos
+    role     String
+    linkedin String?
+    x        String?
+    phrases  Phrase[]
+    team     String
 }
 
-// model Semester {
-//     id       String    @id @default(auto()) @map("_id") @db.ObjectId
-//     semester Int
-//     yearId   String    @db.ObjectId
-//     year     Year      @relation(fields: [yearId], references: [id])
-//     subjects Subject[]
-// }
-// model Subject {
-//     id         String   @id @default(auto()) @map("_id") @db.ObjectId
-//     name       String
-//     workload   Int
-//     semesterId String   @db.ObjectId
-//     semester   Semester @relation(fields: [semesterId], references: [id])
-// }
-
-model Application {
-    id        Int      @id @default(autoincrement())
-    name      String
-    email     String
-    phone     String
-    birthDate DateTime
-    course    String
-    interest  String
-    date      DateTime
+model Phrase {
+    id          Int    @id @default(autoincrement())
+    title       String
+    description String @db.Text // Permite descrições maiores
+    roleId      Int
+    Role        Role   @relation(fields: [roleId], references: [id])
 }
 
 model Event {
     id              Int      @id @default(autoincrement())
     title           String
     description     String
-    longDescription String
+    longDescription String   @db.LongText // Permite descrições detalhadas
     date            DateTime
     category        String
-    imageUrl        String
+    imageUrl        String   @db.LongText
     isFeatured      Boolean
     slug            String
     place           String
 }
 
+model Course {
+    id               Int        @id @default(autoincrement())
+    course           String
+    short_detail     String?
+    long_description String?    @db.LongText // Permite descrição completa do curso
+    duration         Int
+    level            String
+    slug             String
+    shift            Shift?
+    benefits         String     @db.Text // Explicação detalhada dos benefícios
+    entryProfile     String     @db.Text // Explicação do perfil de entrada
+    outProfile       String     @db.Text // Explicação do perfil de saída
+    years            Year[]
+    course_cover     String     @db.LongText
+    department       Department @relation(fields: [departmentId], references: [id])
+    departmentId     Int
+    createdAt        DateTime   @default(now())
+    updatedAt        DateTime   @updatedAt
+}
+
 model Department {
-    id                 Int      @id @default(autoincrement())
+    id                 Int                 @id @default(autoincrement())
     name               String
     catalog_link       String?
-    department_cover   String?
-    departmentDirector Director @relation(fields: [directorId], references: [id])
+    department_cover   String?             @db.LongText
+    departmentDirector DepartmentDirector?
     courses            Course[]
-    directorId         Int
+    createdAt          DateTime            @default(now())
+    updatedAt          DateTime            @updatedAt
 }
 
-model Director {
-    id         Int          @id @default(autoincrement())
-    name       String?
-    picture    String?
-    Department Department[]
+model DepartmentDirector {
+    id           Int        @id @default(autoincrement())
+    name         String
+    picture      String     @db.LongText
+    department   Department @relation(fields: [departmentId], references: [id])
+    departmentId Int        @unique
+    createdAt    DateTime   @default(now())
+    updatedAt    DateTime   @updatedAt
 }
 
-model Course {
-    id               Int          @id @default(autoincrement())
-    name             String
-    duration         String
-    level            String
-    short_detail     String
-    slug             String
-    long_description String
-    benefits         String[]
-    shift_afternoon  Boolean?
-    shift_morning    Boolean?
-    entryProfile     String[]
-    outProfile       String[]
-    shift_evening    Boolean?
-    course_cover     String
-    yearDetails      YearDetail[]
-    departmentId     Int
-    department       Department   @relation(fields: [departmentId], references: [id])
-    // shiftId          Int
-    // Department      Department   @relation(fields: [departmentId], references: [id])
-    Year             Year[]
+model Shift {
+    id        Int      @id @default(autoincrement())
+    morning   Boolean
+    afternoon Boolean
+    evening   Boolean
+    course    Course   @relation(fields: [courseId], references: [id])
+    courseId  Int      @unique
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
-model YearDetail {
+model Year {
     id        Int        @id @default(autoincrement())
     year      Int
     semesters Semester[]
+    course    Course     @relation(fields: [courseId], references: [id])
     courseId  Int
-    Course    Course     @relation(fields: [courseId], references: [id])
+    createdAt DateTime   @default(now())
+    updatedAt DateTime   @updatedAt
 }
 
 model Semester {
-    id           Int        @id @default(autoincrement())
-    semester     Int
-    subjects     Subject[]
-    yearDetailId Int
-    YearDetail   YearDetail @relation(fields: [yearDetailId], references: [id])
-    Year         Year?      @relation(fields: [yearId], references: [id])
-    yearId       Int?
+    id        Int       @id @default(autoincrement())
+    semester  Int
+    subjects  Subject[]
+    year      Year      @relation(fields: [yearId], references: [id])
+    yearId    Int
+    createdAt DateTime  @default(now())
+    updatedAt DateTime  @updatedAt
 }
 
 model Subject {
     id         Int      @id @default(autoincrement())
     name       String
     workload   Int
+    semester   Semester @relation(fields: [semesterId], references: [id])
     semesterId Int
-    Semester   Semester @relation(fields: [semesterId], references: [id])
+    createdAt  DateTime @default(now())
+    updatedAt  DateTime @updatedAt
 }

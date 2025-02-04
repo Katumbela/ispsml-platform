@@ -16,12 +16,12 @@ export interface ICourse {
   benefits?: string[];
   entryProfile?: string[];
   outProfile?: string[];
-  years: IYear[]; // Corrigido para corresponder ao modelo `Year`
+  years?: IYear[]; // Corrigido para corresponder ao modelo `Year`
   course_cover: string;
   additional_courses?: ICourse[];
-  departmentId: string; // Adicionado conforme o modelo
+  departmentId: number; // Adicionado conforme o modelo
   department?: IDepartment; // Referência ao departamento
-  shiftId?: string; // Relacionado opcional ao turno
+  shiftId?: number; // Relacionado opcional ao turno
 }
 
 export interface IShift {
@@ -32,7 +32,7 @@ export interface IShift {
 }
 
 export interface IDepartment {
-  id: string;
+  id?: string;
   name: string;
   departmentDirector?: {
     name: string;
@@ -41,7 +41,7 @@ export interface IDepartment {
   department_cover?: string;
   catalog_link?: string;
   courses?: ICourse[];
-  directorId?: string;
+  directorId?: number;
 }
 
 export interface IYear {

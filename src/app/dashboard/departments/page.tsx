@@ -9,7 +9,7 @@ import CourseForm from "./components/add-course-form";
 
 const DepartmentList: React.FC = () => {
   const [departments, setDepartments] = useState<IDepartment[]>([]);
-  const [selectedDepartmentId, setSelectedDepartmentId] = useState<string | null>(null);
+  const [selectedDepartmentId, setSelectedDepartmentId] = useState<number | null>(null);
   const [courses, setCourses] = useState<ICourse[]>([]);
 
   useEffect(() => {
@@ -20,9 +20,9 @@ const DepartmentList: React.FC = () => {
     fetchDepartments();
   }, []);
 
-  const handleSelectDepartment = async (departmentId: string) => {
-    setSelectedDepartmentId(departmentId);
-    const data = await getCoursesByDepartment(departmentId);
+  const handleSelectDepartment = async (departmentId: number) => {
+    setSelectedDepartmentId(Number(departmentId));
+    const data = await getCoursesByDepartment(Number(departmentId));
     setCourses(data);
   };
 
@@ -33,8 +33,8 @@ const DepartmentList: React.FC = () => {
       formData.append("course", course as any);
       console.log(formData);
       // Add other course fields to formData if necessary
-      await addCourseToDepartment(selectedDepartmentId, formData);
-      const updatedCourses = await getCoursesByDepartment(selectedDepartmentId);
+      await addCourseToDepartment(Number(selectedDepartmentId), formData);
+      const updatedCourses = await getCoursesByDepartment(Number(selectedDepartmentId));
       setCourses(updatedCourses);
     }
   };
@@ -47,7 +47,7 @@ const DepartmentList: React.FC = () => {
           <li key={department.id}>
             <button
               className="text-blue-500"
-              onClick={() => handleSelectDepartment(selectedDepartmentId === department.id ? '' : department.id)}
+              onClick={() => handleSelectDepartment(Number(selectedDepartmentId) === Number(department.id) ? 0 : Number(department.id))}
             >
               {department.name} - {department.courses ? department.courses.length : 0} Cursos
             </button>

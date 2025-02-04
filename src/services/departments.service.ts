@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { Department } from '@/infra/data/interfaces';
 import axios from 'axios';
 

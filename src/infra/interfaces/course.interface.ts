@@ -13,9 +13,9 @@ export interface ICourse {
   | "preparatory";
   slug: string; // Campo obrigatório
   shift?: IShift; // Ajustado para incluir shiftId diretamente
-  benefits?: string[];
-  entryProfile?: string[];
-  outProfile?: string[];
+  benefits?: string;
+  entryProfile?: string;
+  outProfile?: string;
   years?: IYear[]; // Corrigido para corresponder ao modelo `Year`
   course_cover: string;
   additional_courses?: ICourse[];

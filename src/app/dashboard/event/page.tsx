@@ -5,11 +5,10 @@ import React, { useEffect, useState } from 'react';
 import InputDefault from '@/components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '@/config/firebaseConfig';
 import { generateSlug } from '@/utils/slugfy';
 import DateSelect from '@/components/date-select/date-select';
 import eventsService from '@/services/events.service';
+import { fileToBase64 } from '@/utils/file-to-b64';
 
 const EventsDashboard = () => {
   const [title, setTitle] = useState('');
@@ -33,9 +32,7 @@ const EventsDashboard = () => {
     try {
       let imageUrlString = '';
       if (imageUrl) {
-        const storageRef = ref(storage, `events/${imageUrl.name}`);
-        await uploadBytes(storageRef, imageUrl);
-        imageUrlString = await getDownloadURL(storageRef);
+        imageUrlString = await fileToBase64(imageUrl);
       }
 
       await eventsService.createEvent({
@@ -60,34 +57,40 @@ const EventsDashboard = () => {
   };
 
   return (
-    <div className="max-w-3xl p-6 mx-auto text-white bg-gray-900 rounded-lg shadow-lg">
-      <h1 className="mb-6 text-3xl font-bold text-center">Adicionar Evento</h1>
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <InputDefault label='Título' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
-        <InputDefault label='Descrição' placeholder='Descrição' value={description} onChange={(e) => setDescription(e.target.value)} required={true} />
-        <InputDefault label='Descrição Longa' placeholder='Descrição Longa' value={longDescription} onChange={(e) => setLongDescription(e.target.value)} required={true} />
-        <DateSelect name='date' value={date} onChange={(date: any) => setDate(date)} placeholder='Data do evento' required={true} />
-        <InputDefault label='Categoria' placeholder='Categoria' value={category} onChange={(e) => setCategory(e.target.value)} />
+    <div>
+      <div className="h-20 mb-10 bg-gray-800" />
 
-        <div>
-          <label className="block mb-1 text-sm font-medium">Imagem do Evento</label>
-          <input type="file" className="block w-full p-2 text-sm text-gray-400 bg-gray-800 border border-gray-600 rounded" onChange={(e) => setImageUrl(e.target.files ? e.target.files[0] : null)} required />
-        </div>
+      <div className="max-w-3xl p-6 mx-auto text-white bg-gray-900 rounded-lg shadow-lg">
+        <h1 className="mb-6 text-3xl font-bold text-center">Adicionar Evento</h1>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <InputDefault label='Título' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
+          <InputDefault label='Descrição' placeholder='Descrição' value={description} onChange={(e) => setDescription(e.target.value)} required={true} />
+          <InputDefault label='Descrição Longa' placeholder='Descrição Longa' value={longDescription} onChange={(e) => setLongDescription(e.target.value)} required={true} />
+          <DateSelect name='date' value={date} onChange={(date: any) => setDate(date)} placeholder='Data do evento' required={true} />
+          <InputDefault label='Categoria' placeholder='Categoria' value={category} onChange={(e) => setCategory(e.target.value)} />
 
-        <InputDefault label='Slug' placeholder='Slug' value={slug} onChange={(e) => setSlug(e.target.value)} required={true} />
-        <InputDefault label='Local' placeholder='Local' value={place} onChange={(e) => setPlace(e.target.value)} required={true} />
+          <div>
+            <label className="block mb-1 text-sm font-medium">Imagem do Evento</label>
+            <input type="file" className="block w-full p-2 text-sm text-gray-400 bg-gray-800 border border-gray-600 rounded" onChange={(e) => setImageUrl(e.target.files ? e.target.files[0] : null)} required />
+          </div>
 
-        <div className="flex items-center gap-2">
-          <input type="checkbox" className="w-5 h-5 text-blue-500 border-gray-600 rounded" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} />
-          <label className="text-sm">Evento em Destaque</label>
-        </div>
+          <InputDefault label='Local' placeholder='Local' value={place} onChange={(e) => setPlace(e.target.value)} required={true} />
 
-        <div className="flex justify-center">
-          <button type="submit" className="flex items-center gap-2 px-6 py-3 text-white transition-all bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50" disabled={loading}>
-            {loading ? <FaSpinner className="animate-spin" /> : "Adicionar Evento"}
-          </button>
-        </div>
-      </form>
+          <div className="flex items-center gap-2">
+            <input type="checkbox" className="w-5 h-5 text-blue-500 border-gray-600 rounded" checked={isFeatured} onChange={(e) => setIsFeatured(e.target.checked)} />
+            <label className="text-sm">Evento em Destaque</label>
+          </div>
+
+          <div className="flex justify-center">
+            <button type="submit" className="flex items-center gap-2 px-6 py-3 text-white transition-all rounded-lg bg-primary hover:bg-blue-700 disabled:opacity-50" disabled={loading}>
+              {loading ? <FaSpinner className="animate-spin" /> : "Adicionar Evento"}
+            </button>
+          </div>
+        </form>
+      </div>
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

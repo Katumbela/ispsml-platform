@@ -3,8 +3,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { addCourseToDepartment } from '@/services/dep.service';
-import { ICourse } from '@/infra/interfaces/course.interface';
+import { addCourseToDepartment, getDepartmentById } from '@/services/dep.service';
+import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
 import { generateSlug } from '@/utils/slugfy';
 import { fileToBase64 } from '@/utils/file-to-b64';
 
@@ -22,7 +22,9 @@ const NewCoursePage = () => {
     const [slug, setSlug] = useState('');
     const [courseCover, setCourseCover] = useState('');
     const router = useRouter();
-    const { id: departmentId } = useParams()
+    const { dep_id: departmentId } = useParams()
+    const [department, setDepartment] = useState<IDepartment | null>(null);
+
 
     const handleSubmit = async () => {
         // e.preventDefault();
@@ -62,6 +64,17 @@ const NewCoursePage = () => {
     };
 
     useEffect(() => {
+
+        const fetchDep = async () => {
+            const dep = await getDepartmentById(Number(departmentId) || 0);
+
+            setDepartment(dep);
+        };
+        fetchDep();
+        fetchDep();
+    }, [departmentId]);
+
+    useEffect(() => {
         setSlug(generateSlug(course || ""));
     }, [course]);
 
@@ -69,6 +82,7 @@ const NewCoursePage = () => {
         <div>
             <div className="h-20 mb-20 bg-gray-800" />
             <div className="p-4">
+                <h1 className="mb-4 text-2xl font-bold">{department?.name}</h1>
                 <h1 className="mb-4 text-2xl font-bold">Adicionar Curso</h1>
                 <div className="space-y-4">
                     {/* <form onSubmit={handleSubmit} className="space-y-4"> */}
@@ -90,6 +104,7 @@ const NewCoursePage = () => {
                             className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm"
                         />
                     </div>
+                    
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Descrição Longa</label>
                         <textarea

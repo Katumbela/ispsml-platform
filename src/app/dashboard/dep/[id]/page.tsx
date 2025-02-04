@@ -29,7 +29,7 @@ const DepartmentCoursesPage = () => {
     }, [departmentId]);
 
     const handleAddCourse = () => {
-        router.push(`${departmentId}/new-course`);
+        router.push(`${departmentId}/${departmentId}`);
     };
 
     return (

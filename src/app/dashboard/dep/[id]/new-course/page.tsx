@@ -6,6 +6,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { addCourseToDepartment } from '@/services/dep.service';
 import { ICourse } from '@/infra/interfaces/course.interface';
 import { generateSlug } from '@/utils/slugfy';
+import { fileToBase64 } from '@/utils/file-to-b64';
 
 const NewCoursePage = () => {
     const [course, setCourse] = useState('');
@@ -23,8 +24,8 @@ const NewCoursePage = () => {
     const router = useRouter();
     const { id: departmentId } = useParams()
 
-    const handleSubmit = async (e: any) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
+        // e.preventDefault();
 
         const data: ICourse = {
             course,
@@ -46,6 +47,15 @@ const NewCoursePage = () => {
     };
 
 
+    const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
+        const file = event.target.files?.[0];
+        if (file) {
+            const base64 = await fileToBase64(file);
+            setCourseCover(base64);
+            // setPreview(URL.createObjectURL(file));
+        }
+    };
+
     useEffect(() => {
         setSlug(generateSlug(course || ""));
     }, [course]);
@@ -55,7 +65,8 @@ const NewCoursePage = () => {
             <div className="h-20 mb-20 bg-gray-800" />
             <div className="p-4">
                 <h1 className="mb-4 text-2xl font-bold">Adicionar Curso</h1>
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-4">
+                    {/* <form onSubmit={handleSubmit} className="space-y-4"> */}
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Nome do Curso</label>
                         <input
@@ -115,19 +126,19 @@ const NewCoursePage = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Capa do Curso</label>
                         <input
-                            type="text"
-                            value={courseCover}
-                            onChange={(e) => setCourseCover(e.target.value)}
+                            type="file"
+                            onChange={handleFileChange}
                             className="block w-full px-3 py-2 mt-1 border border-gray-300 rounded-md shadow-sm"
                         />
                     </div>
                     <button
-                        type="submit"
-                        className="px-4 py-2 text-white bg-blue-500 rounded"
+                        // type="submit"
+
+                        onClick={handleSubmit} className="px-4 py-2 text-white bg-blue-500 rounded"
                     >
                         Salvar
                     </button>
-                </form>
+                </div>
             </div>
             <br />
             <br />

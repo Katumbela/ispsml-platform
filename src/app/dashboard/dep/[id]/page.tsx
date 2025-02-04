@@ -3,28 +3,23 @@
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
-import { getCoursesByDepartment, getDepartmentById } from '@/services/dep.service';
+import { IDepartment } from '@/infra/interfaces/course.interface';
+import { getDepartmentById } from '@/services/dep.service';
+import Image from 'next/image';
 
 const DepartmentCoursesPage = () => {
-    const [courses, setCourses] = useState<ICourse[] | []>([]);
     const [department, setDepartments] = useState<IDepartment | null>(null);
 
     const router = useRouter();
     const { id: departmentId } = useParams()
 
     useEffect(() => {
-        const fetchCourses = async () => {
-            const response = await getCoursesByDepartment(Number(departmentId) || 0);
-
-            setCourses(response);
-        };
         const fetchDep = async () => {
             const dep = await getDepartmentById(Number(departmentId) || 0);
 
             setDepartments(dep);
         };
-        fetchCourses();
+
         fetchDep();
     }, [departmentId]);
 
@@ -47,16 +42,19 @@ const DepartmentCoursesPage = () => {
                     Adicionar Curso
                 </button>
                 <div className="mt-4">
-                    {courses.map((course) => (
+                    {department?.courses?.map((course) => (
                         <motion.div
                             key={course.id}
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.5 }}
-                            className="p-4 mb-2 border rounded"
+                            className="flex gap-2 p-4 mb-2 border rounded"
                         >
-                            <h2 className="text-xl font-semibold">{course.course}</h2>
-                            <p>{course.short_detail}</p>
+                            <Image alt='' src={course.course_cover} height={100} width={100} />
+                            <div>
+                                <h2 className="text-xl font-semibold">{course.course}</h2>
+                                <p>{course.short_detail}</p>
+                            </div>
                         </motion.div>
                     ))}
                 </div>

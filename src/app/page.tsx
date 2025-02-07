@@ -19,7 +19,7 @@ export default function Home() {
 			<div>
 				<Hero />
 				<StudyOffer />
-				
+
 				<NewsComponents />
 
 				<FixedImageScrollWithElastic />

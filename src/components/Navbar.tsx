@@ -90,39 +90,33 @@ const Navbar = () => {
 				: 'bg-transparent text-white'}`}
 		>
 			<div
-				className={`flex flex-col  justify-between w-full gap-4 px-6 mx-auto lg:flex-row lg:items-center`}
+				className={`flex flex-col  justify-between w-full gap-4 sm:px-6 mx-auto lg:flex-row lg:items-center`}
 			>
 				{/* logo e os items  */}
 
-				<div className="flex">
-					<div
-						onClick={() => (window.location.href = `${routes.HOME_ROUTE}`)}
-						className="flex items-center text-2xl cursor-pointer me-7"
-					>
-						<Image src={ isScrolled ? images.logos.logos_ispsml.logo_1_png : images.logos.logos_ispsml.logo_2_png} width={1000} height={1000} alt="Logo" className="h-[2em] w-full mr-2" />
-						<div
-							className={`fflex my-auto hidden flex-col justify-center font-semibold ${!isScrolled
-								? 'text-white'
-								: 'text-primary'}`}
-						>
-							<span className="text-[16px] -mt-[.1rem]">{t('navbar.institutoSuperior')}</span>
-							<span className="text-[10px] hidden -mt-[1.3rem] ">{t('navbar.politecnico')}</span>
-							<span className="text-[16px] -mt-[.8rem] ">{t('navbar.saoMartinhoDeLima')}</span>
-						</div>
-					</div>
-
-					<div className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+				<div className="flex w-full my-auto">
+					<div className="my-auto md:hidden me-3" onClick={() => setIsOpen(!isOpen)}>
 						{isOpen ? (
 							<FontAwesomeIcon icon={faTimes} size="lg" />
 						) : (
 							<FontAwesomeIcon icon={faBars} size="lg" />
 						)}
 					</div>
+					<div
+						onClick={() => (window.location.href = `${routes.HOME_ROUTE}`)}
+						className="flex items-center my-auto text-2xl cursor-pointer "
+					>
+						<Image src={isScrolled ? images.logos.logos_ispsml.logo_1_png : images.logos.logos_ispsml.logo_2_png} width={1000} height={1000} alt="Logo" className="h-[2em] hidden lg:flex w-full mr-2" />
+						<Image src={images.logos.logo1} width={1000} height={1000} alt="Logo" className="h-[1.5em] lg:hidden w-full" />
+
+					</div>
+
+
 					<div className="flex items-center my-auto ">
 						<ul
-							className={`md:flex bg-red-4000 md:items-center my-auto absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
-								? 'transform translate-y-0'
-								: 'transform -translate-y-full md:translate-y-0'}`}
+							className={`md:flex transform containers  ${isScrolled && "bg-white"}  lg:translate-y-0 right-0 bg-red-4000 md:items-center my-auto absolute md:static w-full md:w-auto left-0 md:left-auto top-16 md:top-auto transition-transform duration-300 ease-in-out ${isOpen
+								? ' -translate-y-5 py-4  shadow-lg fixed top-0 left-0 '
+								: '  lg:translate-y-0 translate-y-[-400px]'}`}
 						>
 							{navItems.map((item, index) => (
 								<li
@@ -137,7 +131,7 @@ const Navbar = () => {
 										onClick={() => (window.location.href = item.href)}
 										className="flex flex-row items-center justify-start w-full p-0 m-0 space-x-2 bg-bblack nav-link hover-anim "
 									>
-										<span className="font-[600] my-auto text-[12px]  uppercase tracking-wider">
+										<span className="font-[600] my-auto lg:text-[12px] text-[10px]  uppercase tracking-wider">
 											{t(item.label)}
 										</span>
 										{item.children && (
@@ -145,7 +139,7 @@ const Navbar = () => {
 												animate={{ rotate: activeDropdown === index ? 180 : 0 }}
 												transition={{ duration: 0.2 }}
 											>
-												<FontAwesomeIcon icon={faAngleDown} />
+												<FontAwesomeIcon className='text-sm lg:text-lg' icon={faAngleDown} />
 											</motion.span>
 										)}
 									</div>
@@ -186,7 +180,7 @@ const Navbar = () => {
 															</motion.div>
 														))
 													) : (
-														<div className="p-4">{item.children}</div>
+														<div className="p-4 text-sm">{item.children}</div>
 													)}
 												</motion.div>
 											)}
@@ -195,25 +189,26 @@ const Navbar = () => {
 							))}
 						</ul>
 					</div>
+					<div className="flex items-center space-x-4 ms-auto ">
+						<div className="flex my-auto space-x-2">
+							<span className="my-auto cursor-pointer" onClick={() => changeLanguage('en')}>
+								EN
+							</span>
+							<span>|</span>
+							<span className="my-auto cursor-pointer" onClick={() => changeLanguage('pt')}>
+								PT
+							</span>
+						</div>
+						<FontAwesomeIcon
+							icon={faSearch}
+							size="lg"
+							className="cursor-pointer"
+							onClick={() => setIsSearchOpen(true)}
+						/>
+					</div>
 				</div>
 				{/* Icone de search e EN e PT options  */}
-				<div className="flex items-center my-auto ml-4 space-x-4 ">
-					<div className="flex my-auto space-x-2">
-						<span className="my-auto cursor-pointer" onClick={() => changeLanguage('en')}>
-							EN
-						</span>
-						<span>|</span>
-						<span className="my-auto cursor-pointer" onClick={() => changeLanguage('pt')}>
-							PT
-						</span>
-					</div>
-					<FontAwesomeIcon
-						icon={faSearch}
-						size="lg"
-						className="cursor-pointer"
-						onClick={() => setIsSearchOpen(true)}
-					/>
-				</div>
+
 			</div>
 			<AnimatePresence>
 				{isSearchOpen && (
@@ -250,7 +245,7 @@ const Navbar = () => {
 								{searchQuery &&
 									filteredSearchResults.map((item, index) => (
 										<li key={index} className="mb-2">
-											<Link href={item.href} className="text-white hover:underline">
+											<Link href={item.href} className="text-sm text-white lg:text-lg hover:underline">
 												{item.label}
 											</Link>
 										</li>

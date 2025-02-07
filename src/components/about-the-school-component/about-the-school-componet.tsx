@@ -24,59 +24,33 @@ export function AboutTheSchoolComponents() {
 	return (
 		<section className="py-0 z-500">
 			<div className="text-center containers">
-				<h2 className="mb-10 text-5xl font-bold text-primary">{t('aboutTheSchool.title')}</h2>
-				{/* <p className="hidden text-gray-500">{t('aboutTheSchool.description')}</p> */}
+				<h2 className="mb-10 text-2xl font-bold md:text-5xl text-primary">{t('aboutTheSchool.title')}</h2>
 			</div>
 			<br />
-			<div className="h-[450px] overflow-hidden containers 2xl:h-[700px] relative bg-primary-footer">
-				<div className="relative w-3/4 2xl:w-3/4 pt-[2.5rem]  ]">
+			<div className="relative h-auto px-4 overflow-hidden containers bg-primary-footer md:px-0">
+				<div className="relative w-full pt-10 mx-auto md:w-3/4">
 					<Slider {...settings}>
 						{imageList.map((item, index) => (
-							<div className=" h-[75vh] 2xl:h-[85vh] " key={index}>
-								{/* <h3 className="mb-2 text-xl font-medium text-center text-white">{item.title}</h3> */}
-								{/* <div className="relative w-20 h-20"> */}
+							<div className="h-[50vh] md:h-[75vh] 2xl:h-[85vh]" key={index}>
 								<Image
 									alt={`Imagem ${index + 1}`}
 									src={item.src}
-									className="mx-auto w-[100%] h-[100%]"
-									// width={100}
-									// height={100}
-									layout="fit"
-									objectFit="100%"
+									className="object-cover w-full h-full mx-auto"
+									layout="responsive"
 								/>
-								{/* </div> */}
 							</div>
 						))}
 					</Slider>
 				</div>
 
-				<div className="h-[550px] relative w-full" />
-
-				<div className="absolute right-[3.5vw] bottom-[8vh]">
-					<ul className="space-y-2 text-white text-end">
+				<div className="absolute right-4 md:right-[3.5vw] bottom-4 md:bottom-[8vh] text-white text-end">
+					<ul className="space-y-2">
 						<li>
-							<p className="flex flex-col gap-1 text-white text-end">
-								{/* <span className="text-sm"> Campus</span> */}
+							<p className="flex flex-col gap-1">
 								<span className="text-xl font-bold"> ISPSML</span>
 								<span className="text-sm"> Luanda, Benfica</span>
 							</p>
 						</li>
-						{/* <li className="flex justify-end gap-2 pt-4 text-xs font-semibold uppercase cursor-pointer hover:underline ">
-							<span className="my-auto">Galeria</span>
-							<BiPhotoAlbum className="my-auto text-xl" />
-						</li>
-						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
-							<span className="my-auto">Apresentação</span>
-							<FaVideo className="my-auto text-xl" />
-						</li>
-						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
-							<span className="my-auto">Link</span>
-							<BiLink className="my-auto text-xl" />
-						</li>
-						<li className="flex justify-end gap-2 text-xs font-semibold uppercase cursor-pointer hover:underline ">
-							<span className="my-auto">Street View</span>
-							<BiSolidBuildings className="my-auto text-xl" />
-						</li> */}
 					</ul>
 				</div>
 			</div>

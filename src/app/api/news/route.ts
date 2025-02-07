@@ -8,7 +8,7 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { title, shortDescription, content, postDate, poster, link, slug, image } = body;
- 
+
     await prisma.news.create({
       data: {
         title,
@@ -38,7 +38,9 @@ export async function GET(request: Request) {
     if (id) {
       // Buscar por ID
       const news = await prisma.news.findUnique({
-        where: { id: String(id) },
+        where: {
+          id: Number(id)
+        }
       });
       if (!news) {
         return NextResponse.json({ message: 'Notícia não encontrada!' }, { status: 404 });
@@ -72,14 +74,14 @@ export async function PUT(request: Request) {
     const { id, title, shortDescription, content, postDate, poster, link, slug, image } = body;
 
     await prisma.news.update({
-      where: { id: String(id) },
+      where: { id },
       data: {
         title,
         shortDescription,
         content,
         postDate: new Date(postDate),
         poster,
-        link, 
+        link,
         slug,
         image,
       },
@@ -102,7 +104,9 @@ export async function DELETE(request: Request) {
     }
 
     await prisma.news.delete({
-      where: { id: String(id) },
+      where: {
+        id: Number(id)
+      }
     });
 
     return NextResponse.json({ message: 'Notícia deletada com sucesso!' }, { status: 200 });

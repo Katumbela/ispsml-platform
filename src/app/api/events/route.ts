@@ -12,7 +12,7 @@ export async function GET(request: NextRequest) {
         if (id) {
             // Buscar por ID
             const event = await prisma.event.findUnique({
-                where: { id },
+                where: { id: Number(id) },
             });
             if (!event) {
                 return NextResponse.json({ message: 'Evento não encontrado!' }, { status: 404 });
@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
                 title,
                 description,
                 longDescription,
-                date, 
+                date,
                 category,
                 imageUrl,
                 isFeatured,
@@ -79,12 +79,12 @@ export async function PUT(request: NextRequest) {
         const { title, description, longDescription, date, category, imageUrl, isFeatured, slug, place } = body;
 
         const updatedEvent = await prisma.event.update({
-            where: { id },
+            where: { id: Number(id) },
             data: {
                 title,
                 description,
                 longDescription,
-                date, 
+                date,
                 category,
                 imageUrl,
                 isFeatured,
@@ -110,7 +110,7 @@ export async function DELETE(request: NextRequest) {
 
     try {
         await prisma.event.delete({
-            where: { id },
+            where: { id: Number(id) },
         });
 
         return NextResponse.json({ message: 'Evento deletado com sucesso!' }, { status: 200 });

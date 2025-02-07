@@ -22,11 +22,14 @@ const config = {
           dark: '#F57C00',
         },
       },
-      containers: {
+      container: {
         center: true,
-        padding: "10px",
+        padding: {
+          DEFAULT: "6px", // Aplicado a todas as telas
+          sm: "20px", // Aumenta o padding para telas maiores que `sm`
+        },
         screens: {
-          sm: "776px",
+          sm: "476px",
           md: "968px",
           lg: "1192px",
           xl: "1400px",

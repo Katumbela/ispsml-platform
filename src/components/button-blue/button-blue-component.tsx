@@ -1,4 +1,5 @@
 // import { routes } from "@/infra/routes.vars";
+
 import { FaAngleRight } from "react-icons/fa";
 
 export interface IButtonBlue {
@@ -16,3 +17,4 @@ export default function ButtonBlueComponent({ text, onclick }: IButtonBlue) {
         </button>
     )
 }
+

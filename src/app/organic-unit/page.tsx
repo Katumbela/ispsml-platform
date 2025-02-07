@@ -1,16 +1,18 @@
 'use client';
 
-import { routes } from '@/infra/routes.vars';
-import { coursesData } from '@/infra/data/courses-data';
 import { RolesData } from '@/infra/data/roles-data';
 import { images } from '@/assets';
 import GlobalHero from '@/components/global-hero/global-hero';
+import { IDepartment } from '@/infra/interfaces/course.interface';
+import { getDepartments } from '@/services/dep.service';
+import { useState, useEffect } from 'react';
+import { routes } from '@/infra/routes.vars';
 
-const departments = Object.entries(coursesData).map(([key, value]) => ({
-	link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
-	name: `Departamento de ${key.charAt(0).toUpperCase() + key.slice(1)}`,
-	cover: value.department_cover
-}));
+// const departments = Object.entries(coursesData).map(([key, value]) => ({
+// 	link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
+// 	name: `Departamento de ${key.charAt(0).toUpperCase() + key.slice(1)}`,
+// 	cover: value.department_cover
+// }));
 
 export default function OrganicUnitPage() {
 	function getTeamMembers(directorId: string) {
@@ -20,6 +22,18 @@ export default function OrganicUnitPage() {
 		}
 		return [];
 	}
+
+	const [departments, setDepartments] = useState<IDepartment[] | []>([]);
+
+	useEffect(() => {
+		async function fetchDepartments() {
+			const data = await getDepartments();
+			setDepartments(data);
+		}
+		fetchDepartments();
+	}, []);
+
+
 
 	// ...existing code...
 
@@ -48,7 +62,7 @@ export default function OrganicUnitPage() {
 				<div className="grid grid-cols-1 gap-1 mb-1 md:grid-cols-2 lg:grid-cols-3">
 					{departments.filter((e) => e.name != 'Masters').map((department, i) => (
 						<div
-							onClick={() => (window.location.href = department.link)}
+							onClick={() => (window.location.href = routes.ORGANIC_UNIT_ROUTE + '/' + department.slug)}
 							key={i}
 							className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa"
 						//   style={{

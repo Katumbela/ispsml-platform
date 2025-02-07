@@ -1,4 +1,4 @@
-"use client" 
+"use client"
 
 import "./globals.css";
 import { useEffect, useState } from "react";
@@ -8,8 +8,23 @@ import i18n from '@/infra/i18n';
 import { usePathname } from 'next/navigation'; // importar usePathname
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
+// import { Metadata } from "next";
 // import { LanguageProvider } from "@/contexts/lang-context";
- 
+
+
+
+// export const metadata: Metadata = {
+//   metadataBase: new URL('https://ispsml.com'),
+//   title: {
+//     default: 'ISPSML AO',
+//     template: `%s | ISPSML`
+//   },
+//   openGraph: {
+//     description: 'Melhor Universidade de Angola.'
+//   }
+// }
+
 
 export default function RootLayout({
   children,
@@ -26,18 +41,18 @@ export default function RootLayout({
     }
   }, [lang]);
 
-  const [isLargeScreen, setIsLargeScreen] = useState(true);
+  // const [isLargeScreen, setIsLargeScreen] = useState(true);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint is 1024px
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint is 1024px
+  //   };
 
-    handleResize(); // Check initial screen size
-    window.addEventListener("resize", handleResize);
+  //   handleResize(); // Check initial screen size
+  //   window.addEventListener("resize", handleResize);
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+  //   return () => window.removeEventListener("resize", handleResize);
+  // }, []);
 
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -50,41 +65,38 @@ export default function RootLayout({
 
   return (
     <html lang={lang}>
-      <head>
-      {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" /> */}
-        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-        
-        <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i" />
-         <link rel="stylesheet" media="all" href="//fonts.googleapis.com/css2?family=Raleway:wght@900&amp;display=swap" />
-      </head>
       <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
         {/* <LanguageProvider> */}
-          
-        {/* <I18nextProvider i18n={i18n}> */}
-          {isLargeScreen ? (
-	
 
+        {/* <I18nextProvider i18n={i18n}> */}
+        {/* {isLargeScreen ? ( */}
+
+
+
+        <>
+
+          {loading ? <Loader /> :
 
             <>
-
-              {loading ? <Loader /> : 
-              
-              <>
-              		<Navbar />
+              <Navbar />
               {children}
+              <Toaster />
               <Footer />
-              </>}
+            </>}
 
-            </>) : (
-            <div className="flex items-center justify-center h-screen text-lg font-medium text-center text-red-600">
-              Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
-            </div>
-          )}
+          {/* </>) : (
+          <div className="items-center justify-center hidden h-screen text-lg font-medium text-center text-red-600 flexx">
+            Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
+          </div>
+        )} */}
+        </>
+
+
         {/* </I18nextProvider> */}
-        
+
         {/* </LanguageProvider> */}
       </body>
     </html>

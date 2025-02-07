@@ -2,7 +2,7 @@ export function GetLevelDescription(
   level:
     | undefined
     | "bacharel"
-    | "graduation"
+    | "undergraduation"
     | "professional"
     | "master"
     | "pos-graduation"
@@ -11,7 +11,7 @@ export function GetLevelDescription(
   switch (level) {
     case "bacharel":
       return "Bacharelado";
-    case "graduation":
+    case "undergraduation":
       return "Licenciatura";
     case "professional":
       return "Curso Profissional";

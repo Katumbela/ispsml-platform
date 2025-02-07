@@ -1,0 +1,23 @@
+import { getDepartments } from "@/services/dep.service";
+
+export default async function sitemap() {
+    const getCourse = await getDepartments() || [];
+
+    const courses = getCourse.map((course) => {
+        if (!course?.slug) {
+            return null;
+        }
+        return {
+            url: `https://ispsml.ao/organic-unit/${course.slug}`,
+            lastModified: new Date().toISOString()
+        };
+    }).filter(Boolean);
+
+    return [
+        {
+            url: 'https://ispsml.ao',
+            lastModified: new Date().toISOString()
+        },
+        ...courses
+    ];
+}

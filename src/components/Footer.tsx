@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-
+"use client"
 import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa6';
 import { useTranslation } from 'react-i18next';
 import Image from 'next/image';

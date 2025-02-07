@@ -5,6 +5,7 @@ import { images } from '@/assets';
 import { FaAngleRight } from 'react-icons/fa6';
 import { HoverCard } from '@/components/hover-card/hover-card';
 import { routes } from '@/infra/routes.vars';
+import ButtonLink from '@/components/buttonLink/button-link';
 // import { title } from 'process';
 // import Image from 'next/image';
 // import { motion } from 'framer-motion';
@@ -69,7 +70,7 @@ const About = () => {
 				title={'Sobre Nós'}
 				className="h-[500px] 2xl:h-[750px]"
 			/>
-			
+
 			<div className="py-8 -mt-2 2xl:py-14 bg-primary">
 				<div className="containers">
 					{' '}
@@ -79,45 +80,53 @@ const About = () => {
 					</p>
 				</div>
 			</div>
-			<div className="grid w-full grid-cols-2">
+			<div className="flex flex-col w-full sm:grid sm:grid-cols-2">
 				<div
 					style={{
 						background: `url(${images.bgPplImages.bg_ppl22.src}) center center`,
 						backgroundRepeat: 'no-repeat',
-						backgroundPosition:'top',
+						backgroundPosition: 'top',
 						backgroundSize: 'cover'
 					}}
-					className="h-[20rem] 2xl:h-[23rem] relative w-full"
+					className="lg:h-[20rem]  h-[18rem]  2xl:h-[23rem] relative w-full"
 				>
 					{/* <Image alt="" objectFit='cover' layout='fill' src={images.teachers.katumbela} /> */}
 				</div>
-				<div className="h-[20rem] 2xl:h-[23rem] grid  w-full">
+				<div className="lg:h-[20rem]  sm:h-[18rem] py-8 sm:py-0 2xl:h-[23rem] grid  w-full">
 					<div className="w-full my-auto 2xl:mx-24 containers">
-						<h2 className="text-4xl font-bold 2xl:text-5xl">Promotoria</h2>
-						<button onClick={()=> window.location.href = routes.ABOUT_ROUTE+"/promotor"} className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
+						<h2 className="text-3xl font-bold lg:text-4xl 2xl:text-5xl">Promotoria</h2>
+						<ButtonLink className='mt-10' href={routes.ABOUT_ROUTE + "/promotor"} rightIcon={<FaAngleRight className="my-auto" />} >
 							<span className="my-auto">Saber Mais</span>
-							<FaAngleRight className="my-auto" />
-						</button>
-					</div>
-				</div>
-
-				<div className="h-[20rem] 2xl:h-[23rem] grid items-start  w-full">
-					<div className="w-full my-auto 2xl:mx-24 containers">
-						<h2 className="text-4xl font-bold 2xl:text-5xl">Presidência</h2>
-						<button  onClick={()=> window.location.href = routes.ABOUT_ROUTE+"/president"}  className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
-							<span className="my-auto">Saber Mais</span>
-							<FaAngleRight className="my-auto" />
-						</button>
+						</ButtonLink>
 					</div>
 				</div>
 				<div
 					style={{
 						background: `url(${images.teachers.president_photo.src}) center center`,
 						backgroundRepeat: 'no-repeat',
-						backgroundPosition:'top',
+						backgroundPosition: 'top',
 						backgroundSize: 'cover'
 					}}
-					className="h-[20rem] 2xl:h-[23rem] relative w-full"
+					className="lg:h-[20rem] sm:hidden h-[18rem] 2xl:h-[23rem] relative w-full"
+				>
+					{/* <Image alt="" objectFit='cover' layout='fill' src={images.teachers.katumbela} /> */}
+				</div>
+				<div className="lg:h-[20rem] sm:h-[18rem] py-8 sm:py-0 2xl:h-[23rem] grid items-start  w-full">
+					<div className="w-full my-auto 2xl:mx-24 containers">
+						<h2 className="text-3xl font-bold lg:text-4xl 2xl:text-5xl">Presidência</h2>
+						<ButtonLink className='mt-10' href={routes.ABOUT_ROUTE + "/president"} rightIcon={<FaAngleRight className="my-auto" />} >
+							<span className="my-auto">Saber Mais</span>
+						</ButtonLink>
+					</div>
+				</div>
+				<div
+					style={{
+						background: `url(${images.teachers.president_photo.src}) center center`,
+						backgroundRepeat: 'no-repeat',
+						backgroundPosition: 'top',
+						backgroundSize: 'cover'
+					}}
+					className="lg:h-[20rem] hidden sm:flex h-[18rem] 2xl:h-[23rem] relative w-full"
 				>
 					{/* <Image alt="" objectFit='cover' layout='fill' src={images.teachers.katumbela} /> */}
 				</div>
@@ -154,8 +163,8 @@ const About = () => {
 			<br />
 			<br />
 			<div className="containers">
-				<h2 className="text-3xl font-bold">Nossa Instituição</h2>
-				<p className="text-gray-600">
+				<h2 className="text-2xl font-bold lg:text-3xl">Nossa Instituição</h2>
+				<p className="text-sm text-gray-600 lg:text-base">
 					The ISPSML, founded in 1943, is a private, non-profit institution committed to the quality of higher
 					education in the country.
 				</p>
@@ -163,7 +172,7 @@ const About = () => {
 			<br />
 			<br />
 			<section className="py-1">
-				<div className="grid grid-cols-4 gap-1">
+				<div className="grid gap-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
 					{ourInst.map((info, i) => (
 						<div
 							title={`Clique para abrir mais sobre ${info.title}`}
@@ -172,7 +181,7 @@ const About = () => {
 								backgroundSize: 'cover'
 							}}
 							key={i}
-							className="grid px-5 text-center cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[15rem] 2xl:h-[35vh]"
+							className="grid px-5 text-xl text-center cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[15rem] 2xl:h-[35vh]"
 						>
 							{info.title}
 						</div>
@@ -180,12 +189,12 @@ const About = () => {
 				</div>
 			</section>
 			<div className="mb-1 cards-sections-about">
-				<div className="flex gap-1">
+				<div className="flex flex-col gap-1 sm:flex-row">
 					<HoverCard
 						bgColor="bg-primary"
 						hoverBgColor="bg-sky-700"
 						title="Missão, Visão e Valores"
-						className="h-[400px] 2xl:h-[600px]"
+						className="sm:h-[400px] h-[250px] 2xl:h-[600px]"
 						bgImage={images.bgsSchool.bg_school_28.src}
 					>
 						<div className="px-6 text-xl font-semibold text-white containers">
@@ -202,7 +211,7 @@ const About = () => {
 					</HoverCard>
 					<HoverCard
 						bgImage={images.bgsSchool.bg_school_23.src}
-						className="h-[400px] 2xl:h-[600px]"
+						className="sm:h-[400px] h-[250px] 2xl:h-[600px]"
 						hoverBgColor="bg-green-600"
 						title="Mais sobre o ISPSML"
 					>

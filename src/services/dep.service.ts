@@ -34,6 +34,11 @@ export const getCourseBySlug = async (slug: string): Promise<any | null> => {
     return response.data;
 };
 
+export const getAllCourses = async (): Promise<ICourse[] | []> => {
+    const response = await axios.get("/api/courses");
+    return response.data;
+};
+
 
 // Adicionar um curso a um departamento
 export const addCourseToDepartment = async (departmentId: number, courseData: any) => {

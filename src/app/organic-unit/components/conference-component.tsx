@@ -24,7 +24,7 @@ const ConferenceComponent = () => {
 
   return (
     <section className="px-4 py-8 mt-[10vh] mx-auto containers">
-      <h2 className="max-w-3xl mb-4 text-3xl font-semibold text md:text-4xl">
+      <h2 className="max-w-3xl mb-4 text-xl font-semibold sm:text-3xl text md:text-4xl">
         Participe dos nossos eventos académico
       </h2>
       {/* <p className="mb-8 text-gray-600 text">
@@ -36,23 +36,23 @@ const ConferenceComponent = () => {
           <Skeleton height={400} />
         ) : (
           featuredEvent && (
-            <div className="relative grid items-center p-10 overflow-hidden text-white place-content-start md:col-span-1" style={{ background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover" }}>
+            <div className="relative grid items-center p-5 overflow-hidden text-white sm:p-10 place-content-start md:col-span-1" style={{ background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover" }}>
               <div className='w-full '>
-                <div className="top-0 left-0 flex gap-6 text-2xl ">
-                  <p className="flex flex-col font-semibold ">{new Date(featuredEvent.date).getDate()} <span className='text-xl'>{DateUtils.getAbbreviatedMonth(new Date(featuredEvent.date))}</span></p>
-                  <p className="flex flex-col ">{DateUtils.getTime(featuredEvent.date)} <span className='text-xl'>HRS</span></p>
+                <div className="top-0 left-0 flex gap-6 text-lg md:text-2xl sm:text-xl ">
+                  <p className="flex flex-col font-semibold ">{new Date(featuredEvent.date).getDate()} <span className=''>{DateUtils.getAbbreviatedMonth(new Date(featuredEvent.date))}</span></p>
+                  <p className="flex flex-col ">{DateUtils.getTime(featuredEvent.date)} <span className=''>HRS</span></p>
                 </div>
                 <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white top-16 left-4">
                   {featuredEvent.category}
                 </span>
                 <div className="mt-12">
-                  <h3 className="mb-4 text-2xl font-semibold">
+                  <h3 className="mb-4 text-xl font-semibold sm:text-2xl">
                     {featuredEvent.title}
                   </h3>
-                  <p className="mb-6">
+                  <p className="mb-6 text-xs sm:text-base">
                     {AbreviateString.abbreviate(featuredEvent.description, 100)}
                   </p>
-                  <p className="mb-6">
+                  <p className="mb-6 text-xs sm:text-base">
                     Local: {featuredEvent.place}
                   </p>
                   <Link href={`/events/${featuredEvent.slug}`}>
@@ -68,7 +68,7 @@ const ConferenceComponent = () => {
 
         {/* Previous Events */}
         <div className="space-y-4">
-          <h3 className="text-lg font-semibold text-gray-700">EVENTOS ANTERIORES</h3>
+          <h3 className="text-base font-semibold text-gray-700 sm:text-lg">EVENTOS ANTERIORES</h3>
           {loading ? (
             <Skeleton count={3} height={100} />
           ) : (

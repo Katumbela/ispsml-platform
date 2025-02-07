@@ -28,6 +28,7 @@ export async function POST(request: NextRequest) {
                 cv,
                 linkedin,
                 x,
+                team: "director",
             },
         });
 
@@ -47,16 +48,16 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PUT(request: NextRequest) {
-    
+
     const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id'); 
+    const id = searchParams.get('id');
     const body = await request.json();
     const { name, about, role, cv, linkedin, x, image } = body;
 
     try {
-      
+
         await prisma.role.update({
-            where: { id },
+            where: { id: Number(id) },
             data: {
                 name,
                 about,
@@ -64,7 +65,7 @@ export async function PUT(request: NextRequest) {
                 cv,
                 linkedin,
                 x,
-                pic: image, 
+                pic: image,
             },
         });
 
@@ -75,13 +76,13 @@ export async function PUT(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-    
+
     const { searchParams } = new URL(request.url);
-    const id = searchParams.get('id'); 
+    const id = searchParams.get('id');
 
     try {
         await prisma.role.delete({
-            where: { id },
+            where: { id: Number(id) },
         });
 
         return NextResponse.json({ message: 'Role deletada com sucesso!' }, { status: 200 });

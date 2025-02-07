@@ -17,3 +17,4 @@ export default function ButtonBlueComponent({ text, onclick }: IButtonBlue) {
         </button>
     )
 }
+

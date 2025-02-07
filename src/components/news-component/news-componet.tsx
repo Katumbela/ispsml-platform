@@ -68,12 +68,12 @@ export function NewsComponents() {
 	};
 
 	return (
-		<section className="pt-20 pb-11">
+		<section className="pt-10 md:pt-20 pb-11">
 			<div className="containers">
-				<h2 className="mb-8 text-3xl font-bold">{t('global.newsTitle')}</h2>
+				<h2 className="mb-8 text-xl font-bold sm:text-3xl">{t('global.newsTitle')}</h2>
 			</div>
-			<div className="flex gap-2 px-1 mx-auto ">
-				<div className="w-1/2">
+			<div className="flex flex-col gap-2 px-1 mx-auto sm:flex-row ">
+				<div className="sm:w-1/2">
 					{loading ? (
 						<Skeleton height={400} />
 					) : (
@@ -85,14 +85,14 @@ export function NewsComponents() {
 									backgroundSize: 'cover'
 								}}
 								title="Clique para ler mais"
-								className="relative h-full transition-all cursor-pointer hover:shadow-xl shadow-primary bg-primary"
+								className="relative h-[20rem] w-full transition-all cursor-pointer sm:h-full hover:shadow-xl shadow-primary bg-primary"
 							>
-								<div className="absolute px-3 py-1 text-sm text-white rounded-full bg-primary left-4 top-4">
+								<div className="absolute px-3 text-xs text-white rounded-full py sm:text-base-1 bg-primary left-4 top-4">
 									Em Destaque
 								</div>
 								<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">
-									<h2 className="text-2xl font-bold">{randomNews.title}</h2>
-									<div className="text-md" dangerouslySetInnerHTML={{
+									<h2 className="text-base font-bold sm:text-2xl">{randomNews.title}</h2>
+									<div className="text-xs sm:text-md" dangerouslySetInnerHTML={{
 										__html: AbreviateString.abbreviate(`${randomNews.content}`, 170)
 									}} />
 									<br />
@@ -110,7 +110,7 @@ export function NewsComponents() {
 						)
 					)}
 				</div>
-				<div className="w-3/5">
+				<div className="sm:w-3/5">
 					<div className="relative">
 						{loading ? (
 

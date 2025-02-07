@@ -2,7 +2,7 @@
 
 
 import prisma from '@/infra/database/prisma';
-import { NextResponse } from 'next/server'; 
+import { NextResponse } from 'next/server';
 
 // Handler para o método POST (Criar inscrição)
 export async function POST(request: Request) {

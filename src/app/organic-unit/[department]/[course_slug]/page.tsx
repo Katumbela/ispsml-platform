@@ -64,7 +64,7 @@ export default function CourseDetailsPage() {
         <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
         <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
       </head>
-      <HeroCourseDetail departmentName={department?.name as string} department={department?.name} course={course} bg_image={course.course_cover} title={course.course} />
+      <HeroCourseDetail departmentName={department?.name as string} department={department ?? undefined} course={course} bg_image={course.course_cover} title={course.course} />
       <ShortDescCourse course={course} />
       <br />
       <br />
@@ -73,18 +73,28 @@ export default function CourseDetailsPage() {
         <div className="grid grid-cols-2 gap-4">
           <div className="p">
             <h2 className="title-course">Perfil de Entrada</h2>
-            {/* {course.entryProfile?.slice(0, 3).map((item: string, index: number) => ( */}
-            <div className="flex gap-2 benefit-item">
-              <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{course.entryProfile}</p>
-            </div>
-            {/* ))} */}
+            {course.entryProfile
+              ?.split('*')
+              .filter(Boolean)
+              .map((item: string, index: number) => (
+                <div key={index} className="flex gap-2 benefit-item">
+                  <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>
+                  <p>{item.trim()}</p>
+                </div>
+              ))}
           </div>
           <div className="p">
             <h2 className="title-course">Perfil de Saída</h2>
             {/* {course.outProfile?.map((item: string, index: number) => ( */}
-            <div className="flex gap-2 benefit-item">
-              <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{course.outProfile}</p>
-            </div>
+            {course.outProfile
+              ?.split('*')
+              .filter(Boolean)
+              .map((item: string, index: number) => (
+                <div key={index} className="flex gap-2 benefit-item">
+                  <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>
+                  <p>{item.trim()}</p>
+                </div>
+              ))}
             {/* ))} */}
           </div>
         </div>

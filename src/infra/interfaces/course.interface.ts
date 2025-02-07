@@ -6,7 +6,7 @@ export interface ICourse {
   duration: number; // Campo obrigatório, conforme o modelo
   level:
   | "bacharel"
-  | "graduation"
+  | "undergraduation"
   | "professional"
   | "master"
   | "pos-graduation"

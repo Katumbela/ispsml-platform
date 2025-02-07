@@ -36,8 +36,8 @@ const ConferenceComponent = () => {
           <Skeleton height={400} />
         ) : (
           featuredEvent && (
-            <div className="relative grid items-center p-10 overflow-hidden text-white place-content-center md:col-span-1" style={{ background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover" }}>
-              <div>
+            <div className="relative grid items-center p-10 overflow-hidden text-white place-content-start md:col-span-1" style={{ background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover" }}>
+              <div className='w-full '>
                 <div className="top-0 left-0 flex gap-6 text-2xl ">
                   <p className="flex flex-col font-semibold ">{new Date(featuredEvent.date).getDate()} <span className='text-xl'>{DateUtils.getAbbreviatedMonth(new Date(featuredEvent.date))}</span></p>
                   <p className="flex flex-col ">{DateUtils.getTime(featuredEvent.date)} <span className='text-xl'>HRS</span></p>

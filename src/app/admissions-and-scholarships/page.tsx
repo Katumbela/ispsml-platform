@@ -40,7 +40,7 @@ export default function OrganicUnitPage() {
 				className=" bg-primary image-container"
 			>
 				<div className="flex gap-2 ">
-					<div className="w-1/2 ps-10 py-20 2xl:py-32">
+					<div className="w-1/2 py-20 ps-10 2xl:py-32">
 						<h2 className="font-bold text-white lg:mb-2 lg:text-4xl 2xl:mb-3 2xl:text-5xl">
 							 Preparatório & Inscrição
 						</h2>
@@ -75,7 +75,7 @@ export default function OrganicUnitPage() {
       <br />
       <section className=' containers'>
         <div className="">
-          <h2 className="font-bold  text-3xl 2xl:text-4xl">Bolsas de Estudos </h2>
+          <h2 className="text-3xl font-bold 2xl:text-4xl">Bolsas de Estudos </h2>
         </div>
         <br />
         <div className="flex gap-1">
@@ -98,7 +98,7 @@ export default function OrganicUnitPage() {
 				className=" bg-primary-footer image-container"
 			>
 				<div className="flex gap-2 ">
-					<div className="w-1/2 ps-10 py-20 2xl:py-32">
+					<div className="w-1/2 py-20 ps-10 2xl:py-32">
 						<div className="containers">
               <h2 className="font-bold text-white lg:mb-2 lg:text-4xl 2xl:mb-3 2xl:text-5xl">
 							 Inscrões em Licenciatura
@@ -127,21 +127,21 @@ export default function OrganicUnitPage() {
         <br />
         <div className="flex gap-1">
           {cardData.map((card, index) => (
-            <AdmissionsCard card={card} type='undergraduate' key={index}/>
+            <AdmissionsCard card={card} type='undergraduation' key={index}/>
           ))}
         </div>
       </section>
  <br />
  <br />   <section className=' containers'>
         <div className="">
-          <h2 className="font-bold  text-3xl 2xl:text-4xl">Bolsas de Estudos </h2>
+          <h2 className="text-3xl font-bold 2xl:text-4xl">Bolsas de Estudos </h2>
         </div>
         <br />
         <div className="flex gap-1">
           {/* <Slider {...settings} > */}
 
           {scholarShipsData.map((card, index) => (
-           <AdmissionsCard type='undergraduate' card={card} key={index}/>
+           <AdmissionsCard type='undergraduation' card={card} key={index}/>
           ))}
 
           {/* </Slider> */}

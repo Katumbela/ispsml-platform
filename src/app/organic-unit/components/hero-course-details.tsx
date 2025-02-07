@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 import { FaLocationCrosshairs, FaRegClock } from 'react-icons/fa6';
-import { ICourse } from '@/infra/interfaces/course.interface';
+import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
 import { FaPencilRuler } from 'react-icons/fa';
 import { GetLevelDescription } from '@/utils/return-level-name';
 import { routes } from '@/infra/routes.vars';
@@ -20,12 +20,12 @@ interface HeroCourseDetailProps {
   bg_image?: string | StaticImageData
   height?: string
   course: ICourse
-  department?: string
+  department?: IDepartment
   departmentName?: string
 }
 
 
-export function HeroCourseDetail({ departmentName, department, bg_image, title, course }: HeroCourseDetailProps) {
+export function HeroCourseDetail({ department, bg_image, title, course }: HeroCourseDetailProps) {
   const [slideIndex, setSlideIndex] = useState(0);
   const [animationDirection, setAnimationDirection] = useState('top');
 
@@ -74,7 +74,7 @@ export function HeroCourseDetail({ departmentName, department, bg_image, title, 
               <div className="py-8 bg-gradient-to-t from-black ">
                 <div className="flex flex-col containers">
                   <p className='pb-2 mb-3 border-b'>
-                    <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE + "/" + department}>{departmentName}</a> / {course?.course}
+                    <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / <a className='hover:underline' href={routes.ORGANIC_UNIT_ROUTE + "/" + department?.slug}>{department?.name}</a> / {course?.course}
                   </p>
                   <span>{GetLevelDescription(course?.level)}</span>
                   <motion.h1

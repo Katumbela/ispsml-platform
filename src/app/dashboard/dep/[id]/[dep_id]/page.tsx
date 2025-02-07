@@ -13,7 +13,7 @@ const NewCoursePage = () => {
     const [shortDetail, setShortDetail] = useState('');
     const [longDescription, setLongDescription] = useState('');
     const [duration, setDuration] = useState(0);
-    const [level, setLevel] = useState<'bacharel' | 'graduation' | 'professional' | 'master' | 'pos-graduation' | 'preparatory'>('graduation');
+    const [level, setLevel] = useState<'bacharel' | 'undergraduation' | 'professional' | 'master' | 'pos-graduation' | 'preparatory'>('undergraduation');
     const [slug, setSlug] = useState('');
     const [courseCover, setCourseCover] = useState('');
     const [shift, setShift] = useState({ morning: false, afternoon: false, evening: false });
@@ -140,9 +140,12 @@ const NewCoursePage = () => {
                     <div>
                         <label className="block text-sm font-medium text-gray-700">Nível</label>
                         <select value={level} onChange={(e) => setLevel(e.target.value as any)} className="block w-full p-2 mt-1 border border-gray-300 rounded-md">
-                            <option value="graduation">Graduação</option>
-                            <option value="master">Mestrado</option>
+                            <option value="undergraduation">Graduação</option>
                             <option value="pos-graduation">Pós-Graduação</option>
+                            <option value="master">Mestrado</option>
+                            <option value="bacharel">Bacharelado</option>
+                            <option value="preparatory">Preparatório</option>
+                            <option value="professional">Curso Profissional</option>
                         </select>
                     </div>
                     <div>

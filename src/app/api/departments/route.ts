@@ -5,7 +5,7 @@ import prisma from '@/infra/database/prisma';
 export async function POST(request: Request) {
   try {
     const body = await request.json();
-    const { name, catalog_link, department_cover, departmentDirector } = body;
+    const { name, catalog_link, slug, department_cover, departmentDirector } = body;
 
     // Cria o departamento com o diretor e cursos
     const department = await prisma.department.create({
@@ -19,6 +19,7 @@ export async function POST(request: Request) {
             picture: departmentDirector.picture,
           },
         },
+        slug
         // courses: {
         //   create: courses.map((course: any) => ({
         //     course: course.course,
@@ -69,11 +70,38 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const id = searchParams.get('id');
   const courseId = searchParams.get('course_id');
+  const slug = searchParams.get('slug');
 
   try {
     if (id) {
       const department = await prisma.department.findUnique({
         where: { id: Number(id) },
+        include: {
+          departmentDirector: true,
+          courses: {
+            include: {
+              shift: true,
+              years: {
+                include: {
+                  semesters: {
+                    include: { subjects: true },
+                  },
+                },
+              },
+            },
+          },
+        },
+      });
+
+      if (!department) {
+        return NextResponse.json({ message: 'Departamento não encontrado!' }, { status: 404 });
+      }
+      return NextResponse.json(department, { status: 200 });
+    }
+
+    if (slug) {
+      const department = await prisma.department.findFirst({
+        where: { slug },
         include: {
           departmentDirector: true,
           courses: {

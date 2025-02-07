@@ -64,7 +64,7 @@ model Course {
     level            String
     slug             String
     shift            Shift?
-    benefits         String    @db.Text // Explicação detalhada dos benefícios
+    benefits         String     @db.Text // Explicação detalhada dos benefícios
     entryProfile     String     @db.Text // Explicação do perfil de entrada
     outProfile       String     @db.Text // Explicação do perfil de saída
     years            Year[]
@@ -79,6 +79,7 @@ model Department {
     id                 Int                 @id @default(autoincrement())
     name               String
     catalog_link       String?
+    slug               String
     department_cover   String?             @db.LongText
     departmentDirector DepartmentDirector?
     courses            Course[]

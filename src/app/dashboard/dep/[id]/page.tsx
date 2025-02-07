@@ -1,11 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { IDepartment } from '@/infra/interfaces/course.interface';
-import { getDepartmentById } from '@/services/dep.service';
+import { deleteCourse, getDepartmentById } from '@/services/dep.service';
 import Image from 'next/image';
+import { FaTrash } from 'react-icons/fa6';
+import { AlertUtils } from '@/utils';
 
 const DepartmentCoursesPage = () => {
     const [department, setDepartments] = useState<IDepartment | null>(null);
@@ -25,6 +28,14 @@ const DepartmentCoursesPage = () => {
 
     const handleAddCourse = () => {
         router.push(`${departmentId}/${departmentId}`);
+    };
+    const deleteCourseDep = async (id: number) => {
+        await deleteCourse(Number(id));
+        AlertUtils.success('Curso deletado com sucesso');
+        // } catch (error: any) {
+        //     console.log(error.message);
+        //     AlertUtils.error('Erro ao deletar curso');
+        // }
     };
 
     return (
@@ -51,9 +62,12 @@ const DepartmentCoursesPage = () => {
                             className="flex gap-2 p-4 mb-2 border rounded"
                         >
                             <Image alt='' src={course.course_cover} height={100} width={100} />
-                            <div>
-                                <h2 className="text-xl font-semibold">{course.course}</h2>
-                                <p>{course.short_detail}</p>
+                            <div className='flex justify-between w-full'>
+                                <div>
+                                    <h2 className="text-xl font-semibold">{course.course}</h2>
+                                    <p>{course.short_detail}</p>
+                                </div>
+                                <FaTrash className='my-auto cursor-pointer' onClick={() => deleteCourseDep(Number(course?.id))} />
                             </div>
                         </motion.div>
                     ))}

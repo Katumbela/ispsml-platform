@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
             // Buscar por ID
             const course = await prisma.course.findUnique({
                 where: { id: Number(id) },
-                include: { department: true },
+                include: { department: true, years: { include: { semesters: { include: { subjects: true } } } }, shift: true },
             });
             if (!course) {
                 return NextResponse.json({ message: 'Curso não encontrado!' }, { status: 404 });
@@ -26,6 +26,7 @@ export async function GET(request: NextRequest) {
             // Buscar por slug
             const course = await prisma.course.findFirst({
                 where: { slug: slug },
+                include: { department: true, years: { include: { semesters: { include: { subjects: true } } } }, shift: true },
             });
             if (!course) {
                 return NextResponse.json({ message: 'Curso não encontrado!' }, { status: 404 });
@@ -41,78 +42,50 @@ export async function GET(request: NextRequest) {
     }
 }
 
-
-// Função para criar um novo curso com upload de imagens
+// Criar um novo curso com base no modelo Prisma
 export async function POST(request: NextRequest) {
     try {
-
         const formData = await request.json();
 
-        console.log(formData);
-        const data = {
-            course: formData.course,
-            short_detail: formData.short_detail,
-            long_description: formData.long_description,
-            duration: formData.duration,
-            level: formData.level,
-            slug: formData.slug,
-            shift: formData.shift,
-            benefits: formData.benefits,
-            entryProfile: formData.entryProfile,
-            outProfile: formData.outProfile,
-            course_cover: formData.course_cover,
-            departmentId: formData.departmentId,
-            years: formData.years,
-            semesters: formData.semesters,
-            subjects: formData.subjects,
-        };
-
-        // Verificar se os arquivos são instâncias de File
-        // if (!(data.course_cover instanceof File)) {
-        //     throw new Error("Invalid file upload");
-        // }
-
-        // Criar o curso no banco de dados usando Prisma
         const newCourse = await prisma.course.create({
             data: {
-                course: data.course,
-                short_detail: data.short_detail,
-                long_description: data.long_description,
-                duration: data.duration,
-                level: data.level,
-                slug: data.slug,
-                // shift: data.shift ? { create: { ...data.shift } } : undefined,
-                benefits: data.benefits,
-                entryProfile: data.entryProfile,
-                outProfile: data.outProfile,
-                course_cover: String(data.course_cover),
-                department: { connect: { id: data.departmentId } },
-                // shiftId: data.shiftId,
-                // yearDetails: {
-                //     create: data.years.map((year: IYear) => ({
-                //         year: year.year,
-                //         semesters: {
-                //             create: year.semesters.map((semester: ISemester) => ({
-                //                 semester: semester.semester,
-                //                 subjects: {
-                //                     create: semester.subjects.map((subject: ISubject) => ({
-                //                         name: subject.name,
-                //                         workload: subject.workload,
-                //                     })),
-                //                 },
-                //             })),
-                //         },
-                //     })),
-                // },
+                course: formData.course,
+                short_detail: formData.short_detail || null,
+                long_description: formData.long_description || null,
+                duration: Number(formData.duration),
+                level: formData.level,
+                slug: formData.slug,
+                shift: formData.shift ? { create: { ...formData.shift } } : undefined,
+                benefits: formData.benefits || null,
+                entryProfile: formData.entryProfile || null,
+                outProfile: formData.outProfile || null,
+                course_cover: formData.course_cover,
+                department: { connect: { id: formData.departmentId } },
+                years: {
+                    create: formData.years?.map((year: any) => ({
+                        year: Number(year.year),
+                        semesters: {
+                            create: year.semesters.map((semester: any) => ({
+                                semester: Number(semester.semester),
+                                subjects: {
+                                    create: semester.subjects.map((subject: any) => ({
+                                        name: subject.name,
+                                        workload: Number(subject.workload),
+                                    })),
+                                },
+                            })),
+                        },
+                    })) || [],
+                },
             },
         });
 
-        // Retornar o curso criado com status 201
         return NextResponse.json(newCourse, { status: 201 });
     } catch (error: any) {
         return NextResponse.json({ message: 'Erro ao criar curso! ' + error.message }, { status: 500 });
     }
 }
+
 
 // Atualizar um curso
 export async function PUT(request: NextRequest) {
@@ -136,6 +109,7 @@ export async function PUT(request: NextRequest) {
                 duration,
                 level,
             },
+            include: { department: true, years: { include: { semesters: { include: { subjects: true } } } }, shift: true },
         });
 
         return NextResponse.json(updatedCourse, { status: 200 });
@@ -156,6 +130,7 @@ export async function DELETE(request: NextRequest) {
     try {
         await prisma.course.delete({
             where: { id: Number(id) },
+            include: { department: true, years: { include: { semesters: { include: { subjects: true } } } }, shift: true },
         });
 
         return NextResponse.json({ message: 'Curso deletado com sucesso!' }, { status: 200 });

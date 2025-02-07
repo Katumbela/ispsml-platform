@@ -13,8 +13,24 @@ export const getDepartments = async (): Promise<IDepartment[]> => {
     return response.data;
 };
 
+export const getDepartmentBySlug = async (slug: string): Promise<IDepartment | null> => {
+    const response = await axios.get("/api/departments?slug=" + slug);
+    return response.data;
+};
+
 export const getDepartmentById = async (id: number): Promise<IDepartment | null> => {
     const response = await axios.get("/api/departments?id=" + id);
+    return response.data;
+};
+
+
+export const deleteCourse = async (id: number): Promise<any | null> => {
+    const response = await axios.delete("/api/courses?id=" + id);
+    return response.data;
+};
+
+export const getCourseBySlug = async (slug: string): Promise<any | null> => {
+    const response = await axios.get("/api/courses?slug=" + slug);
     return response.data;
 };
 

@@ -2,23 +2,39 @@
 "use client"
 
 import { useParams } from 'next/navigation';
-import { coursesData } from '@/infra/data/courses-data';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import YearAccordion from '../../components/YearAccordion';
 import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
 import { FaAngleRight, FaDownload } from 'react-icons/fa6';
 // import QuickLinks from '@/components/QuickLinks';
 import { routes } from '@/infra/routes.vars';
-import { AbreviateString } from '@/utils';
+import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
+import { getCourseBySlug, getDepartmentBySlug } from '@/services/dep.service';
 // import { RolesData } from '@/infra/data/roles-data';
 
 export default function CourseDetailsPage() {
-  const { department, course_slug } = useParams();
-  const departmentData = coursesData[department as string];
+  const { department: dep_slug, course_slug } = useParams();
+  // const departmentData = coursesData[department as string];
 
-  const course = typeof department === 'string' ? coursesData[department]?.courses.find(c => c.slug === course_slug) : null;
+  // const course = typeof department === 'string' ? coursesData[department]?.courses.find(c => c.slug === course_slug) : null;
   const [openYear, setOpenYear] = useState<number | null>(null);
+
+  const [department, setDepartment] = useState<IDepartment | null>(null);
+
+  const [course, setCourse] = useState<ICourse | null>(null);
+
+  useEffect(() => {
+    const fetchDep = async () => {
+      const cour = await getCourseBySlug(course_slug as string || "");
+      const dep = await getDepartmentBySlug(dep_slug as string || "");
+      setDepartment(dep);
+      setCourse(cour);
+
+    };
+    fetchDep();
+  }, [course_slug, dep_slug]);
+
 
   if (!course) {
     return <div>Curso não encontrado</div>;
@@ -48,7 +64,7 @@ export default function CourseDetailsPage() {
         <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
         <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
       </head>
-      <HeroCourseDetail departmentName={departmentData.name as string} department={department as string} course={course} bg_image={course.course_cover} title={course.course} />
+      <HeroCourseDetail departmentName={department?.name as string} department={department?.name} course={course} bg_image={course.course_cover} title={course.course} />
       <ShortDescCourse course={course} />
       <br />
       <br />
@@ -57,19 +73,19 @@ export default function CourseDetailsPage() {
         <div className="grid grid-cols-2 gap-4">
           <div className="p">
             <h2 className="title-course">Perfil de Entrada</h2>
-            {course.entryProfile?.slice(0, 3).map((item: string, index: number) => (
-              <div key={index} className="flex gap-2 benefit-item">
-                <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{AbreviateString.abbreviate(item, 40)}</p>
-              </div>
-            ))}
+            {/* {course.entryProfile?.slice(0, 3).map((item: string, index: number) => ( */}
+            <div className="flex gap-2 benefit-item">
+              <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{course.entryProfile}</p>
+            </div>
+            {/* ))} */}
           </div>
           <div className="p">
             <h2 className="title-course">Perfil de Saída</h2>
-            {course.outProfile?.map((item: string, index: number) => (
-              <div key={index} className="flex gap-2 benefit-item">
-                <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{AbreviateString.abbreviate(item, 40)}</p>
-              </div>
-            ))}
+            {/* {course.outProfile?.map((item: string, index: number) => ( */}
+            <div className="flex gap-2 benefit-item">
+              <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>  <p>{course.outProfile}</p>
+            </div>
+            {/* ))} */}
           </div>
         </div>
       </div>
@@ -79,11 +95,11 @@ export default function CourseDetailsPage() {
       <div className="containers">
         <h2 className='mb-6 text-3xl font-semibold'>Plano Curricular</h2>
         <div className="relative grid grid-cols-2 gap-4">
-          {course.years.map(year => (
+          {course.years?.map(year => (
             <YearAccordion
               key={year.year}
               year={year}
-              isOpen={openYear === year.year}
+              isOpen={openYear === Number(year.year)}
               toggleYear={toggleYear}
             />
           ))}

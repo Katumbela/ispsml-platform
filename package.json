@@ -2,9 +2,6 @@
   "name": "ispsml-platform",
   "version": "0.0.1",
   "private": true,
-  "prisma": {
-    "seed": "node prisma/seed.ts"
-  },
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "npx prisma generate && npx prisma migrate dev --name db_init && next build",

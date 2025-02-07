@@ -7,6 +7,7 @@ import { fileToBase64 } from "@/utils/file-to-b64";
 import { createDepartment } from "@/services/dep.service";
 import { IDepartment } from "@/infra/interfaces/course.interface";
 import Image from "next/image";
+import { AlertUtils } from "@/utils";
 
 const NewDepartmentPage = () => {
     const [name, setName] = useState("");
@@ -55,12 +56,13 @@ const NewDepartmentPage = () => {
                     name: directorName,
                     picture: departmentDirectorCover,
                 },
+                slug: name.toLowerCase().replace(/\s/g, "-"),
 
             }
             const response = await createDepartment(data);
 
-            if (!response.ok) {
-                throw new Error("Erro ao criar departamento.");
+            if (response) {
+                AlertUtils.success("Departamento criado com sucesso!");
             }
 
             router.push("/departments");

@@ -8,8 +8,8 @@ import { getDepartments } from '@/services/dep.service';
 import { routes } from '@/infra/routes.vars';
 
 const DepartmentsPage = () => {
-    const [departments, setDepartments] = useState<IDepartment[] | []>([]);
     const router = useRouter();
+    const [departments, setDepartments] = useState<IDepartment[] | []>([]);
 
     const handleAddDepartment = () => {
         router.push(routes.NEW_DEP);

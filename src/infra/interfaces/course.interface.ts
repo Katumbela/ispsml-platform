@@ -38,19 +38,21 @@ export interface IDepartment {
     name: string;
     picture: string;
   };
+
   department_cover?: string;
   catalog_link?: string;
   courses?: ICourse[];
+  slug: string;
   directorId?: number;
 }
 
 export interface IYear {
-  year: number; // Exemplo: 1, 2, 3...
+  year: string; // Exemplo: 1, 2, 3...
   semesters: ISemester[];
 }
 
 export interface ISemester {
-  semester: number; // Exemplo: 1, 2
+  semester: string; // Exemplo: 1, 2
   subjects: ISubject[];
 }
 

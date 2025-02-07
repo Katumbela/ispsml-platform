@@ -1,24 +1,36 @@
 'use client';
 
 // import QuickLinks from '@/components/QuickLinks'; 
-import { coursesData } from '@/infra/data/courses-data';
+// import { coursesData } from '@/infra/data/courses-data';
 import { StringUtils } from '@/utils';
 import { useParams } from 'next/navigation';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaAngleRight } from 'react-icons/fa';
 import { CardCourseComponent } from '../components/card-course-component';
+import { IDepartment } from '@/infra/interfaces/course.interface';
+import { getDepartmentBySlug } from '@/services/dep.service';
+import { useState, useEffect } from 'react';
 
 const CSADepartment = () => {
 
-	const { department } = useParams();
-	const departmentData = coursesData[department as string];
+	const { department: slug } = useParams();
+	// const department = coursesData[department as string];
 
-	if (!departmentData) {
+	const [department, setDepartment] = useState<IDepartment | null>(null);
+	useEffect(() => {
+		const fetchDep = async () => {
+			const dep = await getDepartmentBySlug(slug as string || "");
+			setDepartment(dep);
+		};
+		fetchDep();
+	}, [slug]);
+
+	if (!department) {
 		return (
 			<div className="flex items-center justify-center h-screen bg-gray-100">
-				<div className="p-8 text-center bg-white rounded-lg shadow-lg">
-					<h1 className="mb-4 text-4xl font-semibold">Departamento não encontrado</h1>
+				<div className="text-center bg-white rounded-lg shadow-lg p-14">
+					<h1 className="mb-4 text-3xl font-semibold">Departamento não encontrado</h1>
 					<p className="text-lg text-gray-700">
 						Desculpe, não conseguimos encontrar o departamento que você está procurando.
 					</p>
@@ -49,14 +61,14 @@ const CSADepartment = () => {
 			<div className="pt-24 pb-10 bg-primary-footer">
 				<div className="containers">
 					<p className="pb-1 mb-5 text-white border-b">
-						<a href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / {departmentData.name}{' '}
+						<a href={routes.ORGANIC_UNIT_ROUTE}>Unidades Orgânicas</a> / {department.name}{' '}
 					</p>
 					<div className="sticky top-0 w-full bg-primary-footer">
 
 						<h1 className="text-4xl font-bold text-white">
-							{StringUtils.getFirstLetterOfEachWord(`Unidade ${departmentData.name}`)}
+							{StringUtils.getFirstLetterOfEachWord(`Unidade ${department.name}`)}
 						</h1>
-						<span className="text-white text-md">Unidade de {departmentData.name}</span>
+						<span className="text-white text-md">Unidade de {department.name}</span>
 					</div>
 				</div>
 			</div>
@@ -68,7 +80,7 @@ const CSADepartment = () => {
 			/> */}
 			<main className="flex gap-1 ">
 				<div className="relative w-full">
-					<Image alt="" src={departmentData.department_cover} layout="fill" objectFit="cover" />
+					<Image alt="" src={department.department_cover || ""} layout="fill" objectFit="cover" />
 				</div>
 				<div className="w-full 2xl:p-16 p-14">
 					<p className="mt-4">
@@ -76,14 +88,14 @@ const CSADepartment = () => {
 						<br />
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab expedita dolorum reiciendis esse saepe perferendis quos, incidunt eaque, nam vero provident unde debitis optio enim hic minima rem porro?
 						<br />
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab expedita dolorum reiciendis esse saepe perferendis quos, incidunt eaque, nam vero provident unde debitis optio enim hic minima rem porro?
+						<br />
 					</p>
 					<br />
 					<div className="flex">
 						<p className="flex w-full gap-4">
-							<Image alt='' width={100} height={100} className='w-[2em] my-auto border border-black rounded-full h-[2em]' src={departmentData.departmentDirector.picture} />
+							<Image alt='' width={100} height={100} className='w-[2em] my-auto border border-black rounded-full h-[2em]' src={department.departmentDirector?.picture || ""} />
 							<span className="flex flex-col my-auto">
-								{departmentData.departmentDirector.name}
+								{department?.departmentDirector?.name}
 								<span className="text-xs">
 									<strong className='text-gray-500'>Chefe do Dep. </strong>
 								</span>
@@ -93,7 +105,7 @@ const CSADepartment = () => {
 					</div>
 					<br />
 					<div>
-						<button onClick={() => window.location.href = departmentData.catalog_link} className="flex w-auto gap-2 py-5 text-white uppercase transition-all bg-black border-2 border-black mt- px-7 hover:bg-white hover:text-black ">
+						<button onClick={() => window.location.href = department.catalog_link || ""} className="flex w-auto gap-2 py-5 text-white uppercase transition-all bg-black border-2 border-black mt- px-7 hover:bg-white hover:text-black ">
 							<span className="my-auto">Baixar Catalogo</span>
 							<FaAngleRight className="my-auto" />
 						</button>
@@ -103,7 +115,7 @@ const CSADepartment = () => {
 			<div className="containers">
 				<br />
 				<br />
-				<h2 className="mb-6 title">Cursos Destacados de {departmentData.name}</h2>
+				<h2 className="mb-6 title">Cursos Destacados de {department.name}</h2>
 				<p className="text-slate-500">
 					<i>
 						Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde harum eveniet autem?
@@ -115,8 +127,8 @@ const CSADepartment = () => {
 			</div>
 			<div className="px-1 mb-1">
 				<div className="grid gap-1.5 grid-cols-4">
-					{departmentData?.courses.map((course, i) => (
-						<CardCourseComponent key={i} course={course} department={department as string} />
+					{department?.courses?.map((course, i) => (
+						<CardCourseComponent key={i} course={course} department={department} />
 					))}
 				</div>
 			</div>

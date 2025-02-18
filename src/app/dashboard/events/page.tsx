@@ -9,6 +9,7 @@ import { generateSlug } from '@/utils/slugfy';
 import DateSelect from '@/components/date-select/date-select';
 import eventsService from '@/services/events.service';
 import { fileToBase64 } from '@/utils/file-to-b64';
+import { useRouter } from 'next/navigation';
 
 const EventsDashboard = () => {
   const [title, setTitle] = useState('');
@@ -56,12 +57,15 @@ const EventsDashboard = () => {
     }
   };
 
+  const router = useRouter()
+
   return (
-    <div>
+    <div className='bg-primary-footer'>
       <div className="h-20 mb-10 bg-gray-800" />
 
-      <div className="max-w-3xl p-6 mx-auto text-white bg-gray-900 rounded-lg shadow-lg">
-        <h1 className="mb-6 text-3xl font-bold text-center">Adicionar Evento</h1>
+      <div className="max-w-3xl p-14 mx-auto text-white bg-gray-800 rounded-lg shadow-lg">
+        <button className=' my-3 hover:underline' onClick={() => router.back()}>Voltar</button>
+        <h1 className="mb-6 text-3xl font-bold text-start">Adicionar Evento</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           <InputDefault label='Título' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
           <InputDefault label='Descrição' placeholder='Descrição' value={description} onChange={(e) => setDescription(e.target.value)} required={true} />

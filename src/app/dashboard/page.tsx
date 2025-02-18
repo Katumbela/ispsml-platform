@@ -12,6 +12,8 @@ import { generateSlug } from '@/utils/slugfy';
 import newsService from '@/services/news.service';
 import { TextEditor } from '@/components/text-editor/text-editor';
 import { News } from '@/infra/interfaces/news';
+import { useRouter } from 'next/navigation';
+import { routes } from '@/infra/routes.vars';
 
 const Dashboard = () => {
   const [title, setTitle] = useState('');
@@ -79,9 +81,21 @@ const Dashboard = () => {
     setSlug(generateSlug(title));
   }, [title]);
 
+
+  const router = useRouter()
   return (
-    <div className=" flex gap-10 px-6 py-32 mx-auto text-white bg-primary-footer">
-      <div className="w-2/4 px-10">
+    <div className=" grid grid-cols-2  gap-10 px-6 py-32 mx-auto text-white bg-primary-footer">
+      <div className="col-span-2 px-10">
+        <div className="flex gap-4 mb-4">
+          <button onClick={() => router.push(routes.MANAGE_DEPARTMENTS)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
+            Gerenciar Departamentos
+          </button>
+          <button onClick={() => router.push(routes.MANAGE_EVENT)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
+            Gerenciar Eventos
+          </button>
+        </div>
+      </div>
+      <div className="px-10">
         <h1 className="mb-4 text-2xl font-bold">  Adicionar Notícia</h1>
         <form onSubmit={handleSubmit}>
           <InputDefault label='Título da notícia' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
@@ -111,17 +125,10 @@ const Dashboard = () => {
         </form>
 
       </div>
-      <div className="con w-2/4">
+      <div className="con">
 
         <h2 className="mt-10 mb-4 text-2xl font-bold">Gerenciar Notícias</h2>
-        <div className="flex gap-4 mb-4">
-          <button className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
-            Gerenciar Departamentos
-          </button>
-          <button className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
-            Gerenciar Eventos
-          </button>
-        </div>
+
         <ul>
           {
             loadingn ? <FaSpinner className="my-auto animate-spin" /> : (

@@ -16,7 +16,7 @@ export const TextEditor: React.FC<TextEditorProps> = ({ editorContent, setEditor
             placeholder='Escreva aqui...'
             onChange={handleEditorChange}
             rows={10}
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border bg-white/20 rounded"
         />
     );
 };

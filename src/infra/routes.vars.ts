@@ -8,7 +8,7 @@ const HOME_ROUTE = "/",
   CSA_ROUTE = "/csa-unit",
   GEOSCIENCE_ROUTE = "/geoscience-department",
   DET_ROUTER = "/ispsml-det",
-  VIEW_DEP = "dep",
+  VIEW_DEP = "/dashboard/manage-departments",
   ABOUT_ROUTE = "/about",
   SOCIAL_REPONSABILITY_ROUTE = "/social-responsability",
   ACADEMIC_SERVICES_ROUTE = "/academic-services",
@@ -66,7 +66,7 @@ const HOME_ROUTE = "/",
   PRESIDENCY_OFFICE_ROUTE = ABOUT_ROUTE + "/presidency-office",
   PROMOTOR_OFFICE_ROUTE = ABOUT_ROUTE + "/promotor-office",
   ADMISSIONS_AND_SCHOLARSHIPS_ROUTE = "/admissions-and-scholarships",
-  NEW_DEP = "dep/new",
+  NEW_DEP = "/dashboard/manage-departments/new",
   ADMISSIONS_FORM_ROUTE = ADMISSIONS_AND_SCHOLARSHIPS_ROUTE + "/admissions-form",
   DEPARTMENTS = {
     ENGINEERING: "engineering",
@@ -75,13 +75,17 @@ const HOME_ROUTE = "/",
     MASTERS: "masters",
     PROFESSIONAL: "professional",
     PREPARATORY: "preparatory"
-  };
+  },
+  MANAGE_DEPARTMENTS = "dashboard/manage-departments",
+  MANAGE_EVENT = "dashboard/events";
 
 
 export const routes = {
   HOME_ROUTE,
+  MANAGE_EVENT,
   GEOSCIENCE_ROUTE,
   NEW_DEP,
+  MANAGE_DEPARTMENTS,
   VIEW_NEWS_ROUTE,
   VIEW_DEP,
   PRESIDENCY_OFFICE_ROUTE,

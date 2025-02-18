@@ -14,7 +14,7 @@ export default function Home() {
 			<div className="flex  max-w-5xl justify-center gap-6">
 				{/* Main Content */}
 				<div className="relative z-10 text-start w-full px-4">
-					<h1 className="text-6xl font-bold mb-4">Novo website a caminho!</h1>
+					<h1 className="text-6xl font-bold mb-4">Novo website a caminho !</h1>
 					<p className="text-lg mb-6">Estamos a criar um website que vai proporcionar uma <strong>experiência ainda melhor</strong> para todos. Para qualquer dúvida ou mais informações, entre em contacto conosco:</p>
 
 					<div className="space-y-3">

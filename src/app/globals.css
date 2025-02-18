@@ -1,0 +1,267 @@
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i');
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&display=swap');
+
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('./fonts/static/Raleway-Regular.ttf') format('truetype'); 
+ }
+/*@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/static/Raleway-Bold.ttf') format('truetype'); 
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/static/Raleway-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/static/Raleway-BoldItalic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 700;.
+} */
+
+
+.slick-arrow {
+  display: none!important
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: Raleway;
+  font-style: normal;
+} 
+
+#toolbar-administration ul li {
+  font-family: Raleway;
+  font-style: normal;
+}
+li.select2-results__option {
+  font-family: Raleway;
+  font-style: normal;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+ 
+
+body, html {
+  overflow-x: hidden;
+}
+
+
+footer div ul li, footer div p {
+  @apply text-sm
+}
+
+::-webkit-scrollbar {
+  width: 10px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #fff; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B4B4B4FF;  
+  border-radius: 100px !important;  
+}
+
+.nav-link {
+  @apply flex p-1 mt-0 transition-all lg:mt-2 md:whitespace-nowrap;
+}
+
+.containers {
+  @apply px-5 mx-auto sm:px-10;
+}
+
+.bg-nav {
+  @apply backdrop-blur-xl bg-white/50;
+}
+
+/* 
+.children-nav {
+  z-index: 99999999999999 !important;
+} */
+
+.children-nav h3 {
+  @apply text-lg font-medium whitespace-normal text-primary-dark;
+  white-space: normal !important;
+}
+
+.children-nav ul li {
+  @apply py-1 text-sm font-normal text-black transition-all border-b cursor-pointer hover:text-primary border-b-white;
+}
+
+.children-nav div {
+  @apply break-words whitespace-break-spaces text-wrap;
+  overflow-x: hidden !important;
+  overflow-wrap: break-word !important;
+}
+
+.hover-anim {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-anim:hover {
+
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.hover-anim:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2.5px;
+  bottom: 0px;
+  left: 0;
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-anim:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.z-500 {
+  z-index: 9999999999999999999999999999999999 !important;
+}
+.z-501 {
+  z-index: 99999999999999999999999999999999999 !important;
+}
+
+.z-0 {
+  z-index: -1 !important;
+}
+
+.cta-button {
+  @apply py-4 px-5 mt-6 overflow-hidden flex gap-3 text-xl font-semibold
+}
+.cta-button svg {
+  transform: translateX(100);
+  transition: .2s;
+}
+
+
+.cta-button:hover svg {
+  transform: translateX(0);
+  transition: .3s;
+}
+
+.title {
+  @apply text-lg font-bold sm:text-3xl 2xl:text-4xl;
+}
+
+.navbar {
+  z-index: 10000 !important;
+}
+
+.card-depa {
+  background: linear-gradient(180deg, #011a4de7, #011a4de7), url(../assets/logos/logo.png) no-repeat left bottom;
+  background-size: 60%;
+  transition: .5s all;
+}
+
+.card-depa:hover {
+  background: linear-gradient(180deg, #012d86ee, #012d86ee), url(../assets/logos/logo.png) no-repeat left bottom;
+  background-size: 60%;
+  transition: .5s all;
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-down {
+  animation: slide-down 0.3s ease-out forwards;
+}
+
+.quick-link {
+  @apply flex items-center gap-4 font-medium tracking-wide transition-transform transform rounded bg-white/50;
+}
+
+.quick-link span {
+  @apply text-sm
+}
+.quick-link .icon {
+  @apply py-3 px-4 bg-primary rounded-l flex items-center justify-center
+}
+
+.slick-dots {
+  position: absolute !important;
+  bottom: 1rem !important;
+  margin-top: -10rem !important;
+}
+
+.slick-dots li button::before {
+  color: white !important;
+}
+
+.slick-slider {
+  position: relative !important;
+}
+
+/* Add hover effect for card background */
+.card-background {
+  background-size: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.cc:hover .card-background {
+  transform: scale(1.05) !important;
+}
+
+.hero-det .slick-dots {
+  display: none !important;
+}
+
+.card-view-course:hover a {
+    display: flex;
+}
+
+.font-raleway-regular {
+  font-family: 'Raleway';
+  font-weight: 400;
+}
+
+.font-raleway-bold {
+  font-family: 'Raleway';
+  font-weight: 700;
+}
+
+.font-raleway-italic {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 400;
+}
+
+.font-raleway-bold-italic {
+  font-family: 'Raleway';
+  font-style: italic;
+  font-weight: 700;
+}
+
+.title-course {
+  @apply mb-6 text-3xl font-semibold
+}

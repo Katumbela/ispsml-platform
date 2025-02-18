@@ -80,56 +80,63 @@ const Dashboard = () => {
   }, [title]);
 
   return (
-    <div className="container px-6 py-32 mx-auto text-white bg-primary-footer">
-      <h1 className="mb-4 text-2xl font-bold">  Adicionar Informação</h1>
-      <form onSubmit={handleSubmit}>
-        <InputDefault label='Título' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
+    <div className=" flex gap-10 px-6 py-32 mx-auto text-white bg-primary-footer">
+      <div className="w-2/4 px-10">
+        <h1 className="mb-4 text-2xl font-bold">  Adicionar Notícia</h1>
+        <form onSubmit={handleSubmit}>
+          <InputDefault label='Título da notícia' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
 
-        <br />
-        <InputDefault label='Descrição Curta' placeholder='Descrição Curta' value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} required={true} />
-        <br /> 
-        <TextEditor editorContent={content} setEditorContent={setContent} />
-        <br />
-        {/* <InputDefault label='Poster' placeholder='Poster' value={poster} onChange={(e) => setPoster(e.target.value)} required={true} /> */}
-        <InputDefault label='Link' placeholder='Link' value={link} onChange={(e) => setLink(e.target.value)} required={true} />
-        <InputDefault label='Slug' disabled placeholder='Slug' value={slug} onChange={(e) => setSlug(e.target.value)} required={true} />
-        <div className="mb-4">
-          <label className="block mb-2 text-sm font-bold" htmlFor="image">Imagem</label>
-          <input type="file" id="image" onChange={(e) => setImage(e.target.files?.[0] || null)} required className="w-full px-3 py-2 leading-tight text-black text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
-        </div>
-        <div className="flex justify-center">
-          <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
-            {loading ? <FaSpinner className="my-auto animate-spin" /> : (
+          <br />
+          <InputDefault label='Descrição Curta' placeholder='Descrição Curta' value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} required={true} />
+          <br />
+          <span className="text-white mb-2">Descrição geral</span>
+          <TextEditor editorContent={content} setEditorContent={setContent} />
+          <br />
+          {/* <InputDefault label='Poster' placeholder='Poster' value={poster} onChange={(e) => setPoster(e.target.value)} required={true} /> */}
+          {/* <InputDefault label='Link' placeholder='Link' value={link} onChange={(e) => setLink(e.target.value)} required={true} /> */}
+          {/* <InputDefault label='Slug' disabled placeholder='Slug' value={slug} onChange={(e) => setSlug(e.target.value)} required={true} /> */}
+          <div className="mb-4 mt-6">
+            <label className="block mb-2 text-sm font-bold" htmlFor="image">Capa da Informação</label>
+            <input type="file" id="image" onChange={(e) => setImage(e.target.files?.[0] || null)} required className="w-full px-3 py-2 leading-tight text-black text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
+          </div>
+          <div className="flex justify-start">
+            <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
+              {loading ? <FaSpinner className="my-auto animate-spin" /> : (
+                <>
+                  <span className="my-auto">Adicionar Informação</span>
+                </>
+              )}
+            </button>
+          </div>
+        </form>
+
+      </div>
+      <div className="con w-2/4">
+
+        <h2 className="mt-10 mb-4 text-2xl font-bold">Gerenciar Notícias</h2>
+        <ul>
+          {
+            loadingn ? <FaSpinner className="my-auto animate-spin" /> : (
+
               <>
-                <span className="my-auto">Adicionar Informação</span>
+                {newses.map(news => (
+                  <li key={news.id} className="mb-4">
+                    <div className="flex justify-between">
+                      <span>{news.title}</span>
+                      <button
+                        onClick={() => handleDelete(news.id)}
+                        className="px-3 py-1 text-white bg-red-600 rounded hover:bg-red-700"
+                      >
+                        Deletar
+                      </button>
+                    </div>
+                  </li>
+                ))}
               </>
-            )}
-          </button>
-        </div>
-      </form>
-      <h2 className="mt-10 mb-4 text-2xl font-bold">Gerenciar Informações</h2>
-      <ul>
-        {
-          loadingn ? <FaSpinner className="my-auto animate-spin" /> : (
-
-            <>
-              {newses.map(news => (
-                <li key={news.id} className="mb-4">
-                  <div className="flex justify-between">
-                    <span>{news.title}</span>
-                    <button
-                      onClick={() => handleDelete(news.id)}
-                      className="px-3 py-1 text-white bg-red-600 rounded hover:bg-red-700"
-                    >
-                      Deletar
-                    </button>
-                  </div>
-                </li>
-              ))}
-            </>
-          )
-        }
-      </ul>
+            )
+          }
+        </ul>
+      </div>
     </div>
   );
 };

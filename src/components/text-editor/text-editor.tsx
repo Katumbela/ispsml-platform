@@ -13,6 +13,7 @@ export const TextEditor: React.FC<TextEditorProps> = ({ editorContent, setEditor
     return (
         <textarea
             value={editorContent}
+            placeholder='Escreva aqui...'
             onChange={handleEditorChange}
             rows={10}
             className="w-full p-2 border rounded"

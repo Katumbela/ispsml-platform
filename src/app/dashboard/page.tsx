@@ -114,6 +114,14 @@ const Dashboard = () => {
       <div className="con w-2/4">
 
         <h2 className="mt-10 mb-4 text-2xl font-bold">Gerenciar Notícias</h2>
+        <div className="flex gap-4 mb-4">
+          <button className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
+            Gerenciar Departamentos
+          </button>
+          <button className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
+            Gerenciar Eventos
+          </button>
+        </div>
         <ul>
           {
             loadingn ? <FaSpinner className="my-auto animate-spin" /> : (

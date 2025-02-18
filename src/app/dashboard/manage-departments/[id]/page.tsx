@@ -33,10 +33,6 @@ const DepartmentCoursesPage = () => {
     const deleteCourseDep = async (id: number) => {
         await deleteCourse(Number(id));
         AlertUtils.success('Curso deletado com sucesso');
-        // } catch (error: any) {
-        //     console.log(error.message);
-        //     AlertUtils.error('Erro ao deletar curso');
-        // }
     };
 
     return (

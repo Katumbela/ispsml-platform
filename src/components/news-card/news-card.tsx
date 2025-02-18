@@ -51,4 +51,24 @@ const NewsCard: React.FC<NewsCardProps> = ({ slug, title, content, postDate, ima
 	);
 };
 
+const NewsCardSkeleton: React.FC = () => {
+	return (
+		<div className="px-1 2xl:px-2">
+			<div className="w-full relative h-[24rem] 2xl:h-[45vh] overflow-hidden border shadow-lg animate-pulse">
+				<div className="relative w-full overflow-hidden h-44 2xl:h-[25vh] bg-gray-300"></div>
+				<div className="p-2">
+					<div className="h-6 bg-gray-300 rounded w-3/4"></div>
+					<div className="mt-1 h-4 bg-gray-300 rounded w-full"></div>
+					<div className="mt-1 h-4 bg-gray-300 rounded w-full"></div>
+					<div className="absolute flex justify-between right-2 left-2 bottom-3">
+						<div className="px-3 py-1 mt-auto h-6 bg-gray-300 rounded w-20"></div>
+						<div className="h-6 bg-gray-300 rounded w-16"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
 export default NewsCard;
+export { NewsCardSkeleton };

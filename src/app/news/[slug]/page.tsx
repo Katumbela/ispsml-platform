@@ -38,30 +38,30 @@ export default function ViewNewsPage() {
 				</Head>
 				<div className="pt-24 pb-6 bg-primary">
 					<div className="containers">
-						<div className="w-3/4 h-8 bg-gray-200 rounded"></div>
+						<div className="w-3/4 h-8 bg-gray-200 rounded animate-pulse"></div>
 						<div className="flex gap-2 mt-4">
-							<div className="w-1/4 h-4 bg-gray-200 rounded"></div>
+							<div className="w-1/4 h-4 bg-gray-200 rounded animate-pulse"></div>
 						</div>
 					</div>
 				</div>
 				<section className="containers">
 					<div className="flex gap-4 my-3">
-						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
-						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
-						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
-						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded animate-pulse"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded animate-pulse"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded animate-pulse"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded animate-pulse"></div>
 					</div>
 					<br />
 					<div className="flex">
 						<div className="w-full">
-							<div className="h-[400px] 2xl:h-[600px] bg-gray-300"></div>
+							<div className="h-[400px] 2xl:h-[600px] bg-gray-300 animate-pulse"></div>
 						</div>
 						<div className="w-full containers">
-							<div className="w-1/2 h-6 bg-gray-200 rounded"></div>
+							<div className="w-1/2 h-6 bg-gray-200 rounded animate-pulse"></div>
 							<br />
-							<div className="w-full h-4 bg-gray-200 rounded"></div>
-							<div className="w-full h-4 bg-gray-200 rounded"></div>
-							<div className="w-full h-4 bg-gray-200 rounded"></div>
+							<div className="w-full h-4 bg-gray-200 rounded animate-pulse"></div>
+							<div className="w-full h-4 bg-gray-200 rounded animate-pulse"></div>
+							<div className="w-full h-4 bg-gray-200 rounded animate-pulse"></div>
 						</div>
 					</div>
 				</section>
@@ -70,17 +70,17 @@ export default function ViewNewsPage() {
 				<br />
 				<section className="py-10 view-more bg-slate-100">
 					<div className="containers">
-						<div className="w-1/4 h-6 bg-gray-200 rounded"></div>
+						<div className="w-1/4 h-6 bg-gray-200 rounded animate-pulse"></div>
 						<br />
 						<br />
 						<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
 							{[...Array(3)].map((_, index) => (
-								<div key={index} className="h-48 bg-gray-200 rounded"></div>
+								<div key={index} className="h-48 bg-gray-200 rounded animate-pulse"></div>
 							))}
 						</div>
 						<br />
 						<br />
-						<div className="w-1/4 h-8 bg-gray-200 rounded"></div>
+						<div className="w-1/4 h-8 bg-gray-200 rounded animate-pulse"></div>
 					</div>
 				</section>
 			</div>
@@ -89,11 +89,17 @@ export default function ViewNewsPage() {
 
 	if (!news) {
 		return (
-			<div>
+			<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
 				<Head>
 					<title>Notícia não encontrada</title>
 				</Head>
-				Notícia não encontrada
+				<div className="p-6 bg-white rounded shadow-md">
+					<h1 className="text-2xl font-semibold text-gray-800">Notícia não encontrada</h1>
+					<p className="mt-4 text-gray-600">A notícia que você está procurando não foi encontrada. Por favor, verifique o link ou volte para a página inicial.</p>
+					<button onClick={() => window.location.href = routes.NEWS_ROUTE} className="mt-6 px-4 py-2 text-white bg-primary rounded hover:bg-primary-dark">
+						Voltar para Notícias
+					</button>
+				</div>
 			</div>
 		);
 	}

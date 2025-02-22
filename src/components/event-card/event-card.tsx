@@ -26,7 +26,7 @@ export default function EventCard({ data }: { data: Event }) {
 
 export function EventCardSkeleton() {
     return (
-        <div className="p-4 bg-gray-200 rounded shadow-md animate-pulse">
+        <div className="p-4 sm:w-[20rem] w-full bg-gray-200 rounded shadow-md animate-pulse">
             <div className="w-full h-48 bg-gray-300 rounded"></div>
             <div className="w-3/4 h-6 mt-2 bg-gray-300 rounded"></div>
             <div className="w-1/2 h-4 mt-1 bg-gray-300 rounded"></div>

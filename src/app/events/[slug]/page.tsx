@@ -82,6 +82,12 @@ export default function EventDetailPage() {
                 <div className="pt-24 pb-6 bg-primary-footer">
                     <div className="containers">
                         <h1 className="text-3xl font-semibold text-white">{event.title}</h1>
+
+                        {/* Breadcrumb navigation */}
+                        <nav className="text-sm text-white my-3">
+                            <Link href={`/${routes.ALL_EVENT}`} className="hover:underline">Eventos</Link> / <span>{event.title}</span>
+                        </nav>
+
                         <p className="flex gap-2 mt-4 text-sm text-white">
                             <span className="my-auto">{DateUtils.getDateTimePt(event.date)}</span>
                         </p>

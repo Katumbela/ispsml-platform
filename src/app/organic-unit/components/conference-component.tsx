@@ -1,4 +1,4 @@
-import { images } from '@/assets';
+
 import React, { useEffect, useState } from 'react';
 // import { events } from '@/infra/data/events';
 import Link from 'next/link';
@@ -7,6 +7,7 @@ import { AbreviateString, DateUtils } from '@/utils';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import eventsService from '@/services/events.service';
+import { routes } from '@/infra/routes.vars';
 
 const ConferenceComponent = () => {
   const [events, setEvents] = useState<Event[] | []>([]);
@@ -36,15 +37,19 @@ const ConferenceComponent = () => {
           <Skeleton height={400} />
         ) : (
           featuredEvent && (
-            <div className="relative grid items-center p-5 overflow-hidden text-white sm:p-10 place-content-start md:col-span-1" style={{ background: `linear-gradient(90deg, #00000093, #000000AF), url(${images.departImages.ciencias_sociais.src}) center center`, backgroundSize: "cover" }}>
+            <div className="relative grid items-center p-5 overflow-hidden text-white sm:p-10 place-content-start md:col-span-1" style={{ background: `linear-gradient(90deg, #00000093, #000000AF), url(${featuredEvent.imageUrl}) center center`, backgroundSize: "cover" }}>
               <div className='w-full '>
                 <div className="top-0 left-0 flex gap-6 text-lg md:text-2xl sm:text-xl ">
                   <p className="flex flex-col font-semibold ">{new Date(featuredEvent.date).getDate()} <span className=''>{DateUtils.getAbbreviatedMonth(new Date(featuredEvent.date))}</span></p>
                   <p className="flex flex-col ">{DateUtils.getTime(featuredEvent.date)} <span className=''>HRS</span></p>
                 </div>
-                <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white top-16 left-4">
-                  {featuredEvent.category}
-                </span>
+                {
+                  featuredEvent.category && (
+                    <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white top-16 left-4">
+                      {featuredEvent.category}
+                    </span>
+                  )
+                }
                 <div className="mt-12">
                   <h3 className="mb-4 text-xl font-semibold sm:text-2xl">
                     {featuredEvent.title}
@@ -93,9 +98,12 @@ const ConferenceComponent = () => {
               </div>
             ))
           )}
-          <button className="w-full px-4 py-2 mt-4 font-medium text-gray-700 border border-gray-500 hover:bg-gray-200">
-            Ver mais eventos
-          </button>
+          <br />
+          <div className="w-full">
+            <button onClick={() => window.location.href = routes.ALL_EVENT} className="w-full  px-4 py-2 mt-4 font-medium text-gray-700 border border-gray-500 hover:bg-gray-200">
+              Ver mais eventos
+            </button>
+          </div>
         </div>
       </div>
     </section>

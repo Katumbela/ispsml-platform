@@ -10,7 +10,7 @@ const Contact = () => {
 			<GlobalHero
 				title="Como podemos ajudar ?"
 				subtitle="Contante o ISPSML"
-				className="h-[500px] 2xl:h-[650px]"
+				className="h-[400px] 2xl:h-[550px]"
 				bottomBG="dark"
 				bgImage={images.backgrounds.bg_support.src}
 			/>

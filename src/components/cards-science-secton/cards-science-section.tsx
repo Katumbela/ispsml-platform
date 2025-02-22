@@ -40,8 +40,9 @@ export function ScienceStudyCard() {
 					<div className="my-auto ">
 						<h2 className='title'>Laboratórios de Informática</h2>
 						<p className="mt-4 text-gray-600">
-							Conheça a nova abordagem de pesquisa no Tecnológico de Monterrey. Descubra os três
-							institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
+							Os nossos laboratórios de informática estão equipados com tecnologia de ponta para
+							proporcionar um ambiente ideal de aprendizagem e pesquisa. Aqui, os estudantes têm acesso
+							a ferramentas inovadoras que os preparam para os desafios do mundo digital.
 						</p>
 						<ButtonBlueComponent
 							onclick={() => window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}
@@ -66,8 +67,11 @@ export function ScienceStudyCard() {
 					<div className="my-auto containers ">
 						<h2 className='title'>Biblioteca Moderna</h2>
 						<p className="mt-4 text-gray-600">
-							Conheça a nova abordagem de pesquisa no Tecnológico de Monterrey. Descubra os três
-							institutos e os diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
+							A nossa biblioteca moderna oferece um vasto acervo de livros, revistas e recursos digitais,
+							proporcionando um espaço confortável e inspirador para estudos e pesquisas. Com um
+							ambiente organizado e acesso a materiais actualizados, garantimos suporte ao
+							desenvolvimento académico dos nossos estudantes.
+
 						</p>
 						<ButtonBlueComponent
 							onclick={() => window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}

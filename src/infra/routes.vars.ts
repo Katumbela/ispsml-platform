@@ -77,11 +77,13 @@ const HOME_ROUTE = "/",
     PREPARATORY: "preparatory"
   },
   MANAGE_DEPARTMENTS = "dashboard/manage-departments",
-  MANAGE_EVENT = "dashboard/events";
+  MANAGE_EVENT = "dashboard/events",
+  ALL_EVENT = "events";
 
 
 export const routes = {
   HOME_ROUTE,
+  ALL_EVENT,
   MANAGE_EVENT,
   GEOSCIENCE_ROUTE,
   NEW_DEP,

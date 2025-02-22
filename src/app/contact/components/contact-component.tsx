@@ -14,9 +14,9 @@ const ContactComponent = () => {
   };
 
   const contactOptions = [
-    { 
-      icon: <BiBot className='m-auto text-6xl' />, 
-      label: 'ISPSMLbot', 
+    {
+      icon: <BiBot className='m-auto text-6xl' />,
+      label: 'ISPSMLbot',
       content: (
         <>
           <p><strong>Assistência por ISPSMLbot disponível 24/7.</strong></p>
@@ -24,29 +24,29 @@ const ContactComponent = () => {
         </>
       )
     },
-    { 
-      icon: <FaWhatsapp className='m-auto text-6xl' />, 
-      label: 'WhatsApp', 
+    {
+      icon: <FaWhatsapp className='m-auto text-6xl' />,
+      label: 'WhatsApp',
       content: (
         <>
           <p><strong>Contate-nos pelo WhatsApp a qualquer momento.</strong></p>
           <p>Ajudar você de maneira ágil é a facilidade que este canal de atendimento imediato nos proporciona.</p>
           <p>Nosso consultor virtual está disponível 24 horas por dia, 365 dias por ano para ajudar você. Se precisar de assistência personalizada, nossos consultores estão disponíveis de segunda a sexta-feira, das 8h às 18h.</p>
           <p><strong>Iniciar conversa {'>'}</strong></p>
-          <p>+244 928 134 249 (somente mensagens de texto)</p>
+          <p>+244 939 072 374; +244 939 072 373  (somente mensagens de texto)</p>
         </>
       )
     },
-    { 
-      icon: <FaEnvelope className='m-auto text-6xl' />, 
-      label: 'Email', 
+    {
+      icon: <FaEnvelope className='m-auto text-6xl' />,
+      label: 'Email',
       content: (
         <>
           <p><strong>Envie um email para assistência.</strong></p>
-          <p>Responderemos o mais rápido possível.</p> 
+          <p>Responderemos o mais rápido possível.</p>
           <br />
-          <p>suporte@ISPSML.com</p>
-          <p>atendimento@ISPSML.com</p>
+          <p>geral@ispsml.com</p>
+          <p>secretaria@ispsml.com</p>
         </>
       )
     },
@@ -61,9 +61,9 @@ const ContactComponent = () => {
         </>
       ),
     },
-    { 
-      icon: <FaUserFriends className='m-auto text-6xl' />, 
-      label: 'Atendimento presencial', 
+    {
+      icon: <FaUserFriends className='m-auto text-6xl' />,
+      label: 'Atendimento presencial',
       content: (
         <>
           <p><strong>Visite-nos em nossos escritórios para assistência pessoalmente.</strong></p>
@@ -76,14 +76,14 @@ const ContactComponent = () => {
   return (
     <section className="py-8 mx-auto ">
       <div className="grid grid-cols-1 gap-0 md:grid-cols-12">
-        
+
         {/* Primeira linha de opções */}
         <div className="grid grid-cols-1 col-span-12 gap-4 md:grid-cols-3">
           {contactOptions.slice(0, 3).map((option, index) => (
             <div key={index} className="col-span-1">
               <div
                 onClick={() => toggleAccordion(index)}
-                className={cn("cursor-pointer transition-all grid hover:bg-sky-500 hover:text-white h-[20rem]", {"bg-sky-500 text-white": activeIndex === index})}
+                className={cn("cursor-pointer transition-all grid hover:bg-sky-500 hover:text-white h-[20rem]", { "bg-sky-500 text-white": activeIndex === index })}
               >
                 <div className="flex flex-col items-center justify-center my-auto">
                   <div>
@@ -113,9 +113,9 @@ const ContactComponent = () => {
               transition={{ duration: 0.3 }}
               className="col-span-12 py-6 text-wshite text-md bg-xsky-500"
             >
-           <div className="containers">
-           {contactOptions[activeIndex].content}
-           </div>
+              <div className="containers">
+                {contactOptions[activeIndex].content}
+              </div>
             </motion.div>
           )}
         </AnimatePresence>
@@ -126,7 +126,7 @@ const ContactComponent = () => {
             <div key={index + 3} className="col-span-1">
               <div
                 onClick={() => toggleAccordion(index + 3)}
-                className={cn("cursor-pointer transition-all grid hover:bg-sky-500 hover:text-white h-[20rem]", {"bg-sky-500 text-white": activeIndex === index + 3})}
+                className={cn("cursor-pointer transition-all grid hover:bg-sky-500 hover:text-white h-[20rem]", { "bg-sky-500 text-white": activeIndex === index + 3 })}
               >
                 <div className="flex flex-col items-center justify-center my-auto">
                   <div>
@@ -157,23 +157,23 @@ const ContactComponent = () => {
               className="col-span-12 py-6 text-lg text-white bg-sky-500"
             >
               <div className="containers">
-              {contactOptions[activeIndex].content}
+                {contactOptions[activeIndex].content}
               </div>
             </motion.div>
           )}
         </AnimatePresence>
-     </div>
+      </div>
 
 
-<br />
-<br /><div className="containers">
+      <br />
+      <br /><div className="containers">
 
 
-<p>ISPSML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no ISPSML. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.
-<br />
-<br />
-Na o ISPSML, nos esforçamos para oferecer a melhor experiência possível. Nossos pilares são confiança, empatia e compreensão, para que você se sinta ouvido e apoiado o tempo todo. Além disso, garantimos respostas claras, ágeis e oportunas para resolver suas dúvidas ou problemas de forma eficiente. Queremos que o acesso aos nossos serviços seja fácil e rápido, e para isso contamos com uma equipe altamente capacitada e comprometida. Sua satisfação é nossa prioridade!</p>
-</div>
+        <p>ISPSML Secretaria é a equipe especializada em oferecer o melhor atendimento e serviços especializados no ISPSML. Nos dedicamos a fazer com que cada processo e serviço funcione de maneira eficiente. Com o apoio de nossos líderes em cada área, estamos prontos para resolver qualquer particularidade que você possa ter.
+          <br />
+          <br />
+          Na o ISPSML, nos esforçamos para oferecer a melhor experiência possível. Nossos pilares são confiança, empatia e compreensão, para que você se sinta ouvido e apoiado o tempo todo. Além disso, garantimos respostas claras, ágeis e oportunas para resolver suas dúvidas ou problemas de forma eficiente. Queremos que o acesso aos nossos serviços seja fácil e rápido, e para isso contamos com uma equipe altamente capacitada e comprometida. Sua satisfação é nossa prioridade!</p>
+      </div>
     </section>
   );
 };

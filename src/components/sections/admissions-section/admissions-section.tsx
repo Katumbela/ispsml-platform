@@ -87,7 +87,10 @@ const FixedImageScrollWithBrutalEffect = () => {
 			title: 'Preparatórios',
 			content: (
 				<>
-					Mestres e Educação Continuada, Programas de Pós-Graduação, Nossos programas de educação continuada são projetados para prepará-lo para os desafios do mercado atual. Oferecemos cursos preparatórios que ajudam a desenvolver habilidades avançadas e conhecimentos especializados, essenciais para o sucesso em diversas áreas profissionais.
+					Os nossos cursos preparatórios foram concebidos para ajudar os estudantes a aceder ao
+					ensino superior com uma base sólida de conhecimentos. Estes programas reforçam
+					competências essenciais e preparam os alunos para os desafios académicos das
+					licenciaturas, aumentando as suas chances de sucesso.
 					<div className="mt-6">
 						<a href={routes.KNOW_MORE_ROUTE + "/preparatory"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
@@ -98,7 +101,11 @@ const FixedImageScrollWithBrutalEffect = () => {
 			title: 'Licenciatura',
 			content: (
 				<>
-					Se o seu interesse é aprofundar seus conhecimentos, fortalecer sua visão de mundo, se você deseja adquirir ou fortalecer o inglês como segunda língua, a PrepaTec é a sua melhor opção. Nossos programas de licenciatura são projetados para fornecer uma base sólida em diversas áreas do conhecimento, preparando você para uma carreira de sucesso.
+					Se pretende aprofundar os seus conhecimentos e ampliar a sua visão do mundo, os
+					nossos cursos de licenciatura são a escolha certa. Com uma base sólida em várias áreas
+					do saber, garantimos uma formação que lhe permitirá construir uma carreira de sucesso
+					e expandir as suas oportunidades profissionais.
+
 					<div className="mt-6">
 						<a href={routes.KNOW_MORE_ROUTE + "/undergraduation"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>
@@ -109,7 +116,10 @@ const FixedImageScrollWithBrutalEffect = () => {
 			title: 'Técnico Profissional',
 			content: (
 				<>
-					Admissões, Bolsas de Estudo, Programas Acadêmicos, Saiba mais. Nossos programas de formação profissional são projetados para fornecer as habilidades e conhecimentos necessários para se destacar no mercado de trabalho. Oferecemos uma variedade de cursos e certificações que atendem às demandas das indústrias modernas.
+					Ganhe as competências e conhecimentos essenciais para se destacar no mercado de
+					trabalho com os nossos cursos técnicos. Oferecemos formações ajustadas às exigências
+					da indústria moderna, garantindo certificações que impulsionam a sua empregabilidade
+					e o seu crescimento profissional.
 					<div className="mt-6">
 						<a href={routes.KNOW_MORE_ROUTE + "/professional"} className="flex items-center text-sm font-semibold uppercase transition-all text-slate-600 hover:text-slate-700"> Saber mais <FaAngleRight className="ml-1" /></a>
 					</div>

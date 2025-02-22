@@ -19,7 +19,7 @@ export default function Home() {
 
 					<div className="space-y-3">
 						<p className="flex items-start justify-start space-x-2">
-							📞 <span>(+244) 929 707 766, 997 614 691</span>
+							📞 <span>+244 939 072 374; +244 939 072 373 </span>
 						</p>
 						<p className="flex items-center justify-start space-x-2">
 							📧 <span>secretaria@ispsml.ao</span>

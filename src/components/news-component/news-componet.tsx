@@ -26,7 +26,9 @@ export function NewsComponents() {
 			setLoading(false);
 			if (news.length > 0) {
 				const randomIndex = Math.floor(Math.random() * news.length);
-				setRandomNews(news[randomIndex]);
+				const featuredNews = news[randomIndex];
+				setRandomNews(featuredNews);
+				setNewses(news.filter(n => n !== featuredNews));
 			}
 		});
 	}, []);
@@ -87,7 +89,7 @@ export function NewsComponents() {
 								title="Clique para ler mais"
 								className="relative h-[20rem] w-full transition-all cursor-pointer sm:h-full hover:shadow-xl shadow-primary bg-primary"
 							>
-								<div className="absolute px-3 text-xs text-white rounded-full py sm:text-base-1 bg-primary left-4 top-4">
+								<div className="absolute px-3 text-xs text-white rounded-full py-1.5 sm:text-base-1 bg-primary left-4 top-4">
 									Em Destaque
 								</div>
 								<div className="absolute bottom-0 left-0 right-0 px-4 py-5 text-white">

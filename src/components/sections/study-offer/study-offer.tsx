@@ -33,19 +33,32 @@ export function StudyOffer() {
 	const cards: Card[] = [
 		{
 			title: 'Inscrições e Matrículas',
-			description: 'Informações detalhadas sobre como se inscrever, os requisitos necessários, prazos importantes e como obter bolsas de estudo para ajudar a financiar sua educação.',
+			description: `
+			Descubra como garantir sua vaga! Encontre informações detalhadas sobre o processo de
+			inscrição, os requisitos necessários, prazos importantes e oportunidades de bolsas de
+			estudo para apoiar o seu percurso académico.
+			`,
 			image: images.departImages.eng_tech.src,
 			link: routes.APPLY_ROUTE
 		},
 		{
 			title: 'Unidades Orgânicas',
-			description: 'Detalhes abrangentes sobre as diferentes unidades orgânicas da instituição, incluindo suas funções, departamentos, cursos oferecidos e oportunidades de pesquisa.',
+			description: `
+			Conheça as nossas unidades orgânicas e descubra a estrutura que sustenta a excelência
+			do nosso ensino. Saiba mais sobre as diferentes áreas de estudo e como cada unidade
+			contribui para a formação integral dos estudantes.
+
+			`,
 			image: images.departImages.ciencias_sociais.src,
 			link: routes.ORGANIC_UNIT_ROUTE
 		},
 		{
 			title: 'Responsabilidade Social',
-			description: 'Iniciativas e projetos de responsabilidade social que a instituição está envolvida, destacando o impacto positivo na comunidade e as oportunidades de participação para os alunos.',
+			description: `
+			O nosso compromisso vai além da educação. Acreditamos no impacto positivo da nossa
+			instituição na sociedade, promovendo iniciativas que beneficiam a comunidade e
+			impulsionam o desenvolvimento social.
+			`,
 			image: images.departImages.geoscience.src,
 			link: routes.SOCIAL_REPONSABILITY_ROUTE
 		}

@@ -6,58 +6,16 @@ import { FaAngleRight } from 'react-icons/fa6';
 import { HoverCard } from '@/components/hover-card/hover-card';
 import { routes } from '@/infra/routes.vars';
 import ButtonLink from '@/components/buttonLink/button-link';
-// import { title } from 'process';
-// import Image from 'next/image';
-// import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
+import { ourInst } from '@/data/aboutContent';
 
-interface IOurInst {
-	title: string;
-	link: string;
-	bg: string;
-}
-const ourInst: IOurInst[] = [
-	{
-		bg: images.backgrounds.bg_student_11.src,
-		link: '#',
-		title: 'Apresentação Institucional'
-	},
-	{
-		bg: images.backgrounds.bg_graduated_student_1.src,
-		link: '#',
-		title: 'Infraestuturas'
-	},
-	{
-		bg: images.backgrounds.bg_graduated_student_2.src,
-		link: '#',
-		title: 'Convênios e Protocolos'
-	},
-	{
-		bg: images.backgrounds.bg_school_4.src,
-		link: '#',
-		title: 'Organigrama'
-	},
-	{
-		bg: images.backgrounds.bg_school_2.src,
-		link: '#',
-		title: 'Código de Conduta e Ética'
-	},
-	{
-		bg: images.backgrounds.bg_vertical_education_1.src,
-		link: '#',
-		title: 'Ação Social'
-	},
-	{
-		bg: images.backgrounds.bg_student_11.src,
-		link: '#',
-		title: 'Mensagem de Direção'
-	},
-	{
-		bg: images.backgrounds.bg_graduated_student_1.src,
-		link: '#',
-		title: 'Legislação'
-	}
-];
 const About = () => {
+	const router = useRouter();
+
+	const handleNavigation = (link: string) => {
+		router.push(link);
+	};
+
 	return (
 		<>
 			<head>
@@ -68,20 +26,20 @@ const About = () => {
 				bgImage={images.backgrounds.bg_woman_bg_flower.src}
 				bottomBG="dark"
 				title={'Sobre Nós'}
-				className="h-[500px] 2xl:h-[750px]"
+				position='top'
+				className="h-[400px] 2xl:h-[550px]"
 			/>
 
 			<div className="py-8 -mt-2 2xl:py-14 bg-primary">
 				<div className="containers">
 					{' '}
 					<p className="text-white text-md max-w-[83vw]">
-						At ISPSML you will develop your professional and human potential through the high academic
-						level, resources and programs of excellence we offer.
+						Na ISPSML você desenvolverá seu potencial profissional e humano através do alto nível acadêmico, recursos e programas de excelência que oferecemos.
 					</p>
 				</div>
 			</div>
 			<div className="flex flex-col w-full sm:grid sm:grid-cols-2">
-				<div
+				{/* <div
 					style={{
 						background: `url(${images.bgPplImages.bg_ppl22.src}) center center`,
 						backgroundRepeat: 'no-repeat',
@@ -90,16 +48,15 @@ const About = () => {
 					}}
 					className="lg:h-[20rem]  h-[18rem]  2xl:h-[23rem] relative w-full"
 				>
-					{/* <Image alt="" objectFit='cover' layout='fill' src={images.teachers.katumbela} /> */}
-				</div>
-				<div className="lg:h-[20rem]  sm:h-[18rem] py-8 sm:py-0 2xl:h-[23rem] grid  w-full">
+				</div> */}
+				{/* <div className="lg:h-[20rem]  sm:h-[18rem] py-8 sm:py-0 2xl:h-[23rem] grid  w-full">
 					<div className="w-full my-auto 2xl:mx-24 containers">
 						<h2 className="text-3xl font-bold lg:text-4xl 2xl:text-5xl">Promotoria</h2>
 						<ButtonLink className='mt-10' href={routes.ABOUT_ROUTE + "/promotor"} rightIcon={<FaAngleRight className="my-auto" />} >
 							<span className="my-auto">Saber Mais</span>
 						</ButtonLink>
 					</div>
-				</div>
+				</div> */}
 				<div
 					style={{
 						background: `url(${images.teachers.president_photo.src}) center center`,
@@ -165,8 +122,7 @@ const About = () => {
 			<div className="containers">
 				<h2 className="text-2xl font-bold lg:text-3xl">Nossa Instituição</h2>
 				<p className="text-sm text-gray-600 lg:text-base">
-					The ISPSML, founded in 1943, is a private, non-profit institution committed to the quality of higher
-					education in the country.
+					O Instituto Superior Politécnico São Martinho de Lima (ISPSML), fundado em 1943, é uma instituição privada e sem fins lucrativos, comprometida com a qualidade do ensino superior em Angola. Tem como missão formar profissionais altamente qualificados, promovendo a inovação, a ética e o desenvolvimento sustentável.
 				</p>
 			</div>
 			<br />
@@ -182,6 +138,7 @@ const About = () => {
 							}}
 							key={i}
 							className="grid px-5 text-xl text-center cursor-pointer items-center justify-center 2xl:text-xl font-medium text-white h-[15rem] 2xl:h-[35vh]"
+							onClick={() => handleNavigation(`/about/institution/${info.link}`)}
 						>
 							{info.title}
 						</div>

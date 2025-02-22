@@ -129,7 +129,23 @@ export const RolesData: IRole[] = [
         id: "president",
         pic: images.teachers.president_photo.src,
         name: "Bill Gates",
-        about: "<p>Bill Gates é um Presidente com um doutorado na área. Ele é conhecido por sua abordagem prática ao ensino da química, sempre buscando maneiras de tornar as aulas mais interativas e envolventes.</p><p>Ricardo é um pesquisador dedicado, com várias publicações em revistas científicas renomadas.</p><p>Ele também lidera iniciativas de responsabilidade social e programas de bolsas de estudo.</p><p>Bill tem sido uma figura central na promoção da educação acessível e de qualidade para todos. Ele acredita que a educação é um direito fundamental e trabalha para garantir que todos os alunos tenham as mesmas oportunidades de sucesso. Sua liderança e visão têm sido fundamentais para o desenvolvimento de programas e iniciativas que apoiam a aprendizagem e o crescimento dos alunos. Além disso, Bill é um defensor ativo da responsabilidade social, liderando várias iniciativas que visam melhorar a comunidade e o mundo em geral.</p>",
+        about: `<p>A Presidência do Instituto Superior Politécnico de São Martinho de Lima (ISPSML) é a
+estrutura responsável pela definição e implementação das diretrizes estratégicas da
+instituição. Cabe a esta liderança garantir a excelência acadêmica, promover a inovação
+no ensino e na pesquisa, e fortalecer a ligação entre o ISPSML e a sociedade.
+O órgão presidencial trabalha em estreita colaboração com as demais instâncias
+diretivas para assegurar um ambiente educacional de qualidade, alinhado às
+necessidades do mercado e aos desafios do desenvolvimento sustentável. Além disso, a
+Presidência desempenha um papel fundamental na consolidação de parcerias
+institucionais, na captação de recursos e na implementação de políticas que favoreçam o
+crescimento do instituto.
+Através de uma gestão transparente e participativa, a Presidência do ISPSML busca
+criar condições para a formação de profissionais altamente qualificados, promovendo o
+ensino, a investigação científica e a extensão universitária como pilares fundamentais
+para o progresso social e econômico de Angola.
+O Corpo Diretivo é composto por profissionais altamente qualificados, que atuam de
+forma integrada para garantir uma gestão eficiente e alinhada aos objetivos
+institucionais. São eles:</p>`,
         role: "Presidente",
         cv: "link_para_cv",
         linkedin: "link_para_linkedin",
@@ -185,7 +201,7 @@ export const RolesData: IRole[] = [
             title: "A História Viva",
             description: "Explorando os eventos que moldaram o mundo moderno."
         }],
-      
+
         team: ["team-member-1", "team-member-2"]
     },
     {

@@ -1,16 +1,17 @@
 "use client"
 
 import { useParams } from 'next/navigation';
-// import { events } from '@/infra/data/events';
+// import { events } from '@/infra/data${routes.ALL_EVENT}';
 import Image from 'next/image';
 import Link from 'next/link';
 import { AbreviateString } from '../../../utils/abreviate-utils';
 import { DateUtils } from '@/utils';
 import { useEffect, useState } from 'react';
 import { Event } from '@/infra/interfaces/events.interface';
-import Head  from 'next/head';
+import Head from 'next/head';
 import Custom404 from '@/app/404/page';
 import eventsService from '@/services/events.service';
+import { routes } from '@/infra/routes.vars';
 
 export default function EventDetailPage() {
     const { slug } = useParams();
@@ -65,18 +66,18 @@ export default function EventDetailPage() {
 
     return (
         <>
-        <Head>
-            <title>{event.title} | ISPSML</title>
-            <meta name="description" content={event.description} />
-            <meta property="og:title" content={event.title} />
-            <meta property="og:description" content={event.description} />
-            <meta property="og:image" content={event.imageUrl} />
-            <meta property="og:url" content={`https://seusite.com/events/${event.slug}`} />
-            <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={event.title} />
-            <meta name="twitter:description" content={event.description} />
-            <meta name="twitter:image" content={event.imageUrl} />
-        </Head>
+            <Head>
+                <title>{event.title} | ISPSML</title>
+                <meta name="description" content={event.description} />
+                <meta property="og:title" content={event.title} />
+                <meta property="og:description" content={event.description} />
+                <meta property="og:image" content={event.imageUrl} />
+                <meta property="og:url" content={`https://seusite.com${routes.ALL_EVENT}/${event.slug}`} />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content={event.title} />
+                <meta name="twitter:description" content={event.description} />
+                <meta name="twitter:image" content={event.imageUrl} />
+            </Head>
             <div>
                 <div className="pt-24 pb-6 bg-primary-footer">
                     <div className="containers">
@@ -123,11 +124,11 @@ export default function EventDetailPage() {
                                         {AbreviateString.abbreviate(event.title, 30)}
                                     </h4>
                                     <p className="text-xs text-gray-600">{DateUtils.getDateTime(event.date)} HRS.</p>
-                                    <Link href={`/events/${event.slug}`}>
+                                    <Link href={`${routes.ALL_EVENT}/${event.slug}`}>
                                         <button className="mt-1 text-xs text-blue-500 hover:underline">Conferência online</button>
                                     </Link>
                                 </div>
-                                <Link href={`/events/${event.slug}`}>
+                                <Link href={`${routes.ALL_EVENT}/${event.slug}`}>
                                     <button className="ml-4 text-sm text-pink-500 hover:underline">Ver evento</button>
                                 </Link>
                             </div>

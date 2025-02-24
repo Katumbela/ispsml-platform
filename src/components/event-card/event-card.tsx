@@ -9,7 +9,7 @@ export default function EventCard({ data }: { data: Event }) {
     return (
         <div onClick={() => window.location.href = `${routes.ALL_EVENT}/${data.slug}`} className=" bg-white sm:w-[20rem] w-full cursor-pointer shadow-md group">
             <div className="2xl:w-[20rem] w-full overflow-hidden relative h-[12rem] bg-gray-300 ">
-                <Image src={data.imageUrl} alt={data.title} className=" group-hover:scale-[1.07] transition-all" layout='fill' objectFit='cover' />
+                <Image src={data.imageUrl as string} alt={data.title} className=" group-hover:scale-[1.07] transition-all" layout='fill' objectFit='cover' />
             </div>
             <div className="p-2">
                 <h3 className="mt-2 text-lg font-semibold">{AbreviateString.abbreviate(data.title, 50)}</h3>

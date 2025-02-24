@@ -73,12 +73,12 @@ export default function EventDetailPage() {
                 <meta name="description" content={event.description} />
                 <meta property="og:title" content={event.title} />
                 <meta property="og:description" content={event.description} />
-                <meta property="og:image" content={event.imageUrl} />
+                <meta property="og:image" content={event.imageUrl as string} />
                 <meta property="og:url" content={`https://ispsml.ao${routes.ALL_EVENT}/${event.slug}`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={event.title} />
                 <meta name="twitter:description" content={event.description} />
-                <meta name="twitter:image" content={event.imageUrl} />
+                <meta name="twitter:image" content={event.imageUrl as string} />
             </head>
             <div>
                 <div className="pt-24 pb-6 bg-primary-footer">
@@ -110,7 +110,7 @@ export default function EventDetailPage() {
                         <br />
                         <p>Local: {event.place}</p>
                         <br />
-                        <Image height={1000} width={1000} src={event.imageUrl} alt={event.title} />
+                        <Image height={1000} width={1000} src={event.imageUrl as string} alt={event.title} />
                         <br />
                         <span className="px-3 py-1 text-xs font-semibold text-gray-500 bg-white">
                             {event.category}

@@ -37,7 +37,7 @@ const CourseList = ({ courses }: { courses: { course: ICourse, department: strin
 );
 
 export default function CustomKnowMore() {
-  const { level } = useParams();
+  const { level } = useParams() as { level: string };
   // const [departments, setDepartments] = useState<IDepartment[]>([]);
   const [courses, setCourses] = useState<{ course: ICourse, department: string }[]>([]);
 

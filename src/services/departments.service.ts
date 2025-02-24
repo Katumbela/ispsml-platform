@@ -11,7 +11,7 @@ class DepartmentService {
     return response.data as Department[];
   }
 
-  async getDepartmentById(id: string): Promise<Department | null> {
+  async getDepartmentById(id: number): Promise<Department | null> {
     const response = await this.httpClient.get(`${this.route}/${id}`);
     return response.data as Department;
   }
@@ -21,7 +21,7 @@ class DepartmentService {
     return response.data as Department;
   }
 
-  async updateDepartment(id: string, departmentData: Partial<Department>): Promise<Department> {
+  async updateDepartment(id: number, departmentData: Partial<Department>): Promise<Department> {
     const response = await this.httpClient.put(`${this.route}/${id}`, departmentData);
     return response.data as Department;
   }

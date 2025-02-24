@@ -14,7 +14,10 @@ const nextConfig = {
             },
         ],
     },
-    output: "standalone"
+    output: "export",
+    experimental: {
+        dynamicParams: true
+    }
 };
 
 module.exports = nextConfig;

@@ -16,7 +16,7 @@ class EventService {
     return response.data as Event[];
   }
 
-  async getEventById(id: string): Promise<Event | null> {
+  async getEventById(id: number): Promise<Event | null> {
     const response = await this.httpClient.get(`${this.route}/${id}`);
     return response.data as Event;
   }
@@ -31,7 +31,7 @@ class EventService {
     return response.data as Event;
   }
 
-  async updateEvent(id: string, eventData: Partial<Event>): Promise<Event> {
+  async updateEvent(id: number, eventData: Partial<Event>): Promise<Event> {
     const response = await this.httpClient.put(`${this.route}/${id}`, eventData);
     return response.data as Event;
   }

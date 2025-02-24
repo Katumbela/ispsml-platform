@@ -6,12 +6,12 @@
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
     "start": "node server.js",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
     "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@prisma/client": "^6.0.1",
     "axios": "^1.7.9",
     "bcrypt": "^5.1.1",
     "clsx": "^2.1.1",

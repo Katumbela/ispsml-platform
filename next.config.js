@@ -3,11 +3,10 @@ const nextConfig = {
     // output: "export",
     env: {
         LOCAL_URL: "http://localhost:8000",
-        API_URL: "https://dev.ispsmlao.ao/api",
-        DATABASE_URL: "mysql://ispsmlao_katumbela:Joao2025@65.108.218.149:3306/ispsmlao_dev",
-        SHADOW_DATABASE_URL: "mysql://ispsmlao_m2j_technnology:ispsml2025@65.108.218.149:3306/ispsmlao_ispsml_db"
+        API_URL: "https://dev.ispsml.ao/api",
     },
     images: {
+        unoptimized: true,
         remotePatterns: [
             {
                 protocol: 'https',
@@ -15,6 +14,7 @@ const nextConfig = {
             },
         ],
     },
+    output: "standalone"
 };
 
 module.exports = nextConfig;

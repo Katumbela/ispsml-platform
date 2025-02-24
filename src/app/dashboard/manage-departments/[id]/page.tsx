@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
@@ -5,12 +6,13 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { IDepartment } from '@/infra/interfaces/course.interface';
-import { getDepartmentById } from '@/services/dep.service';
+import { getDepartmentById, getDepartments } from '@/services/dep.service';
 import Image from 'next/image';
 import { FaTrash } from 'react-icons/fa6';
 import { AlertUtils } from '@/utils';
 import { deleteCourse } from '@/services/course.service';
 import { routes } from '@/infra/routes.vars';
+
 
 const DepartmentCoursesPage = () => {
     const [department, setDepartments] = useState<IDepartment | null>(null);

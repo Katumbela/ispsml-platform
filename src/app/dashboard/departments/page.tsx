@@ -2,9 +2,10 @@
 "use client"
 
 import React, { useState, useEffect } from "react";
-import { getDepartments, getCoursesByDepartment, addCourseToDepartment } from "@/services/dep.service";
+import { getDepartments, getCoursesByDepartment } from "@/services/dep.service";
 import { ICourse, IDepartment } from "@/infra/interfaces/course.interface";
 import CourseForm from "./components/add-course-form";
+import { addCourseToDepartment } from "@/services/course.service";
 
 
 const DepartmentList: React.FC = () => {

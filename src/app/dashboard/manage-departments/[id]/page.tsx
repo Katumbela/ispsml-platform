@@ -90,7 +90,7 @@ const DepartmentCoursesPage = () => {
                                     initial={{ opacity: 0 }}
                                     animate={{ opacity: 1 }}
                                     transition={{ duration: 0.5 }}
-                                    className="flex gap-2 p-4 mb-2 border rounded"
+                                    className="flex max-w-3xl gap-2 p-4 mb-2 border rounded"
                                 >
                                     <Image alt='' src={course.course_cover} height={100} width={100} />
                                     <div className='flex justify-between w-full'>

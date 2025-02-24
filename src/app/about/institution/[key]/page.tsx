@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { routes } from '@/infra/routes.vars';
 
 const AboutDetail = () => {
-	const { key } = useParams();
+	const { key } = useParams() as { key: string };
 	const pageContent = content[key as keyof typeof content];
 
 	const router = useRouter();

@@ -10,11 +10,12 @@ import { FaAngleRight, FaDownload } from 'react-icons/fa6';
 // import QuickLinks from '@/components/QuickLinks';
 import { routes } from '@/infra/routes.vars';
 import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
-import { getCourseBySlug, getDepartmentBySlug } from '@/services/dep.service';
+import { getDepartmentBySlug } from '@/services/dep.service';
+import { getCourseBySlug } from '@/services/course.service';
 // import { RolesData } from '@/infra/data/roles-data';
 
 export default function CourseDetailsPage() {
-  const { department: dep_slug, course_slug } = useParams();
+  const { department: dep_slug, course_slug } = useParams() as { department: string, course_slug: string };
   // const departmentData = coursesData[department as string];
 
   // const course = typeof department === 'string' ? coursesData[department]?.courses.find(c => c.slug === course_slug) : null;

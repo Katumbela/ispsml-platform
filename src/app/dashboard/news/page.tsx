@@ -5,7 +5,7 @@ import React, { useEffect, useState } from "react";
 import { FaSpinner, FaTrash } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { generateSlug } from "@/utils/slugfy";
-import newsService from "@/services/news.service";
+import { newsService } from "@/services/news.service";
 import { TextEditor } from "@/components/text-editor/text-editor";
 // import InputDefault from "@/components/input-default/input";
 import Image from "next/image";
@@ -71,7 +71,7 @@ const NewsPage = () => {
     const handleDelete = async (id: string) => {
         setLoadingNews(true);
         try {
-            await newsService.deleteNews(id);
+            await newsService.deleteNews(Number(id));
             setNewsList(newsList.filter((news) => news.id !== id));
             setLoadingNews(false);
             toast.success("Notícia deletada com sucesso!");
@@ -88,7 +88,7 @@ const NewsPage = () => {
     return (
         <div>
             <div className="h-20 mb-20 bg-gray-800" />
- 
+
             <div className="container p-8 mx-auto bg-white rounded-lg shadow-md">
                 <h1 className="mb-6 text-3xl font-bold text-gray-900">Criar Notícia</h1>
                 <form onSubmit={handleSubmit} className="space-y-4">

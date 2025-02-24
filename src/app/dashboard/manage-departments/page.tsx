@@ -6,6 +6,8 @@ import { useRouter } from 'next/navigation';
 import { IDepartment } from '@/infra/interfaces/course.interface';
 import { getDepartments } from '@/services/dep.service';
 import { routes } from '@/infra/routes.vars';
+import Image from 'next/image';
+import { departmentService } from '../../../services/departments.service';
 
 const DepartmentsPage = () => {
     const router = useRouter();
@@ -16,6 +18,14 @@ const DepartmentsPage = () => {
         router.push(routes.NEW_DEP);
     };
 
+    const handleEditDepartment = (id: string) => {
+        router.push(`${routes.EDIT_DEP}/${id}`);
+    };
+
+    const handleDeleteDepartment = async (id: string) => {
+        await departmentService.deleteDepartment(id);
+        setDepartments(departments.filter(department => department.id !== id));
+    };
 
     useEffect(() => {
         async function fetchDepartments() {
@@ -27,7 +37,10 @@ const DepartmentsPage = () => {
     }, []);
 
     return (
-        <div>
+        <>
+            <head>
+                <title>Gerenciar Departamentos | ISPSML</title>
+            </head>
             <div className="h-20 mb-20 bg-gray-800" />
             <div className="p-4">
                 {loading ? (
@@ -76,13 +89,32 @@ const DepartmentsPage = () => {
                                     transition={{ duration: 0.5 }}
                                     className="p-4 mb-2 border rounded"
                                 >
-                                    <h2 className="text-xl font-semibold">{department.name}</h2>
-                                    <button
-                                        onClick={() => router.push(`${routes.VIEW_DEP}/${department.id}`)}
-                                        className="px-4 py-2 mt-2 text-white bg-green-500 rounded"
-                                    >
-                                        Ver Cursos
-                                    </button>
+                                    <div className="flex gap-5">
+                                        <div>
+                                            <Image alt='' src={department?.department_cover || ""} width={50} className='object-contain h-20' height={100} />
+                                        </div>
+                                        <div>
+                                            <h2 className="text-xl font-semibold">{department.name}</h2>
+                                            <button
+                                                onClick={() => router.push(`${routes.VIEW_DEP}/${department.id}`)}
+                                                className="px-4 py-2 text-sm mt-2 text-white bg-green-500 rounded"
+                                            >
+                                                Ver Cursos
+                                            </button>
+                                            <button
+                                                onClick={() => handleEditDepartment(department?.id || "")}
+                                                className="px-4 py-2 text-sm mt-2 text-white bg-blue-500 rounded"
+                                            >
+                                                Editar {department.id}
+                                            </button>
+                                            <button
+                                                onClick={() => handleDeleteDepartment(department?.id || "")}
+                                                className="px-4 py-2 text-sm mt-2 text-white bg-red-500 rounded"
+                                            >
+                                                Deletar
+                                            </button>
+                                        </div>
+                                    </div>
                                 </motion.div>
                             ))}
                         </div>
@@ -96,7 +128,7 @@ const DepartmentsPage = () => {
             <br />
             <br />
             <br />
-        </div>
+        </>
     );
 };
 

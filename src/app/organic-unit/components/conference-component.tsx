@@ -6,7 +6,7 @@ import { Event } from '@/infra/interfaces/events.interface';
 import { AbreviateString, DateUtils } from '@/utils';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import eventsService from '@/services/events.service';
+import { eventsService } from '@/services/events.service';
 import { routes } from '@/infra/routes.vars';
 
 const ConferenceComponent = () => {

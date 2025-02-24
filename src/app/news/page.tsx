@@ -3,7 +3,7 @@
 import NewsCard from "@/components/news-card/news-card";
 import { NewsCardSkeleton } from "@/components/news-card/news-card";
 import { News } from "@/infra/interfaces/news";
-import newsService from "@/services/news.service";
+import { newsService } from "@/services/news.service";
 import { useEffect, useState } from "react";
 
 export default function NewsPage() {

@@ -2,11 +2,11 @@ export interface Event {
   id: string;
   title: string;
   description: string;
-  longDescription: string; 
-  date: Date; 
+  longDescription: string;
+  date: Date;
   category: string;
-  imageUrl: string;
+  imageUrl: string | File;
   isFeatured: boolean;
-  slug: string; 
+  slug: string;
   place: string;
 }

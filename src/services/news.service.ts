@@ -1,51 +1,38 @@
+import AxiosHttpClient from '@/http/axiosHttpClient';
 import { News } from '@/infra/interfaces/news';
-import axios from 'axios';
 
 class NewsService {
-  private api = axios.create({
-    baseURL: '/api/news',
-  });
+  private httpClient = new AxiosHttpClient();
+  private route = "/news";
 
   async getAllNews(): Promise<News[] | []> {
-    const response = await this.api.get('/');
-    return response.data;
+    const response = await this.httpClient.get(this.route);
+    return response.data as News[];
   }
 
   async getNewsById(id: string): Promise<News | null> {
-    const response = await this.api.get(`/?id=${id}`);
-    return response.data;
+    const response = await this.httpClient.get(`${this.route}/${id}`);
+    return response.data as News;
   }
 
   async getNewsBySlug(slug: string): Promise<News | null> {
-    const response = await this.api.get(`/?slug=${slug}`);
-    return response.data;
+    const response = await this.httpClient.get(`${this.route}/slug/${slug}`);
+    return response.data as News;
   }
 
   async createNews(newsData: News): Promise<News> {
-    const response = await this.api.post('/', newsData);
-    return response.data;
+    const response = await this.httpClient.post(this.route, newsData);
+    return response.data as News;
   }
 
-  async updateNews(id: string, newsData: Partial<News>): Promise<News> {
-    const response = await this.api.put(`/?id=${id}`, newsData);
-    return response.data;
+  async updateNews(id: number, newsData: Partial<News>): Promise<News> {
+    const response = await this.httpClient.put(`${this.route}/${id}`, newsData);
+    return response.data as News;
   }
 
-  async deleteNews(id: string): Promise<void> {
-    await this.api.delete(`/?id=${id}`);
+  async deleteNews(id: number): Promise<void> {
+    await this.httpClient.delete(`${this.route}?id=${id}`);
   }
 }
 
-export default new NewsService();
-
-
-interface SomaProps {
-  a: string
-  b: number
-}
-
-export function soma({ a, b }: SomaProps): number {
-  return Number(a + b)
-}
-
-soma({ a: '1', b: 2 })
+export const newsService = new NewsService();

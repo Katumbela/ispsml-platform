@@ -5,17 +5,19 @@ import { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import { IDepartment } from '@/infra/interfaces/course.interface';
-import { deleteCourse, getDepartmentById } from '@/services/dep.service';
+import { getDepartmentById } from '@/services/dep.service';
 import Image from 'next/image';
 import { FaTrash } from 'react-icons/fa6';
 import { AlertUtils } from '@/utils';
+import { deleteCourse } from '@/services/course.service';
+import { routes } from '@/infra/routes.vars';
 
 const DepartmentCoursesPage = () => {
     const [department, setDepartments] = useState<IDepartment | null>(null);
     const [loading, setLoading] = useState(true);
 
     const router = useRouter();
-    const { id: departmentId } = useParams()
+    const { id: departmentId } = useParams() as { id: string };
 
     useEffect(() => {
         const fetchDep = async () => {
@@ -33,6 +35,10 @@ const DepartmentCoursesPage = () => {
     const deleteCourseDep = async (id: number) => {
         await deleteCourse(Number(id));
         AlertUtils.success('Curso deletado com sucesso');
+    };
+
+    const handleEditCourse = (courseId: number) => {
+        router.push(`${routes.MANAGE_DEPARTMENTS}/${departmentId}/edit-course/${courseId}`);
     };
 
     return (
@@ -92,7 +98,10 @@ const DepartmentCoursesPage = () => {
                                             <h2 className="text-xl font-semibold">{course.course}</h2>
                                             <p>{course.short_detail}</p>
                                         </div>
-                                        <FaTrash className='my-auto cursor-pointer' onClick={() => deleteCourseDep(Number(course?.id))} />
+                                        <div className='flex items-center gap-2'>
+                                            <button onClick={() => handleEditCourse(Number(course.id))}>Editar</button>
+                                            <FaTrash className='my-auto cursor-pointer' onClick={() => deleteCourseDep(Number(course?.id))} />
+                                        </div>
                                     </div>
                                 </motion.div>
                             ))}

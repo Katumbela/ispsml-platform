@@ -8,6 +8,7 @@ import { createDepartment } from "@/services/dep.service";
 import { IDepartment } from "@/infra/interfaces/course.interface";
 import Image from "next/image";
 import { AlertUtils } from "@/utils";
+import { routes } from "@/infra/routes.vars";
 
 const NewDepartmentPage = () => {
     const [name, setName] = useState("");
@@ -64,8 +65,7 @@ const NewDepartmentPage = () => {
             if (response) {
                 AlertUtils.success("Departamento criado com sucesso!");
             }
-
-            router.push("/departments");
+            router.push(routes.MANAGE_DEPARTMENTS);
         } catch (err: any) {
             console.log(err.message)
             setError("Erro ao enviar os dados. Tente novamente.");

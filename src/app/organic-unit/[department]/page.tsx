@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react';
 
 const CSADepartment = () => {
 
-	const { department: slug } = useParams();
+	const { department: slug } = useParams() as { department: string };
 	// const department = coursesData[department as string];
 
 	const [department, setDepartment] = useState<IDepartment | null>(null);
@@ -84,9 +84,8 @@ const CSADepartment = () => {
 				</div>
 				<div className="w-full 2xl:p-16 p-14">
 					<p className="mt-4">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae tenetur aliquid porro asperiores error ipsam aperiam voluptates vitae pariatur dolores saepe tempora nihil eius placeat maiores, eaque repellendus sint illum.
-						<br />
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab expedita dolorum reiciendis esse saepe perferendis quos, incidunt eaque, nam vero provident unde debitis optio enim hic minima rem porro?
+
+						<p dangerouslySetInnerHTML={{ __html: department?.description || "" }} />
 						<br />
 						<br />
 					</p>

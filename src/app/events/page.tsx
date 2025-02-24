@@ -2,7 +2,7 @@
 
 import EventCard, { EventCardSkeleton } from "@/components/event-card/event-card";
 import { Event } from "@/infra/interfaces/events.interface";
-import eventsService from "@/services/events.service";
+import { eventsService } from "@/services/events.service";
 import { useEffect, useState } from "react";
 
 export default function EventsPage() {
@@ -37,7 +37,7 @@ export default function EventsPage() {
                     </div>
                     <br />
                     <br />
-                    <div className="grid grid-cols-4 gap-4 2xl:flex 2xl:flex-wrap">
+                    <div className="grid grid-cols-4 gap-4 lg:flex 2xl:flex-wrap">
                         {loading ? (
                             Array.from({ length: 6 }).map((_, index) => <EventCardSkeleton key={index} />)
                         ) : events.length > 0 ? (

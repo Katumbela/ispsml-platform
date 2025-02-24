@@ -18,7 +18,7 @@ export interface ICourse {
   outProfile?: string;
   years?: IYear[]; // Corrigido para corresponder ao modelo `Year`
   course_cover: string;
-  additional_courses?: ICourse[];
+  // additional_courses?: ICourse[];
   departmentId: number; // Adicionado conforme o modelo
   department?: IDepartment; // Referência ao departamento
   shiftId?: number; // Relacionado opcional ao turno
@@ -34,6 +34,7 @@ export interface IShift {
 export interface IDepartment {
   id?: string;
   name: string;
+  description?: string;
   departmentDirector?: {
     name: string;
     picture: string;

@@ -3,10 +3,12 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-import { addCourseToDepartment, getDepartmentById } from '@/services/dep.service';
+import { getDepartmentById } from '@/services/dep.service';
 import { ICourse, IDepartment, IYear } from '@/infra/interfaces/course.interface';
 import { generateSlug } from '@/utils/slugfy';
-import { fileToBase64 } from '@/utils/file-to-b64';
+import { addCourseToDepartment } from '@/services/course.service';
+import { routes } from '@/infra/routes.vars';
+import { uploadImage } from '@/utils/uploadImage';
 
 const NewCoursePage = () => {
     const [course, setCourse] = useState('');
@@ -22,7 +24,8 @@ const NewCoursePage = () => {
     const [entryProfile, setEntryProfile] = useState('');
     const [outProfile, setOutProfile] = useState('');
     const router = useRouter();
-    const { dep_id: departmentId } = useParams();
+    const params = useParams<{ dep_id: string }>();
+    const departmentId = params?.dep_id;
     const [department, setDepartment] = useState<IDepartment | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -42,7 +45,7 @@ const NewCoursePage = () => {
     const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
-            const base64 = await fileToBase64(file);
+            const base64 = await uploadImage(file, "departments");
             setCourseCover(base64);
         }
     };
@@ -105,12 +108,12 @@ const NewCoursePage = () => {
             benefits,
             entryProfile,
             outProfile,
-            additional_courses: [],
         };
 
-        const response = await addCourseToDepartment(Number(departmentId), data);
-        if (response.ok) {
-            router.push(`/departments/${departmentId}/courses`);
+        const response: any = await addCourseToDepartment(Number(departmentId), data);
+
+        if (response.id) {
+            router.push(`${routes.MANAGE_DEPARTMENTS}/${departmentId}`);
         }
     };
 

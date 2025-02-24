@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { AbreviateString, DateUtils } from '@/utils';
 import { routes } from '@/infra/routes.vars';
 import { useEffect, useState } from 'react';
-import newsService from '@/services/news.service';
+import { newsService } from '@/services/news.service';
 import { News } from '@/infra/interfaces/news';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';

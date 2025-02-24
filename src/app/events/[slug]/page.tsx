@@ -8,13 +8,13 @@ import { AbreviateString } from '../../../utils/abreviate-utils';
 import { DateUtils } from '@/utils';
 import { useEffect, useState } from 'react';
 import { Event } from '@/infra/interfaces/events.interface';
-import Head from 'next/head';
+// import Head from 'next/head';
 import Custom404 from '@/app/404/page';
-import eventsService from '@/services/events.service';
+import { eventsService } from '@/services/events.service';
 import { routes } from '@/infra/routes.vars';
 
 export default function EventDetailPage() {
-    const { slug } = useParams();
+    const { slug } = useParams() as { slug: string };
     // const event = events.find(event => event.slug === slug);
     const [event, setEvents] = useState<Event | null>(null);
     const [allEvent, setAllEvents] = useState<Event[] | []>([]);
@@ -64,20 +64,22 @@ export default function EventDetailPage() {
         return <Custom404 />;
     }
 
+    document.title = `${event.title} | ISPSML`;
+
     return (
         <>
-            <Head>
+            <head>
                 <title>{event.title} | ISPSML</title>
                 <meta name="description" content={event.description} />
                 <meta property="og:title" content={event.title} />
                 <meta property="og:description" content={event.description} />
                 <meta property="og:image" content={event.imageUrl} />
-                <meta property="og:url" content={`https://seusite.com${routes.ALL_EVENT}/${event.slug}`} />
+                <meta property="og:url" content={`https://ispsml.ao${routes.ALL_EVENT}/${event.slug}`} />
                 <meta name="twitter:card" content="summary_large_image" />
                 <meta name="twitter:title" content={event.title} />
                 <meta name="twitter:description" content={event.description} />
                 <meta name="twitter:image" content={event.imageUrl} />
-            </Head>
+            </head>
             <div>
                 <div className="pt-24 pb-6 bg-primary-footer">
                     <div className="containers">
@@ -85,7 +87,7 @@ export default function EventDetailPage() {
 
                         {/* Breadcrumb navigation */}
                         <nav className="text-sm text-white my-3">
-                            <Link href={`/${routes.ALL_EVENT}`} className="hover:underline">Eventos</Link> / <span>{event.title}</span>
+                            <Link href={`${routes.ALL_EVENT}`} className="hover:underline">Eventos</Link> / <span>{event.title}</span>
                         </nav>
 
                         <p className="flex gap-2 mt-4 text-sm text-white">

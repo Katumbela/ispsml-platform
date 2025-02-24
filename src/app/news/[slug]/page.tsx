@@ -7,14 +7,15 @@ import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaCalendarAlt } from 'react-icons/fa';
 import NewsCard from '@/components/news-card/news-card';
-import newsService from '@/services/news.service';
+import { newsService } from '@/services/news.service';
 import { useEffect, useState } from 'react';
 import { News } from '@/infra/interfaces/news';
 import { DateUtils } from '@/utils';
 import Head from 'next/head';
 
 export default function ViewNewsPage() {
-	const { slug } = useParams();
+	const params = useParams() as { slug: string };
+	const { slug } = params;
 	const [news, setNews] = useState<News | null>(null);
 	const [allNews, setAllNews] = useState<News[] | []>([]);
 	const [loading, setLoading] = useState(true);

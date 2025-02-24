@@ -9,11 +9,13 @@ import { toast } from 'react-toastify';
 import { uploadImage } from '@/utils/uploadImage';
 import { generateSlug } from '@/utils/slugfy';
 // import { News } from '@/infra/interfaces/news'; 
-import newsService from '@/services/news.service';
+import { newsService } from '@/services/news.service';
 import { TextEditor } from '@/components/text-editor/text-editor';
 import { News } from '@/infra/interfaces/news';
 import { useRouter } from 'next/navigation';
 import { routes } from '@/infra/routes.vars';
+import { AbreviateString } from '@/utils';
+import Image from 'next/image';
 
 const Dashboard = () => {
   const [title, setTitle] = useState('');
@@ -25,10 +27,11 @@ const Dashboard = () => {
   const [loading, setLoading] = useState(false);
   const [loadingn, setLoadingN] = useState(false);
   const [newses, setNewses] = useState<News[]>([]);
+  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     setLoadingN(true);
-    newsService.getAllNews().then((news) => {
+    newsService.getAllNews().then((news: News[]) => {
       setNewses(news);
       setLoadingN(false);
     });
@@ -67,7 +70,7 @@ const Dashboard = () => {
   const handleDelete = async (id: string) => {
     setLoadingN(true);
     try {
-      await newsService.deleteNews(id);
+      await newsService.deleteNews(Number(id));
       setNewses(newses.filter(news => news.id !== id));
       setLoadingN(false);
       toast.success('Informação deletada com sucesso!');
@@ -75,6 +78,10 @@ const Dashboard = () => {
       setLoadingN(false);
       toast.error('Erro ao deletar informação! ' + error.message);
     }
+  };
+
+  const handleEdit = (id: string) => {
+    router.push(`/dashboard/edit-news?id=${id}`);
   };
 
   useEffect(() => {
@@ -93,63 +100,75 @@ const Dashboard = () => {
           <button onClick={() => router.push(routes.MANAGE_EVENT)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
             Gerenciar Eventos
           </button>
+          <button onClick={() => setShowForm(!showForm)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
+            {showForm ? 'Esconder Formulário' : 'Adicionar Notícia'}
+          </button>
         </div>
       </div>
-      <div className="px-10">
-        <h1 className="mb-4 text-2xl font-bold">  Adicionar Notícia</h1>
-        <form onSubmit={handleSubmit}>
-          <InputDefault label='Título da notícia' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
-
-          <br />
-          <InputDefault label='Descrição Curta' placeholder='Descrição Curta' value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} required={true} />
-          <br />
-          <span className="text-white mb-2">Descrição geral</span>
-          <TextEditor editorContent={content} setEditorContent={setContent} />
-          <br />
-          {/* <InputDefault label='Poster' placeholder='Poster' value={poster} onChange={(e) => setPoster(e.target.value)} required={true} /> */}
-          {/* <InputDefault label='Link' placeholder='Link' value={link} onChange={(e) => setLink(e.target.value)} required={true} /> */}
-          {/* <InputDefault label='Slug' disabled placeholder='Slug' value={slug} onChange={(e) => setSlug(e.target.value)} required={true} /> */}
-          <div className="mb-4 mt-6">
-            <label className="block mb-2 text-sm font-bold" htmlFor="image">Capa da Informação</label>
-            <input type="file" id="image" onChange={(e) => setImage(e.target.files?.[0] || null)} required className="w-full px-3 py-2 leading-tight text-black text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
-          </div>
-          <div className="flex justify-start">
-            <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
-              {loading ? <FaSpinner className="my-auto animate-spin" /> : (
-                <>
-                  <span className="my-auto">Adicionar Informação</span>
-                </>
-              )}
-            </button>
-          </div>
-        </form>
-
-      </div>
-      <div className="con">
-
+      {showForm && (
+        <div className="px-10">
+          <h1 className="mb-4 text-2xl font-bold">Adicionar Notícia</h1>
+          <form onSubmit={handleSubmit}>
+            <InputDefault label='Título da notícia' placeholder='Título' value={title} onChange={(e) => setTitle(e.target.value)} required={true} />
+            <br />
+            <InputDefault label='Descrição Curta' placeholder='Descrição Curta' value={shortDescription} onChange={(e) => setShortDescription(e.target.value)} required={true} />
+            <br />
+            <span className="text-white mb-2">Descrição geral</span>
+            <TextEditor editorContent={content} setEditorContent={setContent} />
+            <br />
+            <div className="mb-4 mt-6">
+              <label className="block mb-2 text-sm font-bold" htmlFor="image">Capa da Informação</label>
+              <input type="file" id="image" onChange={(e) => setImage(e.target.files?.[0] || null)} required className="w-full px-3 py-2 leading-tight text-black text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
+            </div>
+            <div className="flex justify-start">
+              <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
+                {loading ? <FaSpinner className="my-auto animate-spin" /> : (
+                  <>
+                    <span className="my-auto">Adicionar Informação</span>
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
+        </div>
+      )}
+      <div className=" px-10">
         <h2 className="mt-10 mb-4 text-2xl font-bold">Gerenciar Notícias</h2>
-
         <ul>
-          {
-            loadingn ? <FaSpinner className="my-auto animate-spin" /> : (
-
-              <>
-                {newses.map(news => (
-                  <li key={news.id} className="mb-4">
-                    <div className="flex justify-between">
-                      <span>{news.title}</span>
+          {loadingn ? <FaSpinner className="my-auto animate-spin" /> : (
+            <>
+              {newses.map(news => (
+                <li key={news.id} className="mb-4">
+                  <div className="flex flex-col border border-white/30 p-3 rounded justify-start">
+                    <div className="flex mb-2 gap-4">
+                      <Image src={news.image} width={50} height={50} alt='' className='object-contain h-8' />
+                      <span>{AbreviateString.abbreviate(news.title, 40)}</span>
+                    </div>
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() => handleEdit(news.id)}
+                        className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700"
+                      >
+                        Editar
+                      </button>
                       <button
                         onClick={() => handleDelete(news.id)}
                         className="px-3 py-1 text-white bg-red-600 rounded hover:bg-red-700"
                       >
                         Deletar
                       </button>
+                      <button
+                        onClick={() => window.location.href = routes.NEWS_ROUTE + "/" + news.slug}
+                        className="px-3 py-1 text-primary hover:text-white bg-white rounded hover:bg-primary"
+                      >
+                        Ver
+                      </button>
                     </div>
-                  </li>
-                ))}
-              </>
-            )
-          }
+                  </div>
+                </li>
+              ))}
+            </>
+          )}
         </ul>
       </div>
     </div>

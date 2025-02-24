@@ -2,8 +2,7 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 import { HttpClient } from './httpClient';
 import Cookies from 'js-cookie';
-import * as dotenv from 'dotenv';
-import { env } from '@/infra/env';
+import * as dotenv from 'dotenv'; 
 dotenv.config();
 
 export interface apiResponse<T> {
@@ -16,7 +15,7 @@ class AxiosHttpClient implements HttpClient {
 
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: env.API_URL,
+      baseURL: process.env.API_URL,
     });
 
     this.axiosInstance.interceptors.request.use(

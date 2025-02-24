@@ -25,7 +25,7 @@ import AnimatedAccordion from '@/components/animated-accordion/animated-accordio
 export default function ApplyForm() {
   const [hour, setHour] = useState('');
   const q = useSearchParams()
-  const pretendedCoursr = q.get('course')
+  const pretendedCoursr = q?.get('course')
   // const [date, setDate] = useState<Date | null>(null);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');

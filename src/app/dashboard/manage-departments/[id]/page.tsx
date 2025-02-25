@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { generateMetadata } from '@/infra/metadata';
 
-import { getDepartments } from '@/services/dep.service';
 import DepartmentCoursesPage from './client-man-dep';
 
 export const metadata = generateMetadata({
@@ -11,8 +10,9 @@ export const metadata = generateMetadata({
 });
 
 export async function generateStaticParams() {
-    const deps = await getDepartments();
-    return deps.map((dep) => ({ id: dep?.id }));
+    return Array.from({ length: 25 }, (_, i) => ({
+        id: (i + 1).toString(),
+    }));
 }
 
 export default function Page({ params }: any) {

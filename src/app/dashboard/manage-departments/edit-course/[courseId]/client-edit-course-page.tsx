@@ -9,7 +9,7 @@ import { AlertUtils } from '@/utils';
 import Loader from '@/components/common/Loader';
 import Image from 'next/image';
 
-const ClientEditCoursePage = ({ courseId }: { courseId: number }) => {
+const ClientEditCoursePage = ({ courseId }: { courseId: string }) => {
     const [course, setCourse] = useState<ICourse | null>(null);
     const [loading, setLoading] = useState(true);
     const router = useRouter();
@@ -77,7 +77,7 @@ const ClientEditCoursePage = ({ courseId }: { courseId: number }) => {
             </head>
             <div className="h-20  bg-gray-800" />
 
-            <div className="px-6 py-20 bg-gray-100 containers min-h-screen">
+            <div className=" max-w-4xl py-20 bg-gray-100 px-10 min-h-screen">
                 <button className="mb-4 text-blue-600 hover:underline" onClick={() => router.back()}>Voltar</button>
                 <h1 className="mb-6 text-3xl font-bold">Editar Curso</h1>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

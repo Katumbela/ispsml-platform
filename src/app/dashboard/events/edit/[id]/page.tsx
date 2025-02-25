@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { generateMetadata } from '@/infra/metadata';
 import EditEventPage from './edit-event-page.tsx';
-import { eventsService } from '@/services/events.service';
 
 export const metadata = generateMetadata({
     title: 'Editar evento | ISPSML',
@@ -10,8 +9,9 @@ export const metadata = generateMetadata({
 });
 
 export async function generateStaticParams() {
-    const events = await eventsService.getAllEvents();
-    return events.map((event) => ({ id: event?.id }));
+    return Array.from({ length: 25 }, (_, i) => ({
+        id: (i + 1).toString(),
+    }));
 }
 
 export default function Page({ params }: any) {

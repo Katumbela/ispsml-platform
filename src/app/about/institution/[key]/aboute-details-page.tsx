@@ -6,9 +6,9 @@ import { content, ourInst } from '@/data/aboutContent'; // Import the content
 import Link from 'next/link';
 import { routes } from '@/infra/routes.vars';
 
-const AboutDetail = ({ key }: { key: string }) => {
+const AboutDetail = ({ selectedKey: key }: { selectedKey: keyof typeof content }) => {
 	// const { key } = useParams() as { key: string };
-	const pageContent = content[key as keyof typeof content];
+	const pageContent = content[key];
 
 	const router = useRouter();
 
@@ -17,7 +17,7 @@ const AboutDetail = ({ key }: { key: string }) => {
 	};
 
 	if (!pageContent) {
-		return <p>Conteúdo não encontrado</p>;
+		return <p>Conteúdo não encontrado {key} </p>;
 	}
 
 	return (

@@ -13,7 +13,7 @@ import { getDepartmentBySlug } from '@/services/dep.service';
 import { getCourseBySlug } from '@/services/course.service';
 // import { RolesData } from '@/infra/data/roles-data';
 
-export default function CourseDetailsPage({ course_slug, dep_slug }: { dep_slug: string, course_slug: string }) {
+export default function CourseDetailsPage({ course_slug, department: dep_slug }: { department: string, course_slug: string }) {
   // const { department: dep_slug, course_slug } = useParams() as { department: string, course_slug: string };
   // const departmentData = coursesData[department as string];
 

@@ -15,9 +15,7 @@ const nextConfig = {
         ],
     },
     output: "export",
-    experimental: {
-        dynamicParams: true
-    }
+    // trailingSlash: true,
 };
 
 module.exports = nextConfig;

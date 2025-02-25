@@ -40,7 +40,7 @@ const DepartmentCoursesPage = ({ departmentId }: { departmentId: string }) => {
     };
 
     const handleEditCourse = (courseId: number) => {
-        router.push(`${routes.MANAGE_DEPARTMENTS}/${departmentId}/edit-course/${courseId}`);
+        router.push(`${routes.MANAGE_DEPARTMENTS}/edit-course/${courseId}`);
     };
 
     return (

@@ -1,18 +1,26 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { generateMetadata } from '@/infra/metadata';
 import AboutDetail from './aboute-details-page';
-import { content } from '@/data/aboutContent';
 
 export const metadata = generateMetadata({
-    title: ' Sobre esta area na nossa instituição | ISPSML',
+    title: 'Sobre esta área na nossa instituição | ISPSML',
     description: '',
 });
 
 export async function generateStaticParams() {
-    const keys = Object.keys(content);
-    return keys.map((key) => ({ key }));
+    return [
+        { key: 'apresentacao-institucional' },
+        { key: 'infraestruturas' },
+        { key: 'convenios-e-protocolos' },
+        { key: 'organigrama' },
+        { key: 'codigo-de-conduta-e-etica' },
+        { key: 'acao-social' },
+        { key: 'mensagem-de-direcao' },
+        { key: 'legislacao' }
+    ];
 }
 
-export default function Page({ params }: any) {
-    return <AboutDetail key={params.key} />;
+export default async function Page({ params }: any) {
+    const key = params.key; // Ainda é válido, problema era a prop reservada "key"
+    return <AboutDetail selectedKey={key} />; // "selectedKey" no lugar de "key"
 }

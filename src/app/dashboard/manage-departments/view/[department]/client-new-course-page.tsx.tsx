@@ -2,7 +2,7 @@
 "use client"
 
 import { useEffect, useState } from 'react';
-import {  useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { getDepartmentById } from '@/services/dep.service';
 import { ICourse, IDepartment, IYear } from '@/infra/interfaces/course.interface';
 import { generateSlug } from '@/utils/slugfy';

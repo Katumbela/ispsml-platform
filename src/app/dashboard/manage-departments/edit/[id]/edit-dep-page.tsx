@@ -11,7 +11,7 @@ import { uploadImage } from '@/utils/uploadImage';
 import Image from 'next/image';
 import { TextEditor } from '@/components/text-editor/text-editor';
 
-const EditDepartmentPage = ({ id }: { id: number }) => {
+const EditDepartmentPage = ({ id }: { id: string }) => {
     // const { id } = useParams() as { id: string };
     const [department, setDepartment] = useState<Department | null>(null);
     const [loading, setLoading] = useState(true);
@@ -24,7 +24,7 @@ const EditDepartmentPage = ({ id }: { id: number }) => {
 
     useEffect(() => {
         if (id) {
-            departmentService.getDepartmentById(id)
+            departmentService.getDepartmentById(Number(id))
                 .then(department => {
                     setDepartment(department);
                     setPreviewImage(typeof department?.image === 'string' ? department.image : null);
@@ -58,7 +58,7 @@ const EditDepartmentPage = ({ id }: { id: number }) => {
                     const upimage = await uploadImage(newImage, "departments");
                     updatedDepartment.image = upimage;
                 }
-                const res = await departmentService.updateDepartment(id, updatedDepartment);
+                const res = await departmentService.updateDepartment(Number(id), updatedDepartment);
 
                 if (res.id) {
                     router.push(routes.MANAGE_DEPARTMENTS);

@@ -1,7 +1,20 @@
+"use client"
 import { images } from '@/assets';
+import { getAllCourses } from '@/services/course.service';
 import Image from 'next/image';
+import { useEffect } from 'react';
 
 export default function Home() {
+
+	useEffect(() => {
+		async function test() {
+			const res = await getAllCourses();
+			console.log(res);
+		}
+		test();
+	}, []);
+
+
 	return (
 		<div className="fixed top-0 bottom-0 left-0 right-0 min-h-screen z-[10000000000000000] flex items-center justify-center bg-gradient-to-b from-blue-700 to-blue-900 text-white">
 			{/* Background Animation */}

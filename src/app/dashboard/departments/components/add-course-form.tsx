@@ -54,7 +54,7 @@ const AddCourseForm = ({ onSubmit }: { onSubmit: (values: any) => void }) => {
 
     const handleSubmit = (values: any) => {
 
-        console.log(values);
+        // console.log(values);
         onSubmit(values);
     };
 

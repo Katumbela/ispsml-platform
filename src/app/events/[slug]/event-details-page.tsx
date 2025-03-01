@@ -1,35 +1,25 @@
-"use client" 
+"use client"
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { AbreviateString } from '../../../utils/abreviate-utils';
 import { DateUtils } from '@/utils';
-import { useEffect, useState } from 'react';
-import { Event } from '@/infra/interfaces/events.interface';
-// import Head from 'next/head';
 import Custom404 from '@/app/404/page';
 import { eventsService } from '@/services/events.service';
 import { routes } from '@/infra/routes.vars';
+import { useQuery } from 'react-query';
 
-export default function EventDetailPage({ slug }: {slug: string}) {
-    // const { slug } = useParams() as { slug: string };
-    // const event = events.find(event => event.slug === slug);
-    const [event, setEvents] = useState<Event | null>(null);
-    const [allEvent, setAllEvents] = useState<Event[] | []>([]);
-    const [loading, setLoading] = useState(true);
+export default function EventDetailPage({ slug }: { slug: string }) {
 
-    useEffect(() => {
-        eventsService.getEventBySlug(slug ? String(slug) : "").then((events) => {
-            setEvents(events);
-            setLoading(false);
-        });
-        eventsService.getAllEvents().then((events) => {
-            setAllEvents(events);
-            setLoading(false);
-        });
-    }, [slug]);
+    const { data: event, isLoading: loadingBySlug } = useQuery('eventSlug', () => eventsService.getEventBySlug(slug), {
+        refetchOnWindowFocus: false
+    });
 
-    if (loading) {
+    const { data: allEvent = [], isLoading: loadingAll } = useQuery('allEvents', () => eventsService.getAllEvents(), {
+        refetchOnWindowFocus: false
+    });
+
+    if (loadingAll || loadingBySlug) {
         return (
             <div className="items-center py-[15vh] h-full containers place-content-center">
                 <div className="w-full h-32 mb-2 bg-gray-300 rounded"></div>

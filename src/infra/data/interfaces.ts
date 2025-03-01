@@ -86,10 +86,10 @@ export interface Application {
   name: string;
   email: string;
   phone: string;
-  birthDate: Date;
+  birthDate?: string | Date;
   course: string;
   interest: string;
-  date: Date;
+  date?: Date;
 }
 
 export interface Event {

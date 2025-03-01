@@ -58,9 +58,9 @@ const ClientEditCoursePage = ({ courseId }: { courseId: string }) => {
 
     const handleSaveCourse = async () => {
         if (course) {
-            const res = await updateCourse(Number(course.id), course);
+             await updateCourse(Number(course.id), course);
             AlertUtils.success('Curso atualizado com sucesso');
-            console.log(res)
+            // console.log(res)
             // router.back();
         }
     };

@@ -32,7 +32,7 @@ const DepartmentList: React.FC = () => {
     if (selectedDepartmentId) {
       const formData = new FormData();
       formData.append("course", course as any);
-      console.log(formData);
+      // console.log(formData);
       // Add other course fields to formData if necessary
       await addCourseToDepartment(Number(selectedDepartmentId), formData);
       const updatedCourses = await getCoursesByDepartment(Number(selectedDepartmentId));

@@ -1,24 +1,16 @@
-
-import React, { useEffect, useState } from 'react';
-// import { events } from '@/infra/data/events';
+import React from 'react';
 import Link from 'next/link';
-import { Event } from '@/infra/interfaces/events.interface';
 import { AbreviateString, DateUtils } from '@/utils';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { eventsService } from '@/services/events.service';
 import { routes } from '@/infra/routes.vars';
+import { useQuery } from 'react-query';
 
 const ConferenceComponent = () => {
-  const [events, setEvents] = useState<Event[] | []>([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    eventsService.getAllEvents().then((events) => {
-      setEvents(events);
-      setLoading(false);
-    });
-  }, []);
+  const { data: events = [], isLoading } = useQuery('allEvents', () => eventsService.getAllEvents(), {
+    refetchOnWindowFocus: false
+  });
 
   const featuredEvent = events.find(event => event.isFeatured);
   const previousEvents = events.filter(event => !event.isFeatured);
@@ -28,12 +20,9 @@ const ConferenceComponent = () => {
       <h2 className="max-w-3xl mb-4 text-xl font-semibold sm:text-3xl text md:text-4xl">
         Participe dos nossos eventos académico
       </h2>
-      {/* <p className="mb-8 text-gray-600 text">
-        NOSSO CORPO DOCENTE COMPARTILHARÁ INFORMAÇÕES VALIOSAS E TEMAS ATUAIS
-      </p> */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         {/* Featured Conference */}
-        {loading ? (
+        {isLoading ? (
           <Skeleton height={400} />
         ) : (
           featuredEvent && (
@@ -74,7 +63,7 @@ const ConferenceComponent = () => {
         {/* Previous Events */}
         <div className="space-y-4">
           <h3 className="text-base font-semibold text-gray-700 sm:text-lg">EVENTOS ANTERIORES</h3>
-          {loading ? (
+          {isLoading ? (
             <Skeleton count={3} height={100} />
           ) : (
             previousEvents.map((event, index) => (
@@ -89,12 +78,10 @@ const ConferenceComponent = () => {
                   <p className="text-xs text-gray-600">{DateUtils.getTime(event.date)} HRS.</p>
                   <p className="text-xs text-gray-600">Local: {event.place}</p>
                   <Link href={`/events/${event.slug}`}>
-                    <button className="mt-1 text-xs text-blue-500 hover:underline">Conferência online</button>
+                    <button className="mt-1 text-xs text-blue-500 hover:underline">Ver evento</button>
                   </Link>
                 </div>
-                <Link href={`/events/${event.slug}`}>
-                  <button className="ml-4 text-sm text-pink-500 hover:underline">Ver evento</button>
-                </Link>
+
               </div>
             ))
           )}

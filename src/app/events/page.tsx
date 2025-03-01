@@ -1,21 +1,14 @@
 "use client"
 
 import EventCard, { EventCardSkeleton } from "@/components/event-card/event-card";
-import { Event } from "@/infra/interfaces/events.interface";
 import { eventsService } from "@/services/events.service";
-import { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 
 export default function EventsPage() {
-    const [loading, setLoading] = useState(false);
-    const [events, setEvents] = useState<Event[] | []>([]);
 
-    useEffect(() => {
-        setLoading(true);
-        eventsService.getAllEvents().then((events) => {
-            setEvents(events);
-            setLoading(false);
-        });
-    }, []);
+    const { data: events = [], isLoading: loading } = useQuery('allEvents', () => eventsService.getAllEvents(), {
+        refetchOnWindowFocus: false
+    });
 
     return (
         <div>

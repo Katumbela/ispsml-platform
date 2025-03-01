@@ -6,9 +6,9 @@ import InputDefault from '../../../components/input-default/input';
 import { FaSpinner } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { storage } from '../../../config/firebaseConfig'; 
-import rolesService from '@/services/roles.service';
- 
+import { storage } from '../../../config/firebaseConfig';
+import { createRole } from '@/services/role.service';
+
 const RolesDashboard = () => {
   const [name, setName] = useState('');
   const [about, setAbout] = useState('');
@@ -29,7 +29,7 @@ const RolesDashboard = () => {
         cvUrl = await getDownloadURL(storageRef);
       }
 
-      await rolesService.createRole({
+      await createRole({
         id: '', // Add appropriate value for id
         name,
         about,

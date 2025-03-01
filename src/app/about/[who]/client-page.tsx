@@ -38,7 +38,7 @@ const RoleProfileClient = ({ who }: { who: string }) => {
         const data = RolesData.find((e) => e.id === who);
         setUser(data || null);
         if (data?.team) {
-            const members = RolesData.filter((e) => data.team?.includes(e.id));
+            const members = RolesData.filter((e) => e.id && data?.team?.includes(e.id) || false);
             setTeamMembers(members);
         }
     }, [who])

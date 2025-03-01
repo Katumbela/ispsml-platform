@@ -1,6 +1,5 @@
 'use client';
 
-import { RolesData } from '@/infra/data/roles-data';
 import { images } from '@/assets';
 import GlobalHero from '@/components/global-hero/global-hero';
 import { getDepartments } from '@/services/dep.service';
@@ -9,19 +8,12 @@ import { routes } from '@/infra/routes.vars';
 import { env } from '@/infra/env';
 
 export default function OrganicUnitPage() {
-	function getTeamMembers(directorId: string) {
-		const director = RolesData.find((role) => role.id === directorId);
-		if (director && director.team) {
-			return director.team.map((memberId) => RolesData.find((role) => role.id === memberId));
-		}
-		return [];
-	}
-
+	 
 	const { data: departments = [], isLoading } = useQuery('allDepartments', () => getDepartments());
 
 	// Exemplo de uso
-	const teamMembers = getTeamMembers('diretor-unidade-organica');
-	console.log(teamMembers);
+	// const teamMembers = getTeamMembers('diretor-unidade-organica');
+	// console.log(teamMembers);
 
 	return (
 		<div>

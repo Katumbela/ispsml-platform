@@ -1,7 +1,9 @@
 const PT_SCHOOL_TITLE = "Instituto Superior Politécnico São Martinho de Lima",
-    EN_SCHOOL_TITLE = "Higher Politechnic Institute São Martinho de Lima";
+    EN_SCHOOL_TITLE = "Higher Politechnic Institute São Martinho de Lima",
+    BLUR_IMAGE = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAMCAIAAADgcHrrAAAACXBIWXMAAA7EAAAOxAGVKw4bAAACn0lEQVR4nAGUAmv9AMTOyMTKxc/PxsDEvbzFwL3JxqzBxKzHyKHCx5S7xI+6xoOywoCyxHmxx3StyHWxzm2tznmz0ACqyuuevt52n7+2zeOUs82HqMLC0uKSqsCjus2yyNiWqrmywM62wMyqt8K7ws6vuL6wvMapt8UAP3jKlb7rUI2yu9PneKPCea3Q0+b2h6bOnLHQvs7kVoewpcffrdHucarSs9DrcqrSf63fsdH2AAAelgBctr/N1ZuxzZ2twrTK5pmz1qSoyJmMspqHrp+cvqO+4Z+735WqwqO72b/e+QBduQBgvgAANI4ASZtclbY7f6Y6f6V1ocG3yufI4PfO4vbG3O/A1u+3zumfttRdh6p3lK+Op7obX6QAIoEAACJyAFWbcaK8TY6rRISjo8XZ8v7/io2EZmRMo5t2rquM3OXp2/X/PGp/RHGHWIGbM2GWACF4ABJJh1d4o4+3zXKiuWmhvcPi+K+ypgAAAAAAAHVrRWtmPqOqm+X9/2OJoD1/oWSfwFV8rQAhZgDN0M63ubTHyq7Y18rPz8LHyryLjYdCNiJWSDM3My00NTK0w8jIzsvKy8DU19PY3dy0vLuJjpoAzdjmrcfUkrfEmLjIp8XTr8LNoqeqSk1PR0pLjZKRlpqUucnQx9LTkqm1kamylK+7n6+0tcLLANbp+bXS8J/I66jS7qC91J7W/2eUrgAGAAEQEF1xd1BlbKq7xdbp/X+guZjN7Iu925u2ztDh9wDAyLl5kHZaeFVedWmtwbp4qqdolZ9JRjxLT0stRlkaO02Wqau9y7NzhHh2i4B3ioZ8ioC/yrYA1tC3xMKJ0NCS3tiq5OC239il4t/JtrunwMOqw8m0zNO+1tfH1cun49qt4tWq6Nm51s+n0Mqn6BSZ4lugccEAAAAASUVORK5CYII="
 
 export const env = {
     PT_SCHOOL_TITLE,
-    EN_SCHOOL_TITLE
+    EN_SCHOOL_TITLE,
+    BLUR_IMAGE
 } 

@@ -156,9 +156,9 @@ export const navigationItems = (t: any): NavigationItem[] => {
       label: 'navbar.more.title',
       href: "#",
       children: [
-        { label: 'navbar.more.studentPortal', href: "https://ispsml.forlearn.ao/pt" },
+        { label: 'navbar.more.studentPortal', target: "_blank", href: "https://ispsml.forlearn.ao/pt" },
         // { label: 'navbar.more.alumni', href: routes.ALUMNI_ROUTE },
-        { label: 'navbar.more.library', href: "https://bibliotecavirtual.renascerdosaber.com/" },
+        { label: 'navbar.more.library', target: "_blank", href: "https://bibliotecavirtual.renascerdosaber.com/" },
         // { label: 'navbar.more.associations', href: routes.ASSOCIATIONS_ROUTE },
         { label: 'navbar.more.contact', href: routes.CONTACT_ROUTE },
         { label: 'navbar.more.news', href: routes.NEWS_ROUTE },

@@ -1,19 +1,14 @@
-"use client"
 import { images } from '@/assets';
-import { getAllCourses } from '@/services/course.service';
+import { generateMetadata } from '@/infra/metadata';
 import Image from 'next/image';
-import { useEffect } from 'react';
+
+
+export const metadata = generateMetadata({
+	title: ' Instituto Superior São Martinho de Lima | ISPSML',
+	description: 'Estamos a criar um website que vai proporcionar uma experiência ainda melhor para todos.',
+});
 
 export default function Home() {
-
-	useEffect(() => {
-		async function test() {
-			const res = await getAllCourses();
-			console.log(res);
-		}
-		test();
-	}, []);
-
 
 	return (
 		<div className="fixed top-0 bottom-0 left-0 right-0 min-h-screen z-[10000000000000000] flex items-center justify-center bg-gradient-to-b from-blue-700 to-blue-900 text-white">
@@ -24,11 +19,11 @@ export default function Home() {
 				<div className="absolute w-3 h-3 bg-white rounded-full bottom-20 right-40 animate-pulse"></div>
 			</div>
 
-			<div className="flex  max-w-5xl justify-center gap-6">
+			<div className="flex flex-col md:flex-row max-w-5xl justify-center gap-6 px-4 md:px-0">
 				{/* Main Content */}
-				<div className="relative z-10 text-start w-full px-4">
-					<h1 className="text-6xl font-bold mb-4">Novo website a caminho !</h1>
-					<p className="text-lg mb-6">Estamos a criar um website que vai proporcionar uma <strong>experiência ainda melhor</strong> para todos. Para qualquer dúvida ou mais informações, entre em contacto conosco:</p>
+				<div className="relative z-10 text-start w-full md:w-1/2">
+					<h1 className="text-4xl md:text-6xl font-bold mb-4">Novo website a caminho !</h1>
+					<p className="text-base md:text-lg mb-6">Estamos a criar um website que vai proporcionar uma <strong>experiência ainda melhor</strong> para todos. Para qualquer dúvida ou mais informações, entre em contacto conosco:</p>
 
 					<div className="space-y-3">
 						<p className="flex items-start justify-start space-x-2">
@@ -47,14 +42,12 @@ export default function Home() {
 				</div>
 
 				{/* Logo */}
-				<div className=" relative w-full">
+				<div className="relative w-full md:w-1/2 h-64 md:h-auto">
 					<Image
 						src={images.logos.logo1}
 						alt="Logo ISPSML"
-						// width={300}
 						layout='fill'
 						objectFit='contain'
-						// height={300}
 						className="rounded-full"
 					/>
 				</div>

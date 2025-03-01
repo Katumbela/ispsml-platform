@@ -173,6 +173,7 @@ const Navbar = () => {
 																transition={{ delay: childIndex * 0.05 }}
 															>
 																<Link
+																	target={childItem?.target}
 																	href={`${childItem.href}`} // incluir a língua na rota
 																	className="block px-4 py-2 text-sm text-black hover:bg-white/30 backdrop-blur-lg "
 																>

@@ -1,4 +1,5 @@
 "use client"
+import { env } from "@/infra/env";
 import type { ICourse, IDepartment } from "@/infra/interfaces/course.interface";
 import { routes } from "@/infra/routes.vars";
 import Image from "next/image";
@@ -16,6 +17,8 @@ export function CardCourseComponent({ course, department }: CardCourseComponentP
         alt=""
         src={course.course_cover}
         layout="fill"
+        blurDataURL={env.BLUR_IMAGE}
+        placeholder="blur"
         objectFit="cover"
         className="inset-0 transition-opacity duration-300 group-hover:opacity-75"
       />

@@ -10,6 +10,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useEffect, useState } from 'react';
 import { images } from '@/assets';
 import cn from 'classnames';
+import { env } from '@/infra/env';
 
 interface GlobalHeroProps {
 	children?: React.ReactNode;
@@ -81,6 +82,8 @@ const GlobalHero = ({
 							layout="fill"
 							objectPosition={position || ""}
 							objectFit="cover"
+							blurDataURL={env.BLUR_IMAGE || images.backgrounds.bg_night_1.src}
+							placeholder="blur"
 							className="absolute inset-0 z-[-1]"
 						/>
 						<div className="absolute inset-0 bg-black opacity-50 z-[-1]" />

@@ -1,40 +1,52 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
+import { useQuery } from 'react-query';
 import YearAccordion from '../../components/YearAccordion';
 import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
 import { FaAngleRight, FaDownload } from 'react-icons/fa6';
 // import QuickLinks from '@/components/QuickLinks';
 import { routes } from '@/infra/routes.vars';
-import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
 import { getDepartmentBySlug } from '@/services/dep.service';
 import { getCourseBySlug } from '@/services/course.service';
 // import { RolesData } from '@/infra/data/roles-data';
 
 export default function CourseDetailsPage({ course_slug, department: dep_slug }: { department: string, course_slug: string }) {
-  // const { department: dep_slug, course_slug } = useParams() as { department: string, course_slug: string };
-  // const departmentData = coursesData[department as string];
-
-  // const course = typeof department === 'string' ? coursesData[department]?.courses.find(c => c.slug === course_slug) : null;
   const [openYear, setOpenYear] = useState<number | null>(null);
 
-  const [department, setDepartment] = useState<IDepartment | null>(null);
+  const { data: department, isLoading: isLoadingDep } = useQuery(['department', dep_slug], () => getDepartmentBySlug(dep_slug));
+  const { data: course, isLoading: isLoadingCourse } = useQuery(['course', course_slug], () => getCourseBySlug(course_slug));
 
-  const [course, setCourse] = useState<ICourse | null>(null);
-
-  useEffect(() => {
-    const fetchDep = async () => {
-      const cour = await getCourseBySlug(course_slug as string || "");
-      const dep = await getDepartmentBySlug(dep_slug as string || "");
-      setDepartment(dep);
-      setCourse(cour);
-
-    };
-    fetchDep();
-  }, [course_slug, dep_slug]);
-
+  if (isLoadingDep || isLoadingCourse) {
+    return (
+      <>
+        <div className="h-24 bg-gray-800" />
+        <div className="p-4">
+          <div className="h-[25vh] bg-gray-200 animate-pulse mb-4"></div>
+          <div className="space-y-4">
+            <div className="flex my-10 gap-10">
+              <div className="h-[20vh] w-full bg-gray-200 animate-pulse"></div>
+              <div className="h-[20vh] w-full bg-gray-200 animate-pulse"></div>
+            </div>
+            <div className="flex gap-5">
+              <div className="w-full space-y-5">
+                <div className="h-6 bg-gray-200 animate-pulse"></div>
+                <div className="h-6 bg-gray-200 animate-pulse"></div>
+              </div>
+              <div className="w-full space-y-5">
+                <div className="h-6 bg-gray-200 animate-pulse"></div>
+                <div className="h-6 bg-gray-200 animate-pulse"></div>
+              </div>
+            </div>
+          </div>
+          <br /><br />
+          <br /><br />
+        </div>
+      </>
+    );
+  }
 
   if (!course) {
     return <div>Curso não encontrado</div>;
@@ -43,7 +55,6 @@ export default function CourseDetailsPage({ course_slug, department: dep_slug }:
   const toggleYear = (year: number) => {
     setOpenYear(openYear === year ? null : year);
   };
-
 
   return (
     <>
@@ -82,7 +93,6 @@ export default function CourseDetailsPage({ course_slug, department: dep_slug }:
                   <p>{item.trim()}</p>
                 </div>
               ))}
-            {/* ))} */}
           </div>
         </div>
       </div>

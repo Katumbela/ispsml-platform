@@ -51,7 +51,7 @@ export default function Footer() {
                             </a>
                         </li>
                         <li>
-                            <a href="/intranet" className="hover:underline">
+                            <a href="https://ispsml.forlearn.ao/pt" target='_blank' className="hover:underline">
                                 Intranet ISPSML
                             </a>
                         </li>
@@ -86,7 +86,10 @@ export default function Footer() {
                             </a>
                         </li>
                         <li>
-                            <a href="/calendar" className="hover:underline">
+                            <a
+                                href="https://drive.google.com/file/d/18xyjGSo_-a5MYvZPAZK-3lyNR0a4yBO-/view?usp=sharing"
+                                className="hover:underline"
+                            >
                                 Calendário ISPSML
                             </a>
                         </li>
@@ -121,7 +124,11 @@ export default function Footer() {
                             </a>
                         </li>
                         <li>
-                            <a href="/calendar" className="hover:underline">
+                            <a
+                                target='_blank'
+                                href="https://drive.google.com/file/d/18xyjGSo_-a5MYvZPAZK-3lyNR0a4yBO-/view?usp=sharing"
+                                className="hover:underline"
+                            >
                                 Calendário ISPSML
                             </a>
                         </li>

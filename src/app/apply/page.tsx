@@ -98,7 +98,7 @@ export default function ApplyForm() {
       <head>
         <title>Processo de Inscrição | Instituto Superior Politécnico São Martinho de Lima</title>
       </head>
-      <GlobalHero bgImage={images.backgrounds.bg_woman_bg_flower.src} className='h-[700px]' bottomBG='dark' position='top' title='Formulário de Inscrição' />
+      <GlobalHero bgImage={images.backgrounds.bg_woman_bg_flower.src} className='d-h' bottomBG='dark' position='top' title='Formulário de Inscrição' />
       <div className="flex justify-between -mt-1.5 text-center border-b">
         {buttons.map((item, index) => (
           <a href={item.link} key={index} className={cn("justify-center w-full py-5 font-bold text-center transition-colors cursor-pointer hover:text-white uppercase text-sm hover:bg-primary-footer", { "border-x": index === 1 })}>

@@ -119,10 +119,72 @@ const About = () => {
 			</motion.div> */}
 			<br />
 			<br />
-			<div className="containers">
+			{/* <div className="containers">
 				<h2 className="text-2xl font-bold lg:text-3xl">Nossa Instituição</h2>
 				<p className="text-sm text-gray-600 lg:text-base">
 					O Instituto Superior Politécnico São Martinho de Lima (ISPSML), fundado em 1943, é uma instituição privada e sem fins lucrativos, comprometida com a qualidade do ensino superior em Angola. Tem como missão formar profissionais altamente qualificados, promovendo a inovação, a ética e o desenvolvimento sustentável.
+				</p>
+			</div> */}
+			<br />
+			<div className="containers">
+				<h2 className="text-2xl font-bold lg:text-3xl">APRESENTAÇÃO INSTITUCIONAL</h2>
+				<h3 className="text-xl mt-6 mb-4 font-bold lg:text-2xl">1. Breve Histórico</h3>
+				<p className="text-sm text-gray-600 lg:text-base">
+					O Instituto Superior Politécnico São Martinho de Lima (ISPSML), MNR – Investimentos, Lda., Entidade Promotora, publicada no Diário da República, III Série – 156/07 de 28 de Dezembro de 2007 ao abrigo do decreto Presidencial nº 310/20 de 7 de Dezembro Regime jurídico do Subsistema do Ensino Superior que regula e organiza, a MNR criou o ISPSML, que foi aprovado pelo Decreto Presidencial nº 233/19 de 22 de Julho.
+					O referido Instituto, está localizado junto à Via Expresso, Bairro Benfica, Município de Belas, Província Luanda.
+					É uma Instituição dotada de autonomia estatutária pedagógica, científica, cultural, administrativa, financeira, patrimonial e disciplinar. É um Estabelecimento Privado de Ensino Superior, integrado no Subsistema do Ensino Superior em Angola.
+					A actual estrutura estabelece a constituição de 3 áreas do conhecimento, no ensino presencial. O Instituto oferece cursos de graduação, nas áreas de:
+					<ul>
+						<li>Área de Ciências Sociais e Humanas</li>
+						<li>Área de Engenharia e Tecnologia</li>
+					</ul>
+					<br />
+					Quanto aos pessoal docente e discente o ISPSML conta actualmente com:
+					<ul className="list-disc ml-5">
+						<li>867 Estudantes</li>
+						<li>67 Docentes</li>
+						<li>85 Administrativos</li>
+					</ul>
+				</p>
+				<h3 className="text-xl mt-10 mb-4 font-bold lg:text-2xl">2. Finalidade institucional</h3>
+				<p className="text-sm text-gray-600 lg:text-base">
+					O Instituto Superior Politécnico São Martinho de Lima (ISPSML), nos termos do seu Estatuto Orgânico, tem por finalidades o desenvolvimento, a transmissão e a aplicação de conhecimentos por meio do ensino, da pesquisa e da extensão, compreendidos de forma não dissociada e, integrados na educação e na formação científica e técnico-profissional de cidadãos imbuídos de responsabilidades sociais, bem como na difusão da cultura e na criação filosófica, artística e tecnológica.
+					No cumprimento dos seus objectivos, o ISPSML mantém cooperação académica, científica, tecnológica e cultural com instituições nacionais, e internacionais e constitui-se no âmbito de desenvolvimento local e nacional, almejando consolidar-se como universidades da classe mundial.
+					No âmbito de assegurar o seu estatuto associa á finalidade institucional, as seguintes:
+					<br />
+					<br />
+					<ol className="list-decimal ml-5">
+						<li>Promover de forma indissociável, o ensino, a pesquisa e a extensão;</li>
+						<li>Fomentar o desenvolvimento tecnológico, científico, filosófico, literário e artístico.</li>
+						<li>Formar profissionais e especialistas de nível superior;</li>
+						<li>Formar profissionais em modalidades vinculadas ao desenvolvimento nacional Nacional.</li>
+						<li>Preparar recursos humanos qualificados.</li>
+					</ol>
+					<br />
+					A directriz estratégica do ISPSML tem de promover a sinergia entre os actores institucionais, estimulando a integração, o trabalho colectivo e também a ampliação da participação da comunidade universitária na tomada de decisão.
+					A dimensão institucional expressa a filosofia da universidade, marcando a sua posição como uma instituição pautada pelo seu compromisso social de construir o conhecimento e promover a formação de pessoas que respeitam valores essenciais para a construção de uma sociedade mais justa e comprometida com as grandes questões planetárias.
+					A dimensão relação com a sociedade, reforça o seu compromisso social e seus objectivos fundamentais e especiais, assegurados no estatuto, especialmente na promoção de transformação social que tenha como alicerces o conhecimento, a inovação e a sustentabilidade, acesso e acessibilidade e inserção social decorrentes das mais diversas áreas de actuação do ISPSML.
+					A dimensão de excelência académica que explicita o compromisso assumido na missão e na visão de ser uma Instituição, voltada para o constante desenvolvimento e qualificação de suas actividades de ensino, pesquisa e extensão.
+					A dimensão do aprendizado organizacional demonstra a preocupação permanente da instituição em promover o desenvolvimento das pessoas em todas as suas potencialidades. Além disso, fica explicitada nessa dimensão a necessidade de criar mecanismos para a retenção do conhecimento e também a reestruturação académica, física e administrativa, o processo de comunicação interna e externa da instituição.
+				</p>
+				<h3 className="text-xl mt-10 mb-3 font-bold lg:text-2xl">3. Objectivo Geral</h3>
+				<p className="text-sm text-gray-600 lg:text-base">
+					O ISPSML tem como objectivo geral aprimorar a dimensão de excelência académica que explicita no ensino, pesquisa e extensão.
+				</p>
+				<h3 className="text-xl mt-6 mb-4 font-bold lg:text-2xl">4. Objectivos específicos:</h3>
+				<p className="text-sm text-gray-600 lg:text-base">
+					<ol>
+						<li>Preparar quadros com formação científica- técnica e cultural em ramos ou especialidades correspondentes a áreas diferenciadas do conhecimento;</li>
+						<li>Realizar a formação em estreita ligação com a investigação científica orientada para a solução dos problemas postos em cada momento pelo desenvolvimento científico- tecnológico da instituição e do país.</li>
+						<li>Realizar cursos de graduação e pós – graduação ou especialização para a superação científica e tecnológica de quadros superiores e docentes.</li>
+						<li>Desenvolver actividades de investigação científica e tecnológica, visando uma produção científica que contribua para o desenvolvimento económico e social de Angola.</li>
+						<li>Divulgar os resultados da investigação científica realizada, de forma a partilhar esse novo conhecimento produtivo com a restante comunidade científica;</li>
+						<li>Contribuir para o desenvolvimento do espírito crítico e de reflexão no domínio da produção material, respeitando os valores históricos, culturais, sociais e humanos do povo angolano;</li>
+						<li>Contribuir para a elevação do padrão do ensino ministrado, visando uma formação sólida e altamente qualificada dos quadros nos domínios técnico, científico, cultural e humanístico.</li>
+						<li>Cooperar com empresas, instituições e associações, interligando o estudo e o trabalho, a educação e o ensino, a ciência e a tecnologia, visando a garantia de uma correcta e imediata inserção social e profissional dos formandos;</li>
+						<li>Promover acções que contribuam para o desenvolvimento das comunidades em que a instituição está inserida;</li>
+						<li>Estabelecer parcerias com Instituições internacionais para promover cursos de pós-graduação em todas as áreas.</li>
+					</ol>
 				</p>
 			</div>
 			<br />

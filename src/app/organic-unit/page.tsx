@@ -7,6 +7,7 @@ import { IDepartment } from '@/infra/interfaces/course.interface';
 import { getDepartments } from '@/services/dep.service';
 import { useState, useEffect } from 'react';
 import { routes } from '@/infra/routes.vars';
+import { env } from '@/infra/env';
 
 // const departments = Object.entries(coursesData).map(([key, value]) => ({
 // 	link: `${routes.ORGANIC_UNIT_ROUTE}/${key}`,
@@ -48,9 +49,7 @@ export default function OrganicUnitPage() {
 				<h2 className="title">Conheça as Nossas Unidades Organicas</h2>
 				<p className="mt-4 text-gray-500">
 					<i>
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio totam repellendus nisi
-						voluptate quis? Doloremque, odit velit ullam ad numquam quibusdam recusandae neque delectus
-						consectetur nostrum repellat, obcaecati, accusamus quidem!
+						Descubra nossas unidades orgânicas diversas e dinâmicas, cada uma dedicada à excelência em educação, pesquisa e serviço comunitário. Junte-se a nós para explorar as oportunidades e recursos únicos disponíveis em nossos departamentos. Nossas unidades orgânicas oferecem uma ampla gama de programas e iniciativas que visam promover o desenvolvimento acadêmico e profissional dos nossos alunos. Com uma equipe de professores altamente qualificados e uma infraestrutura moderna, estamos comprometidos em proporcionar uma experiência educacional enriquecedora e transformadora.
 					</i>
 				</p>
 				<br />
@@ -73,7 +72,8 @@ export default function OrganicUnitPage() {
 								key={i}
 								className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa"
 								style={{
-									backgroundImage: `linear-gradient(180deg, #011a4de7, #011a4de7), url(${department.department_cover})`,
+
+									backgroundImage: `linear-gradient(180deg, #011a4de7, #011a4de7), url(${department.department_cover || env.BLUR_IMAGE})`,
 									backgroundSize: 'cover',
 									backgroundPosition: 'center'
 								}}

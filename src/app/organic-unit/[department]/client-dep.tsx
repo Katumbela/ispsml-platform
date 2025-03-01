@@ -8,9 +8,9 @@ import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaAngleRight } from 'react-icons/fa';
 import { CardCourseComponent } from '../components/card-course-component';
-import { IDepartment } from '@/infra/interfaces/course.interface';
 import { getDepartmentBySlug } from '@/services/dep.service';
-import { useState, useEffect } from 'react';
+import { useQuery } from 'react-query';
+import { env } from '@/infra/env';
 // import Skeleton from 'react-loading-skeleton';
 // import 'react-loading-skeleton/dist/skeleton.css';
 
@@ -19,16 +19,19 @@ const CSADepartment = ({ slug }: { slug: string }) => {
     // const { department: slug } = useParams() as { department: string };
     // const department = coursesData[department as string];
 
-    const [department, setDepartment] = useState<IDepartment | null>(null);
-    const [loading, setLoading] = useState(true);
-    useEffect(() => {
-        const fetchDep = async () => {
-            const dep = await getDepartmentBySlug(slug);
-            setDepartment(dep);
-            setLoading(false);
-        };
-        fetchDep();
-    }, [slug]);
+    const { data: department, isLoading: loading } = useQuery(['department', slug], () => getDepartmentBySlug(slug));
+
+    // Remova o uso do useState e useEffect
+    // const [department, setDepartment] = useState<IDepartment | null>(null);
+    // const [loading, setLoading] = useState(true);
+    // useEffect(() => {
+    //     const fetchDep = async () => {
+    //         const dep = await getDepartmentBySlug(slug);
+    //         setDepartment(dep);
+    //         setLoading(false);
+    //     };
+    //     fetchDep();
+    // }, [slug]);
 
     if (loading) {
         return (
@@ -107,7 +110,14 @@ const CSADepartment = ({ slug }: { slug: string }) => {
             /> */}
             <main className="flex gap-1 ">
                 <div className="relative w-full">
-                    <Image alt="" src={department.department_cover || ""} layout="fill" objectFit="cover" />
+                    <Image
+                        alt=""
+                        src={department.department_cover || ""}
+                        layout="fill"
+                        objectFit="cover"
+                        blurDataURL={env.BLUR_IMAGE}
+                        placeholder='blur'
+                    />
                 </div>
                 <div className="w-full 2xl:p-16 p-14">
                     <p className="mt-4">
@@ -119,7 +129,14 @@ const CSADepartment = ({ slug }: { slug: string }) => {
                     <br />
                     <div className="flex">
                         <p className="flex w-full gap-4">
-                            <Image alt='' width={100} height={100} className='w-[2em] my-auto border border-black rounded-full h-[2em]' src={department.departmentDirector?.picture || ""} />
+                            <Image alt=''
+                                width={100}
+                                height={100}
+                                placeholder='blur'
+                                className='w-[2em] my-auto border border-black rounded-full h-[2em]'
+                                src={department.departmentDirector?.picture || ""}
+                                blurDataURL={env.BLUR_IMAGE}
+                            />
                             <span className="flex flex-col my-auto">
                                 {department?.departmentDirector?.name}
                                 <span className="text-xs">
@@ -144,9 +161,7 @@ const CSADepartment = ({ slug }: { slug: string }) => {
                 <h2 className="mb-6 title">Cursos Destacados de {department.name}</h2>
                 <p className="text-slate-500">
                     <i>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio unde harum eveniet autem?
-                        Aspernatur sit quis cum, ullam fugit provident delectus hic, mollitia expedita magni sapiente
-                        ad, voluptatum perferendis nisi.
+                        O departamento de {department.name} é dedicado a fornecer uma educação de alta qualidade e promover a pesquisa em diversas áreas. Nossos cursos são projetados para preparar os alunos para carreiras de sucesso e contribuir para o avanço do conhecimento. Junte-se a nós e descubra as oportunidades que o departamento de {department.name} tem a oferecer.
                     </i>
                 </p>
                 <br />

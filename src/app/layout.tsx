@@ -9,6 +9,7 @@ import { usePathname } from 'next/navigation'; // importar usePathname
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { QueryClient, QueryClientProvider } from "react-query";
 // import { Metadata } from "next";
 // import { LanguageProvider } from "@/contexts/lang-context";
 
@@ -24,6 +25,9 @@ import { Toaster } from "react-hot-toast";
 //     description: 'Melhor Universidade de Angola.'
 //   }
 // }
+
+
+const queryClient = new QueryClient();
 
 
 export default function RootLayout({
@@ -76,23 +80,26 @@ export default function RootLayout({
 
 
 
-        <>
+        <QueryClientProvider client={queryClient}>
+          <>
 
-          {loading ? <Loader /> :
+            {loading ? <Loader /> :
 
-            <>
-              <Navbar />
-              {children}
-              <Toaster />
-              <Footer />
-            </>}
+              <>
+                <Navbar />
+                {children}
+                <Toaster />
+                <Footer />
+              </>}
 
-          {/* </>) : (
+            {/* </>) : (
           <div className="items-center justify-center hidden h-screen text-lg font-medium text-center text-red-600 flexx">
             Esta plataforma ainda não está disponível para estes tamanhos de tela, use um computador para aceder.
           </div>
         )} */}
-        </>
+          </>
+        </QueryClientProvider>
+
 
 
         {/* </I18nextProvider> */}

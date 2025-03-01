@@ -13,6 +13,7 @@ import { ICourse, IDepartment } from '@/infra/interfaces/course.interface';
 import { FaPencilRuler } from 'react-icons/fa';
 import { GetLevelDescription } from '@/utils/return-level-name';
 import { routes } from '@/infra/routes.vars';
+import { env } from '@/infra/env';
 
 
 interface HeroCourseDetailProps {
@@ -65,6 +66,8 @@ export function HeroCourseDetail({ department, bg_image, title, course }: HeroCo
             <Image
               src={bg_image ? bg_image : ""}
               alt={""}
+              blurDataURL={env.BLUR_IMAGE}
+              placeholder='blur'
               layout="fill"
               objectFit="cover"
               className="absolute inset-0 z-[-1]"

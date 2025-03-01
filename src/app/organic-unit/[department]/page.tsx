@@ -10,7 +10,7 @@ export const metadata = generateMetadata({
 
 export async function generateStaticParams() {
 	const deps = await getDepartments();
-	return deps.map((dep) => ({ department: dep.slug }));
+	return deps?.map((dep) => ({ department: dep.slug }));
 }
 
 export default function Page({ params }: any) {

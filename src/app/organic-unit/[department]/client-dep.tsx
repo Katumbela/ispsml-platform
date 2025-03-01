@@ -11,6 +11,8 @@ import { CardCourseComponent } from '../components/card-course-component';
 import { IDepartment } from '@/infra/interfaces/course.interface';
 import { getDepartmentBySlug } from '@/services/dep.service';
 import { useState, useEffect } from 'react';
+// import Skeleton from 'react-loading-skeleton';
+// import 'react-loading-skeleton/dist/skeleton.css';
 
 const CSADepartment = ({ slug }: { slug: string }) => {
 
@@ -18,13 +20,38 @@ const CSADepartment = ({ slug }: { slug: string }) => {
     // const department = coursesData[department as string];
 
     const [department, setDepartment] = useState<IDepartment | null>(null);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         const fetchDep = async () => {
             const dep = await getDepartmentBySlug(slug);
             setDepartment(dep);
+            setLoading(false);
         };
         fetchDep();
     }, [slug]);
+
+    if (loading) {
+        return (
+            <>
+                <div className="h-24 mb-10 bg-gray-800" />
+                <div className="p-4">
+                    <div className="h-[25vh] bg-gray-200 animate-pulse mb-4"></div>
+                    <div className="space-y-4">
+                        <div className="flex my-10 gap-10">
+                            <div className="h-[20vh] w-full bg-gray-200 animate-pulse"></div>
+                            <div className="h-[20vh] w-full bg-gray-200 animate-pulse"></div>
+                        </div>
+                        <div className="h-6 bg-gray-200 animate-pulse"></div>
+                        <div className="h-6 bg-gray-200 animate-pulse"></div>
+                    </div>
+                    <div className="flex my-10 gap-4">
+                        <div className="h-64 bg-gray-200 animate-pulse mt-4 w-64"></div>
+                        <div className="h-64 bg-gray-200 animate-pulse mt-4 w-64"></div>
+                    </div>
+                </div>
+            </>
+        );
+    }
 
     if (!department) {
         return (

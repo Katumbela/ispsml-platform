@@ -8,12 +8,12 @@ export interface IRole {
     pic: string
     name: string
     about: string
-    cv: string
+    cv?: string
     role: string
     linkedin?: string
     x?: string
     phrases?: IPhrase[]
-    id: string
+    id?: string
     team?: string[]
 }
 

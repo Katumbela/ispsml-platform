@@ -3,12 +3,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { fileToBase64 } from "@/utils/file-to-b64";
 import { createDepartment } from "@/services/dep.service";
 import { IDepartment } from "@/infra/interfaces/course.interface";
 import Image from "next/image";
 import { AlertUtils } from "@/utils";
 import { routes } from "@/infra/routes.vars";
+import { uploadImage } from "@/utils/uploadImage";
 
 const NewDepartmentPage = () => {
     const [name, setName] = useState("");
@@ -24,7 +24,7 @@ const NewDepartmentPage = () => {
     const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
-            const base64 = await fileToBase64(file);
+            const base64 = await uploadImage(file, "department_cover");
             setDepartmentCover(base64);
             setPreview(URL.createObjectURL(file));
         }
@@ -32,7 +32,7 @@ const NewDepartmentPage = () => {
     const handlePhotoDirectorChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
         if (file) {
-            const base64 = await fileToBase64(file);
+            const base64 = await uploadImage(file, "department_director_cover");
             setDepartmentDirectorCover(base64);
             // setPreview(URL.createObjectURL(file));
         }

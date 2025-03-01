@@ -7,7 +7,7 @@ export interface Role {
   role: string;
   linkedin?: string;
   x?: string;
-  phrases: Phrase[];
+  phrases?: Phrase[];
   team: string[];
 }
 

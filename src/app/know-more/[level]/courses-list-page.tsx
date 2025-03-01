@@ -8,30 +8,42 @@ import { ICourse } from '@/infra/interfaces/course.interface';
 // import ConferenceComponent from '@/app/organic-unit/components/conference-component';
 import { routes } from '@/infra/routes.vars';
 import { useEffect, useState } from 'react';
-import { getDepartments } from '@/services/dep.service';
+import { getAllCourses } from '@/services/course.service';
+import { FaExclamationCircle } from 'react-icons/fa';
 
-const CourseList = ({ courses }: { courses: { course: ICourse, department: string }[] }) => (
+const CourseList = ({ courses, loading }: { courses: { course: ICourse, department: string }[], loading: boolean }) => (
   <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
-    {courses.map(({ course, department }, index) => (
-      <div key={index} className="relative cursor-pointer card h-[19rem] group">
-        <Image
-          alt=""
-          src={course.course_cover}
-          layout="fill"
-          objectFit="cover"
-          className="inset-0 transition-opacity duration-300 group-hover:opacity-75"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-30 group-hover:bg-opacity-60">
-          <h3 className="text-2xl font-semibold">{course.course}</h3>
-          <a
-            href={`${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`}
-            className="p-1.5 mt-3 -mb-4 transition-opacity duration-300 border-2 opacity-0 group-hover:opacity-100"
-          >
-            <FaArrowRight className="text-3xl" />
-          </a>
+    {loading ? (
+      Array.from({ length: 8 }).map((_, index) => (
+        <div key={index} className="relative card h-[19rem] bg-gray-200 animate-pulse"></div>
+      ))
+    ) : courses.length > 0 ? (
+      courses.map(({ course, department }, index) => (
+        <div key={index} className="relative cursor-pointer card h-[19rem] group">
+          <Image
+            alt=""
+            src={course.course_cover}
+            layout="fill"
+            objectFit="cover"
+            className="inset-0 transition-opacity duration-300 group-hover:opacity-75"
+          />
+          <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-white transition-opacity duration-300 bg-black bg-opacity-30 group-hover:bg-opacity-60">
+            <h3 className="text-2xl font-semibold">{course.course}</h3>
+            <a
+              href={`${routes.ORGANIC_UNIT_ROUTE}/${department}/${course.slug}`}
+              className="p-1.5 mt-3 -mb-4 transition-opacity duration-300 border-2 opacity-0 group-hover:opacity-100"
+            >
+              <FaArrowRight className="text-3xl" />
+            </a>
+          </div>
         </div>
+      ))
+    ) : (
+      <div className='mx-auto text-center w-full col-span-full my-10'>
+        <FaExclamationCircle className='text-4xl mx-auto mb-6 text-primary' />
+        <p className="col-span-full text-center text-gray-500">Nenhum curso encontrado.</p>
       </div>
-    ))}
+    )}
   </div>
 );
 
@@ -39,23 +51,21 @@ export default function CustomKnowMore({ level }: { level: string }) {
   // const { level } = useParams() as { level: string };
   // const [departments, setDepartments] = useState<IDepartment[]>([]);
   const [courses, setCourses] = useState<{ course: ICourse, department: string }[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchDepartments = async () => {
-      const deps = await getDepartments();
+    const fetchCourses = async () => {
+      const allCourses = await getAllCourses();
 
-      // Extraindo cursos dos departamentos e filtrando pelo nível
-      const filteredCourses = deps.flatMap(dep =>
-        dep.courses
-          ?.filter(course => course.level == level)
-          .map(course => ({ course, department: dep.slug })) || []
-      );
-      console.log(filteredCourses)
-      setCourses(filteredCourses);
+      // Filtrando cursos pelo nível
+      const filteredCourses = allCourses.filter(course => course.level === level);
+      console.log(filteredCourses);
+      setCourses(filteredCourses.map(course => ({ course, department: course.department?.slug || '' })));
+      setLoading(false);
     };
 
-    fetchDepartments();
-  }, []);
+    fetchCourses();
+  }, [level]);
 
   const getTitleByLevel = (level: string) => {
     switch (level) {
@@ -112,7 +122,7 @@ export default function CustomKnowMore({ level }: { level: string }) {
         </p>
 
         <section id="courses">
-          <CourseList courses={courses} />
+          <CourseList courses={courses} loading={loading} />
         </section>
       </section>
       <br />

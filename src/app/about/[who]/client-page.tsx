@@ -45,7 +45,7 @@ const RoleProfileClient = ({ who }: { who: string }) => {
 
     const accordionItems = teamMembers.map((member) => ({
         title: <div key={member.id} className="w-full relative p-4 text-black h-[20rem] 2xl:h-[24rem] group">
-            <Image alt={member.name} src={member.pic} layout='fill' objectFit='cover' className='inset-0' />
+            <Image alt={member.name} src={member.pic} layout='fill' objectFit='cover' objectPosition='top' className='inset-0 object-top' />
             <div className="absolute bottom-0 left-0 right-0 z-10 p-4 text-white bg-opacity-50 from-black bg-gradient-to-t group-hover:bg-opacity-75">
                 <h3>{member.name}</h3>
                 <p className='text-xs'>{member.role}</p>
@@ -84,10 +84,11 @@ const RoleProfileClient = ({ who }: { who: string }) => {
                 <title>Promotoria & Presidencia | Instituto Superior Politécnico São Martinho de Lima</title>
             </head>
             <GlobalHero
-                bgImage={images.backgrounds.bg_school_4.src}
-                titleClassName='text-5xl'
-                title={who === "promotor" ? "Promotor do ISPSML" : "Presidente do ISPSML"}
-                className="h-[500px] 2xl:h-[750px]"
+                bgImage={images.backgrounds.president_banner.src}
+                titleClassName='text-4xl 2xl:text-5xl'
+                position='top'
+                title={who === "promotor" ? "Promotor do ISPSML" : "Presidência do ISPSML"}
+                className="d-h"
             />
             <br />
             <div className="py-8 -mt-2 bg-white 2xl:py-14">
@@ -96,8 +97,7 @@ const RoleProfileClient = ({ who }: { who: string }) => {
                         <div className="w-3/5 2xl:w-4/5">
 
                             {' '}
-                            <div className="flex justify-between">
-                                <h2 className="mb-4 title">Perfil</h2>
+                            <div className="hidden justify-between">
                                 <div className="flex gap-3">
                                     <BiFile className='my-auto text-2xl' />
                                     <div className="flex gap-4"><span className='my-auto border-l-2 border-black ps-8 pe-3'>Curriculo {user?.name} </span> <FaDownload className='my-auto cursor-pointer' /></div>

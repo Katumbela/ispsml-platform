@@ -177,6 +177,10 @@ footer div ul li, footer div p {
   transition: .5s all;
 }
 
+.d-h {
+  @apply h-[400px] lg:h-[500px];
+}
+
 .card-depa:hover {
   background: linear-gradient(180deg, #012d86ee, #012d86ee), url(../assets/logos/logo.png) no-repeat left bottom;
   background-size: 60%;

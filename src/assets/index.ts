@@ -21,6 +21,7 @@ import elon_musk from "./teachers/elon_musk.jpg";
 import news3 from "./news/news3.jpg";
 import news4 from "./news/news4.jpeg";
 
+import president_banner from "./bgs/president.jpg";
 
 // Backgrounds
 import bg1 from "./bgs/school-bg-1.jpeg";
@@ -192,6 +193,7 @@ export const backgrounds = {
   bg1,
   bg_night_1,
   bg_qualidade_e_inovacao,
+  president_banner,
   bg_inscricao_e_matricula,
   bg_oferta_formativa_main_opt_2,
   bg_oferta_formativa_main,

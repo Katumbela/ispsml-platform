@@ -27,7 +27,7 @@ const About = () => {
 				bottomBG="dark"
 				title={'Sobre Nós'}
 				position='top'
-				className="h-[400px] 2xl:h-[550px]"
+				className="d-h"
 			/>
 
 			<div className="py-8 -mt-2 2xl:py-14 bg-primary">
@@ -59,7 +59,7 @@ const About = () => {
 				</div> */}
 				<div
 					style={{
-						background: `url(${images.teachers.president_photo.src}) center center`,
+						background: `url(${images.backgrounds.president_banner.src}) center center`,
 						backgroundRepeat: 'no-repeat',
 						backgroundPosition: 'top',
 						backgroundSize: 'cover'
@@ -78,7 +78,7 @@ const About = () => {
 				</div>
 				<div
 					style={{
-						background: `url(${images.teachers.president_photo.src}) center center`,
+						background: `url(${images.backgrounds.president_banner.src}) center center`,
 						backgroundRepeat: 'no-repeat',
 						backgroundPosition: 'top',
 						backgroundSize: 'cover'

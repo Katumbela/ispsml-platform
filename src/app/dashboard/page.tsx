@@ -97,6 +97,9 @@ const Dashboard = () => {
           <button onClick={() => router.push(routes.MANAGE_DEPARTMENTS)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
             Gerenciar Departamentos
           </button>
+          <button onClick={() => router.push(routes.MANAGE_ROLES)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
+            Gerenciar Membros
+          </button>
           <button onClick={() => router.push(routes.MANAGE_EVENT)} className="px-3 py-2 text-black bg-white border-2 border-white hover:bg-transparent hover:text-white">
             Gerenciar Eventos
           </button>
@@ -118,7 +121,7 @@ const Dashboard = () => {
             <br />
             <div className="mb-4 mt-6">
               <label className="block mb-2 text-sm font-bold" htmlFor="image">Capa da Informação</label>
-              <input type="file" id="image" onChange={(e) => setImage(e.target.files?.[0] || null)} required className="w-full px-3 py-2 leading-tight text-black text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
+              <input type="file" id="image" onChange={(e) => setImage(e.target.files?.[0] || null)} required className="w-full px-3 py-2 leading-tight text-bblack text-white border rounded shadow appearance-none focus:outline-none focus:shadow-outline" />
             </div>
             <div className="flex justify-start">
               <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">

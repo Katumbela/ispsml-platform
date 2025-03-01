@@ -24,18 +24,16 @@ export default function OrganicUnitPage() {
 	}
 
 	const [departments, setDepartments] = useState<IDepartment[] | []>([]);
+	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
 		async function fetchDepartments() {
 			const data = await getDepartments();
 			setDepartments(data);
+			setLoading(false);
 		}
 		fetchDepartments();
 	}, []);
-
-
-
-	// ...existing code...
 
 	// Exemplo de uso
 	const teamMembers = getTeamMembers('diretor-unidade-organica');
@@ -59,22 +57,32 @@ export default function OrganicUnitPage() {
 				<br />
 			</div>
 			<div className="px-1">
-				<div className="grid grid-cols-1 gap-1 mb-1 md:grid-cols-2 lg:grid-cols-3">
-					{departments.filter((e) => e.name != 'Masters').map((department, i) => (
-						<div
-							onClick={() => (window.location.href = routes.ORGANIC_UNIT_ROUTE + '/' + department.slug)}
-							key={i}
-							className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa"
-						//   style={{
-						//     backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(${department.cover})`,
-						//     backgroundSize: 'cover',
-						//     backgroundPosition: 'center'
-						//   }}
-						>
-							<h3 className="text-xl font-bold 2xl:text-2xl">{department.name}</h3>
-						</div>
-					))}
-				</div>
+				{loading ? (
+					<div className="grid grid-cols-1 gap-1 mb-1 md:grid-cols-2 lg:grid-cols-3">
+						{Array.from({ length: 6 }).map((_, i) => (
+							<div key={i} className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa animate-pulse bg-gray-300">
+								<div className="h-6 bg-gray-400 rounded w-3/4 mx-auto"></div>
+							</div>
+						))}
+					</div>
+				) : (
+					<div className="grid grid-cols-1 gap-1 mb-1 md:grid-cols-2 lg:grid-cols-3">
+						{departments.filter((e) => e.name != 'Masters').map((department, i) => (
+							<div
+								onClick={() => (window.location.href = routes.ORGANIC_UNIT_ROUTE + '/' + department.slug)}
+								key={i}
+								className="p-4 border grid items-center justify-center cursor-pointer px-10 text-white text-center h-[15rem] 2xl:h-[22rem] card-depa"
+								style={{
+									backgroundImage: `linear-gradient(180deg, #011a4de7, #011a4de7), url(${department.department_cover})`,
+									backgroundSize: 'cover',
+									backgroundPosition: 'center'
+								}}
+							>
+								<h3 className="text-xl font-bold 2xl:text-2xl">{department.name}</h3>
+							</div>
+						))}
+					</div>
+				)}
 			</div>
 		</div>
 	);

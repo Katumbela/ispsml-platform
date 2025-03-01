@@ -4,12 +4,10 @@ import CourseDetailsPage from './course-details-slug.tsx';
 import { getDepartments } from '@/services/dep.service';
 import { getAllCourses, getCourseBySlug } from '@/services/course.service';
 
-
-
 export async function generateMetadata({ params }: any) {
-	const course = await getCourseBySlug(params.slug);
+	const course = await getCourseBySlug(params.course_slug);
 	return {
-		title: `${course?.course} | ISPSML`,
+		title: `Curso de ${course?.course || "Visualizar curso"} | ISPSML`,
 		description: course?.short_detail,
 		keywords: "University, alugar, comprar, venda, apartamentos, casas, ISPSML University, Angola, Portugal, imobiliária, contact, ISPSML, Instituto Superior São Martinho de Lima, support, inquiries",
 		authors: [{ name: "ISPSML University, João Afonso Katombela", url: "https://ispsml.ao" }],
@@ -49,34 +47,11 @@ export async function generateMetadata({ params }: any) {
 	};
 }
 
-export const metadata = generateMetadata({
-	title: 'Ver Detalhes do Curso | ISPSML',
-	description: '',
-});
 
 export async function generateStaticParams() {
-	// const departments = [
-	// 	{ id: 1, slug: 'informatica' },
-	// 	{ id: 2, slug: 'gestao' },
-	// 	{ id: 3, slug: 'medicina' },
-	// 	{ id: 4, slug: 'direito' },
-	// 	{ id: 5, slug: 'engenharia' },
-	// ];
+
 
 	const departments = await getDepartments();
-
-	// const courses = [
-	// 	{ id: 101, slug: 'programacao', departmentId: 1 },
-	// 	{ id: 102, slug: 'redes', departmentId: 1 },
-	// 	{ id: 103, slug: 'ciberseguranca', departmentId: 1 },
-	// 	{ id: 104, slug: 'administracao', departmentId: 2 },
-	// 	{ id: 105, slug: 'contabilidade', departmentId: 2 },
-	// 	{ id: 106, slug: 'medicina-geral', departmentId: 3 },
-	// 	{ id: 107, slug: 'cirurgia', departmentId: 3 },
-	// 	{ id: 108, slug: 'direito-penal', departmentId: 4 },
-	// 	{ id: 109, slug: 'direito-civil', departmentId: 4 },
-	// 	{ id: 110, slug: 'mecanica', departmentId: 5 },
-	// ];
 
 	const courses = await getAllCourses();
 

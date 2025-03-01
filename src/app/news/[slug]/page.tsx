@@ -46,6 +46,7 @@ export async function generateMetadata({ params }: any) {
 
 export async function generateStaticParams() {
     const news = await newsService.getAllNews();
+    console.log(news);
     return news.map((n) => ({ slug: n?.slug }));
 }
 

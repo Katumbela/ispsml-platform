@@ -5,34 +5,20 @@ import 'slick-carousel/slick/slick-theme.css';
 import { useTranslation } from 'react-i18next';
 import { AbreviateString, DateUtils } from '@/utils';
 import { routes } from '@/infra/routes.vars';
-import { useEffect, useState } from 'react';
+import { useQuery } from 'react-query';
 import { newsService } from '@/services/news.service';
-import { News } from '@/infra/interfaces/news';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 export function NewsComponents() {
 	const { t } = useTranslation();
 
-	const [loading, setLoading] = useState(false);
+	const { data: newses, isLoading: loading } = useQuery('allNews', () => newsService.getAllNews(), {
+		refetchOnWindowFocus: false
+	});
 
-	const [newses, setNewses] = useState<News[] | []>([]);
-	const [randomNews, setRandomNews] = useState<News | null>(null);
-
-	useEffect(() => {
-		setLoading(true);
-		newsService.getAllNews().then((news) => {
-			setNewses(news);
-			setLoading(false);
-			if (news.length > 0) {
-				const randomIndex = Math.floor(Math.random() * news.length);
-				const featuredNews = news[randomIndex];
-				setRandomNews(featuredNews);
-				setNewses(news.filter(n => n !== featuredNews));
-			}
-		});
-	}, []);
-
+	const randomNews = newses && newses?.length > 0 ? newses[Math.floor(Math.random() * newses.length)] : null;
+	const filteredNewses = randomNews ? newses && newses.filter(n => n !== randomNews) : newses;
 
 	const settings = {
 		dots: false,
@@ -123,7 +109,7 @@ export function NewsComponents() {
 							</div>
 						) : (
 							<Slider {...settings}>
-								{newses.map((news, index) => (
+								{filteredNewses?.map((news, index) => (
 									<NewsCard
 										key={index}
 										title={news.title}

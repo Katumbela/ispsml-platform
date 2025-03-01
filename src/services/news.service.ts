@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import AxiosHttpClient from '@/http/axiosHttpClient';
 import { News } from '@/infra/interfaces/news';
 
@@ -5,9 +6,10 @@ class NewsService {
   private httpClient = new AxiosHttpClient();
   private route = "/news";
 
-  async getAllNews(): Promise<News[] | []> {
+  async getAllNews(): Promise<any[] | []> {
     const response = await this.httpClient.get(this.route);
-    return response.data as News[];
+    // console.log(response.data)
+    return response.data as any;
   }
 
   async getNewsById(id: string): Promise<News | null> {

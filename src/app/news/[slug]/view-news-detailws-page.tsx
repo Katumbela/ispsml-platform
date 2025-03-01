@@ -11,10 +11,15 @@ import { DateUtils } from '@/utils';
 import Head from 'next/head';
 
 export default function ViewNewsPage({ slug }: { slug: string }) {
-	const { data: news, isLoading: newsLoading } = useQuery(['news', slug], () => newsService.getNewsBySlug(slug));
-	const { data: allNews, isLoading: allNewsLoading } = useQuery('allNews', newsService.getAllNews);
+	const { data: news, isLoading: newsLoading } = useQuery(['news', slug], () => newsService.getNewsBySlug(slug), {
+		refetchOnWindowFocus: false
+	});
 
-	if (newsLoading || allNewsLoading) {
+	const { data: allNews, isLoading: allNewsLoading } = useQuery('allNews', () => newsService.getAllNews(), {
+		refetchOnWindowFocus: false
+	});
+
+	if (newsLoading || allNewsLoading && !news) {
 		return (
 			<div>
 				<Head>
@@ -70,6 +75,24 @@ export default function ViewNewsPage({ slug }: { slug: string }) {
 			</div>
 		);
 	}
+
+
+	// if (newsError || allNewsError) {
+	// 	return (
+	// 		<div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+	// 			<Head>
+	// 				<title>Erro ao carregar notícias</title>
+	// 			</Head>
+	// 			<div className="p-6 bg-white rounded shadow-md">
+	// 				<h1 className="text-2xl font-semibold text-gray-800">Erro ao carregar notícias</h1>
+	// 				<p className="mt-4 text-gray-600">Ocorreu um erro ao carregar as notícias. Por favor, tente novamente mais tarde.</p>
+	// 				<button onClick={() => window.location.reload()} className="mt-6 px-4 py-2 text-white bg-primary rounded hover:bg-primary-dark">
+	// 					Tentar novamente
+	// 				</button>
+	// 			</div>
+	// 		</div>
+	// 	);
+	// }
 
 	if (!news) {
 		return (
@@ -155,37 +178,41 @@ export default function ViewNewsPage({ slug }: { slug: string }) {
 			<br />
 			<br />
 			<br />
-			<section className="py-10 view-more bg-slate-100">
-				<div className="containers">
-					<div>
-						<h2 className="text-2xl font-semibold">Veja também </h2>
-					</div>
-					<br />
-					<br />
-					<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
-						{allNews?.filter((n) => n.slug !== slug)
-							.slice(0, 3)
-							.map((news, index) => (
-								<NewsCard
-									key={index}
-									title={news.title}
-									shortDescription={news.shortDescription}
-									postDate={news.postDate}
-									poster={news.poster}
-									content={news.content}
-									link={news.link}
-									slug={news.slug}
-									image={news.image}
-								/>
-							))}
-					</div>
-					<br />
-					<br />
-					<button onClick={() => window.location.href = routes.NEWS_ROUTE} className="flex gap-2 px-3 py-2 text-sm transition-all border-2 hover:bg-primary hover:text-white border-primary text-primary">
-						<span className="my-auto">Todas as Notícias</span> <FaArrowRight className="my-auto" />
-					</button>
-				</div>
-			</section>
+			{
+				allNews && allNews?.length > 0 && (
+					<section className="py-10 view-more bg-slate-100">
+						<div className="containers">
+							<div>
+								<h2 className="text-2xl font-semibold">Veja também </h2>
+							</div>
+							<br />
+							<br />
+							<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
+								{allNews?.filter((n) => n.slug !== slug)
+									.slice(0, 3)
+									.map((news, index) => (
+										<NewsCard
+											key={index}
+											title={news.title}
+											shortDescription={news.shortDescription}
+											postDate={news.postDate}
+											poster={news.poster}
+											content={news.content}
+											link={news.link}
+											slug={news.slug}
+											image={news.image}
+										/>
+									))}
+							</div>
+							<br />
+							<br />
+							<button onClick={() => window.location.href = routes.NEWS_ROUTE} className="flex gap-2 px-3 py-2 text-sm transition-all border-2 hover:bg-primary hover:text-white border-primary text-primary">
+								<span className="my-auto">Todas as Notícias</span> <FaArrowRight className="my-auto" />
+							</button>
+						</div>
+					</section>
+				)
+			}
 
 		</div >
 	);

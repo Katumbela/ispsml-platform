@@ -19,7 +19,7 @@ const CSADepartment = ({ slug }: { slug: string }) => {
     // const { department: slug } = useParams() as { department: string };
     // const department = coursesData[department as string];
 
-    const { data: department, isLoading: loading } = useQuery(['department', slug], () => getDepartmentBySlug(slug));
+    const { data: department, isLoading: loading } = useQuery(['departmentSlug', slug], () => getDepartmentBySlug(slug));
 
     // Remova o uso do useState e useEffect
     // const [department, setDepartment] = useState<IDepartment | null>(null);

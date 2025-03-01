@@ -87,6 +87,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <a
+                                download={true}
                                 href="https://drive.google.com/file/d/18xyjGSo_-a5MYvZPAZK-3lyNR0a4yBO-/view?usp=sharing"
                                 className="hover:underline"
                             >
@@ -125,6 +126,7 @@ export default function Footer() {
                         </li>
                         <li>
                             <a
+                                download
                                 target='_blank'
                                 href="https://drive.google.com/file/d/18xyjGSo_-a5MYvZPAZK-3lyNR0a4yBO-/view?usp=sharing"
                                 className="hover:underline"

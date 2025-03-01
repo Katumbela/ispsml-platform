@@ -16,8 +16,8 @@ import { getCourseBySlug } from '@/services/course.service';
 export default function CourseDetailsPage({ course_slug, department: dep_slug }: { department: string, course_slug: string }) {
   const [openYear, setOpenYear] = useState<number | null>(null);
 
-  const { data: department, isLoading: isLoadingDep } = useQuery(['department', dep_slug], () => getDepartmentBySlug(dep_slug));
-  const { data: course, isLoading: isLoadingCourse } = useQuery(['course', course_slug], () => getCourseBySlug(course_slug));
+  const { data: department, isLoading: isLoadingDep } = useQuery(['departmentSlug', dep_slug], () => getDepartmentBySlug(dep_slug));
+  const { data: course, isLoading: isLoadingCourse } = useQuery(['courseSlug', course_slug], () => getCourseBySlug(course_slug));
 
   if (isLoadingDep || isLoadingCourse) {
     return (

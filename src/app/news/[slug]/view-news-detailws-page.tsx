@@ -1,36 +1,20 @@
 'use client';
 
-// import { newsData } from '@/infra/data/newsData';
 import { FaArrowRight, FaFacebookF, FaLinkedin, FaWhatsapp } from 'react-icons/fa6';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { FaCalendarAlt } from 'react-icons/fa';
 import NewsCard from '@/components/news-card/news-card';
 import { newsService } from '@/services/news.service';
-import { useEffect, useState } from 'react';
-import { News } from '@/infra/interfaces/news';
+import { useQuery } from 'react-query';
 import { DateUtils } from '@/utils';
 import Head from 'next/head';
 
 export default function ViewNewsPage({ slug }: { slug: string }) {
-	// const params = useParams() as { slug: string };
-	// const { slug } = params;
-	const [news, setNews] = useState<News | null>(null);
-	const [allNews, setAllNews] = useState<News[] | []>([]);
-	const [loading, setLoading] = useState(true);
+	const { data: news, isLoading: newsLoading } = useQuery(['news', slug], () => newsService.getNewsBySlug(slug));
+	const { data: allNews, isLoading: allNewsLoading } = useQuery('allNews', newsService.getAllNews);
 
-	useEffect(() => {
-		newsService.getNewsBySlug(slug ? String(slug) : "").then((news) => {
-			setNews(news);
-			setLoading(false);
-		});
-		newsService.getAllNews().then((news) => {
-			setAllNews(news);
-			setLoading(false);
-		});
-	}, [slug]);
-
-	if (loading) {
+	if (newsLoading || allNewsLoading) {
 		return (
 			<div>
 				<Head>
@@ -122,7 +106,6 @@ export default function ViewNewsPage({ slug }: { slug: string }) {
 				<div className="containers">
 					<h1 className="text-3xl font-semibold text-white">{news.title}</h1>
 					<p className="flex gap-2 mt-4 text-sm text-white">
-						{' '}
 						<FaCalendarAlt className="my-auto" />
 						<span className="my-auto"> Publicado em: {DateUtils.getDatePt(news.postDate)}</span>
 					</p>
@@ -144,13 +127,6 @@ export default function ViewNewsPage({ slug }: { slug: string }) {
 					>
 						<FaWhatsapp className="my-auto" /> <span className="my-auto">Whatsapp</span>
 					</a>
-					{/* <a
-						href={`https://x.com/intent/tweet?url=https://ispsml.ao${routes.VIEW_NEWS_ROUTE}/${slug}&via=ispml-university`}
-						target="__blank"
-						className="flex gap-2 px-3 py-2 text-sm transition-all border-2 hover:bg-primary hover:text-white border-primary text-primary"
-					>
-						<FaXTwitter className="my-auto" /> <span className="my-auto">Tweeter</span>
-					</a> */}
 					<a
 						href={`https://www.linkedin.com/sharing/share-offsite/?url=https://ispsml.ao${routes.VIEW_NEWS_ROUTE}/${slug}`}
 						target="__blank"
@@ -187,7 +163,7 @@ export default function ViewNewsPage({ slug }: { slug: string }) {
 					<br />
 					<br />
 					<div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
-						{allNews.filter((n) => n.slug !== slug)
+						{allNews?.filter((n) => n.slug !== slug)
 							.slice(0, 3)
 							.map((news, index) => (
 								<NewsCard
@@ -211,6 +187,6 @@ export default function ViewNewsPage({ slug }: { slug: string }) {
 				</div>
 			</section>
 
-		</div>
+		</div >
 	);
 }

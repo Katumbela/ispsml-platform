@@ -6,6 +6,45 @@ import m2j_logo_white from "./logos/m2j_white.png";
 import m2j_logo_p_white from "./logos/logo_p_white.png";
 import logo_blue from "./logos/logo-new-blue.png";
 
+// export the extras images
+
+import extra_1 from "./extra/473534216_1144900074308539_4425048997104963910_n.jpg";
+import extra_2 from "./extra/473805401_1144900577641822_3610752278531674260_n.jpg";
+import extra_3 from "./extra/473806470_1144900387641841_59916680589673863_n.jpg";
+import extra_4 from "./extra/473822756_1144900544308492_6380498363628111783_n.jpg";
+import extra_5 from "./extra/474010356_1144900547641825_875500447479794904_n.jpg";
+import extra_6 from "./extra/474119777_1144900384308508_1656762547128488698_n.jpg";
+import extra_7 from "./extra/474125549_1144900254308521_4334976260872721722_n.jpg";
+import extra_8 from "./extra/474145919_1144900407641839_7485465299568507065_n.jpg";
+import extra_9 from "./extra/474205803_1144900584308488_613324826779976109_n.jpg";
+import extra_10 from "./extra/474327321_1144900247641855_1511320467657088595_n.jpg";
+import extra_11 from "./extra/474559369_1144900564308490_3016855445816324844_n.jpg";
+import extra_12 from "./extra/474478974_1144900400975173_3652736222880759626_n.jpg";
+import extra_13 from "./extra/474575792_1144900554308491_4380911805544420644_n.jpg";
+import extra_14 from "./extra/474677025_1148263270638886_1000706407739654950_n.jpg";
+import extra_15 from "./extra/474687101_1144900644308482_6044488765286970655_n.jpg";
+import extra_16 from "./extra/474696568_1144900350975178_5322990274297180243_n.jpg";
+import extra_17 from "./extra/474723658_1148263280638885_7843229835949251824_n.jpg";
+import extra_18 from "./extra/474727464_1148263317305548_999294310602388495_n.jpg";
+import extra_19 from "./extra/474760699_1144900594308487_4440021667794996965_n.jpg";
+import extra_20 from "./extra/474762349_1144900560975157_1793037944065549227_n.jpg";
+import extra_21 from "./extra/474767585_1144900244308522_4313806604346031483_n.jpg";
+import extra_22 from "./extra/474921608_1148263413972205_3104361571201983054_n.jpg";
+import extra_23 from "./extra/475034343_1148257310639482_7140052710895649484_n.jpg";
+import extra_24 from "./extra/475040344_1148263153972231_799729329750278970_n.jpg";
+import extra_25 from "./extra/475054454_1148263407305539_3350671567741003894_n.jpg";
+import extra_26 from "./extra/475068610_1148262897305590_8739685211206545195_n.jpg";
+import extra_27 from "./extra/475068785_1148262850638928_9017012085246937106_n.jpg";
+import extra_28 from "./extra/475075385_1148263297305550_208218057339896277_n.jpg";
+import extra_29 from "./extra/475115665_1148263340638879_3845914429071373200_n.jpg";
+import extra_30 from "./extra/475136342_1148256800639533_2871773840138272612_n.jpg";
+import extra_31 from "./extra/475137171_1148263010638912_4279420539095022343_n.jpg";
+import extra_32 from "./extra/475140219_1148263397305540_807111289724129725_n.jpg";
+import extra_33 from "./extra/475153716_1148262580638955_3638432789637149286_n.jpg";
+import extra_34 from "./extra/475156239_1148263337305546_1250435675682961537_n.jpg";
+import extra_35 from "./extra/475156294_1148263400638873_3236799474718058010_n.jpg";
+import extra_36 from "./extra/475181273_1148263277305552_6187821046528368849_n.jpg";
+
 // Teachers
 import teacher1 from "./teachers/teacher-1.jpeg";
 import teacher2 from "./teachers/teacher-2.jpg";
@@ -309,6 +348,46 @@ export const newsImages = {
   news4,
 };
 
+
+export const extrasImgs = {
+  extra_1,
+  extra_2,
+  extra_3,
+  extra_4,
+  extra_5,
+  extra_6,
+  extra_7,
+  extra_8,
+  extra_9,
+  extra_10,
+  extra_11,
+  extra_12,
+  extra_13,
+  extra_14,
+  extra_15,
+  extra_16,
+  extra_17,
+  extra_18,
+  extra_19,
+  extra_20,
+  extra_21,
+  extra_22,
+  extra_23,
+  extra_24,
+  extra_25,
+  extra_26,
+  extra_27,
+  extra_28,
+  extra_29,
+  extra_30,
+  extra_31,
+  extra_32,
+  extra_33,
+  extra_34,
+  extra_35,
+  extra_36,
+};
+
 export const bgPplImages = {
   bg_ppl16,
   bg_ppl17,
@@ -334,6 +413,7 @@ export const images = {
   newsImages,
   svgs,
   profiles,
+  extrasImgs,
   bgPplImages,
   bgsSchool,
 };

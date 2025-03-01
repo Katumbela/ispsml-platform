@@ -4,8 +4,8 @@ export function generateMetadata({ title, description }: { title: string; descri
     return {
         title,
         description,
-        keywords: "University, alugar, comprar, venda, apartamentos, casas, ISPSML University, Angola, Portugal, imobiliária",
-        authors: [{ name: "ISPSML University", url: "https://ispsml.ao" }],
+        keywords: "University, alugar, comprar, venda, apartamentos, casas, ISPSML University, Angola, Portugal, imobiliária, contact, ISPSML, Instituto Superior São Martinho de Lima, support, inquiries",
+        authors: [{ name: "ISPSML University - Joao Afonso Katombela", url: "https://ispsml.ao" }],
         robots: "index, follow",
         metadataBase: new URL("https://ispsml.ao"),
         alternates: {
@@ -18,7 +18,7 @@ export function generateMetadata({ title, description }: { title: string; descri
             siteName: "ISPSML University",
             images: [
                 {
-                    url: "https://ISPSML.vercel.app/_next/static/media/Group%2039643.4cc8f4e4.svg",
+                    url: "https://github.com/Katumbela/my_images/blob/main/school15.jpg?raw=true",
                     width: 1200,
                     height: 630,
                     alt: title,
@@ -31,7 +31,7 @@ export function generateMetadata({ title, description }: { title: string; descri
             card: "summary_large_image",
             title,
             description,
-            images: ["https://ISPSML.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.4ba2548e.png"],
+            images: ["https://github.com/Katumbela/my_images/blob/main/school15.jpg?raw=true"],
         },
         icons: {
             icon: "../app/favicon.ico",

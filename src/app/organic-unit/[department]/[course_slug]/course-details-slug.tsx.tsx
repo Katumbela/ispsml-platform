@@ -58,11 +58,11 @@ export default function CourseDetailsPage({ course_slug, department: dep_slug }:
 
   return (
     <>
-      <head>
+      {/* <head>
         <title>{course.course} | ISPSML</title>
         <meta name="description" content={`Saiba mais sobre o curso de ${course.course} na ISPSML.`} />
         <meta name="keywords" content={`${course.course}, ISPSML, cursos`} />
-      </head>
+      </head> */}
       <HeroCourseDetail departmentName={department?.name as string} department={department ?? undefined} course={course} bg_image={course.course_cover} title={course.course} />
       <ShortDescCourse course={course} />
       <br />

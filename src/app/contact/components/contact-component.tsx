@@ -1,3 +1,5 @@
+"use client"
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -83,7 +85,7 @@ const ContactComponent = () => {
             <div key={index} className="col-span-1">
               <div
                 onClick={() => toggleAccordion(index)}
-                className={cn("cursor-pointer transition-all grid hover:bg-sky-500 hover:text-white h-[20rem]", { "bg-sky-500 text-white": activeIndex === index })}
+                className={cn("cursor-pointer transition-all grid hover:bg-primary/80 hover:text-white h-[20rem]", { "bg-primary text-white": activeIndex === index })}
               >
                 <div className="flex flex-col items-center justify-center my-auto">
                   <div>
@@ -126,7 +128,7 @@ const ContactComponent = () => {
             <div key={index + 3} className="col-span-1">
               <div
                 onClick={() => toggleAccordion(index + 3)}
-                className={cn("cursor-pointer transition-all grid hover:bg-sky-500 hover:text-white h-[20rem]", { "bg-sky-500 text-white": activeIndex === index + 3 })}
+                className={cn("cursor-pointer transition-all grid hover:bg-primary hover:text-white h-[20rem]", { "bg-primary text-white": activeIndex === index + 3 })}
               >
                 <div className="flex flex-col items-center justify-center my-auto">
                   <div>
@@ -154,7 +156,7 @@ const ContactComponent = () => {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="col-span-12 py-6 text-lg text-white bg-sky-500"
+              className="col-span-12 py-6 text-lg text-whitee bg-sky-0"
             >
               <div className="containers">
                 {contactOptions[activeIndex].content}

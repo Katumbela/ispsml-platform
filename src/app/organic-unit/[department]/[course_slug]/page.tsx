@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: any) {
 			siteName: "ISPSML University",
 			images: [
 				{
-					url: "https://github.com/Katumbela/my_images/blob/main/school15.jpg?raw=true",
+					url: course?.course_cover || "https://github.com/Katumbela/my_images/blob/main/school15.jpg?raw=true",
 					width: 1200,
 					height: 630,
 					alt: course?.course,
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: any) {
 			card: "summary_large_image",
 			title: course?.course,
 			description: course?.short_detail,
-			images: ["https://github.com/Katumbela/my_images/blob/main/school15.jpg?raw=true"],
+			images: [course?.course_cover, "https://github.com/Katumbela/my_images/blob/main/school15.jpg?raw=true"],
 		},
 		icons: {
 			icon: "../app/favicon.ico",

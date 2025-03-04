@@ -5,7 +5,7 @@ import { generateMetadata } from '@/infra/metadata';
 
 
 export const metadata = generateMetadata({
-	title: 'Contact Us | Instituto Superior São Martinho de Lima | ISPSML',
+	title: 'Contate nos | Instituto Superior São Martinho de Lima | ISPSML',
 	description: 'Get in touch with Instituto Superior São Martinho de Lima (ISPSML) for any inquiries or support. We are here to help you.',
 });
 

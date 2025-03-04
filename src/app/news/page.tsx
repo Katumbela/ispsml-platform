@@ -6,8 +6,10 @@ import { newsService } from "@/services/news.service";
 import { useQuery } from "react-query";
 
 export default function NewsPage() {
-    const { data: newses = [], isLoading } = useQuery('news', newsService.getAllNews);
 
+    const { data: newses, isLoading: isLoading } = useQuery('allNews', () => newsService.getAllNews(), {
+        refetchOnWindowFocus: false
+    });
     return (
         <div>
             <div className="pt-24 pb-6 bg-primary-footer">
@@ -31,7 +33,7 @@ export default function NewsPage() {
                     <div className="grid grid-cols-4 gap-4 2xl:grid-cols-6">
                         {isLoading ? (
                             Array.from({ length: 6 }).map((_, index) => <NewsCardSkeleton key={index} />)
-                        ) : newses.length > 0 ? (
+                        ) : newses && newses?.length > 0 ? (
                             newses.map((news, index) => (
                                 <NewsCard
                                     key={index}

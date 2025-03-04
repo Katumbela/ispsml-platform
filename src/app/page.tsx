@@ -48,6 +48,7 @@ export default function Home() {
 						alt="Logo ISPSML"
 						layout='fill'
 						objectFit='contain'
+						placeholder='blur'
 						className="rounded-full"
 					/>
 				</div>

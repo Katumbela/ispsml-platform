@@ -3,6 +3,7 @@ import React from 'react';
 import { AbreviateString } from '../../utils/abreviate-utils';
 import { routes } from '@/infra/routes.vars';
 import { DateUtils } from '@/utils';
+import { env } from '@/infra/env';
 
 interface NewsCardProps {
 	title: string;
@@ -23,6 +24,8 @@ const NewsCard: React.FC<NewsCardProps> = ({ slug, title, content, postDate, ima
 					<Image
 						src={image}
 						objectFit="cover"
+						placeholder='blur'
+						blurDataURL={env.BLUR_IMAGE}
 						layout="fill"
 						className="transition-all hover:scale-105"
 						alt={title}

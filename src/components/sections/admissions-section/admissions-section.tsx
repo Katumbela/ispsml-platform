@@ -5,6 +5,7 @@ import { images } from '@/assets';
 import { FaAngleRight } from 'react-icons/fa'; // Importar ícones
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
+import { env } from '@/infra/env';
 
 interface IParagraphProps {
 	children: ReactNode;
@@ -142,6 +143,8 @@ const FixedImageScrollWithBrutalEffect = () => {
 						src={images.backgrounds.bg_oferta_formativa_main.src}
 						alt="Imagem fixa"
 						objectFit='cover'
+						placeholder='blur' blurDataURL={env.BLUR_IMAGE}
+
 						layout='fill'
 						className="md:h-[89vh] w-full sm:me-auto"
 					/>

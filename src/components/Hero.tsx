@@ -12,6 +12,7 @@ import { FaAngleRight } from 'react-icons/fa';
 import { useTranslation } from 'react-i18next';
 import { images } from '@/assets';
 import { routes } from '@/infra/routes.vars';
+import { env } from '@/infra/env';
 
 const Hero = () => {
 	const { t } = useTranslation();
@@ -97,6 +98,8 @@ const Hero = () => {
 								src={item.background.src}
 								alt={item.title}
 								layout="fill"
+								placeholder='blur' blurDataURL={env.BLUR_IMAGE}
+
 								objectFit="cover"
 								// objectPosition={index === 1 ? 'top' : 'center'}
 								objectPosition={'top'}

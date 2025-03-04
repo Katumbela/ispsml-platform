@@ -176,8 +176,8 @@ import not_found_1 from './svgs/error-page-svgrepo-com.svg'
 import not_found_2 from './svgs/not-found-error-alert-svgrepo-com.svg'
 
 // importando os logos do ISPSML
-import logo_1_png from './logos/Logo ISPSML/PNG/ISPSML 1@4x.png'
-import logo_2_png from './logos/Logo ISPSML/PNG/ISPSML 2@4x.png'
+import logo_1_png from './logos/Logo ISPSML/PNG/ISPSML14.png'
+import logo_2_png from './logos/Logo ISPSML/PNG/ISPSML24.png'
 import logo_V1_png from './logos/Logo ISPSML/PNG/V1@4x.png'
 import logo_V2_png from './logos/Logo ISPSML/PNG/V2@4x.png'
 

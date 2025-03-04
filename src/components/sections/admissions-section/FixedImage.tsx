@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { images } from '@/assets'; 
+import { images } from '@/assets';
+import { env } from '@/infra/env';
 
 function FixedImage({ isFixed }: { isFixed: boolean }) {
   return (
@@ -11,7 +12,9 @@ function FixedImage({ isFixed }: { isFixed: boolean }) {
       animate={{ opacity: isFixed ? 1 : 1 }}
       transition={{ duration: 0.5 }}
     >
-      <Image src={images.backgrounds.bg_vertical} alt="Admissões" className="w-[50vh] h-[50vh]" />
+      <Image
+        placeholder='blur' blurDataURL={env.BLUR_IMAGE}
+        src={images.backgrounds.bg_vertical} alt="Admissões" className="w-[50vh] h-[50vh]" />
     </motion.div>
   );
 }

@@ -11,6 +11,7 @@ import Image from 'next/image';
 import Slider from 'react-slick';
 import { FaAngleDown, FaLinkedinIn, FaXTwitter } from 'react-icons/fa6';
 import AnimatedAccordion from '@/components/animated-accordion/animated-accordion';
+import { env } from '@/infra/env';
 // import { title } from 'process';
 // import Image from 'next/image';
 // import { motion } from 'framer-motion';
@@ -115,7 +116,10 @@ const RoleProfileClient = ({ who }: { who: string }) => {
                 <div className="absolute border-[.4rem] flex flex-col border-white right-2 top-[55vh]">
                     <div className='relative'>
                         <div className="img relative w-[19rem] h-[20rem]">
-                            <Image alt='' src={user?.pic || ""} objectFit='cover' layout='fill' />
+                            <Image
+                             alt='' src={user?.pic || ""} objectFit='cover'
+                            placeholder='blur' blurDataURL={env.BLUR_IMAGE}
+                            layout='fill' />
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 py-2 from-black bg-gradient-to-t">
                             <div className="flex flex-col px-4 text-white">

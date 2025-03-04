@@ -1,4 +1,4 @@
-const HOME_ROUTE = "/",
+const HOME_ROUTE = "/home",
   LOGIN_ROUTE = "/login",
   REGISTER_ROUTE = "/register",
   KNOW_MORE_ROUTE = "/know-more",

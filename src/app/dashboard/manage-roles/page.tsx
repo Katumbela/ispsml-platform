@@ -2,39 +2,38 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { FaSpinner } from 'react-icons/fa';
-import { toast } from 'react-toastify';
-import { useRouter } from 'next/navigation';
-import { routes } from '@/infra/routes.vars';
+import { toast } from 'react-toastify'; 
 import { IRole } from '@/infra/data/roles-data';
 import InputDefault from '@/components/input-default/input';
 import { createRole, deleteRole, getAllRoles } from '@/services/role.service';
 import { uploadImage } from '@/utils/uploadImage';
-interface Phrase {
-    content: string;
-}
+import { useQuery, useQueryClient } from 'react-query';
+ 
 
 const ManageRoles = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
     const [loading, setLoading] = useState(false);
-    const [loadingR, setLoadingR] = useState(false);
-    const [roles, setRoles] = useState<IRole[]>([]);
     const [showForm, setShowForm] = useState(false);
     const [pic, setPic] = useState<File | null>(null);
     const [role, setRole] = useState('');
     const [linkedin, setLinkedin] = useState('');
     const [x, setX] = useState('');
-    const [team, setTeam] = useState<string[]>([]);
+    const [team, setTeam] = useState<string>(); 
+    const queryClient = useQueryClient();
 
-    useEffect(() => {
-        setLoadingR(true);
-        getAllRoles().then((roles) => {
-            setRoles(roles as IRole[]);
-            setLoadingR(false);
-        });
-    }, []);
+    // Fetch roles with React Query
+    const { data: roles = [], isLoading: loadingR } = useQuery(
+        'roles',
+        getAllRoles,
+        {
+            onError: (error: any) => {
+                toast.error('Erro ao carregar roles! ' + error.message);
+            }
+        }
+    );
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -47,6 +46,7 @@ const ManageRoles = () => {
                     imageUrl = await uploadImage(imageFile, 'roles');
                 }
             }
+            
             await createRole({
                 name: name,
                 about: description,
@@ -54,11 +54,23 @@ const ManageRoles = () => {
                 role: role,
                 linkedin: linkedin,
                 x: x,
-                // phrases: "",
                 team: team
             });
-            setLoading(false);
+            
+            // Manually invalidate the query
+            queryClient.invalidateQueries('roles');
+            
+            // Reset form
+            setName('');
+            setDescription('');
+            setPic(null);
+            setRole('');
+            setLinkedin('');
+            setX('');
+            setTeam('');
+            
             toast.success('Role adicionada com sucesso!');
+            setLoading(false);
         } catch (error: any) {
             setLoading(false);
             toast.error('Erro ao adicionar role! ' + error.message);
@@ -66,23 +78,16 @@ const ManageRoles = () => {
     };
 
     const handleDelete = async (id: number) => {
-        setLoadingR(true);
         try {
-            await deleteRole(Number(id) || 0);
-            setRoles(roles.filter(role => Number(role.id) !== id));
-            setLoadingR(false);
+            await deleteRole(id);
+            // Manually invalidate the query after deletion
+            queryClient.invalidateQueries('roles');
             toast.success('Role deletada com sucesso!');
         } catch (error: any) {
-            setLoadingR(false);
             toast.error('Erro ao deletar role! ' + error.message);
         }
     };
 
-    // const handleEdit = (id: number) => {
-    //     router.push(`/dashboard/edit-role?id=${id}`);
-    // };
-
-    const router = useRouter();
     return (
         <div className="grid grid-cols-2 gap-10 px-6 py-32 mx-auto text-white bg-primary-footer">
             <div className="col-span-2 px-10">
@@ -119,7 +124,11 @@ const ManageRoles = () => {
                         <InputDefault label='Equipe' placeholder='Equipe' value={team.join(',')} onChange={(e) => setTeam(e.target.value.split(','))} />
                         <br />
                         <div className="flex justify-start">
-                            <button type="submit" className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white">
+                            <button 
+                                type="submit" 
+                                className="flex gap-2 px-3 py-3 mt-5 text-black uppercase transition-all bg-white border-2 border-white hover:bg-transparent hover:text-white"
+                                disabled={loading}
+                            >
                                 {loading ? <FaSpinner className="my-auto animate-spin" /> : (
                                     <>
                                         <span className="my-auto">Adicionar Role</span>
@@ -135,19 +144,13 @@ const ManageRoles = () => {
                 <ul>
                     {loadingR ? <FaSpinner className="my-auto animate-spin" /> : (
                         <>
-                            {roles.map(role => (
+                            {roles.map((role: IRole) => (
                                 <li key={role.id} className="mb-4">
                                     <div className="flex flex-col border border-white/30 p-3 rounded justify-start">
                                         <div className="flex mb-2 gap-4">
                                             <span>{role.name}</span>
                                         </div>
                                         <div className="flex gap-2">
-                                            {/* <button
-                                                onClick={() => handleEdit(Number(role.id) || 0)}
-                                                className="px-3 py-1 text-white bg-blue-600 rounded hover:bg-blue-700"
-                                            >
-                                                Editar
-                                            </button> */}
                                             <button
                                                 onClick={() => handleDelete(Number(role.id))}
                                                 className="px-3 py-1 text-white bg-red-600 rounded hover:bg-red-700"

@@ -22,7 +22,7 @@ class EventService {
   }
 
   async getEventBySlug(slug: string): Promise<Event | null> {
-    const response = await this.httpClient.get(`${this.route}?slug=${slug}`);
+    const response = await this.httpClient.get(`${this.route}/slug/${slug}`);
     return response.data as Event;
   }
 
@@ -37,7 +37,7 @@ class EventService {
   }
 
   async deleteEvent(id: string): Promise<void> {
-    await this.httpClient.delete(`${this.route}/?id=${id}`);
+    await this.httpClient.delete(`${this.route}/${id}`);
   }
 }
 

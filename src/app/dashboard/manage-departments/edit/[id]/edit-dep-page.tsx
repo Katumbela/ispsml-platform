@@ -2,37 +2,39 @@
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { departmentService } from '@/services/departments.service';
 import { Department } from '@/infra/data/interfaces';
 import { routes } from '@/infra/routes.vars';
 import { uploadImage } from '@/utils/uploadImage';
 import Image from 'next/image';
 import { TextEditor } from '@/components/text-editor/text-editor';
+import { useQuery } from 'react-query';
 
 const EditDepartmentPage = ({ id }: { id: string }) => {
-    // const { id } = useParams() as { id: string };
     const [department, setDepartment] = useState<Department | null>(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<string | null>(null);
     const [previewImage, setPreviewImage] = useState<string | null>(null);
     const [newImage, setNewImage] = useState<File | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
+    const [error, setError] = useState<string | null>(null);
+ 
     const router = useRouter();
 
-    useEffect(() => {
-        if (id) {
-            departmentService.getDepartmentById(Number(id))
-                .then(department => {
-                    setDepartment(department);
-                    setPreviewImage(typeof department?.image === 'string' ? department.image : null);
-                })
-                .catch(setError)
-                .finally(() => setLoading(false));
+    const { data: fetchedDepartment, isLoading: loading } = useQuery(
+        ['department', id],
+        () => departmentService.getDepartmentById(Number(id)),
+        {
+            enabled: !!id,
+            onSuccess: (data) => {
+                setDepartment(data);
+                setPreviewImage(typeof data?.image === 'string' ? data.image : null);
+            },
+            onError: (err) => {
+                setError('Failed to load department');
+            }
         }
-    }, [id]);
+    );
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, files } = e.target;

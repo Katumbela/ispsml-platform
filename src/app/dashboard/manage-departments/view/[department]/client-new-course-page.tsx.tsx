@@ -9,6 +9,7 @@ import { generateSlug } from '@/utils/slugfy';
 import { addCourseToDepartment } from '@/services/course.service';
 import { routes } from '@/infra/routes.vars';
 import { uploadImage } from '@/utils/uploadImage';
+import { useQuery } from 'react-query';
 
 const NewCoursePage = ({ departmentId }: { departmentId: string }) => {
     const [course, setCourse] = useState('');
@@ -24,23 +25,18 @@ const NewCoursePage = ({ departmentId }: { departmentId: string }) => {
     const [entryProfile, setEntryProfile] = useState('');
     const [outProfile, setOutProfile] = useState('');
     const router = useRouter();
-    // const params = useParams<{ dep_id: string }>();
-    // const departmentId = params?.dep_id;
-    const [department, setDepartment] = useState<IDepartment | null>(null);
-    const [loading, setLoading] = useState(true);
+
+    const { data: department, isLoading } = useQuery(
+        ['department', departmentId],
+        () => getDepartmentById(Number(departmentId) || 0),
+        {
+            enabled: !!departmentId
+        }
+    );
 
     useEffect(() => {
         setSlug(generateSlug(course || ''));
     }, [course]);
-
-    useEffect(() => {
-        const fetchDep = async () => {
-            const dep = await getDepartmentById(Number(departmentId) || 0);
-            setDepartment(dep);
-            setLoading(false);
-        };
-        fetchDep();
-    }, [departmentId]);
 
     const handleFileChange = async (event: React.ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
@@ -121,7 +117,7 @@ const NewCoursePage = ({ departmentId }: { departmentId: string }) => {
         <div>
             <div className="h-20 mb-10 bg-gray-800" />
             <div className="containers">
-                {loading ? (
+                {isLoading ? (
                     <div>
                         <div className="h-8 mb-4 bg-gray-300 rounded w-52 animate-pulse"></div>
                         <div className="h-8 mb-4 bg-gray-300 rounded w-52 animate-pulse"></div>

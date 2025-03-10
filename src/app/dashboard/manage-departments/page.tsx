@@ -1,6 +1,5 @@
 "use client"
 
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import { IDepartment } from '@/infra/interfaces/course.interface';
@@ -8,11 +7,12 @@ import { getDepartments } from '@/services/dep.service';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { departmentService } from '../../../services/departments.service';
+import { useQuery } from '@tanstack/react-query';
 
 const DepartmentsPage = () => {
     const router = useRouter();
-    const [departments, setDepartments] = useState<IDepartment[] | []>([]);
-    const [loading, setLoading] = useState(true);
+    
+    const { data: departments = [], isLoading, refetch } = useQuery('allDepartments', () => getDepartments());
 
     const handleAddDepartment = () => {
         router.push(routes.NEW_DEP);
@@ -24,17 +24,9 @@ const DepartmentsPage = () => {
 
     const handleDeleteDepartment = async (id: string) => {
         await departmentService.deleteDepartment(id);
-        setDepartments(departments.filter(department => department.id !== id));
+        // Refetch departments after deletion
+        refetch();
     };
-
-    useEffect(() => {
-        async function fetchDepartments() {
-            const data = await getDepartments();
-            setDepartments(data);
-            setLoading(false);
-        }
-        fetchDepartments();
-    }, []);
 
     return (
         <>
@@ -43,7 +35,7 @@ const DepartmentsPage = () => {
             </head>
             <div className="h-20 mb-20 bg-gray-800" />
             <div className="p-4">
-                {loading ? (
+                {isLoading ? (
                     <div>
                         <div className="h-8 mb-4 bg-gray-300 rounded w-52 animate-pulse"></div>
                         <div className="h-8 mb-4 bg-gray-300 rounded w-52 animate-pulse"></div>
@@ -54,6 +46,14 @@ const DepartmentsPage = () => {
                                 <div className="h-6 mb-2 bg-gray-300 rounded animate-pulse"></div>
                                 <div className="h-4 bg-gray-300 rounded animate-pulse"></div>
                             </div>
+                        </div>
+                        <div className="flex gap-2 mb-2">
+                            <div className="h-24 w-24 bg-gray-300 rounded animate-pulse"></div>
+                            <div className="flex-1">
+                                <div className="h-6 mb-2 bg-gray-300 rounded animate-pulse"></div>
+                                <div className="h-4 bg-gray-300 rounded animate-pulse"></div>
+                            </div>
+                        </div>
                         </div>
                         <div className="flex gap-2 mb-2">
                             <div className="h-24 w-24 bg-gray-300 rounded animate-pulse"></div>
@@ -105,7 +105,7 @@ const DepartmentsPage = () => {
                                                 onClick={() => handleEditDepartment(department?.id || "")}
                                                 className="px-4 py-2 text-sm mt-2 text-white bg-blue-500 rounded"
                                             >
-                                                Editar {department.id}
+                                                Editar
                                             </button>
                                             <button
                                                 onClick={() => handleDeleteDepartment(department?.id || "")}

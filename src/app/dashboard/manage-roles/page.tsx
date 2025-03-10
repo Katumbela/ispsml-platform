@@ -227,7 +227,7 @@ const ManageRoles = () => {
             {/* Edit Modal */}
             {isEditModalOpen && editingRole && (
                 <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70">
-                    <div className="w-1/2 p-6 bg-gray-900 rounded-lg">
+                    <div className="w-1/2 text-white p-6 bg-gray-900 rounded-lg">
                         <h2 className="mb-4 text-xl font-bold text-white">Editar Role</h2>
                         <form onSubmit={handleEditSubmit}>
                             <InputDefault 
@@ -240,6 +240,7 @@ const ManageRoles = () => {
                             <br />
                             <InputDefault 
                                 label='Descrição' 
+                                className='text-white'
                                 placeholder='Sobre esta pessoa' 
                                 value={editingRole.about} 
                                 onChange={(e) => setEditingRole({...editingRole, about: e.target.value})} 

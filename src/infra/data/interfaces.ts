@@ -36,7 +36,7 @@ export interface Department {
   id?: string;
   name: string;
   description: string;
-  image: string | File; // Adicionado campo image
+  department_cover: string | File; // Adicionado campo image
   courses?: Course[];
 }
 

@@ -21,7 +21,7 @@ export const createRole = async (roleData: IRole): Promise<IRole | null> => {
 };
 
 export const updateRole = async (id: number, roleData: IRole): Promise<IRole | null> => {
-    const response = await httpClient.put(`${route}/${id}`, roleData);
+    const response = await httpClient.patch(`${route}/${id}`, roleData);
     return response.data as IRole;
 };
 

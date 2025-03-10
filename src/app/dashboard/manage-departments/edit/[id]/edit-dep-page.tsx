@@ -18,7 +18,7 @@ const EditDepartmentPage = ({ id }: { id: string }) => {
     const [newImage, setNewImage] = useState<File | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [error, setError] = useState<string | null>(null);
- 
+
     const router = useRouter();
 
     const { data: fetchedDepartment, isLoading: loading } = useQuery(
@@ -28,7 +28,7 @@ const EditDepartmentPage = ({ id }: { id: string }) => {
             enabled: !!id,
             onSuccess: (data) => {
                 setDepartment(data);
-                setPreviewImage(typeof data?.image === 'string' ? data.image : null);
+                setPreviewImage(typeof data?.department_cover === 'string' ? data.department_cover : null);
             },
             onError: (err) => {
                 setError('Failed to load department');
@@ -56,11 +56,13 @@ const EditDepartmentPage = ({ id }: { id: string }) => {
         if (department && id) {
             try {
                 const updatedDepartment = { ...department };
+                let img = updatedDepartment.department_cover;
                 if (newImage) {
                     const upimage = await uploadImage(newImage, "departments");
-                    updatedDepartment.image = upimage;
+                    updatedDepartment.department_cover = upimage;
+                    img = upimage;
                 }
-                const res = await departmentService.updateDepartment(Number(id), updatedDepartment);
+                const res = await departmentService.updateDepartment(Number(id), { ...updatedDepartment, department_cover: img });
 
                 if (res.id) {
                     router.push(routes.MANAGE_DEPARTMENTS);

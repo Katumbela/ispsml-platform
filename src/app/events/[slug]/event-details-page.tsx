@@ -11,7 +11,7 @@ import { useQuery } from 'react-query';
 
 export default function EventDetailPage({ slug }: { slug: string }) {
 
-    const { data: event, isLoading: loadingBySlug } = useQuery('eventSlug', () => eventsService.getEventBySlug(slug), {
+    const { data: event, isLoading: loadingBySlug } = useQuery(['eventSlug', slug], () => eventsService.getEventBySlug(slug), {
         refetchOnWindowFocus: false
     });
 
@@ -121,10 +121,10 @@ export default function EventDetailPage({ slug }: { slug: string }) {
                                     </h4>
                                     <p className="text-xs text-gray-600">{DateUtils.getDateTime(event.date)} HRS.</p>
                                     <Link href={`${routes.ALL_EVENT}/${event.slug}`}>
-                                        <button className="mt-1 text-xs text-blue-500 hover:underline">Conferência online</button>
+                                        <button className="mt-1 text-xs text-blue-500 hover:underline">Ver Evento</button>
                                     </Link>
                                 </div>
-                                <Link href={`${routes.ALL_EVENT}/${event.slug}`}>
+                                <Link href={`${routes.ALL_EVENT}/${event.slug}`} className='hidden'>
                                     <button className="ml-4 text-sm text-pink-500 hover:underline">Ver evento</button>
                                 </Link>
                             </div>

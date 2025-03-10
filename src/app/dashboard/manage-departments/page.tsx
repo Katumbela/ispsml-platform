@@ -1,13 +1,12 @@
 "use client"
 
 import { motion } from 'framer-motion';
-import { useRouter } from 'next/navigation';
-import { IDepartment } from '@/infra/interfaces/course.interface';
+import { useRouter } from 'next/navigation'; 
 import { getDepartments } from '@/services/dep.service';
 import { routes } from '@/infra/routes.vars';
 import Image from 'next/image';
 import { departmentService } from '../../../services/departments.service';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery } from 'react-query';
 
 const DepartmentsPage = () => {
     const router = useRouter();
@@ -54,7 +53,6 @@ const DepartmentsPage = () => {
                                 <div className="h-4 bg-gray-300 rounded animate-pulse"></div>
                             </div>
                         </div>
-                        </div>
                         <div className="flex gap-2 mb-2">
                             <div className="h-24 w-24 bg-gray-300 rounded animate-pulse"></div>
                             <div className="flex-1">
@@ -95,7 +93,8 @@ const DepartmentsPage = () => {
                                         </div>
                                         <div>
                                             <h2 className="text-xl font-semibold">{department.name}</h2>
-                                            <button
+                                          <div className="flex gap-4">
+                                          <button
                                                 onClick={() => router.push(`${routes.VIEW_DEP}/${department.id}`)}
                                                 className="px-4 py-2 text-sm mt-2 text-white bg-green-500 rounded"
                                             >
@@ -113,6 +112,7 @@ const DepartmentsPage = () => {
                                             >
                                                 Deletar
                                             </button>
+                                          </div>
                                         </div>
                                     </div>
                                 </motion.div>

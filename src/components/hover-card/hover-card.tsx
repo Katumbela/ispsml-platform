@@ -1,17 +1,23 @@
 import { motion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
 interface HoverCardProps {
 	bgColor?: string;
 	bgImage?: string;
 	hoverBgColor: string;
+	link?: string;
 	title: string;
 	children: React.ReactNode;
 	className?: string;
 }
 
-export function HoverCard({ bgColor, bgImage, className, title }: HoverCardProps) {
+export function HoverCard({ bgColor, bgImage, link, className, title }: HoverCardProps) {
+
+	const router = useRouter();
+
 	return (
 		<motion.div
+			onClick={() => router.push(link || "#")}
 			className={`relative w-full grid h-64 ${bgColor} ${className} overflow-hidden cursor-pointer`}
 			initial={{ opacity: 1 }}
 			style={
@@ -33,7 +39,7 @@ export function HoverCard({ bgColor, bgImage, className, title }: HoverCardProps
 
 			{/* Hover Content */}
 			{/* <motion.div
-				className={`absolute inset-0 flex items-center justify-center ${hoverBgColor} transition duration-300 ease-in-out opacity-0 hover:opacity-100`}
+				className={`absolute inset - 0 flex items - center justify - center ${ hoverBgColor } transition duration - 300 ease -in -out opacity - 0 hover: opacity - 100`}
 			>
 				<div className="containers">{children}</div>
 			</motion.div> */}

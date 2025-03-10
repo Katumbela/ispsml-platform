@@ -37,7 +37,7 @@ class EventService {
   }
 
   async deleteEvent(id: string): Promise<void> {
-    await this.httpClient.delete(`${this.route}/${id}`);
+    await this.httpClient.delete(`${this.route}/${Number(id)}`);
   }
 }
 

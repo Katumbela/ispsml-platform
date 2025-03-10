@@ -8,6 +8,7 @@ import { routes } from '@/infra/routes.vars';
 import ButtonLink from '@/components/buttonLink/button-link';
 import { useRouter } from 'next/navigation';
 import { ourInst } from '@/data/aboutContent';
+import Link from 'next/link';
 
 const About = () => {
 	const router = useRouter();
@@ -212,23 +213,24 @@ const About = () => {
 					<HoverCard
 						bgColor="bg-primary"
 						hoverBgColor="bg-sky-700"
+						link='/about/mission'
 						title="Missão, Visão e Valores"
 						className="sm:h-[400px] h-[250px] 2xl:h-[600px]"
 						bgImage={images.bgsSchool.bg_school_28.src}
 					>
 						<div className="px-6 text-xl font-semibold text-white containers">
-							NOSSOS PRINCIPIOS, VALORES E VISÃO
+							NOSSOS p PRINCIPIOS, VALORES E VISÃO
 							<p className="text-sm font-light">
-								Conheça a nova abordagem de pesquisa no ISPSML. Descubra os três institutos e os
-								diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
+								Conheça os princípios fundamentais que norteiam a nossa instituição e a nossa visão para o futuro de Angola e do ensino superior.
 							</p>
 							<br />
-							<a href="#" className="font-semibold uppercase">
+							<Link href="" className="font-semibold uppercase">
 								Saber mais
-							</a>
+							</Link>
 						</div>
 					</HoverCard>
 					<HoverCard
+						link='/about/about-ispsml'
 						bgImage={images.bgsSchool.bg_school_23.src}
 						className="sm:h-[400px] h-[250px] 2xl:h-[600px]"
 						hoverBgColor="bg-green-600"
@@ -237,13 +239,12 @@ const About = () => {
 						<div className="text-xl font-semibold text-white">
 							SAIBA MAIS SOBRE O ISPSML
 							<p className="text-sm font-light">
-								Conheça a nova abordagem de pesquisa no ISPSML. Descubra os três institutos e os
-								diferentes Core Labs que mudarão a forma de realizar pesquisa no México.
+								Explore a história, estrutura e impacto do Instituto Superior Politécnico São Martinho de Lima na formação de profissionais qualificados.
 							</p>
 							<br />
-							<a href="#" className="font-semibold underline">
+							<Link href="/about/about-ispsml" className="font-semibold underline">
 								Saber mais
-							</a>
+							</Link>
 						</div>
 					</HoverCard>
 				</div>

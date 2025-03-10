@@ -14,7 +14,7 @@ export interface IRole {
     x?: string
     phrases?: IPhrase[]
     id?: string
-    team?: string[]
+    team?: string
 }
 
 export const RolesData: IRole[] = [
@@ -37,7 +37,7 @@ export const RolesData: IRole[] = [
                 description: "Uma pequena descrição sobre o Little Poney, abordando suas características e importância."
             }
         ],
-        team: ["vice-presidente", "diretor-executivo"]
+        // team: ["vice-presidente", "diretor-executivo"]
     },
     {
         id: "vice-presidente",
@@ -47,7 +47,7 @@ export const RolesData: IRole[] = [
         role: "Vice Presidente",
         cv: "link_para_cv",
         linkedin: "link_para_linkedin",
-        team: ["promotor", "diretor-executivo"]
+        // team: ["promotor", "diretor-executivo"]
     },
     {
         id: "diretor-executivo",
@@ -57,7 +57,7 @@ export const RolesData: IRole[] = [
         role: "Diretor Executivo",
         cv: "link_para_cv",
         linkedin: "link_para_linkedin",
-        team: ["promotor", "vice-presidente"]
+        // team: ["promotor", "vice-presidente"]
     },
     {
         id: "chefe-matematica",
@@ -163,7 +163,7 @@ institucionais. São eles:</p>`,
                 description: "Transformações químicas e suas aplicações no dia a dia, mostrando a importância da química na vida cotidiana."
             },
         ],
-        team: ["promotor", "vice-presidente", "diretor-executivo"]
+        // team: ["promotor", "vice-presidente", "diretor-executivo"]
     },
     {
         id: "diretor-unidade-organica",
@@ -173,7 +173,7 @@ institucionais. São eles:</p>`,
         role: "Diretora de Unidade Orgânica",
         cv: "link_para_cv",
         linkedin: "link_para_linkedin",
-        team: ["professor-biologia", "professor-quimica"]
+        // team: ["professor-biologia", "professor-quimica"]
     },
     {
         id: "professor-biologia",
@@ -202,7 +202,7 @@ institucionais. São eles:</p>`,
             description: "Explorando os eventos que moldaram o mundo moderno."
         }],
 
-        team: ["team-member-1", "team-member-2"]
+        // team: ["team-member-1", "team-member-2"]
     },
     {
         id: "professor-geografia",

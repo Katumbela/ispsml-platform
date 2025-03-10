@@ -4,12 +4,13 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { getDepartmentById } from '@/services/dep.service';
-import { ICourse, IDepartment, IYear } from '@/infra/interfaces/course.interface';
+import { ICourse, IYear } from '@/infra/interfaces/course.interface';
 import { generateSlug } from '@/utils/slugfy';
 import { addCourseToDepartment } from '@/services/course.service';
 import { routes } from '@/infra/routes.vars';
 import { uploadImage } from '@/utils/uploadImage';
 import { useQuery } from 'react-query';
+import { AlertUtils } from '@/utils';
 
 const NewCoursePage = ({ departmentId }: { departmentId: string }) => {
     const [course, setCourse] = useState('');
@@ -108,8 +109,13 @@ const NewCoursePage = ({ departmentId }: { departmentId: string }) => {
 
         const response: any = await addCourseToDepartment(Number(departmentId), data);
 
+        // console.log(response);
         if (response.id) {
+          AlertUtils.success('Curso adicionado com sucesso!');
+
+          setTimeout(() => {
             router.push(`${routes.MANAGE_DEPARTMENTS}/${departmentId}`);
+          }, 5000);
         }
     };
 

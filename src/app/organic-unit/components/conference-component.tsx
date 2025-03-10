@@ -9,7 +9,8 @@ import { useQuery } from 'react-query';
 
 const ConferenceComponent = () => {
   const { data: events = [], isLoading } = useQuery('allEvents', () => eventsService.getAllEvents(), {
-    refetchOnWindowFocus: false
+    refetchOnWindowFocus: false,
+    
   });
 
   const featuredEvent = events.find(event => event.isFeatured);

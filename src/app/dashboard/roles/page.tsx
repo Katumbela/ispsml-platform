@@ -39,7 +39,7 @@ const RolesDashboard = () => {
         x,
         pic: '', // Add appropriate value for pic
         phrases: [], // Add appropriate value for phrases
-        team: [''] // Add appropriate value for team
+        team: '' // Add appropriate value for team
       });
       setLoading(false);
       toast.success('Role adicionada com sucesso!');

@@ -64,6 +64,7 @@ import president_banner from "./bgs/president.jpg";
 
 // Backgrounds
 import bg1 from "./bgs/school-bg-1.jpeg";
+import bg_infra from "./bgs_school/bg_infra.jpg";
 import bg_writing from "./bgs/writing_paper.jpg";
 import bg_oferta_formativa_main_opt_2 from "./bgs/Section Oferta Formativa/Option 2.jpg";
 import bg_oferta_formativa_main from "./bgs/Section Oferta Formativa/Main.png";
@@ -315,6 +316,7 @@ export const bgsSchool = {
   bg_school_22,
   bg_school_23,
   bg_school_24,
+  bg_infra,
   bg_school_25,
   bg_school_26,
   bg_school_27,

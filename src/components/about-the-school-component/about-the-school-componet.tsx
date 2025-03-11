@@ -17,6 +17,8 @@ export function AboutTheSchoolComponents() {
 
 	const imageList = [
 		{ title: 'Campus Principal', src: images.bgsSchool.bg_infra },
+		{ title: 'Campus Principal', src: images.bgsSchool.bg_infra },
+		{ title: 'Campus Principal', src: images.bgsSchool.bg_infra },
 		// { title: 'Biblioteca Moderna', src: images.backgrounds.bg_school_2 },
 		// { title: 'Laboratórios Avançados', src: images.backgrounds.bg_school_4 }
 	];

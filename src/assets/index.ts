@@ -55,7 +55,7 @@ import katumbela from "./teachers/katumbela.png";
 import bill_gates from "./teachers/bil_gates.webp";
 import elon_musk from "./teachers/elon_musk.jpg";
 
-// importando as imagens das news 
+// importando as imagens das news
 
 import news3 from "./news/news3.jpg";
 import news4 from "./news/news4.jpeg";
@@ -145,7 +145,6 @@ import profile7 from "./profiles/7.jpg";
 import profile8 from "./profiles/8.jpg";
 import profile9 from "./profiles/9.jpg";
 
-
 // Importando as imagens da pasta bg_ppl
 import bg_ppl16 from "./bg_ppl/16.jpg";
 import bg_ppl17 from "./bg_ppl/17.jpg";
@@ -170,25 +169,22 @@ import geoscience from "./departs-bgs/geoscience.jpg";
 import studying_group from "./departs-bgs/studying-group.avif";
 import studying_group_2 from "./departs-bgs/studying-group.avif";
 
-
 // importando os scgs
 
-import not_found_1 from './svgs/error-page-svgrepo-com.svg'
-import not_found_2 from './svgs/not-found-error-alert-svgrepo-com.svg'
+import not_found_1 from "./svgs/error-page-svgrepo-com.svg";
+import not_found_2 from "./svgs/not-found-error-alert-svgrepo-com.svg";
 
 // importando os logos do ISPSML
-import logo_1_png from './logos/Logo ISPSML/PNG/ISPSML14.png'
-import logo_2_png from './logos/Logo ISPSML/PNG/ISPSML24.png'
-import logo_V1_png from './logos/Logo ISPSML/PNG/V1@4x.png'
-import logo_V2_png from './logos/Logo ISPSML/PNG/V2@4x.png'
+import logo_1_png from "./logos/Logo ISPSML/PNG/ISPSML14.png";
+import logo_2_png from "./logos/Logo ISPSML/PNG/ISPSML24.png";
+import logo_V1_png from "./logos/Logo ISPSML/PNG/V1@4x.png";
+import logo_V2_png from "./logos/Logo ISPSML/PNG/V2@4x.png";
 
 // importando os logos do ISPSML SVG
-import logo_1_svg from './logos/Logo ISPSML/SVG/ISPSML 1.svg'
-import logo_2_svg from './logos/Logo ISPSML/SVG/ISPSML 2.svg'
-import logo_V1_svg from './logos/Logo ISPSML/SVG/V1.svg'
-import logo_V2_svg from './logos/Logo ISPSML/SVG/V2.svg'
-
-
+import logo_1_svg from "./logos/Logo ISPSML/SVG/ISPSML 1.svg";
+import logo_2_svg from "./logos/Logo ISPSML/SVG/ISPSML 2.svg";
+import logo_V1_svg from "./logos/Logo ISPSML/SVG/V1.svg";
+import logo_V2_svg from "./logos/Logo ISPSML/SVG/V2.svg";
 
 export const logos_ispsml = {
   logo_1_png,
@@ -198,10 +194,8 @@ export const logos_ispsml = {
   logo_V1_png,
   logo_V2_png,
   logo_V1_svg,
-  logo_V2_svg
-}
-
-
+  logo_V2_svg,
+};
 
 export const logos = {
   logo1,
@@ -210,12 +204,12 @@ export const logos = {
   logo_blue,
   m2j_logo_p_white,
   logo_white,
-  logos_ispsml
+  logos_ispsml,
 };
 
 export const svgs = {
   not_found_1,
-  not_found_2
+  not_found_2,
 };
 
 export const teachers = {
@@ -226,7 +220,7 @@ export const teachers = {
   teacher4,
   katumbela,
   elon_musk,
-  bill_gates
+  bill_gates,
 };
 
 export const backgrounds = {
@@ -350,7 +344,6 @@ export const newsImages = {
   news4,
 };
 
-
 export const extrasImgs = {
   extra_1,
   extra_2,
@@ -419,4 +412,3 @@ export const images = {
   bgPplImages,
   bgsSchool,
 };
-

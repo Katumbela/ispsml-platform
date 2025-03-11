@@ -59,7 +59,7 @@ const ContactComponent = () => {
         <>
           <p><strong>Fale com nossos consultores de atendimento.</strong></p>
           <p>Atendimento de segunda a sexta-feira, das 8h às 18h.</p>
-          <p>+52 81 83 58 2000</p>
+          <p>+244 939 072 373</p>
         </>
       ),
     },

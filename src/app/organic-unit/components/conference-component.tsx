@@ -52,7 +52,7 @@ const ConferenceComponent = () => {
                   </p>
                   <Link href={`/events/${featuredEvent.slug}`}>
                     <button className="px-4 py-2 font-medium text-white transition-all bg-primary hover:bg-primary-dark">
-                      QUERO ME REGISTRAR
+                      Ver Evento
                     </button>
                   </Link>
                 </div>

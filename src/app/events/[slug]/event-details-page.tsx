@@ -105,7 +105,7 @@ export default function EventDetailPage({ slug }: { slug: string }) {
                         </span>
                         <br />
                         <button className="px-4 py-2 mt-4 font-medium text-white transition-all bg-primary hover:bg-primary-dark">
-                            QUERO ME REGISTRAR
+                            Ver Evento
                         </button>
                     </div>
                     <div className="w-4/12">

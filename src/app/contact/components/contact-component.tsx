@@ -69,7 +69,7 @@ const ContactComponent = () => {
       content: (
         <>
           <p><strong>Visite-nos em nossos escritórios para assistência pessoalmente.</strong></p>
-          <p>Endereço: Av. 21 de Janeiro - Luanda, 64849, Angola</p>
+          <p>Endereço: Avenida Fidel Castro, junto à entrada do cemitério - Luanda, Angola</p>
         </>
       )
     },

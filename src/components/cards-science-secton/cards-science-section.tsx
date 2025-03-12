@@ -2,7 +2,7 @@ import { images } from '@/assets';
 // import { HoverCard } from '../hover-card/hover-card';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { routes } from '@/infra/routes.vars';
+// import { routes } from '@/infra/routes.vars';
 import ButtonBlueComponent from '../button-blue/button-blue-component';
 
 
@@ -45,7 +45,7 @@ export function ScienceStudyCard() {
 							a ferramentas inovadoras que os preparam para os desafios do mundo digital.
 						</p>
 						<ButtonBlueComponent
-							onclick={() => window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}
+							// onclick={() => window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}
 							text="Saber mais" />
 						{/* <button className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">
 							<span className="my-auto">Saber Mais</span>
@@ -74,7 +74,7 @@ export function ScienceStudyCard() {
 
 						</p>
 						<ButtonBlueComponent
-							onclick={() => window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}
+							// onclick={() => window.location.href = routes.SOCIAL_REPONSABILITY_ROUTE}
 							text="Saber mais" />
 					</div>
 				</div>

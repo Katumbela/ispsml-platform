@@ -201,11 +201,85 @@ export const carouselItems = [
 ];
 
 export const searchItems = (t: any) => [
+  // Home & Main Routes
+  { label: "Home", href: routes.HOME_ROUTE },
   { label: t('navbar.about'), href: routes.ABOUT_ROUTE },
-  { label: "Unidade Organica", href: routes.ORGANIC_UNIT_ROUTE },
-  { label: t('navbar.research.label'), href: routes.RESEARCH_ROUTE },
-  { label: t('navbar.extension'), href: routes.EXTENSION_ROUTE },
   { label: t('navbar.more.news'), href: routes.NEWS_ROUTE },
   { label: t('navbar.more.contact'), href: routes.CONTACT_ROUTE },
-  // Adicionar mais itens conforme necessário
+  
+  // About Section
+  { label: t('navbar.presidentMessage'), href: routes.PRESIDENT_MESSAGE_ROUTE },
+  { label: t('navbar.institutionalPresentation'), href: routes.INSTITUTIONAL_PRESENTATION_ROUTE },
+  { label: "Promotoria", href: routes.PROMOTOR_OFFICE_ROUTE },
+  { label: "Presidência", href: routes.PRESIDENCY_OFFICE_ROUTE },
+  { label: "Missão e Visão", href: routes.MISSION_VISION_VALUES_ROUTE },
+  { label: "Histórico", href: routes.HISTORY_ROUTE },
+  { label: "Infraestruturas", href: routes.INFRASTRUCTURES_ROUTE },
+  { label: "Legislação", href: routes.LEGISLATION_ROUTE },
+  { label: "Convênios", href: routes.AGREEMENTS_ROUTE },
+  { label: "Organigrama", href: routes.ORGANOGRAM_ROUTE },
+  
+  // Admissions & Applications
+  { label: "Inscrições", href: routes.APPLY_ROUTE },
+  { label: "Admissões e Bolsas", href: routes.ADMISSIONS_AND_SCHOLARSHIPS_ROUTE },
+  { label: "Formulário de Admissão", href: routes.ADMISSIONS_FORM_ROUTE },
+  { label: "Acção Social", href: routes.SOCIAL_ACTION_ROUTE },
+  { label: "Responsabilidade Social", href: routes.SOCIAL_REPONSABILITY_ROUTE },
+  
+  // Academic Information
+  { label: "Conhecer Mais", href: routes.KNOW_MORE_ROUTE },
+  { label: "Cursos de Licenciatura", href: `${routes.KNOW_MORE_ROUTE}/undergraduation` },
+  { label: "Cursos Profissionais", href: `${routes.KNOW_MORE_ROUTE}/professional` },
+  { label: "Cursos de Mestrado", href: `${routes.KNOW_MORE_ROUTE}/masters` },
+  { label: "Cursos Preparatórios", href: `${routes.KNOW_MORE_ROUTE}/preparatory` },
+  
+  // Units & Departments
+  { label: "Unidade Orgânica", href: routes.ORGANIC_UNIT_ROUTE },
+  { label: "Departamento de Engenharias e Tecnologias (DET)", href: routes.DET_DEPARTMENT_ROUTE },
+  { label: "Departamento de Geociências (DGC)", href: routes.DGC_DEPARTMENT_ROUTE },
+  { label: "Departamento de Ciências Sociais Aplicadas (DCSA)", href: routes.DCSA_DEPARTMENT_ROUTE },
+  { label: "Corpo Docente", href: routes.FACULTY_ROUTE },
+  
+  // Research
+  { label: t('navbar.research.label'), href: routes.RESEARCH_ROUTE },
+  { label: t('navbar.research.policy'), href: routes.RESEARCH_POLICY_ROUTE },
+  { label: t('navbar.research.guide'), href: routes.RESEARCH_GUIDE_ROUTE },
+  { label: t('navbar.research.scientificJourneys'), href: routes.SCIENTIFIC_JOURNEYS_ROUTE },
+  { label: t('navbar.research.innovationAward'), href: routes.INNOVATION_AWARD_ROUTE },
+  { label: t('navbar.research.lectureSeries'), href: routes.LECTURE_SERIES_ROUTE },
+  { label: t('navbar.research.impactPublications'), href: routes.IMPACT_PUBLICATIONS_ROUTE },
+  { label: t('navbar.research.nonImpactPublications'), href: routes.NON_IMPACT_PUBLICATIONS_ROUTE },
+  { label: t('navbar.research.researchCenters'), href: routes.CICSA_ROUTE },
+  { label: t('navbar.research.postgraduatePrograms'), href: routes.POSTGRADUATE_PROGRAMS_ROUTE },
+  
+  // Extension
+  { label: t('navbar.extension'), href: routes.EXTENSION_ROUTE },
+  { label: t('navbar.extensionSection.policy'), href: routes.EXTENSION_POLICY_ROUTE },
+  { label: t('navbar.extensionSection.knowledgeTransfer'), href: routes.KNOWLEDGE_TRANSFER_ROUTE },
+  { label: t('navbar.extensionSection.nonSupervisedInternships'), href: routes.NON_SUPERVISED_INTERNSHIPS_ROUTE },
+  { label: t('navbar.extensionSection.entrepreneurshipPromotion'), href: routes.ENTREPRENEURSHIP_PROMOTION_ROUTE },
+  { label: t('navbar.extensionSection.scientificOlympiads'), href: routes.SCIENTIFIC_OLYMPIADS_ROUTE },
+  { label: t('navbar.extensionSection.careerServices'), href: routes.CAREER_SERVICES_ROUTE },
+  { label: t('navbar.extensionSection.shortCourses'), href: routes.SHORT_COURSES_ROUTE },
+  { label: t('navbar.extensionSection.languageCenter'), href: routes.LANGUAGE_CENTER_ROUTE },
+  { label: t('navbar.extensionSection.universityBusinessProgram'), href: routes.UNIVERSITY_BUSINESS_PROGRAM_ROUTE },
+  
+  // Academic Services
+  { label: t('navbar.academicServicesSection.academicServices'), href: routes.ACADEMIC_SERVICES_ROUTE },
+  { label: t('navbar.academicServicesSection.academicCalendar'), href: routes.ACADEMIC_CALENDAR_ROUTE },
+  { label: t('navbar.academicServicesSection.studentMobility'), href: routes.STUDENT_MOBILITY_ROUTE },
+  { label: t('navbar.academicServicesSection.regulations'), href: routes.RULES_MODAL_ROUTE },
+  { label: t('navbar.academicServicesSection.examResults'), href: routes.EXAM_RESULTS_ROUTE },
+  
+  // Resources & Community
+  { label: t('navbar.more.studentPortal'), href: "https://ispsml.forlearn.ao/pt", target: "_blank" },
+  { label: t('navbar.more.library'), href: "https://bibliotecavirtual.renascerdosaber.com/", target: "_blank" },
+  { label: "Apresentação da Biblioteca", href: routes.LIBRARY_ROUTE },
+  { label: "Regulamentos e Normas", href: routes.STUDENT_REGULATIONS_ROUTE },
+  { label: "Código de Conduta", href: routes.CODE_OF_CONDUCT_ROUTE, target: "_blank" },
+  { label: t('navbar.more.alumni'), href: routes.ALUMNI_ROUTE },
+  { label: t('navbar.more.associations'), href: routes.ASSOCIATIONS_ROUTE },
+  
+  // Events
+  { label: "Eventos", href: routes.ALL_EVENT },
 ];

@@ -40,7 +40,7 @@ export default function ApplyForm() {
     try {
 
       const data: Application = {
-        name, 
+        name,
         email,
         phone,
         // birthDate: birthDate?.toISOString(),
@@ -159,84 +159,98 @@ export default function ApplyForm() {
       <br />
       <br />
 
-      <div className="containers">
-        <h1 className="py-8 text-4xl font-bold text-start">Processo de Inscrição</h1>
-        <p>1. O processo de inscrição para o exame de acesso deve ser constituído pelos seguintes documentos:</p>
-        <ul>
-          <li>a) Fotocópia do original do Bilhete de Identidade ou passaporte para os estrangeiros</li>
-          <li>b) Fotocópia autenticada do Certificado de Habilitações ou Declarações do PUNIV, com o visto do Director Provincial de Educação;</li>
-          <li>c) Ficha de inscrição devidamente preenchida</li>
-          <li>d) Pagamento de emolumentos</li>
-        </ul>
-        <p>2. No acto da inscrição, é emitido um recibo com a indicação da quantia paga em nome do Candidato que lhe dará acesso à sala do exame.</p>
+      <div className="containers grid grid-cols-2 gap-10">
+        <div>
+          <h1 className="py-8 text-4xl font-bold text-start">Processo de Inscrição</h1>
+          <p>1. O processo de inscrição para o exame de acesso deve ser constituído pelos seguintes documentos:</p>
+          <ul>
+            <li>a) Fotocópia do original do Bilhete de Identidade ou passaporte para os estrangeiros</li>
+            <li>b) Fotocópia autenticada do Certificado de Habilitações ou Declarações do PUNIV, com o visto do Director Provincial de Educação;</li>
+            <li>c) Ficha de inscrição devidamente preenchida</li>
+            <li>d) Pagamento de emolumentos</li>
+          </ul>
+          <p>2. No acto da inscrição, é emitido um recibo com a indicação da quantia paga em nome do Candidato que lhe dará acesso à sala do exame.</p>
 
-        <h1 className="py-8 text-4xl font-bold text-start">Matrícula</h1>
-        <p>1. A matrícula é o acto pela qual o estudante se vincula ao ISPSML, adquire a qualidade de estudante e o direito à inscrição num dos seus cursos;</p>
-        <p>2. A matrícula faz-se uma só vez, dentro dos prazos previstos no respectivo calendário elaborado pelos Serviços Académicos;</p>
-        <p>3. No acto da matrícula, é atribuído um número ao estudante, que estará em vigor até ao final do curso;</p>
-        <p>4. O pagamento da matrícula é único, sendo efectuado no ano em que o estudante entra pela primeira vez na Instituição;</p>
-        <p>5. Podem efectuar a sua matrícula, confirmação de matrícula e inscrição no ISPSML os estudantes que se candidatem e sejam admitidos pelas seguintes vias:</p>
-        <ul>
-          <li>a) Regulamento geral de exames de acesso aos cursos do ISPSML;</li>
-          <li>b) Regulamento de reingresso, mudança de curso ou transferência.</li>
-        </ul>
-        <p>6. A inscrição é o acto efectuado anualmente que faculta ao estudante a frequência das unidades curriculares de um curso, sendo a primeira simultânea com a matrícula, folhas de provas e o cartão de estudante; É efectuada no início de cada ano lectivo, que visa confirmar que o estudante pretende continuar a frequentar o ISPSML;</p>
-        <p>7. Nenhum estudante pode, a qualquer título, frequentar ou ser avaliado em unidades curriculares de um curso superior, sem se encontrar regularmente matriculado e inscrito.</p>
+        </div>
+        <div>
+          <h1 className="py-8 text-4xl font-bold text-start">Matrícula</h1>
+          <p>1. A matrícula é o acto pela qual o estudante se vincula ao ISPSML, adquire a qualidade de estudante e o direito à inscrição num dos seus cursos;</p>
+          <p>2. A matrícula faz-se uma só vez, dentro dos prazos previstos no respectivo calendário elaborado pelos Serviços Académicos;</p>
+          <p>3. No acto da matrícula, é atribuído um número ao estudante, que estará em vigor até ao final do curso;</p>
+          <p>4. O pagamento da matrícula é único, sendo efectuado no ano em que o estudante entra pela primeira vez na Instituição;</p>
+          <p>5. Podem efectuar a sua matrícula, confirmação de matrícula e inscrição no ISPSML os estudantes que se candidatem e sejam admitidos pelas seguintes vias:</p>
+          <ul>
+            <li>a) Regulamento geral de exames de acesso aos cursos do ISPSML;</li>
+            <li>b) Regulamento de reingresso, mudança de curso ou transferência.</li>
+          </ul>
+          <p>6. A inscrição é o acto efectuado anualmente que faculta ao estudante a frequência das unidades curriculares de um curso, sendo a primeira simultânea com a matrícula, folhas de provas e o cartão de estudante; É efectuada no início de cada ano lectivo, que visa confirmar que o estudante pretende continuar a frequentar o ISPSML;</p>
+          <p>7. Nenhum estudante pode, a qualquer título, frequentar ou ser avaliado em unidades curriculares de um curso superior, sem se encontrar regularmente matriculado e inscrito.</p>
 
-        <h1 className="py-8 text-4xl font-bold text-start">Documentos para Matrícula</h1>
-        <ul>
-          <li>a) Cópia do Bilhete de Identidade colorida;</li>
-          <li>b) Certificado Original do Ensino Médio ou Cópia colorida e autenticada;</li>
-          <li>c) 2 fotografias tipo-passe;</li>
-          <li>d) Atestado Médico;</li>
-          <li>e) Situação militar regularizada (género masculino)</li>
-        </ul>
-        <p>No acto da matrícula:</p>
-        <ul>
-          <li>a) Valor correspondente a primeira mensalidade de acordo ao curso;</li>
-          <li>b) Valor correspondente ao cartão de estudante;</li>
-        </ul>
+        </div>
+        <div>
+          <h1 className="py-8 text-4xl font-bold text-start">Documentos para Matrícula</h1>
+          <ul>
+            <li>a) Cópia do Bilhete de Identidade colorida;</li>
+            <li>b) Certificado Original do Ensino Médio ou Cópia colorida e autenticada;</li>
+            <li>c) 2 fotografias tipo-passe;</li>
+            <li>d) Atestado Médico;</li>
+            <li>e) Situação militar regularizada (género masculino)</li>
+          </ul>
+          <p>No acto da matrícula:</p>
+          <ul>
+            <li>a) Valor correspondente a primeira mensalidade de acordo ao curso;</li>
+            <li>b) Valor correspondente ao cartão de estudante;</li>
+          </ul>
 
-        <h1 className="py-8 text-4xl font-bold text-start">Transferência Externa</h1>
-        <p>1. A transferência externa tem como principal objectivo permitir que um estudante se inscreva e se matricule como estudante do ISPSML. A candidatura deverá ser apresentada na Secretaria de Estudantes antes do início de cada ano lectivo, nos prazos estabelecidos no calendário escolar;</p>
-        <p>2. As solicitações de transferência externa deverão ser feitas junto da Secretaria de Estudantes, por requerimento, dirigido a Direcção dos Departamentos que no prazo de 5 (cinco) dias úteis emitam as respectivas equivalências;</p>
-        <p>3. A direcção do Departamento fará chegar o processo a Secretaria de Estudantes de forma a garantir que o processo esteja concluído, contados a partir das datas previstas;</p>
-        <p>4. A Secretaria de Estudantes, no prazo máximo de 2 (dois) dias úteis, após recepção da informação da Direcção do Departamento, notificará o requerente, informando-o da decisão e dos eventuais actos necessários que dela decorram.</p>
+        </div>
+        <div>
+          <h1 className="py-8 text-4xl font-bold text-start">Transferência Externa</h1>
+          <p>1. A transferência externa tem como principal objectivo permitir que um estudante se inscreva e se matricule como estudante do ISPSML. A candidatura deverá ser apresentada na Secretaria de Estudantes antes do início de cada ano lectivo, nos prazos estabelecidos no calendário escolar;</p>
+          <p>2. As solicitações de transferência externa deverão ser feitas junto da Secretaria de Estudantes, por requerimento, dirigido a Direcção dos Departamentos que no prazo de 5 (cinco) dias úteis emitam as respectivas equivalências;</p>
+          <p>3. A direcção do Departamento fará chegar o processo a Secretaria de Estudantes de forma a garantir que o processo esteja concluído, contados a partir das datas previstas;</p>
+          <p>4. A Secretaria de Estudantes, no prazo máximo de 2 (dois) dias úteis, após recepção da informação da Direcção do Departamento, notificará o requerente, informando-o da decisão e dos eventuais actos necessários que dela decorram.</p>
 
-        <h1 className="py-8 text-4xl font-bold text-start">Pedidos de Transferência</h1>
-        <p>1. Os pedidos de transferência deverão ser feitos quando se verifique uma das seguintes situações:</p>
-        <ul>
-          <li>a) Mudança interna de curso;</li>
-          <li>b) Transferência de uma outra Instituição de Ensino Superior, nacional ou estrangeira, legalmente reconhecida pelos órgãos competentes.</li>
-        </ul>
-        <p>2. Os processos de pedidos de transferência deverão dar entrada na Secretaria de Estudantes e serem compostos por:</p>
-        <ul>
-          <li>a) Requerimento dirigido ao Chefe do Departamento do curso que pretende, a solicitar a autorização de transferência e a concepção de equivalência;</li>
-          <li>b) Declaração original com notas discriminadas;</li>
-          <li>c) Original dos planos de estudos e conteúdos programáticos;</li>
-          <li>d) Fotocópia do Bilhete de Identidade.</li>
-        </ul>
-        <p>3. A Direcção do Departamento do curso a que disser respeito deverá no prazo de 5 (cinco) dias úteis, a contar da data da recepção do processo, dar a devida resposta ao pedido de transferência e à solicitação de equivalências, reencaminhando de imediato o processo para a Secretaria de Estudantes.</p>
+        </div>
+        <div>
+          <h1 className="py-8 text-4xl font-bold text-start">Pedidos de Transferência</h1>
+          <p>1. Os pedidos de transferência deverão ser feitos quando se verifique uma das seguintes situações:</p>
+          <ul>
+            <li>a) Mudança interna de curso;</li>
+            <li>b) Transferência de uma outra Instituição de Ensino Superior, nacional ou estrangeira, legalmente reconhecida pelos órgãos competentes.</li>
+          </ul>
+          <p>2. Os processos de pedidos de transferência deverão dar entrada na Secretaria de Estudantes e serem compostos por:</p>
+          <ul>
+            <li>a) Requerimento dirigido ao Chefe do Departamento do curso que pretende, a solicitar a autorização de transferência e a concepção de equivalência;</li>
+            <li>b) Declaração original com notas discriminadas;</li>
+            <li>c) Original dos planos de estudos e conteúdos programáticos;</li>
+            <li>d) Fotocópia do Bilhete de Identidade.</li>
+          </ul>
+          <p>3. A Direcção do Departamento do curso a que disser respeito deverá no prazo de 5 (cinco) dias úteis, a contar da data da recepção do processo, dar a devida resposta ao pedido de transferência e à solicitação de equivalências, reencaminhando de imediato o processo para a Secretaria de Estudantes.</p>
 
-        <h1 className="py-8 text-4xl font-bold text-start">Pedido de Equivalência</h1>
-        <p>O requerimento para pedido de equivalência, será instruído com os seguintes elementos:</p>
-        <ul>
-          <li>a) Certificado e/ou documentos comprovativos da aprovação nas unidades curriculares de que requer equivalência, com a indicação da respectiva classificação;</li>
-          <li>b) Plano de estudo e conteúdos programáticos das unidades curriculares;</li>
-          <li>c) Carga horária de cada unidade curricular.</li>
-        </ul>
+        </div>
+        <div>
+          <h1 className="py-8 text-4xl font-bold text-start">Pedido de Equivalência</h1>
+          <p>O requerimento para pedido de equivalência, será instruído com os seguintes elementos:</p>
+          <ul>
+            <li>a) Certificado e/ou documentos comprovativos da aprovação nas unidades curriculares de que requer equivalência, com a indicação da respectiva classificação;</li>
+            <li>b) Plano de estudo e conteúdos programáticos das unidades curriculares;</li>
+            <li>c) Carga horária de cada unidade curricular.</li>
+          </ul>
 
-        <h1 className="py-8 text-4xl font-bold text-start">Pagamento de Propinas</h1>
-        <p>Pela prestação dos serviços educacionais e conforme o previsto pelos demais regulamentos institucionais, o valor a ser pago será o correspondente a 10 (dez) meses de serviços – Outubro ao Julho, mais o valor da matrícula.</p>
-        <p>O valor da anuidade depende do curso e será indicado sempre no princípio do ano lectivo e será sempre em Moeda Nacional (Kz) que será pago em 10 (dez) parcelas mensais e iguais. O valor pago em moeda nacional será feita sempre no TPA do ISPSML e nunca em mãos ou Cash.</p>
-        <ul>
-          <li>a) A primeira parcela deverá ser paga no acto da matrícula, e as demais parcelas deverão ser pagas até o 10º (décimo) dia útil de cada mês;</li>
-          <li>b) Ao Valor da matrícula para o primeiro ano será acrescentado o valor das folhas dos exames e das provas parcelares, o valor da internet e o valor do cartão de estudante.</li>
-          <li>c) Não deverá ser assinado o contrato sem que o estudante não tenha efectivada o pagamento da matrícula junto com a primeira mensalidade.</li>
-          <li>d) Em caso de atraso ao pagamento das mensalidades seguintes ao primeiro mês, serão acrescidos, ao valor normal da mensalidade, uma multa corresponde a 20%.</li>
-          <li>e) Não serão efectuadas matrículas nos anos subsequentes de estudantes que não tenham cumprido com os seus deveres de pagamentos no ano anterior;</li>
-          <li>f) Em hipótese alguma haverá compensação ou restituição de valores pagos, relativos à matrícula e/ou mensalidades em que o estudante, tenha frequentado à Instituição.</li>
-        </ul>
+        </div>
+        <div className='col-span-2 mb-10'>
+          <h1 className="py-8 text-4xl font-bold text-start">Pagamento de Propinas</h1>
+          <p>Pela prestação dos serviços educacionais e conforme o previsto pelos demais regulamentos institucionais, o valor a ser pago será o correspondente a 10 (dez) meses de serviços – Outubro ao Julho, mais o valor da matrícula.</p>
+          <p>O valor da anuidade depende do curso e será indicado sempre no princípio do ano lectivo e será sempre em Moeda Nacional (Kz) que será pago em 10 (dez) parcelas mensais e iguais. O valor pago em moeda nacional será feita sempre no TPA do ISPSML e nunca em mãos ou Cash.</p>
+          <ul>
+            <li>a) A primeira parcela deverá ser paga no acto da matrícula, e as demais parcelas deverão ser pagas até o 10º (décimo) dia útil de cada mês;</li>
+            <li>b) Ao Valor da matrícula para o primeiro ano será acrescentado o valor das folhas dos exames e das provas parcelares, o valor da internet e o valor do cartão de estudante.</li>
+            <li>c) Não deverá ser assinado o contrato sem que o estudante não tenha efectivada o pagamento da matrícula junto com a primeira mensalidade.</li>
+            <li>d) Em caso de atraso ao pagamento das mensalidades seguintes ao primeiro mês, serão acrescidos, ao valor normal da mensalidade, uma multa corresponde a 20%.</li>
+            <li>e) Não serão efectuadas matrículas nos anos subsequentes de estudantes que não tenham cumprido com os seus deveres de pagamentos no ano anterior;</li>
+            <li>f) Em hipótese alguma haverá compensação ou restituição de valores pagos, relativos à matrícula e/ou mensalidades em que o estudante, tenha frequentado à Instituição.</li>
+          </ul>
+        </div>
       </div>
 
       <div className="containers">

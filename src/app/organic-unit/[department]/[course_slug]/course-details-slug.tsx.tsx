@@ -6,7 +6,7 @@ import { useQuery } from 'react-query';
 import YearAccordion from '../../components/YearAccordion';
 import { HeroCourseDetail } from '../../components/hero-course-details';
 import { ShortDescCourse } from '../../components/short_description_course';
-import { FaAngleRight, FaDownload } from 'react-icons/fa6';
+import { FaAngleRight, FaCircleCheck } from 'react-icons/fa6';
 // import QuickLinks from '@/components/QuickLinks';
 import { routes } from '@/infra/routes.vars';
 import { getDepartmentBySlug } from '@/services/dep.service';
@@ -77,19 +77,19 @@ export default function CourseDetailsPage({ course_slug, department: dep_slug }:
               .filter(Boolean)
               .map((item: string, index: number) => (
                 <div key={index} className="flex gap-2 benefit-item">
-                  <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>
+                  <div className="p-1"><FaCircleCheck className='text-xs text-primary' /></div>
                   <p>{item.trim()}</p>
                 </div>
               ))}
           </div>
-          <div className="p">
+          <div className="p flex flex-col">
             <h2 className="title-course">Perfil de Saída</h2>
             {course.outProfile
               ?.split('*')
               .filter(Boolean)
               .map((item: string, index: number) => (
                 <div key={index} className="flex gap-2 benefit-item">
-                  <div className="w-3 h-3 my-auto border-2 rounded-full border-primary/70"></div>
+                  <div className="p-1"><FaCircleCheck className='text-xs text-primary' /></div>
                   <p>{item.trim()}</p>
                 </div>
               ))}
@@ -99,33 +99,36 @@ export default function CourseDetailsPage({ course_slug, department: dep_slug }:
       <br />
       <br />
       <br />
-      <div className="containers">
-        <h2 className='mb-6 text-3xl font-semibold'>Plano Curricular</h2>
-        <div className="relative grid grid-cols-2 gap-4">
-          {course.years?.map(year => (
-            <YearAccordion
-              key={year.year}
-              year={year}
-              isOpen={openYear === Number(year.year)}
-              toggleYear={toggleYear}
-            />
-          ))}
+      {
+        course.years &&
+        <div className="containers">
+          <h2 className='mb-6 text-3xl font-semibold'>Plano Curricular</h2>
+          <div className="relative grid grid-cols-2 gap-4">
+            {course.years?.map(year => (
+              <YearAccordion
+                key={year.year}
+                year={year}
+                isOpen={openYear === Number(year.year)}
+                toggleYear={toggleYear}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      }
 
       <br />
       <br />
 
       <div className="flex justify-between containers">
         <div className="flex justify-between w-full ">
-          <div className="w-full my-auto">
+          {/* <div className="w-full my-auto">
             <h2 className="text-2xl font-semibold">
               Baixar Plano Curricular de {course.course}
             </h2>
           </div>
           <div className="w-full my-auto">
             <FaDownload className='my-auto text-xl' />
-          </div>
+          </div> */}
         </div>
         <div className="flex justify-end w-full text-end ">
           <button onClick={() => window.location.href = routes.APPLY_ROUTE + "?course=" + course.course} className="flex gap-2 py-5 mt-10 text-white uppercase transition-all bg-black border-2 border-black px-7 hover:bg-white hover:text-black ">

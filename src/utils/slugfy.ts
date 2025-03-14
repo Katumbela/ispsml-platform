@@ -23,7 +23,7 @@ export function generateSlug(text: string): string {
     lower: true,
     strict: true,
     replacement: '-',  // Replace spaces with dashes
-    remove: /[*+~.()'"!:@]/g  // Remove specific characters
+    remove: /[*+~,.()'"!:@]/g  // Remove specific characters
   });
 
   // Remove any duplicate dashes that might have been created

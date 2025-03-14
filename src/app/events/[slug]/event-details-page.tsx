@@ -94,7 +94,7 @@ export default function EventDetailPage({ slug }: { slug: string }) {
                         <h2 className="title">{event.title}</h2>
                         <p>{event.description}</p>
                         <br />
-                        <p>{event.longDescription}</p>
+                        <p dangerouslySetInnerHTML={{ __html: event.longDescription }} />
                         <br />
                         <p>Local: {event.place}</p>
                         <br />
